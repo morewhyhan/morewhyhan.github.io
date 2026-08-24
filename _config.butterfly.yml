@@ -1,0 +1,205 @@
+# Butterfly overrides for the local Hexo source.
+# This file is intentionally separate from themes/butterfly/_config.yml so the
+# theme submodule can be updated without losing the site's configuration.
+
+nav:
+  display_title: true
+  display_post_title: true
+  fixed: false
+
+menu:
+  首页: / || fas fa-home
+  时间轴: /archives/ || fas fa-archive
+  分类: /categories/ || fas fa-folder-open
+  标签: /tags/ || fas fa-tags
+  清单||fas fa-heartbeat:
+    书籍: /book/ || fas fa-book
+  支持我: /reward/ || fas fa-thumbs-up
+  友情链接: /link/ || fas fa-link
+  关于: /about/ || fas fa-heart
+
+code_blocks:
+  theme: darker
+  macStyle: true
+  height_limit: 300
+  word_wrap: false
+  copy: true
+  language: true
+  shrink: false
+  fullpage: false
+
+social:
+  fab fa-github: https://github.com/morewhyhan/ || GitHub || '#24292e'
+
+favicon: /img/favicon.ico
+
+avatar:
+  img: /img/myself.png
+  effect: false
+
+default_top_img: /img/hua.png
+index_img: /img/hua.png
+archive_img: /img/hua.png
+footer_img: /img/hua.png
+
+cover:
+  index_enable: true
+  aside_enable: true
+  archives_enable: true
+  default_cover:
+    - /img/hua.png
+
+error_404:
+  enable: true
+  subtitle: 页面不存在
+  background: /img/error-page.png
+
+subtitle:
+  enable: true
+  effect: true
+  typed_option:
+    typeSpeed: 100
+    backSpeed: 50
+    loop: true
+  source: false
+  sub:
+    - 月印千江水，千江月
+    - 流水不争先，争的是滔滔不绝
+    - 用见识和行动，对抗熵增
+
+toc:
+  post: true
+  page: false
+  number: true
+  expand: false
+  scroll_percent: true
+
+post_copyright:
+  enable: true
+  decode: false
+  author_href: https://github.com/morewhyhan
+  license: CC BY-NC-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+reward:
+  enable: true
+  text: 感谢你的支持
+  QR_code:
+    - img: /img/wechat.jpg
+      text: 微信
+    - img: /img/alipay.jpg
+      text: 支付宝
+
+aside:
+  enable: true
+  button: true
+  mobile: true
+  position: right
+  card_author:
+    enable: true
+    description: 流水不争先，争的是滔滔不绝
+    button:
+      enable: true
+      icon: fab fa-github
+      text: Follow Me
+      link: https://github.com/morewhyhan/
+  card_announcement:
+    enable: true
+    content: Hello ! Welcome my World!
+  card_recent_post:
+    enable: true
+    limit: 5
+    sort: date
+  card_newest_comments:
+    enable: false
+  card_categories:
+    enable: true
+    limit: 8
+    expand: none
+  card_tags:
+    enable: true
+    limit: 40
+    color: false
+  card_archives:
+    enable: true
+    type: monthly
+    format: MMMM YYYY
+    order: -1
+    limit: 8
+  card_post_series:
+    enable: false
+  card_webinfo:
+    enable: true
+    post_count: true
+    last_push_date: true
+
+translate:
+  enable: true
+  default: 繁
+  defaultEncoding: 2
+  translateDelay: 0
+  msgToTraditionalChinese: 繁
+  msgToSimplifiedChinese: 簡
+
+darkmode:
+  enable: true
+  button: true
+  autoChangeMode: 1
+
+copy:
+  enable: true
+  copyright:
+    enable: false
+    limit_count: 150
+
+wordcount:
+  enable: true
+  post_wordcount: true
+  min2read: true
+  total_wordcount: true
+
+search:
+  use: local_search
+  placeholder: 搜索文章
+  path: search.xml
+  local_search:
+    preload: false
+    top_n_per_article: 1
+    unescape: false
+    pagination:
+      enable: false
+      hitsPerPage: 8
+
+lightbox: fancybox
+
+canvas_nest:
+  enable: true
+  color: '0,0,255'
+  opacity: 0.7
+  zIndex: -1
+  count: 99
+  mobile: false
+
+mermaid:
+  enable: true
+  code_write: false
+  theme:
+    light: default
+    dark: dark
+
+pjax:
+  enable: true
+
+font:
+  global_font_size: 16px
+  font_family: '"LXGW WenKai Screen", system-ui, sans-serif'
+
+inject:
+  head:
+    - <link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css">
+    - <link rel="stylesheet" href="/css/custom.css">
+
+CDN:
+  internal_provider: local
+  third_party_provider: jsdelivr
+  version: true
