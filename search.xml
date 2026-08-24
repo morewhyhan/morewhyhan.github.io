@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Freqtrade 量化框架使用指南</title>
+    <url>/2025/12/29/Freqtrade%20%E9%87%8F%E5%8C%96%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[#Freqtrade 量化框架使用指南
+1. 什么是Freqtrade？Freqtrade是一个免费开源的加密货币算法交易框架，它可以帮你：
+
+用代码编写交易策略
+
+用历史数据测试策略是否赚钱（回测）
+
+自动执行交易（实盘或模拟）
+
+
+简单来说，它就是一个让你”编写策略→测试策略→自动交易”的工具。
+
+2. 准备工作2.1 安装DockerFreqtrade推荐使用Docker运行，这样不用安装复杂的依赖。
+
+访问 Docker官网 下载并安装Docker Desktop
+
+安装完成后，打开Docker Desktop，等待它完全启动
+
+
+2.2 获取Freqtrade
+下载或克隆Freqtrade项目文件：
+
+      git clone https://github.com/freqtrade/freqtrade.git   cd freqtrade
+
+复制你的策略文件到user_data/strategies/目录：
+
+      # 替换成你的策略文件路径   cp /path/to/your/strategy.py user_data/strategies/
+
+3. 快速开始：第一次回测3.1 步骤1：创建配置文件运行下面的命令创建配置文件：
+docker-compose run --rm freqtrade new-config --config /freqtrade/user_data/config.json
+
+然后按照提示回答问题：
+
+输入交易所名称（如：binance、okx）
+
+输入API密钥（可选，测试阶段可以留空，后续在config.json重新编辑）
+
+选择交易模式（现货或期货）
+
+设置其他参数（保持默认即可）
+
+
+3.2 步骤2：下载历史数据回测需要历史数据，运行下面的命令下载：
+# 下载15分钟K线数据，时间范围2024年全年docker-compose run --rm freqtrade download-data --config /freqtrade/user_data/config.json --timeframes 15m --timerange 20240101-20241231
+
+3.3 步骤3：运行回测现在可以运行回测了，命令如下：
+# 替换成你的策略名称docker-compose run --rm freqtrade backtesting --config /freqtrade/user_data/config.json --strategy YourStrategyName --timerange 20240101-20241231
+
+
+3.4 步骤4：查看回测结果回测完成后，看到类似这样的结果：
+========================================|      回测结果统计      |========================================总交易次数：120胜率：65%平均收益：2.3%总收益率：145%最大回撤：28%========================================
+
+
+4. 核心概念解释4.1 回测用历史数据模拟执行你的交易策略，看看它过去表现如何。
+4.2 策略你编写的交易规则集合，告诉Freqtrade：
+
+什么时候买入（入场信号）
+
+什么时候卖出（出场信号）
+
+止损多少（亏多少就卖）
+
+止盈多少（赚多少就卖）
+
+
+4.3 杠杆期货交易中，用少量资金控制大量资产。比如10倍杠杆，就是用100元买1000元的资产。
+4.4 止损&#x2F;止盈
+止损：亏到一定比例就卖出，防止更大亏损
+
+止盈：赚到一定比例就卖出，锁定利润
+
+
+
+5. 常用命令速查配置相关# 创建新配置文件docker-compose run --rm freqtrade new-config --config /freqtrade/user_data/config.json
+
+数据相关# 下载历史数据docker-compose run --rm freqtrade download-data --config /freqtrade/user_data/config.json --timeframes 15m --timerange 20240101-20241231
+
+回测相关# 运行回测docker-compose run --rm freqtrade backtesting --config /freqtrade/user_data/config.json --strategy YourStrategyName --timerange 20240101-20241231# 查看回测交易详情docker-compose run --rm freqtrade show-trades --config /freqtrade/user_data/config.json --strategy YourStrategyName
+
+实时交易# 模拟交易（推荐先测试）docker-compose run --rm freqtrade trade --config /freqtrade/user_data/config.json --strategy YourStrategyName --dry-run# 实盘交易（谨慎使用）docker-compose run --rm freqtrade trade --config /freqtrade/user_data/config.json --strategy YourStrategyName
+
+
+6. 简单策略示例下面是一个非常简单的策略，基于均线交叉信号：
+from freqtrade.strategy import IStrategyimport talib.abstract as taimport pandas as pdclass SimpleStrategy(IStrategy):    # 策略接口版本    INTERFACE_VERSION = 2    # 盈利10%就平仓    minimal_roi = &#123;&quot;0&quot;: 0.1&#125;    # 亏损5%就止损    stoploss = -0.05    # 使用15分钟K线    timeframe = &#x27;15m&#x27;    def populate_indicators(self, dataframe: pd.DataFrame, metadata: dict) -&gt; pd.DataFrame:        # 计算短期和长期均线        dataframe[&#x27;short_ma&#x27;] = ta.SMA(dataframe, timeperiod=5)        dataframe[&#x27;long_ma&#x27;] = ta.SMA(dataframe, timeperiod=20)        return dataframe    def populate_entry_trend(self, dataframe: pd.DataFrame, metadata: dict) -&gt; pd.DataFrame:        # 短期均线上穿长期均线时买入        dataframe.loc[            (dataframe[&#x27;short_ma&#x27;] &gt; dataframe[&#x27;long_ma&#x27;]) &amp;  # 均线金叉            (dataframe[&#x27;volume&#x27;] &gt; 0),  # 有成交量            &#x27;buy&#x27;] = 1        return dataframe    def populate_exit_trend(self, dataframe: pd.DataFrame, metadata: dict) -&gt; pd.DataFrame:        # 短期均线下穿长期均线时卖出        dataframe.loc[            (dataframe[&#x27;short_ma&#x27;] &lt; dataframe[&#x27;long_ma&#x27;]) &amp;  # 均线死叉            (dataframe[&#x27;volume&#x27;] &gt; 0),  # 有成交量            &#x27;sell&#x27;] = 1        return dataframe
+
+
+7. 常见问题7.1 回测时提示”缺少数据”？原因：回测需要对应的历史K线数据，但你还没有下载。
+解决方案：使用download-data命令下载对应时间范围和周期的数据：
+# 示例：下载2024全年15分钟K线数据docker-compose run --rm freqtrade download-data --config /freqtrade/user_data/config.json --timeframes 15m --timerange 20240101-20241231
+
+提示：确保下载的数据周期（如15m）和时间范围与你回测时使用的一致。
+7.2 如何设置杠杆？注意：Freqtrade不支持通过命令行参数设置杠杆，必须在策略文件中实现。
+解决方案：在策略类中添加custom_leverage方法：
+# 在你的策略类中添加以下方法def custom_leverage(self, pair: str, **kwargs) -&gt; float:    return 1.0  # 设置1倍杠杆（可根据需要调整数值）
+
+7.3 如何查看详细的回测结果？方法1：使用show-trades命令
+docker-compose run --rm freqtrade show-trades --config /freqtrade/user_data/config.json --strategy YourStrategyName
+
+
+方法2：查看回测结果文件
+回测完成后，结果会保存在user_data/backtest_results/目录下，包含：
+
+详细的交易记录CSV文件
+
+可视化图表HTML文件
+
+
+方法3：使用--export参数导出结果
+# 回测时直接导出结果docker-compose run --rm freqtrade backtesting --config /freqtrade/user_data/config.json --strategy YourStrategyName --export trades
+
+
+7.4 可以回测多个交易对吗？方法1：在配置文件中设置
+编辑config.json，在pair_whitelist中添加多个交易对：
+&quot;pair_whitelist&quot;: [    &quot;BTC/USDT&quot;,    &quot;ETH/USDT&quot;,    &quot;BNB/USDT&quot;]
+
+
+方法2：回测时使用--pairs参数指定
+docker-compose run --rm freqtrade backtesting --config /freqtrade/user_data/config.json --strategy YourStrategyName --pairs BTC/USDT ETH/USDT
+
+注意：回测多个交易对会占用更多资源，建议先下载所有需要的交易对数据。
+7.5 回测时遇到API超时错误？原因：默认情况下，Freqtrade会加载交易所的所有市场数据（包括现货、期货、期权等），导致API请求超时。
+解决方案：在config.json中添加ccxt_config配置，限制只加载期货市场：
+&quot;exchange&quot;: &#123;    &quot;name&quot;: &quot;okx&quot;,    &quot;ccxt_config&quot;: &#123;        &quot;options&quot;: &#123;            &quot;defaultType&quot;: &quot;future&quot;  // 仅加载期货市场        &#125;    &#125;,    // 其他交易所配置...&#125;
+
+7.6 如何切换期货(合约)&#x2F;现货交易模式？解决方案：在config.json中设置交易所的defaultType：
+&quot;exchange&quot;: &#123;    &quot;name&quot;: &quot;okx&quot;,    &quot;ccxt_config&quot;: &#123;        &quot;options&quot;: &#123;            &quot;defaultType&quot;: &quot;future&quot;  // 期货模式            // &quot;defaultType&quot;: &quot;spot&quot;  // 现货模式        &#125;    &#125;,    // 其他配置...
+
+注意：切换模式后，需要重新下载对应模式的历史数据。
+
+温馨提示：先在模拟模式下充分测试策略，再考虑实盘交易。
+参考资料：
+
+Freqtrade官方文档
+Freqtrade GitHub仓库
+Freqtrade策略示例
+前端伪大叔
+
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>交易</category>
+      </categories>
+      <tags>
+        <tag>Freqtrade</tag>
+        <tag>量化</tag>
+        <tag>因子策略</tag>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>以终为始</title>
+    <url>/2025/11/25/%E4%BB%A5%E7%BB%88%E4%B8%BA%E5%A7%8B/</url>
+    <content><![CDATA[以终为始首帖——“以终为始” 
+问我终点在哪？
+我想过——想深了。
+却忽然觉得：终点这种东西，只存在于不敢继续往前走的人心里。
+我嘛，走到哪算哪，索性不设终，把路走着玩。
+大不了一死，序章给别人写。
+]]></content>
+      <categories>
+        <category>日志</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+        <tag>发疯</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《现代思维模式真假、好坏、对错》</title>
+    <url>/2025/11/26/%E3%80%8A%E7%8E%B0%E4%BB%A3%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%BC%8F%E7%9C%9F%E5%81%87%E3%80%81%E5%A5%BD%E5%9D%8F%E3%80%81%E5%AF%B9%E9%94%99%E3%80%8B/</url>
+    <content><![CDATA[《中共四川省委党校学报》上有一篇文章《现代思维模式真假、好坏、对错》深刻讨论了人们的对错观。
+真假是在讨论客观事物是否符合某种规律，叫做合规律性；
+好坏是从一个人的立场出发讨论事物是否符合他的期望，叫做合目的性；
+对错一般是对人们行为的讨论，可以叫做合规范性。
+]]></content>
+      <categories>
+        <category>思维模型</category>
+      </categories>
+      <tags>
+        <tag>辩证法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《高效能人士的7个习惯》阅读感悟</title>
+    <url>/2025/11/25/%E3%80%8A%E9%AB%98%E6%95%88%E8%83%BD%E4%BA%BA%E5%A3%AB%E7%9A%847%E4%B8%AA%E4%B9%A0%E6%83%AF%E3%80%8B/</url>
+    <content><![CDATA[《高效能人士的7个习惯》阅读感悟积极主动人需要掌控感，而这份对生活的掌控感，正建立于一次次主动选择。
+ “来不及” 的焦虑化作达摩克利斯之剑，推着自己被动前行，这是极危险的，因为剑终会落下，我绝不要成为剑下亡魂。
+所以，要想掌控生活，就必须主动选择，而不是被动等待。
+借用李笑来的话：“激进面对生活”
+以及另一句，“注意力是我们最宝贵的财富”。把我们有限的注意力花费在我们可以影响和改变的事情上。
+自我意识是独立的，能脱离肉体束缚。他可以决定外界刺激对自己的影响程度，即使无法改变外界环境，他有能力选择自己的应对方式。 
+以终为始终是终生的意思，我们要以终生的目标为导向（成为一个什么样的人），而不是以短期的目标为导向。
+就像我在减脂，但实际目的并非减重，也不是好看，而是为拥有更积极的心态，为了更健康的身体，为了更优良的道德品质—— 进取、节制
+以人生原则作为根本导向
+要事第一往一个瓶子里装石子，会发现只要努力，总有缝隙可以塞更多东西，但是，那个最大的石子已经装不下了。
+瓶子是有限的，我们的精力是有限的，琐碎一天，怎么还有精力做更重要的事。
+其实，把要事筛出来，会发现根本没有多少事是真正值得做的。
+双赢思维互利双赢，不能双赢就好聚好散。
+知彼解己沟通前要提前对齐双方的目标，理解对方的动机，不然吵的都不是一个东西。
+就比如应对刻意打压的人，讲理就没用。
+善于倾听的人远远强于喋喋不休的人。
+沟通交流这块可以多读卡耐基。
+统合综效合功分工，让更擅长的人做更擅长的事，实现 1+1&gt;2
+不断更新不断更新：从身体、精神、智力、社会 &#x2F; 情感四个维度持续提升自己。
+身体：规律作息，强身健体。精神：维持心力。智力：阅读，反思，拓展知识边界。社会&#x2F;情感：和家人、朋友保持良性沟通，获得情感支持，不用独自扛下所有。
+]]></content>
+      <categories>
+        <category>读书笔记</category>
+      </categories>
+      <tags>
+        <tag>成功学</tag>
+        <tag>效率</tag>
+        <tag>书籍</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>当 AI 把软件成本打到零，人还剩什么</title>
+    <url>/2026/06/11/%E5%BD%93AI%E6%8A%8A%E8%BD%AF%E4%BB%B6%E6%88%90%E6%9C%AC%E6%89%93%E5%88%B0%E9%9B%B6%EF%BC%8C%E4%BA%BA%E8%BF%98%E5%89%A9%E4%BB%80%E4%B9%88/</url>
+    <content><![CDATA[一、软件变便宜了，恐惧和兴奋同时来了AI 时代的到来，让一件曾经高不可攀的事情变得轻而易举——做出一个漂亮的软件。
+不需要学编程，不需要雇设计师，不需要找后端。一个想法到原型，可能只需要一个下午。
+软件的成本趋近于零。
+这件事让人恐惧，也让人兴奋。
+恐惧的是做技术的人。以前写代码是一种稀缺能力，现在 AI 写得更快更好。技术的护城河在被填平。
+兴奋的是做产品的人。以前「人人都是产品经理」不过是一句口号，因为想法再好，没人帮你落地。现在落地不是问题了，真正的问题回到了它本来的位置——你到底要做什么？你凭什么知道这个东西值得做？
+二、能做出来 ≠ 值得做一个软件做出来很容易。做出一个有人真正需要的东西，从来没有变容易。
+这里有一个悖论：用户往往自己都不知道自己想要什么。
+你问他，他说的是一回事。你把东西放在他面前，他的行为是另一回事。
+这就逼出一个问题：既然用户自己说不清，那怎么下判断？
+答案听起来很虚：审美。
+不是视觉上的审美，是判断什么值得做、什么不值得做的那种直觉。
+三、审美是怎么来的审美不是凭空来的。它有一个非常具体的来源——
+先把事情做出来。做出来之后，好坏自然在你面前展开。你看到了，记住了，下一次凭直觉做的取舍，那才叫审美。
+这跟很多人的直觉是反的。通常以为，先得有审美，才能做出好东西。实际上逻辑是反过来的：先做东西，做完之后你才能辨认好和坏。辨认得足够多了，审美就像肌肉记忆一样形成了。
+所以不做事的人，没法真正拥有审美。因为好坏根本没机会在他面前展开。
+四、可量化的归 AI，不可量化的归人这里还有一个关键区分。
+量化交易的回测结果好不好，数字说了算。谁的策略收益高回撤低，数据一跑就清清楚楚。比这个，人永远比不过 AI。
+但一个好产品「该不该做」，没有办法被量化。
+用户痛不痛，场景真不真，这个方向有没有前途——这些东西没有公式，没有指标，没有办法塞进一个模型里跑出一个决策。
+而正是这种不可量化的判断力，才是人的护城河。
+AI 能生成一切，但它没有活过。没有经历过你的困惑，没有踩过你踩过的坑，没在半夜睡不着觉思考人生。它更没有做过取舍——取舍背后是价值观，是「什么东西重要、什么东西可以放弃」。
+AI 没有价值观。你有。
+五、信任 &#x3D; 做多自己那怎么让别人相信你的判断？
+空口谈信任，都是口说无凭。信任的本质其实就是一句话：长期在一件事情上投入筹码。
+在投资里，做多一只股票意味着你押上真金白银赌它涨。在生活中，信任一个人，也是因为你看到他持续在某个方向上下了注——他用了大量时间，放弃了其他机会，承担了不确定性，持续地输出和行动。
+所以要让别人信任你，前提是你自己先信任自己。你得先做多自己，别人才会跟单。
+而「做多自己」最直观的方式，就是用你的审美做出一个又一个的作品。作品本身不一定多大，但每个作品都是你判断力的物证。
+六、没有生活的人，做不出好产品到这里，所有东西可以汇成一句话：
+真正好的产品灵感，来自你亲身经历过的痛苦，或者你看见身边人经历的麻烦。
+没有切肤之痛的人，很容易把产品做成了自嗨。因为他不是用户，他不知道痛在哪里。AI 可以帮他写代码，但没办法帮他补上「活过」的那一课。
+而一旦这个产品刚好戳中了一群人的共同痛点——哪怕最开始你只为自己做的——它就自然成了好东西。
+说白了，AI 时代的门槛从「技术」移到了「生活」。
+你活得足够深入，你的困惑足够真实，你的判断足够准确，你就是不可替代的。
+七、技术让我恐惧，产品让我兴奋做技术，比的是效率。AI 的效率每天在以肉眼可见的速度增长。在这个维度上努力，说实话是让人恐惧的。
+做产品，比的是判断。判断什么值得做，判断什么是好的，判断什么东西用户会买单。而判断的背后是审美，审美的背后是实践，实践的背后是一个人有血有肉的活法。
+AI 没有活过。它不需要活过。但正因为如此，所有真正需要「活过」才能胜任的事情，它注定做不好。
+在这个软件成本被打到零的时代，恐惧留给技术，兴奋留给产品。
+而一个活过的人，就是最好的产品经理。
+]]></content>
+      <categories>
+        <category>思维模型</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>产品</tag>
+        <tag>审美</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>服务器部署 Freqtrade 8080 ，开放 UI</title>
+    <url>/2025/12/29/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%20Freqtrade%208080%20%EF%BC%8C%E5%BC%80%E6%94%BE%20UI/</url>
+    <content><![CDATA[服务器部署 Freqtrade 8080 ，开放 UI本次核心目标是把服务器本地 localhost:8080 的 Freqtrade UI 对外开放，让 Windows 电脑访问，全程解决了配置缺失、权限、端口映射、安全组四大核心问题，以下是可复刻的完整步骤.
+一、前置准备（服务器端）1、登录服务器终端（控制台 &#x2F; SSH）ssh root@【服务器ip】 -p 22
+
+2、搭建目录按照官方的方法搭建https://www.freqtrade.io/https://www.freqtrade.cn/
+3、进入 Freqtrade 部署目录cd ~/Desktop/ft_userdata/my_ft_userdata
+
+二、核心配置步骤1. 修复日志目录权限（解决「PermissionError 13」）Freqtrade 启动需要写日志，先开放权限：
+sudo chmod -R 777 user_data/logs/ &amp;&amp; sudo chown -R root:root user_data/
+
+2. 修改 Freqtrade 配置（让 UI 监听所有 IP）把config.json里的监听地址从本地（127.0.0.1）改成所有 IP（0.0.0.0）：
+sed -i &#x27;s/&quot;listen_addresses&quot;: &quot;127.0.0.1&quot;/&quot;listen_addresses&quot;: &quot;0.0.0.0&quot;/g&#x27; user_data/config.json
+
+3. 修改 Docker 端口映射（解决「仅本地映射」）把 Docker 端口映射从127.0.0.1:8080改成0.0.0.0:8080，允许外部访问：
+sed -i &#x27;s/127.0.0.1:8080:8080/0.0.0.0:8080:8080/g&#x27; docker-compose.yml
+
+4. 开放服务器本地防火墙（Ubuntu&#x2F;Debian）放行 8080&#x2F;TCP 端口，确保本地不拦截：
+ufw enable &amp;&amp; ufw allow 8080/tcp &amp;&amp; ufw reload
+
+5. 启动 &#x2F; 重启 Freqtrade 容器docker compose down &amp;&amp; docker compose up -d
+
+三、验证步骤服务器端验证# 检查8080端口是否监听所有IPss -tulpn | grep 8080  # 输出含「0.0.0.0:8080」则正常# 检查容器是否运行docker compose ps  # 输出STATUS为Up则正常
+
+Windows 端验证（PowerShell）# 测试8080端口是否通Test-NetConnection 服务器IP -Port 8080  # TcpTestSucceeded为True则正常
+
+四、最终访问（Windows 浏览器）输入地址：http://服务器外网IP:8080（如http://154.36.185.193:8080），输入config.json里的用户名密码即可访问。
+五、关键避坑点
+端口映射：Docker 默认可能把 8080 映射到 127.0.0.1，必须改成 0.0.0.0；
+权限问题：logs 目录一定要开放 777 权限，否则 Freqtrade 启动失败；
+安全组：入站规则必须放行 8080&#x2F;TCP，这是外网访问的核心；
+配置文件：Freqtrade 的listen_addresses必须设为 0.0.0.0，否则只允许本地访问。
+
+六、终极解决方案docker compose logs
+
+打印日志，复制下来问ai
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>交易</category>
+      </categories>
+      <tags>
+        <tag>Freqtrade</tag>
+        <tag>量化</tag>
+        <tag>部署</tag>
+      </tags>
+  </entry>
+</search>
