@@ -38,7 +38,7 @@ avatar:
   effect: false
 
 default_top_img: /img/hua.png
-index_img: /img/home-hero-static.webp
+index_img: /img/home-hero-loop-poster.jpg
 archive_img: /img/hua.png
 footer_img: /img/hua.png
 
@@ -199,6 +199,7 @@ inject:
     - <link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css">
     - <link rel="stylesheet" href="/css/custom.css">
   bottom:
+    - <script defer src="/js/home-video.js"></script>
 
 CDN:
   internal_provider: local
