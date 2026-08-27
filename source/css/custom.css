@@ -48,9 +48,3 @@ body {
     min-height: 520px;
   }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  #page-header.full_page .home-hero-video {
-    display: none;
-  }
-}
