@@ -13,7 +13,7 @@ menu:
   分类: /categories/ || fas fa-folder-open
   标签: /tags/ || fas fa-tags
   清单||fas fa-heartbeat:
-    书籍: /book/ || fas fa-book
+    图书笔记: /book/ || fas fa-book-open
   支持我: /reward/ || fas fa-thumbs-up
   友情链接: /link/ || fas fa-link
   关于: /about/ || fas fa-heart
