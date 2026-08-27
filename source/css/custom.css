@@ -127,96 +127,10 @@ body {
   opacity: 0.75;
 }
 
-.home-library {
-  width: 100%;
-  margin-bottom: 1.25rem;
-  padding: 1.4rem;
-  border-radius: 12px;
-  background: var(--card-bg);
-  box-shadow: var(--card-box-shadow);
-}
-
-.home-library-heading {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.home-library-heading span {
-  color: var(--theme-color);
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
-}
-
-.home-library-heading h2 {
-  margin: 0.15rem 0 0;
-  font-size: 1.5rem;
-}
-
-.home-library-heading > a {
-  font-size: 0.9rem;
-}
-
-.home-library-card {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-  border: 1px solid rgba(128, 128, 128, 0.18);
-  border-radius: 0.7rem;
-  color: var(--font-color);
-}
-
-.home-library-card:hover {
-  border-color: var(--theme-color);
-  color: var(--font-color);
-}
-
-.home-library-number {
-  color: var(--theme-color);
-  font-size: 1.6rem;
-  font-weight: 700;
-}
-
-.home-library-card strong {
-  display: block;
-  font-size: 1.1rem;
-}
-
-.home-library-card p {
-  margin: 0.15rem 0 0;
-  color: var(--font-color);
-  font-size: 0.9rem;
-  opacity: 0.7;
-}
-
-.home-library-count {
-  color: var(--theme-color);
-  white-space: nowrap;
-}
-
 @media (max-width: 768px) {
   .book-note-list,
   .book-collection-list {
     grid-template-columns: 1fr;
   }
 
-  .home-library {
-    padding: 1rem;
-  }
-
-  .home-library-heading {
-    align-items: flex-start;
-  }
-
-  .home-library-card {
-    grid-template-columns: auto minmax(0, 1fr);
-  }
-
-  .home-library-count {
-    grid-column: 2;
-  }
 }
