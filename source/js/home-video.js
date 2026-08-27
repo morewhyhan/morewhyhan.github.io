@@ -1,7 +1,7 @@
 (() => {
   'use strict'
 
-  const HOME_HEADER = '#body-wrap.type-rain-home #page-header'
+  const HOME_HEADER = '#page-header.full_page'
   const VIDEO_CLASS = 'home-hero-video'
   const VIDEO_URL = '/media/home-hero-loop.mp4'
   const POSTER_URL = '/img/home-hero-loop-poster.jpg'
