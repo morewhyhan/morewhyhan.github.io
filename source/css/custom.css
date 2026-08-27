@@ -49,8 +49,6 @@ body {
   height: 100%;
   object-fit: cover;
   object-position: center center;
-  image-rendering: crisp-edges;
-  image-rendering: pixelated;
   pointer-events: none;
 }
 
