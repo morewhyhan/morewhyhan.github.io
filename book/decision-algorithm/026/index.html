@@ -1,0 +1,398 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>026｜工程思维：怎样完成看似不可能的任务？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》026：工程思维：怎样完成看似不可能的任务？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="026｜工程思维：怎样完成看似不可能的任务？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/026/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》026：工程思维：怎样完成看似不可能的任务？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:45.080Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/026/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '026｜工程思维：怎样完成看似不可能的任务？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">026｜工程思维：怎样完成看似不可能的任务？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">026｜工程思维：怎样完成看似不可能的任务？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>来源：老喻·决策算法100讲</p>
+<p>音频：13分43秒</p>
+</blockquote>
+<h2 id="老喻亲述"><a href="#老喻亲述" class="headerlink" title="老喻亲述"></a>老喻亲述</h2><p>你好，我是老喻，欢迎回到《决策算法》课。</p>
+<p>这一讲，我们来尝试一个很有挑战性的话题：怎样完成看似不可能的任务？</p>
+<p>什么叫“看似不可能的任务”？</p>
+<p>比如：怎样造火箭？怎么样去火星？怎样在火星上活下来？</p>
+<p>对于个体而言，就是：如何实现在工作上的突破？如何达成那些想都不敢想的人生目标？</p>
+<p>讨论这些问题，并不是为了开脑洞，而是因为其中包含着一种非常重要的决策思维：工程思维。</p>
+<p>事实上，这是地球上那些最聪明的家伙正在运用的做事方法。</p>
+<hr>
+<h2 id="一、工程思维是什么"><a href="#一、工程思维是什么" class="headerlink" title="一、工程思维是什么"></a>一、工程思维是什么</h2><p>我的定义是：<strong>以资源有限为前提，有创意地应用科学方法，来系统化地解决现实问题。</strong></p>
+<p>在商业领域，拥有“工程思维”的决策高手，应该是埃隆·马斯克和任正非。</p>
+<p>埃隆·马斯克说过：“我是具有创新精神、具有创意的工程师。”他在太阳能、电动车、太空运输三大领域的成就众所周知。</p>
+<p>任正非呢？工程兵出身，曾经在恶劣的环境下，依靠数学推导，研制成功我国第一台高精度计量标准仪器——空气压力天平。</p>
+<p>问题来了：</p>
+<p>难道 NASA 的厉害工程师不比埃隆·马斯克的 SpaceX 更多吗？</p>
+<p>难道别的科技公司没有厉害的工程师吗，为什么崛起的是华为，而不是那些出身更强大的企业？</p>
+<p>有人问埃隆·马斯克：“降低发射成本这个事情，为什么 NASA 那么多专家和资源都没做到，而你的 SpaceX 却做到了？”</p>
+<p>埃隆·马斯克回答：“嗯，我想 NASA 做不到的真正原因，恰恰是因为他们资源太多了。”</p>
+<p>马斯克的回答说出了工程思维的精髓：<strong>以资源有限为前提。</strong></p>
+<h2 id="二、预见：在没有结构时预见结构"><a href="#二、预见：在没有结构时预见结构" class="headerlink" title="二、预见：在没有结构时预见结构"></a>二、预见：在没有结构时预见结构</h2><p>2001年，埃隆·马斯克提出了一个叫“火星绿洲”的概念：其实就是打算向火星发射一个装着植物的冲天炮，借此吸引公众对于太空探索的兴趣。</p>
+<p>同年10月，马斯克尝试从俄罗斯购买火箭以实现他的目标。然而，由于价格过高，他未能成功。</p>
+<p>返程的航班上，他一算账，发现生产火箭的原材料价格，仅是当时火箭售价的3%。由此他冒出了一个传统工程师看不懂的商业灵感：做一家太空运输领域的西南航空公司。</p>
+<p>熟悉商业的同学肯定知道，西南航空是世界上最赚钱的航空公司之一，在服务上又能做到极高美誉度。</p>
+<p>埃隆·马斯克给公司找到这样一个定位，体现了一流的商业感觉。</p>
+<p>后来，SpaceX 通过垂直整合，自行生产85%的发射设备及软件模块，将火箭发射价格降至十分之一，而且还有70%毛利率。</p>
+<p>确切说，埃隆·马斯克是一个“有梦想的技术包工头”。他的所有创业项目，可以说都是工程思维的产物：</p>
+<p>比如，他为特斯拉做的也是同样两件事：</p>
+<ol>
+<li>从物理学的基本原理去考虑电动车的技术可能性；</li>
+<li>从商业的角度去考虑电动车的市场化可能性。</li>
+</ol>
+<p>关于第一点，从物理学的基本原理出发，在各类科学、工程问题中寻找可行的解法。</p>
+<p>关于“第一性原理”的案例讲过多次了。</p>
+<p>例如，埃隆·马斯克思考电池的思维是：</p>
+<blockquote>
+<p>大多数人会说，电池组太贵，电池的效率是每千瓦时600美元；</p>
+<p>但他会研究，电池是什么材料组成的？就是铜、镍、铝、碳，以及一些用于分离和密封的聚合物。</p>
+<p>好吧，如果在伦敦钢铁交易市场上购买它们，这些材料值多少钱？</p>
+<p>你看看，只需要每千瓦时80美元。</p>
+<p>结果，一个看起来不可能的问题，变成了可操作的路径：你只要想出聪明的办法找到这些材料，组合他们，那么你就能拥有便宜的电池了。</p>
+</blockquote>
+<p>关于第二点，从商业的角度出发，特斯拉的一系列打法非常老到：</p>
+<ul>
+<li>先出跑车占住山头；</li>
+<li>再出 S 型豪华轿车抢占7万美金以上豪华车市场，因为富人们想要新玩具；</li>
+<li>再出 X 型 SUV，用鹰翼门构建了形式差异化；</li>
+<li>再出3型小轿车血洗宝马3系这个级别的市场；</li>
+<li>再到最近推出皮卡，因为北美前三大销量车型全是皮卡。</li>
+</ul>
+<p>事实上，埃隆·马斯克绝非技术天才，特斯拉电动车不是他发明的，他的火箭公司也是靠最顶尖的专家撑起来的，他在公司最主要的任务，就是用“工程思维”做决策。</p>
+<p>他能够横跨多个领域，关键在于拥有“工程思维”。再加上他的商业天赋，埃隆·马斯克就成了一个具有“工程思维”的决策高手。</p>
+<h2 id="三、约束：在约束条件下进行设计"><a href="#三、约束：在约束条件下进行设计" class="headerlink" title="三、约束：在约束条件下进行设计"></a>三、约束：在约束条件下进行设计</h2><p>既然对于决策而言，工程思维这么重要，那么，我们如何训练自己的这种决策能力呢？</p>
+<p>我们先来看一下，工程思维里面有什么东西。</p>
+<p>有本书叫《转向》，里面介绍了工程思维的三个特征：<strong>预见、约束、取舍</strong>。</p>
+<p>首先，是在没有结构的情况下“预见”结构的能力。</p>
+<p>我们的世界依赖于结构。无论是无中生有，还是在已有的结构上类比、优化、模仿，预见结构都不是一件容易的事情。</p>
+<p>对于决策者来说，“预见”结构至关重要，你要在脑海里，将自己的决策实施后的目标结果想象出来，这样，既有助于你制定决策框架，也有助于你寻找所需要的决策要素。</p>
+<p>这个世界上具有开创性的事儿，新的产品形式、新的商业模式，首先都是因为预见了某种新结构。</p>
+<p>比如，张忠谋在上世纪80年代预见到，随着芯片的生产变得越来越昂贵且复杂，建立一座先进晶圆厂的成本动辄数十亿美元，大多数芯片设计公司无力承担。芯片设计和生产势必分离，专门做芯片代工将是一门好生意。</p>
+<p>40年后，台积电成了全世界的芯片工厂，苹果、英伟达的芯片设计再厉害，都要找台积电代工。</p>
+<p>而英伟达的成功，更是基于该公司在决策上的预见性。</p>
+<p>但预见结构并非工程思维中最重要的环节，即便你没有预见什么新结构，你也可以抄作业。</p>
+<p>科学家的探索、企业的试错，早就为这个世界创造了足够多新结构，让你拿来就用。</p>
+<p>工程思维的第二个（也是更重要的）一个特征是：<strong>熟练地在约束条件下进行设计。</strong></p>
+<p>现实生活中的实际问题，必然受到“约束”。</p>
+<p>这里的约束，首先是科学规律的约束。还有时间约束，财力约束，拥有资源的约束，竞争的约束，人类行为的约束，等等。</p>
+<p><strong>没有约束，就没有决策。</strong></p>
+<p>例如，我们被重力约束在地球上，但是假如没有这个约束，人类就漂浮到宇宙里去了。</p>
+<p>商业需要约束，否则谈何创造价值？凭什么获取利益？</p>
+<p>电动车如果没有约束，那就是奔驰宝马等传统厂商的事儿了，怎么轮得到特斯拉？同样，假如海外市场没那么艰难，不怕吃苦的华为也不会那么快超越国际巨头。</p>
+<p><strong>所以，对于决策者而言，要经常拷问自己：凭什么由你来做这件事？</strong></p>
+<p>约束条件，对于决策高手而言，就像攀岩高手喜欢挑战最难的山岩。对别人来说，这是无法逾越的天堑，对于他们而言这是闯出一片天地的机会。</p>
+<p>不仅如此，决策高手还会主动为自己设置“约束”。</p>
+<p>任正非说：“领导者要学会在开放状态下决策，在约束状态下决策。面子是次要的，不要怕丢面子。”</p>
+<p>所以，在华为内部，包括任正非的任何人，在用人问题上都不能个人说了算，都必须向决策集体的全体成员“妥协”。</p>
+<h2 id="四、取舍：在有限资源中做选择"><a href="#四、取舍：在有限资源中做选择" class="headerlink" title="四、取舍：在有限资源中做选择"></a>四、取舍：在有限资源中做选择</h2><p>工程思维的第三个关键词是“取舍”，也就是：<strong>经过深思熟虑后，对解决方案和备选方案做出决断的能力。</strong></p>
+<p>资源和时间都是有限的，必须根据重点进行分配，要将弱目标从强目标中分离出去。在约束条件下，我们要学会取舍，以及进行“灰度认知、黑白决策”。</p>
+<p>例如特斯拉的 X 型 SUV，为了“取”鹰翼门，“舍”了很多看起来根本无法舍弃的功能。</p>
+<p>在加拿大，夏天露营冬天滑雪，是很多家庭的传统。但是特斯拉的 SUV 因为有鹰翼门，车顶什么都放不了。这个决定可能非要埃隆·马斯克这样的怪家伙才下得了手。</p>
+<p>然而在我看来，这个取舍是英明的。</p>
+<p>有人问我买不买特斯拉，我答：讨小孩子欢心。</p>
+<p>小孩子最喜欢什么？就是 SUV 那双打开的翅膀。</p>
+<p>当然，更深层的原因是，购买特斯拉 X 型 SUV 的车主，首先是因为其与众不同的品牌，其次才是电动车以及使用体验等要素。</p>
+<p>所以，为了“与众不同”这个最大的变量，做一个并不那么实用的鹰翼门，就显得比保留那些实用的车顶行李架更重要了。</p>
+<p>取舍是一场可行性、可能性、期望与限制之间的拔河比赛。</p>
+<p>如上所述：预见、约束和取舍是工程思维的三大法宝。</p>
+<p>《转向》这本书里提及，一位由哈佛大学化学家改行的工程师乔治·怀特赛兹，提供了科学思维与工程思维之间另一种有用的比较：</p>
+<blockquote>
+<p>如果科学钟情于“追踪从离子和神经介质到勃拉姆斯《安魂曲》的机械路径”，那么工程的重点便是提供“分离无限量二氧化碳的实际方法，使用在纳米比亚未曾用过的设备，提供无限供应的电力和清洁水并保证30%的税后投资回报率”。</p>
+</blockquote>
+<p>简单说，就是：<strong>科学的核心是发现，工程的本质是实现，就是要在现实世界把实实在在的东西做出来，把看得见的问题解决掉。</strong></p>
+<h2 id="五、《火星救援》：工程思维的完整演示"><a href="#五、《火星救援》：工程思维的完整演示" class="headerlink" title="五、《火星救援》：工程思维的完整演示"></a>五、《火星救援》：工程思维的完整演示</h2><p>关于“工程思维”，我特别喜欢《火星救援》里的一段情节：</p>
+<p>《火星救援》的男主角，在第63个火星日还没有找到活路，甚至还没有和地球取得联系，他依然用倒推的方式来想：</p>
+<p>在最好的情况下，我应该做什么？当然是赶往（四年之后）下一班星际公交车站：阿瑞斯4的站点。</p>
+<p>有多远？3200公里。（北京到深圳的飞行距离是1800公里）</p>
+<p>有车吗？一辆充满电只能跑35公里的太空漫游车。</p>
+<p>男主角一通神勇操作略过不表，关键是这个过程中体现出来的“工程思维”：</p>
+<p>**改造：**增加了蓄电池，装上了太阳能电池板，解决了续航和取暖问题；</p>
+<p>**测试：**在自己的栖息地附近测试一块电池跑的距离，过程中验证了自己的预测，同时也发现了取暖的遗留问题；</p>
+<p>**调整：**不断增加测试强度，增加漫游里程，测试生命维持系统，确定充电时间，不断自我迭代；</p>
+<p>**1.0版：**先去800公里外去找探路者号……</p>
+<p>**2.0版：**穿越火星地表3200公里，逃出生天……</p>
+<p><strong>如果总结一下，所谓工程思维，就是“想干+会干+肯干”，既仰望星空，又脚踏实地。</strong></p>
+<p>会做梦的人过于天马行空，忘了步步为营；会干活的人过于脚踏实地，忘了仰望星空。</p>
+<p>具有“工程思维”的梦想家，在这个星球上是稀缺的。</p>
+<p>但要成为这样的人，并不需要超凡的智力，特殊的天赋，只是需要你不被“约束”吓到。</p>
+<p><strong>不要因为一个无解的问题而耽搁另外一个有解的问题；先做能做的，别为缺失的板块烦恼。别被看起来很严重的东西吓到，随时操起你手上的家伙。</strong></p>
+<p>当你能够把约束当做创新的条件，并不断用行动，创造新的条件，那些看似不可能完成的任务，终将在你手中实现。</p>
+<p>以上就是这一讲的全部内容。工程思维可能是做项目、创业最重要的决策方法，如果你身边有朋友正在创业，欢迎你把这一讲分享给他。</p>
+<p>我是老喻，我们下一讲再见。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>所谓工程思维，就是“想干+会干+肯干”，既仰望星空，又脚踏实地。</li>
+<li>不要因为一个无解的问题而耽搁另外一个有解的问题；先做能做的，别为缺失的板块烦恼。别被看起来很严重的东西吓到，随时操起你手上的家伙。</li>
+<li>当你能够把约束当做创新的条件，并不断用行动，创造新的条件，那些看似不可能完成的任务，终将在你手中实现。</li>
+</ol>
+<h2 id="PDF-内用户留言"><a href="#PDF-内用户留言" class="headerlink" title="PDF 内用户留言"></a>PDF 内用户留言</h2><h3 id="鸿涛"><a href="#鸿涛" class="headerlink" title="鸿涛"></a>鸿涛</h3><p>工程思维是用低成本规模化、产品化地实现还是科学技术思维下的构想。预见的结构是想干的；约束是资源技术等条件窄门倒逼颠覆创新的激励手段，是肯干；取舍是选择产品低成本、可持续、能长久的可落地决策，是会干。工程思维是利用科学思维的理论、创新的模式、市场上可运用的资源和不懈的尝试制造出商业产品，为人类文明发展铺上一层坚实的砖。</p>
+<p>【知识福利社】你的私人书院，微信：312005650 全网热门课程免费共享！</p>
+<hr>
+<p><a href="/book/decision-algorithm/025/">← 025｜对数思维：怎么抓住二十万分之一的机会？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/027/">027｜胶带纸思维：为什么高手都在用这个笨办法？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

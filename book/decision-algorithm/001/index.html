@@ -1,0 +1,485 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>001｜理解决策：好决策和好运气是什么关系？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》001：理解决策：好决策和好运气是什么关系？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="001｜理解决策：好决策和好运气是什么关系？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/001/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》001：理解决策：好决策和好运气是什么关系？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:44.706Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/001/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '001｜理解决策：好决策和好运气是什么关系？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">001｜理解决策：好决策和好运气是什么关系？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">001｜理解决策：好决策和好运气是什么关系？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>来源：老喻·决策算法100讲</p>
+<p>首次发布时间：2024年11月7日</p>
+<p>音频时长：13分11秒</p>
+</blockquote>
+<h2 id="老喻亲述"><a href="#老喻亲述" class="headerlink" title="老喻亲述"></a>老喻亲述</h2><p>你好。</p>
+<p>我是老喻，欢迎来到《决策算法》课。</p>
+<p>这是这门课的第一讲，我想先跟你讨论一个前提性的问题：什么是好决策？</p>
+<p>让我们先来玩儿一个简单的游戏。下面有两种玩法：</p>
+<ul>
+<li>游戏A：扔硬币，猜中正反面就能中奖；</li>
+<li>游戏B：扔骰子，猜中6就能中奖。</li>
+</ul>
+<p>这两个游戏，猜中都能赢十万奖金，你选择玩儿哪个游戏？</p>
+<p>当然要选1&#x2F;2中奖概率的硬币，而不是1&#x2F;6中奖概率的骰子。</p>
+<p>问题来了，如果甲选择了扔硬币，结果猜错了；而乙选择了扔骰子，然后他猜中了6那一面。也就是说，选择小概率获胜机会的人赢得了十万奖金。</p>
+<p>那么请问：乙选择玩骰子，是一个好决策吗？</p>
+<p>似乎不是。乙做了一个错误的决策，却因为好运气，所以有了一个看上去正确的结果。</p>
+<p>这就要说到一个根本问题：决策和运气，到底是什么关系？</p>
+<p>讲到决策和运气的关系，正好我自己有一个故事可以分享。</p>
+<p>我最早创业是在房地产领域。起步时一穷二白，做了一个服务开发商的小公司。</p>
+<p>但是后来，发生了一个堪称命运转折点的事儿。</p>
+<p>我们为一家上市公司提供决策咨询服务，对方非常满意，但结账时甲方大老板对我说：“这个项目你们做得很好，但是因为我们的公司背景，不太适合给出过高的顾问费。”于是他报给我一个数字。</p>
+<p>相对我们的服务创造的价值，他给出金额的确不算高，不过那时候也够在广州买两三套房子的首付了。</p>
+<p>然而，我当时想也没想，就说：“要不这样，我们这次就不收费了。希望还有机会和你们长期合作。”</p>
+<p>这个决策，看起来非常草率。</p>
+<p>我到现在还记得，在首都机场的摆渡车上，生意搭档在电话里批评我：辛苦工作的报酬，为啥说不要就不要了？</p>
+<p>但不管怎样，这家大公司对我们高看了一眼。又过了一年多，对方果然在一个投资项目上给了一个合作机会。结果，我们由此获得的回报，是此前顾问费的十倍都不止。我这个看起来不像开发商的人，也进入了房地产投资开发领域。</p>
+<p>那么，请问你：多年前，年轻的我，主动放弃一笔不算少的收入，以换取和对方的长期合作，算不算一个好决策？</p>
+<p>从结果看，当然算。在这个转折点之后，又工作了五六年，我就退休了。</p>
+<p>可是，假如这是一个好决策，我当时到底做对了什么？</p>
+<p>之前我自己是这么分析的：</p>
+<p>首先，我当时认为自己的公司有很好的发展潜力，愿意为未来更大的机会舍弃眼前的小钱。</p>
+<p>其次，我在与对方大老板的交往中，觉得他很厚道，是值得长期合作的人。</p>
+<p>但很多年以后，聊起这件事情，我的一个朋友却说：“老喻，你分析得貌似有道理，但这些都不是主要原因。”</p>
+<p>我好奇问：“那你觉得是什么？”</p>
+<p>他说：“最主要的原因，是你们赶上了那一波长达十多年的房地产大牛市。”</p>
+<p>他接着说：“你看，当年相信自己的公司大有前途，是因为你那时候年轻气盛；你因为觉得对方厚道而选择长期合作，那就更不靠谱了。我们都知道你讨好型人格，看人根本不准！你那一次只是运气好，只是碰对了人。”</p>
+<p>虽然被人说中要害有点儿不舒服，但这位朋友似乎道出了真相：</p>
+<blockquote>
+<p>好的决策，通常和运气有关。</p>
+<p>好的决策，又和好的运气互为因果。</p>
+</blockquote>
+<p>假如当时我不是在房地产领域，我那个草率的决策，顶多维系了一段不错的商业关系，可能带来一些好处，但绝不会带给我那样的机遇。</p>
+<p>归根结底，多年前改变了我的命运的那个决策，关键在于把我带到了一个大概率会获胜的战场上，而我的讨好型人格和勤奋工作，又强化了这个表现为“好运气”的机遇。</p>
+<p>反复琢磨这段经历，我渐渐地有了一个自己对“好决策”的定义：</p>
+<blockquote>
+<p>好的决策一定是：围绕一个目标，面向不确定性的未来，在此刻分配你人生当中的资源，以实现“人生持续向好”的概率最大化。</p>
+</blockquote>
+<p>这段话有些复杂，要想准确理解，我们首先要跳出两个极端：</p>
+<blockquote>
+<p>一个极端，是认为决策就是严谨的逻辑推理，因果分明。这就是我们通常所说的“我命由我不由天”；</p>
+<p>另外一个极端，是认为一命二运三风水，运气决定一切。这就是我们的“我命由天不由我”。</p>
+</blockquote>
+<p>就像我们这一讲开头玩的游戏，我们做出决策，到底是选择硬币，或是掷骰子。这是我们能决定的，有点像是，“我命由我不由天”。</p>
+<p>但是，选择的后面，对应的不是结果，而是结果的可能性。你即使选对了，也可能输。这是我们不能决定的，有点像“我命由天不由我”。</p>
+<p>沃顿商学院有两位教授，绘制了一个决策矩阵：</p>
+<table>
+<thead>
+<tr>
+<th>决策 &#x2F; 结果</th>
+<th>好结果</th>
+<th>坏结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>好决策</td>
+<td>应得的成功</td>
+<td>运气不佳</td>
+</tr>
+<tr>
+<td>坏决策</td>
+<td>运气极佳</td>
+<td>诗意的公正</td>
+</tr>
+</tbody></table>
+<p>如图，好的决策，可能会有坏的结果；而坏的决策，有时也会有好的结果。</p>
+<p>不论你如何决策，最终的结果是受到随机性影响的。这是宇宙之间最大的公正之一。即使你做了正确的决策，也可能遇到不利的“被选择”。但这并非随机性对你的惩罚。因为随机性也是用同样的方式对你表达偏爱。</p>
+<p>德国扑克领域的传奇大师埃里克·塞德尔说过一位德州扑克高手的故事。</p>
+<p>这位老兄开口就问别人：“扑克的目标是什么？”</p>
+<p>对方回答：“有的人说是赢钱。”他回答说不对。</p>
+<p>对方又答：“有的人说是赢得很多底池。”他还说不是。</p>
+<p>接着，这位高手说了一段精彩的话：“扑克的目标是做正确的决定。”</p>
+<p>埃里克评价道：“我觉得这是一个非常好的看待德州扑克的方式。”</p>
+<p>德州扑克跟赌博不同，接近真实世界的决策。以上对话，揭示了一个决策的真相：好的选择，未必直接带来好的结果，而是带来：更大的被机会选择的概率。</p>
+<p>某个短期的直接结果，并不能真正证明某个决策是不是对的。从长期来看，如果一个决策，能够让人生持续向好的概率最大化，这才是一个好决策。</p>
+<p>一旦理解了这样一种机制，我们就会跳出对“因果”的沉迷。因果叙事，热衷于前因后果，逻辑鲜明，故事动人。但真实的世界并非如此。</p>
+<p>同时，我们也能跳出“运气决定一切”的虚无感。因为我们知道，即便难逃随机性的支配，总还有一些我们能够决定的东西。</p>
+<p>好的决策，后面对应的是好的可能性，也就是好的概率。而好运，就是穿着世俗外衣的概率。</p>
+<p>好的决策，和好运一样，本质上是大局观好的结果。</p>
+<blockquote>
+<p>这种大局观体现为：要么是因为一个人一直很聪明地停留在自己有优势的领域，要么是因为他尊重常识、情绪稳定。现实环境变量很多，外加人类社会的游戏规则，一个大事不糊涂、小事不糊涂的人，也能通过做模糊而正确的决策，实现持续的好运。</p>
+</blockquote>
+<p>这是我所理解的好决策最底层的逻辑。</p>
+<h2 id="连环7问法"><a href="#连环7问法" class="headerlink" title="连环7问法"></a>连环7问法</h2><p>刚才的讨论，比较抽象，接下来，我再给你一套更实用的方法，来帮助你识别一个好决策。</p>
+<p>我将之称为“连环7问法”，判断一个决策是不是好决策，就问自己这7个问题：</p>
+<h3 id="第一问：我知道自己到底想要什么吗？"><a href="#第一问：我知道自己到底想要什么吗？" class="headerlink" title="第一问：我知道自己到底想要什么吗？"></a>第一问：我知道自己到底想要什么吗？</h3><p>人会不知道自己想要什么？很多时候还真是。我们做某个决策，很可能是为了达到别人预期，或者去扮演某种人设，而不是真正追求自己想要的东西。这样的决策，出发点就是扭曲的，更别提成为一个好决策。</p>
+<p>你必须对自己诚实，才能回答出第一个问题。</p>
+<h3 id="第二问：我是在打自己最有希望打赢的仗吗？"><a href="#第二问：我是在打自己最有希望打赢的仗吗？" class="headerlink" title="第二问：我是在打自己最有希望打赢的仗吗？"></a>第二问：我是在打自己最有希望打赢的仗吗？</h3><p>去大概率蓬勃发展的地方，做成功概率相对大的事情。</p>
+<p>好的决策要做的不是在悬崖上攀岩，而是找到一个快速向上的电梯，然后坐上去。</p>
+<h3 id="第三问：我愿意为这个决策投入稀缺的筹码吗？"><a href="#第三问：我愿意为这个决策投入稀缺的筹码吗？" class="headerlink" title="第三问：我愿意为这个决策投入稀缺的筹码吗？"></a>第三问：我愿意为这个决策投入稀缺的筹码吗？</h3><p>决策要投入你的人生资源，不止是金钱，还有时间、精力、专注。投入也还意味着机会成本，这次的投入是不是好的决策，你需要追问自己，你愿意失去别的选项吗？</p>
+<h3 id="第四问：我知道自己不能失去什么吗？"><a href="#第四问：我知道自己不能失去什么吗？" class="headerlink" title="第四问：我知道自己不能失去什么吗？"></a>第四问：我知道自己不能失去什么吗？</h3><p>决策意味着不确定性，哪怕糟糕的可能性出现的概率并不高，你也要能够承受万一发生了的后果。</p>
+<p>做决策时永远记住，不要为了那些你未必能要到的东西，失去你人生当中不能失去的东西。</p>
+<h3 id="第五问：我有“撤退路线图”吗？"><a href="#第五问：我有“撤退路线图”吗？" class="headerlink" title="第五问：我有“撤退路线图”吗？"></a>第五问：我有“撤退路线图”吗？</h3><p>对于那些重大的决策，你要思考退出机制，总是要有Plan B，任何时候都不要让自己失去选择权。</p>
+<h3 id="第六问：我如何在一个动态的过程中不断优化决策？"><a href="#第六问：我如何在一个动态的过程中不断优化决策？" class="headerlink" title="第六问：我如何在一个动态的过程中不断优化决策？"></a>第六问：我如何在一个动态的过程中不断优化决策？</h3><p>好的决策不是一蹴而就的，而是一步步优化、逐渐逼近的。如果一个决策不能持续优化，那大概它就没你想象中那么好。</p>
+<h3 id="第七问：我的这个决策会让我变成一个更好的人吗？"><a href="#第七问：我的这个决策会让我变成一个更好的人吗？" class="headerlink" title="第七问：我的这个决策会让我变成一个更好的人吗？"></a>第七问：我的这个决策会让我变成一个更好的人吗？</h3><p>好的人做出好决策，而好决策塑造好的人。</p>
+<p>意识到这一点，能够让你拥有一个更加稳定的内核，而这是好决策变成现实的关键所在。</p>
+<p>如果你的决策符合以上“连环7问”，那么恭喜你，你大概率在做一个好决策。</p>
+<p>不过，实事求是地说，要做到这7条对于任何人来说，都不是一件容易的事儿，所以，我将用整整100讲的内容，和你一起去探索，一起去实践。</p>
+<p>我一直相信，好的决策，并不只是做一个简单的选择题，而是思考、行动、做人，三件事儿的统一，好的决策起点是你理性的思考，中间是你的行动，而终点是你希望自己变成一个怎样的人。在这个过程中，好运的降临，是自然而然的事儿。</p>
+<p>我很喜欢康德的一句话：</p>
+<blockquote>
+<p>“道德不是指导我们如何使自己幸福的学说，而是指导我们如何使自己配得上幸福的学说。”</p>
+</blockquote>
+<p>这个逻辑，对于决策而言同样成立。我们做决策，是为了在运气面前获得更多主动权，而获得更多好运的方法，除了不断做出好的决策，还要让自己成为配得上这好运的人。</p>
+<p>期待决策能力的提升，能带给你更多好运。</p>
+<p>我是老喻，我们下一讲见。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>要想做好决策，就要跳出两个极端：一个极端，是认为决策就是严谨的逻辑推理，因果分明；另外一个极端，是认为一命二运三风水，运气决定一切。</li>
+<li>好的决策一定是：围绕一个目标，面向不确定性的未来，在此刻分配你人生当中的资源，以实现“人生持续向好”的概率最大化。</li>
+</ol>
+<h2 id="课程导航"><a href="#课程导航" class="headerlink" title="课程导航"></a>课程导航</h2><ul>
+<li>首次发布时间：2024年11月7日</li>
+<li>上一期：发刊词：做好决策，成为命运的主人</li>
+<li>下一期：02 二阶理性：什么样的人能做出好决策？</li>
+</ul>
+<h2 id="精选留言"><a href="#精选留言" class="headerlink" title="精选留言"></a>精选留言</h2><h3 id="左星星（昨天·上海）"><a href="#左星星（昨天·上海）" class="headerlink" title="左星星（昨天·上海）"></a>左星星（昨天·上海）</h3><p>连环7问法给我最大的启发是，它帮助我们在决策过程中保持清晰的目标和理性，以减少受情绪和外界干扰的影响。它是一个系统性的思考框架，让我们在不确定性中找到稳定的方向。</p>
+<p>第一问提醒我们在做每一个决定前，先弄清楚自己的真实目标，帮助我们避免随波逐流或盲目跟风。明确了目标，我们就不容易被短期的利益或他人的期望所左右。</p>
+<p>第二问是聚焦高概率的机会。我们的资源和时间有限，这个问题让我们在选择职业发展时，优先考虑自己擅长且行业发展前景良好的方向，避免把精力浪费在低回报、高风险的选项上。</p>
+<p>第三问是合理分配资源。每个选择都伴随着机会成本。比如，要不要为一个机会付出大量的加班时间、错过家庭时间？这个问题帮助我们做出更理性的取舍，不为低回报的事情牺牲【原图此处字样需放大复核】的资源。</p>
+<p>第四问是考虑承受底线。在日常决策中，不仅要追求收益，也要知道自己的承受能力，比如在职业变动中，除了关注新岗位的薪酬和前景，还要评估新工作是否符合自己对家庭生活和健康的稳定需求。</p>
+<p>第五问是设置退出策略。我们不要孤注一掷。在选择创业或跳槽之前，设计好退出机制，确保一旦新选择出现问题，可以及时止损，回归更稳定的方案。</p>
+<p>第六问是持续优化决策。比如在项目管理中，根据市场反馈和数据变化，随时优化项目的方向和资源配置，以确保成果符合当前需求。</p>
+<p>第七问关注是否带来成长。我们要思考它对个人成长的长期意义。</p>
+<h3 id="杨蓓蓓·职场高管教练（昨天·河南）"><a href="#杨蓓蓓·职场高管教练（昨天·河南）" class="headerlink" title="杨蓓蓓·职场高管教练（昨天·河南）"></a>杨蓓蓓·职场高管教练（昨天·河南）</h3><p>划重点：</p>
+<p>“连环7问法”，判断一个决策是不是好决策，就问自己这7个问题：</p>
+<ol>
+<li>第一问：我知道自己到底想要什么吗？</li>
+<li>第二问：我是在打自己最有希望打赢的仗吗？</li>
+<li>第三问：我愿意为这个决策投入稀缺的筹码吗？</li>
+<li>第四问：我知道自己不能失去什么吗？</li>
+<li>第五问：我有“撤退路线图”吗？</li>
+<li>第六问：我如何在一个动态的过程中不断优化决策？</li>
+<li>第七问：我的这个决策会让我变成一个更好的人吗？</li>
+</ol>
+<p>如果你的决策符合以上“连环7问”，那么恭喜你，你大概率在做一个好决策。</p>
+<h3 id="Tony-to-ni（昨天·北京）"><a href="#Tony-to-ni（昨天·北京）" class="headerlink" title="Tony to ni（昨天·北京）"></a>Tony to ni（昨天·北京）</h3><p>决策过程和决策结果要分开来看，我们能控制的是决策过程，通过好的框架、流程和方法，去做出高质量的决策。</p>
+<p>但决策后果受到很多因素的影响，比如说运气，所以说好的决策过程，可能不一定有好的结果，只能说更大概率上去获得一个好的结果。</p>
+<p>如果我们做事希望成功的概率更高，那就要进入基础概率更高的池子。就像文中老喻的例子，去一个处于上升期的朝气蓬勃的行业，虽然比去一个成熟期，甚至衰退期的行业，有更大的成功机会。</p>
+<h3 id="学习机器"><a href="#学习机器" class="headerlink" title="学习机器"></a>学习机器</h3><p>德州扑克领域的传奇大师埃里克·塞德尔说过一位德州扑克高手的故事。</p>
+<p>这位老兄开口就问别人：“扑克的目标是什么？”</p>
+<p>对方回答：“有的人说是赢钱。”他回答说不对。</p>
+<p>对方又答：“有的人说是赢得很多底池。”他还说不是。</p>
+<p>接着，这位高手说了一段精彩的话：“扑克的目标是做正确的决定。”</p>
+<p>埃里克评价道：“我觉得这是一个非常好的看待德州扑克的方式。”</p>
+<p>通过这个德州扑克的故事，我们不妨思考这样一个问题，股市投资的目标是什么呢？也许很多人会说，当然是赚钱。其实在投资市场中抱有这种想法的人很多，而真正可怕的，不是这个想法本身，而是他们会说，难道不是这样吗？答案可能出乎很多人的意料，投资的目标真的不是赚钱，而是做出正确的决策。</p>
+<p>就像【原图此处人名&#x2F;引文需放大复核】说的，一个好的棒球手，不是盯着计分牌，而是要确保打好每一个球。同样，作为投资者，每当你做出投资决策时，你都要问自己，你做出了一个正确的决策吗？而这个决策本身与结果无关，所以就不要对结果寄托太多，更不要从结果来质疑你的决策本身。</p>
+<h3 id="Jackson"><a href="#Jackson" class="headerlink" title="Jackson"></a>Jackson</h3><p>就比如说，学完一讲得写下心得，做这件事肯定是个好的选择，但未必能直接被选入精选留言。那为什么要写？因为写下心得，内化到自己的知识体系，会有更大的被机会选择的概率。</p>
+<p>这个机会，目的也不是要被选进精选留言，而是在未来的某个时刻，因为将知识转化成智慧后，让自己不再是像竹竿似的单一形体，而是一整座足球场，机会更能选择自己。</p>
+<p>只要不断做出好的决策，就能持续修正方向，让人生持续更好，路就算再远，总有一天会到的。</p>
+<h3 id="学习机器：进一步拆解"><a href="#学习机器：进一步拆解" class="headerlink" title="学习机器：进一步拆解"></a>学习机器：进一步拆解</h3><p>老喻对好的决策给出的定义：围绕一个目标，面向不确定性的未来，在此刻分配你人生当中的资源，以实现“人生持续向好”的概率最大化。我们不妨将一个好的决策，拆分成四个要素：</p>
+<ol>
+<li>面对不确定的未来</li>
+<li>分配人生资源</li>
+<li>实现持续向好的目标</li>
+<li>概率最大化</li>
+</ol>
+<p>今年9.24号开盘的股市行情，相信很多投资小白也想跃跃欲试，在投资市场分一杯羹。不过无论是新手，还是老手，都不断思考这样一个问题，评价股票投资的本质是什么呢？也许你会看到很多的答案，比如说投资就是赌博、投资就是买好的企业、投资就是赚市场错误定价的钱等。</p>
+<p>我之前看过认知心理学家、扑克高手安妮·杜克写的一本书《对赌》，这本书写道了这样一句话：</p>
+<blockquote>
+<p>【原图此处引文较模糊，需放大复核】</p>
+</blockquote>
+<p>我回到老喻对好决策的定义，作为一个股市投资者你需要问自己：</p>
+<ol>
+<li>你是如何分配好资金投入的？</li>
+<li>你的投资决策模型是不是能够持续向好？</li>
+<li>你的投资结果是不是能够实现正向概率最大化？</li>
+</ol>
+<h3 id="闻思修"><a href="#闻思修" class="headerlink" title="闻思修"></a>闻思修</h3><ol>
+<li><p>决策内在逻辑是什么：如果没有选择也就没有决定可做。有选择，如果资源无限就不会有选择，如果没有明确的目标任何选择都没有意义。</p>
+</li>
+<li><p>什么是决策，什么是决定，他们之间什么关系？决定就是确定目标和方向，以及明确资源分配的方案。而决策就是一系列对未来具有重大影响的决定，是一系列的目标、策略、资源分配。</p>
+</li>
+<li><p>决策是一个过程，而好的决策是能够让这个过程具有“累加效应”。什么是累加效应？当前一个事情的结果，对未来将要发生的事情或结果有概率上的影响，如果一系列串联累积，就形成了必然。</p>
+</li>
+<li><p>成功与决策的关系：</p>
+<ul>
+<li>持续的成功 &#x3D; 初始的成功 + 社会适应度</li>
+<li>初始的成功 &#x3D; 能力 + 运气</li>
+<li>社会适应度 &#x3D; 成功要素筛选 + 累加效应</li>
+</ul>
+</li>
+</ol>
+<p>决策的价值：在于从一次初始的运气中，识别出哪些能够适用未来持续成功的要素，并坚定不移地投入资源、精力，一次改善下一次获胜的概率，记住累加效应，把运气变为必然的一种科学思维。</p>
+<h3 id="山峰"><a href="#山峰" class="headerlink" title="山峰"></a>山峰</h3><p>学习了本讲，我对好决策和好运气的理解：</p>
+<ol>
+<li>好决策所围绕的一个目标，顺应了事物的发展趋势。然而这个发展趋势只是长期的和大方向上的，在短期和细微之处，发展也会偏离大方向，甚至走回头路。因此，从发展趋势看，好决策可以实现“人生持续向好”的概率最大化；从短期和细微之处看，好决策也会碰到坏结果。</li>
+<li>好运气，其实是命运的馈赠。不过命运的馈赠早已在暗中标好了价格。这个价格，可能是你过去付出的、人生当中的资源，也可能是未来人生中的不幸遭遇，还可能两者兼有，甚至更多无法估量的。好的决策，能让个人配得上这个馈赠。同理坏的决策，就配不上这个馈赠。但好运气不会因为配不配得上，而不给你命运的馈赠。</li>
+<li>好决策与好运气的关系，就是好决策配得上好运气，但好决策不一定能得到好运气。</li>
+</ol>
+<h3 id="罗鸣幽（昨天·北京）"><a href="#罗鸣幽（昨天·北京）" class="headerlink" title="罗鸣幽（昨天·北京）"></a>罗鸣幽（昨天·北京）</h3><p>我一直感恩运气垂青，虽然人生走过不少弯路，但整体持续向好。学过本讲才豁然开朗，正如喻老师所说，“好的选择，未必直接带来好的结果，而是带来：更大的被机会选择的概率”。</p>
+<p>对照决策七问，我做对的是：把握住积极向善的大方向，不带功利地持续投入精进，不断拓展并打磨自身多领域的优势能力，获得“更大的被机会选择的概率”。</p>
+<p>感谢喻老师透彻的拆解，让我认清自己人生的得失，更坚定了继续践行“方法论”的决心。</p>
+<h3 id="老吴（昨天·河南）"><a href="#老吴（昨天·河南）" class="headerlink" title="老吴（昨天·河南）"></a>老吴（昨天·河南）</h3><p>这一讲，反复听了多遍，老喻老师对好决策的论述，是目前我听到的最好的阐释，感觉仅仅这一讲的价值就远远超过课程费用了。曾经学过老喻老师的人生算法课程，看过老喻老师的书《人生算法》《成长算法》《好运》，真心感谢老喻老师总能给人独特的深刻的洞见，启发多多，受益多多。有老喻老师在，真好！</p>
+<blockquote>
+<p>以上留言由作者筛选显示</p>
+</blockquote>
+<hr>
+<p><a href="/book/decision-algorithm/000/">← 000｜发刊词：做好决策，成为命运的主人</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/002/">002｜二阶理性：什么样的人能做出好决策？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

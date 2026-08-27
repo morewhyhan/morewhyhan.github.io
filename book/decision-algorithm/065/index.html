@@ -1,0 +1,388 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>065｜老好人陷阱：为什么善良却没有好报？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》065：老好人陷阱：为什么善良却没有好报？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="065｜老好人陷阱：为什么善良却没有好报？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/065/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》065：老好人陷阱：为什么善良却没有好报？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:45.724Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/065/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '065｜老好人陷阱：为什么善良却没有好报？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">065｜老好人陷阱：为什么善良却没有好报？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">065｜老好人陷阱：为什么善良却没有好报？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>《老喻·决策算法100讲》</p>
+</blockquote>
+<h2 id="老喻：决策算法100讲"><a href="#老喻：决策算法100讲" class="headerlink" title="老喻：决策算法100讲"></a>老喻：决策算法100讲</h2><p>你好，我是老喻，欢迎来到《决策算法》课。</p>
+<p>“冬同学”是我认识的在决策上颇有天赋的人之一。有次我听见她打电话，对方是一家服务于VIP客户的机构负责人，说有个非常好的为孩子设计的公益活动，不少家庭都要抢着参加，那位负责人说为冬同学预留了一个位置，让她赶紧安排，否则就要给别人了。</p>
+<p>结果，“冬同学”立马很客气地回复说：“要不你先把机会让给别人吧，谢谢你。”</p>
+<p>我在旁边听很意外，就请教她：“这么好的机会，为啥不要呢？”</p>
+<p>“冬同学”答道：“我只是不太习惯被安排的感觉。”</p>
+<p>虽然是件小事，却很让我触动。也许，因为我是“讨好型人格”。在我看来，人家送给你的福利，怎么能拒绝呢？</p>
+<p>但事实上，在上面的故事里，的确存在小小的、善意的“牵着鼻子走”的意思。“冬同学”是相信“我的人生我做主”的，她大方地说“不”，而不是担心对方比她不快。她没有被表面的“稀缺性”和“特权感”所影响，而是从自主权这个更本质的层面做出判断。事实上，因为她的直率，在生活中反而有不少真诚的朋友。</p>
+<p>这引出了一个思考：当我们忙着做一个老好人，顺从并迎合别人时，是否正在把自己的生活主导权拱手相让？</p>
+<h2 id="一、讨好型人格"><a href="#一、讨好型人格" class="headerlink" title="一、讨好型人格"></a>一、讨好型人格</h2><p>也许你的生活中也有这样的困扰：总是试图做一个大家心目中的老好人，经常一心想着要讨他人的欢心。面对别人的要求，第一反应是“答应了再说”；遇到不合理的期待，也会委曲求全。久而久之，你会发现自己像是被别人牵着鼻子走，陷入一个看不见的陷阱：“讨好型人格”。</p>
+<p>“讨好型人格”是个当下很流行的概念，你肯定已经不陌生了。具有这种特质的人，会在潜意识里优先满足他人的期待，而且往往害怕让别人不开心，因而一味去“配合”“帮助”“成全”。</p>
+<p>从外表看，他们总是和蔼可亲、乐于助人，似乎总把别人的需求摆在前面。一旦深入观察，就会发现，当“老好人”角色演久了，他们很容易在各种关系里失去自我。</p>
+<p>因为没有明确的边界，“老好人”常常不敢拒绝任何请求，也不会计算应得的回报，结果自己却在暗自承受委屈、压抑甚至被利用的命运。</p>
+<p>在职场中，老好人常常因害怕冲突而接受额外工作，其中还有不少人，还会因为过于好说话而不会争取利益，导致失去了晋升机会。</p>
+<p>更令人啼笑的是，“老好人”即使已经全力付出，也不一定能获得感恩或回报。</p>
+<p>我认识一位小有名气的作家。他有个中学同学，一直过得不太如意，工作和生活上都没有着落。起初同学们都出于帮助，向时间讲解“来，看起来不够”，于是得知这位作家还愿意帮助他。结果，没想到，这位不如意的同学最终还伤害了唯一愿意帮助他的作家。</p>
+<p>这位作家很难过，就问他同学：“我对你这么好，你为什么还要这样对待我？”</p>
+<p>对方回答的一句话令人心寒：“你可能是我唯一还可以伤害的人了。”</p>
+<p>这番话虽有点残酷，却道出了老好人的尴尬处境：当你毫无保留地善良时，别人或许并不会感激，甚至可能把你看成“软柿子”，任意拿捏。此刻，你不但没有得到应有的尊重，还会倍感受伤。</p>
+<p>这就是“老好人陷阱”让人痛心的部分——让善意的人渐渐怀疑自己的选择，反复自问：“为什么好心反被利用？我这样做究竟值得吗？”</p>
+<h2 id="二、善良为什么没有好报？"><a href="#二、善良为什么没有好报？" class="headerlink" title="二、善良为什么没有好报？"></a>二、善良为什么没有好报？</h2><p>然而，好人没好报，付出反而遭遇伤害，这些还不是当老好人最大的代价。</p>
+<p><strong>做好人最大的代价，是一个人为了表演“我是一个好人”，所以做了一些不重要的、非理性的事情。</strong></p>
+<p>即使一个人真的是好人，也真的做了好事，然而，一旦有表演的冲动，就会为了表演而做好事。这一点，我们在前面的一讲答疑中提到过，这一讲再进一步展开。（问答：错过了两周翻倍股，我在决策上犯了什么错）</p>
+<p>社会学家欧文·戈夫曼在他的代表作《日常生活中的自我呈现》中，提出了一个有趣的观点：“拟剧论”。在他看来，我们的社会生活就像一个大舞台，每个人都在扮演着不同的角色。在“前台”，我们精心打造着想要呈现给他人的形象；在“后台”，我们才卸下伪装，展现真实的自我。</p>
+<p>戈夫曼进一步认为，我们是通过表演这种方式，来展示自己在某个角色上的能力和特点，进而赢得他人的认可和尊重——也就是完成“印象管理”。</p>
+<p>你看，这不就是我们平常说的“人设”嘛。</p>
+<p>这种角色扮演本身不是问题，问题在于：当我们过分沉迷于“好人”这个角色的表演时，就容易迷失在他人的期待中，做出违背内心、甚至有害的选择。</p>
+<p>我有个朋友，财务自由后，一时心热，做了摊公益的事情，手得热火朝天，他自己也投入了大量人物物力财力。可是他的性格，根本不适合干那些具体而琐碎的事情，而且也根本不擅长与人打交道，几年下来，他心力交瘁。</p>
+<p>他自己反省说，开始的时候大家都叫好，而他实际上在付出也得到了认可，他很开心。但到后来，他觉得自己其实是在表演“当一个好人”，表演“无私付出”。</p>
+<p>表演出来的好事，哪怕是发自内心的，哪怕是付出了代价，也往往不是对的事情。</p>
+<p>的确，那么多年来，他的那摊子事情，付出那么多，他自己也从口袋里掏出了不少钱，结果却并不如人意。</p>
+<p>为什么呢？因为他为维护“好人”人设而自我绑架，做了不对的决策。</p>
+<p>他完全可以直接把钱捐给一家公益机构，然后利用自己的特长再协助做一些事情，而不是深陷其中，耗尽心力。</p>
+<p>这个案例揭示了决策中的一个重要陷阱：<strong>当我们过分关注“角色”而不是“目标”时，往往会做出非理性的选择。</strong></p>
+<p>说实话，当个好人，吃些亏，损失总是有限度的。</p>
+<p>就像你开了一辆运货车，有人搭了你的顺风车，还顺手拿走一些东西，虽然很恼火，但也亏不到哪里去。</p>
+<p>但是，如果你为了表演当一个好人，走错了人生道路，甚至导致翻车，那问题可就严重了。</p>
+<p>事实上，善良不应该成为放弃判断的借口，更不该成为一场消耗生命的表演。真正的善良，应该建立在理性和效率之上，让我们的善意产生最大的价值。</p>
+<h2 id="三、重新定义“善良”"><a href="#三、重新定义“善良”" class="headerlink" title="三、重新定义“善良”"></a>三、重新定义“善良”</h2><p>你是不是“老好人”？你生活中，有没有遇到一些好心没好报的糟心事儿？</p>
+<p>这种现象似乎格外普遍，这很大程度上与社会中的文化氛围有关：和为贵被奉为圭臬，我们推崇“和气生财”，讲究“给人留面子”，甚至把过度迎合美化成了“高情商”。</p>
+<p>这种文化氛围下，很多人从小就缺乏建立个人边界的意识，也没有接受过如何在善良与自保之间寻找平衡的教育。</p>
+<p>更令人担忧的是，当一个人总是展现“好人”形象时，往往会在不经意间暴露出自己的软肋和脆弱之处。这就像在丛林中暴露了自己的气息，很容易成为“猎食者”的目标。那些擅长操纵人的人会敏锐地察觉到这些信号，因为他们知道，一个习惯性示弱的人通常不会有效地反抗。</p>
+<p>那么，如何避免成为别人口中的“软柿子”？关键在于调整心态，重建认知。</p>
+<p>首先，要明白“独立”先于“讨好”。很多人总是期待通过付出来换取他人的喜爱，这是一个危险的思维陷阱。我们要把“希望通过付出获得认可”的软弱心态，转变为“希望因为真实的自我而被接纳”的健康心态。不是所有人都会喜欢你，这很正常，重要的是保持自我认同。</p>
+<p>其次，我们要掌握一些现实的生存智慧。很遗憾，这部分课堂不传授，我们大多数人小时候也没有这方面的学习环境。</p>
+<p>假如你试图通过表达“自己承受了不该承受的东西”，而赢得对方的同情，极可能并不能赢得同情，而是令对方有了“这个软柿子我是不是也可以捏一下”的念头。</p>
+<p>过分展示自己的委屈和脆弱，不仅不会赢得同情，反而可能让他人看出可乘之机。即便是在朋友面前，也要保持适度的界线感。</p>
+<p>从决策科学的角度看，“老好人”常常犯一个经典的决策错误：他们过分看重决策的短期收益（别人的好感），而忽视了长期成本（自主权的丧失）。这种决策偏误会让人陷入“讨好—被利用—更加讨好”的恶性循环。</p>
+<p>在这一点上，<strong>马基雅维利</strong>的观点很有启发。他指出在权力场域中，“被畏惧过被喜爱”虽然这种说法听起来有些极端，但它提醒我们：在某些场合，可以不被喜欢。</p>
+<p>要知道，善良不等于软弱，正直不等于愚蠢。一个真正有智慧的人，既能保持善意，又懂得自我保护。他们知道什么时候该说“是”，什么时候该说“不”；知道如何让善意产生价值，而不是沦为他人的工具。</p>
+<p>最重要的是，要记住：**真正的善良应该是有边界的、有智慧的、有力量的。**它不是一味地付出和退让，而是在维护自我价值的基础上，去帮助和影响他人。只有这样的善良，才能持久，才能真正改变这个世界。</p>
+<h2 id="四、如何成为真正的好人？"><a href="#四、如何成为真正的好人？" class="headerlink" title="四、如何成为真正的好人？"></a>四、如何成为真正的好人？</h2><p>当我们谈论“老好人”的困境时，很多人会说：“至少做个老好人是安全的。”但是，心理学家乔丹·彼得森的这段话会让你如坐针毡。他说：</p>
+<blockquote>
+<p>“因为我人畜无害，所以我是个好人？不，不是这样的，完全不是这么回事。如果你是无害的，这只能说明你很弱。如果你软弱，你就无法成为好人……因为成为好人是需要实力的，成为好人是非常困难的。”</p>
+</blockquote>
+<p>我也曾经写过一句话：所谓讨好型人格，其实是想用小恩小惠，去逃避自己真正的责任——看来我自己也是深有体会。</p>
+<p>乔丹·彼得森给老好人们开出了一剂猛药，他认为：好人必须有危险性。</p>
+<p>他说，对于一个好人而言，“变得危险”让你受敬畏。如果你不具备威慑力量的话，你的善良的一面就不能说是一种道德。</p>
+<p>乔丹·彼得森戳中了老好人的要害：我们经常把软弱和美德混为一谈。</p>
+<p>他说：生活是一个非常艰难的过程，除非你变得具备危险的能力，否则你无法从容面对生活。</p>
+<h3 id="如何才能成为一名真正的好人？"><a href="#如何才能成为一名真正的好人？" class="headerlink" title="如何才能成为一名真正的好人？"></a>如何才能成为一名真正的好人？</h3><p>乔丹·彼得森给出的三个品质是：<strong>你必须强大，并且有威慑性，并且是平和的。</strong></p>
+<p>只有这样，我们才能直面现实的生活，承担起真正的责任，让自己和这个世界变得更好。</p>
+<p>要走出“好人陷阱”，关键是重构我们的决策框架：</p>
+<ul>
+<li>从“他人期待”转向“自我原则”；</li>
+<li>从“短期讨好”转向“长期满足”；</li>
+<li>从“被动应对”转向“主动选择”。</li>
+</ul>
+<p>记住：每个“是”和“否”都是一个决策点，每个决策点都是维护自我边界的机会。</p>
+<p>一个好的决策者，应该既有善良的心，也有清晰的边界意识，敢于说“不”。</p>
+<p>更重要的是，你的善良需要强大和威慑来守护，需要理性的决策来实现。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>做好人最大的代价，是一个人为了表演“我是一个好人”，所以做了一些不重要的、非理性的事情。</li>
+<li>如何才能成为一名真正的好人？乔丹·彼得森给出的三个品质是：你必须强大，并且有威慑性，并且是平和的。</li>
+<li>要走出“好人陷阱”，关键是重构我们的决策框架：从“他人期待”转向“自我原则”；从“短期讨好”转向“长期满足”；从“被动应对”转向“主动选择”。</li>
+</ol>
+<h2 id="用户留言"><a href="#用户留言" class="headerlink" title="用户留言"></a>用户留言</h2><h3 id="左星星"><a href="#左星星" class="headerlink" title="左星星"></a>左星星</h3><p>为什么许多人无法摆脱“老好人”的困局？部分原因在于文化背景，我们从小被教导要“和气生财”“与人为善”，甚至被灌输一种过度迎合的美德观念。然而，这种过度的和谐观念让许多人害怕冲突、害怕拒绝他人，从而把真正的自我藏在心里，最终形成了一种无法明确界限的处事方式。</p>
+<p>另一个原因则在于认知上的偏差。很多人认为，只要我不惹事、对他人好、配合他人，就能赢得更多的尊重和好感。可事实上，过分迎合和牺牲并不能真正赢得尊重，反而会削弱自己的价值。</p>
+<p>面对这样的困境，一方面，我们需要重新定义“善良”。真正的善良并不是一味顺从，而是有原则、有边界的给予。我们可以慷慨地帮助他人，但前提是自己内心坦荡，没有压力或委屈感。另一方面，我们需要培养一种内在的力量感。乔丹·彼得森提到，善良必须伴随着力量和威慑力。这种“威慑力”并不是指用强硬或咄咄逼人的方式与人相处，而是指一种内在的坚定和清晰的自我认知。只有当我们知道自己的价值，不害怕说“不”，并能够坦然面对他人的情绪时，我们才能真正摆脱“讨好型人格”的束缚。</p>
+<h3 id="魏红亮"><a href="#魏红亮" class="headerlink" title="魏红亮"></a>魏红亮</h3><p>65 老好人陷阱：为什么善良却没有好报？这节课结合《熊太行·关系攻略》关于好孩子思维那部分效果更好，“老好人”也是好孩子思维在作祟，而好孩子思维则是在儿时以及校园生活的痕迹。</p>
+<p>对于我们来说尤其是已经走向社会的人来说需要做的就是放弃“标准答案”也就是好孩子思维，重构自己的参考答案，也就是变色龙潜质，需要做恶人的时候得做得出，当然需要做好人的时候也会做！</p>
+<h3 id="美君"><a href="#美君" class="headerlink" title="美君"></a>美君</h3><p>2023年初刚开始健身的时候，我很因护肚上去全套婆婆顿顿做大白粥，女儿吃不完的剩菜剩饭老公推到我面前，辛辛苦苦健身，成果很难保持。</p>
+<p>我想吃早上主食吃红薯、玉米或杂粮粥，女儿剩的面片、面条等精制碳水我也不想碰，可当时喜欢讨好的我只有一个念头：我是要说出真实想法，会不会让婆婆很尴尬？她五点起来做好一桌子革命，既会不会太不，我会太太不给面子了？我毕竟不是亲女儿，提要求会不会太娇情了？</p>
+<p>就这样，我忍了很久，后来姐妹的话点醒我，“你可以直接和婆婆沟通的”。</p>
+<p>于是我买了一堆七色糙米粥、玉米和红薯，让婆婆早上帮忙帮我单独做主食，女儿的剩饭剩菜老公推给我也说不吃。</p>
+<p>结果婆婆一点儿也没嫌麻烦，她一开始为我单独煮玉米、红薯，后来这两年早上的主食全家人都变成了杂粮粥。</p>
+<p>有一次我老公当着婆婆公公的面，让我把剩菜吃完，我当即说：“我吃饱了，而且我吃什么菜有自己的想法。”从那之后，饭桌上再也没人强迫我把什么吃完，出门点菜老公会问我，你看看我点的这些菜有没有你不怎么吃的，你自己再点一点。就连盛饭，我都会说，大米饭你自己盛，我也不知道你吃多少，盛多盛少都麻烦。</p>
+<p>我变成了一个不再讨好的“事儿多”的人，虽然事儿多，但边界清晰，行为可预期。不像味着心意做事，脸上的笑容别人都无法判断是不是有心的。</p>
+<p>不再讨好，我获得了更多尊重和自由，表里如一，我不再内耗。</p>
+<p>至于是不是尴尬、不给面子、娇情之类的，我认为一句话可以打消疑虑：先学会爱自己，才能真正爱别人。把自己放在首位，才能过得更真实更真诚，才是真正对身边人好。</p>
+<h3 id="Scott"><a href="#Scott" class="headerlink" title="Scott"></a>Scott</h3><p>人类作为一种社会性动物，天然就喜欢得到认可，没有人喜欢被人指责、被人讨厌的感觉。</p>
+<p>但过度追求认可，成为讨好型人格，为了满足别人的期望而活，这对于自己、对于他人都没有好处。</p>
+<p>对他人，讨好型人格会给他人不合适的心理预期，产生不切实际的期待，长期来看，必将关系失衡。</p>
+<p>对自己，讨好型人格的过度付出会让人习以为常，甚至是要求更多，成本与收益完全不成正比，这是纯亏本的行为。</p>
+<p>阿德勒心理学认为，对别人认可的追求掠夺了自由。想要行使自由，就需要付出代价。而在人际关系中，自由的代价，就是不被别人接受。</p>
+<p>愿我们都有被讨厌的勇气。</p>
+<h3 id="林同学的思考"><a href="#林同学的思考" class="headerlink" title="林同学的思考"></a>林同学的思考</h3><p>在工作和生活中，善良与真诚无疑是值得大力提倡的。然而，若是一味地扮演好人的角色，其结果可能并不理想。于个人而言，这可能导致过度的劳累与压力；于他人而言，则可能使他们失去承担自身责任、实现自我成长的机会。</p>
+<p>我曾在很长一段时期内深受讨好型人格的影响。追溯其成因，或许与我成长于一个多子女家庭的环境有关。在这样的一个家庭中，那时候整体社会资源相对有限，且父母的关注与精力难以平均分配。加之与妹妹、弟弟年龄相差几岁，彼此间的竞争意识还是存在的。另一方面，作为家中的大哥，我会发现父母希望我做好榜样，且往往更关注妹妹和弟弟的利益。在这种情况下，我不知不觉强化了自己的讨好型人格，试图通过迎合他人来获取关注与认可。</p>
+<p>成年以后，也还是有不少老好人的烙印。以看房经历为例，由于我对过度套路，仅选择了一位中介带我看，从而错失了更多对比与选择空间。在职场上，我也常常未能果断拒绝一些并非自己擅长或感兴趣的工作，甚至因同事的热情推荐，并为了回应这份认可，买了一些自己并不十分理解的金融产品。这些行为，多多少少使我偏离了理性决策的轨道。</p>
+<p>正如老师所言，我们需要将注意力从“扮演某种角色”的束缚中解放出来，转而聚焦于明确并实现具体的目标之上。这样做，将有助于我们做出更加理智和符合自身利益的选择，从而在工作和生活中取得更好的成果，实现个人的成长与价值。</p>
+<h3 id="空"><a href="#空" class="headerlink" title="空"></a>空</h3><p>取悦症的根源在哪里呢？满足别人的需求永远是第一位的。为什么优先满足被人的需求这么重要？需要被喜欢、被欣赏、被认可，这是一种自卑的体现。</p>
+<p>如何破取悦症呢？遵循这样一条原则：“你比任何人都重要”。</p>
+<h3 id="王勇先"><a href="#王勇先" class="headerlink" title="王勇先"></a>王勇先</h3><p>“好人”这个人设标签，是得到社会共识的美好形象认知，人人喜欢，也愿意将其加持于自我角色标签中，但在过程中对其的把控，并不是每个人能够处理妥善的，在好心可能好报的打击下，在良善可能被利用的无常中，如何理性和效率的做有价值的好人，是一个关键的节点判断能力。</p>
+<p>不要被“好人”的概念绑架；“你是一个好人”的价值并不高；做好人是需要实力的；要做一个主动性好人；不要愚蠢的消耗自己的生命为代价来做好人。</p>
+<h3 id="我是谁，我要去何方"><a href="#我是谁，我要去何方" class="headerlink" title="我是谁，我要去何方"></a>我是谁，我要去何方</h3><p>做好人并不是一味讨好他人，最终沦为他人的工具，而是懂得如何让善意产生价值。</p>
+<p>以前自己也是一个标准的“老好人”，总是得罪人，而处处为他人“着想”，而内心其实又在反抗，就这样处在一种自我内耗的处境中，这种付出其实大概率并不会让自己“高尚”起来，反而被他人认为“理所当然”。</p>
+<p>武志红老师对老好人说过一句话，让自己变成一个不好惹的人吧，周围的人会更加尊重你。</p>
+<p>确实如此，“真正的善良应该是有边界的、有智慧的、有力量的”，而不是一味付出和退让，只有尊重自己内心的选择，才能成为更好的自己，才能帮助和影响他人，这样才能更加长久。</p>
+<hr>
+<p><a href="/book/decision-algorithm/064/">← 064｜牛人陷阱：你才是自己人生的决策者</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/066/">066｜占便宜陷阱：怎样用大局观克服贪婪？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

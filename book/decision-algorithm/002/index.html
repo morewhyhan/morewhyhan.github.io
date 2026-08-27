@@ -1,0 +1,403 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>002｜二阶理性：什么样的人能做出好决策？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》002：二阶理性：什么样的人能做出好决策？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="002｜二阶理性：什么样的人能做出好决策？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/002/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》002：二阶理性：什么样的人能做出好决策？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:44.719Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/002/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '002｜二阶理性：什么样的人能做出好决策？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">002｜二阶理性：什么样的人能做出好决策？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">002｜二阶理性：什么样的人能做出好决策？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>来源：老喻·决策算法100讲</p>
+<p>首次发布时间：2024年11月7日</p>
+<p>音频时长：12分47秒</p>
+</blockquote>
+<h2 id="老喻亲述"><a href="#老喻亲述" class="headerlink" title="老喻亲述"></a>老喻亲述</h2><p>你好。</p>
+<p>我是老喻，欢迎回到《决策算法》课。</p>
+<p>上一讲，我们讲了什么样的决策，算是一个好决策？以及：好决策和运气之间有什么关系？</p>
+<p>紧接着，就会遇到一个挑战：到底什么样的人，才能做出好决策？</p>
+<p>是智商高的人？情商高的人？还是很能干的人？</p>
+<p>这些都不是，真正的答案是：</p>
+<blockquote>
+<p>理性的人，更能做出好的决策。</p>
+</blockquote>
+<p>这个答案，似乎也不让人意外。但是，做好决策需要的“理性”，跟通常意义上的“理性”，其实有不小的差别。</p>
+<h2 id="一"><a href="#一" class="headerlink" title="一"></a>一</h2><p>我们先来看一个冷知识。</p>
+<p>猜猜看，在北美，最致命的野生动物是什么？</p>
+<p>很多人可能会猜是“熊”。</p>
+<p>但真实给人类带来更多伤害的，不是熊，而是鹿。</p>
+<p>为什么？鹿看起来很温和，不会像熊那样会袭击人。但是北美鹿太多，经常会横穿公路，导致车祸。</p>
+<p>的确，鹿的体型不小，撞上汽车后果不轻。可如果司机冷静处理，甚至是直接撞上去，也不总是会有致命危险。</p>
+<p>简而言之，并非鹿是凶手，而是鹿导致的汽车失控杀死了很多人。</p>
+<p>鹿的危险性，其实并非个例。真正导致伤害的，往往都不是事件本身，而是我们对事件的反应。</p>
+<p>有一个流行的说法：“生活中的10%是由发生在你身上的事情组成，而另外的90%则是由你对所发生的事情如何反应所决定。”说的也是类似的道理。</p>
+<p>好，既然如此，那决策的时候，冷静处理、理性地应对突发状况，而不是被情绪左右，被本能控制，是不是就可以了呢？</p>
+<p>现实情况要复杂很多。</p>
+<p>为了说明这一点，我们可以拿一种特别流行的哲学来做个对比：斯多葛哲学。</p>
+<h2 id="二"><a href="#二" class="headerlink" title="二"></a>二</h2><p>在华尔街、硅谷等地的大佬和新贵当中，斯多葛哲学颇为流行。</p>
+<p>斯多葛学派主张：我们只应关注和投入那些我们能够控制的事情，而对那些无法控制的事物，选择接纳、平和对待。</p>
+<p>斯多葛学派代表人物爱比克泰德说：“请运用这一原则——这件事是在我的选择之内还是之外？之外，则弃之不理”。</p>
+<p>《纳瓦尔宝典》的作者也写道：“理性很强的人可以通过训练自己的无感反应获得平和，即学会漠视自己无法控制的事物。”</p>
+<p>事实果真如此吗？</p>
+<p>根据我的观察，这种完美而冷酷的理性，很难实现。</p>
+<p>为什么？因为斯多葛主义对理性的追求，建立在彻底驱逐非理性的基础之上。这太难了。</p>
+<p>难怪哲学家休谟认为斯多葛主义的观点“过于美好，不适合人性”。</p>
+<p>的确，有一些决策高手，以理性著称，决策时不受非理性感情的干扰，最终取得了成功。</p>
+<p>然而，正如原生家庭影响一样，绝大多数成年人小时候都有某些情感上的创伤，导致他们性情里天然带有某种冷酷，这种冷酷对于决策而言，的确是一种优势。</p>
+<p>可是，你我，以及绝大多数人，都是普通的正常人，我们是理性和非理性的混合体，不管我们如何努力去强化自身的理性，都无法消除非理性。</p>
+<p>就像那句流传很广的关于如何克服演讲恐惧的格言说的：“问题不是如何在演讲的时候不发抖，而是如何在发抖的时候也能演讲”，对于决策，我们要追求的，不是在决策时消除非理性，而是在理性与非理性的混合状态下，依然能够做出理性的决策。</p>
+<p>为此，我们需要一个新的理性模型，我称之为：</p>
+<blockquote>
+<p>二阶理性。</p>
+</blockquote>
+<h2 id="三"><a href="#三" class="headerlink" title="三"></a>三</h2><h3 id="什么是二阶理性？"><a href="#什么是二阶理性？" class="headerlink" title="什么是二阶理性？"></a>什么是二阶理性？</h3><p>比如说，你要和一个人竞争，所谓一阶理性，就是你要去思考：我怎么样能够获得优势打赢他？</p>
+<p>而二阶理性则是：我一定要和他打吗？</p>
+<p>简而言之：一阶理性是“努力”，二阶理性是“选择”。</p>
+<p>一阶理性，主张我们把自己训练成更强的人，像那些成功的大人物一样杀伐决断。可这太难了。</p>
+<p>想想看，你我从小到大，立过多少志——多看书，学英语，少熬夜，去健身，可又有多少真正做到了？</p>
+<p>但是承认自己是一个普通人，承认自己的非理性，并不是放弃决策权。</p>
+<p>关于“二阶理性”，我们可以这样想象：理性的我，和非理性的我，共同构成了“我自己”。</p>
+<blockquote>
+<p>重点并不在于，我们要用一阶的“理性的我”，去战胜一阶的“非理性的我”，而在于运用二阶理性，让自己做决策的时候，尽量停留在“理性的我”的那一侧。</p>
+</blockquote>
+<p>比如说，你决定睡觉前不玩儿手机，晚上12点之前一定关机睡觉。作为“一阶理性”，你不得不与人性对抗。尤其是当你陷入刷短视频的人性陷阱时，你的理性总是败下阵来。</p>
+<p>“二阶理性”则是：睡觉前根本不把手机带进卧室，让人性不要去经受诱惑的考验。</p>
+<p>换言之，二阶理性就是首先承认，理性是有限的，接纳人性的不完美。</p>
+<p>尤其是对于决策而言，去追求一阶理性的100分，非常困难。</p>
+<p>而二阶理性，则是包容人性的不完美，哪怕一阶理性只能拿60分，但依然可以在二阶理性拿到人生的高分。</p>
+<p>这就是为什么，你在生活中可以看见一些人，似乎各方面都很普通，却过得非常好。</p>
+<h2 id="四"><a href="#四" class="headerlink" title="四"></a>四</h2><p>二阶理性这么好，我们该如何去实现呢？</p>
+<p>休谟哲学的两个观点，可以作为关键建议。</p>
+<h3 id="第一个建议：激发激情，而不是激发领悟力"><a href="#第一个建议：激发激情，而不是激发领悟力" class="headerlink" title="第一个建议：激发激情，而不是激发领悟力"></a>第一个建议：激发激情，而不是激发领悟力</h3><p>第一个，你要想让某人做一件事，最好是鼓舞他的激情而不是激发他的领悟力；他的激情愈浓烈，效果愈佳。</p>
+<p>你看，这是不是很奇怪？明明是为了实现理性，而且还是更高级的二阶理性，怎么又说起“激情”了？</p>
+<p>这正是休谟那句著名的话背后的深意了。他说过：理性是激情的奴隶。</p>
+<p>他的哲学是：“单是理性不会产生任何行动，或导致任何选择。”</p>
+<p>因此，理性之上，需要一些更高的非理性的东西驱动。这并非简单的感性，而是某种更深刻、更强大的力量。在过去，这种力量主要表现为信仰；在现代社会，我们更熟悉的表达是“使命、愿景”。</p>
+<p>就拿2024年诺贝尔物理学奖得主辛顿为例，他引领了人工智能穿越了数十年的黑暗森林，他的理性背后的力量，来自十几岁就有的对“神经网络”的激情。</p>
+<p>找到那个你无论如何想要实现的人生大目标，所有的决策向它对齐。当你在具体而琐碎的种种日常决策中迷失时，抬头看一看它，如何进退取舍，你会心里有数。</p>
+<h3 id="第二个建议：习惯是改造心灵、获得理性的有力手段"><a href="#第二个建议：习惯是改造心灵、获得理性的有力手段" class="headerlink" title="第二个建议：习惯是改造心灵、获得理性的有力手段"></a>第二个建议：习惯是改造心灵、获得理性的有力手段</h3><p>休谟认为，习惯是道德行为的关键。无论大事小事，在每一种情况下做正确的事，你就能养成在所有情况下做正确事情的品格。</p>
+<p>很坦率说，休谟是最被低估的哲学家之一。</p>
+<p>年轻的时候，我认为“人性”“习惯”是无聊的话题，里面掺杂着厚黑学和心灵巫术，总觉得做好决策，只要够聪明久行了。</p>
+<p>今天看来，这是多么无知。</p>
+<p>记得上个世纪90年代我刚到广州时，便利店的老板不少都是潮汕人，店里杂乱，老板穿着拖鞋，叼着牙签。可是当他给你找零钱的时候，会双手递给你，显得很庄重。</p>
+<p>有个潮汕朋友对我解释说：这是他们表达对钱的敬畏。</p>
+<p>潮汕人以擅长经商著称，李嘉诚和马化腾都是潮汕人。据传说，李嘉诚有一次掉了一枚两元的硬币，旁边有人帮他捡起，他装回硬币，然后从钱包里掏出100元给那个人。</p>
+<p>对此，李嘉诚解释道：“虽然这只是一枚普通的硬币，金额很小但也是财富，不能忽视它。如果不重视它，让它随意溜走，财富也会慢慢地离你而去。”</p>
+<p>这正是对休谟哲学的生动阐释：不管大钱小钱，你必须保持一样的敬畏，这样你才能够保持所有情况下对财富的尊重。这样一来，你在关键决策的时候，就不会掉链子了。</p>
+<p>这是一种职业杀手的态度，其与业余玩家之间有天壤之别，不仅在于职业水平，更在于职业精神。——一种自动化的二阶理性。</p>
+<p>不光是财富决策，人生中的其他一切的决策也是如此。尽管我们每个人都吃过“决策”的苦，然而我们面对决策很多的草率，回过头看都会让自己惊讶。</p>
+<p>尊重每一个决策，让谨慎决策成为一种习惯，一种人生的仪式感，是成为决策高手的必备修炼。这样你就会认真按下人生当中的每一个决策按钮。</p>
+<h2 id="五"><a href="#五" class="headerlink" title="五"></a>五</h2><p>回到我们开头，关于鹿的话题。</p>
+<p>开车有一个原则：在高速公路上遇到紧急情况时，不要轻易转弯避开。</p>
+<p>道理大家都懂，但是遇到前面冒出一只鹿，或者只是一只小兔子，我们也会本能地躲开。——这时候，理性毫无作用。</p>
+<p>应对风险的办法，除了在那些可能有鹿出没的地方开慢一点儿，还有赖于你平时养成良好的驾驶习惯，将开车的原则训练成自己的本能反应。</p>
+<p>在《决策算法》的100讲中，我们会分享许多决策的原则、模型和方法。</p>
+<p>而这一讲为你分享的“二阶理性”，就像是《道德经》里说的“道、法、术、器”里的“道”。</p>
+<p>什么样的人能做出好的决策？</p>
+<p>我的答案是：每个普通人都可以。</p>
+<p>我们不必成为完美的人，我们可以接纳自己人性之中的不完美。</p>
+<p>关键在于，我们能够在此之上，构建自己的二阶理性。</p>
+<p>做到这一点，只需要我们对人生有所期盼，并且在日常工作和生活之中，对每一个或大或小的决策都认真对待。</p>
+<p>最后，一段来自休谟的话，我稍加改造想送给你：</p>
+<blockquote>
+<p>当你做出决策的时候，不要自问是勇敢还是懦弱、慷慨还是自私、性情平和稳定还是反复无常；只需问自己能在多大程度上，以何种方式展现所有的理性和美德。</p>
+</blockquote>
+<p>我是老喻，我们下一讲见。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>二阶理性承认人性的不完美，不是要消除非理性，而是在理性与非理性的混合状态下做出理性决策。</li>
+<li>实现二阶理性的两个关键建议：一是找到驱动自己的激情或使命感；二是通过养成习惯来获得理性。</li>
+<li>对每一个决策都认真对待，将谨慎决策变成一种习惯和人生仪式感，是决策高手们的必备修炼。</li>
+</ol>
+<h2 id="课程导航"><a href="#课程导航" class="headerlink" title="课程导航"></a>课程导航</h2><ul>
+<li>首次发布时间：2024年11月7日</li>
+<li>上一期：01 理解决策：好决策和好运气是什么关系？</li>
+<li>下一期：03 有限道德：为什么你要先小人后君子？</li>
+</ul>
+<h2 id="精选留言"><a href="#精选留言" class="headerlink" title="精选留言"></a>精选留言</h2><h3 id="左星星"><a href="#左星星" class="headerlink" title="左星星"></a>左星星</h3><p>“二阶理性”并不要求我们彻底消除非理性，而是接受人性中的非理性成分，并在这种混合状态中依然做出理性决策。换句话说，二阶理性是在自知有限的前提下，通过设计环境和调整习惯，将理性提升为一种自动化反应，以此减少情绪和本能的干扰。</p>
+<p>现代生活中，消费冲动是影响财务决策的一大因素。在面对“剁手”冲动时，一阶理性可能会告诉我们理性消费，但在诱惑面前，很多人还是容易冲动购物。二阶理性的做法是预先设置障碍，比如在某些时候删除购物APP，取消快捷支付功能，或者制定每月的固定储蓄目标。这样做不仅减少了冲动消费的机会，还逐渐将节俭的习惯内化为日常。通过这种“设限”方式，我们无需每次都跟欲望搏斗，而是通过外部设置增加理性决策的可能性。</p>
+<p>健身是许多人理智上的追求，但却往往难以坚持。一阶理性会让我们坚持每天锻炼，但人性中的懒惰常常让计划半途而废。二阶理性可以通过环境设计来帮助我们维持健康习惯，比如将和健身教练的预约时间固定，并设置提醒。通过使用习惯打卡软件来记录每一次锻炼，并转发朋友圈，建立持续性的仪式感，让健康逐渐融入生活。这种方式将健康习惯自动化，从而提高长期坚持的可能性。</p>
+<h3 id="魏红亮"><a href="#魏红亮" class="headerlink" title="魏红亮"></a>魏红亮</h3><h4 id="02-二阶理性：什么样的人能做出好决策？"><a href="#02-二阶理性：什么样的人能做出好决策？" class="headerlink" title="02 二阶理性：什么样的人能做出好决策？"></a>02 二阶理性：什么样的人能做出好决策？</h4><p>接受人的不完美，然后基于自己的不完美，就用另外的方式换到这节课就是用“二阶理性”的手段帮助自己做出更多的理性决策。</p>
+<p>冒顿单于射杀父王的故事非常经典，其中就是利用了下属的非理性。</p>
+<p>一开始冒顿单于射天上和地下的鸟兽，军中有不射鸟兽者，被他砍头。后他带头射自己珍爱的马匹，有不射他的战马的人，被他处死。随后他射自己父王的战马，自然也会有士兵畏惧王上而不敢射箭，被他处死。如此多次，他身边剩下的没死的士兵，都是将他的命令当作最高的指令看待的士兵。</p>
+<p>冒顿单于父子带着一帮人到丛林中行猎玩乐，在玩得正欢快的时候，冒顿单于首先向自己的父王射了一箭，然后命令跟随自己的士兵也朝着王上射箭。因为士兵们都是受过“忠于太子”的训练，所以没有一个不在射箭的，最后王上被他们一拨人当场射死。</p>
+<h3 id="欧金"><a href="#欧金" class="headerlink" title="欧金"></a>欧金</h3><p>“不管大钱小钱，你必须保持一样的敬畏，这样你才能够保持所有情况下对财富的尊重。这样一来，你在关键决策的时候，就不会掉链子了”这几句说到我心坎里去，因为我自己现在没有做到，对于钱我没有任何的敬畏，小钱花的大手大脚，所以我基本没攒下钱。二阶理性，这个还是第一听说，我只听说过管理二阶理性，这个思路很新奇。</p>
+<h3 id="炎帝"><a href="#炎帝" class="headerlink" title="炎帝"></a>炎帝</h3><p>老喻老师说：</p>
+<p>在决策的过程中，我们通常会遇到两种理性：一阶理性和二阶理性。</p>
+<p>一阶理性是指在面对问题时，能够迅速做出反应，直接解决问题的能力。而二阶理性则是一种更为深远的思考方式，它要求我们在做出决策之前，先问自己：这个问题是否值得解决？是否有更好的方法来避免问题的发生？</p>
+<p>二阶理性是一种更成熟和全面的思维模式。它要求我们不仅要有能力解决问题，更要有能力选择问题。这种能力让我们在面对选择时，能够站在更高的维度去审视问题，从而做出更为明智的决策。</p>
+<h3 id="斌杰"><a href="#斌杰" class="headerlink" title="斌杰"></a>斌杰</h3><p>二阶理性，新的概念。</p>
+<p>再加上人生算法的基础，直呼过瘾。</p>
+<h3 id="李艳"><a href="#李艳" class="headerlink" title="李艳"></a>李艳</h3><p>二阶段理性是选择。</p>
+<p>人不是完美的也不可能做到无限理性，我们要做的是在做决策时保有理性，想要保有理性可以用习惯去修炼，好的习惯会变成一种本能反应，辅助我们做决策，一个好的习惯可能比理性更根深蒂固吧。</p>
+<blockquote>
+<p>以上留言由作者筛选显示</p>
+</blockquote>
+<hr>
+<p><a href="/book/decision-algorithm/001/">← 001｜理解决策：好决策和好运气是什么关系？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/003/">003｜有限道德：为什么你要先小人后君子？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

@@ -1,0 +1,417 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>053｜大卫·斯文森：为什么资产组合会主导投资结果？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》053：大卫·斯文森：为什么资产组合会主导投资结果？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="053｜大卫·斯文森：为什么资产组合会主导投资结果？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/053/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》053：大卫·斯文森：为什么资产组合会主导投资结果？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:45.537Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/053/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '053｜大卫·斯文森：为什么资产组合会主导投资结果？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">053｜大卫·斯文森：为什么资产组合会主导投资结果？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">053｜大卫·斯文森：为什么资产组合会主导投资结果？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<h2 id="A｜大卫·斯文森：为什么资产组合会主导投资结果？"><a href="#A｜大卫·斯文森：为什么资产组合会主导投资结果？" class="headerlink" title="A｜大卫·斯文森：为什么资产组合会主导投资结果？"></a>A｜大卫·斯文森：为什么资产组合会主导投资结果？</h2><blockquote>
+<p>来源：老喻·决策算法100讲</p>
+<p>音频时长：12:26</p>
+<p>以下依据 PDF 页面原图逐段人工视觉阅读整理。</p>
+</blockquote>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>喻老师，你好。</p>
+<p>我是老喻，欢迎来到《决策算法》课。</p>
+<p>什么样的高手最了不起？</p>
+<p>也许就是那种能力出众、品德超群的。</p>
+<p>而大卫·斯文森，恰恰就是这样一位令人敬仰的投资大师。在他担任耶鲁大学捐赠基金首席投资官的数十年里，他将基金规模从 10 亿美元发展到 312 亿美元，连续三十多年创造了年化 12.4% 的卓越投资业绩。</p>
+<p>更罕见的是，他是减薪 80% 加入耶鲁校产基金的，而且长期以来都拿着不高的收入，主动放弃了基金经理的巨额财富。</p>
+<p>这么一个专业而品德高尚的人，给个人投资者送出的建议，我们需要竖起耳朵聆听。</p>
+<h2 id="一、资产组合为什么重要？"><a href="#一、资产组合为什么重要？" class="headerlink" title="一、资产组合为什么重要？"></a>一、资产组合为什么重要？</h2><p>他告诉了我们一个投资的关键概念，这也是他取得惊人成就的秘密，那就是：资产组合。</p>
+<p>在他的经典著作《非凡的成功：个人投资的制胜之道》中，斯文森指出：“资本市场为投资者提供了赚取投资收益的三类工具，即资产组合、择时交易和证券选择。”</p>
+<p>然而，这三种工具对投资成功的贡献却大不相同。</p>
+<p>让我们简单介绍一下这三个投资概念：</p>
+<ul>
+<li>**资产组合：**决定将多少资金分别投资在股票、债券、房地产等不同类型资产上。这是在规划一个投资版图，确定每类资产应该占多大比例。</li>
+<li>**择时交易：**是指判断市场涨跌时机，选择合适的时点买入或卖出。比如试图在股市低点买入、高点卖出。</li>
+<li>**证券选择：**是指在某类资产中挑选具体的投资标的。比如在股票市场中选择具体买哪些公司的股票，在债券市场中选择购买哪些债券。</li>
+</ul>
+<p>通过深入研究，斯文森发现了一个惊人的事实：<strong>资产组合对投资业绩的好坏，起着主导作用。</strong></p>
+<p>对机构投资者投资组合的大量可信研究表明，在投资收益率的变动中，大约 90% 是源于资产组合，只有约 10% 是由择时交易和证券选择决定的。</p>
+<p>而对于择时交易，斯文森提醒，大部分个人投资者难以持续准确择时，反而会因追涨杀跌造成损失。</p>
+<p>至于大家热衷的主动选股，对于普通人来说更是难度极高，且长期胜率有限。</p>
+<p><strong>在无法高效择时、精准选股的情况下，资产配置几乎成了“最后的赚钱方法”。</strong></p>
+<p>然而，事实上，大多数个体投资者，花在择时交易和主动选股的时间和精力，要远远大于资产配置。</p>
+<h2 id="二、资产组合的原理"><a href="#二、资产组合的原理" class="headerlink" title="二、资产组合的原理"></a>二、资产组合的原理</h2><p>接下来，我再介绍一下资产组合的原理。</p>
+<p>这要从现代投资组合理论的奠基人马科维茨说起。1952 年，马科维茨在《金融杂志》发表了著名的《投资组合选择》一文，首次用严谨的数学模型证明：通过将不同风险收益特征的资产进行组合，可以显著降低投资组合的整体波动性。</p>
+<p>马科维茨曾说：“<strong>资产配置多元化是投资的唯一免费午餐。</strong>”</p>
+<p>这一基础性的发现，为他赢得了 1990 年诺贝尔经济学奖。</p>
+<p>后来出现的一系列流行的投资策略，比如 60&#x2F;40 股债混合策略，便是对其思想的经典实践：将 60% 资金投资于股票，40% 配置于债券，每年再平衡一次，兼具相对高收益和适度风险。</p>
+<p>大卫·斯文森则在管理耶鲁大学基金时，进一步拓展了资产组合的可能性，大胆融入私募股权、对冲基金等多元资产，获取了长期稳健且卓越的回报。</p>
+<p><strong>对普通投资者而言，资产组合的核心意义在于：通过合理分散，兼顾收益与风险，并在市场变化中保持理性再平衡，从而真正让“钱为我们工作”。</strong></p>
+<p>有人会说，这不过是“不把所有的鸡蛋放在一个篮子里”的老生常谈嘛。</p>
+<p>确实，巴菲特就曾说过：“广泛的多元化只是对无知的保护。”在他看来，真正的投资高手应该是，把鸡蛋放在少数几个精心挑选的篮子里，然后密切关注。</p>
+<p>但大卫·斯文森提醒我们一个残酷的现实：像巴菲特那样精准集中投资的顶尖能手，毕竟屈指可数，而对于绝大多数普通人来说，资产组合不仅是一顿“免费的午餐”，更是通往投资成功的最可靠道路。</p>
+<p>资产组合通过在多个资产类别间进行科学配置、分散风险，可以避免“一招失手，满盘皆输”的极端冲击。</p>
+<p>为什么你需要资产配置？让我用三个简单的比喻说明：</p>
+<p>**第一，它就像是一座四季花园。**在这里，春有杏花、夏有荷花、秋有菊花、冬有腊梅，无论经济环境如何变化，总有一处会为你带来收获。</p>
+<p>**第二，它就像是一座抗震房屋。**多根支柱共同支撑，减震系统相互配合，即使市场地震来袭，你的财富大厦依然能够屹立不倒。</p>
+<p>**第三，它就像是一位智慧的园丁。**定期修剪过于茂盛的枝叶，培育生长不足的幼苗，在反复的实践中培养冷静从容的心态，让你的投资花园常年生机盎然。</p>
+<p>没错，我自己的感受是，一个人的财富体系，其实更像耕耘一个有生命的花园，而不是一个个生硬的下注。</p>
+<p>资产组合就像打造一座“多维度、抗风险、可持续成长”的生态系统，让你在资本市场的狂风暴雨或盛夏骄阳下，都能有较强的韧性与回报潜力。</p>
+<h2 id="三、如何构建资产组合？"><a href="#三、如何构建资产组合？" class="headerlink" title="三、如何构建资产组合？"></a>三、如何构建资产组合？</h2><p>关于资产组合，斯文森对普通投资者的建议有三条：多元化配置、偏重股票指数基金（也是多元化的）、定期再平衡：</p>
+<ul>
+<li>**多元化投资：**这不仅是简单的分散，而是要建立一个科学的资产配置体系。</li>
+<li>**偏重股票的指数化投资：**斯文森认为，对于大多数投资者而言，长期持有以股票为主的投资组合是明智之选，但要选择多元化的指数基金。</li>
+<li>**定期再平衡：**就是定期调整投资组合中各类资产的权重，以保持与初始配置一致。</li>
+</ul>
+<p>说完原理，我们具体该咋办呢？</p>
+<p>实话说，资产组合是一个非常灵活的主题。每个人的情况都不一样，包括职业、收入、家庭状况，年龄段也有很大差异。</p>
+<p>在某种意义上，于不同的年龄段，更新自己的资产配置，可能是最重要的理财决策。——这就像是一名将军，最重要的任务就是排兵布阵。</p>
+<p>关键在于，你要搞懂原理，并且遵循原则。马尔基尼在《漫步华尔街》里，给出了资产配置的五项原则：</p>
+<p>第一条：不要赚得更多，但要承受更多风险。说白了就是“天下没有免费的午餐”。</p>
+<p>第二条：时间是你最好的朋友，越是长期投资，风险其实越小。</p>
+<p>第三条：别想着一次性押宝，押宝不如定投来得稳。</p>
+<p>第四条：该调整的时候要敢于调整。</p>
+<p>比如说，你一开始定的是股票占 60%、债券占 40%。等股票涨得特别好，变成了 70%，这时候就得把多出来的 10% 调出来买债券。</p>
+<p>这种情况下，切忌贪婪，别总想着股票涨得这么好，为什么不多赚点？不懂得及时再平衡，资产组合就失去了意义。</p>
+<p>第五条：工作和投资别押在同一条船上。</p>
+<p>这个道理特别实在：比如你在通用汽车上班，就别再把所有钱都买通用汽车的股票。</p>
+<h2 id="四、家庭资产配置"><a href="#四、家庭资产配置" class="headerlink" title="四、家庭资产配置"></a>四、家庭资产配置</h2><p>有人可能会问，我家不买股票，也不搞投资，是不是就不用在乎资产组合了？</p>
+<p>这个想法其实是个误区。即便不主动投资，你其实也在做着资产配置的决策，只是可能并不自知。比如把钱都放在银行存款，这也是一种资产配置方式，只不过是过度保守的配置。</p>
+<p>实际上，家庭资产配置可以分为两个层面：</p>
+<p>广义的资产配置，是一个家庭的整体财务布局。它包括了所有的资产形式：房产、存款、投资、保险、甚至未来的收入等。这就像是在规划一个家庭的财务蓝图，需要考虑家庭目标、风险承受能力、现金流需求等诸多因素，确保资产和负债的整体平衡。</p>
+<p>狭义的资产配置，则专注于家庭可支配的金融资产。</p>
+<p>如果你想做个简单参考，可使用常见的“标准普尔 4321 法则”进行初步规划：</p>
+<ul>
+<li>**10%：**用于 3～6 个月的短期应急支出（流动资金）；</li>
+<li>**20%：**投向医疗或商业保险等保障性支出；</li>
+<li>**30%：**投资于股票、基金等“追求增值”的领域；</li>
+<li>**40%：**配置于债券等相对稳健的“固定收益类”产品。</li>
+</ul>
+<p>这种划分能帮助你既保证短期生活所需，又兼顾长期增值与必要的风险保障。</p>
+<p>从这个角度看，“家庭资产配置”并不仅仅指炒股或买基金，而是涵盖了你如何分配每一块财务资源；无论是否“主动投资”，家庭资产配置始终在影响着你的资金安全和生活质量。</p>
+<h2 id="五、把资产组合当作人生系统"><a href="#五、把资产组合当作人生系统" class="headerlink" title="五、把资产组合当作人生系统"></a>五、把资产组合当作人生系统</h2><p>人对钱的态度很奇怪。</p>
+<p>大多数时候人们都很在意钱，但对于一些钱的最关键问题，我们却往往漠视。</p>
+<p>对于你我而言，应该养成对钱负责的态度。这些常识和习惯，是我们从小都欠缺的，所以需要主动进行一些程序化的自我训练。</p>
+<p>给大家一个实在的行动指南：</p>
+<h3 id="第一步：认知自我与目标"><a href="#第一步：认知自我与目标" class="headerlink" title="第一步：认知自我与目标"></a>第一步：认知自我与目标</h3><ul>
+<li>明确投资期限、财务状况、流动性需求；</li>
+<li>识别个人心理弱点（如恐慌、贪婪、短视等）。</li>
+</ul>
+<h3 id="第二步：建立长期配置方案"><a href="#第二步：建立长期配置方案" class="headerlink" title="第二步：建立长期配置方案"></a>第二步：建立长期配置方案</h3><ul>
+<li>广义上结合斯文森建议的多元化框架；</li>
+<li>狭义上安排好生活的各种开支。</li>
+</ul>
+<h3 id="第三步：定期评估与再平衡"><a href="#第三步：定期评估与再平衡" class="headerlink" title="第三步：定期评估与再平衡"></a>第三步：定期评估与再平衡</h3><ul>
+<li>定期复盘检查；</li>
+<li>主动调整，根据情况再平衡。</li>
+</ul>
+<h3 id="第四步：控制情绪和外界干扰"><a href="#第四步：控制情绪和外界干扰" class="headerlink" title="第四步：控制情绪和外界干扰"></a>第四步：控制情绪和外界干扰</h3><ul>
+<li>算自己的账，别和别人比，别眼红别人发大财的机会；</li>
+<li>对大部分人来说，“怎样避免大亏损”比“怎样大赚一笔”更关键。只要把损失控制好，稳步获得复利，你就能慢慢拉开与别人的差距。</li>
+</ul>
+<h3 id="第五步：持续学习与优化"><a href="#第五步：持续学习与优化" class="headerlink" title="第五步：持续学习与优化"></a>第五步：持续学习与优化</h3><ul>
+<li>学习投资常识：从基础原理到经济常识，打牢认知；</li>
+<li>结合自身情况做调整：生活变动、市场环境有重大变化时，及时检视是否要微调配置。</li>
+</ul>
+<p>很多时候，我们总是忙着赚钱。有时，辛辛苦苦很多年打拼的财富，一个不留神就从指缝里溜走了。那种感受太痛苦了。</p>
+<p>有人说：“进攻赢得比赛，防守赢得冠军。”</p>
+<p><strong>资产组合，其实就是攻守兼备：我们用它来守卫财富，用它来创造财富，还用它来重新平衡资产配置，让我们的人生之船更加稳健，乘风破浪。</strong></p>
+<p>为了你自己，更为了你的家人，行动起来吧！</p>
+<p>以上就是这一讲的全部内容。我是老喻，我们下一讲再见。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>资产组合对投资业绩的好坏，起着主导作用。</li>
+<li>对普通投资者而言，资产组合的核心意义在于：通过合理分散，兼顾收益与风险，并在市场变化中保持理性再平衡，从而真正让“钱为我们工作”。</li>
+<li>资产组合，其实就是攻守兼备：我们用它来守卫财富，用它来创造财富，还用它来重新平衡资产配置，让我们的人生之船更加稳健，乘风破浪。</li>
+</ol>
+<h2 id="用户留言（原图精选）"><a href="#用户留言（原图精选）" class="headerlink" title="用户留言（原图精选）"></a>用户留言（原图精选）</h2><h3 id="左星星"><a href="#左星星" class="headerlink" title="左星星"></a>左星星</h3><p>资产组合的核心是通过多元化分散风险，但并非简单地把资产分散到不同地方，而是要理解不同资产之间的相关性与互补性。真正有效的资产组合应当在风险与收益之间找到平衡，在不同的市场环境下都能保持一定的韧性。</p>
+<p>资产配置并不是一成不变的。随着人生阶段、收入和家庭状况的变化，资产组合也需要动态调整。年轻时可以承受更多风险，随着年龄增加，稳健和安全的比例应逐渐提高。</p>
+<h3 id="鸿涛"><a href="#鸿涛" class="headerlink" title="鸿涛"></a>鸿涛</h3><p>资产组合是为了降低单一资产的风险。各类资产有不同的收益来源和波动特征，组合起来可以避免“一招失手，满盘皆输”。</p>
+<h3 id="Keiko璟"><a href="#Keiko璟" class="headerlink" title="Keiko璟"></a>Keiko璟</h3><p>资产组合的真正意义，是通过配置不同资产形成安全边际。投资者真正的对手不是市场的波动，而是自己的贪婪和恐慌。要先建立安全垫，再去追求收益。</p>
+<h3 id="方兴（阳光荞草）"><a href="#方兴（阳光荞草）" class="headerlink" title="方兴（阳光荞草）"></a>方兴（阳光荞草）</h3><ol>
+<li>得到财富和驾驭财富，是需要认知和智慧的，而一个人如果没有智慧，就很难把握，克服贪婪，无法真正驾驭财富。</li>
+<li>为什么我们面对财富懂得足够？财富并不是一个人幸福快乐的唯一来源，智慧与认知同样重要。</li>
+<li>资产配置不是简单地把钱放到不同地方，而是要理解不同资产的收益和风险，在人生不同阶段不断调整。</li>
+<li>在这个世界上对我们来说，最珍贵的智慧和认知，何时能够让我们把资源配置到真正有价值的地方。</li>
+</ol>
+<h3 id="李泰"><a href="#李泰" class="headerlink" title="李泰"></a>李泰</h3><p>资产组合是把“攻”和“守”统一起来。工作收入、住房、股票、债券和保险之间，如果全部押在同一个方向，就会形成巨大的单点风险。通过组合与再平衡，可以让资产与人生目标保持一致。</p>
+<h3 id="Scott"><a href="#Scott" class="headerlink" title="Scott"></a>Scott</h3><p>资产组合需要耐心。要通过时间才能慢慢变现，是一个长期的投资观点。很多人高估自己一年内能够取得的成就，急不可耐却又不切实际，最后反复死在短期行为中。</p>
+<h3 id="其他留言要点"><a href="#其他留言要点" class="headerlink" title="其他留言要点"></a>其他留言要点</h3><ul>
+<li>资产组合的意义已经超越金融领域，也是一种关于时间、精力和人生资源的配置方法；</li>
+<li>家庭资产配置要同时考虑流动性、保障、增值和固定收益；</li>
+<li>不主动投资也会形成资产配置，关键在于是否有意识地设计；</li>
+<li>“进攻赢得比赛，防守赢得冠军”，控制大亏损比追求大收益更重要。</li>
+</ul>
+<p>——以上留言由作者筛选显示。</p>
+<hr>
+<h2 id="B｜大卫·斯文森：为什么资产组合会主导投资结果？"><a href="#B｜大卫·斯文森：为什么资产组合会主导投资结果？" class="headerlink" title="B｜大卫·斯文森：为什么资产组合会主导投资结果？"></a>B｜大卫·斯文森：为什么资产组合会主导投资结果？</h2><blockquote>
+<p>来源：<code>053b__大卫·斯文森：为什么资产组合会主导投资结果？(1).pdf</code></p>
+<p>原图视觉核验：本文件渲染后的页面 PNG 与 <code>053a__大卫·斯文森：为什么资产组合会主导投资结果？.pdf</code> 的页面 PNG SHA-256 完全一致：</p>
+<p><code>B61F68784833BB7727FBF5363A3B59961BF9D46F7FEC32BA04DD0B57757F3B7A</code></p>
+</blockquote>
+<p>该 PDF 与 053a 为完全相同的重复文件，页面内容、文字、版式和用户留言均一致。</p>
+<p>对应的完整人工视觉 Markdown 内容见：</p>
+<p><a href="053a__%E5%A4%A7%E5%8D%AB%C2%B7%E6%96%AF%E6%96%87%E6%A3%AE%EF%BC%9A%E4%B8%BA%E4%BB%80%E4%B9%88%E8%B5%84%E4%BA%A7%E7%BB%84%E5%90%88%E4%BC%9A%E4%B8%BB%E5%AF%BC%E6%8A%95%E8%B5%84%E7%BB%93%E6%9E%9C%EF%BC%9F.md">053a__大卫·斯文森：为什么资产组合会主导投资结果？.md</a></p>
+<p>为避免对完全相同的内容重复维护，053b 保留为独立对应文件，并明确指向已完成的完整人工稿。</p>
+<hr>
+<p><a href="/book/decision-algorithm/052/">← 052｜约翰·博格：一生赚多少钱才算“足够”？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/054/">054｜查尔斯·埃利斯：如何成为真正的财富赢家？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

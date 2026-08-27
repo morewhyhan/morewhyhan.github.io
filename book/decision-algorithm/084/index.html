@@ -1,0 +1,405 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>084｜锚点选择：为什么比较是万恶之源？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》084：锚点选择：为什么比较是万恶之源？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="084｜锚点选择：为什么比较是万恶之源？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/084/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》084：锚点选择：为什么比较是万恶之源？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:46.010Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/084/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '084｜锚点选择：为什么比较是万恶之源？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">084｜锚点选择：为什么比较是万恶之源？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">084｜锚点选择：为什么比较是万恶之源？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>来源：老喻·决策算法100讲<br>音频时长：13分22秒</p>
+</blockquote>
+<h2 id="开场：比较改变了选择"><a href="#开场：比较改变了选择" class="headerlink" title="开场：比较改变了选择"></a>开场：比较改变了选择</h2><p>我们先来做一个选择题。以下三位男性，你觉得哪一位可能更爱他的女朋友？</p>
+<ol>
+<li>“成功男”，身家一个亿，拿出资产的1%，为女朋友买了一辆价值100万的保时捷；</li>
+<li>“奋斗男”，存款100万，拿出资产的10%，为女朋友买了一个价值10万的爱马仕包包；</li>
+<li>“白手男”，钱包里一共1万块钱，100%拿出来，为女朋友买了一个价值1万的苹果笔记本电脑。</li>
+</ol>
+<p>姑且让我们不正确地用礼物来评估三位男性的爱情，你一定看出来了，比例和绝对值是两回事：</p>
+<ul>
+<li>论绝对数值，“成功男”最为大方；</li>
+<li>论相对比例，“白手男”最有诚意。</li>
+</ul>
+<p>这个问题本质上是一个决策问题，却被比较的框架所干扰。我们被迫在不同维度间权衡取舍：是看绝对价值，还是相对比例？这正是比较在决策过程中制造的第一个陷阱。</p>
+<p>当然，看人不能只看他给你买什么东西。这是一个简化了的问题。人类喜欢比较，关于“比较”的话题，不仅是情感八卦，还与生物学、行为科学、幸福理论有关，更与我们日常决策过程紧密关联。</p>
+<p>今天，我想说的是：</p>
+<ul>
+<li><strong>比较，是决策的基础。</strong></li>
+<li><strong>比较，也是决策的万恶之源。</strong></li>
+</ul>
+<h2 id="一、比较是决策的基础"><a href="#一、比较是决策的基础" class="headerlink" title="一、比较是决策的基础"></a>一、比较是决策的基础</h2><p>人类是一种“爱比较、但是又经常把自己比晕”的动物，这直接影响我们的决策质量。</p>
+<p>你是否注意到，当你看房子时，房产经纪总会先带你看几套超出预算的豪宅，然后是几套同价位但状况糟糕的房子，最后才展示他真正想卖的那套。</p>
+<p>这不是巧合，而是精心设计的“比较”，利用了我们大脑中的<strong>锚定效应</strong>和<strong>框架效应</strong>。豪宅建立了价格锚点，差房子则衬托出了什么是“好房子”，最终让普通房子在比较中显得格外诱人。</p>
+<p>生活中的“比较效应”比比皆是，它们都在悄悄影响我们的决策：</p>
+<ul>
+<li>股市投资者看到某曾经大牛的股票大跌，就去抄底，结果接到了飞刀，这是典型的相对参照决策失误；</li>
+<li>旅行过程中最后一顿往往是最好的，这利用了“比较效应”和“峰终效应”，让你对整体体验评价更高；</li>
+<li>相亲时带上高颜值朋友，反而会让自己相形见绌，这是决策环境设置的失误。</li>
+</ul>
+<p>为什么人类的决策如此容易被“比较”支配呢？</p>
+<p>人爱比较，有生理基础上的原因，这直接影响我们如何感知和决策。人类进化的目的是为了“生存”去适应，而非真实和精确判断。比如，一包一公斤重的棉花，和一块一公斤重的铁，不考虑浮力，你会觉得铁更重，为什么会这样？</p>
+<p>19世纪的时候，德国生物物理学家赫尔曼·冯·赫尔姆霍兹曾说：大脑不过是一台预测机器，我们的所见、所听、所感不过是它对输入信号的最佳猜测罢了。从决策科学角度，这意味着我们的大脑是个天生的贝叶斯统计学家，通过先验概率和当前数据作出推断。</p>
+<p>一大包东西，大脑预测“较重”，但因为棉花比“预期”轻，大脑感知到“轻”；而一小块同重量的铁却显得很重。轻和重，是基于相对比较的感知，而非精确的度量，这种相对性深刻影响我们对价值的判断和决策过程。</p>
+<p>我们的感官和大脑，很多时候都是借助于“比较”，来观察和适应这个世界，进而做出决策。</p>
+<p>博·洛克在《错觉心理学》里点明：进化的“目标”是获得适应性、稳健性和可发展性，而非精确判断。他得出一个关键结论：你的进化不是为了看到现实……而是为了生存。</p>
+<p>决策科学告诉我们，人类不是为了最优决策而设计的，而是为了“足够好”的决策而设计的。<strong>比较是我们进化出的一种启发式决策机制，帮助祖先从丛林中快速决策以生存，但在现代复杂环境中，这种机制常常导致决策偏差。</strong></p>
+<p>想想看，你的消费决策有多少次因为“对比效应”而被扭曲？比如“五折特惠”时买回一堆用不着的东西，这正是比较机制对决策的干扰。</p>
+<h2 id="二、比较是决策的万恶之源"><a href="#二、比较是决策的万恶之源" class="headerlink" title="二、比较是决策的万恶之源"></a>二、比较是决策的万恶之源</h2><p>比较完了，接下来就是嫉妒和不理性决策。所以，决策失误的源头，也是不当的比较。</p>
+<p>库尔特·格雷提出的“相对剥夺”概念在决策心理学中极为重要：“相对剥夺指人们在缺乏他人或社会群体的资源或机会时，感到处于不利地位的现象。”</p>
+<p>事实上，现代社会的你我比以前的国王生活得更好。假如真让你穿越回清宫，光是去蹲个茅坑就能让你绝望，要是再来场小小的感冒，没准儿就会要了小命。更别说现在还有空调、手机、高铁、飞机等等。</p>
+<p>那为什么大家会觉得越来越不幸福呢？因为人们的“幸福感”并非来自所有人都变得更富有，而是来自比别人更富有。罗素说：除了担心，嫉妒也许是不幸福的最大原因之一。</p>
+<p>比如，你年底奖金比去年多了好几万，正高兴呢，一看同事小明居然比你多500，你顿时心情沮丧。你看，挺开心的事儿，因为没来由的比较而产生的嫉妒毁掉了。</p>
+<p>所以，罗素还说：<strong>乞丐并不会妒忌百万富翁，但是他肯定会妒忌收入更高的乞丐。</strong></p>
+<p>嫉妒不仅摧毁幸福感，更会导致错误的决策。</p>
+<h2 id="三、建立成功的比较系统"><a href="#三、建立成功的比较系统" class="headerlink" title="三、建立成功的比较系统"></a>三、建立成功的比较系统</h2><p>然而，人类作为决策者，我们无法不去比较。既然如此，我们就应该努力对糟糕的“比较”免疫，并正确运用“比较”来优化决策。</p>
+<p>李嘉图的“比较优势”概念，解释了“为什么在一方拥有较另一方低的机会成本的优势下生产，贸易对双方都有利”。这一原理在个人决策中同样适用：<strong>找到自己的比较优势，是做出正确职业和资源配置决策的关键。</strong></p>
+<p>所以，以后谈起优势时，最好说“比较优势”。这是一句非常有用的决策指导。即使你觉得自己普通，也总能在某些领域找到比较优势，比如和邓亚萍比投篮，和姚明比打乒乓球。</p>
+<p>黑石创始人谈及职业决策时，强调的第一课是：发挥你的比较优势。他说，千万不要被一份工作牵着鼻子走，如果仅仅因为薪水高、福利好、地理位置好或给你大办公室等理由就接受它；你需要集中关注的是：能否在工作中发挥你的优势，尤其是你的比较优势。</p>
+<p>关于比较在决策中的应用，有一个简单法则：<strong>对于大数字，看比例；对于小数字，看绝对值。</strong></p>
+<p>例如买套500万的房子，假如你真喜欢，房价差个10万（2%），决策上不必纠结；而买瓶饮料，近处6块远处3块，差100%但绝对值只有3块，通常不值得为此专门跑远，除非你天天买。</p>
+<p>这一次决策算法，可以大幅降低我们在日常决策中的认知负担，避免陷入比较的泥潭。</p>
+<h2 id="四、建立自己的比较系统"><a href="#四、建立自己的比较系统" class="headerlink" title="四、建立自己的比较系统"></a>四、建立自己的比较系统</h2><p>一个优秀的决策者，往往是因为有一个成功的比较系统。概括而言，厉害的比较系统由下面的三个模块构成：</p>
+<ol>
+<li><strong>大处着眼（Think big）</strong>；</li>
+<li><strong>小处着手（Start small）</strong>；</li>
+<li><strong>快速进化（Learn fast）</strong>。</li>
+</ol>
+<p>假如我们将“比较”的概念引入到这个决策框架中，会产生深刻洞见：</p>
+<ul>
+<li><strong>大处着眼</strong>：是指长期来看，你应该选择一个大一点儿的“比较对象”；</li>
+<li><strong>小处着手</strong>：是指短期来看，你应该不要太频繁地去做微观比较；</li>
+<li><strong>快速进化</strong>：自我比较的目的是为了进化，而不是为了学习。</li>
+</ul>
+<h3 id="1-大处着眼"><a href="#1-大处着眼" class="headerlink" title="1. 大处着眼"></a>1. 大处着眼</h3><p>就长远而言，你应该高看自己一点儿。比如互联网的“百团大战”，大家起初都是以团购鼻祖高朋网（Groupon）为比较对象。最后跑出来的美团，早早切换了比较对象，如今市值也高达高朋网的一百多倍都不止。</p>
+<p>又如特斯拉，如果以传统汽车厂商为比较对象，就算把全行业的利润都拿来，也撑不住这么高的估值。但如果瞄准的是人工智能和新能源领域，特斯拉则充满了想象空间。</p>
+<p>在决策科学中，这被称为“参照框架重置”，可以彻底改变你的决策边界和机会空间。所谓的格局，以及想象力，都是建立在你对“比较对象”的选择基础之上的。</p>
+<h3 id="2-小处着手"><a href="#2-小处着手" class="headerlink" title="2. 小处着手"></a>2. 小处着手</h3><p>运动高手知道，在比赛中频繁地去看比分牌，不是高手所为。多么平坦的地面，拿放大镜去看都是沟沟坎坎；多么坎坷的路途，时间拉长了看也不定是一条直线。</p>
+<p>对于频繁的比较，会导致决策中的“噪音放大效应”，使我们对短期波动反应过度。</p>
+<p>如果天天都去比较，过于悲观的人会成为惊弓之鸟，做出过度保守的决策；过于乐观的人会成为掩耳盗铃的猴子，做出过度冒险的决策。在投资决策中尤为明显：许多投资者因频繁比较短期收益，而错过了长期复利的力量，过度关注他人的成功案例，往往导致投资决策中的从众效应和追涨杀跌。</p>
+<p>决策科学的一个关键原则是：波动是常态，优秀的决策应当筛选信号而非放大噪音。</p>
+<h3 id="3-快速进化"><a href="#3-快速进化" class="headerlink" title="3. 快速进化"></a>3. 快速进化</h3><p>决策系统需要不断进化，而非仅仅学习。快速学习、快速失败，都是围绕“自我比较”展开的决策优化机制。</p>
+<p>这样一来，就会发生一件有趣的事情：小尺度上的自我比较，会视波动为反馈，所以，不管是上涨还是下跌，是成功还是失败，就反馈的意义和价值而言是等价的，都是决策系统进化的养料。</p>
+<p>生物的进化并非追求最优，而是在比较中选出那个稍微好的。所以别总拿身边最好的人和事儿去折磨自己，专注于自我比较，小步快跑地进化。</p>
+<p>建立一个长短结合的决策比较系统：<strong>短期与自己比较，长期与标杆对标。<strong>这样，一个完整的“决策优化循环”就形成了</strong>飞轮效应</strong>。</p>
+<h2 id="五、回到开篇的问题"><a href="#五、回到开篇的问题" class="headerlink" title="五、回到开篇的问题"></a>五、回到开篇的问题</h2><p>如果你是一位女性，在三位男士的爱情中，你会选择哪一位？</p>
+<p>通过决策算法的视角，我们可以看到，这个问题本身就是对比较的误用。它让我们陷入虚假二分法：非此即彼的思维陷阱。</p>
+<p>爱情决策不应仅基于物质比较，而应综合考量内心感受、价值契合、成长潜力等多维因素。无论是100万的保时捷，还是1万的笔记本电脑，都只是表达爱的方式，而非决策的唯一依据。</p>
+<p>同样，生活中的许多重要决策——职业选择、生活方式、人际关系——都难以通过简单比较来定夺。当我们过度沉迷于比较时，往往失去了对决策本质的把握。</p>
+<p>比较是决策的工具，而非目的。明智地使用它，能帮助我们做出更好决策；盲目追随它，则会成为决策的万恶之源。</p>
+<p>所以，下次当你发现自己陷入无谓比较导致的决策困境时，不妨问问自己：这种比较对我的决策有何价值？它是否帮助我做出更明智的选择？</p>
+<p>好的比较，产生动力；差的比较，产生嫉妒。而嫉妒，总是会让一个人做出非理性的决策。</p>
+<p>当看到他人成功时，与其羡慕结果，不如关注他们的决策路径和方法。通过比较决策过程而非结果，我们能从他人身上学到真正有价值的东西。</p>
+<p>毕竟，决策的最终目标，是让我们成为更好的自己。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>比较，是决策的基础，也是万恶之源。好的比较产生动力；差的比较产生嫉妒，而嫉妒总会让人做出非理性决策。</li>
+<li>厉害的比较系统由三个模块构成：大处着眼、小处着手、快速进化。短期与自己比较，长期与标杆对标，形成完整的“决策优化循环”飞轮效应。</li>
+<li>当看到他人成功时，与其羡慕结果，不如关注他们的决策路径和方法。通过比较决策过程而非结果，我们能从他人身上学到真正有价值的东西。</li>
+</ol>
+<h2 id="用户留言"><a href="#用户留言" class="headerlink" title="用户留言"></a>用户留言</h2><h3 id="左星星"><a href="#左星星" class="headerlink" title="左星星"></a>左星星</h3><p>很多人跳槽时，喜欢把新工作的工资与当前工资做比较，认为加薪就是好事，但却忽略了工作的成长性、行业前景、自己的核心能力。投资者陷入追涨杀跌的泥潭，也常常是把股价的“当前状态”与“过去的高点”对比，而不是与公司的长期价值做比较。很多人把自己当下的生活与朋友圈里的“高光时刻”做比较，陷入焦虑，却从未想过这些对比本身是否合理。</p>
+<p>我们往往会被社会的单一评价体系束缚，比如考试成绩、学校排名、收入多少，而忽略了个人独特的竞争力。现实中最成功的人未必是全能型选手，而往往是在某个领域拥有突出比较优势的人。如果一个人总是跟错误的对象比较，他可能永远找不到自己的核心价值。</p>
+<p>正确的比较方式，应该是建立一个合理的参照框架。一个创业者应该把自己的成长放到十年的时间维度去看，而不是因为一两年的失败而全盘否定自己。学习新技能时，不要天天跟进度快的人比较，而是看自己是否每天都在进步。比较的目的不是为了满足虚荣心，而是为了找到改进方向，让自己变得更强。</p>
+<h3 id="魏红亮"><a href="#魏红亮" class="headerlink" title="魏红亮"></a>魏红亮</h3><p>我们天天处在比较之中，从小时候的“小明”比较到现在的同事“熊努力”，从比较学习到比较收入，将来可能还会比较孩子的学习……比较是一种常态，但我们要想一下比较了以后怎么办，多想一步就容易判断比较是否有意义了。既然是比较，就会有参照物，不同目的决定着要选择不一样的参照物。结婚的伴侣和伴娘是过来衬托新郎和新娘的，所以人员选择就要“其貌不扬”，否则就会喧宾夺主。任何一个爬树的猴子，向上看都是屁股，向下看都是脑袋。</p>
+<h3 id="白青"><a href="#白青" class="headerlink" title="白青"></a>白青</h3><p>高手应该建立自己的“比较系统”，概括为三模块：大处着眼（Think big）、小处着手（Start small）、快速进化（Learn fast）。大处着眼看长期，选择一个大一点的“比较对象”；小处着手看短期，不要太频繁地做微观比较；自我比较的目的是为了进化，而非学习。老喻在《好运》中的“幸福”模块同样介绍了比较系统，核心是抓主线。</p>
+<p>“古之成大事者，规模远大与综理密微，二者缺一不可。”——曾国藩。既能做大规划，又能做好小事情，即“大处着眼，小处着手”。</p>
+<h3 id="李艳"><a href="#李艳" class="headerlink" title="李艳"></a>李艳</h3><p>“比较”是个工具，不是最终目的。引入决策框架中：大处着眼，长期来看选择一个大一点的比较对象；小处着手，短期不要太频繁地做微观比较；快速进化，自我比较的目的是为了进化，而不是为了学习。当看到别人成功时，与其羡慕结果，不如关注他们的决策路径和方法。决策的最终目标，是让我们成为更好的自己。</p>
+<h3 id="幸福小松树"><a href="#幸福小松树" class="headerlink" title="幸福小松树"></a>幸福小松树</h3><p>“比较效应”来源于锚定效应和框架效应，往往导致双输。核心是找到自己的比较优势，这是做出正确职业和资源配置决策的关键。对于大数字看比例，对于小数字看绝对值。升级增加多维度比较：大处着眼是长期的参照框架重置；小处着手是短期不要放大波动噪音；快速进化是把成功和失败都作为决策系统进化的养料。短期与自己比较，长期与标杆对标，形成决策优化飞轮。通过比较决策过程而非结果，从他人身上学习真正有价值的东西。</p>
+<h3 id="鸿涛"><a href="#鸿涛" class="headerlink" title="鸿涛"></a>鸿涛</h3><p>人是社会动物，关注社会排名，天性爱比较；但不当的比较会产生嫉妒，让人做出非理性的决策。股市狂热中，比较会让人嫉妒周边人赚得多而失去应有的理性判断，最终众人被贪婪裹挟着一起迎来崩盘。应对的策略是通过转换比较目标而促进自己的成长：陷入竞争难题时，放眼长期、重置参照框架；当不自觉地频繁做微观比较时，专注于自我比较，鞭策自我不断进步。</p>
+<h3 id="Scott"><a href="#Scott" class="headerlink" title="Scott"></a>Scott</h3><p>因比较而产生嫉妒，这是万恶之源，这非常不应该。现在的社会是合作的社会，大部分人玩的并非零和游戏，不必因为别人优于自己，就视其为威胁、嫉妒他。相反，我们要视其为反馈，欣赏他人的优点，既而反思自己，让自己获得成长。如何反思？并非概叹一句要是我有他这种能力、这种背景、这种运气就好了，而是问自己是否需要这种优点，若答案是肯定的，就再问需要满足什么条件，才能使自己具备这种优点。去做！</p>
+<h3 id="王茂荣"><a href="#王茂荣" class="headerlink" title="王茂荣"></a>王茂荣</h3><p>比较在决策中有双重作用：它是决策的基础，也可能成为万恶之源。锚定效应、框架效应和比较效应会影响选择；相对剥夺感会让人产生嫉妒和不理性决策。应建立比较系统：大处着眼、小处着手、快速进化；短期与自己比较，长期与标杆对标；看到他人成功时，关注决策路径和方法而非结果。</p>
+<h3 id="Tony-to-ni"><a href="#Tony-to-ni" class="headerlink" title="Tony to ni"></a>Tony to ni</h3><ol>
+<li>更好的认识自己，将能够帮助你做出重要的决策，知道自己的比较优势、能力边界、长板和短板，在决策时抓住机会和避开风险。</li>
+<li>人是感性的动物，决策时往往并非全靠理性，保持情绪稳定，学会管理自己的情绪，不要在能力低的时候去做重大的决策。</li>
+<li>向有结果的人学习，但不是学习他的结果，学习他的过程，看到从过去到现在的路径。一个企业的成功是结果，要看的是真正产生结果的原因。</li>
+</ol>
+<h3 id="空"><a href="#空" class="headerlink" title="空"></a>空</h3><p>比较的决策系统：1.大处着眼：找到标杆，疯狂的效仿；2.小处着手：多关注决策质量，少关注决策结果；3.快速进化：在狭窄领域犯过所有可能的错误，你就是专家。</p>
+<p>我在期货界的标杆人物是理查德·丹尼斯，他发起的海龟交易在业界一直被广为流传。其培训的精髓是《海龟交易法则》所写的：建立自己的交易系统，多关注自己的交易系统，少关注交易结果。短期与自己比较，长期与标杆对标。</p>
+<h3 id="礼之贤士"><a href="#礼之贤士" class="headerlink" title="礼之贤士"></a>礼之贤士</h3><p>通过比较决策过程而非结果，我们能够从他人身上汲取真正有价值的经验。学生时代容易以为只要拥有优秀者的高智商就能取得同等成就，深入了解才发现，卓越并非仅源于智商，更在于科学高效的学习方法。善于科学合理分配时间和精力，清楚自身的优势与特长，不盲目与他人攀比，专注自己的擅长领域，才能取得优异成绩。</p>
+<h3 id="苏晓晓"><a href="#苏晓晓" class="headerlink" title="苏晓晓"></a>苏晓晓</h3><p>小时候父母经常拿我与其他家的孩子做比较，表面是为了激励，实际上深深打击了我的自信。父母的比较让人从小觉得自己不好，甚至觉得自己不值得被爱，长大后不知不觉继续用别人的标准衡量自己。海明威所说：“优于别人，并不高贵，真正的高贵应该优于过去的自己。”</p>
+<p>比较的陷阱让我们渴望被认可、被接纳，不自觉地用他人的成就来衡量自己。觉察时可以问：我是不是又在和别人比较？这种比较对我有帮助吗？我真的需要变成那样吗？如果这是我想要的，我该如何行动？把注意力从“别人有多好”转移到“我该如何变得更好”。</p>
+<p>停止比较并不是一蹴而就的事。每天都可能再次陷入比较的怪圈，但每一次觉察和反思，都是一次进步。试着把目光放回自己身上：今天的我是否比昨天更进步？是否更接近目标？是否更了解自己的内心？这种与自己比较的过程，才是真正的成长。优于过去的自己，才是真正的高贵。</p>
+<h3 id="李中杰"><a href="#李中杰" class="headerlink" title="李中杰"></a>李中杰</h3><p>初中时，物理老师告诉我：最优秀的人和自己比。从此，这句话成了我的座右铭。然而它的副作用是，我常陷入努力后的自我感动中，遇事爱钻牛角尖，明明用勺子挖沙子，还是满足于一个上午竟然用勺子挖出一个小坑。最后遇到障碍就跨不过去，天天满足于表演式的努力，而别人早已跨越这个阶段。</p>
+<p>费曼说过：“The problem cannot be solved at the level it was created.”缺乏外部的信息输入，人很难自发地更换视角。别人提出什么解法，对困在问题中的人来说是帮助；因此与他人比较是有意义的。但要警惕比较时的嫉妒：别人做成一件梦寐以求的事，不应只问为什么不是我，而要问它是怎么做到的，有什么值得借鉴。</p>
+<h3 id="清清山水"><a href="#清清山水" class="headerlink" title="清清山水"></a>清清山水</h3><p>关于比较优势，在决策中的应用有一个简单法则：对于大数字，看比例；对于小数字，看绝对值。比如买500万的房子，房价差10万（2%）不必纠结；买瓶饮料，近处6块远处3块，绝对值只有3块，通常不值得专门跑远。</p>
+<h3 id="元气小土"><a href="#元气小土" class="headerlink" title="元气小土"></a>元气小土</h3><p>没有比较，就没有伤害。比较可以让我们看到差异，但是胡乱比较就不止差异了，而是心理的扭曲！在决策中使用比较，主要是在大的领域参照，小的地方着手落实，快速完成进化；短期跟自己比较，长期向标杆看齐，才是“飞轮”转动的成长。邻居家的小孩再好，也要适当比较。</p>
+<h3 id="阿繁达1043"><a href="#阿繁达1043" class="headerlink" title="阿繁达1043"></a>阿繁达1043</h3><p>如何利用好的比较提供前进动力，同时避免差的比较让我们陷入嫉妒、悔恨甚至糟糕的决策陷阱？高瓴资本的张磊说：“能被火烧掉的东西都不重要，真正值钱的是一个人的知识、能力和价值观。”能被火烧掉的钱和有形资产都可以瞬间拥有，更应重视结果之后的过程。</p>
+<p>知识、能力和价值观无法瞬间到达一定水平，必须重视整个过程，产生心流体验。发挥自己的比较优势，把力量集中在自己的长板上。长期看要对标一个高不可攀的领军人物，短期只需要跟自己比较，今天比昨天进步一点点。人要找到那个无论如何都想实现的人生大目标，把所有决策向它对齐。</p>
+<h3 id="得到学生"><a href="#得到学生" class="headerlink" title="得到学生"></a>得到学生</h3><p>理性运用比较工具，警惕单一维度陷阱，聚焦长期对标与自我迭代，区分绝对与相对价值，避免嫉妒驱动，通过科学比较优化资源配置，最终以成长而非竞争为核心目标。</p>
+<h3 id="FF"><a href="#FF" class="headerlink" title="FF"></a>FF</h3><p>成功的关键不在于比别人更强，而在于找到最适合自己的路。做决策时，抬头关注他人的思维方式和方法论，以鉴他人的经验；同时低头专注于自己的目标和方向。建立合理的对比基准，避免被外界干扰，才能真正做出符合自身利益的选择。不过度比较，每个人的背景、资源和机遇都不同，盲目的比较只会带来焦虑。真正重要的是决策过程，提炼决策逻辑，而不是单纯羡慕结果。</p>
+<h3 id="陈宇星"><a href="#陈宇星" class="headerlink" title="陈宇星"></a>陈宇星</h3><p>大处着眼，长期来看选择一个大一点儿的比较对象；小处着手，短期来看不要太频繁地做微观比较；快速进化，自我比较的目的是为了进化，而不是为了学习。人生最妙的比较，不该是“我比他多什么”，而是“我比昨天的自己更清醒”。</p>
+<h3 id="水门"><a href="#水门" class="headerlink" title="水门"></a>水门</h3><p>比较是人生最痛苦的一件事，底层是因为人有着无限的欲望。但那些能够成事的人，或多或少都战胜了自己的一些本能。与别人比较，我们会关注形；与自己比较，我们会关注内。今天是否比昨天更好？人与其容易放弃，也和比较有关，总想着一下子做成什么事情，而不去认真享受这个过程。当做了一段时间没有效果以后，就容易选择放弃。</p>
+<h3 id="我是谁，我要去何方"><a href="#我是谁，我要去何方" class="headerlink" title="我是谁，我要去何方"></a>我是谁，我要去何方</h3><p>我们总是不自觉地进行各种比较，比较能让我们清楚自己的位置，好的比较产生动力，差的比较产生嫉妒。应该建立比较系统：大处着眼，长期目标要高点，不要低估长期的力量；小处着手，从具体的一件件小事做起，把每件小事做好就是对未来做好的回报；快速进化，小尺度上进行自我比较，把每一次成功或失败都作为一次反馈，不断迭代进步。长期坚持这套系统并不容易，时刻要记住：不要高估短期的收益，更不要低估长期的收益。</p>
+<h3 id="九吉"><a href="#九吉" class="headerlink" title="九吉"></a>九吉</h3><p>每个人条件不一样，活法不一样，一样的只有自己，所以能比较的只有自己。通过结果反馈认知，认知再指导实践，小步迭代，大方向正确，也不要急于求成，即使不出结果，也要做好每天的自己。</p>
+<h3 id="victory"><a href="#victory" class="headerlink" title="victory"></a>victory</h3><p>不患寡而患不均，就是在人因为比较产生的嫉妒。当然比较用的好也能把人提高到另外一个高度，比如乔帮主说出的那句“你是要卖一辈子糖水，还是和我去改变世界”，这就是大处着眼的比较。执行过程中需要低头走路，于是要小处着手，只要每天都在进步就是最好的，所谓日拱一卒功不唐捐。最后要在做事的过程中自我进化，多总结多复盘，把优秀的经验固化。比较是人类生存发展出来的重要工具，工具虽好，但最重要的是我们怎么用。</p>
+<blockquote>
+<p>以上留言由作者筛选显示</p>
+</blockquote>
+<hr>
+<p><a href="/book/decision-algorithm/083/">← 083｜面对冲突：为什么你要遵循“幸福者退让原则”？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/085/">085｜恋爱决策：遇到渣男后你是否还相信男人？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

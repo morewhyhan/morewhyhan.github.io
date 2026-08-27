@@ -1,0 +1,380 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>015｜彩票的诱惑：怎样寻找彩票之外的概率套利机会？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》015：彩票的诱惑：怎样寻找彩票之外的概率套利机会？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="015｜彩票的诱惑：怎样寻找彩票之外的概率套利机会？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/015/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》015：彩票的诱惑：怎样寻找彩票之外的概率套利机会？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:44.920Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/015/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '015｜彩票的诱惑：怎样寻找彩票之外的概率套利机会？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">015｜彩票的诱惑：怎样寻找彩票之外的概率套利机会？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">015｜彩票的诱惑：怎样寻找彩票之外的概率套利机会？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>来源：老喻·决策算法100讲</p>
+<p>音频时长：12:48</p>
+<p>以下依据 PDF 页面原图逐段人工视觉阅读整理。</p>
+</blockquote>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>喻老师，你好。</p>
+<p>我是老喻，欢迎回到《决策算法》课。</p>
+<p>这一讲，我们来讲彩票的诱惑。相信对于加入《决策算法》课的同学来说，“买彩票不可能赚钱”，是基本的常识。</p>
+<p>我们前面的课程也反复说过，从数学上来讲，彩票是期望值为负的游戏，根本不值得参与。</p>
+<p>然而有趣的是，历史上的确有一些人，通过买彩票赚到了钱，甚至实现财务自由。他们是怎么做到的？</p>
+<p>注意，我们这里要说的，可不是那些运气好、突然中了大奖的人，那种天上掉馅饼的好运，没什么研究价值；我们要说的，是一些基于数学原理，用系统的方法，从彩票中赚到了确定性收益的人。</p>
+<p>讲这些人的故事，当然不是为了证明，买彩票可以赚钱——甚至可能正相反，听了他们的故事，你会更懂得彩票为什么是财富的陷阱。</p>
+<p>这些人的故事更大的价值在于，让我们看清，掌握决策算法的高手，是如何理性思考、坚决行动，把概率上的可能性，变成收益上的确定性的。</p>
+<h2 id="一、伏尔泰的套利"><a href="#一、伏尔泰的套利" class="headerlink" title="一、伏尔泰的套利"></a>一、伏尔泰的套利</h2><p>我们要讲的第一个通过彩票赚到钱的决策高手，是伏尔泰。</p>
+<p>没错，就是你知道的那个伏尔泰，法国著名的启蒙思想家和文学家。</p>
+<p>1729 年，35 岁的伏尔泰结识了一位年轻的数学家——拉孔达明（Charles Marie de La Condamine）。</p>
+<p>当时，法国财政部为了刺激国债销售，推出了一种与国债挂钩的彩票。拉孔达明发现，这种彩票的设计存在一个漏洞：无论国债的面值大小，每张国债都可以兑换一张彩票。由于大奖的金额是固定的，购买大量小面值的国债可以提高中奖概率，而成本却相对较低。</p>
+<p>于是，伏尔泰与拉孔达明又找了一些有钱人，组建了一个小团伙，大量购买小面值的国债，从而获得了大量的彩票。他们通过这个策略多次中奖，赢得了巨额奖金。</p>
+<p>据历史学家分析，伏尔泰从中分到的钱，差不多有 50 万里弗尔，至少相当于今天的数百万美元。这笔钱，让伏尔泰实现了财务自由，能够专注于哲学和文学创作。</p>
+<h2 id="二、彩票为什么会有套利机会？"><a href="#二、彩票为什么会有套利机会？" class="headerlink" title="二、彩票为什么会有套利机会？"></a>二、彩票为什么会有套利机会？</h2><p>通常来讲，彩票的原理，是利用头奖的吸引力，设计出耀眼的发财梦，吸引人们去买期望值为负的彩票。</p>
+<p>例如，某种彩票游戏，发行 10000 张彩票，其中只有一张中奖，奖金 5000 元，其他都是空的。每张彩票的成本是 1 元，理论上，每买一张彩票，就亏了 0.5 元。</p>
+<p>更直观一点儿，你和另外 9999 个人一起，把所有彩票全部买光，100% 锁定大奖，然后大家平均分钱，结果是每个人亏掉 0.5 元。</p>
+<p>在伏尔泰的故事里，那个年代大家对概率的理解还不够深，所以财政部长在设计彩票游戏时，就犯了数学错误，导致奖金池比彩票成本还要高，以至于让伏尔泰和他的同伴们找到了漏洞。</p>
+<p>但是，现在大家都变聪明了，彩票设计者不可能再犯这种错误了。</p>
+<p>那么，还有什么彩票套利的机会吗？</p>
+<p>有。</p>
+<p>我们继续上面 10000 张彩票、头奖 5000 元的模拟游戏。</p>
+<p>如果该彩票游戏是即开即中，你在旁边蹲着，发现开了 5000 张，头奖都还没出来，这时候期望值就变成了 0：</p>
+<blockquote>
+<p>4999&#x2F;5000×0 + 1&#x2F;5000×5000 - 1 &#x3D; 0</p>
+</blockquote>
+<p><strong>在这个临界点，奖金总额等于剩余彩票购买总额。</strong></p>
+<p>也就是说，过了这个临界点，你买下剩余所有彩票，就会稳赚。</p>
+<p>现代社会，靠彩票赚钱，大多是源于类似原理。</p>
+<h2 id="三、杰瑞和玛姬的-Winfall-套利"><a href="#三、杰瑞和玛姬的-Winfall-套利" class="headerlink" title="三、杰瑞和玛姬的 Winfall 套利"></a>三、杰瑞和玛姬的 Winfall 套利</h2><p>2022 年，曾执导《穿 Prada 的恶魔》的导演大卫·法兰科，拍摄了一部电影，讲述了一对美国退休老夫妇靠彩票赚大钱的真实故事，电影名为《杰瑞和玛姬生活阔绰》。</p>
+<p>杰瑞和玛姬这对老夫妻玩的，是一种叫“Winfall”的彩票，其规则如下：</p>
+<ul>
+<li>玩家从 1 到 49 的数字中选择 6 个，如果 6 个数字全猜中，即可赢得头奖，独得当期奖金。</li>
+<li>500 万美元是一个分界线，如果奖金额累积到 500 万美元，却依然没有人全中，则会把奖金重新分配到次级奖项，也就是猜中 3～5 个数字的奖项中，从而显著提高这些奖项的奖金金额。</li>
+</ul>
+<p>如此一来，Winfall 彩票的独特规则，会导致在某个时间段，奖金池总额大于彩票购买成本。用数学语言来说，就是：期望值为正。</p>
+<p>这是一个数学上很明显的漏洞，但只有极少人发现并靠此发财。</p>
+<p>其中有一组人就是密歇根州杰瑞和玛姬。</p>
+<p>在玩 Winfall 的 9 年中，杰瑞和玛姬夫妻俩和他们的团队赢得了总计近 2700 万美元（约合人民币 1.7 亿元左右），他们用这笔钱翻新他们的房子，并用来支付孙子孙女及曾孙女的生活费和学费。</p>
+<p>杰瑞和玛姬赚钱的秘密，尽管数学原理很简单，但是他们从决策到行动的整个框架，几乎是教科书式的，值得仔细研究。</p>
+<p>杰瑞和玛姬的赚钱之路是这样的：</p>
+<h3 id="第一步：发现“期望值”为正的概率套利机会"><a href="#第一步：发现“期望值”为正的概率套利机会" class="headerlink" title="第一步：发现“期望值”为正的概率套利机会"></a>第一步：发现“期望值”为正的概率套利机会</h3><p>Winfall 彩票跟所有彩票一样，整体的期望值当然是负的，只有当期没有出现头奖的时候，期望值才会转正。所以出手的时机非常重要。</p>
+<p>杰瑞并不是天才，但他一辈子痴迷数学，退休之后仍然时常琢磨数学题。他是通过缜密的计算，发现了 Winfall 彩票的这个漏洞，而不是运气好。</p>
+<p>但光发现机会会还不够。</p>
+<h3 id="第二步：验证概率假设"><a href="#第二步：验证概率假设" class="headerlink" title="第二步：验证概率假设"></a>第二步：验证概率假设</h3><p>杰瑞发现机会之后，第一次就下注了 2200 元，彩票是一美元一张，他买了 2200 张彩票。有点可惜，第一次他获得的奖金加起来是 2150 美元，略低于他的成本。</p>
+<p>如果只是碰运气的人可能会止步于此。但杰瑞知道，期望值只是期望值，而不是保证，大数定律要足够多的重复才会显现。他又等下一次下注的机会。</p>
+<p>当发现 Winfall 彩票又一次没开出头奖的时候，他花更多的钱，买了 3400 美元的 Winfall 彩票。这一次他总共获得了 6300 美元。再之后，他更加大胆，下一次又下注了 8000 美元，赚了 15700 美元。</p>
+<p>这就是“经证实的认知”。在验证了自己的计算逻辑是正确的之后，他开始正式行动了。</p>
+<h3 id="第三步：大规模重复"><a href="#第三步：大规模重复" class="headerlink" title="第三步：大规模重复"></a>第三步：大规模重复</h3><p>其实，刚开始杰瑞只是偷偷自己买，瞒着老婆。反复验证过方法有效之后，他才告诉玛姬，拉上她一起干。</p>
+<p>后来，他们不光是自己买，还成立了公司，拉着亲朋好友投资入股，一起发财。</p>
+<p>买一张彩票很简单，但是大规模买彩票还真不是一个轻松的活。</p>
+<p>最初的几年，他们是在家附近买，比较方便，但后来密歇根州停止了 Winfall 彩票，他们只能去马萨诸塞州买类似的彩票，连续 6 年，每次开车 14 小时，往返 900 英里。</p>
+<p>买完彩票，还要找中奖号码。他们一次买彩票，就是数十万，然后租一间汽车旅馆，连续 10 天，每天花 10 小时整理。别说是对两个退休老人，对于年轻人来说，这也是不小的工作量。</p>
+<p>但是，对他们来说，辛苦是值得的。</p>
+<p>这就是：<strong>先形成认知，再证实认知，最后大力出奇迹。</strong></p>
+<p>真实世界中，有些事情看起来非常不确定，但是从概率的角度看，却非常有确定性。杰瑞和玛姬，就是看到了这样的确定性。</p>
+<p>当然，这种机会极其罕见，所以，别在彩票和任何期望值为负的赌博上浪费机会。包括那些被包装为投资的赌博，以及所有你不懂的“机会”。</p>
+<p>但是，偶尔，这种隐藏的机会的确也会出现，怎么抓住这样的机会？就看你是否有系统的思考，坚决的行动，和持续的努力。</p>
+<h2 id="四、彩票发行者的“聪明”设计"><a href="#四、彩票发行者的“聪明”设计" class="headerlink" title="四、彩票发行者的“聪明”设计"></a>四、彩票发行者的“聪明”设计</h2><p>彩票对发行者而言，的确是非常“聪明”的设计。</p>
+<p>有次，有人问我，假如你需要在路边摆摊儿赚钱，你会做啥生意？</p>
+<p>我回答说：我可能会摆一个现场抽奖即可兑奖的彩票摊。</p>
+<p>当然，不管是个人还是机构，都不可能随便做彩票的生意。</p>
+<p>但是很多平台，其实是利用了“彩票”的原理：</p>
+<p>对于参与者和创造者，平台往往会通过树立成功典型，让更多的人来开店、做直播、创作内容。</p>
+<p>对于消费者，有些平台也喜欢采用抽奖等机制，来刺激消费。</p>
+<p>技术和商业是社会发展的主要力量，所以，我们不能简单评价平台在引诱我们玩负期望值的游戏。但是，假如我们打算参与其中，<strong>一定要计算胜率、赔率和期望值，以及谨慎选择时机。</strong></p>
+<p>更重要的是，现实世界的各种平台，往往有各种商业设定和技术规则，参与者可以通过实践、获取数据、运营，来实现正的期望值。</p>
+<p>就像我认识的一家公司，他们主要做化妆品，几个合伙人都是技术出身，他们主要在一个电商平台上运营，工作的关键，是发现规则的机会，并通过投放、运营来变现。</p>
+<p>在某种意义上，和我们上面分享的彩票中奖原理也有些像。</p>
+<p>现实世界不是买彩票，但是也充满了不确定性和隐藏的机遇。上面的精彩案例，给我们带来以下“概率套利”的启发：</p>
+<ol>
+<li>通过概率计算，发现正期望值的套利机会。</li>
+<li>利用人们对不确定性的厌恶所带来的错误定价和隐藏机会。</li>
+<li>通过套利者的有组织活动，大规模复制上面的套利机会。</li>
+</ol>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>几百年前，亚当·斯密就曾经这样评价彩票购买行为：“轻视风险和一厢情愿地盼望成功”是人类的普遍倾向。</p>
+<p>专家们对于彩票，大致持有略带调侃的观点：彩票是一种对数学不好的人所收的智商税。</p>
+<p>不过这一讲的最后，我倒是想退回来一点。倒也没必要仅从期望值为负这一点，来嘲讽彩票参与者。</p>
+<p>博尔赫斯曾经说，彩票是世界秩序中插进的一种偶然性。我很喜欢这个略带诗意的犀利说法。</p>
+<p>如果你有机会像杰瑞和玛姬一样，发现期望值为正的机会固然很好，这是理性决策的胜利。</p>
+<p>然而，有节制地用很少的钱买点儿彩票玩玩，也未尝不可。我们在上周的问答中讲过，我们每个人来到世界上，都相当于中了一个宇宙彩票，这本身就是一件很浪漫的事儿。</p>
+<p>未来某些特殊的日子，也不妨用一张小小的彩票，给自己一个小小的浪漫。哪怕这个浪漫从概率的角度而言，非常渺茫，但是效用已经达到了。</p>
+<p>想想看，还有什么比一两块钱的彩票更便宜的白日梦产品？</p>
+<p>只是，千万不要沉溺其中。永远别去和数学定律作对。</p>
+<p>更重要的是，我们要时刻观察所在的世界，去找寻机遇，通过计算和努力，发现稳定的概率套利机会。</p>
+<p>人的一生，就像是唯一的一张彩票，好好珍惜吧。</p>
+<p>我是老喻，我们下一讲再见。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>大多通过买彩票赚到钱的人，都是基于类似原理：等待奖金总额等于剩余彩票购买总额的临界点出现，过了这个临界点，期望值转正，可能赚钱。</li>
+<li>杰瑞和玛姬的赚钱之路：先形成认知（发现“期望值”为正的概率套利机会），再证实认知，最后大力出奇迹。</li>
+</ol>
+<h2 id="用户留言（原图精选）"><a href="#用户留言（原图精选）" class="headerlink" title="用户留言（原图精选）"></a>用户留言（原图精选）</h2><h3 id="左星星"><a href="#左星星" class="headerlink" title="左星星"></a>左星星</h3><p>无论是伏尔泰发现的规则漏洞，还是杰瑞对彩票规则的把握，他们都在日常的细节中捕捉到了关键的信息。这提醒我们需要培养敏锐的观察力，在生活中要学会关注规则的边界和例外，思考如何在常规之外找到新的可能性。</p>
+<p>其次，我们需要懂得进行小规模尝试。杰瑞一开始下注的金额并不大，他通过实践验证了自己的假设后，才逐步放大操作规模。在日常生活中，这种策略同样重要。无论是学习新技能、探索职业机会还是尝试新的投资方式，小规模试错不仅可以降低成本，还能积累经验。</p>
+<p>另外，我们还要有系统化的执行能力。杰瑞和玛姬的故事表明，即使是正确的策略，也需要大量的重复操作才能发挥作用。现实生活中，很多人缺乏的不是策略，而是系统化执行的耐力和决心。例如，在职场中持续提升某项技能，在健康管理中长期坚持某种锻炼方式，这些都需要一种“做时间的朋友”的心态。</p>
+<p>生活中，虽然大多数人不会依赖彩票套利来实现财富增长，但这种“概率套利”的思维可以应用于更广泛的领域。从分析生活中的不确定性，到制定有效的策略，再到执行和调整，我们每个人都可以用这种方式寻找属于自己的机会。</p>
+<h3 id="鸿涛"><a href="#鸿涛" class="headerlink" title="鸿涛"></a>鸿涛</h3><p>杰瑞和玛姬的赚钱之路仍然是投资正期望值的套利机会，仍然是做大概率盈利的事情。然后在稍加验证后，开始大规模复制这些的套利机会。这种投资的边界是能计算出期望值为正的临界点，能力圈是要具备发现定价失衡机会的计算和努力能力。</p>
+<p>——以上留言由作者筛选显示。</p>
+<hr>
+<p><a href="/book/decision-algorithm/014/">← 014｜买房的逻辑：房子还是投资的好选择吗？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/016/">016｜价值投资：为什么巴菲特你学不会？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>097｜平常心：决策高手的最高境界 | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》097：平常心：决策高手的最高境界">
+<meta property="og:type" content="website">
+<meta property="og:title" content="097｜平常心：决策高手的最高境界">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/097/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》097：平常心：决策高手的最高境界">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:46.207Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/097/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '097｜平常心：决策高手的最高境界',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">097｜平常心：决策高手的最高境界</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">097｜平常心：决策高手的最高境界</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>来源：老喻·决策算法100讲</p>
+</blockquote>
+<h2 id="老喻亲述"><a href="#老喻亲述" class="headerlink" title="老喻亲述"></a>老喻亲述</h2><p>你好，我是老喻，欢迎来到《决策算法》课。</p>
+<p>1965 年，日本围棋界发生了一件大事：23 岁的林海峰挑战传奇名人坂田荣男。几乎所有人都认为林海峰绝无胜算。第一局落败后，他深深自我怀疑，问自己为什么总是在关键时刻发挥不出来。</p>
+<p>失去自信的林海峰去请教恩师吴清源。吴清源说：“你现在最需要的是要有一颗平常心。”接着郑重写下“平常心”三个字送给弟子。</p>
+<p>林海峰重返赛场，内心平静如湖面，连赢三局，最终以 4 比 2 击败坂田荣男，成为日本围棋史上最年轻的名人。之后他坦言：“再也没有为输棋而难过。”</p>
+<p>吴清源解释，从棋艺角度看，他和对手几乎没有区别，胜负全靠精神因素。他赛前反复研读老子《道德经》，把道家哲学融入围棋，最后总结成“平常心”。</p>
+<p>现在，投资和体育领域的顶尖高手也都强调平常心。李录曾把投资生动地比作高尔夫：上一杆打出好成绩，下一杆也要完全忘记它，因为每一杆都是独立决策；情绪一波动，成绩就会变糟。</p>
+<p>平常心看似平凡，却无比稀缺；看似简单，却很难真正领悟。它究竟只是心态稳定、情绪控制，还是一种更深的哲学境界？为什么叫“平常”？我们又该如何获得它？</p>
+<h2 id="一、平常心是一套贯穿决策全过程的方法"><a href="#一、平常心是一套贯穿决策全过程的方法" class="headerlink" title="一、平常心是一套贯穿决策全过程的方法"></a>一、平常心是一套贯穿决策全过程的方法</h2><p>平常心并不是一种单一状态，而是一个贯穿决策全过程的系统方法论。</p>
+<p>每个决策都要经历三个阶段：决策思考、决策执行、决策结果。每个阶段都有不同的平常心含义，这也是为什么很少有人能把它解释清楚，普通人也很难真正拥有它。</p>
+<h3 id="1-决策思考：彻底的理性"><a href="#1-决策思考：彻底的理性" class="headerlink" title="1. 决策思考：彻底的理性"></a>1. 决策思考：彻底的理性</h3><p>道家说：“知人者智，自知者明。”顶尖高手和围棋 AI 下棋时都很沉稳。这不只是情绪稳定，而是他们有足够的计算、克制和自知之明。</p>
+<p>段永平说，最重要的原则是“本分”。这不是一般意义上的道德修养，而是承认自己的无知，不做过多假设，回到第一性原理，以理性的态度看问题。简单说，就是“了解你自己”：把资源用好，不欺骗自己。</p>
+<h3 id="2-决策执行：专注当下、情绪稳定"><a href="#2-决策执行：专注当下、情绪稳定" class="headerlink" title="2. 决策执行：专注当下、情绪稳定"></a>2. 决策执行：专注当下、情绪稳定</h3><p>禅宗有句话：“吃饭时吃饭，睡觉时睡觉。”意思是执行时完全沉浸其中。</p>
+<p>压力会让人的计算能力大幅下降。有些人在压力下只能发挥 20%，高手却能保持 90% 以上。执行阶段的平常心，就是进入心流，把注意力全部放在眼前的事情上，不让其他东西干扰。</p>
+<h3 id="3-决策结果：坦然接受结果"><a href="#3-决策结果：坦然接受结果" class="headerlink" title="3. 决策结果：坦然接受结果"></a>3. 决策结果：坦然接受结果</h3><p>要学会打“无记忆的球”：接受不确定性，也接受努力没有回报、统计上正确的选择最终却落空的结果。</p>
+<p>价值投资者知道，市场短期可能对自己不利，长期合理的决策才会兑现。不应因为短期亏损而怀疑自己的方法，也不应因为一次幸运的盈利而沾沾自喜。人生和决策从根本上都带有随机性。</p>
+<p>真正的平常心，是在三个阶段都保持清晰、专注与平和。任何一个阶段失衡，都可能导致失败。</p>
+<h2 id="二、思考阶段：对智力诚实"><a href="#二、思考阶段：对智力诚实" class="headerlink" title="二、思考阶段：对智力诚实"></a>二、思考阶段：对智力诚实</h2><p>决策思考阶段的平常心，不只是情绪稳定，更是对智力的诚实，本质上就是“理性思考的极致”。</p>
+<p>“道可道，非常道。”真正的“道”是尊重现实和自然规律，而不是额外添加的规则、教条。很多人会把自己的假设和期待加进现实，试图制造确定性，最后变成自我欺骗。真正的高手会回到“道”，回到事情的本质。</p>
+<h3 id="1-拥抱无知，摒弃傲慢"><a href="#1-拥抱无知，摒弃傲慢" class="headerlink" title="1. 拥抱无知，摒弃傲慢"></a>1. 拥抱无知，摒弃傲慢</h3><p>苏格拉底说：“我唯一知道的就是我一无所知。”老子说：“大智若愚。”</p>
+<p>做重大决策前，可以问自己：我究竟了解多少？有哪些盲点？最聪明的对手会质疑我什么？诚实地知道自己知道什么、不知道什么，是理性决策的起点。</p>
+<h3 id="2-用第一性原理，而不是类比推理"><a href="#2-用第一性原理，而不是类比推理" class="headerlink" title="2. 用第一性原理，而不是类比推理"></a>2. 用第一性原理，而不是类比推理</h3><p>丢掉表面假设，回到事实和基本元素。人的大脑会用过去经验预测未来，因而容易产生确认偏误。不要只问“别人怎么做”，而要问：“从第一性原理出发，什么最合理？”</p>
+<h3 id="3-用概率思维，而不是二元判断"><a href="#3-用概率思维，而不是二元判断" class="headerlink" title="3. 用概率思维，而不是二元判断"></a>3. 用概率思维，而不是二元判断</h3><p>阿尔法狗击败人类棋手，不是把每一步简单判断成好或坏，而是评估每个落子的概率。多数决策都处于不确定环境中，应该问的不是“这个决定对不对”，而是“它正确的概率有多大？如果错了，损失有多严重？”</p>
+<p>决策思考阶段的平常心，是“超然的理性”加上“诚实的态度”：选择自己有优势、有专业基础、有独特洞见的战场，依据现实出牌。最高境界是回到“道”，尊重事实，诚实地对待世界和自己，创造真实价值。</p>
+<h2 id="三、执行阶段：行动的艺术与自我控制"><a href="#三、执行阶段：行动的艺术与自我控制" class="headerlink" title="三、执行阶段：行动的艺术与自我控制"></a>三、执行阶段：行动的艺术与自我控制</h2><p>顶尖高手常说：“比赛从来不是输给了对手，而是输给了自己。”很多失败并不是判断错，而是执行时 panic、犹豫或失控。</p>
+<p>吴清源讲过孔子的话：“做一件事之前要考虑两次，只考虑一次容易轻率行事，但考虑三次又会心生疑虑，什么也做不成。”高手会放下对结果的执着，把注意力放回行动本身。</p>
+<p>梅尔·罗宾斯的“五秒法则”是：面对压力、焦虑和拖延时，在心里倒数“5、4、3、2、1”，然后立刻行动。大脑从焦虑、恐惧到情绪失控大约需要几秒；如果负面情绪发酵超过五秒，就可能压倒理性。在倒数结束前行动，可以切断恐惧的发酵，重新找回理性。</p>
+<p>篮球运动员迈克尔·乔丹罚球前常有一套固定的小动作，给自己几秒钟回到平静，重新回到当下。</p>
+<p>练习方法：</p>
+<ol>
+<li>面对压力、犹豫，立即在心中倒数五秒；</li>
+<li>数到“一”时不再拖延，果断行动；</li>
+<li>反复训练形成习惯，让大脑自动用行动取代犹豫。</li>
+</ol>
+<p>顶尖高手并不是天生勇敢，而是学会了驾驭压力。记住：5、4、3、2、1。</p>
+<h2 id="四、结果阶段：尘埃落定后的坦然"><a href="#四、结果阶段：尘埃落定后的坦然" class="headerlink" title="四、结果阶段：尘埃落定后的坦然"></a>四、结果阶段：尘埃落定后的坦然</h2><p>无论结果如何，都要保持平静和清晰，做到“不以物喜，不以己悲”。</p>
+<p>最致命的错误，是让成功或失败定义自己，执着于维护自我形象，不肯承认失败，甚至为了证明自己而继续投入。</p>
+<h3 id="1-把结果当作人生礼物"><a href="#1-把结果当作人生礼物" class="headerlink" title="1. 把结果当作人生礼物"></a>1. 把结果当作人生礼物</h3><p>不要只问“为什么我努力了却没有成功”，而要问：“在当时的信息和条件下，我有没有作出最正确的决策？”长期人生结果，是一系列决策的复利，而不是某一次结果。</p>
+<p>丹尼尔·奈格拉努（Daniel Negreanu）是丹麦世界冠军级扑克选手。他习惯评估决策，而不是只看结果：即使输了，只要当时作出了概率上最优的决定，也算好决策；即使赢了，如果是靠运气，也要承认“今天我作了错误的决定，需要改进”。</p>
+<h3 id="2-建立自己的“结果档案”"><a href="#2-建立自己的“结果档案”" class="headerlink" title="2. 建立自己的“结果档案”"></a>2. 建立自己的“结果档案”</h3><p>投资者瑞·达利欧会记录决策原因、预期与实际结果。长期复盘后，会发现短期波动只是水面上的涟漪。系统复盘能帮助自己从结果中抽离出来。</p>
+<h3 id="3-告诉自己一切终将过去"><a href="#3-告诉自己一切终将过去" class="headerlink" title="3. 告诉自己一切终将过去"></a>3. 告诉自己一切终将过去</h3><p>花开花落，云卷云舒。让自己随流而行，任其漂流。结果阶段就是接受一切、进行复盘，但不要把时间和精力浪费在自我消耗上。</p>
+<h2 id="五、三个阶段合在一起"><a href="#五、三个阶段合在一起" class="headerlink" title="五、三个阶段合在一起"></a>五、三个阶段合在一起</h2><p>思考阶段的理性清晰给出方向；执行阶段的专注坚持让自己不退缩；结果阶段的平静接受，使自己在任何风暴中都能保持内心安稳。</p>
+<p>人生像一盘围棋：棋盘之外的命运无法完全控制，但可以把每一步棋下好。</p>
+<p>美国哲学家纳斯鲍姆说：“成为一个好的人，就是要有一种对世界的开放性，一种信任自己难以控制的无常事物的能力。”这正是决策高手的平常心。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>平常心并不是一种单一状态，而是一个贯穿决策全过程的系统方法论。</li>
+<li>在决策的每个阶段，平常心含义不同：<ul>
+<li>思考阶段：彻底理性；</li>
+<li>执行阶段：专注于当下、情绪稳定；</li>
+<li>结果阶段：坦然接受结果。</li>
+</ul>
+</li>
+<li>纳斯鲍姆说：“成为一个好的人，就是要有一种对世界的开放性，一种信任自己难以控制的无常事物的能力。”</li>
+</ol>
+<h2 id="PDF-内用户留言"><a href="#PDF-内用户留言" class="headerlink" title="PDF 内用户留言"></a>PDF 内用户留言</h2><h3 id="左星星"><a href="#左星星" class="headerlink" title="左星星"></a>左星星</h3><p>平常心不是温柔忍耐，而是强大的主动性。真正有平常心的人不是没有情绪，而是在关键时刻能从情绪洪流中抽身，把自己拉回理性、专注和坦然。平常心是一套完整的方法论，不是防守，而是进攻姿态：承认不确定、世界复杂和局部随机，依然用当下所有能力走出最有力的一步。它依靠专业主义和决策系统训练，不是单纯的性格。</p>
+<h3 id="白青"><a href="#白青" class="headerlink" title="白青"></a>白青</h3><p>曾国藩说：“敬字、恒字二端，是彻始彻终工夫。鄙人生平欠此二字，至今老而无成，深自悔憾。”这里的“敬”是敬天悯人、尊重常识和积累、尊重事情本身，不走捷径，彻底清醒诚实。</p>
+<p>Annie Duke 的《Thinking in Bets》提醒我们，决策质量不能完全由结果判断，扑克式思维要区分运气、技能、噪声、决策和结果，谨慎对待信息，把决策技能和运气拆开。</p>
+<h3 id="美君"><a href="#美君" class="headerlink" title="美君"></a>美君</h3><p>即使面对重要且紧急的事，也要保持平常心：情绪稳定、沉着冷静、理性客观、专注坚定、坦然自若。危机时不慌张，是因为手里有规则。</p>
+<p>在人际关系中，要认识到只有自己对自己负责；沉没成本不是成本。就像一盘菜已经馊了，应该用“课题分离”处理，并接受自然结果，这也是平常心。</p>
+<h3 id="蜗牛"><a href="#蜗牛" class="headerlink" title="蜗牛"></a>蜗牛</h3><p>三阶段总结：思考阶段是彻底理性，包含自知、第一性原理和概率思维；执行阶段是专注当下、情绪稳定，进入 flow，并用“两次考虑”和五秒法则行动；结果阶段是接受结果，不让成败定义自己，把结果当作礼物，建立结果档案，并记住一切都会过去。三个境界彼此补足，要尽力而为，也要接受结果。</p>
+<h3 id="Tony-to-ni"><a href="#Tony-to-ni" class="headerlink" title="Tony to ni"></a>Tony to ni</h3><p>高手与普通人的差距，是在巨大压力下仍能维持正常输出。要接受不确定和不完美，把问题带着往前走，时间会处理很多事情。接受自己，不要因为结果否定自己：事情可能没有做好，但你仍然是好的。智慧不只是理性计算，更是自知和稳定参照，在不确定中重新找回确定性。</p>
+<h3 id="炎帝"><a href="#炎帝" class="headerlink" title="炎帝"></a>炎帝</h3><p>圣十字教堂的一句话是：“死亡教会他如何雕刻时间。”平常心不是抵抗异常，而是与更大的节奏相处。它需要长期练习；通过重建认知生态位，把决策视角从“我要赢”变成“我要成为怎样的人”，接受不确定性。</p>
+<h3 id="太阳之子"><a href="#太阳之子" class="headerlink" title="太阳之子"></a>太阳之子</h3><p>平常心是贯穿周期的稳定心态，是面对外界起伏时的内在弹性。外部可控的东西有限，但内在状态可以控制：外部曲线在高点、内心在低点时要居安思危；外部在低点、内心在高点时也能自得其乐。</p>
+<p>范仲淹说：“不以物喜，不以己悲。”苏轼说：“猝然临之而不惊，无故加之而不怒。”</p>
+<h3 id="minyu"><a href="#minyu" class="headerlink" title="minyu"></a>minyu</h3><p>平常心即禅心，不是随意，也不是听天由命，而是回到内在清明，承受并放下。练习包括清理杂乱、反复认知、锚定目标。普通人容易把平常心误解为随便，真正的平常心是“接纳它、面对它、处理它、放下它”，如雁过寒潭不留影、风穿林梢不驻声，也如“饥来则食，困来则眠”。</p>
+<h3 id="墨子坤"><a href="#墨子坤" class="headerlink" title="墨子坤"></a>墨子坤</h3><p>如果只选一本书，会选《道德经》。苏格拉底说“我唯一知道的就是我一无所知”；做决定要想两次；压力下数五秒；接受结果、复盘决策，承认多个因素与随机性。</p>
+<h3 id="空"><a href="#空" class="headerlink" title="空"></a>空</h3><p>投资最重要的特质除了独立、耐心和纪律，还有诚实。把专家建议、内幕消息、技术预测、财务数据或神奇公式当作保证，是对不确定性的回避。要诚实承认投资很难，不确定性是常态；市场是公平的，你有多少认知，就适合投入多少资金。</p>
+<p>牛市买入上涨，会觉得投资容易；熊市买入下跌，会觉得像地狱。可以用索罗斯的控制模型区分“自己的事情”和“老天的事情”：决定买什么、买多少、什么时候止损，属于自己能管理的部分；涨跌属于天。优秀投资者应做到“猝然临之而不惊，无故加之而不怒”。</p>
+<h3 id="幸福小松树"><a href="#幸福小松树" class="headerlink" title="幸福小松树"></a>幸福小松树</h3><p>平常心不是一个单独的状态，而是一套系统方法；思考、执行、结果三个阶段各有对应的训练方式。</p>
+<h3 id="李壹"><a href="#李壹" class="headerlink" title="李壹"></a>李壹</h3><p>决策有三个阶段：思考阶段要求理性和诚实，回到道和第一性原理；执行阶段要求进入 flow、专注当下；结果阶段要接受结果，打“无记忆的球”，不后悔。纳斯鲍姆关于开放性和接受无常的引文，正好说明了这一点。</p>
+<h3 id="刘伯伟"><a href="#刘伯伟" class="headerlink" title="刘伯伟"></a>刘伯伟</h3><p>“积极主动、尽力而为、提升概率；顺其自然、坦然接受、认同随机。表面上极致理性，其实是终极自信，相信现实、相信时间。做能做的，接受改变不了的。”</p>
+<h3 id="我心飞翔"><a href="#我心飞翔" class="headerlink" title="我心飞翔"></a>我心飞翔</h3><p>留言中附有一首《咏平常心决策论》：</p>
+<blockquote>
+<p>平常心非单一态，决策全程法度彰。<br>思策之时求至理，纯然理性【原图此处需放大复核】。<br>行途专注情难扰，静处安恬意自刚。<br>果现欣然皆受纳，坦然无憾对沧桑。<br>纳斯鲍姆言精妙，善决之人性敞扬。<br>信彼无常心自定，世间诸事【原图此处需放大复核】。</p>
+</blockquote>
+<h3 id="张不二"><a href="#张不二" class="headerlink" title="张不二"></a>张不二</h3><p>每一次走路的经历都在训练决策能力。思考要拥抱未知、放弃傲慢：熟悉的道路也可能出现障碍；要用第一性原理而不是类比推理，不盲目模仿别人，观察并等待；也要用概率而非二元判断。能力需要在实践中培养。</p>
+<p>以上留言由作者筛选显示。</p>
+<hr>
+<p><a href="/book/decision-algorithm/096/">← 096｜敢于说不：为什么成功的关键是选择性放弃？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/098/">098｜二阶智慧：怎样作出对未来负责的决策？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

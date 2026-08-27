@@ -1,0 +1,446 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>011｜处置效应：为什么你会拔掉玫瑰，灌溉杂草？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》011：处置效应：为什么你会拔掉玫瑰，灌溉杂草？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="011｜处置效应：为什么你会拔掉玫瑰，灌溉杂草？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/011/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》011：处置效应：为什么你会拔掉玫瑰，灌溉杂草？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:44.858Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/011/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '011｜处置效应：为什么你会拔掉玫瑰，灌溉杂草？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">011｜处置效应：为什么你会拔掉玫瑰，灌溉杂草？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">011｜处置效应：为什么你会拔掉玫瑰，灌溉杂草？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>来源：老喻·决策算法100讲</p>
+<p>音频时长：13:05</p>
+<p>以下内容依据 PDF 页面原图逐段人工视觉阅读整理；原图中无法稳定辨认的个别字句保留复核标记。</p>
+</blockquote>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>老喻：喻老师你好。</p>
+<p>我是老喻，欢迎回到《决策算法》课。</p>
+<p>如果你有一个自己梦想中的花园，种满了漂亮的玫瑰，结果长出了许多杂草。</p>
+<p>请问，你是该拔掉玫瑰，还是拔掉杂草？</p>
+<p>我想，没人会选择拔掉玫瑰，留下杂草吧。</p>
+<p>再请问：</p>
+<p>如果你持有两个基金，第一个基金你投入了一万块，亏了五千，现在值五千。第二个基金你也投入了一万块，赚了五千，现在值一万五。</p>
+<p>现在，你马上要交这个月的两千五房租，你会卖哪个基金呢？</p>
+<p>大多数人会选择卖掉赚钱的基金。</p>
+<p>这看起来有点儿奇怪，假如赚钱的基金是玫瑰，亏钱的基金是杂草，你应该留下赚钱的玫瑰基金继续赚钱，处理掉不赚钱的杂草基金吗？</p>
+<p>行为金融学家把这种效应命名为“处置效应”。说的就是，人们习惯于“售盈持亏”，卖掉赚钱的资产，持有亏钱的资产。</p>
+<p>你可能会说，基金和玫瑰怎么能比呢？玫瑰和杂草是不会变的。但基金的涨跌，可能是暂时的，可能会涨回去，赚的也可能会跌回来。卖掉赚钱的基金，相当于实现了利润，落袋为安，很正常啊。</p>
+<p>可是，经济学家的研究发现，被卖出的盈利股票年收益比继续持有的亏损股票平均高出 3.4%。</p>
+<p>（经济学家特伦斯·奥迪恩对某家券商从 1987 年到 1993 年间约 1 万个账户的数据进行研究。）</p>
+<p>即使是专业投资人，也很难克服这种心理。</p>
+<p>早在 1999 年，IDG 资本就投资了腾讯，投入 210 万美元，占比 20%。在腾讯上市前，IDG 资本将持有股份分别卖给了南非的 MIH 集团和腾讯管理层，获得了近 11 倍的回报。</p>
+<p>MIH 不仅买了老股，还追加了投资。后来，这笔投资赚了三千多倍。</p>
+<p>回忆起这件事，当时 IDG 资本中国区的负责人熊晓鸽，他当时的思考逻辑是：</p>
+<p>MIH 愿意在寒冬里给腾讯估值 6000 万美元，这是 11 倍的退出溢价，在当时看起来，是非常高的回报，非常成功。而且，谁知道腾讯未来还会继续涨那么高呢？</p>
+<p>更关键的是，IDG 的钱也不是自来的，他们背后也有投资人，也需要给这些投资人回报。当时，IDG 同期投资的其他几家公司估值都不理想，要想回收现金，给投资人回报，他们当然是去卖涨幅最高的腾讯了。</p>
+<p>你看，这里面固然有财务回报的现实约束，但是，从另外一个角度，证明了“处置效应”无处不在，连专业人士也不能幸免。</p>
+<p>更让人感慨的案例是，孙正义早早卖掉了英伟达的股票，少赚了一千多亿美元；而他把变现的资金全部投给另一家公司，几乎血本无归。</p>
+<p>难怪，传奇基金经理彼得·林奇会感慨：一些投资者总是习惯性地抛掉赚钱的好股票，抱着亏钱的差股票，这无异于拔掉鲜花，浇灌杂草。</p>
+<p>这也正是我们这一讲标题的由来。</p>
+<p>而且，处置效应不仅出现在投资领域，我们在工作、创业，甚至是人生伴侣选择上，也经常陷入处置效应的泥潭：我们经常陷入与“烂人”的纠缠，却漠视了那些对我们好、有能力帮助我们的人。</p>
+<h2 id="为什么会出现处置效应？"><a href="#为什么会出现处置效应？" class="headerlink" title="为什么会出现处置效应？"></a>为什么会出现处置效应？</h2><p>人们卖掉赚钱的基金，是为了享受成功的喜悦。换个角度讲，其实也是怕煮熟的鸭子飞了，说白了，就是怕损失。</p>
+<p>同样的，人们有时候留下亏损的基金，就是不想面对这个结果，好像不卖，亏损就没发生，自己也有机会回本，也就是怕损失。</p>
+<p>这种心理，其实跟行为经济学里的“损失厌恶”有关。</p>
+<p>损失厌恶是指人们面对同样数量的收益和损失时，损失更加令他们难受。比如说，亏五千块钱给你带来的难受程度，是赚五千块钱给你带来的开心程度的两倍。</p>
+<p>而损失厌恶，似乎又跟进化留给我们的生存本能有些关联。</p>
+<p>想想看，我的祖先在原始森林里，看见一个黑乎乎的东西，可能是石头，也可能是熊，他们的最佳选择，是仔细观察，还是掉头就跑？肯定是跑。因为哪怕是熊的可能性很小，但万一真的是，就会搭进去。</p>
+<p>换句话说，对人类祖先来讲，损失的敏感度更高，就有更高的生存机会。</p>
+<p>然而，到了今天，早已没有了丛林的生死威胁，但是我们的生存本能却没有跟上。曾经的生存优势，反而妨碍了我们获得更大的利益。</p>
+<p>损失厌恶也能够解释很多我们生活中常见的现象：</p>
+<p>例如，“好女深陷渣男的陷阱”。女生已经看清了渣男的真面目，但是却舍不得分手，总想着渣男能够回心转意，即便这时候有个更好的男生在追求她。</p>
+<p>再例如，芝加哥大学的奖惩元教授讲过一个例子：美国一些年轻人在退休金进行储蓄的时候，偏向于把钱存入银行，而不是投资在股票上。但是长期看美国的股市回报率远高于银行利率。</p>
+<p>为什么呢？就是因为，他们讨厌亏损。因为，尽管美国股市长期回报更高，但短期却会有起伏。比如，今年赚两万，明年亏一万五，后年再亏两万，大后年再赚三万。虽然总体算下来最终还是比银行多，但是亏钱那两年，人的不开心程度远大于赚钱那两年的开心程度。最后的结果就是，人们更偏爱不会亏钱，但收益也更低的储蓄。</p>
+<p>当然，任何理论都有其局限性，有不少学者对“损失厌恶”概念提出挑战。对此，卡尼曼回应说：“损失厌恶”不是一条在一切背景下都成立的人性法则，然而“如果一个原则能帮助人们理解大量现象，它就是有用的。这不意味着损失厌恶是真实的，而是意味着它是有用的。”</p>
+<p>“损失厌恶”的适用范围，以后有机会可以单独说。在这里，我们可以先学卡尼曼这种实用主义态度，这对我们做决策很有帮助。</p>
+<h2 id="四个有效的策略"><a href="#四个有效的策略" class="headerlink" title="四个有效的策略"></a>四个有效的策略</h2><p>讲清楚了原理，让我们回到开头的那个问题，我们该如何改变“拔掉鲜花浇灌杂草”的困境呢？</p>
+<p>下面，我将给你四个可能有效的策略。</p>
+<h3 id="策略一：事先承诺，设置止损线"><a href="#策略一：事先承诺，设置止损线" class="headerlink" title="策略一：事先承诺，设置止损线"></a>策略一：事先承诺，设置止损线</h3><p>止损线，是指提前为损失设置一个底线，一旦损失触及这个底线，就立即割肉，斩仓出局，别死打到底。</p>
+<p>有人用鳄鱼法则来解释：</p>
+<p>如果有一只鳄鱼咬住了你的脚，你试图用手去解救，鳄鱼就会同时咬你的脚与手，结果，你越坚持，被咬得越多。所以，万一被鳄鱼咬住你的脚，最好的做法可能就是斩断那只脚。</p>
+<p>听起来很有道理，但是问题来了：谁能亲自斩断自己的脚呢？</p>
+<p>所以，在彼得·林奇的基金公司里，买股票的，不能是同一个人。当一只股票下跌，触及了止损点，当初买股票的人往往下不了手。这个时候，由别人来处置，就不会那么多内疚。</p>
+<p>你看，这是不是就避开“处置效应”了？</p>
+<p>稍微总结一下我的话，要用好“事先承诺，设置止损线”这个策略，就要做到两点：</p>
+<p><strong>A、任何事，都提前设置底线。</strong></p>
+<p>不只是投资，工作、社交，也应该设置底线。例如，和人交往，有些底线一旦触及，就要立即对这段人际关系止损。大白话说，就是非常不对的人，要立即脱离。</p>
+<p><strong>B、借助外力来帮自己止损。</strong></p>
+<p>人是很难对自己下手的，所以最好提前设置好规则，让合适的人帮你来兑现事先作出的承诺，而不是自己当自己的裁判。</p>
+<p>一个具体的建议是，你应该有两个判断力强、又对你好的人，在一些关键的决策问题上，让他们做你的决策教练。</p>
+<h3 id="第二个策略：随时跳出来，如果是某某决策高手，他会怎么做？"><a href="#第二个策略：随时跳出来，如果是某某决策高手，他会怎么做？" class="headerlink" title="第二个策略：随时跳出来，如果是某某决策高手，他会怎么做？"></a>第二个策略：随时跳出来，如果是某某决策高手，他会怎么做？</h3><p>我们必须意识到，类似于“拔掉鲜花浇灌杂草”的认知偏差，是大脑的某种先天设置。就好像是一辆车，自打出厂了，方向就有点儿偏左。仅仅靠了解这些偏差，还不足以让我们避免犯错。</p>
+<p>为了及时帮自己纠偏，我们可以借助他人的角度，不断质疑自己。</p>
+<p>例如，本杰明·富兰克林很喜欢西塞罗的思想。他曾经出版一本书，收录了西塞罗的《论老年》，并遵循西塞罗的忠告生活。富兰克林不仅长寿，而且过了一个幸福的晚年。</p>
+<p>同样的道理，你当然也可以找你的西塞罗或者富兰克林。选一个你敬仰的决策高手，然后按照他的原则行事。</p>
+<p>下次，你看不清鲜花杂草的时候，你就可以问自己，例如像巴菲特这样优秀的决策高手，他会如何做？</p>
+<h3 id="第三个策略：逆向思考"><a href="#第三个策略：逆向思考" class="headerlink" title="第三个策略：逆向思考"></a>第三个策略：逆向思考</h3><p>这个策略比较高级，既然损失厌恶以及处置效应是一种人类先天的“认知缺陷”，那么，我们能不能利用它干点儿啥呢？</p>
+<p>这是一种很聪明的逆向思考。</p>
+<p>已经有聪明人反向利用人类的这些认知缺陷。</p>
+<p>例如，诺贝尔经济学奖得主理查德·塞勒，也是资产管理公司 Fuller &amp; Thaler 的创始人之一。这家公司率先将行为金融应用于投资管理，专注于美国小盘股和中盘股，成果还行。</p>
+<p>这家公司正是利用其他投资者的非理性心理偏好，来设计投资策略。如其网站所言：“投资者犯错。我们寻找他们。”</p>
+<p>你看，大部分普通人辛辛苦苦和自己的性格弱点斗争，而极少数聪明人却利用咱们的这种弱点来赚钱。</p>
+<h3 id="第四个策略：像职业交易员一样思考"><a href="#第四个策略：像职业交易员一样思考" class="headerlink" title="第四个策略：像职业交易员一样思考"></a>第四个策略：像职业交易员一样思考</h3><p>要避免处置效应，职业交易员不会在意单笔交易的得失。假如你要做数百次交易，就不会死抱一笔交易。职业交易员关注整体收益，而非单笔成败。</p>
+<p>任何交易都有盈亏的概率，胜算只有通过大量交易才能显现。过于关注单笔交易容易放大心理影响，忽视长期目标。接受单次决策可能失败的事实，关注长期表现，才能更理性地应对市场波动，优化决策。</p>
+<p>就像我们决策算法的 EVK 模型里提到的，人生是一连串的决策，每次决策的期望值可能是正的，也可能是负的，我们要求的不是没有负的，而是整体回报最大化。</p>
+<p>我有个朋友，生意做得很大，因为遭遇背叛，几乎一夜回到解放前。但是他毫不纠结，又迈向了新的征程。他深沉地说了一句：那事儿翻篇了。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>最后，让我们总结一下。</p>
+<p>为什么我们会拔掉玫瑰，浇灌杂草，说白了，就是患得患失。</p>
+<p>但是，我们的人生很短暂。</p>
+<p>与其如此，不如大方承认那些人生早晚会遇见的损失，与过去痛快干杯。假如做了错误决策，不如痛快承认，及时止损，然后去走下一个决策。</p>
+<p>远离烂人烂事，去发现那些对你而言更重要、更有价值、更不能失去的东西。</p>
+<p>珍惜你生命中的鲜花。人生有限，何必浪费在杂草之上？</p>
+<p>我是老喻，我们下一讲再见。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>处置效应，即人们习惯于“售盈持亏”，卖掉赚钱的资产，持有亏钱的资产。</li>
+<li>处置效应跟“损失厌恶”有关，人们面对同样数量的收益和损失时，损失更加令人难受。</li>
+<li>克服处置效应的四个策略：<ul>
+<li>策略一，事先承诺，设置止损线；</li>
+<li>策略二，随时跳出来，如果是某某决策高手，他会怎么做；</li>
+<li>策略三，逆向思考；</li>
+<li>策略四，像职业交易员一样思考。</li>
+</ul>
+</li>
+</ol>
+<h2 id="用户留言（原图精选）"><a href="#用户留言（原图精选）" class="headerlink" title="用户留言（原图精选）"></a>用户留言（原图精选）</h2><h3 id="左星星"><a href="#左星星" class="headerlink" title="左星星"></a>左星星</h3><p>决策本身是复杂的认知过程，而我们的环境对决策的影响不容忽视。老喻老师提到的借助外力帮助止损的策略让我联想到，我们应当主动构建性决策的外部环境。比如，寻找值得信赖的决策顾问。职场中，可以定期与导师或专业专家沟通，让他们帮助我们从不同视角看待问题。家庭中，也可以与亲密的朋友或共同制定长期规划，帮助彼此校正方向。</p>
+<p>此外，培养“自我同责”的习惯也至关重要。每次做重大决定后，可以通过书面记录的方式追踪结果，并分析其背后的逻辑。这种简单的反馈机制，可以逐步提升我们在未来决策中的准确度。</p>
+<h3 id="黄泊淳-Only"><a href="#黄泊淳-Only" class="headerlink" title="黄泊淳 Only"></a>黄泊淳 Only</h3><p>喻老师您好，处置效应我本来只着重于投资上的应用，我也知您分享的，用科研托尼?著名的老人鸟与物理理论，常常带你感受更天的天性。</p>
+<p>市场先健全企业价值，就好像老人遛狗，狗是市场价格，主人是企业价值，有时候狗就是主人前面，有时候面后，有时候跟随。</p>
+<p>买与卖的决策，不该看狗，而是主人本身。而且投资是往未来看，跟过去的价格没关系，过去盈利与亏损，都不是“绝对”的特有或卖出的因素。</p>
+<p>不过，更让我在本讲课得意的事，人的处置效应无所不在，在感情上的遭遇现象，在事业与人际关系，我们也是期盼对自己不好的人事物，有一天会对自己好，反之，却对自己的人事物，过度低估。</p>
+<p>谢谢老师的提醒，对今后人的帮助甚大！</p>
+<h3 id="炎帝"><a href="#炎帝" class="headerlink" title="炎帝"></a>炎帝</h3><p>处置效应的心理根源可以追溯到人们对损失的厌恶。</p>
+<p>我们在面对盈利时，往往表现出风险回避的倾向，希望锁定利润；在面对亏损时，则表现出风险偏好的倾向，不愿意承认损失。这种心理导致了投资者在盈利时急于卖出，而在亏损时则持有望回本的态度。</p>
+<p>如何规避处置效应，总结以下 5 点：</p>
+<ol>
+<li>理性分析：基于资产的长期价值而非短期的涨跌来做出决策。通过深入研究和分析，确定资产的合理估值，并在达到或超过这一估值时卖出。</li>
+<li>分散投资：通过分散投资，降低单一资产对整体投资组合的影响。这样，即使某些表现不佳，其他资产也可能表现良好，从而平衡整体收益。</li>
+<li>设定止损点：在投资前设定明确的止损点，当资产价格下跌到这一水平时自动卖出，以避免进一步的损失。</li>
+<li>持续学习：投资者应不断学习投资知识和市场动态，提高自己的判断和分析能力。</li>
+<li>建立纪律和判断力。通过了解市场信息，投资者要有很强的市场心理，把错误正常化，也很常见，要有自己的纠错机制。如果自己之前错了基金或者股票，不要死磕，要及时进行纠错，该卖出就卖出，该转换就转换。</li>
+</ol>
+<h3 id="李赛酒"><a href="#李赛酒" class="headerlink" title="李赛酒"></a>李赛酒</h3><p>应对处置效应的策略，个人觉得两个策略特别有效，一个是建立自己的原则，无论是投资原则，还是人际关系原则，只要能犯了就立即止损，或者买入。除非特别因意的发生，不要随便修改自己的原则。</p>
+<p>二是建立自己的谋士团，一个就是外部谋士团，找几个得力的朋友，关键时刻决策时，要参考他们的意见；另一个是内部谋士团，自己最信任什么人，面对困难或者决策的时候，就可以代入他的角色进行决策，给自己带来一个新的角度。</p>
+<h3 id="李慕"><a href="#李慕" class="headerlink" title="李慕"></a>李慕</h3><p>喻老师提到的卡尼曼的观点，“损失厌恶”不是一条在一切背景下都成立的人性法则，然而“如果一个原则能帮助人们理解大量现象，它就是有用的。”这不意味着损失厌恶是真实的，而是意味着它是有用的。</p>
+<p>这反映了科学理论的一种核心功能——解释和预测现象，而非绝对反映“真相”。我们应该认识到：理论的价值在于它能否提供可见，帮助理解和解决实际问题；真正的绝对性在科学中往往是次要的，重要的是工具性和适用性。</p>
+<p>尤其值得广泛课是“决策”课，决策的核心任务在于帮助人们在复杂环境中做出更优的选择。因为即使你有“极其谨慎，绝对正确，一般”的模型，在实际决策中，我们面对的往往是复杂、不确定和动态的环境。理论不可能完全推演这些环境的全部细节。因此，一个理论或原则是否“真实”并不重要，因为我们无法在决策场景中验证所有变量的绝对真实性。</p>
+<p>丹尼尔·卡尼曼的这段观点通过强调理论的“有用性”而非“真实性”，巧妙地哲学了关于理论绝对正确性的无谓争论。</p>
+<h3 id="进化菌"><a href="#进化菌" class="headerlink" title="进化菌"></a>进化菌</h3><p>这个问题挺有趣的：如果你持有两个基金，第一个基金你投入了一万块，亏了五千，现在值五千；第二个基金你也投入了一万块，赚了五千，现在值一万五。</p>
+<p>我想，凭感觉选择的话，大部分人会选择卖掉第二个基金，落袋为安。事实上证明的可能是反人性，就是要保护“鲜花”，剔除“杂草”，并设置好止盈止损线。</p>
+<p>再思想，其实大部分人的选择，之所以不理性，反而是因为看不到“鲜花”。看到未来价值的人，终究是少数。而那，也是一种需要锻炼的一种能力。</p>
+<h3 id="Tony-to-ni"><a href="#Tony-to-ni" class="headerlink" title="Tony to ni"></a>Tony to ni</h3><p>在盈利的时候人们是损失厌恶的，这个时候大多数人会选择落袋为安。</p>
+<p>而在亏损的时候，大家很可能是风险偏好的。在亏损的时候，你有一个机会是 50% 的概率翻一倍。还有一个选择是 100% 的赢，但获利很少，那很多人会选择搏前者。</p>
+<h3 id="李泰"><a href="#李泰" class="headerlink" title="李泰"></a>李泰</h3><p>课程中最后的“人生很短暂”部分，给了我很大触动。每个人的人生是现实的人生，无论我们是否愿意、敢于承认，它就是一种深刻的现实——人生短暂。</p>
+<p>有时候我们为什么不愿意止损？因为觉得时间再拖久一点，说不定会反转，错误的决策也许会变为正确的决策。而决绝对正确的等待，往往是与时间较劲的奢侈。确实，我们都希望每一次决策都能完美无缺，但现实却是，这个世界上没有绝对正确的答案。等待可能带来转机，也可能只是浪费时间，让我们陷入无休止的患失之中。</p>
+<p>人生的时间有限，与其在过去的错误中纠结，不如坦然接受那些早晚会发生的损失，与它们“痛快干杯”。</p>
+<p>这种思维方式提醒我们：真正的智慧在于放下执念，敢于止损，把目光投向未来。</p>
+<h3 id="李泰（关于鳄鱼法则）"><a href="#李泰（关于鳄鱼法则）" class="headerlink" title="李泰（关于鳄鱼法则）"></a>李泰（关于鳄鱼法则）</h3><p>喻老师在课程中引用了大量的极其经典的类比。因为我平日也会给学生讲课，我理解每一个类比背后的持续寻找它的差异与找到的欣赏。类比的价值就在于把熟悉的知识迁移到新的场景，并且创造新的认知。</p>
+<p>我今天想利用“鳄鱼法则”，与各位同学分享我的感受。</p>
+<p>理论描述：止损线，是指提前为损失设置一个底线，一旦损失触及这个底线，就立即割肉，斩仓出局，别死打到底。</p>
+<p>鳄鱼法则：如果有一只鳄鱼咬住了你的脚，你试图用手去解救，鳄鱼就会同时咬你的脚与手，结果，你越坚持，被咬得越多。</p>
+<p>止损的道理，甚至生出出来的演绎成立。从我这很多很多遍，读到过很多遍，但是从来都没有今天听老师讲完“鳄鱼法则”后这样感到触动，用一个流行词，叫“因为而知”。</p>
+<p>“道理”、“理论”和“类比”之间的区别是什么？我总结了几点：</p>
+<ol>
+<li>道理的抽象性与普遍性：道理本身往往以理性和逻辑为基础，提供的是一种抽象的理论框架或指导原则。例如，“止损”的道理告诉我们要及时止损，避免更大损失。这种原则具有高度的普适性，能够适用于不同的情境。</li>
+<li>类比的形象性和具体性：类比的作用在于通过一个直观、具体的场景，把抽象的道理变得可感知。例如，“鳄鱼法则”用一只鳄鱼咬住脚和手的画面，形象地呈现了止损这种坚持带来的恶果。</li>
+<li>类比的类比能够唤起情绪上的共鸣，直击人们内心深处的恐惧或矛盾，帮助他们更深刻地理解“止损”背后的紧迫性和必要性。相比于抽象的道理，类比让人不仅“听懂”，更能“看见”和“感受”。</li>
+</ol>
+<p>归纳起来，道理是决策的指南针，而类比则是通往执行的桥梁。道理让我们知道“该做什么”，而类比让我们深刻感知“不做会怎样”，甚至帮助我们感受到“做了会如何”。两者相辅相成，能更有效地帮助人们理解问题、克服心理阻力，并最终将抽象的知识转化为实际的行动。</p>
+<h3 id="你当懒-飞往你的山"><a href="#你当懒-飞往你的山" class="headerlink" title="你当懒 &#x2F; 飞往你的山"></a>你当懒 &#x2F; 飞往你的山</h3><p>处置效应：为什么你会拔掉玫瑰，灌溉杂草？</p>
+<p>明白了，就是患得患失。远离烂人烂事，珍惜你生命中的鲜花。人生有限，何必浪费在杂草之上？</p>
+<p>策略一：事先承诺，设置止损线。买股票的，不能是同一个人。鳄鱼咬住你的脚，最好的做法是斩断那只脚。</p>
+<p>策略二：如果是某某决策高手，他会怎么做？职业交易员不会在意单笔交易的得失，不会死抱一笔交易。</p>
+<h3 id="伴听"><a href="#伴听" class="headerlink" title="伴听"></a>伴听</h3><p>为什么人们在牛市中不赚钱，熊市一亏到底。其实也是处置效应和损失厌恶在起作用。</p>
+<p>在漫长熊市中，人们以牛市高点作为锚点，认为抄底时机到了，买入一些股票，但其实买在山腰，随着股价经过下跌，人们总想回本，往往不愿卖掉手里的，于是一亏到底。</p>
+<p>经过漫漫熊市一段时间以后，人们回来了，于是由于损失厌恶，就卖掉了，这个时候卖掉已经解套，于是小赚离场。但随着股价进一步上涨，人们情绪降低了，又追高买入。</p>
+<p>其实，我们不是不知道这些原理，只是我们大多数人没有符合设定的能力，就这个股票到底什么价格格是合理的，无法定价，那当然不会不懂。</p>
+<p>所以投资要构建自己的知识体系、决策框架，如果不太懂，不是非常懂，那就做被动投资，买指数好了，避免风险。</p>
+<h3 id="学习机器"><a href="#学习机器" class="headerlink" title="学习机器"></a>学习机器</h3><p>前段时间遇到了一个朋友，在刚开始的接触中，觉得这个人的人品、性情还不错，可以作为一个知心朋友。之后后来在慢慢的接触中，感觉到不对，这个人并没有想象中的那么懂人和纯粹。这个时候，就面临着两个选择：是立即止损，还是继续维持这段没有回报的关系？如果立即止损，那就意味着会今生会失去他，就相忘于江湖，应该不会再见面了，而且目前的一切投入以去；如果继续维持这段朋友情，对方还会继续要各种小聪明，来消耗你，这是一个无底洞。</p>
+<p>该如何做出抉择呢？考虑到我是做投资和市场交易的，于是我将这个问题视为一个投资问题。如果我持有一只股票，可却一直跌跌不停，那我是应该立即止损，还是继续持有，等待回本呢？看到这个问题，我相信大家就会心中都会有标准答案了，当然是立即止损了，这就是行为金融学中著名的“处置效应”。</p>
+<p>可是为什么很多人面对这种情况，却难以克服“处置效应”。选择卖出那个持续盈利的股票，而不是跌跌不休的股票呢？行为金融学给出的解释是“损失厌恶”。其实这就是相处一段关系，你前期投入了那么多的成本（时间、精力、金钱等），哪能那么容易就交割呢？岂不得是人之常情。</p>
+<p>那我们应该如何克服“处置效应”，无论在投资，还是在人际关系中？我的理解是，把自己交易员般的思维，提前按照规则则设置好止损，只要触发，坚决执行，没有任何商量的余地。</p>
+<p>不要把时间花在烂人、烂事、烂股票上。遇到了就果断止损，重新出发，不要陷在纠结中。因为这已经够累了，前方还有更美好的风景在等着你们！珍惜你生命中的鲜花，人生有限，何必把时间浪费在杂草之上呢？</p>
+<h3 id="Todd"><a href="#Todd" class="headerlink" title="Todd"></a>Todd</h3><p>虽然早就知道“处置效应”，也会设置止损点，但是，在实际操作中，就容易下不去手，舍不得出。下次，我要设置自动卖出条件，避免由于舍不得卖出，出现持续亏损的情况。因为一旦到了止损点不卖出，我就会容易想“已经跌了这么多了，不会再跌了吧”。</p>
+<p>我们经常陷入与“烂人”的纠缠，却漠视了那些对我们好、有能力帮助我们的人。“漠视”这个词用得太好了，我就有这个缺点，我不太喜欢社交，如果有人找我帮忙，我多半会帮，但如果别人不主动和我说，就算我知道了，我也可能装作没看见。那些对我们好、有能力帮助我们的人，我们应该主动关注对方并提供帮助。</p>
+<h3 id="JerryLuo"><a href="#JerryLuo" class="headerlink" title="JerryLuo"></a>JerryLuo</h3><p>处置效应和损失厌恶，是一种人类先天的“认知缺陷”。如何克服这种“缺陷”呢？有四个策略：</p>
+<p>策略一，事先承诺，设置止损线；</p>
+<p>策略二，随时跳出来，如果是某某决策高手，他会怎么做；</p>
+<p>策略三，逆向思考；</p>
+<p>策略四，像职业交易员一样思考。</p>
+<p>喻老师在人生算法中提到“双我思维”。与策略二相似。即：这种思维方式要求你在考虑问题的时候，把自己拆成两个人，让他们相互对话。</p>
+<p>人们常说“当局者迷，旁观者清”，应该也是这个道理。最近团队就某个专题开会（首次会议），要做一个决策，我很坚决的投了反对票。事后思考时，我发现自己因为此项工作有一些情绪（存在“损失厌恶”），同时将这种情绪带到了决策中。于是考虑到这些后，我决定进行修正，按决策的另一个方向做准备。同时，静待第二次会议。</p>
+<h3 id="爱艺术的李达拉"><a href="#爱艺术的李达拉" class="headerlink" title="爱艺术的李达拉"></a>爱艺术的李达拉</h3><p>深有感受。很多时候我们的患得患失都来自于把重心都放在了亏钱的差股票上，却对好股票视而不见。朋友、家人皆是如此……捡了芝麻，忘了西瓜。</p>
+<p>老师给出的四条建议确实很受用：</p>
+<ol>
+<li>在任何事情上都给自己设置一条底线，来帮助自己及时止损；</li>
+<li>假如是某一个决策高手，会如何去决策？我之前的方法是，如果十年后的我是如何看待我现在的行为？（貌似可以根据今天的这条思路，再升级一下）；</li>
+<li>逆向思考。从李笑来老师那学到的，听大多数人的话，参考少数人的意见，最后自己做决定；</li>
+<li>像职业交易员一样思考。拒绝线性思维思考问题，要把视角拉到二维、三维，甚至四维上。</li>
+</ol>
+<p>单次失败的决策很正常，平常心接受，把视野放到长期有价值的目标上。</p>
+<p>——以上留言由原图精选显示，个别用户昵称或字句因页面分辨率有限，保留原意并以复核标记为准。</p>
+<hr>
+<p><a href="/book/decision-algorithm/010/">← 010｜提前退休：“25倍法则”能让你财务自由吗？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/012/">012｜人际资产：为什么你会讨好“不对的人”，疏远好人？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

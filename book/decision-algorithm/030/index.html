@@ -1,0 +1,393 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>030｜关键时刻：怎样把握最佳出手时机？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》030：关键时刻：怎样把握最佳出手时机？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="030｜关键时刻：怎样把握最佳出手时机？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/030/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》030：关键时刻：怎样把握最佳出手时机？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:45.150Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/030/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '030｜关键时刻：怎样把握最佳出手时机？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">030｜关键时刻：怎样把握最佳出手时机？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">030｜关键时刻：怎样把握最佳出手时机？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>13分14秒</p>
+</blockquote>
+<p>你好</p>
+<p>我是老喻，欢迎来到《决策算法》课。</p>
+<p>我们在课程一开头就讲过，决策基础是胜率和赔率。但是很多决策场景下，胜率并非固定不变，而是会随着局势变化，有时高一些，有时低一些。于是，时机就成为成败的关键。</p>
+<p>这一讲，我们就来讨论这个重要的决策难题：怎样把握最佳的出手时机？</p>
+<h2 id="一、三个人的决斗"><a href="#一、三个人的决斗" class="headerlink" title="一、三个人的决斗"></a>一、三个人的决斗</h2><p>先来做一道思考题：</p>
+<p>A、B、C 三生子连环决斗，规则如下：</p>
+<ol>
+<li>抽签决定开枪顺序；</li>
+<li>有开枪权者可以自行选择射杀对象；</li>
+<li>每次只能开一枪；</li>
+<li>直至剩下一个人。</li>
+</ol>
+<p>已知 A 和 B 百发百中，都是神枪手，而 C 的命中率是50%。</p>
+<p>请问谁活下来的概率最大？是多少？</p>
+<p>解答如下：</p>
+<p>抽签顺序可能有六种可能性——ABC、ACB、BAC、BCA、CAB、CBA。</p>
+<p>前四种可能性，A 和 B 都会选择先开枪干掉对方——毕竟要先消灭厉害的对手，然后轮到 C 开枪，50%概率干掉一个人。</p>
+<p>问题的重点是，后两种可能性，C 先开枪时，他该怎么办？</p>
+<p>他最明智的办法是对天开一枪。</p>
+<p>也就是说，即使他获得了优先开枪的权力，也应该放弃掉。</p>
+<p>我们先设想一下，由枪法最差的 C 开枪，他选择打 A 或者 B，命中率是50%：</p>
+<ul>
+<li>假如他打中了，接下来活着的那个神枪手会100%干掉他；</li>
+<li>假如他没打中，那还好，那是一个神枪手干掉另一个神枪手。</li>
+</ul>
+<p>与其如此，C 的最佳策略是，对天开一枪，100%没打中；然后留着 A、B 彼此开枪，无论如何死一个人，最后再由 C 开枪，50%概率得手。</p>
+<p>结果，生存概率最大的，居然是枪法最差的 C。</p>
+<p>所以，在特定条件下，弱者也能生存。关键在于，你能够忍耐，等候最佳的开枪时机。</p>
+<h2 id="二、线列步兵战术"><a href="#二、线列步兵战术" class="headerlink" title="二、线列步兵战术"></a>二、线列步兵战术</h2><p>再看和出手时机有关的案例。</p>
+<p>18至19世纪的欧洲，有一种战术在今天看来很奇怪。如果你看过《战争与和平》等描述当时战争场面的电影，可能看到过这样的场面：士兵排排站，列成方阵，然后面对面整齐地射击。</p>
+<p>这一看似荒诞的画面让人不禁质疑：为什么士兵们要排成整齐的队列，像是等待着无情的子弹洗礼？这些勇士难道不懂得躲避，或者寻找掩体？</p>
+<p>但这种被后世戏称为“排队枪毙”的战术，竟然主宰了欧洲战场近两百年，甚至帮助欧洲列强征服了世界。</p>
+<p>是什么让这种看似自杀性的阵型，成为了那个时代的“最优解”？</p>
+<p>线列步兵战术的一部分灵感来自古罗马军团的编队和组织。罗马军团以其严格的队列和战斗阵型著称，而这些元素在后来的线列步兵战术中得到了延续和发展。</p>
+<p>线列步兵战术起源于欧洲火枪和刺刀的普及时期。当时，士兵们使用的是滑膛枪，这种武器装填缓慢且精度低。普通士兵一分钟只能发射2—3次，经验丰富的士兵最多可达4—6次，但在实际战斗中，因为种种因素，这个速率通常更低。此外，当时的火药产生大量烟雾，严重影响了战场视野和射击精度。</p>
+<p>线列步兵战术的核心是将士兵排列成横队，通过集体射击来最大化火力覆盖。这种方法不仅提高了命中率，还使得每个士兵的火力得以集中使用，避免了单兵射击的低效。这种集体射击的方式，在当时的技术条件下，是利用火器的最佳选择。</p>
+<p>此外，线列步兵战术还有“简化指挥与控制、有效使用刺刀、对敌人产生心理威慑”等优势。</p>
+<p>在1815年的滑铁卢战役中，威灵顿公爵展现了线列步兵战术的精妙之处。他命令手下步兵组成空心方阵，将炮兵安置在火枪兵之间。这一战术布局不仅增强了火力密度，还有效保护了炮兵免受敌军骑兵的袭击。</p>
+<p>英军被指示只有在敌人接近到二十米内时才开火，这一策略旨在确保每一发子弹都能发挥最大效用。</p>
+<p>与此同时，法国的内伊元帅率领骑兵冲锋而来。在距离百米处，法国骑兵首次遭遇英军炮攻击。随着距离缩短至二十米，英军的火枪齐射开始了。这一近距离的齐射给法军骑兵带来巨大伤亡，因为即便是精度较差的火药枪，在如此近的距离上也能造成致命打击。第一轮齐射几乎瓦解了法军的冲锋，而第二轮火力则彻底击溃了残余的骑兵。</p>
+<p>这种近距离的人力集中展示了线列步兵战术的优势：尽管这种战术看似简单甚至愚蠢，但在那个没有现代机枪的时代，它却能在近距离作战中造成巨大的杀伤。滑铁卢战役不仅是威灵顿公爵的胜利，更是线列步兵战术的经典案例，展示了其在战场上的强大威慑力。</p>
+<h2 id="三、魁北克战役：等待最佳时机"><a href="#三、魁北克战役：等待最佳时机" class="headerlink" title="三、魁北克战役：等待最佳时机"></a>三、魁北克战役：等待最佳时机</h2><p>体现线列步兵战术精髓的另一场战役，发生于1759年，史称“魁北克战役”。</p>
+<p>整场战役只打了30分钟，却改变了历史。</p>
+<p>法军守将蒙卡尔姆率兵对阵英军。他平常小心而有条理，而这次却没有耐心等待最佳时机反击，当敌人还在百米开外的时候就射击，对英军没有构成太大的损伤。</p>
+<p>与之相反，英军采用了一种非常谨慎而有效的策略。当法军率先发起攻击时，英军并未立刻回应，而是保持队形，静待敌军进一步逼近。</p>
+<p>一直到两军足够近（有资料说是30多米距离），英军第一轮齐射一下子就打乱了法军阵脚，紧接着，英军继续向前推进，距离更近时打了第二轮齐射，法军彻底崩溃。</p>
+<p>法军惨败，再次说明一个朴素的道理：</p>
+<blockquote>
+<p>没有胜算时贸然出击，只是在浪费子弹。</p>
+</blockquote>
+<h2 id="四、集中发力，遵守纪律，等待时机，果断出手"><a href="#四、集中发力，遵守纪律，等待时机，果断出手" class="headerlink" title="四、集中发力，遵守纪律，等待时机，果断出手"></a>四、集中发力，遵守纪律，等待时机，果断出手</h2><p>接下来，让我们撤出历史上的战场，回到现实的决策场景。</p>
+<p>线列步兵战术，某种程度也反映出我们在做决策时常面临的真实困境：<strong>有时候，手头的武器就是很烂，准头也不够，射程也不够，没有什么高精尖的武器，此时要如何取胜？</strong></p>
+<p>制胜策略包括四个关键词：<strong>集中发力，遵守纪律，等待时机，果断出手。</strong></p>
+<p>我们用一场抗洪抢险来说明这四个关键词如何发挥作用。</p>
+<p>1993年，美国密西西比河流域遭遇特大洪水，洪水持续数月，对中西部多个州造成严重破坏。大量城镇、农田、基础设施面临洪水威胁。为抵御洪水，地方政府、军队、志愿者和社区居民纷纷投入紧急抢险。</p>
+<p>在洪水暴发之初，许多社区居民和志愿者虽然热心，但缺乏经验，往往采用自发、零散的方式往河岸边丢沙袋。结果是，大多数沙袋没有形成连续的堤坝结构，轻易被水冲走，志愿者辛苦填装和搬运的沙袋被浪费，宝贵时间也被耽误。</p>
+<p>后来，美国陆军工兵部队抵达现场，防洪行动得到了专业指导和组织管理。</p>
+<p>首先，志愿者排成几队，有人专门填沙袋，有人专门传递，最后有人专门在指定位置按特定方式堆叠沙袋。</p>
+<p>其次，堆叠沙袋讲究也能很多，比如要交错叠放，多层叠加、压实，不能只是简单地往水里丢。这样才能形成一道能持续、稳固的临时堤坝。</p>
+<p>此外，还必须抢在时间窗口内出手，必须要在下一次洪峰尚未全面冲击，或在关键决口点出现前，快速完成一定长度和高度的沙袋堤坝，这样才不会被洪水冲毁。</p>
+<p>这个案例也让我们再次确定一个基本常识：这世界上不存在以弱胜强的传奇，劣等资源也不可能战胜优等资源。</p>
+<p><strong>劣等资源要创造奇迹，唯一的办法是，聚焦单点，制造局部优势。统一号令，严格遵守纪律，耐心等待，以及精准的时机把握，和果断出手。</strong></p>
+<p>然而，必须要承认的是，在一些更加区险的决策场景下，要能做到非常困难，于是，就需要一个关键要素加持，那就是“勇气”。</p>
+<h2 id="五、《勇敢的心》：Hold"><a href="#五、《勇敢的心》：Hold" class="headerlink" title="五、《勇敢的心》：Hold"></a>五、《勇敢的心》：Hold</h2><p>我第一次看电影《勇敢的心》时，最受触动的一个场景是，英国骑兵以压倒性优势，冲向威廉·华莱士（梅尔·吉布森）率领的苏格兰人。看起来手持破铜烂铁的民兵，该如何应对全副武装的骑兵？</p>
+<p>当敌军战马以越来越快的速度冲到阵前，当骑士们举起了长矛，威廉·华莱士一直在大喊“Hold……Hold……Hold……Hold”，他一共喊了四声，直至敌军来到眼前，才命令战友们举起了早已准备好的削尖的长木棍，将来不及停下来的敌人骑兵挑于马下。</p>
+<p>这一场景，从战术的角度看，非常像“线列步兵战术”：一直到敌人来到最后的底线，才齐齐举起武器，一起发射，给出对方致命一击。</p>
+<p>在那一刻，有多少人能够承受压力呢？连最信任威廉·华莱士的伙伴，在最后关头也犹豫不决地望着他。</p>
+<p>即使你用对了“线列步兵战术”，也要冒着生命的危险。就像“魁北克战役”中阵亡的英军将领沃尔夫少将。事实上，在“魁北克战役”中，英军的伤亡也不小，英军将领沃尔夫少将也挨了三枪被打死。</p>
+<p>更何况，“线列步兵战术”早已成为历史名词，现代军事行动更强调火力、机动性、隐蔽性和灵活的指挥控制。</p>
+<p>然而，不管怎样，在现实世界里，如果大敌当前，你需要的不仅是武器，还有勇气和智慧。</p>
+<p>而最大的智慧，往往与机遇有关。如同前面的智力题，为了等待最佳时机，牛仔会放弃优先射击的机会。</p>
+<h2 id="六、钓鱼与等待"><a href="#六、钓鱼与等待" class="headerlink" title="六、钓鱼与等待"></a>六、钓鱼与等待</h2><p>决策有趣的地方是，假如你理解了其中的一些基本原理，你不必去读一堆书，也不用去进商学院，只要运用非常简单的决策框架，就有可能让自己有脱胎换骨的飞跃。</p>
+<p>这一讲的基本智慧就是：<strong>当你遇到重大决策问题时，别马上做出决定，而是耐心等上一阵子。</strong></p>
+<p>我的一位好朋友，分享了他特别敬佩的一位前辈高手的故事。有一次，那位前辈的企业遭遇了大规模的舆论攻击，竞争对手造谣说他们出现了致命危机，接近破产，人也出问题了。一时间，乌云密布，所有人都在传这件事，朋友们也替他着急，公司同事们也异常愤怒，建议立即辟谣，对大众解释。</p>
+<p>这时，这位前辈高手做了一个决定：24小时之内，不采取任何行动。</p>
+<p>这是一个身边人难以理解的艰难决定，因为不解释、不反击，意味着谣言继续满天飞，甚至会发酵。但是，这位高手的观点是：你不知道对手到底是谁，你也不知道他的目的是何，保留然后反击，只会乱了阵脚，也不会真正遏制对方的行为。等上1天，让子弹再飞一会儿，找到幕后黑手，摸清对方的意图，再集中火力，针对性地反击。要么不还手，要打就一举拿下。</p>
+<p>果然，他们最终度过难关，赢得了胜利。</p>
+<p>也许，我们的生活中并没有那么多你死我活的时刻，可你我总会面对一些压力，不得不处理一些麻烦。有些事情可能会让你火冒三丈。</p>
+<p>这时，记得如电影《勇敢的心》一般，面对千军万马，对自己说：</p>
+<blockquote>
+<p>Hold……Hold……Hold……Hold……（挺住……挺住……挺住……）</p>
+</blockquote>
+<p>在关键时刻才出手，但也要守住最后的底线。</p>
+<p>Hold，挺住，不仅是一种勇气，更是一种智慧。</p>
+<h2 id="七、钓鱼时的信号"><a href="#七、钓鱼时的信号" class="headerlink" title="七、钓鱼时的信号"></a>七、钓鱼时的信号</h2><p>在交易市场中，很多人也会犯“过早出手”的错误。钓鱼的时候，鱼线上会有鱼漂。鱼漂的本质就是一个信号系统，我们通过鱼漂观察水里的鱼是否在咬钩，鱼漂动了，适当的时候你就要立刻提竿；鱼漂不动，说明没有鱼在吃鱼饵，此时你要做的就是观察鱼漂的变化，在鱼饵不动之前你拿着鱼竿，耐心等待。</p>
+<p>水里面有很多游来游去的鱼，这些鱼其实和钓鱼者没有关系，我们不用着心神不定地盯着这些鱼。临渊羡鱼，不如退而结网。只有咬住了你的鱼钩，鱼漂动了，这条鱼才和你有关系，这就是我们要的信号。</p>
+<p>做市场交易的道理也是如此，作为交易者我们需要耐心等待鱼漂所发出的信号，如果鱼漂没有浮动，那市场的走势再热闹，也和你没有关系，此时你能做的唯一耐心等待，而不是乱作为，如果你非要乱作为的话，那就是自己作死。</p>
+<p>关于等待的重要性，《孙子兵法》的第四篇军形篇中，写道了这样一句话：</p>
+<blockquote>
+<p>昔之善战者，先为不可胜，以待敌之可胜。</p>
+</blockquote>
+<p>这句话的大致意思是，古代善于作战的人，先让自己不可被战胜，然后耐心等待可以战胜敌人的时机。这句话的精髓就在于一个“待”字，而事实上呢，很多人都患有行动焦虑症，于是就陷入了自己作死的境地。</p>
+<p>以上就是这一讲的全部内容。</p>
+<p>我是老喻，我们下一讲再见。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>在特定条件下，弱者也能取胜，关键在于，你能够忍耐，等候最佳出手时机。</li>
+<li>劣等资源要创造奇迹，唯一的办法是，聚焦单点，制造局部优势，以及统一号令，严格遵守纪律，精准把握时机和果断出手。</li>
+<li>一个决策的基本智慧：当你遇到重大决策问题时，别马上做出决定，而是耐心等上一阵子。</li>
+</ol>
+<hr>
+<p>上一讲：29 反事实思维：条件不够如何突围？</p>
+<h2 id="PDF-内用户留言"><a href="#PDF-内用户留言" class="headerlink" title="PDF 内用户留言"></a>PDF 内用户留言</h2><h3 id="JerryLuo（1小时前·湖北）"><a href="#JerryLuo（1小时前·湖北）" class="headerlink" title="JerryLuo（1小时前·湖北）"></a>JerryLuo（1小时前·湖北）</h3><p>惊讶于线列步兵战术！边听课，边在网上找相关资料。逐步了解到几百年前为什么有这个战术，且在某个时期是最优战术。</p>
+<p>我们不用去嘲笑“线列步兵战术”，如果能掌握其中的精髓，即使使用的“武器”低劣，只要我们能沉住气、找准爆发点，依然可以找到自己的一席之地。</p>
+<h3 id="JerryLuo（1小时前·湖北）-1"><a href="#JerryLuo（1小时前·湖北）-1" class="headerlink" title="JerryLuo（1小时前·湖北）"></a>JerryLuo（1小时前·湖北）</h3><p>关于1759年“魁北克战役”的补充（信息来自网络）：</p>
+<p>1759年9月13日的亚伯拉罕平原之战堪称18世纪排枪战术的典范。在双方都缺乏重炮的情况下，加拿大魁北克城外国英军詹姆斯·沃尔夫少将指挥英格兰第43、第47步兵团、苏格兰第78高地团，约3300人，在魁北克城外的亚伯拉罕平原排成长约1000米的两排线式队形。沃尔夫少将命令手下：“每支步枪装填两颗弹丸，在没看清法军的眼白之前不许开枪！”，对面的法军3500人排成三排队形，出城迎战英军。法军在距离英军180米的时候首先开火，在前进过程中，每前进20米就向英军齐射一次。英军伤亡了约20%，但并不还击，只是静静地站在原地盯着法军。</p>
+<p>当丝毫无损的法军推进到离英军仅30米远时，英军下达了射击命令，第一轮齐射就打倒了法军1000多人，同时敲响战鼓、吹奏风笛，向前推进。英军前进了约10米后，打了第二轮齐射，法军又倒下了800多人，短时间内的大量伤亡使法军瞬间崩溃。法军指挥官蒙特卡姆将军称之为：“这是我在战场上从来没有见过的，想来也是有史以来最恐怖的排枪”，他也挨了一枪，被抬着撤回了城内，第二天清晨也追寻沃尔夫同志去了。</p>
+<p>此战只进行了约20分钟，英军死伤不到600人，法军死伤约2000人。9月19日，魁北克开城投降，连魁北克带整个加拿大，1000余万平方公里都归了英国了。</p>
+<h3 id="鸿涛（8小时前·福建）"><a href="#鸿涛（8小时前·福建）" class="headerlink" title="鸿涛（8小时前·福建）"></a>鸿涛（8小时前·福建）</h3><p>遇到重大对决问题时，有勇气等待有利于己的胜率的来临，有智慧耐心地让胜率积累到更大，这样才能发挥有限资源的最大功效。亮剑的精髓在于勇于、擅于把握时机，这也是弱者、劣等资源唯一的取胜之道。</p>
+<h3 id="学习机器（2小时前·IP未知）"><a href="#学习机器（2小时前·IP未知）" class="headerlink" title="学习机器（2小时前·IP未知）"></a>学习机器（2小时前·IP未知）</h3><p>在知乎上有这样一个问题，交易中最重要的环节是什么呢？答案千奇百怪，有说是不要频繁交易的、有说是设置止损的、也有说是浮盈加仓的。嗯，这些答案都很重要，但不是最重要。在我看来最重要的环节就是耐心等待，等待属于你的交易信号的出现，然后果断出手，狠狠地咬上一口。</p>
+<p>其实做市场交易和钓鱼是类似的。不知道你有没有想过，钓鱼的时候，鱼线上会有鱼漂。为什么会有鱼漂？鱼漂的本质就是一个信号系统，我们通过鱼漂观察水里的鱼是否在咬钩，鱼漂动了，适当的时候你就要立刻提竿。鱼漂不动，说明没有鱼在吃鱼饵，此时你要做的就是观察鱼漂的变化，在鱼饵不动之前你拿着鱼竿，耐心等待。</p>
+<p>水里面有很多游来游去的鱼，这些鱼其实和钓鱼者没有关系，我们不用着心神不定地盯着这些鱼。临渊羡鱼，不如退而结网。只有咬住了你的鱼钩，鱼漂动了，这条鱼才和你有关系，这就是我们要的信号。做市场交易的道理也是如此，作为交易者我们需要耐心等待鱼漂所发出的信号，如果鱼漂没有浮动，那市场的走势再热闹，也和你没有关系，此时你能做的唯一耐心等待，而不是乱作为，如果你非要乱作为的话，那就是自己作死。</p>
+<h3 id="以上留言由作者筛选显示"><a href="#以上留言由作者筛选显示" class="headerlink" title="以上留言由作者筛选显示"></a>以上留言由作者筛选显示</h3><p>【知识福利社】你的私人书院，微信：312005650 全网热门课程众筹共享！</p>
+<hr>
+<p><a href="/book/decision-algorithm/029/">← 029｜反事实思维：条件不够如何突围？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/031/">031｜两眼论：怎样找到你的人生杠杆？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

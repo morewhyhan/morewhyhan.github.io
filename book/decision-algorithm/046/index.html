@@ -1,0 +1,521 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>046｜费德勒的秘密：为什么54%得分率能成为世界第一？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》046：费德勒的秘密：为什么54%得分率能成为世界第一？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="046｜费德勒的秘密：为什么54%得分率能成为世界第一？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/046/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》046：费德勒的秘密：为什么54%得分率能成为世界第一？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:45.412Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/046/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '046｜费德勒的秘密：为什么54%得分率能成为世界第一？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">046｜费德勒的秘密：为什么54%得分率能成为世界第一？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">046｜费德勒的秘密：为什么54%得分率能成为世界第一？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<ul>
+<li>时长：12分23秒</li>
+<li>来源：老喻·决策算法100讲</li>
+</ul>
+<h2 id="老喻亲述"><a href="#老喻亲述" class="headerlink" title="老喻亲述"></a>老喻亲述</h2><p>你好，我是老喻，欢迎来到《决策算法》课。</p>
+<p>在达特茅斯学院2024年毕业典礼演讲中，费德勒提到了一个让人意外的事实：</p>
+<blockquote>
+<p>“在网球运动中，完美是不可能的……在我的职业生涯中，我打过1,526场单打比赛，几乎赢了80%的比赛……现在，我想问你们所有人一个问题……你认为我在这些比赛中赢得了多少百分比的分数？</p>
+<p><strong>只有54%。</strong></p>
+<p>换句话说，即使是顶级网球选手，赢得的分数也仅仅只有他们比赛总分数的一半多一点。”</p>
+</blockquote>
+<p>这听起来很反直觉。</p>
+<p>要知道他可是费德勒，他是网球史上最佳的男子选手之一，总共赢得20座大满贯，在单打世界排名第一累计310周，还创造了连续237周世界排名第一的男子网坛纪录。</p>
+<p>54%的得分率，怎么可能支撑他的传奇？</p>
+<p>但其实，不光是费德勒，网球圈早有多位数据分析专家、统计学家做过相关研究，包括费德勒、纳达尔、德约科维奇这些顶尖球员在自己巅峰时期，得分率通常在53%-55%之间，但他们的胜场率往往在80%-90%之间。</p>
+<p>借助于这个反直觉的事实，我们要分享一个重要的真相：<strong>职业决策高手的成功，靠的不是一城一池的得失，而是靠持续累进的微弱优势。</strong></p>
+<h2 id="一"><a href="#一" class="headerlink" title="一"></a>一</h2><p>让我们暂时从情绪中走出来，回到概率本身：</p>
+<p>为什么只赢了54%的分数，却能赢得80%的比赛，并且成就史上最强的运动员之一？</p>
+<p>这个事实虽然反直觉，但其实也可以通过数学证明。</p>
+<p>这里涉及到伯努利实验和二项分布，过程略微复杂。我自己推导了一遍，过程放在文稿区，如果你对数学感兴趣，可以自己对照推导一遍。</p>
+<p>当然，现在大模型数学能力也不错，你也可以让大模型帮你完成。</p>
+<p>实际计算的结果，当得分率是54%的时候，最终的胜率通常在78%～80%左右，跟费德勒演讲中说的非常接近。</p>
+<p>这就说明，只要你在每一次独立回合里有54%的胜算，在足够多回合的累加下，就能让你有约80%的把握赢下整场比赛。</p>
+<p>从数学计算的角度看，小小的54%得分率，通过二项分布的重复累加，转化为远远高于对手的整场乃至长期胜率。</p>
+<p>在现实网球比赛中，关键分、抢七局等规则还会进一步放大这点胜率优势。</p>
+<p>也正因此，费德勒才能拿下20座大满贯，成为史上最伟大的网球运动员之一。</p>
+<h2 id="二"><a href="#二" class="headerlink" title="二"></a>二</h2><p>费德勒说：所谓的“毫不费力”（的成功）仅仅是一个虚幻的神话。</p>
+<p>54%这个令人震撼的数字也告诉我们，连最厉害的人都挣扎在输和赢的生死线上。</p>
+<p>而费德勒的传奇成就又激励我们：<strong>只要你能够在某些情境下保持略高于50%的胜算，然后持续、反复地利用这点优势，你就会把“少量差距”放大成“决定性胜势”。</strong></p>
+<p>而在这个过程中，最让人难以承受的，是不可避免的失败和结果难料的前奏。</p>
+<p>生长在一个“分分必争”的教育系统里，我们从小接受的教育中，丢分是可耻的。</p>
+<p>慢慢的，人们开始失去了犯错的基本能力，更别谈主动犯错的勇气。</p>
+<p>这或许能让你短期内成绩拔尖，但当走进充满不确定性的职场和社会时，这种思维模式往往束缚你的手脚。</p>
+<p>想象一下，一个从未体会过“得六七十分也不错”的人，怎么能接受在商业或投资世界里“连赢7次又输3次，依然是好业绩”的概念呢？</p>
+<p>现实世界没有现成答案，也不会给你一条“只要做对所有步骤就能100%成功”的清单。相反，它杂乱、不可控，你必须学会在大量失误中，提炼出一点儿稳定的微小得分优势。</p>
+<p>再看看费德勒：他打得既凶又理智，他当然会全力以赴拼每一个球，但他从来不指望自己能拿下每一分，只是让自己的综合实力在大多数情况下略胜对手；然后，在分数足够多时，自然而然就垒出了总胜利。</p>
+<p>可如果你以“必须把每分都拿到”的思维去打，那你大概率会精神崩溃，或在重大失误后难以自我调节。</p>
+<p>我有个中学同学，读书时候成绩只是比学渣略好，但现在他不仅是所在领域的学术带头人，还是一家上市公司的主要股东之一。</p>
+<p>他中学时候喜欢足球，是年级球队成员之一。他说，自己从运动中学到的东西，远比学科知识对他有更大的帮助。他很早就知道了赢球输球是常态，在泥坑里弄脏双脚是常态，拼搏到底但却被对手翻也是常态。</p>
+<p>可惜，大多数人小时候根本没有接受过这些关于成败的启蒙教育。</p>
+<h2 id="三"><a href="#三" class="headerlink" title="三"></a>三</h2><p>如果说，伯努利实验和“54%的得分率”在数学上提醒我们——“多回合的累计可以放大微小优势”，那么它也在生活中启示我们：哪怕你常常会输，总体上依然可能赢得整局。</p>
+<p>输和赢本来就是交织在一起的，我们没有必要苛求“局局完美”。</p>
+<p>在社会里，一次失败，就可能让周围的人觉得你一无是处。然而，真实的成功之道往往依靠的不是“零失误”，而是“抓住多数回合的优势”。</p>
+<p>换句话说，“失败可以是一个选项”。**你应该专注的，是找到那个比对手稍微大1%或2%的胜算，然后把它反复地执行下去。**其他时间里，容许自己犯错，容许自己在一些项目或时刻黯然失利。</p>
+<p>其实，很多时候我们害怕的并非一次具体失败，而是那种胜负难料之下的未知煎熬。我们总说，不要怕进入泥泞，不要怕弄脏双手，其实说的就是——别怕走进“概率的泥泞”。</p>
+<p>因为概率永远含混不清，<strong>我们必须忍受在大获全胜和一败涂地之间的灰度状态，这才是人生的真相。</strong></p>
+<p>费德勒的看似随性的“54%得分率思维”，其实需要职业竞技高手级别的“功夫”去支撑。</p>
+<p>我的经验是，这几乎是一种童子功：</p>
+<ul>
+<li>从小在安全感充足的环境下，孩子也许更容易学会“犯错并重新来过”，从而练就“输了还敢打下一分”的心态；</li>
+<li>但若生长在资源稀缺或“分分必争”的环境，人人往往难以认同这一点，总想一把抓稳全部机会，或者渴望一击制胜。若做不到，也会干脆放弃，在相对确定、安全、平均的轨道上止步不前。这样就失去了真正的决策权、独立思考和判断力。</li>
+</ul>
+<p>要在“混乱中前行”，并且还“不去赌博”，在我观察中，这种人实在太少了。</p>
+<p>更多人或是恐惧失败而畏缩不前，或是放手一搏却忽略理性风控。</p>
+<p>若你能像费德勒那样既保持淡定又不失战斗意志，在一点点微弱优势之上不断重复、不断累积，就能化不可能为可能。</p>
+<p><strong>真正的强者不怕“概率的泥泞”，反倒能在模糊与不确定中一次次搜索、试探、迭代成长，最终用“54%”的得分率造就“80%”的通盘胜局。</strong></p>
+<h2 id="四"><a href="#四" class="headerlink" title="四"></a>四</h2><p>说到这里，你可能会问，如果没有上面说的童子功，我们该如何练就呢？</p>
+<p>还是在同一个演讲中，费德勒给出了自己的答案：</p>
+<blockquote>
+<p>“当你丢掉一分时，你要学会不要对每一次击球都过于纠结。你要教会自己这样想：好吧，我发出了一记双误，但这仅仅是一分而已。接下来，我要重新开始，开始下一个发球或接发球，开始全新的一分。</p>
+<p>即使是一个精彩的击球，一个过顶反手扣杀，最终进入了ESPN（美国的一家体育媒体公司）的十大精彩击球，但它仅仅是一分而已。</p>
+<p>这就是我告诉你这件事的原因。你要努力去赢得下一分，这才是世界上最重要的事情。”</p>
+</blockquote>
+<p>听完他的精彩解答，我们需要再提及伯努利实验的一个关键：每次实验都是独立随机试验。</p>
+<p>作为一名网球高手，一种至关重要的能力是：把每个球都当作独立比赛来打。</p>
+<p>即使丢了分，甚至是连续丢分，都要立即忘掉，然后专注于下一个球。</p>
+<p>只有这样，才能在大数定律的作用下，让54%的得分率以稳定实现，进而赢得80%的比赛。</p>
+<p>无论是负面还是正面的回合，都不应对下一个回合造成持续干扰。如果你把上一回合的情绪一直带到下一回合，就违背了这种“独立性”，也就极大降低了54%胜率能发挥的实际价值。</p>
+<p>放在更广泛的人生里，这一点也是如此。当我们在工作中犯了错，当我们在学习中考砸了或在投资中踩了坑，都要意识到那只是“众多回合”中的一次失败。<strong>去反思可以，但不要过度沉溺，更不能让负面情绪反噬后续的行为。</strong></p>
+<p>因为只有让“前一回合”尽量独立，我们才有机会让大数定律的力量持续运作，在人生的伯努利实验中，让微小的“略优概率”不断累加。</p>
+<p>对我们普通人来说，“把每个决策或行动都视为独立事件”的要点在于，承认你会失败，承认结果可能如过山车般起伏——但依然保持信心，保持对下一次机会的精准投入。</p>
+<p>这才是长久获胜的思维模式，也正是普通普通的“54%”转换为冠军荣耀的内在逻辑。</p>
+<h2 id="五"><a href="#五" class="headerlink" title="五"></a>五</h2><p>我有个做金融的朋友说，他们圈子里有种说法，每个人赚到一笔大钱，或多或少都会“还回去”一部分，有的人还的多，有的人还的少，他自己还了一半回去，花了两三年时间才走出来。</p>
+<p>别的行业，可能不会像金融和竞技那样，面临着大量的决策，经受着一个又一个的成败。但是我们的工作和生活，以及别的人生决策，也是在非成功中起伏跌宕着。</p>
+<p>记住这句话：<strong>输掉一分并不可怕，下一分才是最重要的。</strong></p>
+<p>且让我们用费德勒的演讲来结尾吧：</p>
+<blockquote>
+<p>你要成为战胜困难的大师。对我来说，这就是冠军的标志。世界上最优秀的人之所以优秀，并不是因为他们赢得了每一分……而是因为他们知道他们会输……一次又一次地输……但他们已经学会了如何应对。</p>
+<p>你要接受它。如果需要的话，就哭出来……然后强颜一笑。你继续前进，坚持不懈，适应并成长，然后更加努力地工作，更加聪明地工作。</p>
+</blockquote>
+<p>愿你在现实的起起伏伏中，赢得自己的人生。</p>
+<p>我是老喻，我们下一讲再见。</p>
+<h2 id="附录：伯努利实验与二项分布"><a href="#附录：伯努利实验与二项分布" class="headerlink" title="附录：伯努利实验与二项分布"></a>附录：伯努利实验与二项分布</h2><p>想象你在投掷硬币：正面朝上算“得分”，反面朝上算“失分”。每一次掷硬币都是一个“伯努利实验”。</p>
+<p>伯努利实验研究的是如下情景：</p>
+<p>你要重复做 $n$ 次“赢或输”的独立尝试。每一次赢的概率是 $p$，输的概率是 $(1-p)$。最终如果你赢了 $k$ 次，这个事件发生的“路径”或“组合”有多少？</p>
+<p>我们试着用一个极小的例子，来从头推到计算的方法。</p>
+<p>假设如上的实验只重复3次，想要“赢2次，输1次”。</p>
+<p>那么，所有可能的序列如下：</p>
+<ol>
+<li>赢 赢 输</li>
+<li>赢 输 赢</li>
+<li>输 赢 赢</li>
+</ol>
+<p>你会看到一共3种不同的顺序，这3种都属于“赢了2次、输了1次”。</p>
+<p>根据概率的乘法原理，每一种顺序发生的概率是：</p>
+<p>$$p \times p \times (1-p)&#x3D;p^2(1-p).$$</p>
+<p>又因为赢2输1的顺序有三种，所以“赢2输1”的结果就是：</p>
+<p>$$3\times p^2(1-p).$$</p>
+<p>接下来是二项分布的基本公式：</p>
+<p>当你做 $n$ 次，如果要“赢” $k$ 次，那么赢与输的顺序可以有许多种排列，其具体多少，可以用组合数 $\binom{n}{k}$ 计算——它表示“从 $n$ 次试验里选出 $k$ 次作为赢的回合数”。每个排列的概率是：</p>
+<p>$$p^k(1-p)^{n-k}.$$ </p>
+<p>因此，把组合数与这部分概率相乘，就得到整个事件“赢 $k$ 次”的概率：</p>
+<p>$$P(赢了k次)&#x3D;\binom{n}{k}p^k(1-p)^{n-k}.$$ </p>
+<p>再接着，从数学的角度，重新描述一下这个问题：为什么54%的分数能赢得80%的比赛？</p>
+<ul>
+<li>每一回合：赢的概率是0.54，输的概率是0.46。</li>
+<li>假设有100回合（相当于把一场网球比赛简化为100个球）。</li>
+<li>我们要算：赢了超过50个球（也就是大于对手）是什么概率？</li>
+</ul>
+<p>使用上面的二项分布公式，计算如下：</p>
+<p>令 $X$ 表示“赢的总回合数”，则</p>
+<p>$$P(X&#x3D;k)&#x3D;\binom{100}{k}(0.54)^k(0.46)^{100-k}.$$ </p>
+<p>要整体取胜，需要 $X&gt;50$，因此</p>
+<p>$$P(取胜)&#x3D;\sum_{k&#x3D;51}^{100}\binom{100}{k}(0.54)^k(0.46)^{100-k}.$$ </p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>只要你能够在某些情境下保持略高于50%的胜算，然后持续、反复地利用这点优势，你就会把“少量差距”放大成“决定性胜势”。</li>
+<li>你应该专注的，是找到那个比对手稍微大1%或2%的胜算，然后把它反复地执行下去。其他时间里，容许自己犯错，容许自己在一些项目或时刻黯然失利。</li>
+<li>输掉一分并不可怕，下一分才是最重要的。</li>
+</ol>
+<h2 id="精选留言"><a href="#精选留言" class="headerlink" title="精选留言"></a>精选留言</h2><h3 id="左星星（上海）"><a href="#左星星（上海）" class="headerlink" title="左星星（上海）"></a>左星星（上海）</h3><p>费德勒积累微弱优势的路径并不容易。它需要一种独特的心态——既要有长期的耐心，又要有短期的专注。这种能力并非仅仅是一种竞技技巧，而是一种深刻的情绪管理能力和心智模式。他能够将每一分都视为独立事件，过去的失误不会干扰他的后续发挥。</p>
+<p>然而，我们很多人在面对挫折时，往往会陷入对过去的懊悔，或者对未来的焦虑，而无法专注于当下的行动。费德勒的故事提醒我们，情绪独立性是成功的关键组成部分。只有摆脱对过去失败的纠缠，我们才能充分释放自己在当前情境中的潜力。</p>
+<p>很多人以为成功需要一击制胜的大动作，但真实世界中，更常见的是在无数次试探与调整中，找到属于自己的路径。费德勒的“54%”代表了一种低风险、高回报的策略。他没有试图赢下每一分，而是通过稳定的表现积累了长期的优势。这种思维模式提醒我们，在面对复杂的决策时，不要追求“一次成功”，而是通过小步快跑、持续迭代，逐步扩大自己的胜率。</p>
+<p>费德勒的得分率故事不仅是对竞技体育的深刻解析，更是一种应对复杂世界的生存智慧。我从其中获得的启发是：不可苛求完美，不畏惧失败，专注于小步的前进，用时间将微小的胜率优势转化为最后的胜局。</p>
+<h3 id="Scott（广东）"><a href="#Scott（广东）" class="headerlink" title="Scott（广东）"></a>Scott（广东）</h3><p>现实生活中，人们喜欢追求一蹴而就的大优势，忽略了小优势长期积累的巨大潜力。</p>
+<p>大优势难得，因为大优势往往需要满足诸多苛刻的条件，比如竞争不激烈、天赋异禀、大量的资源投入、特殊的时机等等。</p>
+<p>小优势易取，因为小优势不追求绝对的胜利，容错率高，也容易培养，不需投入大量的资源。</p>
+<p>我理解这个时代，最容易获取的小优势，是何帆老师所说的“苟且红利”，即在别人觉得没必要的地方，坚持不吝惜地投入；在别人不那么认真的地方，多较劲一点。深想一步，认真一点，你就能享受到别人苟且为你所带来的红利。</p>
+<p>也就是说，当别人做事都不认真，苟且、敷衍、糊弄的时候，你认真真正地做事，就会消灭一大批苟且者。</p>
+<h3 id="shuyue（广东）"><a href="#shuyue（广东）" class="headerlink" title="shuyue（广东）"></a>shuyue（广东）</h3><p>费德勒54%的概率造就80%的通盘胜局，确实反直觉。我们认为的全胜似乎百分之百，但实际上是包括了46%的失败。这一讲给我的启示是微弱优势持续累积的惊人结果！只是能持续累积微弱优势也非易事，也符合概率的不确定性。象巴菲特，能持续60年，每年平均收益28%，成为世界首富。依然是凤毛麟角！</p>
+<p>记得我曾看过一篇文章，讲10年10%，10万变100万。当时国内A股，每年都有一两次吃饭行情，每年赚10%似乎不难。但是，真正能做到10万变百万依然是二八定律，少数人的胜局。</p>
+<p>但是，这一讲让我们面对失败的态度有意义。把人生遇到的每件事独立看待，不以一事成败影响下一事。以重新开局的心态处理好每件事，争取持续累积微弱优势。</p>
+<p>“真正的强者不怕‘概率的泥泞’，反倒能在模糊与不确定中一次次搜索、试探、迭代成长，最终用‘54%’的得分率造就‘80%’的通盘胜局”。</p>
+<h3 id="炎帝（北京）"><a href="#炎帝（北京）" class="headerlink" title="炎帝（北京）"></a>炎帝（北京）</h3><p>费德勒，网球传奇，他的优雅、技术和冠军头衔让他成为无数人心中的偶像。</p>
+<p>然而，他的职业生涯得分率只有54%，许多人感到惊讶。这个数字似乎与他的传奇地位不符。但正是这个看似不起眼的54%，揭示了成功的深层逻辑，也为我们提供了宝贵的人生启示。</p>
+<ol>
+<li><strong>接受不完美，追求持续进步</strong></li>
+</ol>
+<p>费德勒的故事提醒我们，成功并不意味着每次都必须做到最好或赢得一切。相反，它更多地依赖于在每个小决策上保持略微领先，并且坚持不懈地积累这些微小的成功。对于普通人来说，这意味着我们要学会接受失败，认识到即使是顶尖高手也会经历起伏，重要的是从中学习并继续前进。</p>
+<ol start="2">
+<li><strong>独立看待每一次挑战</strong></li>
+</ol>
+<p>另一个重要的教训是，要把每一个新的开始都当作一次全新的尝试。无论是工作中的项目还是生活里的选择，我们都应该尽量避免让过去的成败影响当下的表现。就像费德勒所说：“即使是最精彩的击球，最终也只是一分而已。”这种心态帮助他在面对挫折时迅速调整状态，专注于接下来的机会。</p>
+<ol start="3">
+<li><strong>在不确定性中找到确定性</strong></li>
+</ol>
+<p>生活中充满了未知数，我们无法预测每一个结果，但可以通过建立稳健的基础来提高成功的概率。例如，在投资领域，分散风险是一种常见的策略；而在个人成长方面，则需要培养多样化的技能和兴趣，以便更好地适应变化。正如费德勒通过不断地练习和技术改进确保自己在大多数情况下略胜一筹一样，我们也应努力打造自己的核心竞争力，从而在复杂多变的世界里站稳脚跟。</p>
+<ol start="4">
+<li><strong>持续学习与自我提升</strong></li>
+</ol>
+<p>最后，真正的冠军不仅仅是因为他们赢得了多少场比赛，更重要的是他们如何应对失败。费德勒曾提到，“世界上最优秀的人之所以优秀，不是因为他们赢得了每一分……而是因为他们知道他们会输……一次又一次地输……但他们已经学会了如何应对。”这种态度鼓励我们在面对困难时不轻易放弃，而是将其视为成长的机会，不断反思和改进自己。</p>
+<h3 id="Blacole（香港）"><a href="#Blacole（香港）" class="headerlink" title="Blacole（香港）"></a>Blacole（香港）</h3><p>我印象中赌场的胜率好像也就是超过50%多一点，当时看到这个数据的时候就很惊讶，就超过一点那赌场怎么赚钱！？</p>
+<p>但是问题就胜在赌场的量足够大，时间足够长，所以它最终还是赢的。</p>
+<p>马拉松选手的最佳策略其实就是作为第二名跟着第一名，然后快到终点的时候爆发，一下子超过过去的，这个时候两者的实力是很贴近的，但是各自心态是不同的，作为第一名内心容易崩溃。</p>
+<p>这个算法有个局限性，那就是在短时间爆发的竞技场是不适用的，所以人应该庆幸人生是场马拉松。</p>
+<p>如果你在短跑比赛里面搞这个，恐怕比赛还没开始就已经结束，闪电哥守时直接大比分拉开。</p>
+<p>然而我想说，这里面还是有机会，网球我不懂，但是乒乓球我打过，以前中国队就有一种打法是把每一球的胜负决定于前三板之内，这样经常导致对手没法打持久战，但是这里面变数依然很多，因为有11球那么多，比赛还是由很多个短程胜负组成的，所以算法适用。</p>
+<h3 id="FF（马来西亚）"><a href="#FF（马来西亚）" class="headerlink" title="FF（马来西亚）"></a>FF（马来西亚）</h3><p>适应现实的第一步，是接受它的不可控性；而超越现实的关键，是在混沌中保持冷静，从错误中学习，并在微小的成功中找到持续前行的动力，不追求完美，在心态上无敌，从而最后成为赢家。</p>
+<h3 id="李坚（四川）"><a href="#李坚（四川）" class="headerlink" title="李坚（四川）"></a>李坚（四川）</h3><p>大处着眼，小处着手。</p>
+<p>在处理具体问题时要专注，尽量屏蔽外界干扰，全力处理好当下事宜；事情完成后，无论结果好坏，都能将其看做无钱游戏中的某一个环节，不被过去所束缚和影响。这个难度蛮高的，而且在面对某些人生关键性不可重复的决策时尤其考验人。</p>
+<h3 id="Shaper-杨（湖南）"><a href="#Shaper-杨（湖南）" class="headerlink" title="Shaper 杨（湖南）"></a>Shaper 杨（湖南）</h3><p>一次决策失误并不会摧毁你整个人生，因为人生中很多事情都是独立且随机的。重要的是你能破除损失厌恶心理，能够保持尺度认知，保持不确定性，有概率思维。记住，这很重要，甚至能影响你终生的心态。</p>
+<p>依然记住这句话：输掉一分并不可怕，下一分才是最重要的。</p>
+<h3 id="王茂荣（云南）"><a href="#王茂荣（云南）" class="headerlink" title="王茂荣（云南）"></a>王茂荣（云南）</h3><p>一、费德勒的得分率与胜场率现象</p>
+<ul>
+<li><strong>现象描述</strong>：费德勒在其网球职业生涯中，打过1526场单打比赛，赢了近80%的比赛，但赢得的分数仅占比赛总分数的54%。不仅是费德勒，纳达尔、德约科维奇等顶尖球员在巅峰时期，得分率通常在53%-55%之间，胜场率却在80%-90%之间。</li>
+<li><strong>反直觉性</strong>：这一现象看似反直觉，因为人们往往会认为顶尖选手应该赢得更高的分数比例，才能取得如此高的胜场率。</li>
+</ul>
+<p>二、背后的数学原理</p>
+<ul>
+<li><strong>伯努利实验与二项分布</strong>：每次网球得分可以看作是一个伯努利实验，赢的概率为0.54，输的概率为0.46。通过二项分布计算，当得分率是54%时，最终的胜率通常在78%-80%左右，与费德勒的实际胜场率接近。即在足够多回合的累加下，54%的得分率能转化为约80%的把握赢下整场比赛。</li>
+<li><strong>关键分等因素的影响</strong>：现实网球比赛中的关键分、抢七局等规则，还会进一步放大54%得分率所带来的胜率优势。</li>
+</ul>
+<p>三、对职业决策和人生的启示</p>
+<ul>
+<li><strong>微弱优势的累积效应</strong>：职业决策高手的成功，靠的不是一城一池的得失，而是靠持续累进的微弱优势。只要在某些情境下保持略高于50%的胜算，然后持续、反复地利用这点优势，就能把“少量差距”放大成“决定性胜势”。</li>
+<li><strong>接受失败与犯错</strong>：我们从小接受的教育中，丢分常被视为可耻，导致人们失去了犯错的基本能力，更别提主动犯错的勇气。然而在充满不确定性的现实世界，必须学会在大量失误中，提炼出一点儿稳定的微小得分优势。费德勒的传奇成就激励我们，连最厉害的人都挣扎在输和赢的生死线上，我们应该接受失败，容许自己犯错。</li>
+<li><strong>独立看待每次尝试</strong>：要把每一个新的开始都当作一次全新的尝试，避免让过去的成败影响当下的表现。就像费德勒所说：“即使是最精彩的击球，最终也只是一分而已。”无论是工作中的项目还是生活里的选择，我们都应该把每个决策或行动都视为独立事件，承认结果可能如过山车般起伏，但依然保持信心，保持对下一次机会的精准投入。</li>
+</ul>
+<p>四、培养相关能力与心态</p>
+<ul>
+<li><strong>童子功的重要性</strong>：从小在安全感充足的环境下，孩子更容易学会“犯错并重新来过”，从而练就“输了还敢打下一分”的心态。而在资源稀缺或“分分必争”的环境里长大的人，往往难以认同这一点，总想一把抓稳全部机会，或渴望一击制胜，若做不到也会干脆放弃，在相对确定、安全、平均的轨道上止步不前，失去真正的决策权、独立思考和判断力。</li>
+<li><strong>费德勒的建议</strong>：在同一个演讲中，费德勒提到要学会不要对每一次击球都过于纠结，把每个球都当作独立比赛来打。即使丢了分，甚至是连续丢分，都要立即忘掉，然后专注于下一个球。只有这样，才能在大数定律的作用下，让54%的得分率得以稳定实现，进而赢得80%的比赛。在更广泛的人生里，当我们犯错或遭遇失败时，也要意识到那只是“众多回合”中的一次失败，去反思可以，但不要过度沉溺，更不能让负面情绪反噬后续的行为。</li>
+</ul>
+<p>五、实际案例与拓展思考</p>
+<ul>
+<li><strong>金融领域的应用</strong>：有金融从业者提到，每个人赚到一笔大钱，或多或少都会“还回去”一部分。这说明在金融领域，面临着大量的决策，经受着一个又一个的成败，需要像费德勒那样在一点点微弱优势之上不断重复、不断累积，才能化不可能为可能。</li>
+<li><strong>技术领域的启示</strong>：一位技术专长者分享，自己在面对公司分派的陌生领域挑战时，秉持着独立面对的心态，不因担心失败而退缩，一路过五关斩六将，为公司开疆扩土。后来即使进入不擅长的管理领域，也通过学习逐步形成了自己独特的人性化管理风格，团队不断发展壮大。这体现了把每一次挑战都当作独立事件去完成的重要性。</li>
+<li><strong>对个人成长的思考</strong>：费德勒的故事还提醒我们，情绪独立性是成功的关键组成部分。只有摆脱对过去失败的纠缠，专注于当下的行动，才能充分释放自己在当前情境中的潜力。在面对复杂的决策时，不要追求“一次成功”，而是通过小步快跑、持续迭代，逐步扩大自己的胜率。</li>
+</ul>
+<h3 id="鸿涛（福建）"><a href="#鸿涛（福建）" class="headerlink" title="鸿涛（福建）"></a>鸿涛（福建）</h3><p>在高度不确定性和复杂的现实，很多事情是个无限游戏，比如打职业比赛、投资或是其他事业。无限游戏比的是胜率，拼的是在持续的竞争中用累计的微弱优势造就更多的胜局。这就需要在有利时依靠前期优势，扩大积和极影响；在不利时保持独立，不让负面情绪反噬后续的行为。</p>
+<h3 id="victory（四川）"><a href="#victory（四川）" class="headerlink" title="victory（四川）"></a>victory（四川）</h3><p>今年樊正东在巴黎奥运会乒乓球比赛中对阵张本智和的比赛就展现了顶级运动员的心理素质，在3比0落后的情况下，连下四局赢的比赛，其实就顶级乒乓球运动员之间差距很小必须做到每球必争，把后面四局比赛都当成独立的比赛来打，努力争取每一局的比赛，需要的是顶级的心理素质。</p>
+<h3 id="山峰（江西）"><a href="#山峰（江西）" class="headerlink" title="山峰（江西）"></a>山峰（江西）</h3><p>类似费德勒的人物，我想到了韩国棋手李昌镐。李昌镐，是世界围棋界的顶尖高手，被认为是当代仅次于吴清源的棋手。李昌镐下棋，很少追求高胜率，而是追求每手51%的微弱胜率，俗称“半目胜”。但正是这个微弱优势，很难破解。即使每一手棋只有一点点微弱的优势，但一局棋中有200～300手，李昌镐下到一百多手的时候，就能稳操胜券了。</p>
+<p>总之，每次只比对手好一点点，就能赢了。这种微弱的迭代，相比于那种追求妙手的神来之笔，单次效果不明显，但是累积下来效果好的多，而且成本低、难度小。</p>
+<h3 id="铁事（贵州）"><a href="#铁事（贵州）" class="headerlink" title="铁事（贵州）"></a>铁事（贵州）</h3><p>从网球比赛概率模型来看，0.54的单回合赢率、100回合设定下赢超50球概率达0.7591，数字背后是策略的基石。这让我意识到，生活恰似这网球场，工作项目、投资决择皆可类比。提升单局胜率的启示为深刻，0.54到0.55的微变，竟让总胜率跃升近6个点，恰似在日常点滴学习积累中，每次技能精进、知识扩充，都可能成为工作晋升、投资获利的关键助推，让优势在长路上持续放大。</p>
+<p>“保持独立事件”原则如暮鼓晨钟。球局间互不干扰，人生又何尝不是？过往成败只是历史注脚，在投资决策时，不因上一次涨跌而乱方寸；面对工作挑战，不让上次项目结果牵绊，专注当下任务，才能让每一次行动都发挥最大效能。</p>
+<h3 id="张不二（上海）"><a href="#张不二（上海）" class="headerlink" title="张不二（上海）"></a>张不二（上海）</h3><p>我用kimi算了一下，过程贴出来。</p>
+<p>好的，让我们一步步解决这个问题。我需要计算以下求和：</p>
+<p>$$P(获胜)&#x3D;\sum_{k&#x3D;51}^{100}\binom{100}{k}(0.54)^k(0.46)^{100-k}.$$ </p>
+<p>这显然是一个二项概率问题。我们有100次试验，每次试验成功的概率为0.54，失败的概率为0.46。我们需要计算至少有51次成功的概率。</p>
+<p><strong>初步想法：</strong></p>
+<p>直接从 $k&#x3D;51$ 到 $k&#x3D;100$ 逐项计算似乎非常繁琐。一定有更聪明的方法来解决这个问题。</p>
+<p><strong>探索可能的方法：</strong></p>
+<ol>
+<li><strong>使用二项分布</strong>：也许我可以找到一个二项分布表，给出 $n&#x3D;100$ 和 $p&#x3D;0.54$ 的累积概率。但我不确定手头是否有这样的表格。</li>
+<li><strong>正态近似</strong>：由于 $n$ 很大（100），我可以使用正态分布来近似二项分布。让我们看看这是否可行。</li>
+<li><strong>软件或计算器</strong>：我可以使用统计软件或高级计算器来计算这个求和。但假设我现在没有这些工具。</li>
+</ol>
+<p><strong>尝试正态近似：</strong></p>
+<p>首先，计算二项分布的均值 $\mu$ 和标准差 $\sigma$：</p>
+<p>$$\mu&#x3D;n\cdot p&#x3D;100\cdot0.54&#x3D;54,$$</p>
+<p>$$\sigma&#x3D;\sqrt{n\cdot p\cdot(1-p)}&#x3D;\sqrt{100\cdot0.54\cdot0.46}\approx\sqrt{24.84}\approx4.984.$$ </p>
+<p>现在，我需要计算 $P(X\geq51)$。对于正态近似，这可以表示为：</p>
+<p>$$P(X\geq51)\approx P\left(Z\geq\frac{51-54}{4.984}\right)&#x3D;P\left(Z\geq-0.602\right).$$</p>
+<p>查标准正态分布表，$P(Z\geq-0.602)$ 大约是0.728。</p>
+<p>等等，这似乎不对。如果均值是54，我计算 $P(X\geq51)$，我期望概率应该更高，接近0.7或0.8。嗯，也许我哪里出错了。</p>
+<p><strong>检查计算：</strong></p>
+<p>让我重新检查一下z分数的计算：</p>
+<p>$$z&#x3D;\frac{51-54}{4.984}&#x3D;\frac{-3}{4.984}\approx-0.602.$$ </p>
+<p>查标准正态分布表，$P(Z\geq-0.602)$ 应该是 $1-P(Z&lt;-0.602)$。但 $P(Z&lt;-0.602)$ 大约是0.272，所以：</p>
+<p>$$P(Z\geq-0.602)&#x3D;1-0.272&#x3D;0.728.$$ </p>
+<p>嗯，这似乎还是有点低。也许正态近似在这里不是最好的方法。</p>
+<p><strong>考虑其他方法：</strong></p>
+<p>也许我应该考虑二项分布的对称性或其他性质。</p>
+<p>等等，由于 $p&#x3D;0.54$ 接近0.5，分布是轻微偏斜的。也许使用正态近似加上连续性修正会更好。</p>
+<p><strong>应用连续性修正：</strong></p>
+<p>让我们应用连续性修正。所以，不是 $X\geq51$，而是 $X\geq50.5$。</p>
+<p>$$z&#x3D;\frac{50.5-54}{4.984}&#x3D;\frac{-3.5}{4.984}\approx-0.702.$$ </p>
+<p>查标准正态分布表，$P(Z\geq-0.702)$ 大约是0.758。</p>
+<p>这似乎更合理了。但我不完全确定。也许我应该尝试另一种方法来验证。</p>
+<p><strong>考虑使用对数或软件：</strong></p>
+<p>由于手动计算非常繁琐，也许我可以使用对数来简化求和，或者如果可能的话，使用软件。但假设我现在没有软件，我需要找到另一种方法。</p>
+<p><strong>思考递归或简化：</strong></p>
+<p>另一个想法：也许我可以将求和表示为累积二项概率或使用递归公式。但我不确定具体如何操作。</p>
+<p><strong>回到正态近似：</strong></p>
+<p>鉴于时间限制，我将使用正态近似加上连续性修正的结果。所以，$P(获胜)\approx0.758$。</p>
+<p>但等等，我之前认为这可能有点低。让我看看是否可以改进这个估计。</p>
+<p><strong>使用中心极限定理：</strong></p>
+<p>由于 $n$ 很大，中心极限定理应该适用，正态近似应该是合理的。也许我最初的估计是可接受的。</p>
+<p><strong>最终答案：</strong></p>
+<p>经过这些步骤和检查，我估计：</p>
+<p>$$P(获胜)\approx\boxed{0.758}.$$ </p>
+<p><strong>验证：</strong></p>
+<p>为了确保我的答案合理，让我们考虑均值是54，而我计算 $P(X\geq51)$。由于51低于均值，概率应该大于0.5，这与我的估计0.758一致。这似乎合乎逻辑。</p>
+<p>以上留言由作者筛选显示。</p>
+<hr>
+<p><a href="/book/decision-algorithm/045/">← 045｜避风港：怎样在暴风雨中变得更加强大？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/047/">047｜六十分哲学：不是每一场人生的战斗都要你全力以赴 →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

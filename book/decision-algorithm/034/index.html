@@ -1,0 +1,338 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>034｜识别立场：为什么“屁股”赚钱比“脑袋”多？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》034：识别立场：为什么“屁股”赚钱比“脑袋”多？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="034｜识别立场：为什么“屁股”赚钱比“脑袋”多？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/034/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》034：识别立场：为什么“屁股”赚钱比“脑袋”多？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:45.215Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/034/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '034｜识别立场：为什么“屁股”赚钱比“脑袋”多？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">034｜识别立场：为什么“屁股”赚钱比“脑袋”多？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">034｜识别立场：为什么“屁股”赚钱比“脑袋”多？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>老喻·决策算法100讲　时长：12分58秒　首次发布：2024年12月25日</p>
+</blockquote>
+<h2 id="老喻-叙述"><a href="#老喻-叙述" class="headerlink" title="老喻 叙述"></a>老喻 叙述</h2><p>你好，我是老喻，欢迎来到《决策算法》课。</p>
+<p>宇宙有三大定律：一是熵增定律，二是屁股决定脑袋，三是天下没有免费的午餐。系统的稳定性和人的决策方向，往往取决于资源的分配和激励的结构。</p>
+<h2 id="一、屁股不仅决定脑袋，很多时候还比脑袋赚钱"><a href="#一、屁股不仅决定脑袋，很多时候还比脑袋赚钱" class="headerlink" title="一、屁股不仅决定脑袋，很多时候还比脑袋赚钱"></a>一、屁股不仅决定脑袋，很多时候还比脑袋赚钱</h2><p>过去三十年，很多人的财富来自房地产。脑袋决定了要不要买房，但“屁股”决定了房子买在哪里、买了之后持有多久。住房带来的居住需求，让很多人把大部分资产放进房地产；较高的交易成本又让长期持有成为常态，于是“屁股”带来的位置和停留时间，赚到了超出预期的钱。</p>
+<p>可以说：<strong>屁股决定脑袋的空间位置，屁股决定脑袋在该位置停留多久。</strong></p>
+<h2 id="二、识别立场和激励"><a href="#二、识别立场和激励" class="headerlink" title="二、识别立场和激励"></a>二、识别立场和激励</h2><p>理发店里，一个女孩把头发染成粉色，又想改成蓝色。理发师说粉色很适合她，蓝色虽然流行，但需要重新染，成本也更高；女孩最后听从专业意见，改染了蓝色。</p>
+<p>民间有句话：“永远不要问理发师你是否需要理发。”当你问理财顾问是否需要买基金、问地产中介是否需要买房、问律师是否需要打官司，都要想一下：每个人都会从自己的立场思考问题，而这个立场由“屁股”的位置决定。</p>
+<p>巴菲特说过：“笨蛋才会让医生继承自己的遗产。”医生希望病人长寿，遗产被医生继承则意味着病人的经济位置发生了变化。这不是让人不信任医生，而是要理解对方的激励。</p>
+<p>房地产繁荣时期的“跟投机制”，让项目经理成为股东，公司还会借钱帮助其买股。项目快速开发，资金快速回收，大家共享短期收益。但行业调整后，现金流和杠杆风险显现：跟投机制共享了短期利益，却未必共担长期风险，反而可能加剧冲突。</p>
+<p>如果要降低这种冲突，就要让奖惩和风险更对称。比如随机抽出几个降落伞，让老板亲自跳伞，降落伞的合格率一定会大幅提升。</p>
+<blockquote>
+<p><strong>要想用好“屁股决定脑袋”这条定律，最重要的是找到长期风险共担的机制，而不是只做到短期利益共享。</strong></p>
+</blockquote>
+<h2 id="三、激励方式决定行动方式"><a href="#三、激励方式决定行动方式" class="headerlink" title="三、激励方式决定行动方式"></a>三、激励方式决定行动方式</h2><p>儿子参加学校的基金模拟比赛，取得了名次和奖金。模拟盘里可以大胆满仓：输了无所谓，赢了得奖金，反正只要进入前二十名，第二十一名和第五百名没有区别。但实盘用真金白银买股票、买基金就完全不同：仓位是护身符，多只股票分仓是保护伞。</p>
+<p>比赛刚开始时，那个像赌徒一样乱来的孩子可能领先；三周后，他也可能从领先变成最差。儿子说：“基金经理本质上就是模拟盘，输了自己不赔钱，赢了赚大钱，玩儿得真爽。”</p>
+<p>这个故事说明：</p>
+<ol>
+<li>激励方式决定大脑如何思考；</li>
+<li>屁股的位置决定大脑的方向。</li>
+</ol>
+<h2 id="四、把自己放到企业所有者的位置"><a href="#四、把自己放到企业所有者的位置" class="headerlink" title="四、把自己放到企业所有者的位置"></a>四、把自己放到企业所有者的位置</h2><p>“屁股决定脑袋”也适用于价值投资。持有股票，就应该把自己当成企业的所有者和经营者。</p>
+<p>如果把股票理解为代码，股价就是股票的本质属性；如果把股票理解为公司，股价不过是人们对某个公司的群体评价。</p>
+<p>“屁股”给人力量。投资者要有独立思考和长期主义，能把自己放到所有者的位置，才有可能忽略短期波动、理解企业的长期价值。</p>
+<p>巴菲特在 2001 年致股东信里强调，企业最终的优势是难以复制的文化。管理者要像所有者一样思考和行动；如果有人损害公司，股东和管理者最终都会一起承担后果。好的制度会把各方利益放到同一条船上。</p>
+<h2 id="五、把立场放进决策框架"><a href="#五、把立场放进决策框架" class="headerlink" title="五、把立场放进决策框架"></a>五、把立场放进决策框架</h2><p>很多人嘴上说自己已经换位思考，但“屁股”并没有真正挪过去。真正的身入局，不是口头上理解，而是让自己承担相应的利益和风险。</p>
+<p>人的行为和思考方向，会被所在系统的位置、利益和风险暴露影响。与人合作时，不能只听对方说什么，还要看对方的“屁股”坐在哪里。</p>
+<p>可以用四条原则检查：</p>
+<ol>
+<li><strong>利益决定立场</strong>：一个人的屁股（立场）会直接影响其脑袋（思维）的方向；与人合作，先判断对方的利益所在。</li>
+<li><strong>风险与奖惩对称</strong>：利益和风险都要纳入激励设计，避免只共享短期收益、不承担长期代价。</li>
+<li><strong>长期主义与位置选择</strong>：选择能够获得长期利益的位置，用长期视角判断短期波动。</li>
+<li><strong>利益和风险统一</strong>：确保合作方在同一条船上，让各方利益和风险相互绑定。其余文字：【原图此处需放大复核】。</li>
+</ol>
+<p>以上就是这一讲的全部内容。我是老喻，我们下一讲再见。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>人的决策方向，往往取决于资源的分配和激励的结构。</li>
+<li>一个人的屁股（立场），会直接影响其脑袋（思维）的方向，所以与人合作，先判断对方的利益所在。</li>
+<li>要想用好“屁股决定脑袋”这条定律，最重要的是找到长期风险共担的机制，而不是只做到短期利益共享。</li>
+</ol>
+<h2 id="用户留言"><a href="#用户留言" class="headerlink" title="用户留言"></a>用户留言</h2><h3 id="美君"><a href="#美君" class="headerlink" title="美君"></a>美君</h3><p>“屁股决定脑袋，利益决定立场”，让我想到离职：一个人在公司打拼十多年，提出离职后，即使还有一个月交接期，人还在公司，心思和利益却已经转到别处了；交接和同事互动也会减少。员工提出离职的那一刻，立场就发生了变化。</p>
+<h3 id="李嘉"><a href="#李嘉" class="headerlink" title="李嘉"></a>李嘉</h3><p>利益像磁铁，理性像针，道德像风。利益相对稳定，贯穿人的行为；人类行为看似复杂多变，但利益始终稳定。留言还提到：“激励方式决定大脑如何思考；屁股的位置决定了大脑的方向。”</p>
+<h3 id="炎帝"><a href="#炎帝" class="headerlink" title="炎帝"></a>炎帝</h3><p>“屁股决定脑袋”确实如此。物质基础稳定的人更容易做长期投资；知识创新又可能需要短期投入。理性的人要在两者之间平衡。其余文字：【原图此处需放大复核】。</p>
+<h3 id="进化菌"><a href="#进化菌" class="headerlink" title="进化菌"></a>进化菌</h3><p>熵增定律：不努力就会越来越糟，保持秩序需要付出。屁股决定脑袋：站在什么立场，就会有什么判断和决定。天下没有免费的午餐：珍惜已有，警惕陷阱。员工和管理者的立场不同，因此看待工作、风险和收益的方式也不同。</p>
+<h3 id="伴昕"><a href="#伴昕" class="headerlink" title="伴昕"></a>伴昕</h3><p>激励结构会影响思考方向。工作中的跨部门培训、KPI 设计，以及家庭对房产的判断，都能看到立场和激励的作用。投资时如果忽略自己所在的位置，也容易被短期信息带着走。</p>
+<h3 id="方兴（阳光芳草）"><a href="#方兴（阳光芳草）" class="headerlink" title="方兴（阳光芳草）"></a>方兴（阳光芳草）</h3><ol>
+<li>利益影响判断，理解这一点能更好地理解人性；</li>
+<li>李嘉诚主动让利，说明长期合作需要让渡一部分利益；</li>
+<li>可以通过直接利益判断一个人的立场，例如汽车销售推荐 1.5L 还是 2.0L 车型；</li>
+<li>先理解对方的需要；</li>
+<li>用角色扮演，站到对方的位置上思考。</li>
+</ol>
+<h3 id="波澜不惊"><a href="#波澜不惊" class="headerlink" title="波澜不惊"></a>波澜不惊</h3><p>基金经理应该持有自己的基金，不能“光说不练”。如果管理者不承担和客户相同的风险，激励就不一致。</p>
+<h3 id="李坚"><a href="#李坚" class="headerlink" title="李坚"></a>李坚</h3><p>深刻认识“屁股决定脑袋”，很多事情才能多一份宽容和理解。所谓换位思考，就是站到对方的立场；但如果没有相同的利益和风险，很难真正体会。</p>
+<h3 id="我是谁，我要去何方"><a href="#我是谁，我要去何方" class="headerlink" title="我是谁，我要去何方"></a>我是谁，我要去何方</h3><p>要从对方的位置产生同理心，并让合作双方拥有共享的利益和风险。</p>
+<h3 id="陈克彪"><a href="#陈克彪" class="headerlink" title="陈克彪"></a>陈克彪</h3><p>人往往首先顾及自己的利益。留言联想到电视剧中的情节：皇帝吃饭前，厨子会先试吃第一口。</p>
+<h3 id="Todd"><a href="#Todd" class="headerlink" title="Todd"></a>Todd</h3><p>有个先天疾病患儿，父母已经投入巨大成本，治愈率又很低，但不能简单因为概率低就放弃。更好的做法是继续治疗一年，再根据结果评估。看人挑担不吃力，站在窗口看、不躬身入局，就无法真正了解其中的苦与乐。</p>
+<h3 id="宋子-雪中送炭"><a href="#宋子-雪中送炭" class="headerlink" title="宋子@雪中送炭"></a>宋子@雪中送炭</h3><p>TikTok、股权激励和跟投机制都体现了利益绑定，但也有员工投资、企业文化冲击、不同区域项目不均衡、决策压力等问题。设计机制时，需要同时看共享的利益和共同承担的风险。</p>
+<h3 id="其他留言"><a href="#其他留言" class="headerlink" title="其他留言"></a>其他留言</h3><p>其余留言围绕“识别对方利益”“同理心需要换位”“长期风险共担”和“激励相容”展开；看不清的文字：【原图此处需放大复核】。</p>
+<hr>
+<p><a href="/book/decision-algorithm/033/">← 033｜弃子争先：怎样抢回人生的主动权？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/035/">035｜赢得客户：为什么说诚实是最好的策略？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

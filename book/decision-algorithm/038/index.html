@@ -1,0 +1,450 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>038｜极大极小原理：怎样应对零和博弈？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》038：极大极小原理：怎样应对零和博弈？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="038｜极大极小原理：怎样应对零和博弈？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/038/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》038：极大极小原理：怎样应对零和博弈？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:45.283Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/038/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '038｜极大极小原理：怎样应对零和博弈？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">038｜极大极小原理：怎样应对零和博弈？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">038｜极大极小原理：怎样应对零和博弈？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>来源：老喻·决策算法100讲</p>
+<p>音频时长：12分06秒</p>
+</blockquote>
+<h2 id="老喻亲述"><a href="#老喻亲述" class="headerlink" title="老喻亲述"></a>老喻亲述</h2><p>你好。</p>
+<p>我是老喻，欢迎到《决策算法》课。</p>
+<p>这一讲，我们要解决的决策难题是零和博弈。</p>
+<p>游戏通常都是零和博弈，我们可以为常，乐在其中，但那是娱乐。现实中的零和博弈总是让人不那么愉快。</p>
+<p>两家公司竞标同一个项目，只能有一个中标，输的那个，非但没有收益，大量的准备工作都白干了；公司内部竞争，推广资源就那么多，多给你的项目一点儿，我的项目就要吃亏，年底业绩目标完不成，年终奖也飞了。</p>
+<p>“零和博弈”总是意味着争斗。我要赢，你就要输；反过来，你要赢，我就要输，总有一方不如意。而更讨厌是，谁都不知道自己什么时候会赢，什么时候会输。</p>
+<p>当我们不得不面对零和博弈，最佳策略是什么？其实博弈论专家们早就认真研究过这类问题，这一讲我们就来看看他们的成果，并从中得到决策上的启发。</p>
+<h2 id="一、切蛋糕的游戏"><a href="#一、切蛋糕的游戏" class="headerlink" title="一、切蛋糕的游戏"></a>一、切蛋糕的游戏</h2><p>最早系统研究零和博弈的是大神冯·诺伊曼。通过研究零和博弈，他提出了一个核心名词和定理：极大极小原理。</p>
+<p>什么是极大极小原理？</p>
+<p>我们来玩一个古老的分蛋糕游戏。</p>
+<p>有两个孩子，分一块蛋糕，但必须要第一个孩子切，第二个孩子选。</p>
+<p>请问，两个孩子应该怎么做？</p>
+<p>假如两个孩子都不是孔融，并且都想吃更多蛋糕，这其实就是一个典型的零和博弈。</p>
+<ul>
+<li>切蛋糕的孩子的两个可选策略是：不均分和尽可能均分。</li>
+<li>挑蛋糕的孩子也有两个选项：选较大的那一块或选较小的那一块。</li>
+</ul>
+<p>两个孩子的选择一组合，会出现四种情形，我画了一个博弈矩阵，放在文稿中，你可以点开查看。请注意，表格里的4个结果，都是指切蛋糕的孩子的所得收益。</p>
+<table>
+<thead>
+<tr>
+<th>切蛋糕的孩子 \ 挑蛋糕的孩子</th>
+<th align="right">挑较大的那一块</th>
+<th align="right">挑较小的那一块</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>尽可能切得均匀</td>
+<td align="right">稍小点儿的半块蛋糕</td>
+<td align="right">稍大点儿的半块蛋糕</td>
+</tr>
+<tr>
+<td>切得一大一小</td>
+<td align="right">小的那块</td>
+<td align="right">大的那块</td>
+</tr>
+</tbody></table>
+<p>这个游戏的有趣之处在于，切蛋糕的孩子似乎掌握了主动权，但他决策的关键点，取决于“然后呢？”–即对手的下一步会怎么做。</p>
+<p>显然，挑蛋糕的孩子，会追求让自己的蛋糕最大化，反过来也就是让对方的蛋糕最小化。</p>
+<p>于是切蛋糕的孩子要做的事情就是：让挑蛋糕的孩子将要留给他的那小块蛋糕极大化。</p>
+<p>因此，切蛋糕的孩子只能选择尽量均分蛋糕。</p>
+<p>切蛋糕的孩子最后会拿到那块蛋糕的大小，就被称为“极大极小值”，也就是说，令极小值极大化。</p>
+<p>也许有人会说，这么简单的道理，为什么要说这么啰嗦？</p>
+<p>德国克利斯提安·冯·沃尔夫在公元前300多年，就创立了“原子论”，认为一种事物都是由原子所组成的。然而，这只是一种想法。对比而言，爱因斯坦对原子的理解，才算是科学。</p>
+<p>二者之间的区别在于：后者可重复实验，可叠加计算，可现实运用。</p>
+<p>零和博弈的局面，从有人类社会那天起，人类就在面对，并且也摸索胡形成了一些分配规则。然而，直到冯·诺依曼，数学上的证明才出现。</p>
+<p>作为博弈论的创始人之一，冯·诺伊曼说过：没有极大极小定理，就没有博弈论。不过，要说明这一点并不容易，这要涉及博弈论最底层的数学推理，我们暂不深究。</p>
+<p>在日常的决策场景下，“极大极小原理”给我们的建议是：</p>
+<blockquote>
+<p>最优决策，应该基于理性的换位思考。</p>
+</blockquote>
+<p>其中的关键是，充分考虑了对方为了追求自己的利益最大化，会采取怎样的行动。</p>
+<p>糟糕的决策总有一个特征，只顾及自己想要什么，而不管别人想要什么。</p>
+<h2 id="二、绑架与反抗"><a href="#二、绑架与反抗" class="headerlink" title="二、绑架与反抗"></a>二、绑架与反抗</h2><p>接下来，带着极大极小原理，我们再来看一个更极端的零和博弈：绑架。</p>
+<p>假如你被绑架了，你应该怎么办？国外的一位自我防卫专家给出了三个应对建议：</p>
+<ol>
+<li>不要跟绑匪去第二个地点。</li>
+<li>记住，绑匪在撒谎。</li>
+<li>要在原地，用尽一切手段与绑匪搏斗。</li>
+</ol>
+<p>1、不要跟绑匪去第二个地点。</p>
+<p>如果你心怀侥幸，他可能将你带到偏僻的地方，为所欲为，甚至下毒手，然后掩盖他的罪恶痕迹。</p>
+<p>2、记住，绑匪在撒谎。</p>
+<p>不管绑匪说多好听，别相信。从一开始，每个谋杀犯，绑架犯，他们都会用同一句话：照我说的做，我就不会伤害你。</p>
+<p>然而，一旦你照他们说的做，最后大概率会受到更大的伤害。</p>
+<p>3、要在原地，用尽一切手段与绑匪搏斗。</p>
+<p>这一点特别让人疑惑，万一激怒了绑匪，他下死手呢？</p>
+<p>这位专家的洞见是：如果他们想在原地杀你，你早就已经没有生还的可能。所以，你还不如在原地杀了他，他们希望带你去其他地方，达成别的目的。</p>
+<p>你在原地反抗，就打乱了他们的计划。如果他们不想被抓，不想把事情搞得太麻烦，可能就会直接逃跑了。</p>
+<p>要说明的是，在绑架这种极端的情形下，绑匪并非在一种理性的状态下，一时冲动的确可能出意外。但是，从博弈论的角度分析，这位自卫专家的建议，有合理之处。</p>
+<p>绑匪的目标是最小化自己被捕的风险，同时最大化对你施加伤害的机会。</p>
+<p>而你的目标，应该是最小化在绑匪最恶劣行动下的损失。</p>
+<p>极大极小原理在这里的核心是：搏斗和反抗可能带来短期风险，但跟随绑匪的长期风险更大。为了降低这个长期风险，你最佳的策略是反抗。</p>
+<p>某种程度上来说，极大极小原理强调的是一种底线思维，既然负面结果无法避免，那就想办法争取对自己最好的最坏情况。</p>
+<p>这是一种重要的生存智慧。</p>
+<h2 id="三、把零和博弈变成非零和博弈"><a href="#三、把零和博弈变成非零和博弈" class="headerlink" title="三、把零和博弈变成非零和博弈"></a>三、把零和博弈变成非零和博弈</h2><p>讲到这里，我想进一步延伸一下，用极大极小原理来分析零和博弈的过程，还给我以下几点决策启发：</p>
+<h3 id="启发一、站在对方的角度想问题，然后倒推自己的策略"><a href="#启发一、站在对方的角度想问题，然后倒推自己的策略" class="headerlink" title="启发一、站在对方的角度想问题，然后倒推自己的策略"></a>启发一、站在对方的角度想问题，然后倒推自己的策略</h3><p>我们可以广义地来想这个问题，即使不是在零和博弈的环境，例如说某些产品经理很厉害，可以瞬间将自己变成小白，其实是能彻底站在对方的角度。</p>
+<p>几乎所有厉害的商业公司，核心原则就是“客户利益优先”。先想着让客户价值最大化，然后再从中找到让自己最大化的策略。</p>
+<p>所以芒格说：想要说服别人，要诉诸利益，而不是讲道理。</p>
+<p>在创业的时候，我经常和同事在一起谈业务。我不是很好的销售，口才也很一般，但每次谈合作效果还不错。</p>
+<p>我的方法是问对方：</p>
+<ul>
+<li>请问你现在最想要的是什么？</li>
+<li>我们可以如何帮助你实现你最想要的？</li>
+<li>我们立即可以做的最小化合作是什么？</li>
+</ul>
+<h3 id="启发二、将对手想成一个势均力敌的对手"><a href="#启发二、将对手想成一个势均力敌的对手" class="headerlink" title="启发二、将对手想成一个势均力敌的对手"></a>启发二、将对手想成一个势均力敌的对手</h3><p>以下围棋为例，切忌低估对手。</p>
+<p>所谓低估对手，就是对他人抱有幻想。</p>
+<p>例如，你发现一手棋，能够让自己的利益最大化。但是如果被对手识破，那么结果就会很糟糕。有时候，棋手会心存侥幸：要是他看不到，那我就赚了。</p>
+<p>然而，这是不对的。</p>
+<p>你就该假设对方是一个势均力敌的对手，你能看到，对手也能看到。</p>
+<p>也不要赌运气，不寄希望于对手犯错。好的决策应该是，即使对手发挥完美，自己也能保住最基本的生存空间。</p>
+<h3 id="启发三、不占别人便宜，自己的也要握得力争，不当烂好人"><a href="#启发三、不占别人便宜，自己的也要握得力争，不当烂好人" class="headerlink" title="启发三、不占别人便宜，自己的也要握得力争，不当烂好人"></a>启发三、不占别人便宜，自己的也要握得力争，不当烂好人</h3><p>段永平早年经营企业，既不占供应商的便宜，也不给批发商赊货。不管多好的买家，必须现款现货。</p>
+<p>何谓烂好人？就是彻底放弃自己的选择权，试图讨好对方、感动对方。</p>
+<p>然而，很多时候，烂好人不仅招恶人，甚至催生恶人。</p>
+<h3 id="启发四，彻底远离损人不利己的人"><a href="#启发四，彻底远离损人不利己的人" class="headerlink" title="启发四，彻底远离损人不利己的人"></a>启发四，彻底远离损人不利己的人</h3><p>博弈论的假设是：双方都是理性的。</p>
+<p>博弈论只研究“对赢感兴趣的、有完善的逻辑思维能力的游戏者”参与的博弈。只有你相信你的对手是理性的、又是希望赢的，而你自己在玩的时侯也始终有一股劲儿，要力争为自己取得最好的结果，这样的博弈才是博弈论分析的对象。</p>
+<p>对博弈论而言，自私的人并不可怕，可怕的是不理性的人。</p>
+<p>为什么呢？</p>
+<p>一个自私的人可能做损人利己的事，一个合作的人可能做利人利己的事。但是，一个不理性的人可能做损人不利己的事。</p>
+<p>博弈论很强大，但是如果你是在和一个非理性的人“交手”，结果就变得无法预测。</p>
+<p>你的最佳选择是：远离这类人。</p>
+<p>例如说，经济较发达区域的特点之一是：民众只算自己的账，而不去算别人赚多少赚少。倘若不如此，就会出现如下局面：我才赚十块，你居然赚一块，我宁可牺牲自己的十块，也要毁掉你的一块。</p>
+<p>这就是损人不利己。</p>
+<p>如此一来，博弈论的均衡就无法出现，因为理性的失去，会摧毁整个游戏。</p>
+<p>记得中学有个同学的哥哥当年混社会，他说他们那群20岁上下的青年都不怕，最怕十四、五岁的孩子，因为这些混混不可 能毫无目的不顾后果地冲上来给他们一刀。</p>
+<p>博弈论因为这类人而失效。</p>
+<p>类似的，前面对于绑架者的分析，也是设假设他们是理性的。但是，如果绑架者不是理性的人呢？</p>
+<p>那么，不理性的凶手可能会不顾受害人呼救招来人，在没有利益的情况下也下毒手。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>这一讲，我们从零和博弈出发，讲到了极大极小原理。</p>
+<p>在这一讲的最后，我想说的是，零和博弈在现实中的确无处不在，很遗憾的是，即便知道极大极小原理，我们顶多也只能争取到最不坏的结果。</p>
+<p>但是，零和博弈其实并不是最糟的，最糟的是零和博弈思维。</p>
+<p>在这个资源有限的世界上，我们避免陷入零和博弈。与其被彼此的对立禁锢，不如想办法把零和博弈，变成非零和博弈，把有限游戏玩儿成无限游戏。</p>
+<p>真正的高手，不仅懂得如何赢得一场博弈，更懂得如何跳出博弈的框架。</p>
+<p>芒格提醒过我们：“一个持续的社会，依赖的是多方获利，而不是一方独赢。”</p>
+<p>如果说极大极小原理是防守哲学，那么跳出零和博弈，创造非零和空间，则是真正的进攻之道。</p>
+<p>这不仅仅是决策策略，更是一种世界观。</p>
+<p>在这个有限的世界里，有限游戏随处可见，但你总可以选择成为那个“将有限游戏玩成无限游戏的人”。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>最优决策，应该基于理性的换位思考。其中的关键是，充分考虑了对方为了追求自己的利益最大化，会采取怎样的行动。</li>
+<li>糟糕的决策总有一个特征，只顾及自己想要什么，而不管别人想要什么。</li>
+<li>真正的决策高手，不仅懂得如何赢得一场博弈，更懂得如何跳出博弈的框架。</li>
+</ol>
+<h2 id="精选留言"><a href="#精选留言" class="headerlink" title="精选留言"></a>精选留言</h2><h3 id="吴君"><a href="#吴君" class="headerlink" title="吴君"></a>吴君</h3><p>“极大极小原理”认为最优决策基于理性的换位思考，充分考虑对方为了追求自己的利益最大化如何行动，这等于做到了两点：</p>
+<ol>
+<li>顺应人性：面对并接受每个人都把自己的利益放在首位这个现实；</li>
+<li>两权相害取其轻：不是心存侥幸想着自己占便宜，而是搞清楚自己的底线，在负面结果中争取最好的那种。</li>
+</ol>
+<p>这让我想起自己很久之前的经历，在别人面前用自己喜欢的、而ta不一定喜欢的方式对待ta，而一直猜对方真正想要的是什么，想要极力避免什么而踩雷。如果早一点了解“极大极小原理”，我会表明自己的原则和界限，询问对方的需求和渴望，倒推自己该如何对待，甚至前置沟通，基于对方利益最大化的可能出现矛盾冲突，先找到解决这样的策略。</p>
+<p>如今，我以两权相害取其轻，倒推自己方面做得越来越好了，这让我们远离内耗，真正不错。</p>
+<h3 id="Keiko-璟"><a href="#Keiko-璟" class="headerlink" title="Keiko.璟"></a>Keiko.璟</h3><p>零和博弈，指的是一方受益，另一方损失，双方的收益和损失加起来是零。也就是讲博弈双方你死我活的背后，博弈本身不会带来任何价值。</p>
+<p>而非零和博弈并不共赢。我们没有必要非得坚持各自立场博弈，不要只看到我进你的零和博弈，而是更可以往“上”走，去跳出零和博弈的框架，找到共同的立场，寻求共赢，这样岂不是更好。</p>
+<p>在更高点，矛盾可能被共识取代。这个智慧不能避免很多冲突，但双方都有利，而且有可能让我们打开思路，找到更好的思维。</p>
+<p>生活中虽然和博弈也无法避免，但比起零和思维，共赢才应该成为我们长久的处世之道。</p>
+<h3 id="Scott"><a href="#Scott" class="headerlink" title="Scott"></a>Scott</h3><ol>
+<li>换位思考很重要。博弈和游戏，以站在对方的角度想问题，然后倒推自己的策略。非零和游戏亦是如此，诸如商业谈判、职场合作、社会交往、领导团队，都是要充分考虑对方的利益诉求。个人私欲也要满足，正如夫子在《史记·货殖列传》中所说：“天下熙熙，皆为利来；天下攘攘，皆为利往。”人不仅追求利益最大化，而且也追求损失最小化。</li>
+<li>将对手想成一个势均力敌的对手。不要赌运气，不寄希望于对手犯错。好的决策应该是，即使对手发挥完美，自己也能保住最基本的生存空间。如《孙子兵法》所说：“昔之善战者，先为不可胜，以待敌之可胜。不可胜在己，可胜在敌。”</li>
+</ol>
+<h3 id="鸿涛"><a href="#鸿涛" class="headerlink" title="鸿涛"></a>鸿涛</h3><p>极大极小原理是推断对手最大化利益时自己能做出的最好选择，这是面临零和博弈时的底线思维。不仅理性地面临的最坏局面，还冷静推算能争取的最好局面，同时果断做出行动以止式。这种讲数不讲理的做法，迫使对手回归理性，避免双输，从零和的有限游戏交换合作的无限游戏过渡。</p>
+<h3 id="Tony-to-ni"><a href="#Tony-to-ni" class="headerlink" title="Tony to ni"></a>Tony to ni</h3><p>在谈判当中，人们常常持有零和博弈的思维。结果就是对方有利，对方无利，谈判你所在的一方实现自己的利益的一个交集点。大家争夺的是资源的分配，而没有创造增量。</p>
+<p>如果是正和博弈的话，那么双方不对现有的存量进行分配，而是要提出一种合作的模式或者方法，让双方分配的蛋糕都能够做的更大，产生1+1大于2的效果。</p>
+<p>正和博弈就是如果是两个高手的较量，可以给台球馆招来更多的人气和流量。比赛的奖金就可以由台球馆来出。</p>
+<h3 id="FF"><a href="#FF" class="headerlink" title="FF"></a>FF</h3><p>最优决策是综合考虑各方利益、动态调整策略的结果，而高手之所以为高手，是因为他们懂得超越既定规则，创造新的可能性。在任何决策中都需要兼顾全局和长远，而非只执着于眼前的一城一池。</p>
+<h3 id="炎帝"><a href="#炎帝" class="headerlink" title="炎帝"></a>炎帝</h3><p>零和博弈的核心在于“你输我赢”的逻辑框架，这种思维方式容易导致恶性竞争，甚至破坏原有的合作关系。但在现代社会，随着全球化和技术进步，资源不再像过去那样静态，许多领域的竞争已经不再是简单的零和游戏。因此，我们需要重新审视传统的对抗性思维，探索更多可能性。</p>
+<p>真正的高手不仅懂得如何赢得一场博弈，更擅长创造新的空间，让各方都能从中受益。在竞争的同时保持开放心态，寻找共同利益点，可以实现更大的价值创造。</p>
+<h3 id="王茂荣"><a href="#王茂荣" class="headerlink" title="王茂荣"></a>王茂荣</h3><p>关于如何在零和博弈中做出最优决策的洞见，并强调了超越零和博弈思维、寻求合作共赢的重要性：</p>
+<ol>
+<li>零和博弈的定义：一方的收益必然导致另一方损失，总和为零，即一方赢另一方输。</li>
+<li>极大极小原理：由冯·诺依曼提出，是博弈论的基础，原理指出在零和博弈中，参与者应该选择一种策略，使得在最坏情况下自己的收益最大化。</li>
+<li>分蛋糕游戏：切蛋糕的孩子应该尽量均分蛋糕，以确保自己能得到最大的极大极小值。</li>
+<li>零和博弈的现实应用：包括公司竞标、内部竞争等，这些场景最优策略是基于理性的换位思考，考虑对方追求利益最大化的行为。</li>
+<li>绑架情况下的应对：专家建议不要跟绑匪去第二个地点，不要相信绑匪的谎言，要在原地与绑匪搏斗，以打乱他们的计划。</li>
+<li>决策启发：站在对方角度思考问题，将对手视为势均力敌的对手，不占别人便宜，同时握住自己的利益，远离损人不利己的人。</li>
+<li>零和博弈思维的局限：真正的高手懂得如何跳出零和博弈框架，创造非零和空间，将有限游戏转化为无限游戏。</li>
+<li>博弈论的假设：博弈论假设参与者都是理性的，追求自身利益最大化。不理性的人可能做出损人不利己的行为，使得博弈论失效。</li>
+<li>合作共赢：真正的社会持续发展依赖于多方获利，而非一方独赢。创造非零和博弈空间是真正的进攻之道。</li>
+<li>无限游戏思维：即使在资源有限的环境中，也可以通过创新和合作打破僵局，将有限游戏转化为无限游戏。</li>
+</ol>
+<h3 id="万雄"><a href="#万雄" class="headerlink" title="万雄"></a>万雄</h3><p>四条启发特别受用，特别是第三、4条。在工作中不占便宜，本着吃亏是福，不计较多做一些，但其实是个烂好人，这一点我在将来应该好好改正，多干可以，但要设置底线，职责之外可以帮，强调帮，而不是干，不当事的主体。“彻底远离损人不利己的人”，让我想到了幸福者退让原则，之所以退让，是因为对方不是博弈者，不是理性的人。文中说，自私的人不可怕，可怕的是不理性的人。换个说法，坏人不可怕，可怕的是蠢人。</p>
+<h3 id="我是谁，我要去何方"><a href="#我是谁，我要去何方" class="headerlink" title="我是谁，我要去何方"></a>我是谁，我要去何方</h3><p>最大的两点启发：</p>
+<ol>
+<li>对博弈论而言，自私的人并不可怕，可怕的是不理性的人。千万要远离不理性的人，因为这样的人无法预测，可能做出损人不利己的事情。</li>
+<li>真正的高手，不仅懂得如何赢得一场博弈，更懂得如何跳出博弈的框架。不要陷入零和博弈思维中，现实世界中，要想可持续发展，就必须合作共赢，创造非零和博弈空间。</li>
+</ol>
+<p>观念决定策略，策略决定最终的发展，做一个无限游戏玩家。</p>
+<blockquote>
+<p>注：原图中的推广水印、按钮、互动数量等界面元素未作为正文转录。</p>
+</blockquote>
+<hr>
+<p><a href="/book/decision-algorithm/037/">← 037｜快速决策：怎样治好你的选择困难症？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/039/">039｜混合策略：怎样用随机性成为更强大的自己？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

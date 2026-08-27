@@ -1,0 +1,358 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>032｜渡劫：如何在不确定性中逆风翻盘？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》032：渡劫：如何在不确定性中逆风翻盘？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="032｜渡劫：如何在不确定性中逆风翻盘？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/032/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》032：渡劫：如何在不确定性中逆风翻盘？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:45.184Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/032/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '032｜渡劫：如何在不确定性中逆风翻盘？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">032｜渡劫：如何在不确定性中逆风翻盘？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">032｜渡劫：如何在不确定性中逆风翻盘？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>老喻·决策算法100讲　时长：12分31秒　首次发布：今天</p>
+</blockquote>
+<h2 id="老喻-叙述"><a href="#老喻-叙述" class="headerlink" title="老喻 叙述"></a>老喻 叙述</h2><p>你好，我是老喻，欢迎来到《决策算法》课。</p>
+<p>这一讲继续分享围棋里的决策方法，主题是“打劫”。围棋中的“劫”是劫难的“劫”，不是纠结的“结”。“打劫”是双方争夺一颗暂时不属于任何一方的棋子：一方吃掉后，对方本来可以马上提回，但规则要求对方先在别处落子，找到“劫材”，再回来争夺。</p>
+<p>新手往往不喜欢打劫，因为它带来更多的不确定性和复杂变化；高手却可以把打劫变成致胜手段，甚至在逆境中大幅翻盘。</p>
+<blockquote>
+<p><strong>划重点：同样面对危机，新手看见“危”，而高手看到“机”。</strong></p>
+</blockquote>
+<h2 id="一、打劫是动态均衡：从局部跳到全局"><a href="#一、打劫是动态均衡：从局部跳到全局" class="headerlink" title="一、打劫是动态均衡：从局部跳到全局"></a>一、打劫是动态均衡：从局部跳到全局</h2><p>“劫”不只是僵持，而是一个暂时无法定局、却充满可能性的动态局面。规则要求棋手寻找别处的“劫材”，避免局部无休止地僵持，也增加了棋局的变化和策略深度。</p>
+<p>现实中的僵持通常有三种原因：</p>
+<ol>
+<li>双方资源相当，短期内难分胜负；</li>
+<li>局部争夺缺乏突破口；</li>
+<li>强攻可能导致更大的损失。</li>
+</ol>
+<p>破解僵局的方法，是跳出局部，另辟蹊径，寻找新的变量。</p>
+<p>以美团和饿了么早期的补贴大战为例，双方都在价格战中消耗资源。美团把外卖和电影、酒店等业务连接起来，用多元化业务的现金流支持补贴。多元化业务就是它的“劫材”。</p>
+<p>不要困在局部消耗中，要寻找新的战场、改变策略。真正的高手，懂得不拘泥于眼前僵局，而是通过灵活应对、精心布局，将不确定性转化为机会。“打劫”不仅是权宜之计，更是一种全局智慧。</p>
+<h2 id="二、劫难与新的可能"><a href="#二、劫难与新的可能" class="headerlink" title="二、劫难与新的可能"></a>二、劫难与新的可能</h2><p>工作和生活中，我们常会遇到类似围棋“打劫”的局面：事情僵在那里、一直悬而未决，令人不安焦虑。但这些局面并非绝境，往往也隐藏着新的机遇。</p>
+<p>佛教语境里的“劫”，代表宇宙生成、毁灭与再生的漫长周期；围棋里的“劫”是局部争夺、循环对抗。二者都有“你来我往”的意味。打劫改变的不只是局部输赢，也可能改变全局。</p>
+<p>Slack 创始人斯图尔特·巴特菲尔德（Stewart Butterfield）在 2002 年开发游戏失败，却从中分拆出 Flickr，后来 Yahoo 以 3.5 亿美元收购 Flickr。2009 年他又尝试开发另一款游戏，游戏再次失败，但内部协作工具变成了 Slack，2020 年 Salesforce 以 277 亿美元收购 Slack。</p>
+<p>这些失败都成为他的“劫材”。不要停留在局部失败里，要转换视角，把失败转成下一次翻盘的资源。</p>
+<blockquote>
+<p><strong>劫难不可避免，但它同样可以成为改变命运的契机。</strong></p>
+</blockquote>
+<h2 id="三、直面危机，把握劫材"><a href="#三、直面危机，把握劫材" class="headerlink" title="三、直面危机，把握劫材"></a>三、直面危机，把握劫材</h2><p>学会“打劫”的第一步，是直面危机，不被眼前困境吓倒。</p>
+<p>Airbnb 最早由两个找不到工作的设计师创办。他们把三个气垫床放在家里，做了网站来出租。为了活下去，他们还卖“总统口味麦片”：每盒 40 美元，共卖出 1000 盒，赚到 3.5 万美元。这笔钱帮助 Airbnb 走过早期难关，后来保罗·格雷厄姆发现他们并投资。</p>
+<p>在复杂与混乱中，往往蕴藏更多可能性；新手因害怕变数而回避，高手却能把握“劫材”。无论围棋还是人生，把握“劫材”比一次性博弈更重要。</p>
+<h2 id="四、在执行中积累“劫材”"><a href="#四、在执行中积累“劫材”" class="headerlink" title="四、在执行中积累“劫材”"></a>四、在执行中积累“劫材”</h2><p>把“劫”变成机遇，并不是偶然。打劫的关键在于寻找“劫材”。劫材的本质是外部的谈判筹码；这些筹码往往不是事先规划好的，而是在具体执行中逐步积累和发现的。</p>
+<p>巴特菲尔德的第一个游戏失败后做出 Flickr，第二个游戏失败后做出 Slack。这些“劫材”不是刻意设计的，而是源于他在创业过程中扎扎实实解决真实问题的态度。他坦言：“我不知道为什么会成功。”但无心插柳的成果，在关键时刻成了翻盘的武器。</p>
+<p>飞书最初是字节跳动的内部协作工具，后来成为独立的生产力产品；阿里云最初是为“双 11”高并发服务，后来成为云计算业务。适当的“三心二意”并非不务正业，也可能是为未来积累资源。</p>
+<p>像围棋高手布局时会有意识地预留劫材点一样，决策时留有余地和灵活性，关键时刻就能拥有更多选择。</p>
+<h2 id="五、渡劫的方法"><a href="#五、渡劫的方法" class="headerlink" title="五、渡劫的方法"></a>五、渡劫的方法</h2><p>人的一生会遇到几次“打劫”，我们也在一次次“渡劫”中变得越来越强大。佛教里的“渡劫”，是经历重大考验后获得成长和领悟。</p>
+<p>可以从四步开始：</p>
+<ol>
+<li><strong>不惧危机</strong>：危机是改变的开端。不要因暂时困境停滞，要直面挑战，寻找解决的可能。</li>
+<li><strong>寻找劫材</strong>：突破点常来自过去的积累。通过观察和创造，把“副产品”或“旁路能力”转为关键资源。</li>
+<li><strong>全局思考</strong>：局部失利时不要执着于眼前得失，退一步从全局观察，寻找更大的胜算。</li>
+<li><strong>动态调整</strong>：像围棋高手应对劫争一样，随时根据形势优化选择，保持策略的动态性。</li>
+</ol>
+<p>《西游记》中唐僧经历九九八十一难，不仅要面对外部妖魔，也要克服内心的恐惧、贪欲和懒惰。正是在这些磨难中，他完成了成佛的过程。</p>
+<blockquote>
+<p><strong>成功的关键，不在于避免“劫难”，而在于如何在“劫”中找到新生的契机，完成自己的“渡劫”。</strong></p>
+</blockquote>
+<p>真正的高手，是能在“劫”中找到机会，不断迭代思维和策略，利用时间与资源反复重生的人。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>高手之所以喜欢“打劫”，是因为在复杂与混乱的局面中，往往蕴藏着更多的可能性与机会，而新手却因害怕变数而选择回避。</li>
+<li>“劫材”的本质是外部的谈判筹码，而这些筹码往往不是事先规划好的，而是在具体执行中逐步积累和发现的。</li>
+<li>在局部失利时，不要执着于眼前得失，退一步从全局观察，或许能找到更大的胜算。</li>
+</ol>
+<h2 id="用户留言"><a href="#用户留言" class="headerlink" title="用户留言"></a>用户留言</h2><h3 id="左星星"><a href="#左星星" class="headerlink" title="左星星"></a>左星星</h3><p>“渡劫”不仅关乎解决问题，更关乎内心的成长与重塑。人生中的“劫”往往伴随着内外矛盾，既是外界环境的考验，也是自我认知的冲突。面对危机时，不仅要调整技术性策略，也要突破内心的恐惧、犹豫和惯性思维。只有在挑战中直面自己，反思并改变内在模式，才能真正从“劫”中获得成长。</p>
+<p>渡劫是一个不断循环的过程。每一次渡劫都可能带来新的机会，同时也孕育新的挑战。我们不可能彻底“渡过”所有劫难，因为每一次渡劫都是下一段旅程的开始；但可以在每一次渡劫中积累智慧和资源，让未来更从容。</p>
+<p>“渡劫”思维提醒我们不要回避不确定性，而是学会在变化中寻找意义。与其把“劫难”当作障碍，不如看作通往更高层次的台阶。渡劫也是与自我和世界重新对话、共舞的机会；多年以后，曾经渡过的劫，或许成就了一个更好的自己。</p>
+<h3 id="Scott"><a href="#Scott" class="headerlink" title="Scott"></a>Scott</h3><p>高手喜欢打劫，是因为复杂混乱中有更多可能性和机会，而新手害怕变数、选择回避。留言还提到《混乱》一书：在复杂系统里，要看到变化背后的机会。其余文字：【原图此处需放大复核】。</p>
+<h3 id="炎帝"><a href="#炎帝" class="headerlink" title="炎帝"></a>炎帝</h3><p>“渡劫”让我想到修仙小说里的渡劫飞升。现实中的“劫”是不易处理的局面；资源不足、强攻又会造成更大损失时，硬闯只会陷入泥潭。高手会扩大视野，调用积累的资源。</p>
+<p>自己做传统媒体转新媒体时，曾把积累的素材和人脉从单一写作转到短视频、内容分享上，较快得到正反馈，像是无心插柳打破困境。</p>
+<h3 id="Tony-to-ni"><a href="#Tony-to-ni" class="headerlink" title="Tony to ni"></a>Tony to ni</h3><ol>
+<li>处理“打劫”首先是面对变化的态度：拥抱变化的人看到机会，普通人更害怕失去控制。</li>
+<li>劫材往往是外部筹码和副产品，在行动中逐渐积累。其余文字：【原图此处需放大复核】。</li>
+</ol>
+<h3 id="爱艺术的李达拉"><a href="#爱艺术的李达拉" class="headerlink" title="爱艺术的李达拉"></a>爱艺术的李达拉</h3><p>“渡劫”第一次听到是在高中读仙侠小说时。小说人物只有通过渡劫，才能突破当前限制、升华到更高境界；他们应对劫难的方式，与老师所说的直面危机、寻找突破口相似。迎接劫难之前也要做好准备，确保实力达到峰值，才敢尝试。其余文字：【原图此处需放大复核】。</p>
+<h3 id="进化菌"><a href="#进化菌" class="headerlink" title="进化菌"></a>进化菌</h3><p>“劫”不止是单纯的僵持，更是暂时无法定局但充满可能性的动态局面。不要拘泥于眼前僵局，要通过灵活应对、精心布局，将不确定性转化为机会，取得主动。就像中年失业后依然持续输出创作的人，通过创造价值化解危机；不用过分在乎眼前得失，每天进一步，就有一寸的惊喜。</p>
+<h3 id="伴昕"><a href="#伴昕" class="headerlink" title="伴昕"></a>伴昕</h3><p>围棋打劫教会我们，即使处于复杂僵局，也不应只关注眼前一城一池的得失。高手会在棋盘其他区域引入新的变量，改变全局动态。在投资中也一样，不要执着于短期盈利，而应着眼长远，通过新投资变量、不同资产配置和创新策略打破僵局。</p>
+<h3 id="何某"><a href="#何某" class="headerlink" title="何某"></a>何某</h3><ol>
+<li>凡事发生必有利于我；</li>
+<li>冗余度；</li>
+<li>游戏继续比一次胜利更重要；</li>
+<li>勇气，积累素材，克服恐惧。</li>
+</ol>
+<h3 id="李中杰"><a href="#李中杰" class="headerlink" title="李中杰"></a>李中杰</h3><p>国际棋局里的 Zugzwang（楚茨文克）是指因为必须走棋，而任何一步都会让局面变差；需要全面评估，把对手引入不利位置。人生僵局也可能成为转机，可以用时间和积累创造新的价值。</p>
+<h3 id="山峰"><a href="#山峰" class="headerlink" title="山峰"></a>山峰</h3><p>劫材是“暗能力”的具现。企业转型时，常能从已有的暗能力中找到新的业务。</p>
+<h3 id="宋子-雪中送炭"><a href="#宋子-雪中送炭" class="headerlink" title="宋子@雪中送炭"></a>宋子@雪中送炭</h3><p>打劫不只是思维，也是面对挑战的态度；“打劫”更重要的是全局视角。</p>
+<h3 id="阿繁达1043"><a href="#阿繁达1043" class="headerlink" title="阿繁达1043"></a>阿繁达1043</h3><p>过去每次 hardship 都觉得不可能，但可以改变维度、保留选项、保持资源调度能力：一只脚踩在可靠支撑上，同时让未来保持可能。</p>
+<h3 id="程序数据业务逻辑"><a href="#程序数据业务逻辑" class="headerlink" title="程序数据业务逻辑"></a>程序数据业务逻辑</h3><p>“习得性无助”会让人觉得无法行动、命运已经固定。主动创造新变量求生发展，就是渡劫；“无穷劫”里也包含希望。</p>
+<h3 id="鸿涛"><a href="#鸿涛" class="headerlink" title="鸿涛"></a>鸿涛</h3><p>成功往往不是按预设路线发生的，而是在混乱中渡劫、不断突破和迂回；成功也可能是迭代的结果，而不是预先设计好的终点。</p>
+<h3 id="陈克彪"><a href="#陈克彪" class="headerlink" title="陈克彪"></a>陈克彪</h3><p>留言问如何同时保有多个选项、不陷入局部消耗，并留下“今天青岛来晚了，精进留言”。</p>
+<h3 id="victory"><a href="#victory" class="headerlink" title="victory"></a>victory</h3><p>很多时候事情发生变化才会有机会，破局多半是盘外招。无意间积累的资源、经验、人脉，可以盘活全局；不要拘泥于局部，要纵览全局。</p>
+<h3 id="其他留言"><a href="#其他留言" class="headerlink" title="其他留言"></a>其他留言</h3><p>其余留言围绕“劫材来自积累”“危机中的内在成长”“动态调整”“用全局视角面对不确定性”等主题展开；看不清的文字：【原图此处需放大复核】。</p>
+<p>我是老喻，我们下一讲再见。</p>
+<hr>
+<p><a href="/book/decision-algorithm/031/">← 031｜两眼论：怎样找到你的人生杠杆？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/033/">033｜弃子争先：怎样抢回人生的主动权？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

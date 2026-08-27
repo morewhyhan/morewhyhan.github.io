@@ -1,0 +1,432 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>036｜生存下去：怎样利用冗余设计“求生舱”？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》036：生存下去：怎样利用冗余设计“求生舱”？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="036｜生存下去：怎样利用冗余设计“求生舱”？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/036/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》036：生存下去：怎样利用冗余设计“求生舱”？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:45.252Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/036/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '036｜生存下去：怎样利用冗余设计“求生舱”？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">036｜生存下去：怎样利用冗余设计“求生舱”？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">036｜生存下去：怎样利用冗余设计“求生舱”？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>老喻·决策算法100讲　时长：12分55秒　首次发布：今天</p>
+</blockquote>
+<h2 id="老喻-叙述"><a href="#老喻-叙述" class="headerlink" title="老喻 叙述"></a>老喻 叙述</h2><p>你好，我是老喻，欢迎来到《决策算法》课。</p>
+<p>这一讲想讨论的决策难题是：面对不确定的风险，怎样提高最终存活的概率？不确定的风险就像黑天鹅，出现概率也许不高，但总有可能出现，而且一旦出现就是致命的，我们根本承担不起。</p>
+<p>要防范这种风险，需要一种非常重要的策略：<strong>冗余</strong>。</p>
+<h2 id="一、水密隔舱：把风险变成独立事件"><a href="#一、水密隔舱：把风险变成独立事件" class="headerlink" title="一、水密隔舱：把风险变成独立事件"></a>一、水密隔舱：把风险变成独立事件</h2><p>“冗余”为什么能防范黑天鹅？先从全世界最著名的一起沉船事故——泰坦尼克号的沉没说起。</p>
+<p>对于今天的我们，泰坦尼克号是最著名的“沉船”；但在这艘船诞生的时候，却号称是“永不沉没”。为什么这样一艘船的人，敢如此夸口？在电影《泰坦尼克号》中，总设计师解释了该船重要的安全保障之一：<strong>水密隔舱</strong>。</p>
+<p>泰坦尼克号有 16 个单独的水密隔舱，舱与舱之间的水密门用电动开关控制。即使有 4 个隔舱同时进水，也会安然无恙。16 个水密隔舱保持独立，这就是“冗余”机制的设计。</p>
+<p>《马可·波罗游记》曾经描述，元代时中国南方的海船就是多舱结构：</p>
+<blockquote>
+<p>“若干最大船舶有内舱到十三所，互以厚隔隔之，其用在防海险，如船体触礁或触铁而海水渗入之事。”</p>
+</blockquote>
+<blockquote>
+<p><strong>配图说明：</strong> 采用“水密隔舱”技术的宋代沉船（原资料未附图片文件）</p>
+</blockquote>
+<p>水密隔舱的物理原理很直观：多个隔舱彼此独立，其中一个或几个漏水，其他隔舱还是好的，可以确保船不下沉，或者慢一点下沉。</p>
+<p>除了物理原理，水密隔舱还利用了一个数学原理：随机事件的独立性。如果两个随机事件 A、B 互不影响，就称它们独立；它们同时发生的概率等于各自概率的乘积。</p>
+<p>假设：</p>
+<ol>
+<li>这是一艘很大的船，一次意外事件只破坏一个独立的隔舱；</li>
+<li>每次意外事件的概率是 5%。</li>
+</ol>
+<p>那么连续发生四次独立的、破坏隔舱的意外事件，概率为：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">5% × 5% × 5% × 5% = 0.000625%</span><br></pre></td></tr></table></figure>
+
+<p>这个概率约为百万分之六，小于一个人在一年中被雷劈的概率。所以，当时宣传“泰坦尼克号永不沉没”，并非吹牛。</p>
+<h2 id="二、冗余必须真正独立"><a href="#二、冗余必须真正独立" class="headerlink" title="二、冗余必须真正独立"></a>二、冗余必须真正独立</h2><p>既然如此，为什么泰坦尼克号会一撞即沉？</p>
+<p>与“水密隔舱”技术相关的主要原因是：泰坦尼克号的水密隔舱并不是封顶的。当海水漫进前一个隔舱后，导致船体出现较大倾斜，水会漫延到下一个隔舱，如多米诺骨牌般引起连锁反应，直至更大的倾斜、解体、沉没。</p>
+<blockquote>
+<p><strong>配图说明：</strong> 泰坦尼克号水密隔舱设计缺陷示意图（原资料未附图片文件）</p>
+</blockquote>
+<p>这个设计缺陷，恰恰破坏了“水密隔舱”的数学原理：每个隔舱漏水不再是“独立事件”。</p>
+<p>雪上加霜的是，撞上冰山后船员的现场操作也出现了一系列决策失误。撞击前，船员曾用肉眼看到“两个东西”，但船上的远距离望远镜被锁住了，等亲眼看清时已经离冰山很近。</p>
+<p>值班大副给出两个指示：左满舵，全速倒车。通常这是专业且本能的反应。然而，泰坦尼克号是超大型客轮，惯性太大；全速倒车虽然可以减速，却降低了船只的转向能力，未能达到预期的避撞效果。</p>
+<p>也有观点认为，大副试图避开冰山的判断可能本来就是错的。假如只是减速，让最坚固的船头撞上冰山，水密隔舱的设计也许能发挥作用，泰坦尼克号可能不会沉没。选择转向，却把脆弱的船腰暴露给冰山，船身被划开一个 93 米长的大口子，一连损坏了 5 个水密隔舱。</p>
+<p>本来概率极低的 5 个独立事件，突然变得不独立了。概率不再保护这艘原本只有极小可能性沉没的巨轮；2 小时 40 分钟后，泰坦尼克号百分之百没入冰海。</p>
+<p>房地产市场调整前，我有一个朋友意识到房价涨了很久，想分散风险，于是把房产投资分散到所在城市的不同区域。我对他说：你这样不可以，你还是在同一个城市，房地产市场风险是相通的；一旦市场调整，所谓分散投资就像一群蚂蚁躲在同一个锅盖下。</p>
+<p>当时还有一家资产丰厚的房地产公司，创始人意识到住宅开发的风险，决定主动转型、分散风险，但转型方向居然是旅游地产。这两个例子都犯了类似泰坦尼克号的错误：看似分散了风险，风险敞口却是相通的；市场一调整，分散投资就会一起受损。</p>
+<h2 id="三、利用独立性设计“保命系统”"><a href="#三、利用独立性设计“保命系统”" class="headerlink" title="三、利用独立性设计“保命系统”"></a>三、利用独立性设计“保命系统”</h2><p>假如今天出门，钱包、手机、身份证都放在一个包里，突然遭遇小偷，这是否意味着整个生活都将暂停？假如工作和投资出现计划之外的紧急状况，财务上是否有足够的安全垫？每个人的生命中都埋藏着一个“泰坦尼克”瞬间，如何避免在关键时刻全盘皆输？</p>
+<p>利用“随机事件的独立性”，主动进行“冗余设计”，实现概率上的“保命系统”，是非常明智的做法。这也是一种古老智慧，比如“狡兔三窟”。</p>
+<p>假如一个兔子洞的安全程度是 80%，有两种提高安全性的做法：</p>
+<ol>
+<li>努力把一个兔子洞的安全程度提高到 95%；</li>
+<li>建立三个安全程度都是 80% 的兔子洞。</li>
+</ol>
+<p>第一种做法为了提升几个百分点，成本会非常高，还容易遇到瓶颈。第二种做法中，三个兔子洞都被毁的概率是：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0.2 × 0.2 × 0.2 = 0.008 = 0.8%</span><br></pre></td></tr></table></figure>
+
+<p>所以兔子的安全程度达到：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">100% - 0.8% = 99.2%</span><br></pre></td></tr></table></figure>
+
+<p>前面的课程讲过 SpaceX 如何用工程思维和胶囊思维造火箭。实际上，SpaceX 在提高航天安全性时也用了冗余设计。</p>
+<p>传统载人飞船依赖昂贵的宇航器件，单套计算机系统成本高达 1.4 亿元人民币，追求单一系统的鲁棒性。它虽然可靠，但成本高、扩展性差。</p>
+<p>SpaceX 把工程思维和冗余设计结合起来：</p>
+<ul>
+<li>使用低成本的 Intel X86 双核处理器，并将其拆分为两个单核独立运行；</li>
+<li>每个系统配备 3 块芯片，共计 6 个核同时处理相同的数据；</li>
+<li>如果某个核的数据与其他核不一致，系统就让这个核重启，并从其他核获取正确数据，完成同步。</li>
+</ul>
+<p>这种设计不仅大幅降低硬件成本，还通过多核冗余和主动纠错实现了更强的韧性。即使部分系统失效，飞船仍能保持核心功能运转，从而提高整体安全性。</p>
+<p>相比单独追求某一个系统或硬件的可靠性，用多个系统和硬件构成冗余，不仅成本低、出错概率小，还能主动纠错，拥有更强的抗风险力和适应力。</p>
+<h2 id="四、冗余与反脆弱"><a href="#四、冗余与反脆弱" class="headerlink" title="四、冗余与反脆弱"></a>四、冗余与反脆弱</h2><p>“不确定性”像流水，很难用硬堵的方式消除。</p>
+<p>《谁在争霸？》一书写道：</p>
+<blockquote>
+<p>“泰坦尼克号沉没后，船只被要求配备更多的救生艇。然而，救生艇的自重导致了‘伊斯特兰号’邮轮在密歇根湖倾覆，一共有八百多人遇难。”</p>
+</blockquote>
+<p>作者总结：<strong>意外后果定律可以挫败最良好的意愿。我们无法用古代加高加厚城墙的方式来堆砌出“确定性”。</strong></p>
+<p>毕竟，无处不在的墨菲定律决定了：会出错的，终将出错。</p>
+<p>这个世界充满不确定性，我们必须全力以赴，避免遭受永久性损失，永远不要像泰坦尼克号那样沉没。要构建一个强健的系统，设计自己的“求生舱”，承受可能遭遇的各种风险，并通过主动适应提高生存概率。</p>
+<p>未来无法预测，既不能躺平，也不能无限制地安装更多救生艇，只能想方设法在逆境中活下来。活下来、活得久，就有机会实现“均值回归”，有机会让“大数定律”显形。</p>
+<p>我们的身体、人类的演化和生物的多样性，都有赖于冗余机制。《学会生存》强调，要尽可能避免“一招不慎，满盘皆输”。围绕一个核心任务，如果很多环节重叠在一起，就必须保证不能因为一个环节出了岔子而使整个系统都完蛋。</p>
+<p>书中给出了一个实用的 PACE 法则：</p>
+<ul>
+<li><strong>P</strong>，首要选择（Primary）；</li>
+<li><strong>A</strong>，替代方案（Alternate）；</li>
+<li><strong>C</strong>，意外状况备选（Contingency）；</li>
+<li><strong>E</strong>，紧急状况方案（Emergency）。</li>
+</ul>
+<p>例如，去一个既陌生又很远的地方，专家会准备几个不同的导航助手：</p>
+<ul>
+<li>首要选择——地形测量地图和席尔瓦指南针；</li>
+<li>替代方案——GPS（全球定位系统）；</li>
+<li>意外状况备选——智能手机；</li>
+<li>紧急状况方案——指南针。</li>
+</ul>
+<p>PACE 法则在生活中也很有用。最常见的场景可能是：我们做任何事情，至少要有 Plan B；对于复杂的事情，甚至还需要 Plan C 和 Plan D。</p>
+<p>生活中总有计划外的事情发生。面对不确定性，设计冗余和反脆弱，是生存与发展的关键。</p>
+<p>冗余通过分散风险和准备备用方案，确保系统受损时仍维持基本功能，例如工作中备份文件、多技能储备，生活中准备财务安全垫、做好健康管理等。</p>
+<p>反脆弱则更进一步：不只是防守，还要积极思考能否把握机遇、变得更强。风险会吹灭蜡烛，但也会让木材烧得更旺；在消费降级中突飞猛进的拼多多，就是一个例子。</p>
+<p>人生像一场航行，不确定性像随时可能冒出来的冰山。只要构建独立的“求生舱”，就有机会活得更久，看到更多希望的曙光。勇气和机遇，将成为我们的双重守护者。</p>
+<p>以上就是这一讲的全部内容。如果你觉得有收获，欢迎分享给身边的朋友。</p>
+<p>我是老喻，我们下一讲再见。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>生活中总有计划外的事情发生，我们无法用古代加高加厚城墙的方式来堆砌出“确定性”。</li>
+<li>面对不确定性，设计冗余和反脆弱是生存与发展的关键。</li>
+</ol>
+<h2 id="用户留言"><a href="#用户留言" class="headerlink" title="用户留言"></a>用户留言</h2><h3 id="左星星"><a href="#左星星" class="headerlink" title="左星星"></a>左星星</h3><p>现代社会常鼓励人找到“最优解”、追求效率最大化，但最优解通常是脆弱的，环境一变就可能迅速崩溃。许多企业在繁荣时期大力押注，经济下行时却因缺乏缓冲空间而陷入困境。相比之下，冗余强调未雨绸缪，给系统保留空间和多样化选择。</p>
+<p>冗余也适用于技能储备。职场中，与其依赖单一职业能力，不如培养多项技能，形成跨领域竞争力；即使一个领域受到冲击，也还有其他选择。冗余不只是风险防御，更是在复杂网络中为自己创造多个可能性。</p>
+<p>冗余的核心不是防止我们跌倒，而是确保我们即使跌倒，也能再次站起来，甚至走得更远。</p>
+<h3 id="Scott"><a href="#Scott" class="headerlink" title="Scott"></a>Scott</h3><p>面对不确定性，设计冗余和反脆弱是生存与发展的关键。那 All in 呢，是否是冗余的反面？</p>
+<p>钢铁大王卡内基 All in 钢铁行业，因此取得巨大成功。他认为成功的秘密是把精力和资源完全集中在要做的事情上，把所有鸡蛋放在一个篮子里，然后看好这个篮子。他说：“一旦一天都干一件，就要决心干出名堂，要出类拔萃，要点点滴滴地改进，要采用最好的机器，要尽力在竞争中获胜。”</p>
+<p>关键在于确定性：面对不确定性，要设计冗余防止爆仓；面对确定性、决定长期押注某个行业时，才可以高度投入。现在是不确定性的时代，即使有信心，也要给确定性加上概率。ALL IN 的应该是激情、专注和专业，而不是牺牲全部资产，押上自己的车和房子。</p>
+<h3 id="鸿涛"><a href="#鸿涛" class="headerlink" title="鸿涛"></a>鸿涛</h3><p>面对不确定性，设计冗余是为了自保，关键是真正独立的多元，而不是单一的鲁棒性或过于精细的多元。反脆弱则是想从风险中获益，甚至包含当前局面的反面。面对不确定性，想方设法提高生存概率，才是确定的应对策略。</p>
+<h3 id="竹仙兽（昵称文字部分：【原图此处需放大复核】）"><a href="#竹仙兽（昵称文字部分：【原图此处需放大复核】）" class="headerlink" title="竹仙兽（昵称文字部分：【原图此处需放大复核】）"></a>竹仙兽（昵称文字部分：【原图此处需放大复核】）</h3><p>冗余就是构建独立的“求生舱”。这个世界充满不确定性，每个人都必须全力以赴，避免遭受永久性损失，永远不要像泰坦尼克号那样沉没。</p>
+<h3 id="Tony-to-ni"><a href="#Tony-to-ni" class="headerlink" title="Tony to ni"></a>Tony to ni</h3><ol>
+<li>冗余意味着更多资源，比如大公司可以多条线赛马，创业公司却未必做到。</li>
+<li>对普通人来说，资源有限，可能很难设计安全系数很高的冗余系统，需要借助杠杆或“反脆弱”（如跑步）。</li>
+</ol>
+<p>平时人们更多关注“硬”冗余，比如“高筑墙，广积粮”；也要关注自身的“软”冗余——心理层面的冗余。面对生活和工作的如意或不如意，可以更理性地看待和处理，让自己“留在牌桌上”，才有机会继续打牌。</p>
+<h3 id="albert-许方庆"><a href="#albert-许方庆" class="headerlink" title="albert 许方庆"></a>albert 许方庆</h3><p>经济快速发展时容易忽略冗余。活下来，才有机会。</p>
+<h3 id="张守"><a href="#张守" class="headerlink" title="张守"></a>张守</h3><p>我胖到冗余过度了吗？</p>
+<h3 id="方兴（阳光芳草）"><a href="#方兴（阳光芳草）" class="headerlink" title="方兴（阳光芳草）"></a>方兴（阳光芳草）</h3><p>不要在一棵树上吊死，不要把所有鸡蛋放在一个篮子里，要给自己足够的选项和准备，以面对系统的复杂和难以预测。努力也包括对各种情况的预计和准备。</p>
+<p>管理人生的不确定性，要寻找投入很少但回报可能很大的机会，回避可能性很小但一旦发生损伤就致命的风险。面对重大问题多做几手准备，是明智的。</p>
+<p>汽车的发动机控制是重要功能，设计中要考虑冗余。有世界知名汽车品牌把发动机挡位控制放在方向盘左侧，而这个位置在一些国家通常是方向灯控制处；轻轻一碰就可能切换前进、倒挡或空挡，存在误操作风险。不同国家方向灯位置也不同，不熟悉欧洲车的人可能误把方向灯操作成发动机挡位，导致危险。</p>
+<p>这提醒我们，选择车辆时要有冗余思维：了解设计隐患，查找消费者信息，评估自己能否承担风险，并提前知道风险发生时如何应对。比如特斯拉充电桩故障时附近是否有其他充电桩，车门的紧急开关是否教会亲朋好友。由于电动车技术仍在成熟和迭代，我目前不会优先考虑电动车。上述技术细节中若有字句与原图不符：【原图此处需放大复核】。</p>
+<h3 id="炎帝"><a href="#炎帝" class="headerlink" title="炎帝"></a>炎帝</h3><p>《泰坦尼克号》是我喜欢的电影。第一次看完时久久不愿离开：隔着繁华背后的死亡与生离死别，终究从来没有什么永不沉没、万无一失。</p>
+<p>在人生这场未知的旅程中，不确定性随时可能变成风暴，正如“永远不知道意外和明天哪个先来”。所以要设计有效的冗余方案，确保在风暴中依然屹立。</p>
+<p>生活中可以建立多重保障：职业上除了专注某一技能，也培养跨领域知识和能力；财务上保持多样化投资组合、预留应急资金；健康管理和社交网络也构成应对突发情况的防线。</p>
+<p>还要注意不同层面的风险管理不要相互牵连：物质层面备份文件、购买保险，精神层面做心理韧性训练。即使一个方面出问题，其他部分仍能运作，避免“牵一发而动全身”。</p>
+<p>古希腊哲学家伊壁鸠鲁说：“不是事情本身使我们痛苦，而是我们对事情的看法。”真正决定生活质量的，不只是外界环境，而是内心态度。建立外部冗余的同时，也应修炼内心的平静和智慧，接受不可避免的波折，从中找到成长机会。</p>
+<h3 id="强子"><a href="#强子" class="headerlink" title="强子"></a>强子</h3><p>面对不确定性，设计冗余和反脆弱是生存与发展的关键。</p>
+<h3 id="七色黑白"><a href="#七色黑白" class="headerlink" title="七色黑白"></a>七色黑白</h3><p>冗余是工程思维的核心概念，根基是建立在数学上的概率知识，与兵法中的“凡战必分兵”相似。反向设计捕捉黑天鹅的方法，就是利用墨菲定律的思维方式。</p>
+<h3 id="伴昕"><a href="#伴昕" class="headerlink" title="伴昕"></a>伴昕</h3><p>冗余通过提供额外备份提高系统的稳定性和可靠性，避免单点故障导致整体失效；反脆弱强调系统面对挑战时的自我修复与进化，不仅抵御冲击，还从中学习并变得更强。</p>
+<p>产品人除了专业技能，也要有广泛的软技能，使自己能应对多变的工作环境。投资上可以构建多元组合，选择相关性较低的资产，如科技指数与银行指数、大盘股票指数与债券指数、国内与国外的大盘指数。即使一个市场板块表现不佳，其他部分仍能保持稳定。</p>
+<p>反脆弱还体现在投资者不断复盘和调整策略：每一次市场起伏都是学习机会。无论职业发展还是财务管理，融入冗余和反脆弱，都能帮助建立更具韧性的体系，在变化世界中找到稳定立足点，并向更高目标前进。</p>
+<h3 id="我心飞翔"><a href="#我心飞翔" class="headerlink" title="我心飞翔"></a>我心飞翔</h3><p>世事难料变无常，城墙高筑难挡浪。</p>
+<p>不确定性难堆砌，生活波澜想太堂?。</p>
+<p>设计冗余策为上，反脆弱性心中藏。</p>
+<p>生存发展此道进，笑对风云任翻翔。</p>
+<p>其中个别字句：【原图此处需放大复核】。</p>
+<h3 id="学习机器"><a href="#学习机器" class="headerlink" title="学习机器"></a>学习机器</h3><p><strong>不确定性的生存策略一：安全边际。</strong>“安全边际”出自巴菲特的老师、价值投资之父格雷厄姆。大意是：如果企业估值是 10 元，就等到 5 元左右再买，5 元的折价部分就是安全边际。</p>
+<p>在不确定的股市中生存和获益，答案是安全边际和反脆弱。中国股市 9 月 24 日启动疯牛行情，国庆期间开户数升高，很多投资者觉得牛市来了，赶紧上车。有人问国庆后（10 月 8 日）是否还是入市好时机，我的回答不是；比亚迪当时估值已经比较合理，不必参与太多，应该再等等。</p>
+<p><strong>不确定性的生存策略二：反脆弱。</strong>“反脆弱”一词出自塔勒布，在《反脆弱》中有详细讨论：面对不确定性冲击，别人遭受巨大损失，你却因此获益。正如尼采所说：“凡杀不死我的，使我更加强大。”</p>
+<p>有朋友对工作不满意，想出来做一个 IP。我建议他先继续现在的工作；如果实在不喜欢，就找一份喜欢的工作，再用闲余时间做 IP。这样相当于两条腿走路：工作有不确定性危机时，已经留好了退路；IP 做不成，也有工作兜底。这就是塔勒布所说的杠铃式生存策略：一边是低风险工作，一边是高风险的 IP 创业。</p>
+<h3 id="宋子-雪中送炭"><a href="#宋子-雪中送炭" class="headerlink" title="宋子@雪中送炭"></a>宋子@雪中送炭</h3><p>活下来、活得久，就有机会实现“均值回归”，有机会让“大数定律”显形。对投资而言，需要考虑两类风险：</p>
+<ol>
+<li><strong>系统风险</strong>：2008 年金融危机中，中美乃至全世界都躲不掉。企业家可以保留一定现金储备，也就是冗余。</li>
+<li><strong>行业风险</strong>：2021 年医药行业集采，阿里巴巴跌了 90%，也影响了茅台；当时自己对政策风险估计过低。投资需要一定冗余，多元分散风险，覆盖若干行业但不要过多，做到既有冗余也有集中。</li>
+</ol>
+<p>桥水基金全天候基金就是四类资产的多元化配置。股票与债券可以按比例组合，例如危机前设置为 60% 股票和 40% 债券；股票分布在不同行业、不同规模公司，债券包括国债、公司债。还可以配置黄金、房地产信托基金（REITs）等另类资产。黄金常被视为避险资产；REITs 提供房地产投资机会，与股票市场相关性相对较低。</p>
+<h3 id="何某"><a href="#何某" class="headerlink" title="何某"></a>何某</h3><ol>
+<li>因为独立性的破坏，A 事件的损坏作为 B 事件，使 B 的损坏概率大大提高。对于风险因素，应尽量让它们独立，降低非独立性。对于希望成长的事情，则应让各种因素连接起来，形成系统，各自赋能、各自加速。</li>
+<li>无法通过堆砌城墙的方式堆砌确定性。脑中第一个例子是诺基亚：待机时间越来越长、抗摔能力越来越强，但手机面对的不是同一个维度的风险。其余字句：【原图此处需放大复核】。</li>
+</ol>
+<h3 id="李嘉"><a href="#李嘉" class="headerlink" title="李嘉"></a>李嘉</h3><p>生活航行中，每个人都可能遇到类似泰坦尼克号的时刻；通过冗余与反脆弱，可以降低风险、增强韧性，甚至在危机中成长。</p>
+<p>**①文件备份。**手机记录了很多珍贵瞬间。把文件同时存储在本地硬盘、云存储和 U 盘，就像为文件设计多个隔舱；即使电脑崩溃、手机故障，也能从其他渠道找回数据。不同备份路径必须独立、相互隔离；若只是同一设备的不同分区，设备损坏后冗余也失去意义。</p>
+<p>**②日常锻炼与医疗保险。**健康管理和保险是冗余与反脆弱结合的领域。医疗保险、商业保险为突发健康风险建立保护屏障；日常锻炼、饮食控制和定期体检，则把不确定性变成成长机会。规律运动能提升身体素质和耐力，小病小痛恢复更快，抗风险能力也增强。</p>
+<p>生活不只是避免“一招不慎，满盘皆输”，还要在风暴中寻找成长之路。勇气和机遇，是生存与发展的双重守护者。</p>
+<h3 id="水门"><a href="#水门" class="headerlink" title="水门"></a>水门</h3><p>我曾因判断错误经历创业事故。从事小区自动设备和活动，2019 年开始做，2020 年遇到疫情，活动停止。后来考虑备选方案，防止小区封闭，却选择开发商城；以为疫情很快结束，结果一波接一波，多个城市投放本以为是分摊风险，实际增加了成本。2022 年底资金链断裂，不得不终止。</p>
+<p>这就是错误地以为分摊了风险。现在除了创业，也学习个人技能、做讲课并获得一些收益；定期理财、固定存钱，以备不时之需。人的精力有限，不能无限分摊；如果事情相关联又相互独立，仍然可以去做。</p>
+<h3 id="万雄"><a href="#万雄" class="headerlink" title="万雄"></a>万雄</h3><p>有一种说法：短期内成绩最好的投资者，可能是最差的投资者。因为短期成绩最好往往意味着过度优化（如 All in、集中投资），长期总体结果可能与此相反。</p>
+<h3 id="雨萱"><a href="#雨萱" class="headerlink" title="雨萱"></a>雨萱</h3><p>项目管理之 backup plan。</p>
+<h3 id="其他留言"><a href="#其他留言" class="headerlink" title="其他留言"></a>其他留言</h3><p>以上为全部留言。看不清或被界面遮挡的字句：【原图此处需放大复核】。</p>
+<hr>
+<p><a href="/book/decision-algorithm/035/">← 035｜赢得客户：为什么说诚实是最好的策略？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/037/">037｜快速决策：怎样治好你的选择困难症？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>049｜漂亮撤退：全身而退即胜利 | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》049：漂亮撤退：全身而退即胜利">
+<meta property="og:type" content="website">
+<meta property="og:title" content="049｜漂亮撤退：全身而退即胜利">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/049/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》049：漂亮撤退：全身而退即胜利">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:45.465Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/049/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '049｜漂亮撤退：全身而退即胜利',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">049｜漂亮撤退：全身而退即胜利</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">049｜漂亮撤退：全身而退即胜利</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>来源：老喻·决策算法100讲</p>
+<p>音频时长：13分52秒</p>
+</blockquote>
+<h2 id="老喻亲述"><a href="#老喻亲述" class="headerlink" title="老喻亲述"></a>老喻亲述</h2><p>你好。</p>
+<p>我是老喻，欢迎来到《决策算法》课。</p>
+<p>不知道你是哪个年代出生的人，是否看过电影《大话西游》里的这个场景：在一片混乱的打斗中，周星驰饰演的至尊宝落荒而逃，恋爱脑的紫霞（朱茵饰）望着他的背影说：“跑都跑得那么帅，我真幸福。”</p>
+<p>艺术的张力往往来自陌生感。世俗意义上，逃跑是失败而耻辱的，丢盔卸甲，毫无颜面，哪里谈得上帅呢？紫霞夸张的爱慕，与至尊宝无厘头的逃窜，制造了让观众大笑的荒诞不经。</p>
+<p>今天，我们就来说说“逃跑”。有时候，主动的逃跑，也可以称为“撤退”，是个非常重要的决策命题。</p>
+<h2 id="一、撤退的智慧"><a href="#一、撤退的智慧" class="headerlink" title="一、撤退的智慧"></a>一、撤退的智慧</h2><p>我们很容易把人类历史上的两次著名“撤退”拿来比较。</p>
+<p>一次发生在第二次世界大战初期。1940年5月，33.8万英法联军被德军困在法国敦刻尔克海滩。英国政府发起“发动机行动”，在9天时间里完成了历史上最大规模的军事撤退。这次撤退被称为“敦刻尔克奇迹”，其战略意义在于保存了英国的主力部队，为之后的反攻打下基础。这次大撤退成为二战中“失败中的胜利”，展现了在绝境中“以退为进”的智慧。</p>
+<p>还有一次著名的撤退，发生在两千多年前。战败的项羽突破了刘邦与韩信的重重包围，逃到了乌江边。乌江亭长已经在岸边等他，并说：“江东虽小，地方千里，众数十万，亦足王也。”意思是过了长江，依然有机会东山再起。然而项羽没有登船撤退，而是选择了自刎。多年后，李清照写道：“至今思项羽，不肯过江东。”</p>
+<p>所以，发生在乌江边的，其实是“拒绝撤退”。站在局外人的视角，我们当然称赞敦刻尔克大撤退的智慧；但当我们身在局中时，却更容易成为项羽。</p>
+<p>人们往往是对“撤退”抱有偏见的。在潜意识里默认“坚持”是美德，而“放弃”近乎等同于失败。在日常生活中，面对不合适的工作，我们经常咬牙坚持；面对难以维生的生意，也总觉得再拼一把就能成功；甚至明知一段关系已经走向绝路，仍抱有“也许会好”的幻想。</p>
+<p>这种偏见不仅存在于个人层面，更根植于文化传统中。从小我们就被灌输“坚持就是胜利”的理念，童话故事的主角总是通过咬牙坚持获得最后的胜利，励志故事里的英雄永远不言放弃。“不抛弃、不放弃”成为一种道德追求。</p>
+<p>但实际上，撤退并不是前进的反面。即使人生如登山，当你成功登顶之后，也总有下山的时候。登珠穆朗玛峰的数据令人震惊：下山时的死亡人数是上山时的2—3倍。为什么？因为人们过分专注于“征服顶峰”这个目标，却忽视了更重要的“安全返回”。</p>
+<p>在拳击比赛中，一个优秀的教练最重要的职责不是激励选手继续打，而是在恰当的时机及时叫停。这个道理，放在人生的其他领域同样适用。然而道理都懂，可你我都知道，上山容易下山难，很多时候撤退比进攻还要艰难。</p>
+<h2 id="二、为什么撤退这么难"><a href="#二、为什么撤退这么难" class="headerlink" title="二、为什么撤退这么难"></a>二、为什么撤退这么难</h2><p>世界扑克系列赛（WSOP）冠军安妮·杜克专门研究过这个问题。她在《适时退出》一书里，探讨了退出的五大认知陷阱：损失厌恶、沉没成本、承诺升级、禀赋效应与现状偏见、身份认同。</p>
+<ol>
+<li><strong>损失厌恶</strong>：人们对亏损的痛苦感，总是远大于获得同等收益的快乐。比如一个股民宁愿继续持有一只已经跌去50%的股票，也不愿意割肉离场，因为“只要不卖出，就还没有真正亏损”。</li>
+<li><strong>沉没成本</strong>：已经投入的东西，会让人难以割舍，即使明知继续投入也无济于事。比如创业者明知项目已经走偏，却因为“已经投入了三年时间和500万”而不愿及时止损。</li>
+<li><strong>承诺升级</strong>：为了证明之前的决定是对的，反而会加大投入。比如明知对方不适合自己，却因为“我们已经交往五年了”而执意步入婚姻。</li>
+<li><strong>禀赋效应</strong>：一旦拥有某样东西，就会高估它的价值。比如收藏家即使急需用钱，也舍不得低价卖出藏品，因为“这些东西对他来说有特殊的意义”。</li>
+<li><strong>身份认同</strong>：我们常常把某个身份当作自己的全部，因此难以放手。比如运动员即使已经年过巅峰，也不愿退役，因为“我这辈子就是个运动员”。</li>
+</ol>
+<p>这五大认知陷阱共同强化了我们对“坚持到底”的非理性偏好，也许“撤退”等同于失败，导致人们无视客观事实，一再陷入固执或倔强的死循环。当然，我们并不是要简单地非此即彼，人类的认知陷阱总是双刃剑。</p>
+<p>这种“不撤退”的倾向，或许也深深植根于成功者的天性里。就像项羽，正是因为从不轻言放弃，才成长为争夺天下的霸王。在他的生命历程中，那种不屈不挠、死战到底的性格，既是成就霸业的根本，也是他最终难以全身而退的宿命。</p>
+<h2 id="三、撤退的场景与类型"><a href="#三、撤退的场景与类型" class="headerlink" title="三、撤退的场景与类型"></a>三、撤退的场景与类型</h2><p>我们的人生当中，概括而言大约有如下类型的各种撤退：</p>
+<ol>
+<li><strong>高点撤退</strong>：激流勇退。扑克高手知道，不是每一手好牌都要打到底，有时候甘愿吃个差不多就挺好了。</li>
+<li><strong>止损撤退</strong>：不管是股票，还是创业，止损都是极其重要的。</li>
+<li><strong>战略撤退</strong>：敦刻尔克大撤退看似失败，却保存了33.8万人的部队，为最终战胜法西斯保留了力量。有时候要像下棋一样主动让出一些子，才能赢得全局。</li>
+<li><strong>机会撤退</strong>：假如发现自己有个确定性的机会，收益比现在的生意好，在经过验证之后果断关掉看起来还不错的生意，也是主动的撤退。</li>
+<li><strong>身份撤退</strong>：有人在事业巅峰时转行，看似不可思议，却像蝴蝶破茧。传统媒体的大主编、大老板做自媒体、当主播，都是了不起的撤退。</li>
+</ol>
+<p>撤退无处不在：打胜仗时要考虑撤退，打败仗时更要考虑；赚钱时要想着撤退，亏钱时更要想着止损；顺风顺水时要未雨绸缪，逆境困顿时更要及时止步。</p>
+<p>有时候，人生真的如战场，不要等到退无可退时才想起要撤退，因为那时可能早已失去了最后的退路。就像项羽在乌江边的困境：当他最终决定要撤退时，内心的执念已经不允许他这么做了。</p>
+<p>所以，让撤退成为一种习惯，是决策者的一个重要修炼。无论事业顺遂还是陷入低谷，都要把“适时撤退”这张牌握在手里。这样，才能在棋局中既懂得奋勇向前，也懂得见好就收。</p>
+<h2 id="四、漂亮撤退的方法论"><a href="#四、漂亮撤退的方法论" class="headerlink" title="四、漂亮撤退的方法论"></a>四、漂亮撤退的方法论</h2><ol>
+<li><strong>设定撤退点</strong>：“不到山顶不罢休”是最危险的承诺。聪明的登山者会说：“如果两点还没登顶，就必须下山。”同理，开始一个项目时，要预先设定清晰的退出条件，比如“如果半年内现金流不为正，就及时止损”。</li>
+<li><strong>概率思维</strong>：扑克高手不迷信“手气”，而是严格按照胜率赔率计算期望值。人生是一场长局，关键是整体的期望值，不是一把牌的输赢；该弃就弃，见好就收。</li>
+<li><strong>拆解难点</strong>：记住“猴子与基座”模型。如果要让猴子在基座上表演，最难的是训练猴子，而不是造基座。开公司时，关键是有收入，不是装修办公室；决定是否撤退时，要关注最难突破的环节是不是真的没希望，而不是表面的进展。</li>
+<li><strong>请个教练</strong>：拳击手需要教练在关键时刻及时叫停。人生也需要“退出教练”，找2—3个值得信赖的朋友，在你陷入过度坚持时拉你一把。</li>
+<li><strong>体面告别</strong>：撤退不是溃逃。设计一个正式的“告别仪式”，可以是一次总结会，也可以是一封告别信，让撤退变得更有尊严。这不仅是对过去的交代，更是对未来的承诺。</li>
+<li><strong>留条后路</strong>：进入时就想好退出的方案，这不是示弱，而是智慧。创业者要提前想好：如果项目失败，下一步可以做什么？预设好退路，反而能让前进时更有底气。</li>
+</ol>
+<p>撤退的最终目的是为了更好地前进。正如项羽若能过江，未必没有东山再起的机会。所以，让撤退成为你的能力，而不是一种失败。</p>
+<p>在人的大格局中，有进有退，才是真正的高手。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>我曾经在地产行业最红火的时候撤退了，原因很简单：我们就是个小开发商，赚点小钱就知足了；陪伴孩子一起长大，和家人在一起，在我看来是最重要的事情；另外，我还想做点自己感兴趣的不一样的事情。之后地产又热火了七八年，我也毫不牵挂。</p>
+<p>对于撤退这件事，我更多的还是教训。退休后尝试了一些新项目，也经历了很多当舍不舍、当断不断的后悔。反思总结，这可能对我来说是最重要的人生教训：<strong>见好就收，知错就改。</strong></p>
+<p>“见好就收”不容易，形势一片大好的时候谁会想撤退呢？一个办法是“收”一部分。比如参股一家公司，价值涨了十倍、生意也很赚钱，这时候可以考虑卖掉持有的一半股份变现，留另一半儿接着享受生意的成长。</p>
+<p>这就是说：幸运来临时，要一边趁胜追击，一边设计撤退的路线。</p>
+<p>更难的是知错就改。遇到不对的人、不对的事、不对的地方，一定要掉头就走，绝不迟疑。正如段永平所言：当发现错了就尽快改，不管多大的代价都是最小的代价。</p>
+<p>以人为例，一个合作者在关键的品德上出现一点儿瑕疵，就像厨房里发现一只蟑螂，绝对不能心存侥幸，认为这只是偶然的，后面可能会发现越来越多的蟑螂，甚至爆出大雷。</p>
+<p>我们需要为自己的“核心事物”（包括家庭、密友、投资）设置一个基本安全线，只要破了红线，立即撤退，坚决止损，绝对不能含糊。</p>
+<p>最后，任何时候，人生都不是一场必须决胜的战役，而是一连串可以选择的游戏。撤退并不是放弃，而是为了把有限游戏变成无限游戏，也许这正是更多普通人值得过的人生。</p>
+<p>撤退的智慧，给你争取到更多人生的主动权。我是老喻，我们下一讲再见。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>无论事业顺遂还是陷入低谷，都要把“适时撤退”这张牌握在手里。这样，我们才能在棋局中既懂得奋勇向前，也懂得见好就收。</li>
+<li>当发现错了就尽快改，不管多大的代价，都是最小的代价。</li>
+<li>任何时候，人生都不是一场必须决胜的战役，而是一连串可以选择的游戏。撤退并不是放弃，而是为了把有限游戏变成无限游戏。</li>
+</ol>
+<h2 id="PDF-内用户留言"><a href="#PDF-内用户留言" class="headerlink" title="PDF 内用户留言"></a>PDF 内用户留言</h2><h3 id="左星星"><a href="#左星星" class="headerlink" title="左星星"></a>左星星</h3><p>撤退的智慧源自对“胜利叙事”的超越。现代社会习惯把人生描述为持续上升，忽略成功过程中的调整。撤退是重新分配资源：项目或目标消耗大量精力、看不到前景时，可以释放被占用的资源，投入更有价值的方向。高点撤退不是恐惧，而是对风险和不确定性的敏锐嗅觉；人生是一场有限资源的博弈，每次撤退都是为下一个起点蓄力。</p>
+<h3 id="蜗牛"><a href="#蜗牛" class="headerlink" title="蜗牛"></a>蜗牛</h3><p>撤退是重要决策问题。敦刻尔克大撤退保存了主力，为反攻奠基；项羽拒绝撤退，自刎乌江。生活中人们常把“坚持”奉为美德，面对不合适的工作、难以为继的生意和走向绝路的关系，不愿撤退。五大认知陷阱是损失厌恶、沉没成本、承诺升级、禀赋效应和身份认同。高点、止损、战略、机会、身份五类撤退都有价值；要设撤退点、运用概率思维、拆解难点、请退出教练、体面告别、留条后路。</p>
+<h3 id="黄泊淳-Only"><a href="#黄泊淳-Only" class="headerlink" title="黄泊淳 Only"></a>黄泊淳 Only</h3><p>人生的每一个过程，在当下都容易被人性蒙蔽，把每一次的得失看成全部，把人生当作无限赛局，看能否单次博弈，导致不知道何时撤退。撤退的策略，最难的是度的掌握，要判断到底何时坚持、何时撤退。使用撤退策略，是要持续学习一辈子的。</p>
+<h3 id="Keiko-璟"><a href="#Keiko-璟" class="headerlink" title="Keiko.璟"></a>Keiko.璟</h3><p>电视剧情节里有句话：“有一种胜利叫撤退，有一种失败叫占领。”不能只会冲锋的勇士，还应该做一个懂得战略撤退的智者。不甘心是人之常情，但理性放弃的人拥有敬畏和撤退的智慧。要设退出点、设计后路、保留体面告别；撤退是一种选择，也是一种能力。</p>
+<h3 id="Scott"><a href="#Scott" class="headerlink" title="Scott"></a>Scott</h3><p>分享探险家欧内斯特·沙克尔顿的故事：他三次挑战到达南极点都以失败告终，却在南极探险上留下最精彩的故事。面对每个选择都非常果敢，毫不沉没成本；即使到达南纬88度，发现物资和体力不可能支撑到终点，也果断放弃，最后带领27名队友安全脱困。</p>
+<h3 id="Jerryluo"><a href="#Jerryluo" class="headerlink" title="Jerryluo"></a>Jerryluo</h3><p>撤退是为了留在“牌桌”。最近看过一位餐饮生意人将江汉江汉路的店子关掉：两年前转让费20万，一年后花30万装修，一年后合同到期，他仍选择结束合同、关掉店子。因为地段虽好但租金不断上涨，继续经营会消耗掉现金流。课程中的禀赋效应，也提醒人们不要被投入和拥有的东西绑架。</p>
+<h3 id="言蹊"><a href="#言蹊" class="headerlink" title="言蹊"></a>言蹊</h3><p>传统观念总把坚持当作美德，却忽视撤退是一种智慧。从敦刻尔克到项羽的对比可以看到，“以退为进”往往是全局观和理性判断的体现，而非简单失败。设定退出点、设计后路、留下体面告别，才能在合适时间优雅退场。</p>
+<h3 id="阿虫不知春秋"><a href="#阿虫不知春秋" class="headerlink" title="阿虫不知春秋"></a>阿虫不知春秋</h3><p>“善败者不亡”，关键在于“善败”，要克服大多数人与生俱来的固执。围棋中要随时准备撤出战斗，不可恋战；拳击中每次出拳都伴随撤退、躲闪和横移。能在进攻时保持撤退、闪躲的可能，站桩式输出并非好策略。</p>
+<h3 id="陈克彪"><a href="#陈克彪" class="headerlink" title="陈克彪"></a>陈克彪</h3><p>全身而退就是胜利，就是希望，就是机会。不要把所有筹码押在一次机会、一次成功上，要提前做好安全撤退方案：高点撤退，明确目标，不赚最后一个铜板；止损撤退，明确红线，及时止损；请个教练，双重安全保护，预留“再保险”。</p>
+<h3 id="万雄"><a href="#万雄" class="headerlink" title="万雄"></a>万雄</h3><p>《适时退出》开头以攀登珠峰展开，提到安全返回中的“关门时间”：一旦超过某个时间点，无论离顶峰多近，都必须返回。登顶是表面胜利，真正的胜利是安全返回营地。设定撤退点就是设定“关门时间”，五大认知缺陷则是执行关门时间的困难。</p>
+<h3 id="晓斌、铁事、辉太狼、陈宇星、玻璃体、闻思修、victory、FF"><a href="#晓斌、铁事、辉太狼、陈宇星、玻璃体、闻思修、victory、FF" class="headerlink" title="晓斌、铁事、辉太狼、陈宇星、玻璃体、闻思修、victory、FF"></a>晓斌、铁事、辉太狼、陈宇星、玻璃体、闻思修、victory、FF</h3><p>这些留言从“发现错误就尽快改”“资源重新分配”“猴子与基座模型”“登山下撤死亡风险”“为自己准备诺亚方舟”和“拳击教练在关键时刻叫停”等角度，认同撤退不是放弃，而是保存实力、避免重大错误、为下一次机会留下空间。共识是：人生是可选的长期游戏，有进有退，才能保持主动。</p>
+<hr>
+<p><a href="/book/decision-algorithm/048/">← 048｜满意就好：如何成为一个不纠结的人？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/050/">050｜格雷厄姆：如何成为聪明的投资者？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

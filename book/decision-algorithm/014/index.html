@@ -1,0 +1,355 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>014｜买房的逻辑：房子还是投资的好选择吗？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》014：买房的逻辑：房子还是投资的好选择吗？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="014｜买房的逻辑：房子还是投资的好选择吗？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/014/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》014：买房的逻辑：房子还是投资的好选择吗？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:44.906Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/014/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '014｜买房的逻辑：房子还是投资的好选择吗？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">014｜买房的逻辑：房子还是投资的好选择吗？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">014｜买房的逻辑：房子还是投资的好选择吗？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>来源：老喻·决策算法100讲</p>
+<p>音频时长：12:20</p>
+<p>以下依据 PDF 页面原图逐段人工视觉阅读整理。</p>
+</blockquote>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>你好，我是老喻，欢迎来到《决策算法》课。</p>
+<p>要说中国人最关心的财富决策，买房肯定可以排进前三。</p>
+<p>的确，过去 20 年，许多人赚到的最大一笔钱，就是来自房子的增值。</p>
+<p>然而，过去并不能决定未来。尤其最近几年，各地房价或多或少出现了高位回调。在这种背景下，所有人更加关注：未来房价还不会涨？买房还能不能推动我们的财富状况发生质变？</p>
+<p>更具体一点儿就是：房子还值得买吗？哪里的房子值得买？</p>
+<p>我们是一门更关注通用决策方法的课，预测未来几年房价是涨是跌，不是我们的任务。</p>
+<p>不过，我可以给你一套思考买房问题的决策框架，让你用一个新视角来理解买房的逻辑。</p>
+<h2 id="一、房子的功能到底是什么？"><a href="#一、房子的功能到底是什么？" class="headerlink" title="一、房子的功能到底是什么？"></a>一、房子的功能到底是什么？</h2><p>比较常见的观点，是一种二分法：消费功能和投资功能。</p>
+<p>这种分法有它的道理。但在我看来，房价涨跌的复杂性，这种二分法显得片面，无法揭示背后的逻辑。</p>
+<p>先说两个楼盘案例。</p>
+<p>从消费的角度，深圳东部有个楼盘，景观无敌，设计一流，刚推出的时候可谓万众瞩目，被认为是豪宅的代表作。</p>
+<p>然而，十多年过去了，深圳整体房价涨幅惊人，不少房子涨了十倍，而那个豪宅却几乎没涨。为什么？</p>
+<p>从投资的角度，2008 年，因为受到金融危机的影响，大家购房都不再有信心，更别说以投资为目的了。</p>
+<p>但是，上海有一个项目，就在那一年推出，而且房价创了新高，结果一抢而空。购房者相当多一部分，是基金经理等金融从业人员。按理说，他们最讲究投资回报，为什么愿意在那个时间点，投入大量资金到房子上？</p>
+<p>所以，决定房价涨跌背后的关键要素，到底是什么？</p>
+<p>我有一个观点：<strong>房子本质上是一种用于存放“生产力工具”的仓库。</strong></p>
+<p>“生产力工具”是一种隐喻，说的自然是我们自己。人们通过劳动、技能、知识与资源整合，创造经济价值。房子的作用，就是为这一“工具”提供适宜的居住环境，使其能够持续、高效地产出价值。</p>
+<p>回到我们上面的例子：</p>
+<p>深圳东部那个多年不涨的豪宅，距离市区相对较远，还要经过一个容易塞车的隧道。深圳是个讲究效率的城市，有实力购买那个豪宅的人，即使有时间上的自由，但依然追求生产力的效率。所以，再好的环境、再高级的设计，也不能满足“存放生产力工具”这一基本需求。缺乏生产力价值支撑的房产难以获得市场认可。</p>
+<p>再说刚才提及的上海例子。那个项目位于核心区域，环境不错，商业成熟，房子设计和装修也很用心。虽然推出时大环境不好，定价较高，但是该项目的购房者，一眼就看中了房子对自己工作的便利，以及能够通过生活质量的奖励，提高“战斗力”。</p>
+<p>房子的价格由“生产力工具”的价值来支撑。换句话来说，一个人的赚钱能力越强，愿意支付的存放成本越高。</p>
+<p>这就是为什么，核心城市、核心地段的房价会持续上涨。<strong>重要的不止是位置，而是住在这个位置，赚钱的效率更高。</strong></p>
+<p>所以，一栋房子，是用来住也好，用来投资也好，未来会不会涨，你要看，会来住这个房子的人，赚钱能力能不能持续，或者会不会增长。</p>
+<p>换言之，房价的涨跌并非由“消费”或“投资”的表面功能决定，而是取决于其对生产力工具效率的支撑程度。</p>
+<p>包括三点：</p>
+<ul>
+<li>**通勤效率的优化：**减少通勤时间和交通成本，直接提升生产效率。</li>
+<li>**生活质量的改善：**提升居住者的身体与心理状态，从而间接提高工作效率。</li>
+<li>**资源的可及性：**如高质量的教育、医疗、商业等资源，能增强生产力工具的长期价值。</li>
+</ul>
+<h2 id="二、地域和时间的不均匀"><a href="#二、地域和时间的不均匀" class="headerlink" title="二、地域和时间的不均匀"></a>二、地域和时间的不均匀</h2><p>一旦以此作为考量房价的基本逻辑，许多矛盾的问题就迎刃而解了。</p>
+<p>例如，有些人认为房价永远上涨，有些人则认为“房价永远上涨只是个神话”。</p>
+<p>我刚到温哥华时，对这座城市房价历史做了一个简单研究。当地传统豪宅区桑拿斯过去 100 年大约涨了一千倍。看上去，长期而言，房价似乎总是会上涨。</p>
+<p>但是另外一个例子是，在荷兰阿姆斯特丹王子运河边上，那些历史悠久的漂亮房子。从 1628 年到 1973 年之间，这些房子平均每年上涨了 2.3% 左右。扣除通胀后房价每年只增长 0.2%。如此算来，这里的房价在整整 350 年内仅增长了一倍。</p>
+<p>假如用我的观点来解释，也就是房子本质上是一种用于存放“生产力工具”的仓库，就不难理解了：</p>
+<p>荷兰当年是世界经济中心，作为“生产力工具”的人，能够支付更高的存放成本。然而，随着经济的发展，世界经济中心已经发生了转移，阿姆斯特丹不再是“宇宙中心”，房价自然会慢慢回归。</p>
+<p>而温哥华是一个新移民城市，尤其是吸引了许多来自东亚的富豪家庭。尽管那里房子的租金回报率低，也没啥工作机会，但是富豪们为了构建一个稳定的后方，以便让自己安心在前线继续赚钱，所以仍然愿意支付很高的存放成本。</p>
+<h2 id="三、房子的两个延伸价值"><a href="#三、房子的两个延伸价值" class="headerlink" title="三、房子的两个延伸价值"></a>三、房子的两个延伸价值</h2><p>“房子作为生产力工具仓库”的逻辑，还有两个有趣的延伸。</p>
+<h3 id="1-文旅盘的价值逻辑"><a href="#1-文旅盘的价值逻辑" class="headerlink" title="1. 文旅盘的价值逻辑"></a>1. 文旅盘的价值逻辑</h3><p>一些文旅盘之所以火，是因为房子还有另一种功能，那就是生产力工具对自己的奖励。</p>
+<p>很多人不理解，为什么阿那亚那么火，但别的文旅盘就是做不起来？</p>
+<p>能够成为“生产力工具对自己的奖励”，不光要舒服的空间、漂亮的风景，更重要的还需要良好的人文氛围和服务。</p>
+<p>大城市的“生产力工具”们对于人文氛围和服务，要求更高。他们要短途的车程，就能够来到乌托邦般的环境，在精心设计的文化氛围中，用一个周末或者假期，完成赚钱机器的重启，然后回去继续创造价值。</p>
+<p>经济学家席勒多次警告美国房地产市场可能存在泡沫。他认为，房价的快速上涨往往受投资者过度乐观和市场情绪的驱动，而非基本面因素。他主张“是泡沫，就一定会破灭”。</p>
+<p>然而，有趣的是，他自己却在离纽约不远的长岛海湾里买了一个小岛。他对此给出的解释是：1、为了消费；2、为了多元化资产组合。</p>
+<p>你看，总在说房地产泡沫的经济学家，也会拿房产奖励自己。</p>
+<h3 id="2-学区房"><a href="#2-学区房" class="headerlink" title="2. 学区房"></a>2. 学区房</h3><p>“房子作为生产力工具仓库”的逻辑，还有第二个延伸，就是“学区房”。</p>
+<p>学区房是生产力工具为了延续自己的基因付出的溢价。当然，这么解释或许有些太功利，也可以换个角度来说，所谓的学区房，是存放未来的高质量生产工具的仓库。</p>
+<h2 id="四、地域发展的不均匀性"><a href="#四、地域发展的不均匀性" class="headerlink" title="四、地域发展的不均匀性"></a>四、地域发展的不均匀性</h2><p>明晰了“房子作为生产力工具仓库”这一基本逻辑，我们在做决策的时候会更加清晰，而不是停留在表面。</p>
+<p>不管从时间还是从空间看，房价的上涨都是不均匀的。这个不均匀的背后，是生产力发展水平和速度的不均匀。</p>
+<p>例如，在美国过去一百年，房价走势似乎与通货膨胀速度相当，但并不代表购买者就能够以此抵御通货膨胀。因为这一百年间，美国房价的上涨并不均匀。真正称得上房地产黄金时期的并不多，例如，一次是第二次世界大战之后；一次是在 20 世纪 90 年代后期，这是美国经济发展较快的两个时期。</p>
+<p>以中国为例，过去二十年房价整体涨幅惊人，但不同城市之间的涨幅，仍然有较大的差别。即使是在同一个城市，房价的涨跌分布也不均匀。无论是城市之间，还是城市的不同区域，房价的差异，同样是生产力发展水平的不均匀导致。</p>
+<p>在此基础上，我们也可以顺便来看两个特别典型的买房决策：</p>
+<p>第一个案例，小王同学，研究生毕业，北京某大厂工作 5 年，今年 30 岁，加上家人的支持，攒了 100 万首付，是在北京买一套小房子，还是回老家买一套大房子？</p>
+<p>根据小王的特点，他在北京更能发挥自己作为生产力工具的价值，自然应该是在北京买一个能承受的小房子，而不是在老家买一个舒适的大房子。</p>
+<p>第二个案例，小李也是研究生毕业，回到家乡的一所中学当老师，工作 5 年，刚成家。当地房价已经不算低了，要不要买房？或者，要不要在所在的四线城市租房住，在省城买一套更有投资潜力的房子？</p>
+<p>这种情况下，也许小李应该在他家乡，买一套和家人们一起舒适生活的房子。</p>
+<p>类似小李这样的情况，亲戚也通常都在当地，干啥都方便，他的作为生产力工具的价值，在家乡资源的帮助下，可以最大化。并且，让自己这个生产力工具住得舒服，这也是重要的“投资”。</p>
+<h2 id="五、对买房决策的系统总结"><a href="#五、对买房决策的系统总结" class="headerlink" title="五、对买房决策的系统总结"></a>五、对买房决策的系统总结</h2><p>至此，对于买房决策，我来做一个系统性总结：</p>
+<p>一、对绝大多数普通人而言，买房子的主要目的是为了居住，捎带有一定投资价值。</p>
+<p>二、从投资属性看，房子有一定抵御通货膨胀的功能，但是否真能跑赢通胀，受制于时间和空间的不均匀性。</p>
+<p>三、未来因为区域发展的不均匀性，房价的走势会更加两极分化。二八定律将再次“显灵”，少部分城市大涨，大部分城市小涨或原地踏步。</p>
+<p>四、那些“赚钱机器”们愿意去的城市，以及他们更愿意支付“存放自我”成本的区域，是房产投资的风向标。</p>
+<p>五、买房子最重要的“标准”是让自己舒服。付款压力不要太大，让自己舒服点儿。力所能及的情况下，买一个或换一个更舒服点儿的房子。</p>
+<p>六、房子是多元化资产组合中的一部分。一方面要关注“多元化”，例如多套房产投资可能要考虑分散风险，并考虑与其他资产的比例；另一方面则要适当关注“现金流”。</p>
+<p>以上就是这一讲的全部内容。我是老喻，我们下一讲再见。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>房子本质上是一种用于存放“生产力工具”的仓库。</li>
+<li>一个人赚钱能力越强，愿意支付的存放成本越高。</li>
+<li>不管从时间还是从空间看，房价的上涨都是不均匀的。这个不均匀的背后，是生产力发展水平和速度的不均匀。</li>
+</ol>
+<h2 id="用户留言（原图）"><a href="#用户留言（原图）" class="headerlink" title="用户留言（原图）"></a>用户留言（原图）</h2><h3 id="鸿涛"><a href="#鸿涛" class="headerlink" title="鸿涛"></a>鸿涛</h3><p>房子的真正全面的意义在于为生产力工具赋能，可以是直接提升生产效率的通勤，也可以是间接提高工作效率环境改善，还可以是能增强长期价值的教育、医疗、商业等资源。因此，房子的价值，除了的金钱价值还要加上这些赋能的价值。否则买的就是普通的投资品，可以用投资回报率来估算衡量。</p>
+<p>——以上留言由作者筛选显示。</p>
+<hr>
+<p><a href="/book/decision-algorithm/013/">← 013｜对冲思维：做错决策时如何还能赢？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/015/">015｜彩票的诱惑：怎样寻找彩票之外的概率套利机会？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

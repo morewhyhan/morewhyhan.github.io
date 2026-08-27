@@ -1,0 +1,487 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>060｜突破中年：怎样在重围中选择更精彩的人生？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》060：突破中年：怎样在重围中选择更精彩的人生？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="060｜突破中年：怎样在重围中选择更精彩的人生？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/060/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》060：突破中年：怎样在重围中选择更精彩的人生？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:45.647Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/060/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '060｜突破中年：怎样在重围中选择更精彩的人生？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">060｜突破中年：怎样在重围中选择更精彩的人生？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">060｜突破中年：怎样在重围中选择更精彩的人生？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>《老喻·决策算法100讲》</p>
+</blockquote>
+<h2 id="老喻：决策算法100讲"><a href="#老喻：决策算法100讲" class="headerlink" title="老喻：决策算法100讲"></a>老喻：决策算法100讲</h2><p>你好，我是老喻，欢迎来到《决策算法》课。</p>
+<p>42岁那年，<strong>苏轼</strong>遭遇了“乌台诗案”的暴击。吾谪的政坛折断、顶流文豪，一夜之间跌入人生至暗时刻。</p>
+<p>130天的囚禁让他从“京东名士”沦为罪臣，出狱时发如白茅，被贬到湖北黄州任团练副使，一个没有实权、形同软禁的虚职。</p>
+<p>从人生巅峰跌到谷底的苏轼，带着家人在黄州为知县周辅而忙碌，被贬得萧瑟。朋友周围尽然的达官显贵早已消失，他再也不是那个可以高谈阔论天下大事的京城名士，而是一个被时代抛下的孤独中年人。</p>
+<p>这正是典型的“中年危机”——曾经建立起来的一切，转眼化为乌有；曾经信奉的价值体系，突然被现实击得粉碎。</p>
+<p>每个人来到中年，都会陷入类似的疑惑：我怎么了？我为什么会遇到这些糟糕的事情？我还能做什么？我如何走出这场人生的困境？</p>
+<p>也许，我们真正要突破的，并不是中年，而是对人生稳定性的执念。</p>
+<p>经济学家大卫·布兰奇福勒（David Blanchflower）通过对132个国家的研究发现，人类的主观幸福感呈现“U型曲线”——年轻时较高，中年时跌入谷底，直到50岁之后才缓慢回升。在全球范围内，中年低谷大约出现在47岁。</p>
+<p>为什么中年会成为人生最灰暗的阶段？答案或许藏在压力的多重夹击中。40岁到50岁，是人生责任最重、压力最强的阶段：</p>
+<ul>
+<li><strong>事业高不成低不就</strong>：升迁空间受限，职场竞争加剧，曾经的锐气被日复一日的工作消磨。</li>
+<li><strong>家庭责任加码</strong>：上有老、下有小，既要操心孩子的教育，又要照顾逐渐衰老的父母，夹在两代人之间，焦虑无处宣泄。</li>
+<li><strong>人生回顾的失落感</strong>：年少时的梦想被现实冲淡，曾经的激情变成疲惫，内心不禁反思：“我这辈子到底成就了什么？”</li>
+</ul>
+<p>更隐秘的杀伤力来自认知系统的崩解：在20多岁时，我们相信持续就能得到回报；在30多岁时，我们还觉得未来充满可能；但到了40多岁，我们开始发现，这个世界并不像当年以为的那么开阔，可能被现实折磨，充满失望。</p>
+<p><strong>当年努力的所有努力，现实却未必给出相应的回报，这种“期望与现实的错位”正是中年危机的核心。</strong></p>
+<p>中年危机并非个体的失败，而是一个几乎所有人都会经历的心理关口。</p>
+<p>年轻时，我们依赖“加法决策”——尝试一切可能；中年时，我们需要“减法决策”——学会拒绝和放弃。</p>
+<p>那么，问题来了：当我们被现实重重包围，如何选择更精彩的人生？如何像苏轼那样，在低谷中找到突围的方向？</p>
+<h2 id="一、从愤懑到脱胎：认知的转变"><a href="#一、从愤懑到脱胎：认知的转变" class="headerlink" title="一、从愤懑到脱胎：认知的转变"></a>一、从愤懑到脱胎：认知的转变</h2><p>黄州的五年，是苏轼对中年危机发起的一场绝地反击。</p>
+<p>这个被朝廷遗忘的江畔小城，成了他重构人生的实验场——短短几年后，他不仅在精神上完成了自我救赎，还创造了千古流传的文学巨作。</p>
+<p>苏轼用3把钥匙，打开了中年困局的枷锁。</p>
+<h3 id="1-从愤懑到脱胎：认知的转变"><a href="#1-从愤懑到脱胎：认知的转变" class="headerlink" title="1. 从愤懑到脱胎：认知的转变"></a>1. 从愤懑到脱胎：认知的转变</h3><p>初到黄州时，苏轼的心境是低落的。他写道：</p>
+<blockquote>
+<p>“拣尽寒枝不肯栖，寂寞沙洲冷。”</p>
+</blockquote>
+<p>这份洁身自好的孤独与失落。然而，他很快意识到，长久沉浸于怨愤无济于事，唯有调整内心，才能从废墟中爬起。</p>
+<p>他开始学着放下对理想的执念，接受自己被放逐的现实，并试图寻找新的生活意义。</p>
+<p>在现代心理学中，这种“认知重构”被视为帮助人们走出困境的重要策略。苏轼没有一味逃避，而是通过改变对世界的认知方式，使自己能够接受新的身份，并找到继续前行的动力。这是他在黄州的第一个突围——心理上的解放。</p>
+<h3 id="2-从落魄到自足：生活的重建"><a href="#2-从落魄到自足：生活的重建" class="headerlink" title="2. 从落魄到自足：生活的重建"></a>2. 从落魄到自足：生活的重建</h3><p>当苏轼面对的是最现实的问题，是如何养家糊口。他的解决方案是：躬耕自食。</p>
+<p>在好友的帮助下，他在黄州东郊获得了一片荒地，开始亲手种田、养猪，甚至还自创了“东坡肉”的烹饪方法。他在《猪肉颂》中写道：</p>
+<blockquote>
+<p>“慢着火，少着水，柴头罨烟焰不起。待它自熟莫催它，火候足时它自美。”</p>
+</blockquote>
+<p>这不仅是对烹饪的总结，更像是对人生的隐喻——慢慢熬，别急躁，时间会给出答案。</p>
+<h3 id="3-从失意到巅峰：创作的爆发"><a href="#3-从失意到巅峰：创作的爆发" class="headerlink" title="3. 从失意到巅峰：创作的爆发"></a>3. 从失意到巅峰：创作的爆发</h3><p>很多人以为，逆境会摧毁一个人的创造力，但苏轼在黄州的经历恰恰相反。此时的他，开始真正走向文学的巅峰。《前赤壁赋》《后赤壁赋》《念奴娇·赤壁怀古》等千古名篇，均诞生于这段时期。他还写下了“天下第三行书”《寒食帖》。</p>
+<p>有时，失去会让我们意识到自己真正能拥有什么。中年困局也能让人去除浮华，去探寻生命的本质。</p>
+<p>苏轼在黄州最难熬的，不只是现实的困境，还有心理上的崩塌与重塑。</p>
+<p>如何在“人生的至暗时刻”里，找到精神上的光？这才是“突破中年”的核心问题。</p>
+<p>借用苏轼的诗句：“回首向来萧瑟处，归去，也无风雨也无晴。”<strong>当你能以平常心看待得失，以豁达态度对抗焦虑，人生的下半场自然会呈现不一样的高度。</strong></p>
+<p>富兰克林有一句广为流传的名言：</p>
+<blockquote>
+<p>“二十岁时，意志当道；三十岁时，智慧主导；四十岁时，判断力至上。”</p>
+</blockquote>
+<p>这句话深刻揭示了人生不同阶段的优势：二十岁凭借热情和勇气闯荡；三十岁开始积累智慧，明白取舍；到了四十岁，则具备了准确的判断力，能够在复杂的情境中做出更明智的选择。</p>
+<p>到了中年，拼体力，你拼不过20岁的年轻人；拼精力，你比不过30岁的人。但神经科学研究发现，这个阶段恰恰是人大脑的另一个黄金期。</p>
+<p>虽然处理速度和工作记忆可能开始减缓，但在综合决策和判断方面，中年人的表现往往优于年轻人。</p>
+<p>这源于两个关键因素：</p>
+<p>一是经验累积带来的“晶体智力”持续增长，让我们能更准确地识别模式、预判趋势；</p>
+<p>二是情绪管理能力的提升，中年人的大脑对负面刺激的反应减弱，更容易保持理性和平和。</p>
+<p>正如哈佛大学的研究发现，在复杂的经济决策中，中年人往往表现出更强的理性判断力。</p>
+<p>你的阅历、认知深度、资源整合能力，以及对趋势的洞察力，才是这个阶段最宝贵的资产。</p>
+<p>概括而言，40岁后，真正拉开人与人差距的，不是努力，而是决策的质量。</p>
+<p>但是，不同于年轻时的试错成本较低，中年的每一个决定，都意味着更大的机会成本、更深远的影响、更难以回头的路径。</p>
+<p>这时，成熟的决策方式不再是简单的“跟随直觉”或“一鼓作气”，而是更理性、更审慎，更要注重攻守兼备。</p>
+<p>我们通过两个典型案例，来解析中年决策的核心特征。</p>
+<h3 id="案例一：37岁的转型抉择"><a href="#案例一：37岁的转型抉择" class="headerlink" title="案例一：37岁的转型抉择"></a>案例一：37岁的转型抉择</h3><p>刘先生在传统制造业深耕12年，是一位资深的中层管理者。当看到不少朋友转入数字化领域，获得更高的薪资和发展空间时，他内心开始躁动。然而，房贷、家庭责任和对新领域的忧虑，又让他犹豫不决。这正是中年职场人的典型困境：稳定、安全感与成长、眼前利益与长远布局。</p>
+<p>最终，他选择了一条“小步试错”的路径：先在现有公司争取数字化项目，借此学习新技能；同时利用业余时间系统学习互联网运营，在行业论坛结交人脉。</p>
+<p>一年后，他成功跳槽到数字化公司。虽然起薪稍低，但凭借管理经验快速进入核心团队，两年后实现了年加薪和晋升。</p>
+<h3 id="案例二：20年婚姻的重塑"><a href="#案例二：20年婚姻的重塑" class="headerlink" title="案例二：20年婚姻的重塑"></a>案例二：20年婚姻的重塑</h3><p>张先生和王女士在女儿上大学后，突然发现彼此形同陌路。这是典型的“空巢婚姻危机”——当孩子这个纽带淡化后，夫妻关系的裂痕开始显现。</p>
+<p>一个选择摆在他们面前：“是否离婚”。他们没有冲动行事，而是采用了“重塑关系”的策略：定期约会重建二人世界，培养共同爱好，通过婚姻咨询改善沟通方式。</p>
+<p>最终，他们发现婚姻问题的关键，不在于离开还是坚持，而在于找对更好的相处之道。</p>
+<p>从这两个案例中，我们可以总结出中年决策的三个核心特点：</p>
+<ol>
+<li><strong>从冲动决策到策略性决策</strong>：年轻时更容易感性冲动；中年人倾向于分析利弊，设定长期策略。刘先生没有贸然跳槽，而是在安全区试水；张先生没有草率离婚，而是尝试多种修复方案。</li>
+<li><strong>从个人选择到系统性考量</strong>：中年人的决策往往涉及更广泛的家庭、职业和社会责任。每个决定都是一个系统工程，需要更全面的权衡。</li>
+<li><strong>从短期收益到长期价值</strong>：中年决策更注重长远影响。刘先生愿意接受短期薪资下降来换取未来空间，张先生选择用时间和耐心重建关系，都体现了这种长期思维。</li>
+</ol>
+<p>这告诉我们：中年决策的关键，不在于“要不要改变”，而在于“如何更聪明地降低不确定性”。</p>
+<p>正如葛兰·克林所说：“四十岁时，判断力至上。”一个成熟的决策者，既要有勇气做出改变，又要有智慧控制风险。</p>
+<h2 id="二、让我们回到中年苏轼所在的黄州"><a href="#二、让我们回到中年苏轼所在的黄州" class="headerlink" title="二、让我们回到中年苏轼所在的黄州"></a>二、让我们回到中年苏轼所在的黄州</h2><p>我出生在湖北新洲，那里距离黄州城不过数十公里。</p>
+<p>假如你来到赤壁遗址，会感慨“太小了！”这真的就是苏东坡笔下的那个赤壁吗？</p>
+<p>但是，在苏东坡的精神世界里，历史时空中的赤壁却如此恢宏，向“两岸东坡”写下：</p>
+<blockquote>
+<p>“大江东去，浪淘尽，千古风流人物。故垒西边，人道是，三国周郎赤壁。乱石穿空，惊涛拍岸，卷起千堆雪……”</p>
+</blockquote>
+<p>事实上，苏东坡的大半生都是在不知愁和亡命中度过的。但他几乎从来不用“自我批判”来实现其内心的躲避，哪怕他的确做了很多傻事，有些是因为追求正义，有些是因为书生意气。</p>
+<p>可苏东坡在精神世界上绝无妥协。他甚至无暇向上天哀怨，向朋友发怆，向好友咆哮。</p>
+<p>他最多只是自我调侃，然后把自己还原为一个点、一种存在，进而从更大的空间和时间尺度上有所伸缩，有所感，有所悟，每每感悟至极，都能跃升一层次，看见更广阔的时空。</p>
+<p>在我看来，苏东坡最强大的特异功能是，不管到了哪里，都能迅速将那里变成自己的“人生主场”。</p>
+<p>中年时的苏东坡，经历的是生死劫。我们拆解现代人很幸运，不必经历那种肉体上的苦痛。但是现实就是，经历过中年的第二个黄金期。</p>
+<h3 id="1-调整认知，接纳现实"><a href="#1-调整认知，接纳现实" class="headerlink" title="1. 调整认知，接纳现实"></a>1. 调整认知，接纳现实</h3><p>不要沉溺于“本不该如此”的情绪，而是学会接受现实，在现有条件下寻找新的可能。——“莫听穿林打叶声，何妨吟啸且徐行。”</p>
+<h3 id="2-从生活入手，重建秩序"><a href="#2-从生活入手，重建秩序" class="headerlink" title="2. 从生活入手，重建秩序"></a>2. 从生活入手，重建秩序</h3><p>哪怕只是改变一个小习惯，培养一项新爱好，都能帮助我们重获生活的掌控感。再大的事儿也先放下，让自己吃好、睡好，别让内耗和心灵，哪怕一时也总会。</p>
+<blockquote>
+<p>“长江绕郭知鱼美，好竹连山觉笋香。”</p>
+</blockquote>
+<h3 id="3-创造价值，找回成就感"><a href="#3-创造价值，找回成就感" class="headerlink" title="3. 创造价值，找回成就感"></a>3. 创造价值，找回成就感</h3><p>在逆境中主动寻找产生价值的机会，让自己始终保持向上的状态。</p>
+<blockquote>
+<p>“人生到处知何似，应似飞鸿踏雪泥。”</p>
+</blockquote>
+<h3 id="4-拓展视野，重建连接"><a href="#4-拓展视野，重建连接" class="headerlink" title="4. 拓展视野，重建连接"></a>4. 拓展视野，重建连接</h3><p>不要把自己封闭起来，要善于向外寻求帮助，与理解你的人保持联系。</p>
+<blockquote>
+<p>“一年好景君须记，正是橙黄橘绿时。”</p>
+</blockquote>
+<h3 id="5-拥抱变化，保持成长"><a href="#5-拥抱变化，保持成长" class="headerlink" title="5. 拥抱变化，保持成长"></a>5. 拥抱变化，保持成长</h3><p>放下对“完美人生剧本”的执念，学会在变化中调整方向，在跌宕和重建的循环中，不断拓展人生的边界。</p>
+<blockquote>
+<p>“休对故人思故国，且将新火试新茶，诗酒趁年华。”</p>
+</blockquote>
+<p>中年危机并不可怕，可怕的是把它当成终点。</p>
+<p>到了中年，一个人才开始真正修炼属于自己的决策算法。</p>
+<p>未来依然广阔，想想看，巴菲特99%的财富来自50岁之后。</p>
+<p>苏轼的故事告诉我们，中年是一次重塑的机会，不妨放声高歌，笑对风雨，或许迎来的将是人生真正的高峰。</p>
+<p>我是老喻，我们下一讲再见。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>尽管付出了所有努力，现实却未必给出相应的回报，这种“期望与现实的错位”正是中年危机的核心。</li>
+<li>有时，失去会让我们意识到自己真正能拥有什么。中年困局也能让人去除浮华，去探寻生命的本质。</li>
+<li>中年是一次重塑的机会，不妨放声高歌，笑对风雨，或许迎来的将是人生真正的高峰。</li>
+</ol>
+<h2 id="用户留言"><a href="#用户留言" class="headerlink" title="用户留言"></a>用户留言</h2><h3 id="Christy"><a href="#Christy" class="headerlink" title="Christy"></a>Christy</h3><p>当生活不如意的时候试重启。</p>
+<p>电脑有重启的选项，生活没有按钮，但当生活一团糟的时候，也不妨重启试试。所谓的重启就是及时调整我们的生活状态。</p>
+<p>首先要保持对生活的热情，把对生活的热情投掷到具体的事物中，在忙乱的步调中找到属于自己的一个点， 从而对生活保持一种乐观的态度。拥有对待生活的热情，才有积极应对挫折的心态。</p>
+<p>然后制定合理的计划。为自己制定一个清晰可行的目标，先停止自怨自艾，省查自身的缺陷与不足。尽早地对未来有一个小的规划，再选择合适的方式前进。</p>
+<p>还要给生活做减法。生活本身是一个巨大的容器，但装的东西多了，就会显得杂乱无章。及时清理生活中不需要的事物，同时简化身边的人际关系，保持重要的联系，删除日常生活中让你觉得不舒服的交往，多和能滋养你的人一起。</p>
+<p>凡是过往，皆为序章。一个人只有懂得放下过往，才能走得轻盈地迎接未来。人生的主动力，是把握在那些重新出发的人手中的。</p>
+<h3 id="左星星"><a href="#左星星" class="headerlink" title="左星星"></a>左星星</h3><p>苏轼在黄州的故事似乎带着一股穿越时空的力量，直击我内心最深处的迷茫和挣扎。尽管我们身处不同的年代，面临的困境也千差万别，但在那种失落、挫折和重新寻找自我的过程中，我们似乎找到了与他共鸣的地方。</p>
+<p>作为工作不如意的职场中年人，最近几年我的工作也是历史艰辛，终于迎来了一年以来唯一的一次面试机会。过去的工作经历和JD完美匹配，第一轮面试相谈甚欢顺利通过，但第二轮较领导十分钟的挑战和最终的不欢而散，又一场失败的高峰迅速跌入失望的谷底。我不甘心，拒绝我的理由其实很迷不清。为此，我几乎打算24小时入场。</p>
+<p>这种经历让我深刻体会到苏轼当时的心境——那种对过去的无奈、对未来的迷茫，还有对自身价值的质疑。然而，苏轼在黄州的生活是一种放逐，也是一次重新调整的契机。他通过改变心态、调整生活、重燃创作热情，最终找到了“东坡生名”。这种从低谷中突围的精神，对于我现在的处境来说无疑是一种启发。</p>
+<p>或许，我需要放下对那些“挫折应当”的期望，接受现实的复杂性，并学会在有限的条件下寻找新的突破口。苏轼没有抱怨，也没有沉溺于怨愤，而是选择通过认知重构找到新的生命方向。而我也需要成为一个创新者——将真切的天花。比如，改变工者的心态，而仔细去思考一下，自己目前的技能和优势，还能为其他人提供一些什么。</p>
+<h3 id="Keiko-璐"><a href="#Keiko-璐" class="headerlink" title="Keiko.璐"></a>Keiko.璐</h3><p>萨提亚心理学家曾把中年视为“第三次诞生”的机遇。他认为：“我们以受精卵的形式出现时，是第一次诞生；作为婴儿出生时，则是第二次诞生；步入中年，开始重新认识世界，完善自我，并全新的成人时，则是第三次诞生。”</p>
+<p>中年是人生的关键时刻，虽然不再拥有年轻时的无限时间和无畏勇气，但却有了足够的智慧来理解世界的复杂性，以及生命的脆弱与坚韧，更是给了我们一次深度自我探索的机会。</p>
+<p>中年是自我重塑的黄金时期。在这个阶段，人们拥有丰富的人生经验和成熟的心智，为探索未知的自我提供了坚实的基础。</p>
+<p>中年也是情感重生的时期。在这个阶段，人们更倾向于建立基于深层次理解和共鸣的关系，寻求更智慧的相处之道而非表面的交往。</p>
+<p>中年不只是挑战，更是积淀；不是衰退的象征，而是智慧和成熟的标志。</p>
+<h3 id="你当像贾玲一样的山"><a href="#你当像贾玲一样的山" class="headerlink" title="你当像贾玲一样的山"></a>你当像贾玲一样的山</h3><p>也许，我们真正要突破的，并不是中年，而是对人生稳定性的执念。慢慢熬，别急躁，世况会给出答案。</p>
+<p>不要沉溺于“本不该如此”的情绪，接受现实。</p>
+<p>从生活入手，重建秩序：哪怕只是改变一个小习惯，培养一项新爱好，都能帮助我们重获生活的掌控感。再大事儿也先放下，让自己吃好、别让内耗和心灵，叫我一时也不必，再把自己重新做好。</p>
+<p>拓展视野，重建连接：不要把自己封闭起来，要善于向外寻求帮助，与理解你的人保持联系。</p>
+<p>拥抱变化，保持成长：放下对“完美人生剧本”的执念，学会在变化中调整方向，在跌宕和重建的循环中，不断拓展人生的边界。</p>
+<h3 id="鸿涛"><a href="#鸿涛" class="headerlink" title="鸿涛"></a>鸿涛</h3><p>中年就是一次复走过程，经过调整、重建、再创造、重连接这些改革而加强的过程，不仅弥补了期望与现实的错位，还提升了坚韧性和全面质量。突破过了中年，才能真正见到人生中最绚丽的新来下本质——终结地过去拿长期策略。</p>
+<h3 id="苏本小百合"><a href="#苏本小百合" class="headerlink" title="苏本小百合"></a>苏本小百合</h3><p>老师这课里面举的例子都有一个特性，就是具备了选择权。</p>
+<p>意思就是人生有了一定的积累，比如管理能力、比如能消费得起家庭咨询师的费用等等。有了这些积累才能在面临问题的时候有更多选择权。这就是所谓的机会是留给有准备的人的。</p>
+<p>现实中绝大部分人并不是哪吒，也不是李靖、申公豹，甚至连士族都不是，仅仅是陈塘关的百姓，急忙来临了就直接摆脱了。</p>
+<p>所以，我们在没有面临问题前，就要努力获得能有一定自保作用的能力，一旦出了问题，我们才有一些希望。</p>
+<p>真正“我命由我不由天”，那是上位者才能喊的口号，那是小孩子的观念为之热血，然后在后续人生中建立更大的人物去奋斗，这本质上没问题。但如果一进来就听讲，作为成年人，我们得理性看待问题，想达天破命不进度使喊喊口号了，而是有很多事情要提前做准备，最后才有选择权做决策，至于能选择好点的死法，还是能选择逃出生天，就看每个人日常的积累程度了。</p>
+<h3 id="波澜不惊"><a href="#波澜不惊" class="headerlink" title="波澜不惊"></a>波澜不惊</h3><p>用诗词应对中年危机的决策算法：</p>
+<ol>
+<li>调整认知，接纳现实：莫听穿林打叶声，何妨吟啸且徐行。竹杖芒鞋轻胜马，谁怕？一蓑烟雨任平生。</li>
+<li>从生活入手，重建秩序：长江绕郭知鱼美，好竹连山觉笋香。</li>
+<li>创造价值，找回成就感：人生到处知何似，应似飞鸿踏雪泥。</li>
+<li>拓展视野，重建连接：一年好景君须记，正是橙黄橘绿时。</li>
+<li>拥抱变化，保持成长：休对故人思故国，且将新火试新茶，诗酒趁年华。</li>
+</ol>
+<h3 id="胡优石"><a href="#胡优石" class="headerlink" title="胡优石"></a>胡优石</h3><p>穿越千年，和古人有了共情。谁还没有个中年，谁还没有个中年危机。眼下我的事业也正在最艰难的时间节点，周遭朋友也同步了各种危机。于是同学聚会逼过三层后，看到了不再是当年的意气风发和指点江山，而是负重前行后的各种孤独和失落，甚至满脸沧桑下。</p>
+<p>苏轼打开中年困顿的三把钥匙，认知重构&#x2F;生活重建&#x2F;探寻生命的本质。这三把钥匙何尝不适合所有有中年危机的人。</p>
+<h3 id="炎帝"><a href="#炎帝" class="headerlink" title="炎帝"></a>炎帝</h3><p>人到中年，仿佛突然被推入一场没有预告的生存游戏——身体开始背叛意志，事业陷入胶着，家庭责任如山，身上有不放心，想息都不敢取。</p>
+<p>这时传入的内心如潮水般涌来：“我的人生难道就这样了吗？”这种被称为“中年危机”的困境，本质上是人生阶段性的系统重启。</p>
+<h4 id="一、中年危机的本质：价值体系的崩解与重构"><a href="#一、中年危机的本质：价值体系的崩解与重构" class="headerlink" title="一、中年危机的本质：价值体系的崩解与重构"></a>一、中年危机的本质：价值体系的崩解与重构</h4><p>中年危机的核心并非年龄焦虑，而是“认知范式与生存现实的错位”。年轻时，我们信奉“努力即可改变”“善良必得回报”的线性逻辑，但中年时却发现：被努力却可能不如同事的社交手腕有效，真诚待人反遭背叛，行业颠覆十年经验瞬间归零。这种冲击源自三个维度的断裂：</p>
+<ol>
+<li>能力与环境的错配：过去赖以生存的技能，在技术革命中贬值；</li>
+<li>欲望与资源的失衡：房贷、教育、养老开支吞噬收入，而职场天花板触手可及；</li>
+<li>自我认知的撕裂：社会标签（“好员工”“好家长”）与真实需求（自我实现、精神自由）激烈冲突。</li>
+</ol>
+<h4 id="二、减法决策：中年生存的进化策略"><a href="#二、减法决策：中年生存的进化策略" class="headerlink" title="二、减法决策：中年生存的进化策略"></a>二、减法决策：中年生存的进化策略</h4><p>年轻人用加法探索世界，中年人需用减法捍卫生活。减法不是退缩，而是“战略聚焦”：</p>
+<ol>
+<li><p>断舍离“情绪负债”</p>
+<p>切断消耗型关系：同事的八卦、亲戚的道德绑架、无效社交，本质是情绪高利贷。日本最具生活感的书中曾写道：青少年负责90%的物品重塑人生，启示我们：清理人际“债物同”，才能静出心灵气。</p>
+<p>剥离道德枷锁：刘邦在鸿门宴上的隐忍，不是懦弱，而是保全实力的理性选择。中年人的善意应有边界，拒绝成为“情感垃圾桶”。</p>
+</li>
+<li><p>从“标签囚徒”到“动态身份”</p>
+<p>职场人常被“我能做什么”定义（如“资源会计”“技术主管”），但环境剧变时，这种标签反而成为枷锁。</p>
+<p>以“需要做什么”定义身份：公司裁员，会计可转型数据分析，设计可转产品含案技能；打造“斜杠能力结构”，深耕一项核心技能，同时拓展服务边界，如程序员学习心理学，教师研究短视频运营。</p>
+</li>
+<li><p>终极自由：在不确定中构建“弹性人生”</p>
+<p>中年危机的解药，不是寻找确定性，而是培养与不确定性共舞的能力：</p>
+<ul>
+<li>杠铃策略：80%精力投入低风险领域（稳定收入、健康管理），20%用于高潜力探索（如知识付费、轻资产创业）；</li>
+<li>时间折叠：用“碎片时间矩阵”（如通勤时听行业播客、午休时写作）对抗时间碎片化；</li>
+<li>心理留白：如禅师所言，“半壶水足够时，不必上山砍柴”——舍弃完美主义，接受60分人生。</li>
+</ul>
+</li>
+</ol>
+<p>刘邦：“运筹帷幄不如善用他人，攻城略地不如保全实力。”中年人的精彩，不在于征服多少山峰，而在于学会在风暴中搭建自己的方舟。</p>
+<h2 id="后续留言"><a href="#后续留言" class="headerlink" title="后续留言"></a>后续留言</h2><h3 id="JerryLuo"><a href="#JerryLuo" class="headerlink" title="JerryLuo"></a>JerryLuo</h3><p>这节课讲的真好。“中年危机”这个词并不陌生，但能从提出问题、分析问题，给予解决思路的角度来阐述的话，且非常中肯，并不多见。</p>
+<p>我们都会步入“中年”，“中年危机”是一个随时要根据环境不断重建、发生重构的阶段。</p>
+<p>如何应对“中年危机”？</p>
+<p>首先，我们要接纳自己，让自己冷静下来。其次，重新思考自己的价值。可以从建立一个小习惯开始，比如坚持每天做一个好习惯，从一小步开始做自己。再次，重建连接，从一个小圈子改善自我，持续每天加入一个新的朋友。最后，保持成长。放弃最求完美的想法而是小步试错，失败起来，再逐步优化和调整。从无到有，从有到优。</p>
+<h3 id="知东东"><a href="#知东东" class="headerlink" title="知东东"></a>知东东</h3><p>苏轼被贬到哪里，哪里就是他的主场。他的人生哲学，或许可以给我们很多启示：提升认知，拓展视野，拥抱变化，保持成长。这些品质，让他在任何环境中都能源有余。</p>
+<p>同时，我们也要学会尊重年轻人。不要总是指指点点，动不动就说“你都啥了”，这样做最大的态度只会让人反感。更不要成为那种中年陪伴，缺是在懂得怎么从这个圈子小豆。</p>
+<h3 id="Tony-to-ni"><a href="#Tony-to-ni" class="headerlink" title="Tony to ni"></a>Tony to ni</h3><p>人至中年会自然熟的产生一些变化。首先时间的重度感增强，会让你不由自主的去思考人生的意义，就像你到达终点上，列声能不能留下世代人？</p>
+<p>第二，对于自己的能力和可能性，有了更清晰的认识和理性的估计。在年轻的时候，你觉得你要改变世界，但皆有可能。到中年了，你发现可能性太少了，但一定是可能重的。</p>
+<p>第三，我觉得中年人来说的战略是整合，这个整合包括对自我的整合、过往经历进行了你，原生家庭影响了你，对你自己有一个更清晰的了解，中年人会尝试重建加重自我，再次对外部资源的整合，我们无法去掩体力、拼努力，拼战斗力，就朝着所说的，我们拼拼的是决策力，判断力，整合资源的能力。</p>
+<h3 id="妙妙"><a href="#妙妙" class="headerlink" title="妙妙"></a>妙妙</h3><p>人好像一直都是在迷茫中向前摸索。刚毕业时，不知道前路在什么方向，自己是谁，陷入青年迷茫；后来，通过踏踏实实向前走，终于摸出了一条路，但是之前自己认为是最优先的地方在发展的过程中开始不断的出现新的疑问和中年危机。我自己的理解是需要处理不同的问题。</p>
+<h3 id="无敌虫虫"><a href="#无敌虫虫" class="headerlink" title="无敌虫虫"></a>无敌虫虫</h3><p>难怪六神话霸王苏东坡是这个时代图书出版的流量密码。老师用苏东坡的三把钥匙（转变认知，从愤懑到超脱，重建生活，从落魄到自足，激发创作，从失意到巅峰）给位于幸福感曲线底部的中年人提供决策算法，实现“中年突围”。</p>
+<p>的话是“年轻时三思，老来才可，岁不虚度，人生无可悔”。如何看待过去的经历，当下的现实，以及未来的期许，决定了一个人的幸福感。这是“时间的悖论”——中年所提出的核心洞见，即，纵观、消极的心态，未来的6种时间观来看童年人。当前来看现实的核心问题，中年人的。你所看的是越来越多，你所过的是就越来越多。在经历失去之后，才能更加明白自己之所以“中年生存，或许最好的决策，就是在看清自己的”之后，做真正的自己，去除虚浮，实体理想，笑对风雨。</p>
+<h3 id="FF"><a href="#FF" class="headerlink" title="FF"></a>FF</h3><p>失去并不只是遗憾，它也可能是一种觉醒。在年轻时，我们常常被外界的目标和期待所驱动，渴望拥有更多，但真正属于我们的东西，往往是在失去后才真正看见。只有经历过，面对后，放下后才意识到自己最贵见的是什么。</p>
+<p>生命的本质，在于“拥有”而非“占有”。如果年轻时是“往外求”的阶段，那么中年就是“向内看”的阶段。这是一个回归自我、沉淀智慧的时期，让我们从浮华中剥离，找到真正的自我。从外过渡到内的精神世界才是彼岸。</p>
+<h3 id="玻璃体"><a href="#玻璃体" class="headerlink" title="玻璃体"></a>玻璃体</h3><p>我们真正突破的是对确定性的执念。中年危机可能会因然每一个正常的打工人，但如何可能保持一模实现突破，确实很有挑战。我以前一直以为，苏轼是一个非常有慧根的人，他的灵性、佛性、善良以及才华，让他能在任何逆境中笑对人生，也能将那些命运向他的石头炼成宝石。但老师也建议我们，通过调整自己的心境和规划也能实现中年危机的突破。</p>
+<p>年轻时，以为“坚持就是胜利”“付出就有回报”对这个世界善良，世界会回以善良“爱人者人恒爱之”等等这些是人生座右铭或者指路灯，中年时才发现，不是这些话错了，是自己思维维度单一、认知结构简单。这个时间点，我们人生的拐点也会告诉自己：世界的复杂性才是正常的，未来的不可预测才是正常的，人都会走向成熟。如果我们现在面临的困局也是正常的。因此，如果我们足够的福报在年轻时就做人间清醒，也无法通过时光穿梭机回到过去，那就感谢中年危机吧，这是我们实现人生飞跃，逐步接近生命真相的一个关卡，对后半生是否有更大成就、能否实现人生圆满至关重要。</p>
+<h3 id="知识止商业，仅供社群内部免费交流使用"><a href="#知识止商业，仅供社群内部免费交流使用" class="headerlink" title="知识止商业，仅供社群内部免费交流使用"></a>知识止商业，仅供社群内部免费交流使用</h3><p>夸多乖的自由篇，中年人做减法，自由和爱情可以放弃了吗？</p>
+<p>以下内容AI生成和背锅。</p>
+<p>这个问题让我想起阿尔利诗人夸多乖的《自由与爱情》中那句著名的“生命诚可贵，爱情价更高。若为自由故，两者皆可抛”。但当代中年人在生活重压下的“做减法”，或许需要更复杂的哲学思辨。</p>
+<ol>
+<li><p><strong>“夸多乖命题的现代变形”</strong></p>
+<p>青年时代将自由与爱情视为超越价值的激情，在中年阶段遭遇现实解码。房贷压力下的“自由”可能是周末能完整睡个午觉；职场夹缝中的“爱情”或许退化为深夜加班后妻子留在微波炉里的那碗汤。这种价值降维看似妥协，实则是在生存主义的境遇重构。</p>
+</li>
+<li><p><strong>“减法”中的价值炼金术</strong></p>
+<p>中年减法不是简单的放弃，而是将抽象概念治炼成具体生存智慧的过程。放弃的可能是“必须轰轰烈烈”的执念，转化的却是“深夜书房独处的两小时”（微观自由）和“病床前默契的沉默相守”（沉淀的爱情）。就像海德格尔说的“向死而生”，减法反而让本质显形。</p>
+</li>
+<li><p><strong>西西弗斯的中年启示</strong></p>
+<p>加缪笔下的推石者神话在中年获得新解：当意识到石头永远推不到山顶时，真正的自由自在于“发现”过程中本身可雕刻成艺术品。中年人的自由或许学会在KPI报表里写首俳句，在家长群里保持思想的独立性。</p>
+</li>
+<li><p><strong>“道家智慧”的当代回响</strong></p>
+<p>庄子“无用之用”的思想在此显锋芒。放弃对“自由”“爱情”的概念执取，反而可能获得庖丁般的游刃有余。就像日本断舍离文化，剥除社会强加的价值期待后，真正的生命诉求才会浮现。</p>
+</li>
+</ol>
+<p>最终答案藏在过程中：中年不是放弃自由与爱情，而是将其从云端请回人间，在茶米油盐中重新定义。就像被雨水冲刷过的古碑，那些被生活磨去浪漫主义镀层的价值内核，反而会显现更温润持久的光芒。毕竟，真正的自由从不是外部给予的，而是内在秩序的建立；最深的爱情也不必是烈火烹油，可以是静水深流。</p>
+<hr>
+<p><a href="/book/decision-algorithm/059/">← 059｜驾驭青春：怎样少做让自己后悔的决策？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/061/">061｜避免无效努力：为什么重复再多也未必成功？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

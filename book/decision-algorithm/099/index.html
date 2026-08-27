@@ -1,0 +1,386 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>099｜概率思维：支撑决策的三个神奇公式 | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》099：概率思维：支撑决策的三个神奇公式">
+<meta property="og:type" content="website">
+<meta property="og:title" content="099｜概率思维：支撑决策的三个神奇公式">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/099/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》099：概率思维：支撑决策的三个神奇公式">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:46.234Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/099/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '099｜概率思维：支撑决策的三个神奇公式',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">099｜概率思维：支撑决策的三个神奇公式</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">099｜概率思维：支撑决策的三个神奇公式</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>来源：老喻·决策算法100讲</p>
+</blockquote>
+<h2 id="老喻亲述"><a href="#老喻亲述" class="headerlink" title="老喻亲述"></a>老喻亲述</h2><p>你好，我是老喻，欢迎来到决策算法课。</p>
+<p>二战期间，物理学家斯坦尼斯拉夫·乌拉姆被困在一个棘手的问题中：如何准确模拟中子在原子核内碰撞的路径？传统数学工具复杂而无效，似乎毫无出路。</p>
+<p>一天，他在玩纸牌时突然灵光一现：与其费力计算每一个确定的可能，不如随机模拟大量路径，再通过统计找到答案。他与冯·诺依曼迅速合作，将这种方法命名为“蒙特卡洛方法”，以赌城蒙特卡洛命名。一个解决复杂问题的概率工具由此诞生。</p>
+<p>短短几十年后，蒙特卡洛方法已经超越物理学范畴，成为投资、金融乃至人工智能领域的重要利器。对投资者来说，它能模拟上万次市场走势，画出风险和收益的概率分布，帮助决定何时出击、何时收手。如今华尔街的量化投资者几乎离不开它。</p>
+<p>AlphaGo 击败人类围棋冠军时，人们惊奇地发现，这个历史性的 AI 正是靠每秒数百万次的蒙特卡洛树搜索，一步步占据人类智慧的堡垒。可以说，概率是 AI 思考的基石。</p>
+<p>概率之所以强大，是因为在高度复杂的不确定环境中，试图预测唯一确定的未来往往徒劳。概率思维告诉我们，世界不必然，未来也无需明晰。我们只要接受不确定性，通过概率工具发现趋势、洞察风险，从而作出更好的决策。</p>
+<p>概率思维正是我们面对不确定世界时最重要的一种底层思维模式。世界是随机的，但我们并非无能为力。通过理解和运用概率，我们可以拨开迷雾，在复杂世界中作出更明智、更有效的决策。</p>
+<p>概率思维一直贯穿《决策算法100讲》课程。前面介绍过 EKB 决策算式。课程临近结束，今天用一个完整框架复习这套概率决策方法：它整合期望值计算、凯利资源分配和贝叶斯更新，让你作决策时真正心中有“数”。这套系统不仅能帮你避开常见认知陷阱，还能在越来越复杂的世界中，为每个重要决策提供可靠支持。</p>
+<h2 id="一、从赌博到现代概率思维"><a href="#一、从赌博到现代概率思维" class="headerlink" title="一、从赌博到现代概率思维"></a>一、从赌博到现代概率思维</h2><p>人类对概率的探索，最初源于对未知的恐惧与好奇，以及在赌场赚钱的冲动。</p>
+<p>17 世纪时，帕斯卡和费马在讨论赌局输赢时发现：决定一场赌博胜负的，并非命运或神灵，而是能够计算的概率。</p>
+<p>随后出现了“频率派”和“贝叶斯派”两大阵营。频率派认为，概率是事件在大量重复试验中出现的频率；贝叶斯派则更重视已有信念，并通过新证据不断更新这些信念。但现实中并非所有事情都有机会重复试验，例如“我和这个人一生幸福的可能性有多大”，只能用贝叶斯派的信念给出主观概率判断。</p>
+<p>凯利公式的出现，则在风险和回报之间找到了精妙的平衡点，尤其在投资中指导我们根据胜率和赔率合理分配资源、实现收益最大化。人生苦短，筹码有限，认知也有限，所以要分批次打出手上的牌。</p>
+<h2 id="二、结果理性与过程理性"><a href="#二、结果理性与过程理性" class="headerlink" title="二、结果理性与过程理性"></a>二、结果理性与过程理性</h2><p>一种观点认为，好的决策必须遵循概率和数学的理性法则，最大化期望收益；另一种观点认为，好的决策更应重视过程合理性，重视步骤严谨性和方法科学性，尤其是在高度不确定的复杂环境中。</p>
+<p>更好的答案是：需要一种方法，同时整合概率的理性标准和过程的稳健合理性，将计算与智慧融为一体。这正是贯穿课程的 EKB 决策算法：让决策不再依靠运气，而真正靠概率说话。</p>
+<h2 id="三、EKB-决策算法的三个核心公式"><a href="#三、EKB-决策算法的三个核心公式" class="headerlink" title="三、EKB 决策算法的三个核心公式"></a>三、EKB 决策算法的三个核心公式</h2><p>世界是不确定的，每次决策都是一次下注。要持续赢下去，需要的不是运气，而是精准而强大的决策算法——EKB。</p>
+<p>EKB 由三个核心要素组成：期望值（E）、凯利公式（K）和贝叶斯更新（B）。</p>
+<p>一句话概括：</p>
+<ul>
+<li>**E（期望值）**告诉你该下注哪些选项，做正确的事；</li>
+<li>**K（凯利公式）**帮你决定下注比例，在正确的事上投入适量资源；</li>
+<li>**B（贝叶斯更新）**不断优化决策准确度，让你成为一个持续进化的人。</li>
+</ul>
+<h3 id="1-E：期望值"><a href="#1-E：期望值" class="headerlink" title="1. E：期望值"></a>1. E：期望值</h3><p>面对多个选择，期望值通过计算每个选择的可能结果及其概率，告诉我们从长期看哪些选择是正回报的。</p>
+<p>简单来说：</p>
+<blockquote>
+<p>期望值 &#x3D; “各结果的概率 × 各结果的价值”的总和。</p>
+</blockquote>
+<p>它帮助我们筛选那些看似诱人、但实际期望为负的选项，专注于真正有价值的机会。E 是战略高度，是决策的第一道门槛。</p>
+<h3 id="2-K：凯利公式"><a href="#2-K：凯利公式" class="headerlink" title="2. K：凯利公式"></a>2. K：凯利公式</h3><p>找到有价值的机会后，要决定投入多少资源。凯利公式给出数学上的最优解：</p>
+<blockquote>
+<p>最佳下注比例 &#x3D; （赔率 × 胜率 − 失败率）÷ 赔率</p>
+</blockquote>
+<p>这个公式平衡了风险和回报，既避免过度投入导致灾难性损失，也防止投入不足造成机会浪费。即使面对极好的机会，也不要孤注一掷。</p>
+<h3 id="3-B：贝叶斯更新"><a href="#3-B：贝叶斯更新" class="headerlink" title="3. B：贝叶斯更新"></a>3. B：贝叶斯更新</h3><p>环境不断变化，认知需要持续进化。贝叶斯更新让我们根据新证据调整原有信念。</p>
+<blockquote>
+<p>后验概率 ∝ 先验概率 × 新证据的似然度（∝ 为“正比于”的符号）。</p>
+</blockquote>
+<p>通过这种方式，我们可以从每次经验中学习，不断修正对世界的理解，让决策越来越准确。</p>
+<h3 id="4-E、K、B-的循环"><a href="#4-E、K、B-的循环" class="headerlink" title="4. E、K、B 的循环"></a>4. E、K、B 的循环</h3><p>当 E、K、B 协同，就形成一个强大的决策闭环：</p>
+<ol>
+<li>基于概率计算期望值，锁定有利选项；</li>
+<li>用凯利公式精准下注；</li>
+<li>获得结果反馈，进行贝叶斯更新，校准概率认知；</li>
+<li>基于校准后的概率认知再次计算期望值，锁定更有利选项。</li>
+</ol>
+<p>EKB 同时满足决策理论中的两种要求：</p>
+<ul>
+<li><strong>结果理性（最大化期望收益）</strong>：确保决策在长期具有概率优势；</li>
+<li><strong>过程理性（程序合理性）</strong>：帮助你在动态环境中不断学习和进化。</li>
+</ul>
+<p>它不只是实用工具，更是一种底层思维方式：E 让你做对的事情；K 让你把事情做对；B 让你成为一个持续进化的决策者。</p>
+<h2 id="四、把-EKB-用到日常生活"><a href="#四、把-EKB-用到日常生活" class="headerlink" title="四、把 EKB 用到日常生活"></a>四、把 EKB 用到日常生活</h2><p>这套方法不只适用于专业投资，也非常适合日常选择。四个步骤是：</p>
+<h3 id="第一步：建立决策清单"><a href="#第一步：建立决策清单" class="headerlink" title="第一步：建立决策清单"></a>第一步：建立决策清单</h3><p>任何决策开始前，先用一张纸写下所有选项，例如：</p>
+<ul>
+<li>我该不该辞职去创业？</li>
+<li>买房还是租房？</li>
+<li>是否与这个人结婚？</li>
+</ul>
+<p>先不要急着作决定，把选项清晰地列出来，这是决策的起点。</p>
+<h3 id="第二步：估算每个方案的期望值（E）"><a href="#第二步：估算每个方案的期望值（E）" class="headerlink" title="第二步：估算每个方案的期望值（E）"></a>第二步：估算每个方案的期望值（E）</h3><p>用“概率 × 价值”的方式粗略计算各选项期望值。例如创业时，先估计成功概率和失败概率，再乘以各自的收益或损失。如果成功概率只有 30%，但成功后的经济收益、个人成长和自由感很高，而不创业的收益是固定工资、稳定但有限，把两边算出来，就能更客观看到哪个方案值得选择。</p>
+<p>期望值高的方案，才是长期真正值得投入时间和精力的选项。</p>
+<h3 id="第三步：用凯利公式（K）确定资源比例"><a href="#第三步：用凯利公式（K）确定资源比例" class="headerlink" title="第三步：用凯利公式（K）确定资源比例"></a>第三步：用凯利公式（K）确定资源比例</h3><p>确定哪个方案值得做后，下一步是决定“做多少”。不必每次精确计算公式，但要记住：胜算越大、回报越确定，投入比例越高；胜算一般或回报高度不确定时，投入比例要降低。</p>
+<p>例如，对创业的信心只有 30%，就不应拿出全部积蓄或透支未来十年的生活去创业，而应小规模、试探性投入，逐渐验证。买房时，市场上涨周期且风险较小时可以提高首付比例；市场高度不确定时，就应谨慎投入，保持弹性。</p>
+<p>凯利公式的本质是“聪明下注”，避免一次意外失败彻底毁掉未来。</p>
+<h3 id="第四步：用贝叶斯更新（B）不断学习与调整"><a href="#第四步：用贝叶斯更新（B）不断学习与调整" class="headerlink" title="第四步：用贝叶斯更新（B）不断学习与调整"></a>第四步：用贝叶斯更新（B）不断学习与调整</h3><p>决策从来不是一锤定音。每作一次决策，都记录下来，观察结果，再更新自己的认知。例如创业小项目失败了，不要灰心，而要了解失败原因，调整对创业成功概率的认识；租房而不是买房，几年后房价持续上涨，也要重新评估下一次决策时的概率估算。</p>
+<p>通过贝叶斯更新，每一次决策都能让你更了解世界，作出更接近现实的判断。</p>
+<h2 id="五、EKB-要解决的人生三大挑战"><a href="#五、EKB-要解决的人生三大挑战" class="headerlink" title="五、EKB 要解决的人生三大挑战"></a>五、EKB 要解决的人生三大挑战</h2><p>EKB 要解决的是人生决策中三个关键挑战：</p>
+<ol>
+<li><strong>一开始就没做对的事（E）</strong>：如果事情本身长期期望值为负，无论多努力、多勤奋都可能是在自费。先判断事情是否值得做，再谈怎么做。</li>
+<li><strong>喜欢孤注一掷（K）</strong>：创业者抵押全部资产、炒股者杠杆满仓，都可能一把输光。凯利公式告诉我们，任何时候都不要孤注一掷，即使有信心，也要保留下一次下注的筹码。</li>
+<li><strong>决策后不更新（B）</strong>：如果失败后总把原因归为运气差、市场不好，认知就会越来越偏离现实。好的决策者会用每一次反馈修正自己，让自己变得更精准、更理性。</li>
+</ol>
+<p>人生最重要的三件事，恰恰就是：</p>
+<ul>
+<li>先选对的路（E），否则越努力越迷失；</li>
+<li>控制好下注的分寸（K），否则迟早输光所有；</li>
+<li>不断更新认知，让自己持续进化（B），否则只会在错误的循环里越陷越深。</li>
+</ul>
+<p>这就是 EKB 的重要性：做对的事、把事做对，并最终成为对的人。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>我们终其一生都在追寻两样东西，一个是“过得好”，一个是“有价值”。正因为不确定性，我们的追寻才有意义。</p>
+<p>随机性是这个世界最公平的事情之一。就像拉普拉斯说的：“生命中最重要的问题，在很大程度上，其实都是概率问题。”世界上不存在确定性的成功，但我们总是可以选择做成功概率更高的事。</p>
+<p>要想过得好、过得有价值，就需要与概率共舞，用决策塑造出独一无二的自己。这是一生的旅程，也是最值得的旅程。</p>
+<p>以上就是这一讲的全部内容。我是老喻，我们下一讲再见。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><p>掌握了 EKB 决策法，就掌握了一套在不确定世界中持续胜出的方法论。</p>
+<p>EKB 决策法由三个核心要素组成：</p>
+<ol>
+<li>E（期望值）告诉你该下注哪些选项，做正确的事；</li>
+<li>K（凯利公式）帮你决定下注比例，在正确的事上投入适量的资源；</li>
+<li>B（贝叶斯更新）不断优化你的决策准确度，让你成为一个持续进化的人。</li>
+</ol>
+<h2 id="PDF-内用户留言"><a href="#PDF-内用户留言" class="headerlink" title="PDF 内用户留言"></a>PDF 内用户留言</h2><h3 id="左星星"><a href="#左星星" class="headerlink" title="左星星"></a>左星星</h3><p>EKB 最打动人的地方，不只是数学结构，而是它带来一种“慢下来、算一算、想清楚”的生活节奏。在效率至上的时代，人容易被推着走；EKB 提醒我们重要的不是快速决策，而是清醒决策。</p>
+<p>E 让人重新看待“值不值得”：许多选择靠直觉、老板画的大饼、朋友建议或一时冲动，E 把未来拉到眼前，先问长远是赚是赔。K 提醒人不要用命去赌，很多失败不是选错事，而是投得太猛、不留退路；K 是理性的韧性。B 是 EKB 中温柔又强大的部分：不完美不是问题，关键是能否持续更新，在变量太多的世界里一步步靠近更好的答案。EKB 也是一种情绪管理机制：少一些焦虑，多一些判断；少一些执念，多一些进退有度；少一些“赢一次”的冲动，多一点“赢一生”的耐心。</p>
+<h3 id="白青"><a href="#白青" class="headerlink" title="白青"></a>白青</h3><p>期望值（Expected Value）、凯利公式（Kelly Criterion）、贝叶斯定理（Bayes’ Theorem）是决策领域重要的三个“硬核”理论。</p>
+<p>期望值是“获胜的可能性乘以每次可能赚取的金额”，减去“失败的可能性乘以每次可能损失的金额”。要做正期望值的事情，但还要考虑遍历性：即使期望值正确，也需要足够多的重复和耐心才能实现。</p>
+<p>凯利公式告诉我们要保留下注能力。真正聪明的玩家不会把赌注全压在一个时间点上，而会适当拖延、整体布局，把资源分开下注，确保时间洪流中的每一步都有调整余地。可以在认知上、时间上加杠杆，但不要在资金上加杠杆。</p>
+<p>贝叶斯定理可以概括为“过去的经验”加上“新的证据”，得到“修正后的判断”；十六个字是：尊重先验、保持开放、先干为敬、持续更新。它让我们在相信中怀疑、在怀疑中相信。</p>
+<h3 id="美君"><a href="#美君" class="headerlink" title="美君"></a>美君</h3><p>EKB 的启发：做事的方向得是对的，否则南辕北辙；做事要有分寸，保留筹码，不要孤注一掷；不要让过去的决策扭曲现在的认知，要持续进化，客观归因，根据每一次决策的反馈让自己更精准和理性。总结起来就是：知己知彼，百战不殆。</p>
+<h3 id="鸿涛"><a href="#鸿涛" class="headerlink" title="鸿涛"></a>鸿涛</h3><p>人生决策，首要是用期望值模式选对战略；然后用凯利公式指导持续地下胜算更大的注；最后用贝叶斯更新的方法定期复盘，持续取得经验的复利。以个人投资为例，可以建立投资清单，估算各项目的长期期望值，选取 E 最大者，用凯利公式确定投入比例，再不断更新认知、调整投资计划。</p>
+<h3 id="李壹"><a href="#李壹" class="headerlink" title="李壹"></a>李壹</h3><p>EKB 决策法与《易经》卦象产生了联想：卦象不是替人“决定”，而是让人列出所有选项，在抽象的隐喻中反观自身；EKB 也不是机械计算，而是通过期望值、凯利公式、贝叶斯更新，在概率框架下校准认知。两者都在说：面对不确定的世界，决策的本质是“知己知彼”，在混沌中找到属于自己的坐标系。</p>
+<h3 id="Tony-to-ni"><a href="#Tony-to-ni" class="headerlink" title="Tony to ni"></a>Tony to ni</h3><p>EKB 决策算法是信息时代的“理性罗盘”，但有效性取决于三点：承认理论局限并主动补足（例如引入冗余资源、多元思维）；区分可量化决策与不可量化决策的适用边界；在数学框架中保留人性化的弹性空间，避免机械执行导致系统僵化。决策者要在“算<strong>法理性</strong>”与“人类灵性”之间找到动态平衡。</p>
+<h3 id="新月"><a href="#新月" class="headerlink" title="新月"></a>新月</h3><p>这套方法论逻辑上很完美，真正困难的不在掌握方法，而在于“概率”和“价值”的估算。不同的人有不同的估值，期望值也不同，后续一切都会因此不同。最终落脚点是认知：已有的认知、眼界、思维结构、信息和资源才是根本，否则方法也可能只是巧妇难为无米之炊。</p>
+<h3 id="炎帝"><a href="#炎帝" class="headerlink" title="炎帝"></a>炎帝</h3><p>概率思维是理解世界、作出决策的重要工具。超市抽奖、股市大涨等场景背后，藏着人类面对随机性的集体焦虑。连续三次猜中硬币正面，容易产生“我能预测未来”的错觉，把运气当成实力。遇到“绝对稳赚”的机会时，可以问自己：“如果连续失败五次，我还能承受吗？”期望值不只适用于赌博，也适用于生活中的各种决策。学习基础概念、培养量化思维、实践与反思、接受不确定性，都是掌握概率思维的路径。</p>
+<h3 id="Henry-阿力"><a href="#Henry-阿力" class="headerlink" title="Henry 阿力"></a>Henry 阿力</h3><p>我的理解是：第一，用“期望值”判断一件事值不值得做，但真实世界不可能算得那么清楚，期望值更像一个方向，不去做不划算的事；第二，凯利公式提醒我们不要轻易下大注，要根据概率和赔率调整比例；第三，贝叶斯强调动态迭代，随事情变化调整具体策略，战略不能反复摇摆。</p>
+<h3 id="欢喜我就好"><a href="#欢喜我就好" class="headerlink" title="欢喜我就好"></a>欢喜我就好</h3><p>人生最重要的三件事：先选对的路（E），否则越努力越迷失；控制好下注分寸（K），否则迟早输光所有；不断更新认知（B），否则只会在错误循环里越陷越深。这就是 EKB 的重要性：做对的事、把事做对，并最终成为对的人。</p>
+<p>以上留言由作者筛选显示。</p>
+<hr>
+<p><a href="/book/decision-algorithm/098/">← 098｜二阶智慧：怎样作出对未来负责的决策？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/100/">100｜决策终极之战：打一场你必定胜利的战争 →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

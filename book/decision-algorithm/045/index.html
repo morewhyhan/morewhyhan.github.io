@@ -1,0 +1,375 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>045｜避风港：怎样在暴风雨中变得更加强大？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》045：避风港：怎样在暴风雨中变得更加强大？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="045｜避风港：怎样在暴风雨中变得更加强大？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/045/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》045：避风港：怎样在暴风雨中变得更加强大？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:45.391Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/045/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '045｜避风港：怎样在暴风雨中变得更加强大？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">045｜避风港：怎样在暴风雨中变得更加强大？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">045｜避风港：怎样在暴风雨中变得更加强大？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<ul>
+<li>时长：14分05秒</li>
+<li>来源：老喻·决策算法100讲</li>
+</ul>
+<h2 id="老喻亲述"><a href="#老喻亲述" class="headerlink" title="老喻亲述"></a>老喻亲述</h2><p>你好，我是老喻，欢迎来到《决策算法》课。</p>
+<p>在前面的一节课里，我们分享了一个精彩案例：2020年年初，基金经理阿克曼，利用黑天鹅事件，以2600万美元的赌注，赢得了36亿美元的收益。这笔交易被《巴伦周刊》称为有史以来最伟大的交易之一。</p>
+<p>也是在那一年，另外一个神秘的投资人，登上了媒体的头条。《福布斯》是这么说的：“一个山羊农场主是如何通过建造一台末日机器来赚取4144%回报的？”</p>
+<p>这个人叫马克·斯皮茨纳格尔，他的基金在2020年前四个月大约赚了40倍。</p>
+<p>他是塔勒布的搭档，推崇老子的哲学，喜欢弹钢琴和吹号。他将道家的“无为而治”原则与尖端量化模型结合，创造了传奇般的财富奇迹。</p>
+<p>他还在一个湖边的农场放山羊、做奶酪。而他做的奶酪，还被评为世界上最好吃的手工山羊奶酪。</p>
+<p>他是如何做到的？</p>
+<p>这一节课，我们将继续在不确定性的大海里冲浪，去探究如何构建“避风港”——不仅是金融上的，更是人生全方位的。</p>
+<p>如何既守护财富，又享受丰富多彩的人生？</p>
+<h2 id="一"><a href="#一" class="headerlink" title="一"></a>一</h2><p>塔勒布是一个独特的思想家，集数学家、交易员、作家多重身份于一身。1987年“黑色星期一”，他就曾利用市场极端风险而大赚一笔。这种经历让他开始思考：那些被认为“不可能发生”的事件，恰恰可能带来最大的冲击。</p>
+<p>塔勒布提出的“黑天鹅”理论揭示了一个残酷的现实：在复杂系统中，最具破坏性的往往不是那些可以预见的常规风险，而是那些被我们的经验和模型完全忽视的意外。更重要的是，这些意外不仅会带来灾难，有时还蕴含着巨大的机遇。</p>
+<p>1999年，塔勒布与马克·斯皮茨纳格尔共同创立了一家投资公司，将这种思维转化为实战策略。这是一个专门“猎捕”市场崩盘的基金，开创了一种全新的投资模式。</p>
+<p>如果说塔勒布是黑天鹅理论的布道者，那么斯皮茨纳格尔就是将其转化为赚钱机器的工程师。在他的设计下，环球资本（Universa Capital）发展出了一套独特的“避风港”策略。</p>
+<p>这套策略的核心是什么？简单来说，就是用极小的成本，构建对抗市场剧烈波动的防护网。</p>
+<p>也就是说，黑天鹅来临，绝大多数人是受害者，而环球资本（Universa Capital）利用这种“尾部风险对冲”策略，大赚其钱。其运作方式有点儿像“保险公司”：</p>
+<ol>
+<li><strong>收取“保费”</strong>：为客户提供市场崩盘保护，在平稳时期可能显得是额外花销。</li>
+<li><strong>崩盘时获利</strong>：当市场真的出现大崩溃，这类对冲工具价值飞涨，补偿了客户在其他资产上的损失，也为基金本身带来巨大收益。</li>
+<li><strong>小亏大赚</strong>：在平稳期内，这些仓位会不断产生小亏损，但只要长周期来看，那些偶然的巨额补偿就能弥补亏损，并产生可观净利。</li>
+</ol>
+<p>环球资本（Universa Capital）通过购买期权来实现这一目标，平常几乎总是在亏钱，但是遭遇黑天鹅时则能带来巨大回报。就像你为自己的手机买了个保险，有天你的手机摔坏了，保险公司给你赔了3个手机。</p>
+<p>斯皮茨纳格尔经常提及“迂回投资”的概念，即以退为进，如孙子兵法的策略——<strong>输掉战役，赢得战争</strong>。</p>
+<p>依靠这种策略，该公司实现了相当不错的回报。</p>
+<p>然而，斯皮茨纳格尔在2020年致投资者的信中说：“我们手中并无水晶球！”因为，他们的方法并不依赖市场时机或方向性押注。</p>
+<h2 id="二"><a href="#二" class="headerlink" title="二"></a>二</h2><p>而人们总是试图靠预测未来赚大钱。</p>
+<p>布莱恩·亨特，曾是华尔街最耀眼的明星交易员之一。</p>
+<p>他的传奇始于2005年。那年夏天，由于天气不够炎热，天然气需求下降，价格随之下滑至每百万英热（英、美等国采用的一种计算热量的单位）6至8美元之间。</p>
+<p>亨特判断，冬季取暖需求将推动天然气价格回升，于是大胆布局。他大量买入天然气期货和期权，等待市场反弹。而飓风卡特里娜的到来让他押对了宝：天然气价格一路飙升至15.38美元。亨特为公司赚得了巨额利润，也赢得了华尔街的尊敬。</p>
+<p>然而，成功往往带来过度自信。2006年，他再次押注天然气市场，预测即将到来的寒冬将引发价格大涨。他在短期合约上做空、远期合约上做多。</p>
+<p>然而，市场走势完全出乎意料，由于新资金不断涌入，短期价格攀升、长期价格下跌，彻底击穿了亨特的交易逻辑。</p>
+<p>面对日益巨大的亏损，他不仅没有止损，反而加大赌注试图挽回局面。结果，这次豪赌导致基金在两周内亏损高达65亿美元，占公司总资产的70%以上。</p>
+<p>最终，他的基金破产，亨特的“传奇神话”也随之终结，一个“交易高手”在短短两年间从巅峰跌入谷底。</p>
+<p>他的故事揭示了一个残酷的事实：<strong>过度依赖预测和忽视风险管理，无异于自毁前程。在复杂的市场中，没有所谓的“神预测”，只有未雨绸缪的准备和对风险的谦卑。</strong></p>
+<h2 id="三"><a href="#三" class="headerlink" title="三"></a>三</h2><p>那么，为什么环球资本能够无需依赖于预测，也能实现稳定而高额的回报？</p>
+<p>环球资本的成功并不仅仅归功于其对黑天鹅事件的敏锐嗅觉，更在于其策略背后的深刻数学原理和严格的风险管理。</p>
+<p>首先，环球资本采取了一种“反脆弱”的策略：与其试图预测未来，不如利用未来的不确定性来获利。他们并不依赖精准预测市场走势，而是通过系统性地购买看跌期权，为资产建立了“保护伞”。</p>
+<p>其次，环球资本的策略核心在于非对称性。通过大量低成本的期权投入，他们在正常时期承受小幅亏损，但当极端事件发生时，这些期权的价值会指数级增长，弥补所有之前的损失，并带来巨额盈利。</p>
+<p>再者，环球资本的策略避免了人性中的“过度自信”陷阱。许多交易员往往因短期成功而陷入盲目乐观，试图“加码”以挽回损失。然而，环球资本始终坚持其策略的系统性和纪律性，不因市场波动而偏离初衷。</p>
+<p>最后，环球资本数学模型为其策略提供了坚实的理论基础。他们基于尾部风险的分布特性，精确计算了每一笔期权的成本与潜在收益。这种科学化的决策方式，既避免了过度依赖预测的风险，也为其投资策略的可持续性提供了保障。</p>
+<p>因此，环球资本的“不靠预测赚大钱”，并不是对市场视而不见，也不是盲目投机，而是通过系统化、非对称化、纪律化和长期化的方式，把黑天鹅从“灾难”变成“机会”。</p>
+<p>这种以不确定性为友的策略，不仅在金融市场中大放异彩，也为我们的人生决策提供了重要启示：<strong>不要害怕变化，而是学会利用变化中的机遇。</strong></p>
+<p>而要想做到这一点，你需要打造自己的避风港。</p>
+<h2 id="四"><a href="#四" class="headerlink" title="四"></a>四</h2><p>航海中的避风港湾，可以在暴风雨来临时，保护船只免受巨浪袭击，让航行者能在风暴中不至于沉没。而斯皮茨纳格尔的方法也类似：通过低成本的“保险”策略，提前为市场的黑天鹅事件做好准备，在危机风暴中，反而能获得意外的收益。</p>
+<p>他说：“避风港是抵御金融风暴的庇护所。因此，避险投资即风险缓释。”</p>
+<p>要想理解避风港到底是什么，需要知道斯皮茨纳格尔的三个“第一性原理”。</p>
+<h3 id="1-投资是随时间发生的连续过程。"><a href="#1-投资是随时间发生的连续过程。" class="headerlink" title="1. 投资是随时间发生的连续过程。"></a>1. 投资是随时间发生的连续过程。</h3><p>斯皮茨纳格尔指出，投资并非静止或一次性完成的行为，而是一个与时间同步推进的“复合”过程。</p>
+<p>投资是一连串的乘法，任何一次重大亏损都会拖累全局的复利成长。只有意识到并管理好这种“时间维度”上的连续性，才能在长远视角下立于不败之地。</p>
+<h3 id="2-投资的唯一目标，是最大化长期财富（复合年均增长率）。"><a href="#2-投资的唯一目标，是最大化长期财富（复合年均增长率）。" class="headerlink" title="2. 投资的唯一目标，是最大化长期财富（复合年均增长率）。"></a>2. 投资的唯一目标，是最大化长期财富（复合年均增长率）。</h3><p>斯皮茨纳格尔认为，随着时间的推移最大化我们的财富是投资活动的终极目标。换句话说，投资者都在追求长期的复合年均增长率（CAGR），而非短期“赢一次就封神”的暴富幻象。</p>
+<h3 id="3-具有成本效益的风险缓释，是提高复合回报的关键。"><a href="#3-具有成本效益的风险缓释，是提高复合回报的关键。" class="headerlink" title="3. 具有成本效益的风险缓释，是提高复合回报的关键。"></a>3. 具有成本效益的风险缓释，是提高复合回报的关键。</h3><p>这里说的是，避险不只是“保命”，更是“增值”：每当风险来临，它能让你幸免于重大亏损，保持资金继续滚动复利；一旦危机过后，你还能借机积攒更多资源，乘势扩大优势。</p>
+<p>让我们用一个大家都能理解的小学数学概念来概述上面的要点吧：</p>
+<p>假设你有1000块钱，第一次涨50%变成1500，但下一次跌50%就会回到750，需要涨100%才能回本儿。这就是为什么斯皮茨纳格尔反复强调“避免重大亏损”的重要性：只要一次大跌就会让你前面累积的许多“乘法成果”变成空。</p>
+<p>所以，<strong>“回撤率比胜率更重要”：控制单次大幅亏损远比取得一系列小额盈利重要。</strong></p>
+<p>与其绞尽脑汁预测何时会发生黑天鹅，不如确保自己在黑天鹅出现时拥有“爆炸式下跌保护”，避开最危险的那一次“大亏”，保住长期的财富“乘法”过程。</p>
+<p>更关键的是，在那个时刻，其他资产价格通常已经大幅下挫，手里持有的“对冲收益”正好可以用来在低位补仓或抄底。这就让投资者不但能稳住阵脚，更能借助恐慌性下跌反向布局，享受后续反弹带来的超额回报。这就是避风港策略最精彩的一点。</p>
+<p>因此，“保险+补仓”在避风港策略中往往是组合在一起的：<strong>对冲收益既能弥补潜在亏损，又能为抄底提供弹药，从而在市场周期中获得双重优势。</strong></p>
+<p>当街头血流成河时，还有弹药的人，往往能捡到极大的便宜。</p>
+<p>但更重要的是，“避风港”可以被理解为一种能在系统性危机来临时尽量避免重大损失、并且在长期视角下有效提升复合增长率的投资手段。</p>
+<h2 id="五"><a href="#五" class="headerlink" title="五"></a>五</h2><p>斯皮茨纳格尔式的“避风港”不仅是防守，更是长远攻守兼备的生存哲学。对普通人而言，核心要义在于：</p>
+<ol>
+<li><strong>敬畏不可预测，但不因此裹足不前。</strong></li>
+<li><strong>先保住自己，再谈发展壮大。</strong> 这一点我们已经谈过多次，但最重要的事，再怎么强调也不为过。</li>
+<li><strong>让复利持续滚动，避免一次性的大损耗。</strong></li>
+<li><strong>运用风险缓释，保留大跌后“补仓”与“抄底”的选择权。</strong> 通过对冲策略（如期权），在危机来临时既能减少损失，又能获取额外现金弹药，反向布局价值洼地。</li>
+<li><strong>拥抱长期视角，用纪律、方法和韧性穿越不确定性。</strong></li>
+</ol>
+<p>只要我们在工作、生活与投资等维度都能践行“避风港”的原则，就能在面对各种风浪时从容以对，最大化地提升人生回报与价值。</p>
+<p>毕竟，最怕的是在风雨无情时手足无措；而有了“保险+补仓”的弹药和对风险的敬畏，我们才会更有底气地在混沌之中抓住真正的机会。</p>
+<p>《避风港》这本书的开篇，作者引用了我女儿最喜欢的歌手鲍勃·迪伦的一段歌词：</p>
+<blockquote>
+<p>我筋疲力尽，</p>
+<p>淹没于无情的冰雪，一路艰辛，</p>
+<p>荆棘刺痛，</p>
+<p>伤痕累累如被猎杀的鳄鱼，</p>
+<p>如被收割的玉米</p>
+<p>“进来吧，”她说，</p>
+<p>“我会为你遮风挡雨。”</p>
+</blockquote>
+<p>不管你从事什么，祝愿你能建造出自己的避风港。<strong>不是躲避风雨，而是在暴风雨中变得更加强大。</strong></p>
+<p>我是老喻，我们下一讲再见。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>过度依赖预测和忽视风险管理，无异于自毁前程。在复杂的市场中，没有所谓的“神预测”，只有未雨绸缪的准备和对风险的谦卑。</li>
+<li>与其绞尽脑汁预测何时会发生黑天鹅，不如确保自己在黑天鹅出现时拥有“爆炸式下跌保护”，避开最危险的那一次“大亏”，保住长期的财富“乘法”过程。</li>
+<li>“保险+补仓”在避风港策略中往往是组合在一起的：对冲收益既能弥补潜在亏损，又能为抄底提供弹药，从而在市场周期中获得双重优势。</li>
+</ol>
+<h2 id="精选留言"><a href="#精选留言" class="headerlink" title="精选留言"></a>精选留言</h2><h3 id="左星星（上海）"><a href="#左星星（上海）" class="headerlink" title="左星星（上海）"></a>左星星（上海）</h3><p>现代社会的快速变化常常让人们感到焦虑，我们试图用各种方法预测未来，抓住机会，却忽视了如何为自己构建一个能够抵御风险的“安全缓冲”。这种缓冲是一种更高层次的“进攻性防守”。比如，在个人发展中，我们可以通过不断学习新技能、建立多元收入来源，来应对职业不确定性；在家庭生活中，我们可以通过合理的财务规划和保险，减少突发事件对家庭的冲击；在健康管理中，我们可以通过建立良好的生活习惯和定期体检，为身体构建一道防护网。</p>
+<p>我们要想享受到“复利红利”，就必须避免任何一次重大的损失。这种思维不仅适用于投资领域，同样适用于生活的方方面面，比如在职场中，与其追求短期的快速晋升，不如稳扎稳打，积累持久的核心竞争力；在人际关系中，与其急功近利地获取好处，不如花时间建立真正深厚的信任和互助关系。</p>
+<p>面对不确定性，我们需要培养一种“以不确定性为友”的心态。现代人往往害怕变化，希望生活能够按照既定轨迹发展，但实际上，变化本身往往带来巨大的机遇。就像黑天鹅事件，它可能会摧毁一些脆弱的体系，但同时也为那些做好准备的人创造了难以复制的机会。</p>
+<h3 id="一百个我（四川）"><a href="#一百个我（四川）" class="headerlink" title="一百个我（四川）"></a>一百个我（四川）</h3><p>环球资本表面上是利用未来的不确定性获利，实际它利用的是未来的确定性获利——未来的日子里一定会有黑天鹅事件发生，只是它是未知的未知我们无从说起，但它一定会发生。这是确定的。</p>
+<p>第二重确定性在于，黑天鹅事件发生的时候就是确定性的底部（即便是阶段性底部），逃顶只能靠运气，但抄底——确定性的捕获黑天鹅是靠未雨绸缪时编制的大网的能力。这是第二重确定性。</p>
+<p>第三重确定性在于市场的周期性，此时我只能拿住当下廉价筹码岿然不动，在未来便会获得巨额的回报。</p>
+<p>确定性黑天鹅来临，确定性织网捕获黑天鹅，确定性靠黑天鹅下金蛋。</p>
+<p>环球资本靠的是三重确定性。</p>
+<p>以上留言由作者筛选显示。</p>
+<hr>
+<p><a href="/book/decision-algorithm/044/">← 044｜聪明的傻瓜：为什么绝大多数赢家靠的都是运气？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/046/">046｜费德勒的秘密：为什么54%得分率能成为世界第一？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

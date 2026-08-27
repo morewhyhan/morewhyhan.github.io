@@ -1,0 +1,419 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>063｜被动决策：怎样让好决策自动发生？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》063：被动决策：怎样让好决策自动发生？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="063｜被动决策：怎样让好决策自动发生？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/063/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》063：被动决策：怎样让好决策自动发生？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:45.696Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/063/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '063｜被动决策：怎样让好决策自动发生？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">063｜被动决策：怎样让好决策自动发生？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">063｜被动决策：怎样让好决策自动发生？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>《老喻·决策算法100讲》</p>
+</blockquote>
+<h2 id="老喻：决策算法100讲"><a href="#老喻：决策算法100讲" class="headerlink" title="老喻：决策算法100讲"></a>老喻：决策算法100讲</h2><p>你好，我是老喻，欢迎来到《决策算法》课。</p>
+<p>我们这一讲的主题是：被动决策。</p>
+<p>先和你讲一个好玩的故事。</p>
+<p>大学家费曼有个特别的癖好：研究怎么打开保险柜。</p>
+<p>他到处去别人办公室开保险柜，因此名声大噪。有一次，他吃饭前有人告诉他，几分钟就能打开陌生的保险柜，就上门讨教。费曼本来以为遇到了一位职业高手，结果这个锁匠告诉他：他唯一的秘密就是，直接使用保险柜出厂设置的密码，结果密码可以打开。原来，很多人从来不改出厂密码。</p>
+<p>保险柜的出厂设置，就像我们手机的默认选项。其实啊，人很多时候是有惰性的，连保险柜这么重要的东西，大家都懒得去改密码。手机的一些默认选项就更加别说了。研究表明，无论默认设置什么样，许多人宁可保持不变，哪怕手机默认的来电铃声特别难听，也懒得改。</p>
+<p>很多时候，我们的决策也是这样，任由默认选项操纵，自动滑行，这很容易让我们吃亏。</p>
+<p>但是，如果我们能够逆向思考，使用“默认选项”这类被动的决策方式，也会大大提升自己的决策水平。</p>
+<h2 id="一、把被动变主动"><a href="#一、把被动变主动" class="headerlink" title="一、把被动变主动"></a>一、把被动变主动</h2><p>说起“被动决策”，最著名的例子，莫过于古希腊英雄<strong>奥德修斯</strong>。</p>
+<p>在取得特洛伊战争的胜利后，他花了十年时间回家，途中经过海妖的蛊惑，海妖们用自己天籁般的歌喉，让过往的水手入迷，导致航船触礁沉没，没有人能够逃脱。</p>
+<p>奥德修斯让手下的海员以白蜡封住双耳，同时把自己绑在桅杆上。这样他有趣的地方，他倒是不封自己的耳朵，这样就算听说海妖的歌声也不会犯错误。这是题外话。</p>
+<p>在现实生活中，我们经常采用被动决策，但效果怎么样呢？比如说早上起来没闹钟，经常是闹钟响了下就关掉。办健身卡也是，本来以为花了钱就不得不去，坚持，健身卡过期了也没去几次。</p>
+<p>为什么自制力这么难呢？为什么我们可以有美好的计划，却不能够坚定地执行呢？这个其实和人的本性有关。你还记得《人生算法》里的“认知飞轮”吗？里面讲过，一个人的决策和行动，就像两个齿轮在滚动，中间很容易掉进坑了。</p>
+<p>所以，我们不妨把一个人想象成两个角色的组合：一个是决策者，一个是行动者。做决定的时候，决策者既聪明，又坚定；但是到了行动的时候，行动者可能就不愿意了。</p>
+<p>那怎么办呢？这个时候决策者最好一开始就处理下惰性，比如说手机的默认选项，定好了之后行动者懒得改变；又或者像奥德修斯那样，决策者做好决定后，干脆提前把自己捆起来，这样行动者想不执行也没办法了。</p>
+<p>这类被动决策，有的时候显得特别暴力。比如说闹钟响吧，一般的闹钟响起来会被关掉，但是有一种闹钟，一旦响起来就满地乱跑，你要关掉它，非得爬起来。还有一种拧款闹钟就更狠了，每次你关掉闹钟，闹钟就会自动联网，把你的钱捐给一个提前设定好的账户。要想收服，最好对方还是你讨厌的人，比如说情敌。</p>
+<p>现在大家学习某项技能的时候，流行在手机上打卡，你要是坚持下来，就能拿到奖品，反之则罚钱。这也是类似的原理。</p>
+<h2 id="二、把主动交给别人"><a href="#二、把主动交给别人" class="headerlink" title="二、把主动交给别人"></a>二、把主动交给别人</h2><p>有时候，如果某个决策对自己来说实在很难执行，还有一个办法就是：<strong>干脆交给别人。</strong></p>
+<p>金融大鳄索罗斯曾经有过一个特别厉害的基金经理叫斯坦利·德鲁肯·米勒，在30年里创造了年均复合30%的投资回报。</p>
+<p>德鲁肯·米勒大学毕业后第一份工作是在匹兹堡国家银行工作。两年之后，老板把他叫到办公室，说：“从今天起，你将会成为我们银行的研究部主管，你那个52岁的主管今天开始向你汇报！”</p>
+<p>德鲁肯·米勒感到太意外了，因为他们部门除了他，全是30多岁以上的人，而且就他一个人没有MBA学位，为什会选他呢？</p>
+<p>他的老板说：“你知道为什么我让你来负责这个部门吗？这和他们让18岁的年轻人去打仗是一样的。因为你的无知！公司除了你以外，都经历了10年熊市。但现在我认为一场大周期的牛市即将来临！你的无知可以让你在牛市更好地发挥，而其他人都是熊市思维的老家伙！”</p>
+<p>结果，25岁的德鲁肯·米勒凭借自己的研究结论，被公司委派年轻的研究室去分析市场，并成为年轻一代的顶尖基金经理。你看，他就是一个决策者，所以他要找的，就是一个毫无牵挂的坚定执行者。</p>
+<p>后来，德鲁肯·米勒跳槽到了索罗斯手下，工作了好多年，替索罗斯挣了很多钱。有一次他发现索罗斯掉掉了他帐户里的债券，特别生气，于是打电话给索罗斯要求辞职。</p>
+<p>索罗斯是高人，他也挺后悔的，觉得自己这么干不对，于是很平静地说：“你别走，我走。”随后，索罗斯真的就客往徐，待了几个月，彻底避免自己手挥空操作。</p>
+<p>我们经常听到有人说，那个股票我看得准了，可就是操作的时候太犹豫。然而，一个好的决策，必须包含对行动的提前设计，否则就谈不上好的决策。</p>
+<h2 id="三、思维会计"><a href="#三、思维会计" class="headerlink" title="三、思维会计"></a>三、思维会计</h2><p>德鲁肯·米勒的故事，对我们普通人有什么启发呢？</p>
+<p>就说理财这件事吧，我们可以提前把自己的账户分成几份儿，提前设置好分配比例，工资发下来，按照比例分配。比如说，一个专门用于租房、一个用于存款、一个用于定投指数基金、一个用于学习、一个用于健身、一个用于旅游，等等。这样，你就不会手舞足蹈，拿存款去买高风险的消息股。</p>
+<p>这种方法，诺奖得主塞勒把它叫作“思维会计”，这会使我们的生活更有保障，也更有趣。塞勒有个朋友，一辈子省吃俭用，65岁了还在工作，就打算奖励一下自己，于是，他开了一个“享受专用账户”，规定这个账户里的钱可以用来买红酒、去旅游，但不能用于维修自家的马桶。</p>
+<p>你看，提前把账户分配好，是不是很像手机的默认设置？只要你坚持下去，就能够形成良好的理财习惯，而不会出现那种把房租拿去炒期货的极端事情。</p>
+<p><strong>被动决策，捆住自己，不仅有利于我们做出正确的决策，还能帮助我们避免致命的错误决策。</strong></p>
+<p>电影《大空头》里，讲了几个利用美国次贷危机赚大钱的真实事件。迈克·布瑞投资的创始人李录，当时其实发现了这个投资机会，打算通过信用违约掉期（CDS）这个产品做空美国楼市。</p>
+<p>后来李录和查理·芒格聊了几次，芒格反对他，原因很简单，芒格认为，如果李录的分析是正确的，那么他对赌的金融公司要么破产，要么用政府救助的钱来支付，所以这笔投资最后可能赚的是纳税人的钱，心理不踏实。</p>
+<p>这个理由很高尚，但其实还有另外一个理由，那就是做空的风险也很大。李录后来总结说：做空这件事儿，即使是百分百正确，也可能把自己弄得破产。</p>
+<p>但是，如果和电影《大空头》里讲的一样，这次做空其实是一件把握特别大的事情，还要不要做呢？</p>
+<p>这个问题，就相当于你觉得去赌场是件特别傻的事情，因为根据大数定律，你必然输掉。但有一天，有人对你说有个内幕，它能赢，你要不要去？</p>
+<p>这可就考验人性了。</p>
+<p>次贷危机结束后，芒格和李录又聊起这件事儿，他说：当时如果你真的参与了，而且赚了很多钱，可能你都会分不清你是对了一个大空头的机会，还是你碰巧了。</p>
+<p>人的本性就是这样。</p>
+<p>的确如此，次贷危机中，大空头最大的赢家是约翰·保尔森。自打2008年以后，他有点儿路径依赖，赌性很大，结果呢，业绩一直不太好，真的应验了芒格的预测。</p>
+<p>有个很有趣的说法：有些事儿，你做对100%，也做到90%还容易。就像上面说的，你百分之百不进赌场，比90%的时间拒绝进赌场要容易；假如你每天抽一根烟，要是戒烟的话，彻底不抽比一天只抽一根要容易。</p>
+<p>我有个朋友，打算戒酒，结果每次别人都说，那就喝一小杯吧，结果后来还是逢喝多。于是他干脆开了个病例，上了酒桌就一摆，再也没人劝酒了，从此滴酒不沾。</p>
+<p>你看，是不是彻底不做反而更容易？</p>
+<h2 id="四、最后"><a href="#四、最后" class="headerlink" title="四、最后"></a>四、最后</h2><p>我们再来看一下这节课的主题：“被动地”做正确决策。</p>
+<p>确切来说，是主动地设计“被动执行”的正确决策。听起来似乎有点儿绕，其实就是承认人性的弱点，用理性的自己去捆住感性的自己，或者是用外部力量担任自己，而不是去考验自己的个性。我们知道，人性是经不起反复考验的。</p>
+<p>我们上面说了好几种方法：包括“默认选项”、捆住自己、交给别人、思维会计、彻底不碰等等。这些方法，能够帮助我们克服人性的弱点，真正地正确的决策，别陷入“想得好，却做不到”的恶性循环。</p>
+<p>我们要让自己大脑里的“决策者”战胜“行动者”，做出正确的决策，还应该根据道德常识，形成自己的原则，并依此塑造自己的行为方式。培根说过，知智慧养成的习惯，能成为第二天性。</p>
+<p>我们通过这种方法，可以把自己第二天性里的默认选项，设置为最优决策。</p>
+<p>最后，我改编了一句名言，送给你：</p>
+<blockquote>
+<p><strong>思想决定行为，行为决定习惯，习惯塑造“决策”，决策影响命运。</strong></p>
+</blockquote>
+<p>我是老喻，我们下一讲再见。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>被动决策，实际上是主动地设计“被动执行”的正确决策。</li>
+<li>被动决策的核心是，承认人性的弱点，用理性的自己去捆住感性的自己，或者是用外部力量担任自己，而不是去考验自己的个性。</li>
+<li>思想决定行为，行为决定习惯，习惯塑造“决策”，“决策”影响命运。</li>
+</ol>
+<h2 id="用户留言"><a href="#用户留言" class="headerlink" title="用户留言"></a>用户留言</h2><h3 id="左星星"><a href="#左星星" class="headerlink" title="左星星"></a>左星星</h3><p>我们经常听到“理性战胜感性”这样的说法，但实际上，纯粹依靠意志力并不可靠。人在面对复杂选择时，总是会不自觉地偏向轻松的选项，而非长远的最佳决策。相较于依赖“今天一定要去运动”这种理性约束，选择提前2站下地铁然后走回家，更容易确保锻炼成功。</p>
+<p>这种“被动”其实带有一定的放手心态。我们过于重视控制和实时决策，反而容易陷入焦虑。但如果预先将许多事项设计好，形成自动化的习惯，我们就可以将注意力放在更重要的领域上，从而获得更多的自由。正如管理大师彼得·德鲁克所说，效率不是“尽尽力而为”，而是做正确的事情。通过被动决策，我们能把自己从琐碎的日常挣扎中解放出来，把更多的精力投入到真正有意义的任务中。</p>
+<p>因此，所谓“被动决策”，其实是一种主动设计生活的方式。它提醒我们，不必时刻意志力，而是通过制度、规则和环境的设置，减轻心理负担，增加执行。这不是放弃自我选择，而是用更聪明的方式实现理性与行动之间的完美衔接。</p>
+<h3 id="美君"><a href="#美君" class="headerlink" title="美君"></a>美君</h3><p>对于“彻底不碰”来说有感触。年后比年前重了2斤，家里顿顿八个菜，要不就是全家整筐大点特点点，每一过衣服裤子都小了，脸也圆了一圈儿，我想着把这2斤减回去，回到年前。</p>
+<p>结果复工这个月公司免费供应的饼干，我吃了；我老公买的可可粉和羊角包，我吃了；同事一起来吃饭，我走了大饼、面条、米饭……过去几斤顿顿粗粮，这个月一放纵，导致体重毫无变化。</p>
+<p>如果是过去，控制半个月肯定让我2斤下去。当然，我不认为超加工真一口不碰，精米精面也不能吃，但是发现一旦开了“小吃点没事”的口子，就不会少吃，反而越吃越多。</p>
+<p>既然如此，我决定列个单子，哪些超加工食品在半个月内刷掉一口不碰，比如饼干、面包、粉儿。具体执行分为3个步骤：</p>
+<ol>
+<li><strong>物理隔断。</strong> 公司免费供应的面包、饼干等高热量零食拿不到座位上，早上自己从家里带足自备的下午茶，放在办公室上，伸手可拿。</li>
+<li><strong>课题分离。</strong> 不管老公买的还是婆婆做的还是打包剩的，热量过高，我就刷脂期限不吃。比如昨晚的红糖锅盔，本身外面粉里面红糖就是超量的糖、油，还煎烤添加了额外的油脂，刷脂期坚决不吃。一旦开了口子，高热量的就源源不断地吃。</li>
+<li><strong>拉长战线。</strong> 年后给自己更长刷脂期，从今天算起，4月17日前回到年前体重即可，半年一月一斤，轻轻松松，毫无压力。不需要过度自律消耗意志，也不急于求成里下暴饮暴食的种子。</li>
+</ol>
+<p>以上，从今天开始执行。</p>
+<h3 id="Scott"><a href="#Scott" class="headerlink" title="Scott"></a>Scott</h3><p>人的意志力和时间都是有限的，无法承载过多需要深思熟虑的主动决策。因此，我们需要借助一些高效的方法来辅助自己，比如“被动决策”——即主动设计出能够“被动执行”的正确决策机制。</p>
+<p>被动决策的核心是，承认人性的弱点，用理性的自己去捆住感性的自己，或者是用外部力量担任自己，而不是去考验自己的个性。</p>
+<p>比如奥德修斯提前将自己捆在桅杆上，既能聆听海妖塞壬的美妙歌声，又不会被其诱惑迷倒。</p>
+<p>同样，我们可以通过设置清单来约束自己。正如《清单革命》中所强调的，清单将工作流程从依赖记忆和经验转化为一种可视化的强制约束，能够确保在任何情况下，重要的环节都不会被遗漏，从而提升效率和准确性。</p>
+<h3 id="空"><a href="#空" class="headerlink" title="空"></a>空</h3><p>作为一名投资者，我经常表达这样一个观点：从决策科学的视角来看，投资的本质就是面对不确定的信息，做决策。为了做好投资，我们必须要思考这样一个问题，如何提升自己的决策水平呢？</p>
+<p>巴菲特的著名投资思想家芒格说过这样一句话：“如果我知道比喻中要避免的错误，我就可能不犯错误。”正如斯科特·亚当斯说的，通过提前设置好决策的环境，能让我们在面对复杂问题时减少被人性和惰性影响。</p>
+<h3 id="胡优石"><a href="#胡优石" class="headerlink" title="胡优石"></a>胡优石</h3><p>被动决策就是主动设计“被动执行”的正确决策，承认人性的弱点，用理性的方式捆住感性的自己，不去考验自己的人性。</p>
+<p>我想起了芥菜老师的“坚持”一课。芥菜老师说：“坚持等于把奖杯从自己的操作系统中去除，因为人性的原因，所谓的坚持和毅力，大多是自己不愿意去做的，所以大概率也是做不好的。”如何主动设计呢？</p>
+<ol>
+<li>赋予你要“坚持”的事一个甚至多重正面的重大意义。</li>
+<li>设想如果做不好，或者没有它的存在（没有坚持做好这件事），你会受到什么负面影响。</li>
+<li>到高质量的社交圈，沉浸“负能量重”的人群。</li>
+</ol>
+<p>重点说第一条。比如坚持得到app学习并留言，好多人包括我在内留言较少，心里也知道留言或评论可以对自己学到的知识有更深刻的理解，如何主动设计这个“被动执行”的决策呢？</p>
+<p>设想如果能坚持每天留言200字，一年就能积累万几万字的学习笔记；几乎可以写一本书了，而这些笔记记录了自己的成长点滴，一年两年的时间编辑整理出一本书，如果不小心夭夫，还能因此获得“被动收入”，开启自己的第二人生出戏，岂不美哉。即便不大变，这种记录自己成长过程的书，你自己有本身不是成就感爆棚嘛！</p>
+<h3 id="炎帝"><a href="#炎帝" class="headerlink" title="炎帝"></a>炎帝</h3><p>人类或许是地球上唯一会制定新年计划却总在一个月放弃的物种。我们一边用精美的日程本写下“每日健身”，一边在深夜刷短视频；一边收藏“高效学习法”，一边拖延到日期的最后一刻。</p>
+<p>这种“想得好却做不到”的困境，本质上是“理性大脑与原始本能的权力斗争”，前者是手握缰绳的骑士，后者是横冲直撞的野马。</p>
+<p>要理解这场斗争的复杂性，需从生理、心理与行为方三重视角切入。</p>
+<h4 id="一、自制力的三重枷锁：为何理性总败给本能？"><a href="#一、自制力的三重枷锁：为何理性总败给本能？" class="headerlink" title="一、自制力的三重枷锁：为何理性总败给本能？"></a>一、自制力的三重枷锁：为何理性总败给本能？</h4><ol>
+<li><strong>大脑的进化陷阱</strong>：人类前额叶皮层有300万年历史，而掌管本能的大脑边缘系统已进化了5亿年。当我们试图抵制诱惑时，前额叶需要消耗大量葡萄糖才能勉强对抗边缘系统的多巴胺攻势——这如同用智能手机的电池驱动一台蒸汽机。更糟糕的是，睡眠不足或高糖饮食会进一步削弱前额叶功能，让人更易屈从即时快感。</li>
+<li><strong>情绪的暴政</strong>：压力会激活“战或逃”反应，强制大脑选择短期缓解策略（如暴饮暴食、刷手机）。斯坦福实验显示，面对棉花糖诱惑时，孩子们通过踱桌子、捂眼睛等动作分散注意力，本质上是用物理手段对抗化学冲动。</li>
+<li><strong>算法的阴谋</strong>：从App的无限滑动功能到便利店收银台的糖果货架，商业社会早已将“即时满足”机制植入生活场景。我们如同置身于一个巨型行为实验室，每个设计师都在诱惑你选择“默认选项”——刷手机而非读书，吃零食而非健身。</li>
+</ol>
+<h4 id="二、破解困局的四把密钥：从对抗到共生"><a href="#二、破解困局的四把密钥：从对抗到共生" class="headerlink" title="二、破解困局的四把密钥：从对抗到共生"></a>二、破解困局的四把密钥：从对抗到共生</h4><ol>
+<li><strong>重构动力系统：用自爱取代自我批判</strong><ul>
+<li>传统自律强调“自我鞭策”，但心理学研究发现，长期自我责备会耗尽心理能量。正如斯坦利·米尔格拉姆所言，真正的自律源自“我必须早起”转化为“我值得拥有清晨的宁静”。</li>
+</ul>
+</li>
+<li><strong>设计“反脆弱”环境</strong><ul>
+<li>物理隔离法：作者村上春树写作时会将手机锁进保险箱；正如斯坦福实验中孩子对棉花糖。</li>
+<li>默认选项重置：把健身服放在床头，将蔬菜洗净装盘，让健康选择成为路径最短的选项。</li>
+<li>诱惑定价机制：每刷一小时短视频就往储蓄账户中转50元，为放纵贴上价格标签。</li>
+</ul>
+</li>
+<li><strong>梯度训练延迟满足能力</strong><ul>
+<li>米歇尔的棉花糖实验揭示，延迟满足能力可通过渐进训练提升：初级战场从延迟10分钟喝奶茶开始，记录忍耐时的身体反应与思维变化；进阶战场将“每日学习1小时”拆解为4个25分钟番茄钟，每个间隔允许5分钟放松；终极阶段：像米尔甘那样，将大目标转化为“只能前进”的物理路径。</li>
+</ul>
+</li>
+<li><strong>建立行为复利系统</strong><ul>
+<li>微习惯引擎：每天做一个俯卧撑，写50字日记，利用“启动效应”逐步扩大行动规模；</li>
+<li>正反馈闭环：用App记录每天自律时长，当数据可视化呈现进步曲线时，多巴胺会从“放纵补偿”转向“成就奖励”；</li>
+<li>社交契约绑定：加入读书打卡群，违约需向朋友发红包——利用损失厌恶强化承诺。</li>
+</ul>
+</li>
+</ol>
+<h4 id="三、超越自律：与人性弱点共舞的艺术"><a href="#三、超越自律：与人性弱点共舞的艺术" class="headerlink" title="三、超越自律：与人性弱点共舞的艺术"></a>三、超越自律：与人性弱点共舞的艺术</h4><p>自制力的最高境界，不是消灭本能，而是与之达成战略和解。正如顶级围棋选手会利用对手的攻势构建自己的防线：</p>
+<ul>
+<li>将贪欲转化为竞争创新：美食博主通过研发低卡食谱，既满足味蕾又保持健康；</li>
+<li>让拖延成为创新契机：设计师在DDL压力下迸发灵感，往往比提前完成更出色；</li>
+<li>借虚荣心驱动成长：公开承诺“100天写作计划”，用社会监督倒逼行动。</li>
+</ul>
+<p>人类永远无法完全摆脱基因设定的“及时行乐”程序，但文明的伟大之处，正在于我们能在生物性与神性之间找到平衡点。当我们学会用系统思维代替意志力蛮力，用智慧设计对抗环境陷阱，那些曾被视为“弱点”的本能，反而会成为创造力的源泉。</p>
+<h3 id="王荣荣"><a href="#王荣荣" class="headerlink" title="王荣荣"></a>王荣荣</h3><p>被动决策是一种智慧，通过理性设计和外部约束，避免直接考验人性弱点，从而实现更好的决策和行为模式。</p>
+<ol>
+<li>被动决策的定义：被动决策是主动设计“被动执行”的正确决策，通过承认人性的弱点，用理性的方式约束感性行为，避免直接考验人性。</li>
+<li>被动决策的原理：人往往容易受情性、即时满足和情绪的影响，导致决策失误；决策者与行动者的分离，可以被看作决策者和行动者的组合。决策者理性，行动者感性，需要通过被动决策来管住感性行为。</li>
+<li>被动决策的方法：设置默认选项，捆住自己，把决策执行权交给别人，思维会计，彻底不碰。</li>
+<li>被动决策的案例：奥德修斯把自己绑在桅杆上；索罗斯避免冲动交易；李录放弃做空次贷；日常应用闹钟、健身打卡、定投基金等。</li>
+<li>被动决策的意义：减少错误、避免人性弱点导致的决策失误；形成习惯、通过制度化设计培养执行力；提升效率，将精力集中在更重要的事情上。</li>
+</ol>
+<h3 id="七色黑白"><a href="#七色黑白" class="headerlink" title="七色黑白"></a>七色黑白</h3><p>不要相信自己，自我是个幻觉。提前设置好一切，无脑执行即可，心念一动，必败给随机性。</p>
+<p>所谓原则就是不能因为任何理由改变的执行法则。</p>
+<h3 id="幸福小松树"><a href="#幸福小松树" class="headerlink" title="幸福小松树"></a>幸福小松树</h3><p>感谢前老师的分享，赢得比最重要的是减少错误，防守比进攻在某种程度上更关键。被动决策就是一种减少错误的决策！人的决策往往出现单一和联合不一致的情况，很多时候被心理账户或者沉默成本的情绪左右，出现失误。坚决和耐心很重要，但是不能陷入一种优柔寡断的误区！</p>
+<h3 id="周卫"><a href="#周卫" class="headerlink" title="周卫"></a>周卫</h3><p>思维会计的方式我一直用了很多年，特别是最近8年分类更清楚，执行更彻底，所以随着时间的积累，经济压力越来越小，而各项投资带来的回报也越来越稳定当当的，自己在工作和家庭的时间更多，生活和工作也越来越顺利了。</p>
+<p>另外就是严格不参与赌博。实际上，我也是经不住诱惑，参与过几次，基本都是大亏而终，还好有严格的本金限制，不然所有的被动收益都主动的输光了。被动决策，捆住自己，不参与数学期望为负的事。自由其实能带来最多的自由。</p>
+<h3 id="李坚"><a href="#李坚" class="headerlink" title="李坚"></a>李坚</h3><p>从力量上来比较，理性根本战胜不了感性，所以才说不要考验人性。但理性很聪明，可以通过对感性习惯的研究，利用感性的弱点达到目的，这种被设计的第二习惯，是人生智慧的体现。</p>
+<h3 id="王勇先"><a href="#王勇先" class="headerlink" title="王勇先"></a>王勇先</h3><p>一个人对理性的管束能力是会有边界的，而感性的力量爆发则常常是无法预测的。在理性外寻找力量管理约束感性的“任性”，才可能让自己的思想不脱离理性的轨道，行为有边界，习惯有根基，决策有章法，命运有希望。</p>
+<hr>
+<p><a href="/book/decision-algorithm/062/">← 062｜个人含金量：为什么相对优势比绝对优势更重要？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/064/">064｜牛人陷阱：你才是自己人生的决策者 →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

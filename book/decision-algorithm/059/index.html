@@ -1,0 +1,484 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>059｜驾驭青春：怎样少做让自己后悔的决策？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》059：驾驭青春：怎样少做让自己后悔的决策？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="059｜驾驭青春：怎样少做让自己后悔的决策？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/059/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》059：驾驭青春：怎样少做让自己后悔的决策？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:45.634Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/059/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '059｜驾驭青春：怎样少做让自己后悔的决策？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">059｜驾驭青春：怎样少做让自己后悔的决策？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">059｜驾驭青春：怎样少做让自己后悔的决策？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>《老喻·决策算法100讲》</p>
+<p>主题：驾驭青春，怎样少做让自己后悔的决策？</p>
+</blockquote>
+<h2 id="老喻：决策算法100讲"><a href="#老喻：决策算法100讲" class="headerlink" title="老喻：决策算法100讲"></a>老喻：决策算法100讲</h2><p>你好，我是老喻，欢迎来到《决策算法》课。</p>
+<p>1832年，一个叫<strong>伽罗瓦</strong>的天才决定赴死。那时他还未满21岁。</p>
+<p>看上去他完全头脑发昏，居然因为爱情而与人决斗，据传情敌是一位职业枪手，对伽罗瓦而言，这无异于自杀。</p>
+<p>在决斗前的夜晚，这位20岁的天才青年写下几封信，其中一封是对自己的调侃和对数学的遗憾，他写道：</p>
+<blockquote>
+<p>“……我的生命是在一场悲惨的斗争中消失的。我为什么那么做而不是适当地再活，无非出于那番事而死！原谅那些杀了我的人，至少他们是真诚的。”</p>
+</blockquote>
+<p>为什么伽罗瓦这么轻易地把自己的性命丢入一场毫无希望的赌注？是因为他太愚蠢，还是觉得生命短如鸿毛？</p>
+<p>恰恰相反，伽罗瓦是一位数学天才，他在十九岁的时候，就解决了长期困扰数学界的问题。他深知自己的研究对人类的价值。</p>
+<p>决斗前夜，他让人在坟墓的热血青年，以某种异乎寻常的冷静，将他的数学生命记录下来。在草稿的空白处，他写下无奈的感慨：“我没有时间了，我没有时间了……”</p>
+<p>多年以后，我在一本数学著作中，看见了伽罗瓦留下的完整文字。年轻的数学家对自己划时代的研究满怀希望，在遗嘱的最后，他依然年少狂地写道：</p>
+<blockquote>
+<p>“请瞧可比高斯公开提出他们的意见，不是对这些定理的正确性，而是对它们的重要性。”</p>
+</blockquote>
+<p>雅可比和高斯是那个时代最伟大的数学家，20岁的伽罗瓦不需要他们来确认自己的正确，尽管这个世界要在他死后数十年，才意识到他有多正确。</p>
+<p>而他留下的“群论”，后来成为现代数学的基石之一，也被广泛应用于晶体结构、基本粒子、量子力学、材料科学、乃至公认编码学。</p>
+<p>全世界都会感谢伽罗瓦在那个夜晚留下的文字。为世界留下了如此杰出的成果，被打穿身躯，最终死在弟弟的怀中，并对他说：“不要哭，我需要足够的勇气在20岁死去。”</p>
+<p>伽罗瓦的故事令人叹息。在他身上，我们看到了青春最璀璨的光芒：天才般的创造力、对真理的执着追求、敢于挑战权威的勇气。</p>
+<p>但同时，我们也目睹了青春最致命的弱点：感性压倒理性、冲动战胜深思、当下横横远方。这位年轻的天才在二十岁选择为一场无谓的决斗献出生命，极可能改变人类文明进程的智慧却终止。</p>
+<h2 id="一、青春是一段令人困惑的旅程"><a href="#一、青春是一段令人困惑的旅程" class="headerlink" title="一、青春是一段令人困惑的旅程"></a>一、青春是一段令人困惑的旅程</h2><p>为什么我们会在这个时期做出许多危险的决定？为什么某些选择可能带来灾难性后果，却依然无法抗拒诱惑？</p>
+<p>近年来的脑科学研究为我们揭开了这个谜题的面纱。</p>
+<p>想象一下，青春期的大脑就像一辆高性能跑车：引擎强劲，动力十足，却没有与之匹配的刹车系统。这个比喻准确描述了青少年时期特殊的大脑发育状态。</p>
+<p>科学家发现，人类大脑中负责决策和控制冲动的前额叶皮质要到25岁左右才能完全成熟。这个区域就像是决策的“刹车”和“导航”系统，帮助我们在行动前权衡利弊、进行理性思考。</p>
+<p>而在这个关键区域发育完全之前，大脑中的另一个系统——情绪中枢（负责处理情绪和奖励）却已经高度发达。</p>
+<p>研究表明，在风险决策任务中，青少年的前额叶活动比成年人低40%，而情绪中枢的活跃度却高出50%。这解释了为什么青少年在面对诱惑时，常常明知风险却依然无法抗拒。</p>
+<p>正如著名神经科学家荣格尔所说：“青少年的大脑奖励系统已经在全速运转，而负责自我控制的前额叶还在蓄发育。”这种发育的不同步，导致年轻人往往会优先选择即时的小奖励，而非未来更大的收益。</p>
+<p>这些发现让我们明白，青春期的决策更容易受到情绪驱动，而非依靠理性权衡。</p>
+<h2 id="二、走出校园后的“非线性”"><a href="#二、走出校园后的“非线性”" class="headerlink" title="二、走出校园后的“非线性”"></a>二、走出校园后的“非线性”</h2><p>这些神经科学的发现让人不安，但更令人不安的是走出校园后的“残酷现实”。</p>
+<p>我曾看到一段很扎心的对话——</p>
+<blockquote>
+<p>问：“为什么社会上的人都大学毕业才小孩？”</p>
+<p>答：“我只能说，别说大学生了，我觉得这个世界上，没干过销售或者业务的人，思想都很小孩。他们这行多劳多得，迷信努力让人进步，相信坏人会得到惩罚，迷信好人有好报。这是典型的小孩思维。”</p>
+</blockquote>
+<p>这个回答可能有些偏激，但它说明了部分真相。</p>
+<p>的确，走出校园后，年轻人面临的挑战远比大脑发育的局限更为严峻。这是一个双重打击：一重来自世界的非线性，另一重源于人性的复杂。</p>
+<p>先来看看第一重打击，现实世界运行的非线性。</p>
+<p>在校园里，我们习惯了“付出就有回报”的确定性思维：认真复习就能考高分，按时完成作业就能得到老师的认可。</p>
+<p>但真实世界却是高度不确定的，它更像是一个混沌系统：价格会随着多方面可能在瞬息万变的市场中失效，你苦心经营的项目可能因为一个意外事件而归零。</p>
+<p>对这种非线性，销售人员最有发言权：今天拜访了十个客户可能一个都没有，明天随意的一个电话却带来了大订单。</p>
+<p>创业者的经历更是如此：有人埋头苦干数年依然原地踏步，有人灵光一现就找到了市场突破口。这不是努力与否的问题，而是世界本身的不确定性。</p>
+<p>再来看第二重打击，人性的复杂。</p>
+<p>在学校中，我们习惯了简单的是非判断：善有善报，恶有恶报。但现实世界中的人际关系远比这复杂。你真诚以待的人可能在背后说你坏话，你倾力帮助的伙伴可能在关键时刻背刺你。</p>
+<p>最令人困惑的是，那些不按“道德规则”行事的人，有时反而能获得更多资源和机会。</p>
+<p>面对这双重打击，许多年轻人陷入迷茫。他们仍在校园里的线性思维和道德判断来理解这个世界：相信付出就会有回报，相信正直就能得到尊重，相信坏人终将受到惩罚。这种认知偏差不仅会带来巨大的挫折感，更可能导致错误的决策。</p>
+<p>那么，对于年轻人而言，该如何在这个真实的世界生存呢？</p>
+<h2 id="四、两个选择：退化或成长"><a href="#四、两个选择：退化或成长" class="headerlink" title="四、两个选择：退化或成长"></a>四、两个选择：退化或成长</h2><p>面对现实世界，一个年轻人似乎只有两种选择：</p>
+<p>第一种，是变得世故、心如死灰，仿佛一只“仅为生存的昆虫”。</p>
+<p>他们见识了社会的冷酷与无常后，便向现实缴械投降：不再相信理想，也不再奢望改变，只想过渡混混日子。</p>
+<p>在职场里，这类人或许表现出谨小慎微、明哲保身的态度，看似减少了挫败，却也丧失了激情与创造力，内心深处空洞乏味。</p>
+<p>对他们而言，成长意味着“变得圆滑”，用最小的冲突活下去。可惜的是，这种“大雪保护层”也隔断了他们活成更丰盛人生的可能性。</p>
+<p>第二种，是停留在“延迟的成年期”或“彼得·潘综合征”状态里，不愿真正迈入成人角色。</p>
+<p>美国发展心理学家内特（Jeffrey Jensen Arnett）指出，18～25岁之间的“新兴成年期”常见于现代社会：因为教育延长或婚育推迟，很多年轻人留在“半大小”的过渡地带，既享受着青春的探索与自由，却又不敢或不想面对实际责任。</p>
+<p>这样的日子表面有无限可能，实际上容易陷入浮躁与不稳定：一面仿佛父母的安排，一面又依赖家庭的保障；心想“我还有机会”，却迟迟不落实任何长远规划。</p>
+<p>这种状态就是极限退步，被称为“彼得·潘综合征”，患者拒绝长大、拒绝承担任何社会义务，终日沉迷娱乐或逃避现实。</p>
+<p>但事实上，我们还有第三种选择，也是最值得追求的一条路：在看清世界的真相后，仍然选择继续前行。</p>
+<p>这是主动告别青春式任性，却也保持内心的热血与愿景。在不确定中努力试错，在繁杂人性中依然相信善意并建立边界，学着承担责任、锻炼自我决策力，把“成长”从一句口号变成实际行动。</p>
+<p>我们不会被迫去接受情绪，任我们可以在竞争激烈的职场里，逐步拓展能力边界；在明暗不定的人际关系中保持理性，学会分辨与守护，让自己既能保护纯粹，也能灵活应对风浪。</p>
+<p>驾驭青春，就是在这三条路面前做出明智的选择：<strong>既不让世故扼杀热情，也不被彼得潘心态所困，而是在现实与理想之间找到平衡，让自己在这个世界中活得既真实又丰富。</strong></p>
+<h2 id="五、什么是真正的成熟？"><a href="#五、什么是真正的成熟？" class="headerlink" title="五、什么是真正的成熟？"></a>五、什么是真正的成熟？</h2><p>让我们看看全项顶尖企业家的标准。他们有一个著名的用人原则：只招成年人。</p>
+<p>这里的“成年人”，当然不是指年龄，而是指一种成熟的态度和能力。在奈飞看来，真正的成年人应该具备三个特质：</p>
+<p>首先是对结果负责，而不是对规则。</p>
+<p>奈飞没有考勤制度，也不限带薪休假，因为他们相信成年人知道如何把工作与生活、会为自己的选择承担后果。</p>
+<p>这不正是我们前面讨论的从“线性思维”到“非线性思维”的跃迁吗？成年人明白，重要的不是过程中的条条框框，而是最终能否创造价值。</p>
+<p>其次是敢于直面冲突。</p>
+<p>奈飞提倡“诚实的激进透明”，鼓励员工之间开诚布公地讨论分歧。</p>
+<p>这与我们之前谈到的人性的复杂性相呼应：成年人既不会因为害怕冲突而惧怕问题，也不会因为个人情绪而失去理性。他们学会在复杂的人际关系中保持专业和建设性。</p>
+<p>第三是具备自主决策能力。</p>
+<p>奈飞期待每个员工都能像创业者一样思考问题，在不确定中做出判断。</p>
+<p>这些特点勾勒出了驾驭青春的航向：</p>
+<ul>
+<li>真正的成年人，不是放弃理想变得世故，而是学会在复杂世界中坚持原则；</li>
+<li>不是逃避责任当做得罪，而是勇于承担更大的挑战；</li>
+<li>不是简单地服从或反抗，而是发展出独立思考和决策的能力。</li>
+</ul>
+<p>这才是我们追求的成熟之道。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>什么是驾驭青春？就是在认清自身局限和世界真实相处的基础上，依然能够做出自己想要的选择。</p>
+<p>从伽罗瓦的传奇，到当代青年的迷茫，再到奈飞的成人法则，我们看到了一个永恒的课题：如何在这个复杂的世界里，真正地掌控自己的人生。</p>
+<p>像伽罗瓦的传奇，明知当下的选择，会引来死亡，仍然选择做出自己的选择。奈飞系统的成年人法则，让我们看到一个永恒的课题：如何在这个复杂的世界里，真正地掌控自己的人生。</p>
+<p><strong>像成年人那样选择，就是对结果负责而不是对规则负责，敢于直面冲突，不简单地服从或反抗，而是发展出独立思考和决策的能力而不是人云亦云。</strong></p>
+<p>这才是真正驾驭青春的姿态，既保留纯粹与激情，又用理性框架与担当边界提升抗拒力。</p>
+<p>这并不容易，有时候不仅艰难，甚至让人恐惧。我喜欢的诗人里尔克，在《给青年人的信》里，写下过这样的一段话：</p>
+<blockquote>
+<p>“人在遇见了艰难，遇见了恐怖，遇见了严重的事物而无法应付时，要会躲在习俗的下边去求庇护。完成了人们的避难所，却不是安立自己的庇护。”</p>
+</blockquote>
+<p>该怎么办呢？里尔克建议是：</p>
+<blockquote>
+<p><strong>谁若是要真实地生活，就必须脱离开现成的习俗，自己独立成为一个生存者。</strong></p>
+</blockquote>
+<p>原你在挣底下自己的“第二条路”时，既能守护内心最真实的愿望，又能掌握现实的方向盘，在自由与责任交织的天空下，成为那个能做出真正想要的选择的成年人。</p>
+<p>我是老喻，我们下一讲再见。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>驾驭青春，就是在这三条路面前做出明智的选择：既不让世故扼杀热情，也不被彼得潘心态所困，而是在现实与理想之间找到平衡。</li>
+<li>真正的成熟，首先是对结果负责，而不是对规则；其次是敢于直面冲突；第三是具备自主决策能力。</li>
+</ol>
+<h2 id="用户留言"><a href="#用户留言" class="headerlink" title="用户留言"></a>用户留言</h2><h3 id="左星星"><a href="#左星星" class="headerlink" title="左星星"></a>左星星</h3><p>听完老喻，我获得的最大启发是：成熟不是一个终点，而是一种持续的修行。它体现在对当下情境的细腻观察、对自己内心的诚实审视、对未来选择的理性权衡。无论是在工作中争取进步，还是在生活中追求幸福，真正的成熟都不仅仅是一目标，也是不断复杂的挑战中迷失，而是以平衡的姿态继续前行。</p>
+<p>换句话说，成熟的核心并非放弃激情或压抑自我，而是在现实的框架内找到适合自己的路径，并始终对自己的选择和人生负责。这是老喻的文字给我的启发，也是我在人生选择中努力实践的方向。</p>
+<h3 id="Keiko-璐"><a href="#Keiko-璐" class="headerlink" title="Keiko.璐"></a>Keiko.璐</h3><p>“成熟”是一个多维度的概念，不仅涉及个体的生理成长，还包括心理、情感、社会等个层面的发展，因此成熟是一个涉及勇气、自律和自我超越的复杂过程。</p>
+<p>成熟并非是顺其自然的结果，不会随着年龄的渐长、阅历的增加，就一定会越来越成熟。成熟更多是心智上的成熟，精神上的丰足。</p>
+<p>许多人所谓的成熟，不过是被习俗去了棱角，变得世故圆滑罢了。那不是成熟，而是精神的早衰和个性的夭亡。</p>
+<p>真正的成熟意味着能够面对现实、接受生活的复杂性和不确定性。不逃避问题，勇于面对挑战，承担责任；对自己的行为负责，能独立思考和自主决策；同时还有个体的自我意识，可以认识到自己的局限，看清生活的真相，却还能不断追求自我提升和成长，以实现自我超越。</p>
+<p>真正成熟的人，不是处事圆滑、世故，而是知世故而不世故，是一种由内而外的丰盈与觉察。他们从不逃避这个社会的复杂与世事的艰难，但永远会在适应规则的基础上，让自己看到美好的一面，做出真正想要的选择，拎出让自己活得更受控制的涌泉，走上真正的成熟之道。</p>
+<h3 id="晨霞"><a href="#晨霞" class="headerlink" title="晨霞"></a>晨霞</h3><p>看完这一讲，我反思了自己情绪化的惯性行为，相信规则，相信多劳必多得，相信如果结果不好一定是不够努力。但这很不对。我想起来，羽现在正在一件新事物上修改大论文，一个月前预答辩得到“重大修改”的结论时，我很生气，很恼，觉得自己的“努力”怎么就得到了这样的结果！我的即时计划是：更努力重新看文献，大改一番。但今天的事，我去伴了一周论文——一个生人的老师，心态慢慢有了点转变。于是，我去和我硕导沟通，他给了我指点，并且写定地说“建议很好，结论有误”。于是，整个月，我都在学习自己本身的人生课题，2月才开始一点点改论文，进度也很慢。但我打开论文时，先删除了和主题无关的一些大段表达，再调整了一些表达结构，将专家提出的逻辑表述不连贯的地方重新强调整出来，站在同读者视角，去观察整体的表达流觞。反而有等顺得。不连任修改，依一连整大努力，很可能正在生成成问题。</p>
+<p>孩童的思维，有活力，有创新意识，有闯劲，感性大于理性，敢于激清冲上前不顾一切。而，井不是完整的人生，完整的人生必须要有成年人，是理性性决策，冷静观察，敢于负担责任的，成年人。若果成年人人，保证守护少年的激情与创新，都是一种选择。</p>
+<p>最后，我想问一个问题，不知道有无一些互动感：常常不能控制情绪的人，是否都非成熟的成年人呢？</p>
+<h3 id="炎帝"><a href="#炎帝" class="headerlink" title="炎帝"></a>炎帝</h3><p>在这个复杂多变的世界里，许多人抱持着一种理想化的信念：只要付出足够的努力，就一定能收获相应的回报；好人终将得到好报，而坏人也必将受到惩罚。</p>
+<p>然而，现实往往比我们想象的要残酷得多。那些没有经历过销售或业务的人，可能会更容易陷入这种“小孩思维”，相信世界会公平地预设回报，且直觉上世界充满了不确定性和偶然性。</p>
+<h4 id="一、为什么我们会有“小孩思维”？"><a href="#一、为什么我们会有“小孩思维”？" class="headerlink" title="一、为什么我们会有“小孩思维”？"></a>一、为什么我们会有“小孩思维”？</h4><ol>
+<li><p><strong>教育系统的因果强化</strong></p>
+<p>从小学到大学，我们被训练成“解题机器”——每道题都有标准答案，每次考试都有明确回报。这种环境塑造了“输入—输出”的确定性幻想。但真实世界的规则是：你可能超越了所有题，却输给了意外；也可能努力暂时无回报。</p>
+</li>
+<li><p><strong>大脑的认知普遍化</strong></p>
+<p>人类会天然追求简化和叙事。丹尼尔·卡尼曼在《思考，快与慢》中指出，人们依赖“系统1”（直觉思维）快速归因，将复杂现象简化为“努力&#x3D;成功”或“被善待的单一因果链。这种思维带着认知偏误，却解释了真实世界的随机性。</p>
+</li>
+<li><p><strong>道德叙事的心理慰藉</strong></p>
+<p>“善有善报”的本质是对不确定性的恐惧消解。当人们无法掌控结果时，道德因果就成了心理安全——你只要坚持做个“好人”，就能免疫厄运。这种信念在销售领域尤其危险：你真诚对待客户，时常可能特别容易获得更多的竞争对手。</p>
+</li>
+</ol>
+<h4 id="二、如何摆脱“小孩思维”？"><a href="#二、如何摆脱“小孩思维”？" class="headerlink" title="二、如何摆脱“小孩思维”？"></a>二、如何摆脱“小孩思维”？</h4><ol>
+<li><p><strong>从“农夫”到“园丁”的思维升级</strong></p>
+<p>农夫思维：选定一块地，埋头耕种，期待季节回报。</p>
+<p>园丁思维：观察整个生态，培育多种植物，让系统组织生长。</p>
+</li>
+<li><p><strong>建立“反脆弱”决策系统</strong></p>
+<p>杠铃策略：将80%资源投入低风险领域（如稳定工作、指数基金），20%用于高风险探索（如创业试水、新兴技能）。</p>
+<p>最小可行性试错：用3个月验证一个商业假设，而非All in赌命。</p>
+<p>定期再平衡：每年审视人生“资产配置”，砍掉无效路径（如与物质、消费关系），增加成长方向。</p>
+</li>
+<li><p><strong>驯化道德焦虑：从“好人”到“理性人”</strong></p>
+<p>刻意道德练习：帮助同事是因为互利，而非追求“善报”；拒绝不合理请求是权利，不必愧疚。</p>
+<p>灰度认知：接受世界不是非黑即白。商业合作中，对方“背叛”可能只是利益权衡，而非人格否定。</p>
+<p>建立底线防火墙：如亚马逊的“Day 1”原则，每日清零历史包袱，根据当下信息做最优决策。</p>
+</li>
+<li><p><strong>拥抱“过程回报”哲学</strong></p>
+<p>70%的销售成果来自长期品牌资产积累，而非短期促销。人生亦如此：不是立即让。</p>
+<p>过程性目标：将“签下订单”转化为“每天深度沟通3个客户”；</p>
+<p>微型正反馈：记录客户沟通中的认知突破、谈判技巧提升，并悄悄改变结果；</p>
+<p>反脆弱日记：定期撰写“失败收益清单”，例如：“项目虽流产，但获得了跨界人脉”。</p>
+</li>
+</ol>
+<h3 id="苏晓晓"><a href="#苏晓晓" class="headerlink" title="苏晓晓"></a>苏晓晓</h3><p>成年人的世界没有“如果”，只有“结果”。</p>
+<p>无论选择带来的是成功还是失败，都要坦然接受，并从中学习和成长。</p>
+<p>这才是真正的成熟。</p>
+<ul>
+<li><strong>承认结果，不甩锅</strong></li>
+<li><strong>不找借口</strong>：别把责任推给别人或环境，承认这是自己的选择带来的结果。</li>
+<li><strong>不抱怨</strong>：抱怨只会让你陷入负面情绪，接受现实才能找到改进的方向。</li>
+<li><strong>从结果中学习</strong></li>
+<li><strong>总结经验</strong>：无论成功还是失败，都要分析原因。成功时，总结哪些做法是对的；失败时，找出问题所在。</li>
+<li><strong>调整行动</strong>：根据总结的经验，调整未来的选择和行动，避免重复同样的错误。</li>
+<li><strong>承担后果，积极解决</strong></li>
+<li><strong>面对问题</strong>：如果选择带来了负面结果，别逃避，积极寻找解决办法。</li>
+<li><strong>对外担责</strong>：如果选择对他人造成了影响，尽量弥补损失，并承担责任。</li>
+<li><strong>不后悔，向前看</strong></li>
+<li><strong>接受不完美</strong>：没有选择是完美的，即使结果不如预期，也别过度后悔。后悔只会消耗你的精力。</li>
+</ul>
+<p>只有敢于为自己的选择负责，才能真正掌握自己的人生，活出自己想要的样子。</p>
+<h3 id="礼之殿士"><a href="#礼之殿士" class="headerlink" title="礼之殿士"></a>礼之殿士</h3><p>什么是真正的成熟？我过去，看法是比较简单，甚至是幼稚的。我认为，一个人只要大了，就会认同社会的真相，懂得自己身上的责任，就会义无反顾去做自己应该做的事情。但是，当我看到，不少成年人成，甚至老年人，都不愿意长大，不愿意承担自己的责任时，我才知道，一个人是否成熟，与一个人的年龄无关。如果一个人，明确意识到自己身上的责任，愿意为结果负责，那么，即使他还未成年，也已经成熟了。相反，如果一个人能够年龄大，只知道躲避，不愿意承担自己的问题，那么，即使年纪再大，都还是处于不成熟的状态。</p>
+<h3 id="鸿涛"><a href="#鸿涛" class="headerlink" title="鸿涛"></a>鸿涛</h3><p>谁的青春都迷茫，迷茫的是内心与外化之间的磨合和世界的世界不是革命的，驾驭青春也不是世故和被寂得满心态之间的选择。我们可以选择另一种英雄主义——承认生活的真相之后依然热爱生活。即在现实与理想之间找到平衡，具体就是外部因对内心坚持独立原则和激情，对外则有负责和适应的成熟。</p>
+<h3 id="李蔡吾"><a href="#李蔡吾" class="headerlink" title="李蔡吾"></a>李蔡吾</h3><p>既能守护内心最真实的愿望，又能掌握现实的方向盘，最好的方式其实是发展惰性思考和主体思维。比如面对新鲜项目，每个人都需要有一个稳项目，保证自己的激情和创造力。</p>
+<p>这个项目不被外人所知，它的结果失败与否，对你的外部评价没有任何影响，但你面对这个项目的时刻，敢于去失败，敢于去应对，然后去独立思考如何去解决这个个问题。这样的活，你在深度项目上所培养的心灵，会逐渐和星星之火可以燎原一样，改变你自己的行为风格。</p>
+<h3 id="空"><a href="#空" class="headerlink" title="空"></a>空</h3><p>巴菲特在他的老师格雷厄姆的著作《聪明的投资者》的序言中写道：“投资的成功只需要两个条件，理性的决策框架和不受情绪的腐蚀”。也许你会问，就这么简单，我想说的是的，但真正能够满足这两个条件的人，未必能够做到！而且第二个条件更满足，很少投资者有自己的投资决策框架，但是因为人的性的非理性无法得到很好的执行，导致投资效果不佳。</p>
+<p>“投资”是一个考验智商的地方，而是一个考验人性的地方，我想这句话大家听很多了，可为什么呢？如果投资决策框架考验的是一个人的智商，那投资决策大部分投资者都会是一个人的性格了。可问题是，投资市场有太多的诱惑，人性很难经得住考验。比如在A股9:24的异常行情，当外界都叫嚣着大牛市要来的时候，你是否还能保持一份清醒和定力，我想对于很多投资来说，答案当然是否定的。</p>
+<p>为什么在投资市场，人类的理性往往失灵呢？从脑科学的视角来看，人的大脑大致分为三个区域：本能脑、情绪脑、理性脑。从童发时代来看，本能脑与情绪脑已经性。人类的决策总是被本能脑和情绪脑所控制，而后天习得的理性脑很多时候根本无法建立起来，所以当需要做出投资决策的时候，当然是本能脑和情绪脑一马当先，却在投资市场面前表现的贪婪与恐惧，就是再正常不过的事情了。</p>
+<h3 id="丹霞·小飞侠"><a href="#丹霞·小飞侠" class="headerlink" title="丹霞·小飞侠"></a>丹霞·小飞侠</h3><p>青春决策权：从天才少年到“守规则”——丹霞</p>
+<p>今天老喻说起的那位年轻数学天才因为爱情决斗而丧命，让人感叹青春的冲动与无奈。我特别希望从他的故事提炼一些启示，以更好地理解和帮助零零后同事驾驭他们的青春美丽，避免成为“失败者”的例子。</p>
+<p>大脑发育的不同步：青春期的大脑前额叶负责理性和控制冲动，发育相对滞后；情绪中枢已经开始快速发育。这个我们可以幽默地用“动力十足，却没有与之匹配的冲车系统”来形容，青少年容易在冲动下做出草率决定。这时我们可以幽默地用“动力十足，却没有与之匹配的刹车系统”来形容，青少年容易在冲动下做出草率决定。这时我们可以幽默地用“动力十足，却没有与之匹配的刹车系统”来形容。</p>
+<p>现实世界的双重打击：</p>
+<p>生活并不像校园那样简单和确定，现实世界是高度不确定的混沌系统。面对这种非线性，我们需要接受努力未必带来回报的事实，同时培养适应性和变化能力。另外，人际关系也比较复杂得多，保持理性、学会分辨与自我意识的技能。</p>
+<p>成熟的决策态度：</p>
+<p>全项顶尖企业家“的标准是只招“成年人”，因为“成年人才有成熟的态度和能力，能对结果负责、敢于直面冲突、具备自主决策能力。我们应当学会在复杂世界中坚持原则，同时勇于承担责任，发展独立思考和决策的能力。</p>
+<p>很欣赏老喻说的“什么是驾驭青春？就是在认清自身局限和世界真相的基础上，依然能够做出自己想要的选择。”既保留纯粹与激情，又用理性框架与担当边界自律选择。愿大家都能成为那个“如何驾驭青春与生活，会为自己的选择承担后果”的成年人。</p>
+<h3 id="山峰"><a href="#山峰" class="headerlink" title="山峰"></a>山峰</h3><p>青春期的优势是敢意敢于、不畏艰难，好奇心重，以及丰富的想象力、创造力、运算力、记忆力，精力。</p>
+<p>青春期的劣势是容易情绪化，以自我为中心，一条道走到黑，撞了南墙也要头破血流。</p>
+<h2 id="后记留言（节选）"><a href="#后记留言（节选）" class="headerlink" title="后记留言（节选）"></a>后记留言（节选）</h2><h3 id="victory"><a href="#victory" class="headerlink" title="victory"></a>victory</h3><p>自己的勇气敢于直面惨淡的人生，敢于直面满满的鲜血。现实很残酷，但是我们要尊重现实，对自己要更加诚实面对的就是这样一个社会，有人会利用你，有人会欺骗你，接受它并学会利用他去改变世界，这才是最大的勇气，总是要充满信心，才能够驾驭好自己的未来。</p>
+<h3 id="元气小土"><a href="#元气小土" class="headerlink" title="元气小土"></a>元气小土</h3><p>后悔，做与不做都会。做的时候，可能太着急冲动；不做的话，过后会问自己为啥没做。</p>
+<p>真正的成年人，不是放弃理想变得世故，而是学会在复杂世界中坚持原则。</p>
+<p>驾驭青春是在认清自身局限和世界真的基础上，依然能够做出自己想要的选择。</p>
+<p>不悔，不曾做与没做。直面冲突，接受结果，自主决策！</p>
+<h3 id="黄圆圆"><a href="#黄圆圆" class="headerlink" title="黄圆圆"></a>黄圆圆</h3><p>真正的成年人，不是放弃理想变得世故，而是学会在复杂世界中坚持原则；不是逃避责任当做得罪，而是勇于承担更大的挑战；不是简单地服从或反抗，而是发展出独立思考和决策的能力。</p>
+<h3 id="阿繁达1043"><a href="#阿繁达1043" class="headerlink" title="阿繁达1043"></a>阿繁达1043</h3><p>萨波斯基的《行为》一书中说，青少年大脑的其他部分都发育好了，就是负责决策、控制和规划的前额叶皮质还没完全发育好——这就使得青少年的理性能力没能跟上荷尔蒙刺激下奔放的情绪，就好像一辆只有油门而没有刹车的汽车。这个经典解释可以简单地用“神经生物学能力”模式来概括。</p>
+<ol>
+<li>意思是青少年大脑中仍然有“神经生物学能力”——研究者认为，青少年的前额叶皮质的髓鞘还在发育中，但并不能。比如青少年会冲动地前往社区做什么贡献，然后应对河人的一个社交场面，那会本身非常热烈的。所以新生代学着认为青少年会冲动，然后更容易会做自己后悔的事情，并不是大脑，而是大脑的优先级不一样。</li>
+</ol>
+<p>我觉得必须少年冲动，做事不计后果，可我们很多成年人何尝不是这样呢？遇到问题一开口总是这样说：“把一开始的自己的忘的一干二净，只想保持一切的保护自己和自己的意思。各种认知偏差，包括损失厌恶、锚定偏误、蒙蔽效应等，都是大脑的默认设定：我的东西都是最好的，我的经验都是对的。我们缩缩在自己的脑壳里，如果在可能也不怎么舒服的舒适区内，好像只要不出手，就能保留对自己完美的想象。因为一旦接到真实世界，去投入协作、打交道、必然会遭遇一些挫折，这是对自己盲目的打击。我们对世界并不看，甚至觉得只要要可爱完美，设计框架，这个世界就该自己一尘不染。特别是我们年龄中年人，因而因我不知道。好像只要所有人的面子都很顺利了，事情就能得到自动解决。至于背后有多少人遭罪，怎么收拾剩下来的烂摊子，就没有多少人关心了。</p>
+<p>作为一个靠谱的成年人，要做到时刻以结果为导向，正所谓事情有回报，作伴有着落，凡事有交代。可以把情绪当做前进的动力，但理性一定要充当方向盘和刹车。任何规则、限制都要为更高的目标服务或让路，该沟通协调时就要使用最柔软的身段，该据理力争时也不要害怕冲突甚至撕破脸。这个世界只会拜能够持续交付结果的人，不会容忍只会要爱的愚昧，不会容忍只会感情用事，不论结果如何，你已经输了。</p>
+<h3 id="幸福小松树"><a href="#幸福小松树" class="headerlink" title="幸福小松树"></a>幸福小松树</h3><p>青春最致命的弱点：感性压倒理性、冲动战胜深思、当下模糊远方。青春期的大脑就像一辆高性能跑车：引擎强劲，动力十足，却没有与之匹配的刹车系统。“青少年的大脑奖励系统已经在全速运转，而负责自我控制的前额叶却还在忙着发育。”</p>
+<p>世界复杂双重打击：一重来自世界的非线性，另一重源于人性的复杂。</p>
+<p>拒绝线性思维。</p>
+<p>路径一，“大雪保护层”，但这也隔断了他们成为更加丰盛人生的可能性。</p>
+<p>路径二，是停留在“延迟的成年期”或“彼得潘综合征”状态里，不愿真正迈入成人角色。18～25岁之间的“新兴成年期”常见于现代社会：因为教育延长或婚育推迟，很多年轻人留在“半大小”的过渡地带，既享受着青春的探索与自由，却又不敢或不想面对实际责任。</p>
+<p>路径三，在看清世界的真相后，仍然选择继续前行。主动告别青春式任性，却也保持内心的热血与愿景。在不确定中努力试错，在繁杂人性中依然相信善意并建立边界，学着承担责任、锻炼自我决策力，把“成长”从一句口号变成实际行动。</p>
+<p>路径三是我们追求的正确的路径，既不让世故扼杀热情，也不被彼得潘心态所困，而是在现实与理想之间找到平衡，让自己在这个世界中活得既真实又丰富。</p>
+<p>成年人的三个标准：</p>
+<ol>
+<li>首先是对结果负责，而不是对规则。</li>
+<li>其次是敢于直面冲突。</li>
+<li>第三是具备自主决策能力。</li>
+</ol>
+<h3 id="小丑-不才"><a href="#小丑-不才" class="headerlink" title="小丑-不才"></a>小丑-不才</h3><p>在复杂环境中坚持原则，不是固执己见，而是能够在多变的局势中根据核心价值观灵活调整策略。比如，年轻人面对极为油水的行业变化时，可以在追求长期成长和个人价值之间寻找平衡，而不是仅仅为了短期利益妥协。</p>
+<h3 id="Gaven（建平）"><a href="#Gaven（建平）" class="headerlink" title="Gaven（建平）"></a>Gaven（建平）</h3><p>怎么才算成人？</p>
+<p>通过老喻的分享，我觉得成熟的标准可以是：具有青春活力的冲劲，又能拥抱理性的宏实思考问题；具有自己的边界，又能接受世界预料的现实生活。</p>
+<p>简而言之，敢于不断探索来达成自己的目标并获得成长，也能理性接受生活给自己创造的各种磨练。</p>
+<hr>
+<p><a href="/book/decision-algorithm/058/">← 058｜告别童年：怎样像成年人一样决策？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/060/">060｜突破中年：怎样在重围中选择更精彩的人生？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

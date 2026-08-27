@@ -1,0 +1,414 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>057｜选择VS努力：怎样找到你人生的α和β？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》057：选择VS努力：怎样找到你人生的α和β？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="057｜选择VS努力：怎样找到你人生的α和β？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/057/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》057：选择VS努力：怎样找到你人生的α和β？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:45.601Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/057/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '057｜选择VS努力：怎样找到你人生的α和β？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">057｜选择VS努力：怎样找到你人生的α和β？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">057｜选择VS努力：怎样找到你人生的α和β？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>来源：老喻·决策算法100讲</p>
+<p>音频时长：15:20</p>
+<p>以下依据 PDF 页面原图逐段人工视觉阅读整理。</p>
+</blockquote>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>喻老师，你好。</p>
+<p>我是老喻，欢迎来到《决策算法》课。</p>
+<p>大约十几年前，还是中国地产最热火的时候，我作为股东，去我们投资的一个地产项目上盯了一段时间。此前，我只管项目的投资和拿地环节，不太参与具体的项目管理。</p>
+<p>那段亲临一线的时间，让我突然意识到了一点：有可能我们赚的完全是运气的钱。为什么呢？因为至少就那个项目而言，公司管理的专业性和精细度，都远远没有办法与别的行业相比较。</p>
+<p>当时，这种念头是很奇怪的。因为房地产行业正在高速发展，从业人员各种创新，到处学习，成功者出没于各大论坛峰会分享经验，大家都充满了自信，觉得自己是弄潮儿，是引领时代的人。</p>
+<p>我把这个困惑告诉其他股东：“你们说，会不会我们赚的钱，就是时代带来的行业红利？从专业水准和付出看，配不上这么高的回报。”</p>
+<p>多年以后的今天，不少将“行业红利”误认为是“自身优势”的地产公司，因为时代的变迁，遇到了极为惨痛的市场调整。</p>
+<p>直到后来我学到两个金融概念，才恍然大悟。今天我就要和大家分享这两个改变了我思维方式的概念：阿尔法（α）和贝塔（β）。</p>
+<h2 id="一、α-和-β-是什么？"><a href="#一、α-和-β-是什么？" class="headerlink" title="一、α 和 β 是什么？"></a>一、α 和 β 是什么？</h2><p>现代金融理论认为，投资收益可以由两部分组合：</p>
+<ul>
+<li>第一部分和市场波动无关的，叫阿尔法收益（α）；</li>
+<li>第二部分和市场波动相关的，叫贝塔收益（β）。</li>
+</ul>
+<p>听起来有点专业是不是？别担心，我们用一个特别生动的比喻说明：</p>
+<p>想象你现在站在一个向上的电梯上：</p>
+<ul>
+<li>电梯自己往上走的速度，就是贝塔；</li>
+<li>你在电梯上迈步往上走的速度，就是阿尔法。</li>
+</ul>
+<p>就像前面说的，地产的行业红利，主要靠的是时代的贝塔（β）。</p>
+<p>如果我们误将时代的贝塔（β），看成与市场无关的阿尔法（α），例如认为是自己的专业能力、品牌优势等带来的，就会忽视一个极大的风险：<strong>假如电梯停下来，你还能够一直向上吗？</strong></p>
+<p>事实证明，多年前我那个“奇怪”的直觉，可能是对的：地产行业赚的是贝塔（β）的钱，所谓的阿尔法（α），只是从业者在繁荣时期的幻觉。</p>
+<h2 id="二、选择和努力"><a href="#二、选择和努力" class="headerlink" title="二、选择和努力"></a>二、选择和努力</h2><p>既然阿尔法（α）与贝塔（β）都是金融领域的重要概念，我们不妨先回到金融投资的场景中，看看它们是如何帮助我们赚钱的。</p>
+<p>请你先来做个简单的数学题：如何赚到 2000 万？</p>
+<p>假如你在上市之初，买一股可口可乐的股票，股价是 40 美金；然后拿 100 年，就能赚到惊人的 2000 万。</p>
+<p>100 年约赚 50 倍，年复合收益率大概是 14% 多一点，是不是比直觉少很多？</p>
+<p>换在牛市的时候，说 14% 回报，没人会理你。等到经历过熊市，大家会变理性，知道超过 10% 的年化回报率很不容易，何况持续 100 年。</p>
+<p>事实上，巴菲特持有可口可乐的 36 年，年化回报其实还不到 14%，但财富增长已经很惊人了。</p>
+<p>再请问你一个问题：</p>
+<p>如果可口可乐的股票，每年复合收益率变为一半，例如约为 7%，那么一百年后收益将变成多少倍？</p>
+<p>大约变成了原来的 868 倍。</p>
+<p>似乎也不错，但 40 美金不变成了不到 35000 美金，离财富自由还很有距离。</p>
+<p>你看，年化回报率从 14% 变成 7%，2000 万就降到了 35000。复利太狡猾了。</p>
+<p>这 7% 左右的年化回报率，大约就是美国资产回报的贝塔（β）。</p>
+<p>而可口可乐的超额回报，对应的则是阿尔法（α）。α 和 β，最终都是以复利的形式带来长期总体回报。</p>
+<p>回到个人投资者，或者任何想要让资产或事业实现复利的人来说，掌握并守住贝塔（β）其实已经不易。在一个整体向上的市场里，稳稳拿到平均水平，就能获得相当可观的回报。</p>
+<p>但若想真正实现财富或能力的飞跃，就需要继续叠加那几步“超额”的努力，也就是“阿尔法（α）”的部分——这才是决定你是否能够超越“大盘”的关键。</p>
+<p>正如芒格提到的两种貌似矛盾的观点：</p>
+<ul>
+<li>一方面，他建议人们降低期望值；</li>
+<li>另一方面，他又强调追求卓越，因为巴菲特去除了最伟大的那几笔交易，就会变得无比平庸。</li>
+</ul>
+<p>这是不是有点儿矛盾呢？</p>
+<p>其实，降低期望值，意思就是说，在一个还不错的市场里，能拿到贝塔（β），已经很不错了。</p>
+<p>而追求卓越，则是说，在守住贝塔（β）的基础上，去追求阿尔法（α），才能带来不平凡的结果。</p>
+<p>所以，人生也是如此：</p>
+<ul>
+<li>好的选择（β）能让你站在上升的电梯上；</li>
+<li>持续的努力（α）则让你在电梯上不断前进；</li>
+<li>两者结合，才能达到最理想的高度。</li>
+</ul>
+<h2 id="三、选择比努力重要吗？"><a href="#三、选择比努力重要吗？" class="headerlink" title="三、选择比努力重要吗？"></a>三、选择比努力重要吗？</h2><p>表面上看：贝塔易得，阿尔法难求。</p>
+<p>但事实上，如果从复利的角度看，阿尔法和贝塔都很难。</p>
+<p>从美国上市公司的情况来看，每过 10.5 年就有一半企业消亡或被收购。</p>
+<p>前面说了，可口可乐公司的股票 100 年约赚 50 倍，但这是否算“幸存者偏差”？显然是。</p>
+<p>在更普遍的意义上，韦斯特和团队测算后表示，一家公司能活 100 年的概率，是百万分之四十五。</p>
+<p>以上是阿尔法的难，再看贝塔的难。</p>
+<p>有人统计过美国过去 200 年不同资产的投资回报率，时间跨度是从 1802 年到 2013 年，表现最优秀的是持有股票或股权，200 年来翻了 90 多万倍。90 多万倍听起来夸张，但其实，年化收益仅仅是 7% 左右。</p>
+<p>7% 左右的年化回报意味着什么呢？十年左右翻一番，三十年左右变成原来的 8 倍。1 万变 8 万，10 万变 80 万，100 万变 800 万……不过如此而已，奇迹似乎并没有诞生。</p>
+<p>所以，人生复利的贝塔（β），至少从财务的角度看，我们不得不听从芒格的建议：降低期望。</p>
+<p>这背后给普通人的启发在于：</p>
+<h3 id="1-选对大方向"><a href="#1-选对大方向" class="headerlink" title="1. 选对大方向"></a>1. 选对大方向</h3><p>先确保你站在一条长期向上的赛道上，这就是对贝塔（β）的把握。我们在职业或投资中要先寻找一个“大趋势”所在。毕竟，一旦你不小心踏上一个衰退或高度动荡的行业，再多努力也可能是“南辕北辙”。</p>
+<h3 id="2-找到自己的“少数关键交易”"><a href="#2-找到自己的“少数关键交易”" class="headerlink" title="2. 找到自己的“少数关键交易”"></a>2. 找到自己的“少数关键交易”</h3><p>芒格举巴菲特的例子——如果去掉他最成功的几笔投资，整体回报会平平无奇。对于普通人来说，真正改变命运的，往往也是少数几次关键决策：也许是一份果断的跳槽，一次对的创业伙伴选择，或是一笔在正确时机的投资。</p>
+<p>关键在于：你是否已经做好准备，是否有能力把握住机会？这就是“阿尔法（α）”的来源。</p>
+<p>要做到这两点，需要我们沉淀专业与实力，才有等待与出击的底气。</p>
+<p>长期看，大部分普通人的财富增长，靠的仍是稳健的 β 复利——勤奋工作、适度储蓄、合理投资，逐渐积累，以及警惕过度追求短期“奇迹”。</p>
+<p>而“少数关键交易”也并非凭空而来，它要求你在平时就不断学习、积累资源、提升认知。</p>
+<h2 id="四、人生中的选择与努力"><a href="#四、人生中的选择与努力" class="headerlink" title="四、人生中的选择与努力"></a>四、人生中的选择与努力</h2><p>阿尔法和贝塔不仅在投资中具有重要意义，在人生规划和职业发展中同样扮演着关键角色。</p>
+<p>现在流行说：选择比努力更重要。其实，选择和努力一样重要。</p>
+<p><strong>选择，对应的就是我们前面说的自动扶梯。</strong></p>
+<p><strong>而努力，则是你自己在扶梯上往上走的速度。</strong></p>
+<p>选择是个大概念。</p>
+<p>例如，选择哪个城市。有人认为在大城市再差都会有个不错的结果，而这些年也有不少年轻人回归三四线城市和县城。这背后，对应的是对不同贝塔（β）的价值判断——看你是喜欢大城市这个电梯，还是小城市这个电梯。</p>
+<p>比如，北上广深在过去多年里拥有显著的集群效应，有巨大的发展红利（β）。现在房价高企、生活成本上升，让不少年轻人权衡再三。但这里依然有最大的机遇，只是可能更适合有足够的阿尔法（α）实力的人。</p>
+<p>这几年，成都、杭州、武汉、西安、南京、长沙等“新一线”城市正在崛起，互联网和科创企业在这些城市纷纷落地，生活成本与压力相对一线城市更低。对于很多年轻人来说，新一线更具性价比，也在持续吸纳从一线城市外溢的人才与资源。</p>
+<p>因此，如果你在专业领域和个人偏好上，能与某个新一线城市的产业诉求相匹配（比如电商产业在杭州、游戏和文创在成都、先进制造在武汉等），那就相当于站上了一个更“舒适”的电梯；生活开支少、政策支持多，再加上个人努力（α），就有机会取得意想不到的高速成长。</p>
+<p>而回归三四线城市或县城，也可能是合适的选择。小城市整体“电梯速度（β）”往往不及大城市，但如果你拥有当地的资源禀赋，比如家庭关系、土地、地方政策扶持等，这就相当于额外“加速”了一部分阿尔法（α），也能跑出独特的成绩。</p>
+<p>还有工作选择。选择某个行业，选择是否学习新技术，本质上也是选择一个更可能向上的电梯。</p>
+<p>过去几年，人工智能（AI）快速发展，尤其深度学习、大模型（GPT 等）上取得突破，使得 AI 技术渗透到工业、医疗、金融、教育等方方面面。很多行业都在积极寻求 AI+X 的升级，加速催生大量新岗位和新需求。</p>
+<p>这意味着 AI 正在成为一条急速上升的“电梯”。</p>
+<p>然而，我个人的观点是，对于个人而言，AI 改变的，并不只有贝塔，还有阿尔法（α）。</p>
+<p>即使你不直接从事 AI 核心研发，也能从中受益——当你善用 AI 赋能，往往能在工作或创业中实现个人效率和成果的大幅提升，相当于在电梯上获得了加速奔跑的能力。你越早入局并深耕，就越容易在行业群体中拉开差距。</p>
+<h2 id="五、给自己找-α-和-β"><a href="#五、给自己找-α-和-β" class="headerlink" title="五、给自己找 α 和 β"></a>五、给自己找 α 和 β</h2><p>最近我看到一个人讲了一个真实的故事。他们去一个经济不发达国家投资矿产业，那里资源丰富、劳动力成本也低，看起来很不错，结果，因为市场不成熟，以及别的一些原因，没多久就铩羽而归了。</p>
+<p>他由此发出一段感慨：</p>
+<blockquote>
+<p>“投资也好，合伙也好，交友也好，一定要去比自己生活更发达的城市和国家投资，一定要与比自己更优秀更强大的伙伴合作，一定要和比自己更努力更有实力的人去交友！”</p>
+</blockquote>
+<p>付出代价的智慧，总是无价的。</p>
+<p>也许我们的人生，也需要先想好贝塔（β）的问题，然后再在阿尔法（α）上追求与众不同。</p>
+<p>所有的理论与道理，终究要回到行动。最后，我想送给你几条“阿尔法＋贝塔”的行动指南：</p>
+<ol>
+<li><p><strong>辨识你的电梯（β）</strong></p>
+<p>先仔细看，你所在的行业、城市、平台，是否真的在“往上升”——如果没站对电梯，就算跑断腿，也难逃回报平平的命运。问自己：你在对的地方吗？你在做对的事情吗？你在和对的人一起吗？</p>
+</li>
+<li><p><strong>拓展你的竞速力（α）</strong></p>
+<p>别指望风口会永远吹着你，要想跑赢别人，就得用心修炼内功。对你所在领域的专业能力、资源、人脉，都要投入“持续＋深度”的复利耕耘。风口并非万能，你的“奔跑速度”才是真正打败对手的关键。</p>
+</li>
+<li><p><strong>抓住那几次关键机会</strong></p>
+<p>每个人的一生，都不会有无数次大转折，大多只是几次关键节点——跳槽、创业、投资、决定与谁合作……在机会来临前，你能否眼光独到？在机会出现时，你能否果断出击？如果你已经练就了阿尔法（α）的实力，那么这几次行动就足以改变命运。</p>
+</li>
+<li><p><strong>别把暂时的成功当永恒的实力</strong></p>
+<p>你所享受的“红利”，究竟来自大环境的好处，还是你真有硬核能力？你需要分辨。时刻提醒自己，电梯随时可能停摆，甚至下行。要想脱颖而出，一定要有超越环境变化的真本事。</p>
+</li>
+<li><p><strong>给自己设一个更持久、更宽阔的赛道</strong></p>
+<p>人生不止靠金钱衡量。你可以在健康、认知、情感、家庭等不同维度寻找你的“阿尔法”及其“复利”。种一棵树、写一本书、坚持运动、学习新技能……这些同样会像滚雪球一样，让你在未来得到无法估量的收获。</p>
+</li>
+</ol>
+<p>所以，选择和努力，到底哪个更重要？</p>
+<p>阿尔法（α）和贝塔（β）的思维模式，其实已经给出了精辟的答案：</p>
+<p><strong>一个人的成就，既不是单纯选择的结果，也不是纯粹努力的产物，而是两者的乘积。</strong></p>
+<ul>
+<li>选择，是让你站上那部“往上升的电梯”；</li>
+<li>努力，则是你在电梯上行进的速度与坚持。</li>
+</ul>
+<p>并且，这二者是互相成就的。</p>
+<p>愿你在人生决策时，先锁定对的大方向（β），再不断淬炼自身（α），最终实现两者的完美叠加，跑出让人惊艳的轨迹。</p>
+<p>我是老喻，我们下一讲再见。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>一个人的成就，既不是单纯选择的结果，也不是纯粹努力的产物，而是两者的乘积。</li>
+<li>选择，是让你站上那部“往上升的电梯”；努力，则是你在电梯上行进的速度与坚持，而且这二者是互相成就的。</li>
+<li>你所享受的“红利”，究竟来自大环境的好处，还是你真有硬核能力？需要分辨。时刻提醒自己，电梯随时可能停摆，甚至下行。要想脱颖而出，一定要有超越环境变化的真本事。</li>
+</ol>
+<h2 id="用户留言（原图精选）"><a href="#用户留言（原图精选）" class="headerlink" title="用户留言（原图精选）"></a>用户留言（原图精选）</h2><h3 id="左星星"><a href="#左星星" class="headerlink" title="左星星"></a>左星星</h3><p>巴菲特的投资，如果去掉最成功的几笔交易，整体回报会平平无奇。这让我意识到，真正决定个人成长曲线的，并不是日复一日的“努力”，而是少数几个关键决策。可能是一笔成功的投资、一次精准的跳槽，甚至是一次大胆的创业尝试。而这些决策的正确性，很大程度上取决于你是否在积累 α——认知、锻炼判断力、建立自己独有的竞争壁垒。</p>
+<p>今天，AI 正在成为一个全新的“上行电梯”。那些能够利用 AI 提升工作效率、优化业务模式的人，等于是在电梯上加速奔跑。AI 不只是替代某些职业的工具，也给个人增加了阿尔法。</p>
+<h3 id="魏红亮"><a href="#魏红亮" class="headerlink" title="魏红亮"></a>魏红亮</h3><p>选择和努力之间的节点性选择很多。要知道自己的电梯是不是在上升，也要知道自己的奔跑速度是否足够。AI 可能是一部上升很快的电梯，能否抓住它，取决于你是否有使用它、深入它的能力。</p>
+<h3 id="Scott"><a href="#Scott" class="headerlink" title="Scott"></a>Scott</h3><p>价值投资需要耐心，要通过时间才能慢慢变现，是一个长期的投资观点。人们常高估自己一年内所能取得的成就，急不可耐却又不切实际，既而频死在循环往复的短期行为中。</p>
+<h3 id="Keiko璟"><a href="#Keiko璟" class="headerlink" title="Keiko璟"></a>Keiko璟</h3><p>看懂行业价值，坚定价值投资。要投自己特别懂的，置信度高的，才能不被股价波动扰乱心智。投资也是在投资自己，学习好的价值理念，能够改变个人的认知并指导人生。</p>
+<h3 id="李泰"><a href="#李泰" class="headerlink" title="李泰"></a>李泰</h3><p>学完这一讲，更能理解商业模式和企业文化的互补：好的商业模式保证做对的事，好的企业文化保证把事做好。个人也一样，要站上正确的电梯，同时训练自己的奔跑能力。</p>
+<h3 id="张到"><a href="#张到" class="headerlink" title="张到"></a>张到</h3><p>价值投资看起来非常简洁，许多人稍加了解后就投身股市，结果反而造成损失。信息有滞后性，普通人掌握的很多信息都是别人想让他们掌握的。真正重要的是选择正确方向和积累自己的能力。</p>
+<h3 id="JerryLuo"><a href="#JerryLuo" class="headerlink" title="JerryLuo"></a>JerryLuo</h3><p>“因为巴菲特而亏钱的人，远比因为巴菲特而赚钱的人多。”价值投资耳熟能详，难的是知行合一。降低期望、抓住少数关键机会、长期坚持，才是普通人可以学习的地方。</p>
+<p>——以上留言由作者筛选显示。</p>
+<hr>
+<p><a href="/book/decision-algorithm/056/">← 056｜态度第一：怎样拿回你的决策权？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/058/">058｜告别童年：怎样像成年人一样决策？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

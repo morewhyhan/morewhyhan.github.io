@@ -1,0 +1,419 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>029｜反事实思维：条件不够如何突围？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》029：反事实思维：条件不够如何突围？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="029｜反事实思维：条件不够如何突围？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/029/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》029：反事实思维：条件不够如何突围？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:45.132Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/029/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '029｜反事实思维：条件不够如何突围？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">029｜反事实思维：条件不够如何突围？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">029｜反事实思维：条件不够如何突围？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>13分04秒</p>
+</blockquote>
+<p>🌶️，你好</p>
+<p>我是老喻，欢迎来到《决策算法》课。</p>
+<p>上一讲我们讲了奥卡姆剃刀原理，核心是减少不必要的假设，才能提高做成事的可能性。</p>
+<p>但事情并不总是这么绝对。有些时候，适当的假设能够帮助我们突破当下的局限，这就涉及到我们这一讲要研究的“反事实思维”。</p>
+<p>什么是反事实思维？我先用一场经典的围棋对局，带你有一个感性的认识。</p>
+<h2 id="一、从围棋的“瞒天过海”开始"><a href="#一、从围棋的“瞒天过海”开始" class="headerlink" title="一、从围棋的“瞒天过海”开始"></a>一、从围棋的“瞒天过海”开始</h2><p>国手马晓春九段，是中国首个围棋世界冠军。他的棋风以轻灵著称，人称“妖刀”，意思是说诡异多变，带有妖气，杀敌于无形。</p>
+<p>他有一本很特别的围棋著作，名为《围棋与三十六计》。其中第一计，是瞒天过海。</p>
+<p>“瞒天过海”是指用各种巧妙的伪装，混淆视听，达到秘密的目的。</p>
+<p>但围棋是一切都明摆在棋盘上的，怎么能实施“瞒天过海”计呢？</p>
+<p>在这一计里，马晓春讲解了自己的一盘实战对局。对手占地领先，他发现棋盘的右下角，对手有一个隐藏的漏洞，一旦抓住，自己就可以反败为胜。</p>
+<p>但是，要抓住这个漏洞，自己还欠缺一个条件，也就是说要在另一处有一手棋。可要是直接走这一手棋的话，对方就会意识到这个漏洞。</p>
+<p>所以，能够抓住这个漏洞的构思，基于这样一种思考：假如我在这里连续走上两手，对方就会崩溃。</p>
+<p>但是，我们知道，围棋是一种两人轮流走棋的对弈游戏，连续两手棋，是“反事实”的。</p>
+<p>既然“反事实”，那么，这类思考有什么意义呢？</p>
+<p>实战中，马晓春通过迂回作战，在左侧开辟了另外一个战场，转移对手的注意力，然后，瞒天过海，走出了“反事实”中的第一手。</p>
+<p>对手果然中计，没能有效应对，于是，他如愿以偿，走出了“反事实”中的第二手，妖刀闪现，一举获胜。</p>
+<p>在这一讲的后面，我附上这局对战的棋谱，如果你会下围棋，方便的时候可以对照着看。</p>
+<h2 id="二、什么是反事实思维"><a href="#二、什么是反事实思维" class="headerlink" title="二、什么是反事实思维"></a>二、什么是反事实思维</h2><p>让我们从马晓春的“瞒天过海”跳出来，看看“反事实思维”的定义到底是什么？</p>
+<p>反事实思维通常是指：<strong>人们面对已发生的事情时，通过假设“如果当初某件事没有发生”或“如果情况不同”来推测可能结果的思维方式。</strong></p>
+<p>举个简单例子吧：</p>
+<p>你中午和朋友去吃饭，左边的店吃火锅，右边的店吃饺子，你们选了火锅。吃完后，你觉得夏天吃火锅太热了，于是便想：</p>
+<blockquote>
+<p>如果选择吃饺子，就不用这么满头大汗了。</p>
+</blockquote>
+<p>这个例子，展示了“反事实条件句”的一般形式，其具有“如果……，那么……”的结构。</p>
+<p>从中我们可以看出，一个反事实思维包括两个部分：</p>
+<ol>
+<li>假设（虚假的、未发生的）前提，例如“如果选择吃饺子”；</li>
+<li>假设（虚假的、未发生的）结论，例如“就不用这么满头大汗了”。</li>
+</ol>
+<p>现在请你闭上眼睛，想一下过去30分钟里，你有多少时间是在想过去的事情，有多少时间是在想将要发生的事情。你会发现，大部分时间，自己都在进行反事实思考。</p>
+<p>没错，人并非完全生活在“正在发生的现实世界”里，我们的大脑在不停地计算着事实之外的其他很多种可能性，并以此做出决策。</p>
+<p>所以，<strong>反事实思维，其实是人类固有的一种思维模式。</strong></p>
+<h2 id="三、反事实思维的两种方向"><a href="#三、反事实思维的两种方向" class="headerlink" title="三、反事实思维的两种方向"></a>三、反事实思维的两种方向</h2><p>说完了通常意义的反事实思维，也就是对已经发生的事情进行反事实思考。接下来，我们说一下面向未来的反事实思维。</p>
+<p>事实上，这是决策高于最厉害的地方之一。</p>
+<p>一般的人，在工作和生活中被“现实”捶得死死的，看不见任何“事实”以外的事情。</p>
+<p>但是厉害的人，则能看见绝大多数人都看不见的趋势，然后用“反事实”来创造条件，让趋势变成现实。</p>
+<p>就像我们开始讲的马晓春的反事实思维：如果我站在这里，连续走上两步就会有妙手。</p>
+<p>这种思维方式，在现实世界里非常强大。</p>
+<p>IBM 在1981年推出了个人电脑，需要操作系统，于是找到了微软。当时微软手上也没有现成的东西，比尔·盖茨就找到了西雅图电脑公司，以传说中的5万美元的价格，向该公司购买他们所开发的操作系统。然后，微软将该软件更名，再把使用权卖给 IBM。这可是微软成就万亿美元霸业的关键一战。</p>
+<p>其实，盖茨进行的，也是类似于马晓春的反事实思考：西雅图电脑公司是他的第一手棋，IBM 是他的第二手棋。他做的绝非是简单的低买高卖，而是将这两手棋连接在一起，形成了妙手。</p>
+<p>这背后的逻辑是：</p>
+<blockquote>
+<p>事实上，我没有 A，也没有 B，但我经过反事实思考，知道假如我同时拥有 A 和 B，就创造极大价值，那么，我就可以全力以赴，将 A 和 B 整合起来。</p>
+</blockquote>
+<p>所以，有种说法是：一家初创公司知道如何配置资源，比拥有资源更重要。</p>
+<h2 id="四、上行与下行的反事实"><a href="#四、上行与下行的反事实" class="headerlink" title="四、上行与下行的反事实"></a>四、上行与下行的反事实</h2><p>反事实思维最早是由卡尼曼和他的搭档特沃斯基提出的。特沃斯基其实还进一步把反事实思维分成了两种：上行反事实思维和下行反事实思维。</p>
+<p>比如说，奥运会游泳比赛，银牌获得者想，如果我下水的时候再快一点儿，就有可能拿冠军了。这种“向上靠一靠”的假设，被称为“上行反事实思维”。</p>
+<p>又比如说，游泳比赛的铜牌获得者，他可能会想，刚才我要是冲刺的时候稍微慢一点儿，就拿不到奖牌了。这种“向下靠一靠”的假设，被称为“下行反事实思维”。</p>
+<p>2006年，心理学家大卫·松本和鲍勃·威林厄姆研究了柔道比赛，结果发现：铜牌得主比银牌得主笑得更开心。其实就是因为两个人的反事实思维，一个是下行，一个是上行。不过，如果拿铜牌的人以前拿过金牌，那他可能还是没那么开心。</p>
+<p>所以，反事实思维，可以起到预期管理的作用。</p>
+<p>那么你可能要问了，反事实思维到底是上行好，还是下行好呢？我们仔细想想看：</p>
+<ul>
+<li>上行反事实思维，是说“要是……就好了”，这么做的好处是去想有什么地方可以改进，坏处是容易后悔。</li>
+<li>下行反事实思维，是说“要是……就更糟了”，这么做的好处是容易接受现实，稳定心态；坏处是容易得过且过。</li>
+</ul>
+<p>那我们该怎么办呢？我的建议是：</p>
+<ul>
+<li>过去发生的坏事情，你可以采用“下行反事实思维”。比如说你的股票亏了，你可以假设：幸好投的钱不多，不然就更惨了。这样，能够让你管理好情绪。</li>
+<li>对过去发生的好事情，我们则应该采用“上行反事实思维”。比如说，我如果不是买股票，而是定投指数基金，会不会更容易赚钱？因为业余投资者不适合自己选股票。这样的好处是，可以不断提升自我。</li>
+</ul>
+<h2 id="五、用反事实思维面对未来"><a href="#五、用反事实思维面对未来" class="headerlink" title="五、用反事实思维面对未来"></a>五、用反事实思维面对未来</h2><p>那是不是“面向未来的反事实思维”，就是要大胆乐观地想象未来呢？</p>
+<p>绝非如此。</p>
+<p>“面向未来的反事实思维”有时候也需要悲观和审慎。</p>
+<p>例如，有人告诉你一个特别好的投资机会，让你参股开个奶茶店，你想着自己每次买奶茶都要排长队，心想这次可发财了。</p>
+<p>这是一种非常常见的“先入为主”的思维，我们很容易把自己特别想要的东西，假设为一定会发生的事情。这个时候，反事实思维就至关重要。</p>
+<p>你要问自己：要是没那么好，该怎么办呢？</p>
+<p>当年美国海豹突击队猎杀本·拉登。对各种可能性都做了预演，把拉登藏身的建筑里里外外摸得透透的。即使如此，人算不如天算，突击队就没算到院子里面的气流，结果一架黑鹰直升机在降落时坠毁了。</p>
+<p>好在他们早就进行了反事实思考，突击队还有另外一架直升机，在完成任务后，全体人员还是能够安全撤退。</p>
+<p>有时候人们容易对未来过于自信，比如我们喜欢说：这件事儿板上钉钉。煮熟的鸭子难道不会飞吗？</p>
+<p>我的经验和观察是：<strong>煮熟的鸭子，经常会飞掉。问题不在于飞不飞，而在于，假如煮熟的鸭子飞了，你该怎么办？</strong></p>
+<p>对于未来的反事实思维，绝非分为“乐观”或“悲观”那么简单，二者是交织在一起的。例如美团创业早期，CEO 王兴扮演着乐观者的角色，他早早看到了移动互联网的趋势；而前 COO 干嘉伟则扮演着审慎执行者的角色。</p>
+<p>王兴是因为相信所以看见，干嘉伟是因为敢干所以实现。</p>
+<h2 id="六、反事实思维与生命的本质"><a href="#六、反事实思维与生命的本质" class="headerlink" title="六、反事实思维与生命的本质"></a>六、反事实思维与生命的本质</h2><p>在做事儿、创业之外，反事实思维，还能帮助我们去思考生命的本质。</p>
+<p>例如，我们有时候会心情不好，怀疑人生的意义。</p>
+<p>这时候，你可以做一个反事实的假设：</p>
+<p>假设明天是世界末日，今天是你最后一次触摸那些你最珍爱的物品，比如耳机、相机、钓鱼杆、盆栽等等。</p>
+<p>这样的反事实假设，会明确人生的价值排序。假如这是我们最后一次拥抱家人，最后一次抚摸自己的宠物，最后一次和长辈聊天……</p>
+<p>这种对生存的反事实思考，让我突然领悟小说家保罗·鲍尔斯在《遮蔽的天空》里写过的一段话：</p>
+<blockquote>
+<p>因为我们不知道死亡何时降临，我们才会以为生命是一口永不干涸的井。然而每件事情都只会发生一个特定的次数，一个很少的次数，真的。</p>
+</blockquote>
+<p>于是，也许我们能发现：生命的意义完全由我们自己来赋予。生命的价值不在于成败得失，而在于此时此刻你的所感所知。</p>
+<p>“哈佛幸福课”主要设计者肖恩·埃科尔在《发现你的积极优势》里写到：</p>
+<blockquote>
+<p>当一件事情发生后，大脑会创造出反事实来帮助我们评估和理解事件的另一种场景。选择更好的反事实，除了可以使我们感觉更好外，还会让我们从伴随积极心态而来的动力和表现中获益良多。</p>
+</blockquote>
+<p>没错，反事实的数量，反而比事实的数量大得多。而且，我们还有主动选择“反事实”的权利。</p>
+<p>既然如此，为什么我们不去进行“对自己更加有利”的反事实思考呢？</p>
+<p>当肖恩·埃科尔认为，一个人在危机或逆境后，有三种选择：1、原地打转；2、变得消极。第3个选择是，在经历失败或挫折后更强大，更能干。</p>
+<p>他说：</p>
+<blockquote>
+<p>改变是可能的，而且当我们做出这样的选择时，不仅会给自己带来最大的竞争优势，也会让别人的生活更美好。</p>
+</blockquote>
+<p>最后，稍微总结一下，对于反事实思维，我想交给你一个有用的思考框架：</p>
+<h3 id="对于过去"><a href="#对于过去" class="headerlink" title="对于过去"></a>对于过去</h3><ul>
+<li><strong>第一步：</strong> 采用下行的反事实思维，感激命运，坦然接受现实；</li>
+<li><strong>第二步：</strong> 采用上行的反事实思维，去思考“假如……就好了”，通过这种假设，不断刷新自我。</li>
+</ul>
+<h3 id="关于未来"><a href="#关于未来" class="headerlink" title="关于未来"></a>关于未来</h3><ul>
+<li><strong>第一步：</strong> 避免先入为主，尤其是别太放大你自己想要的东西。美好的东西总是有代价，做梦的时候要想一下，你要付出什么，失去什么。</li>
+<li><strong>第二步：</strong> 对未来，也要相信一些看不见的美好事情，就像《爱丽丝漫游仙境》里说的，在早餐前相信六件不可能的事儿。</li>
+</ul>
+<p>以上就是这一讲的全部内容。</p>
+<p>我是老喻，我们下一讲再见。</p>
+<p>附：马晓春九段“瞒天过海”对局</p>
+<h2 id="PDF-内用户留言"><a href="#PDF-内用户留言" class="headerlink" title="PDF 内用户留言"></a>PDF 内用户留言</h2><h3 id="方兴（阳光芳草）（2小时前·澳大利亚）"><a href="#方兴（阳光芳草）（2小时前·澳大利亚）" class="headerlink" title="方兴（阳光芳草）（2小时前·澳大利亚）"></a>方兴（阳光芳草）（2小时前·澳大利亚）</h3><ol>
+<li><p>非常喜欢这种智慧的思维，我特别喜欢一句就是最好的预测你自己人生的方式，就是创造你的未来，而这种反事实推测的思维可以让我们更好得复盘过去，同时设计和打造我们的未来。</p>
+</li>
+<li><p>这种思维方式让我想到了六帽子思维方式，就是我们看待一件事情的时候，如果我们的角度更多元，我们的智慧就更多。很多时候一个人的局限就在于只用一个视角去看待事件，这样我们的推测假设很可能是错的。而如果我们能用反事实推测，让自己有正反两种思维来看待一件事情，它就可以让我们的假设更多元，让我们的角度更丰富，让我们同时以积极和悲观的视角来看待一件事情。这让我想到了王菲是如何教育自己的女儿窦靖童的，窦靖童就说她的妈妈每次当自己特别开心的时候，王菲就会跟她说你要小心，快乐不可能会永远存在，这当然是王菲笃信佛教的一种思维方式，但是这种思维方式一定会让年轻的窦靖童对于人生有着普通的同龄人难以达到的一种豁达和智慧，就更加能够看得开看得远。于是窦靖童身上也有王菲那种超然啥也不在乎的仙气。</p>
+</li>
+<li><p>这样的一种反事实推理，我们面对过去一件让我们不开心的事情，我们可以去想这件事积极的一面，而我们去复盘过去的时候也可以去找到让我们更加成功的地方以及方法。面对未来，我们也可以去设计和计划。</p>
+</li>
+<li><p>比如，当时刘晓庆在监狱里的时候，她就有一种反事实推理，她发现自己没有被判死刑，她就觉得只要能活下去，就没有什么过不去的坎儿，之后就天天洗冷水澡锻炼身体，她出狱的时候脸色红润精状态特别好。比如我们可以居安思危，当年奈飞在 DVD 卖得特别好的时候就预判到有一天线上业务的重要性，因此奈飞做了很多企业都难以做的事情，就是把利润当时特别好的 DVD 业务砍掉，来聚焦发展自己的线上业务，这是需要反事实推理能力的。</p>
+</li>
+<li><p>复盘一下，我自己最近买了一辆车，车出现了故障，红路灯前车子偶然自动熄火，一想到这件事情，我真的觉得还是挺开心的，因为自动熄火只发生在红绿灯面前，没有在我驾驶的时候发生过。第二，虽然车子暂时很安全，只在红路灯前偶然发生，那我如何提高自己的安全性呢，答案，换一辆完全安全的车，而且马上进行！虽然因为这样我会损失一些钱，因为车一上路就贬值，但是我的安全性得到了保障，那么如何能够让自己的车辆投资最大程度得到保障呢？在买新车的时候，和几个车行车轮短信到过价还价，选择保值车型，确保我拿到好价格。</p>
+</li>
+</ol>
+<h3 id="何荣（2小时前·北京）"><a href="#何荣（2小时前·北京）" class="headerlink" title="何荣（2小时前·北京）"></a>何荣（2小时前·北京）</h3><ol>
+<li>在军事上，有一个很重要的原则叫留有机动，哪怕是再有把握的战斗，也会留出机动的部署。本质上就是因为现实情况太过于变化多端。不止是说如果出现这种情况则那么。。。。，不是说我甚至都不知道会出现什么情况，我只是尽自己的最大努力用最合理划算的准备迎接这种情况。</li>
+<li>反事实思维如果没有行动，只是想想的话。可能会消极坍缩为愿望思维。</li>
+<li>用它来创造条件。其实也可以理解为创造条件的一种方式。用你想象的结果倒推现在所需要的资源和条件，然后逐环节攻关它。</li>
+</ol>
+<h3 id="李豪（1小时前·河南）"><a href="#李豪（1小时前·河南）" class="headerlink" title="李豪（1小时前·河南）"></a>李豪（1小时前·河南）</h3><p>反事实思维，是一次思想的“远行”、甚至是“越狱”，它让我们跳出当前的现实，去假设另一种可能，找到改进过去与重塑未来的方法。通过这堂课，我意识到，反事实思维不仅是一种“假如”的游戏，更是一种面对挫折与不确定时，极具力量的思维工具。</p>
+<p>反事实思维在面对过去时，有两种不同的路径：下行反事实思维与上行反事实思维。</p>
+<p>下行反事实思维：是一种“幸好……”的假设，帮助我们感激现状，平复情绪，在失败面前保持情绪稳定，避免深陷消极。</p>
+<p>上行反事实思维：则是一种“要是能……可以更好”的假设，促使我们去反思与进步。这样的假设，让我们看到更优的选择，进而脱离自满与过度骄傲，不断刷新自己。</p>
+<p>这种双向思维就像两股力量：一股让我们学会接受，一股推动我们不断向上。两者的结合，让我们在复盘过去时，既能平衡情绪，又能汲取经验，迎接更好的未来。</p>
+<p>在思考未来时，反事实思维的价值更为明显，因为它提醒我们——未来的美好不是理所当然的，它需要理性与想象力的平衡。</p>
+<p>很多时候，我们容易陷入“先入为主”的思维误区，把自己渴望的事情假设为必然发生。反事实思维提醒我们：假如煮熟的鸭子飞了，该怎么办？面对未来，不仅要有乐观的愿景，更要具备周全的准备。同时，反事实思维也鼓励我们保持一份信念——相信一些“不可能的事”。这种乐观的想象力，给予了我们面对不确定性的勇气，帮助我们在理性的基础上，去拥抱未来的可能。</p>
+<p>反事实思维，让我们在现实之外，找到更优的自己、更好的未来。它教会我们接受过去、洞察未来，并从假设中迈出行动的步伐。最终，它不是让我们逃离现实，而是带着新的视角与思考，更加坚定地走向属于自己的答案。</p>
+<h3 id="水门（2小时前·江苏）"><a href="#水门（2小时前·江苏）" class="headerlink" title="水门（2小时前·江苏）"></a>水门（2小时前·江苏）</h3><p>乐观的畅想，悲观的执行。</p>
+<p>看完这一篇，我发现我一直都有反事实思维，每当遇到一个什么事情的时候，我总是会不断思考，如果这样或者不这样，我还有没有更好的选择。</p>
+<p>我的反思基本上都是上行反思，不断在否定自己，并没有做反坦然面对。</p>
+<p>老师的这节课让我最大的感触就是，很多问题我们经常都会遇到，到我们从来不去系统思考这个问题背后的原因。但经过老师的系统分析，我们就能够知道原来一个问题背后隐藏着这么多系统，有了这个系统的解题思路，就知道面对问题如何应对的。</p>
+<p>面对问题，逐步拆解，不断分析，一步一步找到解决的方案，要敢于想，也要敢于做。既要着眼于未来，也要有行动力。</p>
+<p>以上留言由作者筛选显示</p>
+<p>【知识福利社】你的私人书院，微信：312005650 全网热门课程众筹共享！</p>
+<hr>
+<p><a href="/book/decision-algorithm/028/">← 028｜看清本质：怎样用奥卡姆剃刀砍掉复杂？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/030/">030｜关键时刻：怎样把握最佳出手时机？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

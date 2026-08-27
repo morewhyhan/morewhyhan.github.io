@@ -1,0 +1,384 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>047｜六十分哲学：不是每一场人生的战斗都要你全力以赴 | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》047：六十分哲学：不是每一场人生的战斗都要你全力以赴">
+<meta property="og:type" content="website">
+<meta property="og:title" content="047｜六十分哲学：不是每一场人生的战斗都要你全力以赴">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/047/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》047：六十分哲学：不是每一场人生的战斗都要你全力以赴">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:45.430Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/047/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '047｜六十分哲学：不是每一场人生的战斗都要你全力以赴',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">047｜六十分哲学：不是每一场人生的战斗都要你全力以赴</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">047｜六十分哲学：不是每一场人生的战斗都要你全力以赴</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>来源：老喻·决策算法100讲</p>
+<p>音频时长：14分17秒</p>
+</blockquote>
+<h2 id="老喻亲述"><a href="#老喻亲述" class="headerlink" title="老喻亲述"></a>老喻亲述</h2><p>你好。</p>
+<p>我是老喻，欢迎来到《决策算法》课。</p>
+<p>在上一讲中，我们讨论了费德勒的54%法则：在必须参与的网球比赛中，他只得了54%的分数，却赢下了80%的比赛。</p>
+<p>然而，人生并不是打比赛。作为普通人，我们在现实生活中其实有一个特权，那就是：你不必参与每一场比赛。</p>
+<p>也就是说，遇到对你不利的比赛，你可以放弃，并且没有任何损失。</p>
+<p>即使是那些你非参加不可的比赛，假如不是那么重要，你也不必全力以赴，能将就过去就行了。</p>
+<p>这可能是读书时代和现实世界最大的差别之一了。学生时代不能不考数学；成年后遇到讨厌的办公室同事，可以不理，绕开走。</p>
+<p>看上去，想要过好这一生，我们要打两种球：</p>
+<ul>
+<li>一种是必须参与的、非打不可、还要全力打好的球；</li>
+<li>一种是可以选择的、未必非要打的球。</li>
+</ul>
+<p>但事实上，现实生活中还有第三类“球”，似乎更让我们为难：有些球非打不可，但是并不重要，即使你拼命打好，也不会有更多回报。</p>
+<p>常识告诉我们，对于这类无法避开的“球”，投入太多精力和资源，不值得。换而言之，不是每一场人生的战斗都要你全力以赴。</p>
+<p>但很多人却会在这类战斗中长时间内耗。那么，在绕不过的情形下，面对那些我们不必全力以赴的战斗，该如何应对呢？</p>
+<h2 id="一、60分哲学"><a href="#一、60分哲学" class="headerlink" title="一、60分哲学"></a>一、60分哲学</h2><p>拼多多创始人黄峥曾经说：自己求学时目标导向太明确，在追求第一、努力做个好学生上浪费了过多时间，损失了逆反、捣乱的青春时光，很多年后才慢慢领悟到“60分万岁是个好哲学”。</p>
+<p>“60分哲学”，源于对有限资源（如时间、精力、资金）理性配置的深刻理解。我们在《决策算法》一开始定义过：</p>
+<blockquote>
+<p>决策的真正使命是，面向不确定性的未来，在此刻分配人生的资源，以实现人生持续向好的概率最大化。</p>
+</blockquote>
+<p>人生短暂，资源有限，每个人的优势劣势各不相同，所以，很多事情并非要求我们做到完美或极致。</p>
+<p>“60分哲学”的核心在于“及格即可，避免过度消耗”。非做不可但意义重大时，达到60%完成度，留时间精力给真正关键、高价值的事；这样既满足最低要求，也避免为微小收益而投入过多资源。</p>
+<p>“60分哲学”背后的逻辑源于有限理性与机会成本：过分追求满分，会失去更多创造与探索空间。非做不可但非核心的事情，只要保证基本目标即可；剩余能量分配到更优处，整体反而得到更大回报。</p>
+<p>过度地追求完美实际上是一种苛责。凡事不用追求太过圆满才能持久，精力也可以分散安排到其他值得投资的地方。</p>
+<p>拼多多创业初期，黄峥没有追求完美电商平台，在物流、客服等传统电商优势领域保持“60分及格”水平，把主要资源集中在社交裂变、下沉市场这些突破口，几年内突围，在电商巨头中占有一席之地。</p>
+<p>“60分哲学”的精髓并非每个领域都追求完美，而是懂得区分主次，把宝贵资源用在最关键的地方。</p>
+<blockquote>
+<p>在非核心领域，及格就好；在决定性领域，才需要全力以赴。</p>
+</blockquote>
+<p>这种取舍智慧，最终会带来远超预期的整体成功。</p>
+<h2 id="二、双阈值决策系统"><a href="#二、双阈值决策系统" class="headerlink" title="二、双阈值决策系统"></a>二、双阈值决策系统</h2><p>接下来，我们来探讨如何在工作和生活中运用“60分哲学”。首先要分析接到的球是哪种球：是非打不可并且要全力以赴打好的？还是不用打的？还是需要打但不用全力以赴的？只有最后一种球适用于“60分哲学”。</p>
+<p>接下来还要判断，到底分配多少资源、投入多少精力，算是60分。</p>
+<p>真正的高手，会花很多时间在“打好球”之前。</p>
+<h3 id="决策阈值"><a href="#决策阈值" class="headerlink" title="决策阈值"></a>决策阈值</h3><blockquote>
+<p>决策阈值，是决策者在不确定环境中预先设定的基准线，用于衡量可选方案是否有足够高的期望收益、或可接受的风险水平。一旦外部信息使得实际指标越过这一基准，决策者便可选择进入、更大规模投入，或执行特定策略。</p>
+</blockquote>
+<p>（参见：Raiffa &amp; Schlaifer, <em>Applied Statistical Decision Theory</em>, 1961）</p>
+<p>决策阈值可以帮助我们在有限资源和信息不完整的情况下，判断一件事值得还是不值得。它至少包含三个要素：</p>
+<ol>
+<li>预期收益；</li>
+<li>机会成本；</li>
+<li>资源约束。</li>
+</ol>
+<p>例如，必要回报率就是一种阈值。</p>
+<h3 id="第一重阈值：参与还是放弃？"><a href="#第一重阈值：参与还是放弃？" class="headerlink" title="第一重阈值：参与还是放弃？"></a>第一重阈值：参与还是放弃？</h3><p>这是“进或不进”的决策门槛。投资者会设置最低回报率，只有预期回报高于阈值才投资。雷军曾经把自己的机会成本量化为每小时5000元，面对低价值事情时就要重新考虑。</p>
+<p>一场饭局可能有人脉回报，一个项目可能有潜在收益，一场社交活动也可能值得参加；但如果基本期待无法满足，就应该果断放弃。</p>
+<p>很多人“有仗就打，有活动就赶场，有圈子就加入”，没有经过筛选的投入，看似勤奋、合群、积极，实际上会挤占真正有价值的事情。第一重阈值回答的是“要不要打这场仗”：低于标准就绕开，只有合格的事情才进入下一步。</p>
+<h3 id="第二重阈值：投入多少精力？"><a href="#第二重阈值：投入多少精力？" class="headerlink" title="第二重阈值：投入多少精力？"></a>第二重阈值：投入多少精力？</h3><p>对于绕不过、已经确认要做的事情，还要判断它的重要性。可以为精力投入设定阈值：基本通过即可，不必事事拿满分。</p>
+<ul>
+<li>核心重要的事，全力以赴；</li>
+<li>普通必要的事，60分够用；</li>
+<li>次要事务，按实际情况投入精力和资源。</li>
+</ul>
+<p>例如，例行公事的会议只需做基本准备；非核心副项目达到及格；必要但不重要的社交保持基本礼貌。不是所有必须参加的事情都值得投入全部能量。</p>
+<p>这就是“要不要做”与“做到几分”的双阈值决策系统：它既不会让我们错过重要机会，又能避免资源过度消耗，让能量集中在最高价值的地方。</p>
+<p>通过这套机制，我们就能在有限的资源和精力中做出较优分配，既不会在琐事上浪费弹药，也能在要害处一击制胜。</p>
+<p>不是每一场人生的战斗都要你全力以赴。人生的智慧不仅在于知道要打哪些仗，更在于懂得每场仗该投入多少。</p>
+<h2 id="三、教育：不必处处完美"><a href="#三、教育：不必处处完美" class="headerlink" title="三、教育：不必处处完美"></a>三、教育：不必处处完美</h2><p>让我们再回到教育的角度，说一下不必处处完美、门门满分。</p>
+<p>很多成绩优秀的中国学生，成绩接近满分，参加体育、竞赛、社会活动，弹钢琴、去非洲做志愿者，履历看起来“完美”，却仍然可能被哈佛等名校拒绝。不是名校“有眼无珠”，而是这些“数理化好、钢琴弹得好、球也打得好”的申请者容易变成同一种模板，无法显示真正的兴趣、热情和独特潜能。</p>
+<p>我女儿申请大学时，最后半年决定学电影，提前申请纽约大学电影电视专业。艺术专业看作品集，别的申请者都有专业包装的作品，她只有一部自己拍的短片，还不愿意让专业人士润色。我以为作品太业余，不可能有机会。一位电视台朋友安慰我说：</p>
+<blockquote>
+<p>对我们这些专业人士来说，好不重要，好东西太多了。独特才重要，也许你女儿作品的稚嫩，更容易在激烈竞争中脱颖而出。</p>
+</blockquote>
+<p>后来，我女儿非常幸运地被纽约大学的电影电视专业提前录取了。</p>
+<p>并非所有科目和才艺都要高分或拔尖。让孩子把更多时间投入到最具热情或天赋之处，才可能产出更深远的成就与个性化成长。</p>
+<p>教育最终意义不在于“面面俱到、门门满分”，而是帮助孩子寻找并发挥独特潜能。因材施教，是为了把更多精力留给真正值得深挖的方向，让孩子在关键处绽放更持久的热爱与创造力。我想，对于成年人而言，更是如此。</p>
+<h2 id="四、三个建议"><a href="#四、三个建议" class="headerlink" title="四、三个建议"></a>四、三个建议</h2><ol>
+<li><strong>设置“放弃阈值”</strong>：对于回报不高或毫无必要的“战斗”，果断绕开，让自己从琐碎中解脱，腾出空间给更有价值的事。</li>
+<li><strong>运用“60分哲学”</strong>：对于必须参与但非核心的重要事项，用最小投入达到及格线，不必把全部精力耗在微小收益上。</li>
+<li><strong>聚焦“核心突破”</strong>：认清最想发力的领域，将更多资源投向能产生长远、高价值回报的关键点，不在次要之处做无谓的完美主义冲刺。</li>
+</ol>
+<p>以上就是这一讲的全部内容。如果你觉得有收获，欢迎转发给身边的朋友。我是老喻，我们下一讲再见。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>不是每一场人生的战斗都要你全力以赴。</li>
+<li>在非核心领域，及格就好；在决定性领域，才需要全力以赴。</li>
+<li>人生的智慧不仅在于知道要打哪些仗，更在于懂得每场仗该投入多少。</li>
+</ol>
+<h2 id="PDF-内用户留言"><a href="#PDF-内用户留言" class="headerlink" title="PDF 内用户留言"></a>PDF 内用户留言</h2><h3 id="左星星"><a href="#左星星" class="headerlink" title="左星星"></a>左星星</h3><p>社交活动中的“60分哲学”可以帮助管理时间和精力：并非每一次聚会都要参加，也并非每一次互动都要倾注全部心力。必须参加但非核心的活动，采取“参与即可”的策略；真正重要的关系投入深度互动，浅层关系偶尔点赞或问候即可。学习新技能时先掌握基本应用，不必一开始追求专业水准；读实用类书籍抓住核心观点和关键章节即可。“60分哲学”不是敷衍了事，而是合理分配精力，把时间用在真正重要的地方。</p>
+<h3 id="魏然"><a href="#魏然" class="headerlink" title="魏然"></a>魏然</h3><p>资源有限是常态，资源不足时取舍非常重要。集中力量办大事，先分清哪些是大事；资源倾斜不等于 all in，而是确保其他地方安全后重点攻坚。比如家长看到孩子作业字迹歪，就只批评字体工整，反而忽略了作业本身。将军赶路不捉小兔！</p>
+<h3 id="蜗牛"><a href="#蜗牛" class="headerlink" title="蜗牛"></a>蜗牛</h3><p>人生有三种球：必须全力打好的、可以选择不打的、非打不可但不重要的。最后一种适合用“60分哲学”应对：及格即可，避免过度消耗。第一重阈值判断是否参与，第二重阈值决定投入多少精力；教育上也不必门门满分，应让孩子把时间投入到最具热情或天赋之处。</p>
+<h3 id="黄泊淳-Only"><a href="#黄泊淳-Only" class="headerlink" title="黄泊淳 Only"></a>黄泊淳 Only</h3><p>六十分哲学就是做减法，做减法后留下的精力，要拿来做出自己的独特性。没有短板等于没有特色，所有精力都花在没有短板上，最后只是一个优秀的普通人。应该避重就轻，找到最重要的事情做好，而不是每件事都花所有精力，反而顾此失彼。</p>
+<h3 id="美君"><a href="#美君" class="headerlink" title="美君"></a>美君</h3><p>精力管理就是生命能量管理。工作中可以按重要性和紧急程度排序，生活中却容易陷入无效社交、虚假勤奋和小事内耗。她准备做三点调整：设置放弃阈值；内容创作是优势，设计审美做到够用，不再吹毛求疵；聚焦核心突破，更多学习和使用 AI 工具提升效率，因为这个时代看结果，擅用工具可以事半功倍。</p>
+<h3 id="一百个我"><a href="#一百个我" class="headerlink" title="一百个我"></a>一百个我</h3><p>挣钱时先考虑该不该挣这个钱，其次考虑能不能挣，最后在可行项目上尽可能赚取更多回报。结合前几讲，超预期回报不只取决于胜率，也取决于面对高胜率、高赔率时敢下多大的注，以及下错注后能否快速调整或对冲。</p>
+<h3 id="方兴（阳光芳草）"><a href="#方兴（阳光芳草）" class="headerlink" title="方兴（阳光芳草）"></a>方兴（阳光芳草）</h3><ol>
+<li>最大收获是向雷军学习，用量化公式判断时间是否值得。</li>
+<li>人生的重要智慧是搞清楚什么对自己重要，坚持不把时间和精力投放在不重要的事情上。</li>
+<li>追求完美和匠人精神应放在人生主战场，其他领域“60分万岁”。</li>
+<li>即使出差，也坚持每日打卡；城市观光不如好习惯带来技能提升。</li>
+</ol>
+<h3 id="Keiko-璟"><a href="#Keiko-璟" class="headerlink" title="Keiko.璟"></a>Keiko.璟</h3><p>工作和生活80%的质量，可能由20%的重要事情决定。把最重要的20%全力以赴，剩下的80%做到及格，才能腾出更多时间和精力去做更值得的事。做到60分可能只需花10分力气，而做到100分可能需要80分甚至更多。</p>
+<h3 id="晓蒙"><a href="#晓蒙" class="headerlink" title="晓蒙"></a>晓蒙</h3><p>这节课让我看到自己总在追求最好、陷入比较和内耗。已经够好了，就这样够了；育人先育己，应该问自己真正的兴趣在哪里，也不要认为到了中年就不能培养新的兴趣。持续学习依然有用。</p>
+<h3 id="Scott"><a href="#Scott" class="headerlink" title="Scott"></a>Scott</h3><p>人类面临“东西不够、生命有限、相互依赖、需要协调”的约束。有限的资源、时间和精力意味着必须取舍，要用机会成本和预期价值判断：有些事做到及格，有些会议可以跳过，有些事情不需要强求。</p>
+<h3 id="Jerryluo"><a href="#Jerryluo" class="headerlink" title="Jerryluo"></a>Jerryluo</h3><p>想到第四十五课提到的“输掉战役，赢得战争”，这节课的内容是不是也可以说明这个观点？</p>
+<h3 id="阿繁达1043"><a href="#阿繁达1043" class="headerlink" title="阿繁达1043"></a>阿繁达1043</h3><p>只做那些只有自己必须做、而且能够产生改变的事情，找到自己的长处。不要被“所有方面都要好”的标准绑架，应该找到自己的 GPU、生成式 AI 和英伟达。</p>
+<h3 id="水门"><a href="#水门" class="headerlink" title="水门"></a>水门</h3><p>做事情之前先设定阈值，分清什么值得做、什么不值得做。成长需要日积月累，但更需要正确的日积月累。</p>
+<h3 id="victory"><a href="#victory" class="headerlink" title="victory"></a>victory</h3><p>人生最难的不是做什么，而是不做什么。应抓住核心矛盾，优先集中资源解决核心问题。对所有事情都全力以赴，只会失去关键胜利。</p>
+<h3 id="其他留言"><a href="#其他留言" class="headerlink" title="其他留言"></a>其他留言</h3><ul>
+<li>墨玉的麒麟：量力而行，自我保重。</li>
+<li>董耀：现在企业里“无效内卷”和“床上雕花”的管理者太多，都应该看看。</li>
+<li>学习之路：学生时代还能靠熬夜努力完成，工作后会发现很多工作根本做不完，事事认真努力会把自己累死。</li>
+<li>albert 许方庆：追求系统的最优，而不是局部的最优。</li>
+</ul>
+<hr>
+<p><a href="/book/decision-algorithm/046/">← 046｜费德勒的秘密：为什么54%得分率能成为世界第一？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/048/">048｜满意就好：如何成为一个不纠结的人？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

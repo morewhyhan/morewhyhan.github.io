@@ -1,0 +1,437 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>022｜应对逆境：为什么帆船可以逆风前行？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》022：应对逆境：为什么帆船可以逆风前行？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="022｜应对逆境：为什么帆船可以逆风前行？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/022/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》022：应对逆境：为什么帆船可以逆风前行？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:45.018Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/022/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '022｜应对逆境：为什么帆船可以逆风前行？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">022｜应对逆境：为什么帆船可以逆风前行？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">022｜应对逆境：为什么帆船可以逆风前行？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>来源：老喻·决策算法100讲</p>
+<p>首次发布：2024年12月5日</p>
+<p>音频时长：12分42秒</p>
+</blockquote>
+<h2 id="老喻亲述"><a href="#老喻亲述" class="headerlink" title="老喻亲述"></a>老喻亲述</h2><p>你好。</p>
+<p>我是老喻，欢迎回到《决策算法》课。</p>
+<p>这一讲，我们来看一个人人都会遇到的决策难题：逆境。</p>
+<p>更确切来说是，逆境之下如何突围。</p>
+<p>世界上最动人的故事，往往和“逆境反转”有关。</p>
+<p>然而，我们都知道，在逆境中活下来就很不容易，更别说“逆袭”了。</p>
+<p>但我还真听说了一个“逆袭”的故事，而且居然发生在处于“逆风阶段”的房地产行业：</p>
+<p>故事的主角是一个不起眼的地产团队，2023年据说赚了几个亿，而且所在区域的房子都很难卖。</p>
+<p>他们是怎么做到的？</p>
+<p>其中的秘密，就藏在我们这一讲的标题里：为什么帆船可以逆风前行？</p>
+<h2 id="一、帆船为什么可以逆风前行？"><a href="#一、帆船为什么可以逆风前行？" class="headerlink" title="一、帆船为什么可以逆风前行？"></a>一、帆船为什么可以逆风前行？</h2><p>人的逆袭，很多只是传说；而帆船的逆风前行，却是有物理学原理支持的。</p>
+<p>自古以来，人们经常用“一帆风顺”来表达祝福。的确，帆船顺着风行驶，这容易理解。逆着风，哪儿来的动力呢？</p>
+<p>答案是：靠船帆两侧的压力差。这就是著名的伯努利原理。</p>
+<p>伯努利原理，是指流体速度加快时，物体与流体接触的界面上的压力会减小，反之压力会增加。</p>
+<p>这一效应，是由瑞士数学家和物理学家丹尼尔·伯努利发现的。</p>
+<p>你现在就可以马上亲自实验一下这个效应：</p>
+<p>两手各拿一张打印纸，面对面竖直放着，中间间隔大约十厘米，然后对着两张纸中间吹气，你猜猜结果会怎样？</p>
+<p>直觉会认为，应该纸会被往外吹吧？</p>
+<p>事实恰恰相反，你会发现纸不是向外飘，而是往里压。</p>
+<p>这是因为，根据伯努利原理，你往两张纸中间吹，导致中间空气流速加快，所以压强变小。相对而言纸外面的空气没被吹动，压强较大，于是纸张外面的压力大于中间的压力，所以两张纸就被压往中间了。</p>
+<p>伯努利原理最经典的应用，就是飞机。飞机的机翼，上表面是凸面的弧形，空气流速快，压强小；下表面平一些，空气流速慢，压强大。上下的压力差，为飞机提供了升力。</p>
+<p>帆船能够逆风前行，也是一样的道理。</p>
+<p>船帆被风吹动时，会变成飞机机翼一样的弧形，只不过是竖过来的。船帆的凸面我们称为迎风面，凹面被称为背风面。根据伯努利原理，背风面的气流速度快，压强小；而迎风面的气流速度慢，压强大。于是二者之间形成了压力差，帆船就能够逆风前行了。有趣的是，逆风前行的帆船，船速甚至可以比风速还快。</p>
+<p>不过严谨地说，这里还有一些别的细节。例如，帆船逆风的时候，并不能迎着风向走直线，而是要采用之字形路线，这个要讲清楚涉及到繁琐的受力分析，我们这里就不展开。在文稿区，放了一个帆船力学分析的视频的链接，感兴趣你可以单独去看。</p>
+<blockquote>
+<p>帆船力学分析视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1et411d7vp/?spm_id_from=333.337.search-card.all.click">https://www.bilibili.com/video/BV1et411d7vp/?spm_id_from=333.337.search-card.all.click</a></p>
+</blockquote>
+<h2 id="二、从物理学跳出来"><a href="#二、从物理学跳出来" class="headerlink" title="二、从物理学跳出来"></a>二、从物理学跳出来</h2><p>我们这里不是要讲物理学，让我们跳出来。</p>
+<p>在刚才的分析中，你一定注意到关键点了：</p>
+<p><strong>即使是在逆风的情况下，只要你的帆船能够制造出局部的压力差，也能够前行。</strong></p>
+<p>我们回到开头那个赚大钱的故事吧：</p>
+<p>一个不起眼的地产团队，是如何做到在大势一般的时候，也能够成功逆袭呢？</p>
+<p>他们的秘密，是找到那些市场调整比较大的区域的地产项目，整体购买开发商已经建好的物业，并且要求非常低的折扣价。开发商为了现金流，不得不忍痛割爱。</p>
+<p>然后，他们利用自己地推的优势，走街串巷，找到一些以前被忽视的买家，用优惠的价格零售卖出。仅仅一年，据说赚了几个“小目标”。</p>
+<p>你看，他们的秘密，就是在一个逆风的市场，制造出了局部的压力差，进而产生了惊人的利润。</p>
+<p>物理学的压力差，和商业上的低买高卖，也许只是一种类比。但背后的相同之处，则是：</p>
+<p><strong>绝对值只表征环境，而相对值中存在机会。</strong></p>
+<p>让我们再来看一个利用“压力差”来赚钱的例子。</p>
+<p>上世纪八十年代，天体物理学家努兹奥·塔塔里亚在摩根士丹利组建了以物理学家、数学家、计算机教授等为核心的秘密团队，他们发现了一个隐秘的金融漏洞：</p>
+<p>无论是上升、下降还是横盘的行情中，总能找到两只长期走势相似的股票，它们之间的价格差，基本保持不变，偶尔出现偏离，要不了多久也会纠正回来。</p>
+<p>所以，他们就设计了一种策略，只要当两只股票出现较大价格差，就押注两者之间的“价差”很快会变小。他们买入价格较低的，做空价格较高的，等两只股票价格差变小，再获利退出。</p>
+<p>举个例子，大陆航空和美国航空两只股票的历史价格轨迹非常接近，但价差有时大，有时小，所以策略就是在价差较大的时候买入价格低的股票，做空价格高的另外一个。</p>
+<p>这种方法，被称为统计套利，当年可谓大赚其钱，备受“聪明钱”的追捧。因为其原理是利用价格差，所以不管大盘涨跌，总有机会赚钱。仅此一项，当时摩根士丹利一年就能赚5000万美金。</p>
+<h2 id="三、在生活中制造压力差"><a href="#三、在生活中制造压力差" class="headerlink" title="三、在生活中制造压力差"></a>三、在生活中制造压力差</h2><p>其实，“压力差”的原理，在我们生活中，可谓无处不在。</p>
+<p>比方说，我们平时最开心的时候，是压力最小的时候吗？并非如此，想想看，最开心的时候，往往是高考结束，或是完成一个艰难的任务之后。</p>
+<p>让我们开心的，并非是压力很小，而是从压力很大变到压力不大之间的“压力差”。</p>
+<p>事实上，我们的大脑，很多时候计算的也不是绝对值，而是比较值。例如，有一盆仅有10摄氏度的水，手放进去会感觉冷。但如果你一直抓着一个冰块，然后再把手放进同样那个水盆里，却会感觉很暖和。</p>
+<p>所以，有个叫门肯的人调侃道：“只要比你的连襟（也就是你老婆妹妹的老公）一年多赚1000美元，你就算有钱人了。”</p>
+<p>说到这儿，你会不会觉得，“朝三暮四”的故事其实挺有道理的。</p>
+<p>人们讲起这个成语，就会嘲笑猴子的笨，居然分不清“朝三暮四”和“朝四暮三”的区别。人其实也是一种比较的动物，一个人工资从五千涨到一万，会比连续几年工资都是一万二要更开心。</p>
+<p>我们获得幸福感，很多时候都不是靠绝对值，而是就靠越来越好的那种“压力差”。</p>
+<p>可是，或许有人会问，生活大多数时候平淡如水，周而复始，哪里去找到有利的压力差？</p>
+<p>其实，生活中的“压力差”无处不在，只是你可能没发现。</p>
+<p>说到这儿，我想和你分享另一种神秘的帆船：太阳帆飞船。</p>
+<p>太阳帆飞船，是利用太阳光的光压进行宇宙航行的一种航天器。其原理是：</p>
+<p>移动的光子打在任何反射面上，其动量会给物体施加一个很小的力。因为太空没有空气阻力，所以可以推动太阳帆飞船向前。</p>
+<p>这个力小到什么程度呢？在地球到太阳的距离上，光在一平方米帆面上产生的推力还不如一只蚂蚁重。</p>
+<p>太阳帆的神奇之处在于，尽管该推力很小，却源源不断，积少成多，从而令飞船的加速有一个惊人的复利效应。</p>
+<p>回到我们每个人，我​​们身上持续不断的这种小压力差在哪里？就在每一天一点点的持续改善中。</p>
+<p>就像海明威所言：<strong>优于别人，并不高贵，真正的高贵应该是优于过去的自己。</strong></p>
+<p>一个人，如果能够做到每天早上起来都比昨天好一点儿，就会变得非常优秀。</p>
+<p>心理学上有个概念叫“动机强化效应”，指的是人们在经历微小的成功时，会感受到一种积极的情绪和成就感，这种体验能够显著增强内在动机，使其更容易坚持行动。具体来说，每次完成小目标，例如达成学习计划、完成一次锻炼或解决一个问题，大脑会释放多巴胺，这种神经递质能够强化行为，并在心理层面让人相信“我可以做到”。这种正向反馈不仅让人对未来目标更有信心，还能建立起持续行动的动力循环。</p>
+<p>微小的压力差推动帆船逆风航行，微小的成功则推动我们迈向更好的自己。只要坚持每天一点点的积累，像太阳帆一样，我们终将迎来质的飞跃。</p>
+<p>在更大的人生尺度上，我们也可以利用压力差，来为自己创造好运。</p>
+<p>什么是好运？很多人对这个最平常的词是有误解的。</p>
+<p>斯坦福教授蒂娜·齐利格说：<strong>“运气很少是孤立而戏剧性的雷击，而是不断吹的风。”</strong></p>
+<p>所以，如果我们想要实现持续的好运，必须搭起帆，建起自己的帆船。</p>
+<p>怎么来建造这样的帆船？</p>
+<p>帆船逆风也能前行，这是因为它们利用了风的力量和特定的物理原理，制造出了压力差。这一过程主要涉及几个关键因素：帆的形状和角度，以及防止侧翻的龙骨。</p>
+<p>要建造人生的帆船，同样有三个关键要素：</p>
+<ol>
+<li><strong>在大环境中，隔离出一个小局部，持续捕捉微小的机会。</strong> 不要和大环境去斗争，更不要和所有人开战。在你选择的那个局部，压上你的全部努力，你才能获得相对竞争力，才有机会赢。</li>
+<li><strong>找到自己的核心竞争力</strong> - 这就是你的龙骨，然后以此为基本盘，稳稳向前走。守住自己的基本盘，才能真正向逆风借力，而不是被吹翻。</li>
+<li><strong>调整帆的角度，善用运气的随机性。</strong> 风向的变化不可控，但无论顺风还是逆风，都可以被利用，关键在于如何调整帆的角度，让风成为推动你前行的力量。顺境时，利用好运快速推进；逆境时，借助智慧和灵活性，找到新的突破路径。调整帆的过程，实际是将运气与能力结合的动态策略。正如智慧决定了我们能否从运气中获益，行动力则是将随机性转化为助推力的关键。</li>
+</ol>
+<p>最后小结一下。</p>
+<p>这一讲，我们从帆船的物理学原理中学到的是，即使身处逆风中，用对了方法，也可以前进。</p>
+<p>在每个人的一生中，完完全全顺风都是极偶然的情况；大多时候，我们大概处在多多少少的逆风中。所以，逆风航行是一种必备的人生能力。掌握了这种能力，你就更多地掌握了人生的主动权。</p>
+<p>我们的一生，说长也长，说短也短，与其抱怨为什么我总是运气不好，为什么我总是遭遇逆境，不如想办法在逆境中，寻找局部的机会。这样的机会总是存在，就看你是不是相信，是不是花了功夫去找。</p>
+<p><strong>以及，你是否拥有一艘自己的“帆船”，来捕获此生的好运。</strong></p>
+<p>我是老喻，我们下一讲再见。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>帆船逆风航行的动力，来自船帆两侧的压力差。</li>
+<li>绝对值只表征环境，而相对值中存在机会。</li>
+<li>利用压力差的方法：在大环境中，隔离出一个小局部，压上你的全部努力，获得相对竞争力。</li>
+</ol>
+<h2 id="精选留言"><a href="#精选留言" class="headerlink" title="精选留言"></a>精选留言</h2><h3 id="魏红亮"><a href="#魏红亮" class="headerlink" title="魏红亮"></a>魏红亮</h3><p>“逆风”和“顺风”是相对的，逆顺之间是可以互相转化，而这个转化在不同人的眼里是不一样的，能力具备的人在逆风中能找到方法转换成“顺风”，能力不足的人面对逆风只有顿足捶胸了！</p>
+<p>“危机”也是一种“逆风”，但总有人在“危”中找到“机遇”，再强大的敌人也有弱点，总量再大的军队也有局部人数少的时候！</p>
+<h3 id="蝸牛"><a href="#蝸牛" class="headerlink" title="蝸牛"></a>蝸牛</h3><p>逆境要怎么突围，帆船给我们提供一个参考，帆船逆风前行基于伯努利原理，即流体速度与压力成反比，船帆形成压力差提供动力，虽逆风时需走之字形路线。“压力差”原理在生活中也常见，人们开心常源于压力的大幅变化而非压力小，大脑多计算比较值，太阳帆飞船借助太阳光压航行，虽推力微小但持续产生复利效应。个人成长中，每天的小改善积累就如同太阳帆，依据“动机强化效应”，微小成功可增强内在动力，推动自身进步。构建人生帆船，一是于大环境中聚焦小局部捕捉机会，全力投入获相对竞争力；二是明确核心竞争力即“龙骨”，以此稳步前行；三是灵活调整“帆的角度”，结合运气与能力，顺境速进，逆境巧导突破。人生多逆风，掌握逆风航行可掌控主动权，应在逆境探寻机会并构建自身“帆”以捕获好运，抱怨运气不佳与身处逆境并不能变好，积极行动才能变好。</p>
+<h3 id="晓蒙"><a href="#晓蒙" class="headerlink" title="晓蒙"></a>晓蒙</h3><p>原文：1、在大环境中，隔离出一个小局部，持续捕捉微小的机会。不要和大环境去斗争，更不要和所有人开战。在你选择的那个局部，压上你的全部努力，你才能获得相对竞争力，才有机会赢。</p>
+<p>2、找到自己的核心竞争力 - 这就是你的龙骨，然后以此为基本盘，稳稳向前走。守住自己的基本盘，才能真正向逆风借力，而不是被吹翻。</p>
+<p>3、调整帆的角度，善用运气的随机性。</p>
+<p>总结：1.差异化竞争；2.找到核心竞争力；3.保持动态性，以适应随机性。</p>
+<p>贴合自己的运用举例：在行业找到适合自己的机会，向专业性靠拢，运用自己的学习能力去获取可能的竞争优势，并且关注局势变化，调整“帆”的角度。</p>
+<h3 id="鸿涛"><a href="#鸿涛" class="headerlink" title="鸿涛"></a>鸿涛</h3><p>找到自己的核心优势，全力在一个小局部中占优，制造压力差，在对冲大环境变化后找到自身的生态位。这是立于不败的生存能力，这样的基本盘积攒多了形成网络合力就能形成真正的抗风险、抗不确定性的反脆弱能力了。</p>
+<h3 id="炎帝"><a href="#炎帝" class="headerlink" title="炎帝"></a>炎帝</h3><p>在人生的漫长旅程中，逆境常常不期而至，让我们举步维艰。</p>
+<p>所以我们才喜欢“逆袭”、“绝地反转”的故事，但这些故事虽动人心弦，却又似乎遥不可及，毕竟在逆境中能活下来已属不易，更别说实现华丽转身了。</p>
+<p>老喻交了两个办法，一个是“压力差”效应。我们可以从以下3个方面着手：</p>
+<ol>
+<li>设定小目标：每天为自己设定一个小目标，无论是完成一次锻炼、学习一项新技能，还是解决一个问题。每一次达成目标，都会让你感到进步和满足。</li>
+<li>积累微小成功：就像太阳帆飞船依靠持续不断的光压逐渐加速一样，每天一点点的持续改善，终将带来质的变化。海明威曾说：“优于别人，并不高贵，真正的高贵应该是优于过去的自己。”</li>
+<li>保持正向反馈：每次完成任务后，给自己一点奖励或认可，强化这种正向反馈循环。大脑会释放多巴胺，激励你继续前进。</li>
+</ol>
+<p>另一个是建造人生的“帆船”，捕捉好运。</p>
+<ol>
+<li>隔离出一个小局部：不要试图与整个大环境对抗，而是选择一个小范围内的领域，集中精力捕捉其中的微小机会。这样，你可以在特定区域内获得相对竞争力。</li>
+<li>确定核心竞争力：找到自己的“龙骨”，即核心竞争力，作为稳定的基础。无论外界环境如何变化，始终保持这个基本盘，才能更好地应对各种挑战。</li>
+<li>灵活调整策略：风向的变化不可控，但你可以调整帆的角度，让风成为推动你前进的力量。顺境时，快速推进；逆境时，灵活应变，寻找新的突破路径。</li>
+</ol>
+<h3 id="Tony-to-ni"><a href="#Tony-to-ni" class="headerlink" title="Tony to ni"></a>Tony to ni</h3><p>这一讲在当下尤其具有现实意义，现在全球政治经济都处于动荡之中，我们没法去改变大环境，但是即便是在动荡下行的环境当中，在各个行业仍然存在结构性的机会。</p>
+<p>所以我们要做的是，寻找行业当中的压力差。并且利用自己的比较优势，整合团队和资源去创造逆境中的业绩和增长。</p>
+<p>对于大环境，我们也要相信周期的力量。周期意味着既有下行，也必然会有上扬。</p>
+<p>最后就是挺住，坚持到周期的转折点。</p>
+<p>在逆境当中可能无法走直线。但借助小环境中的压力差机会，即便是走Z字形的路线，我们也是在向前出发！</p>
+<h3 id="太阳之子"><a href="#太阳之子" class="headerlink" title="太阳之子"></a>太阳之子</h3><p>文中指出，在大环境中隔离出小局部，是打造“自我之帆”的第一步。我想说，其实生命也来源于隔离。</p>
+<p>我们知道，宇宙环境的熵值在不断增大，但是生命又以负熵为生。由此，一个结论呼之欲出：生命体内的熵&lt;周围环境的熵。</p>
+<p>问题来了，当周围环境的熵值都在增加时，生命如何维持一个低于环境的熵？答案就是“隔离”，生命必须想办法将自己与周围环境分离。</p>
+<p>30、40亿年前，在地球深海底的一个热泉口，一层薄薄、软软的膜，像胞壳泡一样将物质、能量、自我复制三种原材料包裹起来，形成了地球第一个细胞。</p>
+<p>这层膜，就是细胞膜，它使得细胞内部与外部环境实现了分离。细胞既能维持稳定代谢的细胞内环境，又能调节和选择物质的进出。</p>
+<p>有了这个独立封闭的空间，物质、能量、自我复制这三个生命支柱得以在细胞内部能互相协作、充分反应。细胞膜包裹着物质、能量、自我复制慢慢的，细胞内部的熵值开始降低，生命活动随之开启。</p>
+<p>我们常说，“自律让人自由”。其实，自律就是那层看不见的“细胞膜”。通过内在的自律，让个体与周围环境实现隔离，最终达到灵魂自由。所谓“大隐隐于市”，就在于此。</p>
+<h3 id="张到"><a href="#张到" class="headerlink" title="张到"></a>张到</h3><p>人们只愿意相信自己愿意相信的。</p>
+<p>不是自己悟到的东西，就算摆在自己面前也拿不住！</p>
+<p>有无相生，难易相成。</p>
+<p>如何在逆境中，建立自己的强大竞争力？</p>
+<p>在大环境中，隔离出一个小局部，持续捕捉微小的机会。找到自己的核心竞争力，压上全部努力，提高自己的相对竞争力。</p>
+<h3 id="JerryLuo"><a href="#JerryLuo" class="headerlink" title="JerryLuo"></a>JerryLuo</h3><p>帆船逆风前行，就是我们当下的生活写照。</p>
+<p>今早翻看微博，一位在美华人发微博说：近期在美国商店购置衣服，突然发现原来商店里绝大部分是made in Chian的衣服，不知不觉变成了made in 越南、印尼、印度……made in Chian的衣服基本不见踪影。面对经济下行的环境，我们每个人、每个家庭就是一艘帆船，身处逆风，必须航行。</p>
+<p>建造人生帆船的三个关键要素：</p>
+<ul>
+<li>在大环境中，隔离出一个小局部，持续捕捉微小的机会。</li>
+</ul>
+<p>“小局部”是自己的“影响圈”，“小局部”以外的“大环境”是“关注圈”——我们对于“关注圈”可以少些精力。更多精力放到自己的“影响圈”，塑造自己的影响力，锤炼自身的价值。</p>
+<ul>
+<li>找到自己的核心竞争力</li>
+</ul>
+<p>“得到”一个很好的学习途径，《决策算法》是一门好的课程，还可以考虑每年报一门与工作相关的职业考试。给自己搭建一条“护城河”。</p>
+<ul>
+<li>调整帆的角度，善用运气的随机性。</li>
+</ul>
+<p>人生、经济都是波动的。可以顺势而为，也可以逆势航行。要调整自己的心态、理念、做事的方式方法等等，增强自身的韧性，实现“反脆弱”。</p>
+<p>除此生死，其他都是擦伤。何惧逆风，起舞飞扬。</p>
+<h3 id="学习机器"><a href="#学习机器" class="headerlink" title="学习机器"></a>学习机器</h3><p>前几天有一位朋友跟我聊起自己的工作大卷，没什么意思，想辞职。考虑到现在的大环境不是很好，工作也不太好找，而且她也不是很清楚接下来应该做什么，于是她问我对此有什么好的建议。我给她的建议是：</p>
+<ol>
+<li>从外界的大环境中跳出来，向内看，结合自身优势找到属于自己的生态位。</li>
+<li>构建自己的基本盘，去发展、推动它。</li>
+<li>逆风时耐心深耕，顺风时借势发展。</li>
+</ol>
+<p>曾有人问马斯克，你生命中最大的挑战是什么？马斯克足足想了30秒，给出了一个非常精彩的回答：“确保你有一个可纠错的反馈闭环。”其实不论是企业经营，还是个人经营，你都需要有一个可纠错的反馈系统。</p>
+<p>就拿个人经营来说，这个可纠错的反馈系统首先需要建立在你的基本盘之上，然后你用接下来的时间、精力去迭代你的反馈系统，以此来壮大你的基本盘。到那个时候，任它外界狂风暴雨，你依然能够立于不败之地。</p>
+<h3 id="李慕"><a href="#李慕" class="headerlink" title="李慕"></a>李慕</h3><p>好运并非孤立而偶然的“雷击”，而是一种持续吹拂的“风”。这种比喻深刻而生动，让人不禁思考，生活中的好运究竟如何而来？</p>
+<p>这种观点让我意识到，我们无法决定风从哪里吹来，但却可以决定是否扬帆起航。如果没有准备好帆船，即便风再大，也只会在我们周围呼啸而过，却无法为我们带来前进的动力。因此，持续的好运不仅需要抓住机遇，还需要我们提前搭建“帆船”——包括培养技能、保持好奇心、扩展视野，甚至是积极的人生态度。这些都是我们“迎风而行”的基础。</p>
+<p>回想过去，我曾感叹某些人为何总是看似“幸运”，但仔细观察便能发现，他们在“好运来临”之前已经做了充分的准备。</p>
+<p>所谓“机会只垂青有准备的人”，正是这种持续努力的体现。我们无法预测风会何时吹起，但若能不断精进自己，便能在“风到来时化为航行的动力”。</p>
+<hr>
+<p><a href="/book/decision-algorithm/021/">← 021｜驾驭熵增：为什么世界的意义在于事与愿违？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/023/">023｜万事开头难：为什么你永远都有最好的下一步？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

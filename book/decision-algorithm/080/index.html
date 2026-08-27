@@ -1,0 +1,653 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>080｜社交决策：怎样构建你的四级社交圈？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》080：社交决策：怎样构建你的四级社交圈？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="080｜社交决策：怎样构建你的四级社交圈？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/080/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》080：社交决策：怎样构建你的四级社交圈？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:45.943Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/080/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '080｜社交决策：怎样构建你的四级社交圈？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">080｜社交决策：怎样构建你的四级社交圈？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">080｜社交决策：怎样构建你的四级社交圈？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<p><strong>时长：16分01秒</strong></p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>你好，我是老喻，欢迎来到《决策算法》课。</p>
+<p>从这一讲开始，我想跟你讨论一些跟个人的日常生活关系更密切的决策话题，今天我们来讨论第一个话题“社交决策”。</p>
+<p>因为公众号的缘故，我有个别名，叫“孤独大脑”。我很享受独处的时间和空间，也和不少现代人一样，自认为有“社恐”的嫌疑。但是和你一样，我享受与朋友相处的时光，也从社交中获得了不少乐趣，以及商业上的机会。</p>
+<p>石油大王洛克菲勒曾说过：与天底下其他任何本领相比，我愿意付出更大的代价，来获取与人相处的本领。</p>
+<p>戴尔·卡耐基也曾说过：专业知识在一个人成功中的作用只占15%，而其余的85%则取决于人际关系。</p>
+<p>这不是偶然。从石器时代的部落生存，到现代社会的商业成功，人类的命运一直被一个核心能力所主导——<strong>与他人建立有效连接的能力。</strong></p>
+<p>作为一个既渴望深度连接又珍视独处空间的矛盾体，我深知社交平衡之道的重要性。多年来，我不断观察、实践与反思，发现社交决策遵循几个核心算法，它们帮助我在保持真实自我的同时，建立了有价值的人际网络，也获得了友谊、商机与人生智慧。</p>
+<p>今天，我将这五大社交决策算法分享给你，希望无论你是社交达人还是“社恐患者”，都能从中获得启发，找到属于自己的社交之道：</p>
+<ol>
+<li><p><strong>经营你的社会资本。</strong></p>
+<p>呼应布尔迪厄的洞见——认识谁不如谁真正认可你；</p>
+</li>
+<li><p><strong>构建四层社交圈层。</strong></p>
+<p>采纳本杰明·富兰克林的忠告：“对所有人有礼，对多数人友好，与少数人亲近”；</p>
+</li>
+<li><p><strong>守护关系类别边界。</strong></p>
+<p>能和你一起开心喝酒的知己，不一定能够成为你的生意伙伴。</p>
+</li>
+<li><p><strong>成为强势的社交者。</strong></p>
+<p>用勇气和独立抵御人际关系中的“最小作用力原理”；</p>
+</li>
+<li><p><strong>把时间给重要的人。</strong></p>
+<p>像做资产配置一样，不断把更多社交资源分给你最重要的人。</p>
+</li>
+</ol>
+<h2 id="一、经营你的社会资本"><a href="#一、经营你的社会资本" class="headerlink" title="一、经营你的社会资本"></a>一、经营你的社会资本</h2><p>法国社会学家皮埃尔·布尔迪厄（Pierre Bourdieu）提出的“社会资本”（Social Capital）概念，将社交网络视为一种资源。社会资本是“实际或潜在资源的总和，这些资源与拥有相互认可的制度化关系网络有关”。</p>
+<p>换言之，<strong>你认识多少人固然重要，但更关键的是多少人愿意为你提供帮助与背书。</strong></p>
+<p>社会资本的交互，就像是交换思想。两个人交换苹果，每个人还是只有一个苹果。但是交换思想、交换社会资本，每个人就会有两个。</p>
+<p>社交不是交换利益，而是共享美好，让美好的东西变得更多。所以，要问自己，你能为朋友圈做出什么贡献？——就像那种周末聚餐，每家都带上一个擅长的菜，大家可以吃得既丰富又开心。</p>
+<p>所以你要有一致性，自己有专业，有资源，有连续在经营的事情。我们有个朋友，每次都换在不同的事情，此前的事儿很快就没下文了，后来他一出现大家就很紧张。</p>
+<p>当然，并不是说只有厉害的人才能社交。社交有价值线，也有情感线。人世间有什么比好玩儿、有趣更“有用”的东西呢？</p>
+<p>罗伯特·普特南（Robert Putnam）进一步将社会资本分为两类：</p>
+<ul>
+<li><strong>黏合型社会资本（Bonding Social Capital）</strong>：来自于强关系，如家人、亲密伙伴。</li>
+<li><strong>桥接型社会资本（Bridging Social Capital）</strong>：来自于弱关系，如同事、泛泛之交。</li>
+</ul>
+<p>想象一个场景：你深夜突发急病，能打电话求助的人往往是黏合型关系；而在公司新项目启动时，出手相助的人也许是两年前只见过一面的行业伙伴——这正是桥接型关系带来的意外惊喜。</p>
+<p>人与人的交往通常包含“有用”和“有趣”两条线索，优秀的社交离不开将这两条线有机结合。关键在于先情感后利益，先建立真诚的联系，再谈资源的交换。</p>
+<p>组织心理学家亚当·格兰特在其著作《给予与获取》中，将人际交往分为“给予者”（givers）、“匹配者”（matchers）和“索取者”（takers）三种类型。他的研究发现，“给予者”往往能建立起更广、更有支持力度的人际网络，而“只知道索取或精于算计等价交换的人”脉圈相对有限。</p>
+<p>从价值出发，真正把社交当作“共享美好”的过程，而不是不停地“索取”，你的社会资本就会源源不断地增值。</p>
+<h2 id="二、构建四级社交圈层"><a href="#二、构建四级社交圈层" class="headerlink" title="二、构建四级社交圈层"></a>二、构建四级社交圈层</h2><p>本杰明·富兰克林说：“对所有人有礼，对多数人友好，与少数人亲近，结交一个知己，不与人为敌。”</p>
+<p>这句话为社交资源分配提供了绝佳框架。</p>
+<p>人类学家罗宾·邓巴研究发现，人类大脑存在认知限制，平均只能维持约150个稳定社会关系，这就是著名的“邓巴数字”。这些关系呈同心圆层次展开：</p>
+<ul>
+<li><strong>核心圈（5-7人）</strong>：你的情感堡垒，包括最亲密的伴侣、挚友和至亲。这层关系需要最多的真诚与时间，因为他们是你的人格后盾。</li>
+<li><strong>信任圈（15-20人）</strong>：你的好朋友，经常联系且感情深厚。这些人你可以坦诚交流，在需要时寻求帮助。</li>
+<li><strong>外围圈（50-150人）</strong>：熟人朋友，提供多样信息和机会。比如你的一份新工作，很可能会来自一位只见过两次面的前同事的推荐。</li>
+<li><strong>认知圈（数百人）</strong>：点头之交，构成社会影响力基础。保持友善但无需深度投入。</li>
+</ul>
+<p>我喜欢用概率来解释上面的圈层框架：</p>
+<ul>
+<li>核心圈追求的是确定性，是最优解，是你们之间彼此忠诚的最可信赖的亲友。</li>
+<li>而外围社交圈追求的是随机性。</li>
+</ul>
+<p>核心圈往往比较同质——他们可能和你有相似的背景、圈子和视野。而外围圈的人由于来自不同领域和社会网络，能够带来新的想法和资源。一个过于封闭狭窄的人际圈子可能导致视野局限、机会匮乏。很多重大机遇（如工作推荐、商业合作）往往是通过“朋友的朋友”甚至更远的关系偶然获得的。</p>
+<p>从数学的角度看，基数越大，资源越多元化，偶然的机会和好运气也会更多。</p>
+<p>要做好圈层平衡，一方面要在核心圈投入心力，定期与至亲好友联络情感，另一方面也要“广种薄收”，并区分哪些关系值得深入经营，哪些只需保持礼貌往来。</p>
+<p>无论身处何种圈层，都请保持基本的尊重与真诚。这样既能让你的社交网络呈现稳固的多层架构，也能确保你的人格底色不被庞杂关系所淹没。</p>
+<p>随着时间推移，你会逐渐学会重新分配资源，让有限的社交精力与能力真正得其所用，从而在深与广之间找到平衡。</p>
+<h2 id="三、守护关系类别边界"><a href="#三、守护关系类别边界" class="headerlink" title="三、守护关系类别边界"></a>三、守护关系类别边界</h2><p>我有个朋友，习惯给所有社交关系加标签，例如，他在微信上注明：哪些是可以深夜喝酒的朋友，哪些是可以聊天倾诉的朋友，哪些是可以商业合作的朋友。初次听说时，我还调侃他过于现实和功利。几年后的今天，我才明白他的智慧。</p>
+<p>心理学家亨利·克劳德和约翰·汤森德在《界限》一书中强调，健康的关系需要清晰的界限。这些边界分为四个关键领域：</p>
+<ol>
+<li>物理边界：个人空间、财产、隐私</li>
+<li>心理边界：思想、观点、价值观</li>
+<li>情感边界：情绪管理和表达</li>
+<li>时间边界：时间分配和优先级</li>
+</ol>
+<p>特别要小心的是金钱关系。能够成功合作做生意的朋友凤毛麟角，本质上比选择伴侣还难。数据显示，65%的高潜力创业公司最终失败，是因为联合创始人之间的冲突，这个比例甚至超过了离婚率。</p>
+<p>有太多人曾因为金钱问题失去过友谊。莎士比亚在《哈姆雷特》中就告诫人们：不要向人借钱，也不要借钱给人，因为债款放了出去，往往不但丢了本钱，而且失去了朋友。</p>
+<p>守护关系边界的关键在于，学会礼貌而坚定地说“不”，避免过度承诺。当有朋友提议和你一起做事情时，记得先问自己三个问题：</p>
+<ul>
+<li>我们在工作压力下相处过吗？</li>
+<li>我们对金钱和成功的定义一致吗？</li>
+<li>我们是否有明确的冲突解决机制？</li>
+</ul>
+<p>只有都能肯定回答，才考虑合作。</p>
+<p>**建立健康边界并非冷漠或自私，而是尊重关系的本质。**就像电路需要绝缘体一样，适当的边界不是隔离墙，而是保护不同关系健康发展的安全阀。那些看似无所不谈、无所不包的关系，往往是最脆弱的。</p>
+<p>学会给关系分类并非功利，而是智慧。能一起喝酒的朋友，不一定适合一起创业；能给你情感支持的人，不一定是理财的好顾问。认清这一点，才能让每种关系在合适的轨道上健康发展，既不失温度，也不越界。</p>
+<h2 id="四、成为强势的社交者"><a href="#四、成为强势的社交者" class="headerlink" title="四、成为强势的社交者"></a>四、成为强势的社交者</h2><p>友善的人经常会遇到一种困境：人善被人欺。</p>
+<p>例如职场上，会哭的孩子有奶吃。</p>
+<p>例如朋友相处，当你不得不得罪人时，人们不是去根据“好”的角度出发，而是从“恶”的角度去评估。</p>
+<p>具体而言就是：</p>
+<ol>
+<li>如果非要伤害一个人，不是说先把好的挑出来保护起来；</li>
+<li>而是先绕开那些不好得罪的；</li>
+<li>面对一个友善的好人，和一个难惹的恶人，人们大多时候会选择去伤害一个好欺负的好人。</li>
+</ol>
+<p>我将其称为社交的“最小作用力原理”。</p>
+<p>在人际关系上，很多时候人们会挑软柿子捏，而不是从善恶和道义的角度出发。</p>
+<p>当然，并非人人如此。尤其是在持续交往（多次博弈）的场景里，人们会更多评估全局利益。</p>
+<p>所以，对于自己的核心朋友圈，用心对待，全情付出。</p>
+<p>对于普通社交圈，在商言商，不主动奉负别人，被辜负了也应坦然接受。</p>
+<p>强势不是要你去欺负别人，强势的本质是自立、独立，也只有这样你才能成为一个社交圈里受欢迎的人。</p>
+<p>尼采说过：真诚，对我们自己，要不就是对我们的朋友；勇敢，对敌人；宽恕，对失败者；优雅，任何情况下。这是四美德寄望于我们的。</p>
+<p>社交离不开敌人。很多时候，你的敌人更能定义自己的社交质量。——这也是我自己的反思。</p>
+<p>好的敌人，经常是你最好的朋友和老师。与李世石五番棋大战前，古力游览灵隐寺，老法师对他说：“你的对手都是你的朋友，你的敌人是你自己。”</p>
+<p>如何成为一个强势的社交者？我在一本书上看到十大法则，可以作为参考：</p>
+<ol>
+<li>你有权坚持自己的行为、想法和情感，并对产生的一切后果负责。</li>
+<li>坚持你要做的，不必解释。</li>
+<li>帮不到别人，也不用内疚。</li>
+<li>你有权改变想法。</li>
+<li>犯错不可怕，但要承担后果。</li>
+<li>你有权说“我不知道”。</li>
+<li>要与人交往，但不要刻意讨好。</li>
+<li>你有权做出“不合逻辑”的决定。</li>
+<li>你有权说“我不明白”。</li>
+<li>你有权说“我不在乎”。</li>
+</ol>
+<p>你不用担心，你的强势伤害不到你真正的朋友，反而可能帮助你们守好共同的朋友圈。</p>
+<h2 id="五、把时间给重要的人"><a href="#五、把时间给重要的人" class="headerlink" title="五、把时间给重要的人"></a>五、把时间给重要的人</h2><p>有一次，我受邀参加一个商务邮轮活动，看见另一位嘉宾老师带了妈妈同行，立即心生惭愧：我怎么没想到……</p>
+<p>下船后，我直接飞去看妈妈，一起喝了早茶，吃了她种的西红柿和莴菜，在小区散步，听她讲每一户的八卦，如数家珍，她的记忆力好得惊人，能记住50年前哪一天买了多少布花了多少钱，精确到寸和分。</p>
+<p>我们还去小区附近入海口的河边公园散步，湿地公园红树林茂盛，修整之后的水岸不少人在钓鱼，地上水里都开满了花。</p>
+<p>我发誓，从今以后，把时间花在重要的人身上。因为我每在一些无关紧要的人和事上花费一天，就会少陪妈妈一天。</p>
+<p>最近有个感受：过去能帮到你的人，会继续帮到你；过去没做出过啥事儿的，哪怕再熟，再密切，也做不出啥事儿。</p>
+<p>这么说，显得有点儿太功利，但事实的确如此。将时间和精力投入到那些关键时刻能够“雪中送炭”的人身上，别总慢怠他们，别亏待他们。</p>
+<p>像投资股票的仓位调整一样，我们需要定期审视自己的人际关系，并据此调整时间与资源的分配。</p>
+<p>对高价值关系增加“持仓”，让这些关系持续产生正向回报；而对于低价值关系则适当“减仓”或“清仓”。</p>
+<p>这个过程类似于一种“人际资产”的再平衡，确保资源分配始终服务于个人长远目标。</p>
+<p>其实，<strong>真正的友谊永远不需要计算。但是在世俗世界里，我们必须掌握一些理性的决策算法，作为生存之道。</strong></p>
+<p>博尔赫斯在《朋友之树》里写道：</p>
+<blockquote>
+<p>我们生命中的每位过客都是独一无二的。他们会留下自己的一些印记，也会带走我们的部分气息。有人会带走很多，也有人什么也不留下。这恰好证明，两个灵魂不会偶然相遇。</p>
+</blockquote>
+<p>诚然，我们对所有人都应抱以真诚和友善，但一生宝贵的时间却必须投入给真正重要的人。</p>
+<p>愿你既能保持坦荡与开放，也能用有限的时光去悉心经营最珍贵的联结，让每一次灵魂的相遇都成为幸福与成长的见证。</p>
+<p>以上就是这一讲的全部内容，我是老喻，我们下一讲再见。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>人类的命运一直被一个核心能力所主导——与他人建立有效连接的能力。</li>
+<li>社交决策五大核心算法：经营你的社会资本，构建四层社交圈层，守护关系类别边界，成为强势的社交者，把时间给重要的人。</li>
+<li>真正的友谊永远不需要计算。但是在世俗世界里，我们必须掌握一些理性的决策算法，作为生存之道。</li>
+</ol>
+<h2 id="PDF-内用户留言"><a href="#PDF-内用户留言" class="headerlink" title="PDF 内用户留言"></a>PDF 内用户留言</h2><h3 id="左星星"><a href="#左星星" class="headerlink" title="左星星"></a>左星星</h3><p>很多时候，我们的压力并不是来自陌生人，而是来自那些看似亲近，却在关键时刻并不真正理解你的人。所以分清“关系的层次”，其实是保护自己，也是左给彼此留出一份尊重。能谈钱的，就好好谈钱；能谈情的，就彼此坦诚。别把不该混在一起的东西混在一起，否则受伤的往往是自己。</p>
+<p>而当我们懂得珍惜自己的时间和情感，把那些最重要的人排在优先顺位时，就会发现很多原先纠缠不清的事情都变得简单。与其在琐碎的人际圈子里耗费精力，不如多花点时间陪伴家人，或者把重心放在能够真正带来共鸣的朋友身上。这个过程可能会让一些边缘关系逐渐淡去，但那些真正意义上的“同路人”会越来越紧密，合作也好，感情也好，都更经得起风吹雨打。</p>
+<p>我们应该追求的是那种更“有温度”的社交观。它不是盲目地多交朋友，也不是刻意地凡事都要算得清清楚楚，而是在真诚和边界之间寻找一种微妙的平衡。这样一来，我们既能享受社交带来的愉感与机会，也能在必要时保护自己的独立和尊严。归根到底，能否处理好人际关系，很大程度上取决于我们能不能在真诚与理性之间找到那个恰到好处的分寸。真正的朋友，其实也更懂得欣赏这样的你。</p>
+<h3 id="白青"><a href="#白青" class="headerlink" title="白青"></a>白青</h3><p>成为强势的社交者，让我想起邓富强在《强势》这本书里将人际关系分为“挚友、知友、诤友、畏友”。</p>
+<p>人的一生中，一定要结交以下四种朋友：</p>
+<p>●首先是挚友。</p>
+<p>他们通常是你的发小，一起光屁股长大的朋友。无论你们日后财富多少，地位高低，与他们在一起时，你总能抛却一切束缚，畅快地喝酒撸串，甚至吵吵闹闹。这种交情，是吵不散、打不断的。不过虽然他们了解你的欲望，可以陪你放纵，但却无法触及和滋养你的灵魂。他们知道你是谁，从哪里来，却不知道你会是谁，将到哪里去。</p>
+<p>●其次是知友。</p>
+<p>他们很懂你。在你颓废的时候，你可以找他们倾诉悲伤；当你迎来高光时刻，也会第一时间想到与他们分享喜悦。他们因你的忧伤而忧伤，因你的快乐而快乐，可谓是你灵魂的伴侣。虽然他们可能不知道你的来处，但却清楚地知道你未来的归处。</p>
+<p>●再次是诤友。</p>
+<p>他们总是直言不讳，甚至时常跟你针锋相对。在你风光无限时，他们会给你泼冷水，提醒你保持谦逊；在你失意时，他们会毫不客气地指出你的不足，虽然言辞犀利让你很不舒服，但细思之后你却会发现他们说得很有道理。在关键时刻，他们会毫不犹豫地伸出援手，帮助你的同时也会让你牢记教训。</p>
+<p>他们是你拥有时或许不懂珍惜，但一旦失去就会深感痛惜的朋友。他们可能不知道你是谁，也不知道你能到哪里去，但他们知道你不能是谁。</p>
+<p>●最后是畏友。</p>
+<p>他们学识渊博，道行深厚，资源广泛，甚至睿智得令人望尘莫及。他们或许不知道你是谁，从哪里来，要到哪里去，但是他们知道你会是谁，并帮助你成为你终将成为的那个谁。</p>
+<p>朋友不在于多而在于精。随着你的成长，平台的提升，以及资源的积累，请务必对人际关系进行适当的断舍离。你要远离那些不能给你添彩，反而总是给你添堵，甚至添祸的人。这样做，并非冷漠无情，反而意味着成熟与自我保护。它让我们能够集中精力，去维系和深化那些真正能够相互成就、共同进步的关系。</p>
+<p>人生短暂，不必将就，更不需强求。</p>
+<h3 id="魏红亮"><a href="#魏红亮" class="headerlink" title="魏红亮"></a>魏红亮</h3><p>80 社交决策：怎样构建你的四级社交圈？</p>
+<p>决策就需要人拎得清，分得清轻重缓急，套用时间管理四象限的逻辑，为了规避重要紧急的事发生就要在事处于重要不紧急阶段着手处理。换言之，所有重要紧急的事情都是在重要不紧急阶段没有处理好而导致的，也可以理解为把重要的时间放在重要不紧急的事情上。</p>
+<p>如课程里边喻老师所说的多腾出了点时间陪父母，这就属于典型的重要不紧急的事情，常回家看看非常重要。</p>
+<h3 id="蜗牛"><a href="#蜗牛" class="headerlink" title="蜗牛"></a>蜗牛</h3><p>社会资本是与相互认可的制度化关系网络有关的实际或潜在资源总和，关键不在认识多少人，而在多少人愿意提供帮助。社交应是共享美好，从价值出发，真诚社交能使社会资本增值。社交圈层呈同心圆分布，包括核心圈、信任圈、外围圈、认知圈。核心圈求确定性，外围圈重随机性，要做好圈层平衡，合理分配精力，保持尊重真诚。健康关系需清晰界限，涵盖物理、心理、情感、时间边界，守护边界要学会说“不”，面对合作提议先自问相处、金钱观、冲突解决机制三问题，给关系分类能助其健康发展。友善之人易遇“人善被人欺”困境，即社交“最小作用力原理”，人们常挑软柿子捏。对核心朋友圈用心，普通社交圈在商言商。强势本质是自立独立，强势不会伤害真朋友，反而能守护朋友圈。把时间花在重要之人身上，过去助人者未来大概率继续帮忙，要像调整股票仓位般审视人际关系，对高价值关系“加仓”，低价值关系“减仓”或“清仓”，也俗中需用理性决策经营珍贵联结。</p>
+<h3 id="美君"><a href="#美君" class="headerlink" title="美君"></a>美君</h3><p>《美好生活：历时85年哈佛幸福研究给我们的启示》一书中有一个关于人际关系网络的重要表格，表格里包含7个维度：</p>
+<h4 id="1-安全和保障"><a href="#1-安全和保障" class="headerlink" title="1 安全和保障"></a>1 安全和保障</h4><p>如果你半夜惊醒，你会打电话给谁？</p>
+<p>在危急时刻，你会向谁求助？</p>
+<h4 id="2-学习和成长"><a href="#2-学习和成长" class="headerlink" title="2 学习和成长"></a>2 学习和成长</h4><p>是谁鼓励你去尝试新事物、去抓住机遇、去追求你的人生目标？</p>
+<h4 id="3-情感上的亲密和信任"><a href="#3-情感上的亲密和信任" class="headerlink" title="3 情感上的亲密和信任"></a>3 情感上的亲密和信任</h4><p>谁知道你的一切（或大部分事情）？</p>
+<p>当你情绪低落的时候，你可以对谁坦诚地说出你的感受？</p>
+<p>你可以向谁寻求建议（并相信他们所说的话）？</p>
+<h4 id="4-身份认同和共有经历"><a href="#4-身份认同和共有经历" class="headerlink" title="4 身份认同和共有经历"></a>4 身份认同和共有经历</h4><p>在你的生活中，有没有人和你共同经历过很多，并且帮助你加深了对你是谁、你来自哪里的认知？</p>
+<h4 id="5-浪漫和亲密（爱和性）"><a href="#5-浪漫和亲密（爱和性）" class="headerlink" title="5 浪漫和亲密（爱和性）"></a>5 浪漫和亲密（爱和性）</h4><p>你对生活中亲密关系的浪漫程度感到满意吗？</p>
+<p>你对你的性关系满意吗？</p>
+<h4 id="6-帮助（信息和实践）"><a href="#6-帮助（信息和实践）" class="headerlink" title="6 帮助（信息和实践）"></a>6 帮助（信息和实践）</h4><p>如果你需要一些专业知识或帮助来解决实际问题（例如，你需要砍一棵树，修复你的Wi-Fi连接，申请医疗保险），你会向谁求助？</p>
+<h4 id="7-娱乐和放松"><a href="#7-娱乐和放松" class="headerlink" title="7 娱乐和放松"></a>7 娱乐和放松</h4><p>谁让你笑？</p>
+<p>你会打电话约谁去看电影或去自驾游？</p>
+<p>是谁让你感到轻松、亲近、自在？</p>
+<p>前几天我刚做过这个表格，有很重要的发现：</p>
+<ol>
+<li>我发现在帮助我的名单里，有些并不是多好的朋友，甚至相互没有多深的了解，只是彼此熟识，有很多“专业对口”的问题能够帮上，但只要需要帮助，她们从来都竭尽全力。</li>
+<li>我发现让我笑、轻松和自在的名单里竟然有一个同事，关键是我以为我和其他的同事比和她关系好，其实每个和我关系好的同事带给我的情绪价值都不一样，这个让我轻松自在的同事带给我最多的接纳、允许、认可、支持、鼓励和倾听。</li>
+<li>我发现名单里的人也是我平时投入注意力、感情和心力最多的人，我很开心我一直都很清醒理性的知道自己最想要的是什么。</li>
+<li>我发现，如果在3年前、5年前或10年前回答这7个问题，很多答案会截然不同。因为名单上的一些人，在3年前、5年前甚至10年前，我还未曾与他们相识。</li>
+</ol>
+<p>不得不承认，有些朋友确实是分阶段出现的。也许在30岁之前，我们互不相识，但有幸的是，在30多岁后的某个节点，我们彼此为友，彼此陪伴，一起前行。</p>
+<p>未来，我们还会相伴多久尚不可知，但一切只需顺其自然、水到渠成，跟随自己的心就好。</p>
+<p>注：部分内容参考来源于书籍《美好生活：历时85年哈佛幸福研究给我们的启示》</p>
+<h3 id="鸿涛"><a href="#鸿涛" class="headerlink" title="鸿涛"></a>鸿涛</h3><p>阿德勒说人际关系是烦恼的根源，但也是幸福之源。社交财富的大小，关键在于社交决策。从共享美好的角度去经营社会资本，会营造出更丰富的社会资源，这是社交的量增之法。构建由内及外的四级社交圈，是从自己心灵港湾的确定归属一步步蔓延到坦诚交流、共享信息、展现友善的概率随机减弱。这是社交的差序格局，也是社交由深至广的生态构成。由此产生了尊重关系的健康边界意识和高价值关系需要更多投入，这是社交的智慧之处。社交中的强势地位，依靠的是在圈层中自立、独立的声望积累出来的。“被依赖”，是当今世界给你最好的待遇。</p>
+<h3 id="礼之贤士"><a href="#礼之贤士" class="headerlink" title="礼之贤士"></a>礼之贤士</h3><p>时间留给重要的人，这句话于我而言，深有触动。多年来，我始终将心力倾注于家人，因为在我心中，家人无可替代，是生命里最为重要的存在。故而，每逢家人的重要节日或活动，我定会设法参与，并精心筹备活动，让这些时刻更具意义。</p>
+<p>特别是孩子与爱人，他们与我关系最为亲密，世间再无其他关系能与之相提并论。基于此，我更应用心陪伴他们。</p>
+<p>至于那些无关紧要的活动，能免则免。当我们将主要精力聚焦于重要之人，便能与他们构建更为紧密、稳固的关系，人生也会因此更加圆满，我们亦能收获更多幸福。</p>
+<h3 id="熊延文"><a href="#熊延文" class="headerlink" title="熊延文"></a>熊延文</h3><p>老喻策略算法课80讲学习收获：</p>
+<p>一、社交资产化：用资本思维经营人脉。</p>
+<p>核心认知：人脉不是「认识多少人」，而是「多少人认可你」</p>
+<p>弱关系（桥接型资本）带来机会，强关系（黏合型资本）提供保障。</p>
+<p>行动策略：1. 建立价值账户：每月主动为3位朋友提供帮助（如分享行业报告&#x2F;介绍资源）；在朋友圈持续输出专业观点（每天三篇学习内容精选和笔记）；2. 绘制社交地图：关系类型、维护频率和方式。</p>
+<p>二、边界守卫术：用物理法则处理关系。</p>
+<p>关键原则：给关系贴标签：喝酒伙伴&#x2F;创业伙伴&#x2F;情感导师须严格区分。</p>
+<p>警惕“跨界污染”：85%的关系破裂源于角色混淆。</p>
+<p>实操工具：</p>
+<ol>
+<li>关系分类表：【微信备注模板】姓名+行业｜可深夜倾诉｜可商业合作｜可资源推荐。</li>
+<li>合作三连问：我们共同经历过压力测试吗？我们对失败的承受力是否匹配？是否有书面退出机制？</li>
+</ol>
+<p>三、强势社交法：建立社交反脆弱系统。</p>
+<p>认知升级：真正的强势&#x3D;清晰底线+稳定内核，遵循“10%拒绝法则”：每月至少拒绝3次非核心请求。</p>
+<p>实战技巧小提示：</p>
+<ol>
+<li>能量守恒沟通法：当被越界时回应：我很重视我们的关系，但这件事我的原则是。</li>
+<li>冲突预演训练：每月模拟1次艰难对话（如拒绝借钱&#x2F;退出合作）。</li>
+</ol>
+<p>四、时间配置学：像管理基金一样经营关系，决策算法：80%精力给前20%高价值关系；每年做“人际资产审计”：淘汰消耗型关系，增持滋养型关系。</p>
+<p>五、终极心法：在算法时代守护人性温度。</p>
+<p>给予者悖论：主动分享资源的人最终获得更多，但需设置“善意防火墙”。</p>
+<p>量子纠缠原理：每次真诚互动都在改写关系概率波函数。</p>
+<p>社交复利公式：优质关系价值&#x3D;初始情感投入×信任指数^时间。</p>
+<p>行动建议：用企业家的理性经营社交网络，用艺术家的感性滋养核心关系，用哲学家的清醒守护自我边界。</p>
+<h3 id="JerryLuo"><a href="#JerryLuo" class="headerlink" title="JerryLuo"></a>JerryLuo</h3><p>说说另一个场景的“社交决策”——摆摊的“社交决策”。</p>
+<p>最近在看黄碧云老师的《摆摊式创业：会摆摊就会做生意》，其中有这么一个案例，讲述了摆摊的“社交决策”，很有意思。</p>
+<p>小杨是在夜市街区摆摊的摊主。开始摆摊后的前两天，他们的生意很不错，日营业额从原来的800元上升到了2000元。这可把小杨高兴坏了。没想到，这样稳稳出摊的日子没过几天，小杨就被投诉了。投诉他的是摊位后面门店的店主，投诉原因是小杨的摊位挡了他的门面。本来小杨想着自己可以加一些摊位费，但无论小杨怎么说，对方都不肯让小杨继续在这里摆摊。</p>
+<p>后来他打听了一下，发现原因主要是自己除了做饭团又加了一个印度尼西亚烤串的新项目，而摊位后面就是一家烧烤店，他们之间就有了直接竞争了。烧烤店的店主看他们生意不错，也抢走了一些顾客，才想尽一切办法把小杨赶走。</p>
+<p>他女朋友劝他说：“这不等于又多了一次升级的经验嘛，要在别人门口摆摊，就得和别人建立合作关系。”后来，他们在一家麻辣烫和猪杂粉店中间找到了一位置。一到晚上，这两家门店就有很多顾客，小杨他们摆摊的生意也好了很多。</p>
+<p>小杨还总结了经验：“摆摊就是要注意人情细节。在人家门口摆摊，一定要把卫生收拾干净，也可以顺手帮忙收拾一下店门口的卫生，维护好和店里的关系。像在广州摆摊经常要对抗多雨的天气，而且容易遇到暴雨，如果你维护好了和商户的关系，店主还能让你躲避雨。如果以后自己开店，别人在店门口和自己摆同品类的摊位，自己也不会高兴的。要是有人摆摊卖和自己店里的商品互补的商品，反而会带来更大的增量。”</p>
+<h3 id="空"><a href="#空" class="headerlink" title="空"></a>空</h3><p>我本人算是一个不爱社交的人，比起热闹的社交，更喜欢一个人安静的独处。当然我并不否认社交的价值，不过前提是要建立相应的社交原则，否则社交对于你而言不会滋养你，反而会消耗、拖累你。关于社交，个人谈几点看法：</p>
+<ol>
+<li>一个人的成功是由你的能力和社交网络共同决定的。</li>
+<li>一段社交关系的持续，是因为“互惠”，价值双向流动才能长久发展。</li>
+<li>社交中谨记你“比任何人都重要”，牺牲自己，讨好他人的低姿态不可取。</li>
+<li>一段社交关系的健康程度取决于你们之间的界限程度。</li>
+<li>社交中，有时退一步海阔天空，有时却退一步得寸进尺，要掌握其火候。</li>
+</ol>
+<h3 id="我是谁，我要去何方"><a href="#我是谁，我要去何方" class="headerlink" title="我是谁，我要去何方"></a>我是谁，我要去何方</h3><p>随着社会阅历的增多，越来越发现健康的关系需要边界，学会给关系进行分类，会让我们的人际关系更加和谐。</p>
+<p>不同的关系需要不同的维护方式，突破关系的界限，往往会适得其反。尊重关系的本质，才能维护良好的人际关系。</p>
+<p>还有，就是我们常常忽略身边最重要的人，人生有限，减少在一些无关紧要的人和事上会费太多时间，珍惜生命中那些最重要的人，会让我们活得更加安定美好。</p>
+<h3 id="炎帝"><a href="#炎帝" class="headerlink" title="炎帝"></a>炎帝</h3><p>社交账户的关注数不再是财富密码，真正具有决策价值的是那些愿意在凌晨三点接你电话的人。</p>
+<p>就像区块链技术中的共识机制，高质量社交关系的建立需要共同经历、应对过危机的伙伴，远比酒桌上的觥筹交错更值得纳入核心人脉圈。</p>
+<p>要处理好社交决策，可以从以下5个方面入手：</p>
+<ol>
+<li>明确目标：在社交中，明确自己的目标是非常重要的。是为了建立商业关系、拓展人脉，还是为了寻找志同道合的朋友？不同的目标会影响你的社交策略和行为。</li>
+<li>增强自我认知：了解自己的价值观、兴趣和能力，有助于你做出更符合自己意愿的选择。通过反思和自我探索，你可以更好地认识自己，从而减少外部因素对决策的影响。</li>
+<li>培养批判性思维：在面对各种信息和决策时，保持批判性思维，不要盲目接受他人的观点。通过分析和评估信息，你可以更理性地做出决策。</li>
+<li>接受不确定性：生活中的很多选择并没有绝对的对错，接受不确定性，学会在不完美的信息和条件下做出决策，是实现自由意志的重要一步。</li>
+<li>注重关系质量：与其追求广泛的社交网络，不如专注于建立深度和有意义的关系。真正认可你的人，才是你社交决策中最重要的资产。</li>
+</ol>
+<p>真正的社交智慧，在于知道该推开哪扇门，更在于懂得何时转身离开热闹的会场。</p>
+<h3 id="苏晓晓"><a href="#苏晓晓" class="headerlink" title="苏晓晓"></a>苏晓晓</h3><p>尽管认识很多人，在关键时刻却找不到真正能帮助你的人？</p>
+<p>发现自己在社交场合中花费了大量时间，却始终无法进入更高层次的圈子？</p>
+<p>人脉的意义不在于你认识谁，在于你能吸引谁。</p>
+<p>✓ 人脉的本质</p>
+<p>任何人际关系本质上都是交换关系。</p>
+<p>你的人脉不是你和多少人打过交道，有多少人愿意主动和你打交道。</p>
+<p>人脉质量取决于你有多大的“可交换价值”。</p>
+<p>可交换价值 &#x3D; 你的价值 × 你的可交换系数</p>
+<p>“价值”指的是技能、资源、知识等。</p>
+<p>“可交换系数”指你如何有效地将这些价值传递给别人。</p>
+<p>只有当你具备了足够的价值，能够有效地交换这些价值时，你的人脉才会真正发挥作用。</p>
+<p>✓ 精准加圈</p>
+<p>我们的⼤脑新皮层大小有限，只能高效处理150人左右的关系。</p>
+<p>超过这一阈值，要么降低互动质量，要么压缩其他生存活动时间。</p>
+<p>加入的圈子要精准，减少无效社交，降低社交成本。</p>
+<p>🙏 如何精准加圈？</p>
+<p>不要盲目加入各种社交群组，选择那些与你的职业、兴趣或目标高度相关的圈子。</p>
+<p>✅ 在价值未建立前，专注自我提升</p>
+<p>在你还没有足够的“可交换价值”之前，不要浪费太多精力在社交上。</p>
+<p>多花时间提升自己，增加你的价值储备。</p>
+<p>✓ 建立信任</p>
+<p>建立信任是提升人脉的关键。不同层次的社交关系需要不同的策略。</p>
+<p>✅ 对上交往</p>
+<p>在与比你高层级的人交往时，不要过度“利用”。</p>
+<p>成为别人的工具，帮助对方解决问题，展示你的价值。</p>
+<p>能够获得对方的信任，还能在关键时刻得到他们的支持。</p>
+<p>✅ 对下交往</p>
+<p>在与比你低级别的人交往时，不要采用“利用”策略，而是多“提携”。</p>
+<p>对下交往很难产生即时的人脉收益，要着眼于长期人脉关系的构建。</p>
+<p>✅ 平级交往</p>
+<p>在与平级的人交往时，要注重互惠互利。</p>
+<p>互相帮助，建立稳固的合作关系，这样你们可以在未来的某个时刻互相支持。</p>
+<p>✓ 施人慎勿念</p>
+<p>在采用“提携”策略时，你要做好毫无回报的准备，要做好会遇到“白眼狼”的准备。</p>
+<p>古人说的“施人慎勿念”、“但问耕耘，不问收获”就是这个道理。</p>
+<p>一旦有所回报，就会高于你的预期，你的“可交换系数”也会永远大于1。</p>
+<p>✓ 立体信任关系</p>
+<p>精准加圈，建立对上、平级、对下的立体信任关系，你的“可交换系数”将会被充分放大。</p>
+<p>不断提升自己的价值，交换这些价值。</p>
+<p>人脉不是辉煌时有多少人奉承你，你落魄时，有多少人愿意帮助你。</p>
+<h3 id="阿繁达1043"><a href="#阿繁达1043" class="headerlink" title="阿繁达1043"></a>阿繁达1043</h3><p>我跟一个老同学在同一个单位，之前分属不同部门，大家见面也都客客气气，关系还算不错。后来因为组织架构的调整，领导把我们俩调到同一个部门，需要一起合作共事。我刚得到这个消息的时候，本能地产生焦虑和排斥情绪，因为我知道自己即将失去一个可以诚坦相见，甚至掏心窝子的好朋友。因为对于这三个关键问题：“我们在工作压力下相处过吗？我们对金钱和成功的定义一致吗？我们是否有明确的冲突解决机制？”，我的回答都是否定的，因此我们的关系势必要走向分崩离析。后来的结果也印证了我的推测，我们之间的嫌隙越来越多，只是碍于情面没有吵起来。总之我的感受就是，老同学的感情和工作中责权利的关系搅合在一起，这种黏糊糊的感觉对双方来说都太难受了。既不利于维护好关系，又影响了工作效率，实在是两头都不好。</p>
+<p>为人际关系建立清晰的界限实在是太重要了，这让我们做做人做事都干净利落，目标清晰，路径明确。</p>
+<p>哪些人可以让我们半夜三点打电话求救，他们是我们生命中最重要的人，一定要加倍珍惜，投入更多的时间和资源给他们；</p>
+<p>哪些人可以交换情绪价值，我们要向他们交付自己的真情实感，不要用虚头巴脑的那一套来应付；</p>
+<p>哪些人对我们有功能价值，比如家里突然跳闸了，车子在路上抛锚了，他们可以随叫随到。对于这些人我们只需跟他们交换实用价值或货币价值即可；</p>
+<p>对于事业上志同道合的人，我们要尽可能地跟他们共享同一个价值观、愿景和人生意义，去风险共享，责任共担。尽量不要去参杂其它因素，因为合伙制的延续一定是建立在双方优势互补的基础上，除此以外都不会牢靠。</p>
+<h3 id="陈克彪"><a href="#陈克彪" class="headerlink" title="陈克彪"></a>陈克彪</h3><p>真正的好关系永远不需要计算。但是人生时间有限，我们只有用理性的决策算法，才能把人生的有限时间投入给真正重要的人。</p>
+<ol>
+<li>提供你的价值，向确定性关系付出情感陪伴，向不确定性关系输出能力经验。</li>
+<li>保持关系的多元化，我们既需要稳定的关系带来安全感，也需要不确定性的关系带来新机会。</li>
+<li>建立关系的边界和底线，就像刺猬一样保持距离，才能互相取暖。</li>
+<li>掌握主动权，首先表明自己的底线原则，才能够低成本的筛选出价值观相同的朋友。</li>
+<li>把资源投入到帮助你“产出多”的人身上，减少或停止投入“产出少或没有产出”一直消耗你的人。</li>
+</ol>
+<h3 id="王茂荣"><a href="#王茂荣" class="headerlink" title="王茂荣"></a>王茂荣</h3><p>“社交决策：怎样构建你的四级社交圈？”讨论的知识要点：</p>
+<p>一、社交决策的重要性</p>
+<ul>
+<li><strong>核心能力</strong>：人类命运一直被与他人建立有效连接的能力所主导，从石器时代部落生存到现代社会商业成功，社交能力始终至关重要。</li>
+<li><strong>成功要素</strong>：洛克菲勒和戴尔·卡耐基都强调了社交能力在成功中的重要性，专业知识仅占成功因素的15%，而85%取决于人际关系。</li>
+</ul>
+<p>二、社交决策的五大核心算法</p>
+<ol>
+<li>经营你的社会资本<ul>
+<li><strong>社会资本定义</strong>：由法国社会学家皮埃尔·布尔迪厄提出，指与拥有相互认可的制度化关系网络有关的实际或潜在资源总和。关键在于多少人愿意为你提供帮助与背书。</li>
+<li><strong>社会资本的增值</strong>：社交不是交换利益，而是共享美好，要问自己能为朋友圈做出什么贡献。要有专业、资源和持续经营的事情，保持一致性。</li>
+<li><strong>社会资本的分类</strong>：<ul>
+<li><strong>黏合型社会资本</strong>：来自强关系，如家人、亲密伙伴，能在危急时刻提供帮助。</li>
+<li><strong>桥接型社会资本</strong>：来自弱关系，如同事、泛泛之交，可能带来意外惊喜和新机会。</li>
+</ul>
+</li>
+<li><strong>人际交往类型</strong>：组织心理学家亚当·格兰特将人际交往分为“给予者”“匹配者”和“索取者”三种类型，“给予者”能建立更广、更有支持力度的人际网络。</li>
+</ul>
+</li>
+<li>构建四级社交圈层<ul>
+<li><strong>社交圈层框架</strong>：根据本杰明·富兰克林的忠告和人类学家罗宾·邓巴的“邓巴数字”理论，人类大脑平均只能维持约150个稳定社会关系，这些关系呈同心圆层次展开：<ul>
+<li><strong>核心圈（5-7人）</strong>：情感堡垒，包括最亲密的伴侣、挚友和至亲，需要最多的真诚与时间，是“人格后盾”。</li>
+<li><strong>信任圈（15-20人）</strong>：好朋友，经常联系且感情深厚，可以坦诚交流，在需要时寻求帮助。</li>
+<li><strong>外围圈（50-150人）</strong>：熟人朋友，提供多样信息和机会，如工作推荐可能来自只见过几次面的前同事。</li>
+<li><strong>认知圈（数百人）</strong>：点头之交，构成社会影响力基础，保持友善但无需深度投入。</li>
+</ul>
+</li>
+<li><strong>圈层平衡</strong>：核心圈追求确定性，外围圈追求随机性。核心圈往往较同质，外围圈的人来自不同领域，能带来新的想法和资源。要做好圈层平衡，一方面在核心圈投入心力，另一方面“广种薄收”，区分关系价值。</li>
+</ul>
+</li>
+<li>守护关系类别边界<ul>
+<li><strong>关系分类的智慧</strong>：作者的朋友通过给社交关系加标签来管理不同类型的社交关系，如可以深夜喝酒的朋友、可以聊天倾诉的朋友、可以商业合作的朋友等，这种做法体现了关系分类的智慧。</li>
+<li><strong>健康关系的边界</strong>：心理学家亨利·克劳德和约翰·汤森德在《界限》一书中强调，健康的关系需要清晰的界限，这些边界分为物理边界、心理边界、情感边界和时间边界。</li>
+<li><strong>金钱关系的风险</strong>：能够成功合作做生意的朋友很少，数据显示65%的高潜力创业公司最终失败是因为联合创始人之间的冲突。要避免因金钱问题失去友谊，学会礼貌而坚定地说“不”，避免过度承诺。</li>
+<li><strong>关系分类的重要性</strong>：能一起喝酒的朋友不一定适合一起创业，能给你情感支持的人不一定是理财的好顾问。认清这一点，才能让每种关系在合适的轨道上健康发展。</li>
+</ul>
+</li>
+<li>成为强势的社交者<ul>
+<li><strong>社交的“最小作用力原理”</strong>：友善的人容易被人欺负，人们在选择伤害对象时，往往会先绕开那些不好得罪的人，而选择好欺负的好人。</li>
+<li><strong>强势的本质</strong>：强势不是要欺负别人，而是自立、独立，这样才能成为一个社交圈里受欢迎的人。</li>
+</ul>
+</li>
+<li>把时间给重要的人<ul>
+<li><strong>时间分配的重要性</strong>：作者通过参加商务邮轮活动后意识到，应该把时间花在重要的人身上，如家人。将时间和精力投入到那些在关键时刻能够“雪中送炭”的人身上，别怠慢他们，别亏待他们。</li>
+<li><strong>人际关系的再平衡</strong>：像投资股票的仓位调整一样，需要定期审视自己的人际关系，对高价值关系增加“持仓”，让这些关系持续产生正向回报；对于低价值关系适当“减仓”或“清仓”。</li>
+</ul>
+</li>
+</ol>
+<p>三、强势社交者的十大法则：</p>
+<ol>
+<li>你有权坚持自己的行为、想法和情感，并对产生的一切后果负责。</li>
+<li>坚持你要做的，不必解释。</li>
+<li>帮不到别人，也不用内疚。</li>
+<li>你有权改变想法。</li>
+<li>犯错不可怕，但要承担后果。</li>
+<li>你有权说“我不知道”。</li>
+<li>要与人交往，但不要刻意讨好。</li>
+<li>你有权做出“不合逻辑”的决定。</li>
+<li>你有权说“我不明白”。</li>
+<li>你有权说“我不在乎”。</li>
+</ol>
+<p>四、总结</p>
+<ul>
+<li><strong>社交决策的核心</strong>：人类的命运一直被与他人建立有效连接的能力所主导，社交决策五大核心算法是经营你的社会资本、构建四层社交圈层、守护关系类别边界、成为强势的社交者、把时间给重要的人。</li>
+<li><strong>真诚与理性的平衡</strong>：真正的友谊永远不需要计算，但在世俗世界里，我们必须掌握一些理性的决策算法，作为生存之道。</li>
+</ul>
+<h3 id="FF"><a href="#FF" class="headerlink" title="FF"></a>FF</h3><p>人生的智慧，不在于一招走天下，而在于知道什么时候该用哪一招。人不是一个固定的行为模式，而是动态调整的智慧。该真诚时真诚，该勇敢时勇敢，该宽恕时宽恕，但任何情况下都要保持优雅。</p>
+<h3 id="李坚"><a href="#李坚" class="headerlink" title="李坚"></a>李坚</h3><p>关系要有边界感，做不到强势社交但起码不会成为那个被欺负的“老好人”。</p>
+<p>将时间最大可能的放在重要的人身上，必须清醒的认识和重视那些生命中对你最重要的人。能做到这几点，对关系的把控基本能摆脱“巨婴”状态。</p>
+<h3 id="陈宇星"><a href="#陈宇星" class="headerlink" title="陈宇星"></a>陈宇星</h3><p>你的对手都是你的朋友，你的敌人是你自己。</p>
+<p>建立健康边界并非冷漠或自私，而是尊重关系的本质。</p>
+<p>认真静心整理归纳一下，给所有社交关系加上标签和属性。</p>
+<h3 id="Shaper-杨"><a href="#Shaper-杨" class="headerlink" title="Shaper 杨"></a>Shaper 杨</h3><p>有句话是说，三年不上门，是亲也不亲。关系还是需要经营的。我们需要把时间留给自己真正重要的人。</p>
+<p>强关系能够带来情感支撑，而弱关系更加具备自身能力圈外的信息优势。所以，让自己成为一个能够给他人带来价值的人，成为一个给予者很重要，但前提是我们能够始终去追求自身的圆满，做到爱自己，爱满则溢，才能真正拥有利他思维。万维钢老师讲，想要积累社交财富，最关键的方法就是两点：可信任和可依赖。成为一个靠谱的人，不论何时何地都是人际关系必备的底层修炼。</p>
+<h3 id="王勇先"><a href="#王勇先" class="headerlink" title="王勇先"></a>王勇先</h3><p>人与人的交往通常包含“有用”和“有趣”两条线索，优秀的社交离不开将这两条线有机结合。</p>
+<p>关键在于先情感后利益，先建立真诚的联系，再谈资源的交换。</p>
+<p>认识谁不如谁真正认可你；</p>
+<p>说到社交，我属社死型，是我的绝对痛点，先天性的基因缺陷，让自己不能喝酒，对公元2000年左右的大西北来说，做生意不能喝酒是缺了一个绝对的硬核能力，公司发展磨磨唧唧的，好在熬过来没死。</p>
+<p>自己被逼反思过程中，其中做了两件事效果显著：</p>
+<p>第一，打羽毛球，既对自己的身体健康负责，又建立了一个有趣有效的社交平台，尤其是有了自己的羽毛球馆和球队后，各种比赛培训互动过程中，认识的很多球友，人情世故交往基本先情感后利益，先真诚后资源交换的，彼此信任的成本低且愉悦，而其中羽毛球成年人的群体，很多是那种扛着家庭事业对自己身体负责，有自律，爱好健康的，质量真的不低；</p>
+<p>第二，坚持学习，提升认知和行为能力，让别人来真正的认可你，远好过你守着一身平淡淡的能力，却偏要千寻万找的求偶遇。这个目标，可真的是值得用一生努力攀爬的一座山，它的底层逻辑是你的能力越强，所能赢得认可的人就越广泛且强大。</p>
+<h3 id="小太阳在泸州"><a href="#小太阳在泸州" class="headerlink" title="小太阳在泸州"></a>小太阳在泸州</h3><p>不同年龄和不同人生阶段秉持的社交心法不一样，就我而言，核心圈和信任圈随着自己的家庭和事业的框架基本成型，这两个圈层再向上发展的能量容纳空间已经没多少了。从让自己与家人生活更美好和给到孩子更好的成长引导两个点出发，外围圈和认知圈多多益善！</p>
+<h3 id="victory"><a href="#victory" class="headerlink" title="victory"></a>victory</h3><p>你的水平由你身边几个合作最多的朋友决定，这揭示出了社交圈的本质，我们的精力是有限的，只有把自己的时间用在最关键的地方收益才会最大化。我自己的一个社交心得是你一定要让你变的有价值，如果一段关系里面长期只有一方提供价值那么这段关系很难长久，同时人的偏好很多，那么仔细发现我们一定有自己的价值。最后不要试图一直保持一个社交圈，因为人的思想境遇都在发生变化，所以社交圈里面的人来来去去都是常态。</p>
+<p>（以上留言由作者筛选显示）</p>
+<hr>
+<p>日更、防断更、更多低价好课 加微信：coc36666 &#x2F; coc3678</p>
+<hr>
+<p><a href="/book/decision-algorithm/079/">← 079｜决策之“痴”：怎样掌握知与不知的边界？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/081/">081｜安全决策：守护岁月静好的四大支柱系统 →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

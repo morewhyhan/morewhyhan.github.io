@@ -1,0 +1,317 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>020｜机会成本：你愿意花多少钱买一台印钞机？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》020：机会成本：你愿意花多少钱买一台印钞机？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="020｜机会成本：你愿意花多少钱买一台印钞机？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/020/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》020：机会成本：你愿意花多少钱买一台印钞机？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:44.990Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/020/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '020｜机会成本：你愿意花多少钱买一台印钞机？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">020｜机会成本：你愿意花多少钱买一台印钞机？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">020｜机会成本：你愿意花多少钱买一台印钞机？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>来源：老喻·决策算法100讲<br>音频时长：13分08秒</p>
+</blockquote>
+<h2 id="一、你愿意花多少钱买一台印钞机？"><a href="#一、你愿意花多少钱买一台印钞机？" class="headerlink" title="一、你愿意花多少钱买一台印钞机？"></a>一、你愿意花多少钱买一台印钞机？</h2><p>机会成本，是做出一个选择时，放弃的那个最佳选项的价值。</p>
+<p>想象有一台可以用一辈子的印钞机，你愿意花多少钱买它？在回答之前，至少要问清楚几个问题：它每年、每月还是每天能印出多少钱？印钞的成本和原料从哪里来，未来会不会涨价？产量有没有上限？是不是任何人都能买到？有没有专利和竞争者？</p>
+<p>“天下没有免费的午餐。”看见一个看似白送的机会时，更要先问：它的成本究竟在哪里？一切都有成本，陷阱掉下来时更要保持冷静。</p>
+<h2 id="二、机会成本是什么"><a href="#二、机会成本是什么" class="headerlink" title="二、机会成本是什么"></a>二、机会成本是什么</h2><p>假设有三份工作，年薪分别是3万元、2万5千元和2万元。你选择了3万元的工作，机会成本是被放弃的最佳选择——2万5千元，而不是把另外两份工作的收入全部相加。因为你一次只能选择一份工作。</p>
+<p>机会成本的关键，是比较“如果不选现在这个，最好的替代方案是什么”。</p>
+<p>有一位朋友想买一间商铺开超市。他把买商铺当成房地产投资，又把开超市当成经营投资，分别计算：如果租金回报率只有2%，就不买这间商铺；如果超市本身的经营收益可观，就把经营项目单独评估。不能因为一项资产和一个生意碰巧发生在同一间房子里，就把两种决策混成一个。</p>
+<h2 id="三、沉没成本与及时止损"><a href="#三、沉没成本与及时止损" class="headerlink" title="三、沉没成本与及时止损"></a>三、沉没成本与及时止损</h2><p>沉没成本，是已经付出、无论接下来怎么选择都无法收回的成本。比如你花100元买电影票，电影看了一会儿发现很糟糕。继续看，除了已经付出的100元，还要付出剩下三分之二的时间，并失去去吃饭、散步或烧烤的机会；离开虽然不能挽回票钱，却可以挽回后面的机会成本。</p>
+<p>对于机会成本的理解，区分了开心的人和不开心的人。开心的人总是能够及时止损，忘掉沉没成本，挽回机会成本，切换到更开心的事情上。</p>
+<h2 id="四、机会成本与财富"><a href="#四、机会成本与财富" class="headerlink" title="四、机会成本与财富"></a>四、机会成本与财富</h2><p>机会成本也区分了有钱人和普通人。</p>
+<p>机场里一碗价值10万元的牛肉面，普通人会认为它绝对不值得；但如果一个富有的商人因为不吃这碗面就会错过一笔更大的生意，那么他衡量的不是牛肉面的标价，而是错过那笔生意的机会成本。对他而言，吃面可能反而是更理性的选择。</p>
+<p>有钱人是用“机会成本—收益原则”来做决策，而普通人则只看一个东西表面值多少钱。</p>
+<h2 id="五、选择性下注"><a href="#五、选择性下注" class="headerlink" title="五、选择性下注"></a>五、选择性下注</h2><p>小米创始人雷军曾经给自己的一个小时估价5000元。类似地，在商业决策中，签名、应酬、低价值的重复劳动，都应该放到时间价值中评估。看起来只是几分钟的事情，乘以机会成本，可能并不便宜。</p>
+<p>赢家必须有选择地下注，不追逐平庸的机会，最卓越的投资人应该是只打好球。</p>
+<h2 id="六、机会成本不是万能公式"><a href="#六、机会成本不是万能公式" class="headerlink" title="六、机会成本不是万能公式"></a>六、机会成本不是万能公式</h2><p>机会成本容易被滥用。把所有事情都外包，可能失去核心竞争力；把孩子的教育全部交给别人，可能失去亲子关系和成长过程；为了节省一笔小钱，也可能错过生活中真正重要的体验。</p>
+<p>对于一个决策高手来说，不仅要能深刻理解机会成本，还要能够深入本质去评估机会成本的多元化价值。</p>
+<p>例如，一位母亲为了使用两元优惠券，专门坐公交车去很远的地方。对另一个人来说，走路本身可能是锻炼身体、晒太阳和与家人相处的机会，这种价值很难用优惠券金额衡量。</p>
+<p>爱因斯坦说：“并不是每一件计算出来的事，都有意义；也不是每一件有意义的事，都能够被算出来。”</p>
+<h2 id="本讲重点"><a href="#本讲重点" class="headerlink" title="本讲重点"></a>本讲重点</h2><ol>
+<li>赢家必须有选择地下注，不追逐平庸的机会，最卓越的投资人应该是只打好球。</li>
+<li>对于投资和工作这些大事儿的决策，要遵循“成本—收益原则”，算好账，评估机会成本，做理性决策。</li>
+<li>对于生活和亲情方面的一些小事儿的决策，要难得糊涂。</li>
+</ol>
+<h2 id="PDF-内留言"><a href="#PDF-内留言" class="headerlink" title="PDF 内留言"></a>PDF 内留言</h2><h3 id="左星星"><a href="#左星星" class="headerlink" title="左星星"></a>左星星</h3><p>机会成本不是简单地把所有没有选择的东西相加，而是被放弃的最佳替代选项的价值。</p>
+<h3 id="美君"><a href="#美君" class="headerlink" title="美君"></a>美君</h3><p>留言围绕“天下没有免费的午餐”展开：看起来便宜或免费的东西，往往都隐含着时间、精力和放弃其他机会的成本。</p>
+<h3 id="黄泊淳-Only"><a href="#黄泊淳-Only" class="headerlink" title="黄泊淳 Only"></a>黄泊淳 Only</h3><p>如果只盯着眼前的价格，就会忽略真正被放弃的东西。做决策时应该把时间价值和替代方案一起算进去。</p>
+<h3 id="鸿涛"><a href="#鸿涛" class="headerlink" title="鸿涛"></a>鸿涛</h3><p>机会成本的本质，是在有限资源下做取舍。一个选择不仅带来收益，也意味着关闭其他可能性。</p>
+<h3 id="进化菌"><a href="#进化菌" class="headerlink" title="进化菌"></a>进化菌</h3><p>沉没成本已经发生，继续投入并不能让它消失；真正重要的是接下来还能不能挽回时间和机会。</p>
+<h3 id="Keiko-璟"><a href="#Keiko-璟" class="headerlink" title="Keiko.璟"></a>Keiko.璟</h3><p>留言强调：能够及时止损、放下已经付出的成本，才有机会切换到更好的选择。</p>
+<h3 id="伴听"><a href="#伴听" class="headerlink" title="伴听"></a>伴听</h3><p>生活里有些事情无法精确计算。对亲情、体验和健康，不能只用金钱的机会成本衡量。</p>
+<h3 id="山峰"><a href="#山峰" class="headerlink" title="山峰"></a>山峰</h3><p>普通人常常只看表面价格，而高手会比较不同选择的收益、风险和机会成本。</p>
+<h3 id="阳木·李欣"><a href="#阳木·李欣" class="headerlink" title="阳木·李欣"></a>阳木·李欣</h3><p>留言谈到时间是不可再生资源；把时间投入一个方向，就放弃了同时做另一件事的可能。</p>
+<h3 id="ZERO"><a href="#ZERO" class="headerlink" title="ZERO"></a>ZERO</h3><p>选择本身就是放弃。面对机会时，不追逐所有机会，而是挑选真正值得下注的机会。</p>
+<h3 id="逆风阿煜"><a href="#逆风阿煜" class="headerlink" title="逆风阿煜"></a>逆风阿煜</h3><p>对于重大投资和工作决策，要算账；对于生活中的小事，要保留一些“难得糊涂”。</p>
+<h3 id="七色黑白"><a href="#七色黑白" class="headerlink" title="七色黑白"></a>七色黑白</h3><p>沉没成本和机会成本常常被混淆：已经付出的钱不是继续选择的理由，未来还能得到什么才是。</p>
+<h3 id="Todd"><a href="#Todd" class="headerlink" title="Todd"></a>Todd</h3><p>赢家只打好球，意味着主动放弃平庸机会，把有限的注意力留给高价值的选择。</p>
+<h3 id="PDF-内作者回复"><a href="#PDF-内作者回复" class="headerlink" title="PDF 内作者回复"></a>PDF 内作者回复</h3><p>对上述关于机会成本、及时止损与生活取舍的留言，作者作了回应。具体字句：【原图此处需放大复核】</p>
+<hr>
+<p><a href="/book/decision-algorithm/019/">← 019｜赌技的幻觉：马丁·格尔策略为什么不能让你翻盘？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/021/">021｜驾驭熵增：为什么世界的意义在于事与愿违？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

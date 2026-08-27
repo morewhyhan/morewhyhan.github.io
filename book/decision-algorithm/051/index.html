@@ -1,0 +1,406 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>051｜巴菲特：如何在不确定性中构建确定性？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》051：巴菲特：如何在不确定性中构建确定性？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="051｜巴菲特：如何在不确定性中构建确定性？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/051/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》051：巴菲特：如何在不确定性中构建确定性？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:45.501Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/051/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '051｜巴菲特：如何在不确定性中构建确定性？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">051｜巴菲特：如何在不确定性中构建确定性？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">051｜巴菲特：如何在不确定性中构建确定性？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>来源：老喻·决策算法100讲</p>
+<p>音频时长：13分11秒</p>
+</blockquote>
+<h2 id="老喻亲述"><a href="#老喻亲述" class="headerlink" title="老喻亲述"></a>老喻亲述</h2><p>你好。</p>
+<p>我是老喻，欢迎来到《决策算法》课。</p>
+<p>我想问你一个问题：投资理财，啥最重要？</p>
+<p>新手往往会说：当然是赚钱快最重要了。</p>
+<p>而有经验的人则会说：稳更重要。</p>
+<p>这种“稳”的背后，其实是对“确定性”的追求。</p>
+<p>在上一节课里，我们探讨了格雷厄姆提出的“本金安全”“安全边际”等理念——说到底，也就是为了在充满不确定性的市场环境中，找到一种“较为确定”的生存与获利方式。</p>
+<p>但很多时候，人们对“确定性”本身容易产生误解：好像只要押注“长期必然会发生的大趋势”，就能获得确定的回报。</p>
+<p>其实，在这个世界里，“大趋势”常常就是最不确定的部分：巴菲特之所以被称为“股神”，恰恰在于他并不执着于做宏观预言，而是在无数不可预测的浪潮中，为自己建造了一艘能穿越风暴、抵御大部分冲击的“投资方舟”。</p>
+<p>那么，究竟什么是投资中的“确定性”？为什么说“确定性”并不意味着我们要精准预测未来？巴菲特如何在这个被不确定性支配的世界中，建立起能够积累财富的相对确定性？又是什么让他在几十年的投资生涯中既能稳扎稳打，又能享受长期复利的威力？带着这些疑问，我们来细细拆解。</p>
+<h2 id="一、确定性不是预测未来"><a href="#一、确定性不是预测未来" class="headerlink" title="一、确定性不是预测未来"></a>一、确定性不是预测未来</h2><p>人们常常对确定性有着根深蒂固的误解。有些投资者认为，只要找到某个确定的趋势，就能稳赚不赔。例如，有人看到全球铜供需关系紧张，就认定铜矿股必然上涨；有人研究康波周期，就宣称能预测大宗商品的走势。</p>
+<p>这些想法看似有理有据，实则都犯了一个致命错误：把“确定的趋势”等同于“确定的结果”。而且，正如《决策算法》课程一直强调的，这个世界是概率的，而非因果的。</p>
+<p>巴菲特曾多次嘲讽“预测未来”这件事：</p>
+<blockquote>
+<p>从预言中，你可以看出很多关于预言者的信息，却很难从中了解到未来本身。</p>
+</blockquote>
+<p>他还在不同场合反复声明：“我对宏观经济一窍不通，也从不预测汇率、利率，因为无论怎么看，这些都不可知，也不重要。”</p>
+<p>为什么市场里还不断有人乐此不疲地做预测呢？因为人们本能地渴望得到一个可以抓住的答案，一种“控制未来”的幻觉。</p>
+<p>所以，一种常见的误解就是：“确定性&#x3D;精准预测未来+看懂大趋势。”</p>
+<p>在巴菲特眼里，真正的确定性并非由预测大势获得，而是基于对企业本身及其经营模式的理解，对风险边界的把握，以及对投入与回报概率的判断。</p>
+<h2 id="二、怎么构建投资的确定性"><a href="#二、怎么构建投资的确定性" class="headerlink" title="二、怎么构建投资的确定性"></a>二、怎么构建投资的确定性</h2><h3 id="第一，投资追求的确定性，是不确定性基础之上的确定性"><a href="#第一，投资追求的确定性，是不确定性基础之上的确定性" class="headerlink" title="第一，投资追求的确定性，是不确定性基础之上的确定性"></a>第一，投资追求的确定性，是不确定性基础之上的确定性</h3><p>我们不是要在坚固的岩石上建立一个牢不可破的堡垒，也不是要精确预测未来、知道海浪什么时候来临；要做的是建造一艘方舟，能够抵御可能遇到的最大风险，走完全程，最终到达目的地。</p>
+<p>这艘“方舟”就是投资决策中的安全边际与风险控制体系。</p>
+<p>换句话说，真正的“追求确定性”，并非否认不确定性，而是在承认世界充满随机性的前提下，为自己建立最大化生存率、最大化收益概率的组合方案。</p>
+<h3 id="第二，建造确定性的船"><a href="#第二，建造确定性的船" class="headerlink" title="第二，建造确定性的船"></a>第二，建造确定性的船</h3><p>巴菲特有句名言：</p>
+<blockquote>
+<p>我们无法预知未来，但可以确定一家公司是否能保持长期快速增长。</p>
+</blockquote>
+<p>什么是巴菲特说的确定性？他说：“我们的目标是使我们持股合伙人的利润来自于企业，而不是其他共有者的愚蠢行为。”</p>
+<p>在他看来，一家公司的股票是否值得投资，很大程度上决定于该公司的未来是否具有确定性；一家未来没有确定性的公司的股票，是不值得购买的。</p>
+<p>如何定义确定性的公司？上节课讲到，巴菲特的老师格雷厄姆用非常保守的“清算公司价值”方法，而巴菲特受到芒格影响，一方面估算企业未来现金流折现，另一方面愿意为伟大的公司付出好的价格。</p>
+<p>他为伟大企业给出如下定义：在25年或30年后仍然能够保持其伟大企业地位的企业。按照这种标准，恐怕很少有公司值得长期拥有。</p>
+<h3 id="第三，即使对于确定性，也要懂概率"><a href="#第三，即使对于确定性，也要懂概率" class="headerlink" title="第三，即使对于确定性，也要懂概率"></a>第三，即使对于确定性，也要懂概率</h3><p>巴菲特在投资决策中非常重视企业未来增长的确定性。但他所讲的确定性，并不代表100%的把握，而是一个概率问题——假如有人说确定性就是100%，其实是很危险的事情。</p>
+<p>伯克希尔的投资经理库姆斯曾提到，他们在评估企业时会考虑以下标准：市盈率（PE）不超过15倍；五年后盈利增长的确定性（置信度为90%）；年复合增长率达到7%（置信度为50%）。</p>
+<p>你看，再厉害的高手，也要在自己的评估数字前加上概率。</p>
+<h3 id="第四，利用不确定性"><a href="#第四，利用不确定性" class="headerlink" title="第四，利用不确定性"></a>第四，利用不确定性</h3><p>巴菲特说，着眼于长远的投资者，一直要学着如何与不确定性周旋。</p>
+<p>未来充满了不确定性，而不确定性是价值投资者的朋友。不确定性带来好的投资机会。巴菲特欢迎市场下跌，因为能使他能以新的、令人感到恐慌的便宜价格捡到更多的好股票。</p>
+<p>总结来说，巴菲特追求的，是从长期回报看确定性，也就是寻找长期胜率更大的股票。根据凯利公式，这样的投资标的，投资者可以有更大的仓位，并且因为长期持有，也能真正享有复利。而复利，是实现财富的强大力量。</p>
+<h2 id="三、巴菲特的能力圈、安全边际与护城河"><a href="#三、巴菲特的能力圈、安全边际与护城河" class="headerlink" title="三、巴菲特的能力圈、安全边际与护城河"></a>三、巴菲特的能力圈、安全边际与护城河</h2><p>在格雷厄姆的课堂上，巴菲特学到了三大主要原则：</p>
+<ul>
+<li>买股票就是买公司；</li>
+<li>使用安全边际；</li>
+<li>“市场先生”是你的仆人。</li>
+</ul>
+<p>这几条里，安全边际的观点至关重要。为了造出确定性的投资方舟，巴菲特进一步补充与发展了两个关键概念：能力圈，以及“好生意”与护城河。</p>
+<h3 id="能力圈"><a href="#能力圈" class="headerlink" title="能力圈"></a>能力圈</h3><p>只投资自己真正懂的行业和公司。如果不懂，就坚决不碰，不管涨多少，也不眼红，不后悔。能力圈本质上是一个概率问题：哪怕能力圈很小，只要在其中能够精准判断，就比能力圈很大却无法分辨边界的人强得多。</p>
+<p>巴菲特说：“哪怕你的能力圈很小，但只要你在其中能精准判断，就比那种能力圈虽然更大却无法分辨边界的人强得多。”</p>
+<p>简而言之：知道自己真正理解哪些行业，并清楚自己在哪些方面无知。</p>
+<h3 id="“好生意”与护城河"><a href="#“好生意”与护城河" class="headerlink" title="“好生意”与护城河"></a>“好生意”与护城河</h3><p>巴菲特喜欢找那些未来十年或二十年都能保持独占地位的生意，哪怕收益率不是最高，但是足够稳定、足够持久。护城河可以来自品牌、稳定经营、管理团队、低成本优势等。</p>
+<p>基于能力圈和护城河，他才有底气在能力圈内碰到真正看得懂的优质公司时，集中火力，大举买入，长期持有。相反，他对科技股曾长期观望，就是因为自觉难以预测那些公司十年后如何，难以摸清竞争格局，因此“宁可错过也不犯错”。</p>
+<p>用概率来量化确定性，并且运用概率构建冗余，才能实现在不确定现实中的确定性回报。</p>
+<p>除了能力圈和护城河，巴菲特还构建了多重保护机制来增强确定性：</p>
+<ul>
+<li>优先股策略提供稳定股息和清算保护，同时保留享受上涨收益的机会；</li>
+<li>旗下保险公司提供源源不断的浮存金；</li>
+<li>充足的现金储备则能更好地让“市场先生”当仆人。</li>
+</ul>
+<p>这些保护措施都基于概率思维，通过层层叠加，构建起一个能适应不确定性的投资体系，最终实现财富的稳健增长。</p>
+<h2 id="四、为什么巴菲特的智慧难以复制"><a href="#四、为什么巴菲特的智慧难以复制" class="headerlink" title="四、为什么巴菲特的智慧难以复制"></a>四、为什么巴菲特的智慧难以复制</h2><h3 id="1-认知理解的局限"><a href="#1-认知理解的局限" class="headerlink" title="1. 认知理解的局限"></a>1. 认知理解的局限</h3><p>很多人对巴菲特的理论存在表面化、片面化的理解。以价值投资为例，巴菲特的价值投资并非简单地寻找被低估的股票然后长期持有，他会综合考虑公司的内在价值、竞争优势、管理团队等多方面因素。</p>
+<p>可口可乐不只是因为它是家喻户晓的饮料公司，更因为可口可乐拥有强大的品牌影响力、稳定的经营业绩和优秀的管理团队。如果仅仅因为一家公司的股价看起来便宜就盲目买入并长期持有，而不考虑其内在价值和发展前景，很可能会遭受损失。</p>
+<h3 id="2-资金与成本差异"><a href="#2-资金与成本差异" class="headerlink" title="2. 资金与成本差异"></a>2. 资金与成本差异</h3><p>巴菲特的资金来源与普通投资者有很大不同。他的资金主要来自伯克希尔旗下众多保险公司的浮存金以及持仓中的分红，这些资金几乎没有成本，而且没有时间上的压力。这使得他能够更加从容地投资，不受短期市场波动影响，耐心等待投资机会。</p>
+<p>普通投资者的资金往往是积蓄或通过融资获得的，不仅有成本压力，还可能面临资金赎回等问题。即便知道某只股票具有长期投资价值，也可能因为资金压力而不得不提前卖出。</p>
+<h3 id="3-能力圈扩展难度大"><a href="#3-能力圈扩展难度大" class="headerlink" title="3. 能力圈扩展难度大"></a>3. 能力圈扩展难度大</h3><p>巴菲特强调要在自己的能力圈范围内投资，同时也在不断扩展自己的能力圈。他通过持续学习和研究，逐渐涉足更多领域和行业。然而对普通投资者来说，扩展能力圈并非易事：可能缺乏足够时间和精力，也可能因缺乏专业知识和经验而难以真正掌握。巴菲特能深入分析能源、金融等复杂行业的企业，普通投资者可能连基本运作原理都难以搞清楚，更不用说准确评估企业的价值和投资风险。</p>
+<h3 id="4-市场环境与机会不同"><a href="#4-市场环境与机会不同" class="headerlink" title="4. 市场环境与机会不同"></a>4. 市场环境与机会不同</h3><p>巴菲特所处的美国股市市场环境与其他国家和地区存在差异。美国股市历史悠久，市场机制相对完善，优质企业较多，市场风格转换周期较长，为巴菲特的投资策略提供了有利条件。其他市场可能缺乏同样的优质企业，市场风格变化频繁，投资者很难找到长期稳定的投资机会；不同市场的监管政策、投资者结构等因素也会影响投资策略。</p>
+<h3 id="5-心态与耐心的差距"><a href="#5-心态与耐心的差距" class="headerlink" title="5. 心态与耐心的差距"></a>5. 心态与耐心的差距</h3><p>投资是一场马拉松，而不是短跑。巴菲特能够在长达几十年的投资生涯中保持耐心，不受短期市场波动干扰，坚持自己的投资理念和策略。普通投资者往往缺乏这种耐心和定力，市场上涨时盲目追高，市场下跌时惊慌失措，频繁买卖不仅增加投资成本，还容易错失长期投资机会。</p>
+<h2 id="五、投资中的实践"><a href="#五、投资中的实践" class="headerlink" title="五、投资中的实践"></a>五、投资中的实践</h2><h3 id="1-避险为先，稳字当头"><a href="#1-避险为先，稳字当头" class="headerlink" title="1. 避险为先，稳字当头"></a>1. 避险为先，稳字当头</h3><p>成大功，就是避大险。实际方法包括：</p>
+<ul>
+<li>聚焦熟悉领域：选择自己了解的行业和公司进行投资，避免盲目涉足陌生领域；</li>
+<li>坚守知识边界：对于不熟悉的金融工具如期权、期货等复杂衍生品，保持谨慎态度，不予涉足；</li>
+<li>理性和自制力：建立并严格遵守个人投资原则，构建行之有效的方法论，不受短期波动影响；</li>
+<li>远离杠杆：坚决抵制使用杠杆交易，因为这极易导致资金链断裂，甚至造成无法挽回的损失；</li>
+<li>投资自我提升：重视自身职业发展和个人成长，确保有足够现金流维持生活稳定，减少因经济压力而被迫退出市场的风险。</li>
+</ul>
+<h3 id="2-构建保险浮存金机制：储备充足弹药"><a href="#2-构建保险浮存金机制：储备充足弹药" class="headerlink" title="2. 构建保险浮存金机制：储备充足弹药"></a>2. 构建保险浮存金机制：储备充足弹药</h3><p>巴菲特通过收购一些保险公司，同时经常手握大量现金，为自己备足了子弹。市场大跌时，这些子弹可以买大量便宜的、性价比超高的公司股票，从而获得极好的投资回报率。普通人也可以通过打工、存钱，给自己备子弹，并等待好的机会。投资的世界里，不缺机会，缺钱。</p>
+<h3 id="3-购买高品质的公司，而不仅仅是便宜的公司"><a href="#3-购买高品质的公司，而不仅仅是便宜的公司" class="headerlink" title="3. 购买高品质的公司，而不仅仅是便宜的公司"></a>3. 购买高品质的公司，而不仅仅是便宜的公司</h3><p>巴菲特曾在1989年的年报里说：</p>
+<blockquote>
+<p>我觉得你们应该有个大致的了解，以合理的价格买进一家很棒的公司，远胜于以很低的价格买进一家平平的公司。</p>
+</blockquote>
+<p>这里的“很棒的公司”，是指那些具备低风险、高回报、高分红的优秀公司。这样的公司很少，需要投资者不断提升自身的投资分析能力和市场洞察力。</p>
+<h2 id="六、普通人的人生启示"><a href="#六、普通人的人生启示" class="headerlink" title="六、普通人的人生启示"></a>六、普通人的人生启示</h2><p>巴菲特的投资智慧和人生哲学，归根结底都指向一个核心：在不确定的世界中建立确定性。</p>
+<p>无论是投资还是人生，最重要的不是追求完美或利益最大化，而是避免重大错误；不是预测未来，而是构建防护体系；不是期待暴利，而是持续积累。</p>
+<p>这个道理用在投资上，就是通过能力圈、安全边际等多重保护机制来降低风险；用在人生中，就是保持理性、专注擅长领域、不断投资自己。</p>
+<p>正如巴菲特所说：</p>
+<blockquote>
+<p>成功不在于你有多聪明，而在于你能在多大程度上避免愚蠢的错误。</p>
+</blockquote>
+<p>这句话道出了投资和人生的共同真谛：智慧往往来自于克制，成功常常源于避险。</p>
+<p>在追求财富的道路上，最重要的不是预测能力，而是生存能力；不是投资技巧，而是认知进化；不是投机思维，而是价值思维；不是短期收益，而是长期复利。</p>
+<p>巴菲特给普通人的启示，远不止价值投资的理念，而是一种非常本质的人生智慧：</p>
+<ol>
+<li><strong>要深耕自己熟悉和擅长的领域，建立独特的竞争优势</strong>：知道自己知道什么，更要知道自己不知道什么。</li>
+<li><strong>别去干你不熟悉的东西</strong>：不要因为贪婪或从众心理，去碰触自己不了解的投资，或转行去毫无优势的领域。这需要极强的克制力，但这种克制恰恰是最好的保护。</li>
+<li><strong>用理性和自制力守住原则</strong>：巴菲特说：“我是个现实主义者，我喜欢目前自己所从事的一切，并对此始终深信不疑。作为一个彻底的实用现实主义者，我只对现实感兴趣，从不抱任何幻想，尤其是对自己。”</li>
+<li><strong>在投资上永远不要加杠杆</strong>：巴菲特即使只有1万美元时也不借钱投资，因为一旦加杠杆，再小的波动都可能带来致命打击，多赚的那点钱不如内心的宁静重要。</li>
+<li><strong>投资自己是最好的投资</strong>：一个人最好的资产就是自己。保持向前看的心态，不为过去懊恼，专注当下，期待未来。</li>
+</ol>
+<p>我有一位初中同学，因为听《决策算法》又和我联系上了。我们都处在一个人生中相当有压力的年龄段。她说，我记得你写过，巴菲特的财富99%以上都是五十岁以后实现的。</p>
+<p>的确如此。在不确定性中构建财富的确定性，是一件漫长、需要极大耐心的事。但正因为过程漫长，我们随时都可以出发。哪怕过去曾经犯过很多错误，未来仍有足够的可能性。</p>
+<p>最后送你我很喜欢的巴菲特的一段话：</p>
+<blockquote>
+<p>我从来不想已经过去的事，未来有那么多值得期待的，何必对过去耿耿于怀。不纠结过去的事，纠结也没用，人生只能向前看。</p>
+</blockquote>
+<p>以上就是这一讲的全部内容。我是老喻，我们下一讲再见。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>真正的确定性并非由预测大势获得，而是基于对企业本身及其经营模式的理解，对风险边界的把握，以及对投入与回报概率的判断。</li>
+<li>在追求财富的道路上，最重要的不是预测能力，而是生存能力；不是投资技巧，而是认知进化；不是投机思维，而是价值思维；不是短期收益，而是长期复利。</li>
+</ol>
+<h2 id="PDF-内用户留言"><a href="#PDF-内用户留言" class="headerlink" title="PDF 内用户留言"></a>PDF 内用户留言</h2><h3 id="Christy"><a href="#Christy" class="headerlink" title="Christy"></a>Christy</h3><p>只在自己的能力圈中决策和做事情。专注于自己擅长的领域，而不是盲目追随热点。能力圈内的能力是一个人的核心竞争力；优秀的一技之长来自天赋技能、专注实践、深耕拓展和做大做强。在竞争激烈的时代，能出圈不在于做了多少事，而在于是否深耕自己。只要情长久坚持，对手并没有那么多。</p>
+<h3 id="左星星"><a href="#左星星" class="headerlink" title="左星星"></a>左星星</h3><p>“能力圈”反映了一个深刻道理：清楚自己的局限，比扩展自己的能力更重要。真正的智慧不是去拥抱所有可能性，而是有意识地放弃，专注于少数真正重要的事情，并在领域内做到极致。巴菲特的“克制”不是消极保守，而是积极选择；与其跟随潮流，不如深挖自己擅长的领域，形成长期优势。</p>
+<h3 id="Keiko-璟"><a href="#Keiko-璟" class="headerlink" title="Keiko.璟"></a>Keiko.璟</h3><p>人们常被灌输“想成功就必须冒险”，但真正的成功者并非凭借冒险取胜，而是通过深思熟虑与精准避险，在看似高风险的行动中获得回报。“聪明不重要，少犯错误才重要。”要控制风险、防止犯错、保持安全边际，从“避免失败”中寻找成功的反向思维。</p>
+<h3 id="空"><a href="#空" class="headerlink" title="空"></a>空</h3><p>巴菲特的投资智慧和人生哲学，归根结底都指向在不确定的世界中建立确定性。这背后可以理解为康德的先验哲学：我们无法认识世界本质，只能通过自己的认知形式和模型认识世界的表象；市场同样不确定，投资者只能用自己的模型和确定性规则认识市场。</p>
+<h3 id="炎帝"><a href="#炎帝" class="headerlink" title="炎帝"></a>炎帝</h3><p>巴菲特的价值投资理论大家都熟悉，但真正做到很少。问题是：为什么巴菲特的智慧难以复制？留言从认知理解、资金成本、能力圈扩展、市场环境、心态与耐心等方面进行了梳理。</p>
+<h3 id="李祭酒"><a href="#李祭酒" class="headerlink" title="李祭酒"></a>李祭酒</h3><p>能力圈让我想到《财富方程》里巴菲特长期持有比亚迪股票的案例。不能只预测一个未来趋势，还要选择趋势中的龙头企业；只有能够穿越周期、长期生存并持续增长的企业，才是巴菲特所要寻找的确定性。投资应从自身能力圈和认知出发，寻找有护城河和竞争优势的企业，在低于安全边界的价格买入。</p>
+<h3 id="陈克彪"><a href="#陈克彪" class="headerlink" title="陈克彪"></a>陈克彪</h3><p>这个世界不存在“稳赚不赔”，我们能做的是在不确定性世界里构建确定性：避免重大错误，不把全部筹码押在一次“确定性赢”的机会；做一个胆小鬼，只做自己熟悉的东西，不懂的事情坚决不碰；持续投资自己，因为知识和技能无法被夺走，并会随时间积累。</p>
+<h3 id="Todd"><a href="#Todd" class="headerlink" title="Todd"></a>Todd</h3><p>飞镖游戏的比喻很好：提高命中率，或者把靶子放大，在靶子外面再加一圈安全边际，并且只扎向离自己最近、把握最大的区域。想要成功，一方面提高准确率，另一方面放大目标；降低收益率能赢的原因在于稳定，长期看波动小的投资可能比波动大的投资获得更好的回报，但需要耐得住寂寞，慢慢变富。</p>
+<h3 id="鸿涛"><a href="#鸿涛" class="headerlink" title="鸿涛"></a>鸿涛</h3><p>巴菲特的“在不确定的世界中建立确定性”，确定的是对宏观、利率、汇率和市场不能掌握的小概率因素不做幻想；可以掌握的是对公司理解、能力圈、情绪控制和投资纪律。用巨轮和长期业绩的稳定性获得投资航程的确定性。</p>
+<h3 id="山峰"><a href="#山峰" class="headerlink" title="山峰"></a>山峰</h3><p>2008年金融危机时，巴菲特说“我在买入美国”。深入看，他买的是高盛的优先股，而不是普通股，体现的是对风险的剥离：不追求最大的回报，而是在保住本金的前提下获得收益。</p>
+<h3 id="得到学生"><a href="#得到学生" class="headerlink" title="得到学生"></a>得到学生</h3><p>以前一直不能领略“能力圈”，现在才明白巴菲特始终没有越过能力圈去买涨幅巨大的科技股，反而证明其智慧和克制。永远向前看，过去过去感叹只会消耗自己，未来仍然美好，专注当下走向未来。</p>
+<h3 id="FF"><a href="#FF" class="headerlink" title="FF"></a>FF</h3><p>面对过去，可以总结、反思，但不能沉溺其中。人生的精彩在于未知的未来，任务是专注当下，用坚定脚步走向明天。世界虽广阔，但只能在自己构建的方舟上远航；方舟足够稳固，便不惧风浪，不必掌控一切，只需避免被大浪击沉。</p>
+<h3 id="victory"><a href="#victory" class="headerlink" title="victory"></a>victory</h3><p>建立自己的诺亚方舟：用高安全边际、核心地段的稳定租金、稳定工作形成现金流；通过学习提高认知边界；锻炼身体以保证足够长的生命享受复利；始终储蓄，等待市场机会。要在不确定性中建立确定性，需要长期准备。</p>
+<h3 id="玻璃体"><a href="#玻璃体" class="headerlink" title="玻璃体"></a>玻璃体</h3><p>很多投资者和管理者都强调“不做预测”。正确顺序应是先分析确定性，再分析不确定性对确定性的影响：明确最终目的、现有资源和风险，再做计划与资源配置。围绕预测结果做工作容易变成投机行为，真正的成功更多源于对手一定会犯错。</p>
+<h3 id="王勇先"><a href="#王勇先" class="headerlink" title="王勇先"></a>王勇先</h3><p>稳定，不要冒险，尤其不要加杠杆冒险，更不要相信有100%概率的确定性好事。在自己的能力范围内、在不确定性的范围中，自内而外寻找可控概率的确定性，用理性守住自知之明。</p>
+<h3 id="阿繁达1043"><a href="#阿繁达1043" class="headerlink" title="阿繁达1043"></a>阿繁达1043</h3><p>预测未来最好的方式是亲手创造它。巴菲特不仅看懂企业的经营逻辑和盈利模式，也下血本培育企业，在他的关照下企业逐步变好，形成飞轮效应。个人也可以创造想要的未来：设定长期、中期和短期目标，持续投入和调整，人生会成为持续向好的过程。先填满脑袋，再填满口袋。</p>
+<h3 id="伴听"><a href="#伴听" class="headerlink" title="伴听"></a>伴听</h3><p>本讲深入剖析了巴菲特在充满变量和不确定性的市场环境中找到相对确定性的投资方法：避险为先、稳字当头；聚焦熟悉领域、坚守知识边界、远离杠杆、投资自我；构建保险浮存金；购买高品质公司。</p>
+<h3 id="元气小生"><a href="#元气小生" class="headerlink" title="元气小生"></a>元气小生</h3><p>巴菲特最清楚的一句话是：“如果你不懂某个行业，最好不要去投资它。”不懂不要乱投机。构建自己擅长的领域也很重要，总得有一技之长，方能不紧不慢地生活着。投资自己是最好的投资，知识、技能、健康、心智、情感和人际关系都会转化为人生的竞争力和幸福感。</p>
+<hr>
+<p><a href="/book/decision-algorithm/050/">← 050｜格雷厄姆：如何成为聪明的投资者？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/052/">052｜约翰·博格：一生赚多少钱才算“足够”？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

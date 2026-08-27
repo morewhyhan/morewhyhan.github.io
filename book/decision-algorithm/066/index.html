@@ -1,0 +1,377 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>066｜占便宜陷阱：怎样用大局观克服贪婪？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》066：占便宜陷阱：怎样用大局观克服贪婪？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="066｜占便宜陷阱：怎样用大局观克服贪婪？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/066/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》066：占便宜陷阱：怎样用大局观克服贪婪？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:45.736Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/066/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '066｜占便宜陷阱：怎样用大局观克服贪婪？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">066｜占便宜陷阱：怎样用大局观克服贪婪？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">066｜占便宜陷阱：怎样用大局观克服贪婪？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>《老喻·决策算法100讲》</p>
+</blockquote>
+<h2 id="老喻：决策算法100讲"><a href="#老喻：决策算法100讲" class="headerlink" title="老喻：决策算法100讲"></a>老喻：决策算法100讲</h2><p>你好，我是老喻，欢迎来到《决策算法》课。</p>
+<p>有这样一个有趣的故事，展示了人们在面对“小便宜”时的盲目和冲动：</p>
+<p>两兄弟经营着一家服装店，哥哥负责销售，弟弟负责裁剪。哥哥发明了一个独特的销售手法——每当有顾客对某套西服表现出浓厚兴趣时，他就会假装自己有点耳聋。</p>
+<p>当顾客询问价格时，哥哥就会对他的兄弟大声喊道：“喂儿，这套西服多少钱？”</p>
+<p>弟弟从裁剪台抬起头，回答说：“这套漂亮的棉质西服42美元。”</p>
+<p>哥哥则转向顾客说：“他说22美元。”</p>
+<p>有趣的是，几乎所有顾客都会立即掏出22美元，迫不及待地带着西服匆匆离去，生怕哥哥发现“错误”。</p>
+<p>在《影响力》一书中，罗伯特·西奥迪尼将这种现象称为“<strong>对比效应</strong>”。当42美元成为参照物时，22美元看起来就像是天大的便宜。在这种心理作用下，顾客的理性思考能力会显著下降，让大脑产生“捡到大便宜”的幻觉，而完全忽略了对商品本身价值的判断。</p>
+<p>这种“占便宜”心理在我们的日常生活中随处可见：为了“满300减50”而购买不需要的商品，为了赠品而选择更贵的套餐，为了会员积分而做出非理性消费。表面上看，我们似乎占到了便宜，实际上却在不知不觉中落入了精心设计的营销陷阱。</p>
+<p>这背后藏着一个更深的真相：<strong>人类对“占便宜”的贪婪，本质是决策系统的致命漏洞。</strong></p>
+<h2 id="一、“占便宜”是怎么让人上钩的？"><a href="#一、“占便宜”是怎么让人上钩的？" class="headerlink" title="一、“占便宜”是怎么让人上钩的？"></a>一、“占便宜”是怎么让人上钩的？</h2><p>当然，买些自己并不需要的东西，算是“占便宜陷阱”里伤害最小的一种——顶多是浪费点小钱，家里堆满闲置物品。</p>
+<p>在现实中，更多时候，“小便宜”会用一种“看起来又大又好的机会”的面貌出现，让我们心情激动、急于做决定，最终发现，那只不过是天上掉下来的“陷阱饼”，一旦下口就再也拔不出来。</p>
+<p>我以前在广州有位朋友，绝对称得上生意高手，早年在市场上赚了不少钱。某次他兴冲冲地分享，说江浙一带有家新能源公司找他投资，前景很火热，对方老板连厂房都拿来做担保，可谓“诚意满满”，他打算投下一大笔钱。</p>
+<p>我虽不懂具体业务，但对“大完美、太吸引人”的项目向来抱持一丝谨慎，于是抛出两个疑问：</p>
+<ol>
+<li>天上为什么掉馅饼？</li>
+<li>馅饼为什么偏偏砸到你头上？</li>
+</ol>
+<p>在这儿，好像问题一容易回答：新能源大势所趋嘛，热门行业不错；可问题二却耐人寻味：江浙本地并不缺资本，为什么这家公司非得跨省跑到广州找投资？</p>
+<p>打着“给你独家机会”的旗号，是不是过于巧合了？毕竟有些项目看似有利可图，实际上是“一般人都抢不到”的饵子，一旦你放下戒心，认定自己幸运地“占便宜”的机会，往往便掉入对方设计的局。</p>
+<p>可朋友热血上头，还是没听人劝，结果那笔投入基本血本无归。所谓的厂房抵押也并非真正过户给他，对方背后还有借贷和资产腾挪，等他追责时，项目早已人去楼空。</p>
+<p>看似风光的新能源项目，最后只是一场典型的戏，化地踩以虚假“低风险”“行业风口”“资源独家”。很多人在幻想“别人都不行，我能抓住这只金凤凰”，殊不知当人人都踩它不靠谱，唯独你自信能得便宜时，也许正好说明这是个处处漏风的赌局。</p>
+<p>对于那些看似送上门的“大便宜”，尤其要谨慎提防。先问自己：</p>
+<ol>
+<li>这块馅饼究竟为何而降？</li>
+<li>它为何落到我头上？</li>
+</ol>
+<p>若答案经不起推敲，就该收起一厢情愿的“占便宜”心态，而把注意力放在“是否合乎常识、风险与收益是否对应”上。否则，所谓的大馅饼终会变成让人难以下咽的陷阱，酿成更严重的后果。</p>
+<p>所以，不管是你遇到有便宜可以占，还是天上突然掉下馅饼，都要想一下波森格尔所说的那句话：<strong>命运给予的馈赠，早已在暗中标好了价格。</strong></p>
+<h2 id="二、为什么人会被“小便宜”诱惑？"><a href="#二、为什么人会被“小便宜”诱惑？" class="headerlink" title="二、为什么人会被“小便宜”诱惑？"></a>二、为什么人会被“小便宜”诱惑？</h2><p>本杰明·富兰克林曾说：“便宜没好货，贪小失大。”这句话朴素的古训，点出了占便宜陷阱的核心：我们为了眼前的一点好处，常常丢掉更重要、更长远的价值。</p>
+<p>为什么会出现这样的短视？从行为经济学的角度看，人类在面对“便宜”时，大脑会出现三大典型偏差：<strong>即时满足偏误、损失厌恶偏误和确定性偏好。</strong></p>
+<p>它们让我们在看到优惠时多巴胺飙升，害怕错过“限时”折扣，宁愿买些无用之物，也不肯放弃那点微不足道的“省钱机会”。</p>
+<p>可真正的问题是：我们在“占便宜”背后，往往忽视了真正重要的“机会成本”。就像排队抢购打折商品，也许并不知晓会占用你长时间的精力，原本可以用来提升技能、陪伴家人，或挖掘更有价值的机会。</p>
+<p>管理学大师彼得·德鲁克强调：“最重要的不是把事情做对，而是做对的事情。”如果我们把注意力耗费在微小折扣或貌似超值的短期机会，占误了对长期目标的投入，就等于以微利抛掉了极有价值的资源。</p>
+<p>就此而言，“占便宜陷阱”最危险的地方，不是多花了几十块钱买没用的东西，而是让你彻底偏离了本该优先做的要事。</p>
+<p>在德鲁克看来，组织和个人都要追求“效能”而非单纯“效率”。效率只是把事情做对，而效能则是“做对的事情”。</p>
+<p>我举一个生动的例子，来解释一下“效能”和“效率”。请问：你认为阅读最重要的能力是什么？</p>
+<p>我们都知道阅读非常重要，厉害的人几乎都会大量阅读。那么，阅读最重要的能力，是速度？还是理解？还是运用？</p>
+<p>在我看来，阅读最重要的能力，是决定不要读哪些书，而把时间和精力花在真正值得读的书上。这才是阅读的效能，而阅读速度等等，属于效率——当然，二者兼顾更好。</p>
+<p>回到决策的主题，若目标本身就错了，或根本不值得做，再高的效率也毫无意义。</p>
+<p>对个人决策而言，则意味着要时刻分辨：我是把注意力用在最核心的目标上吗？</p>
+<p>如果不是，只因那点小利便心甘情愿耗费资源，就等同于“因小失大”。</p>
+<p><strong>要走出“占便宜陷阱”，关键是要从“把事情做对”的效率思维，提升到“做对的事情”的效能思维。只有这样，我们才能在纷繁的“便宜”诱惑中，始终把握住真正重要的方向。</strong></p>
+<h2 id="三、从大局观到优先级"><a href="#三、从大局观到优先级" class="headerlink" title="三、从大局观到优先级"></a>三、从大局观到优先级</h2><p>说到这里，你也许会意识到，占便宜陷阱，背后正是决策的核心问题：分优先级，分大小、轻重、缓急。在这一点上，围棋给了我们很好的启发。</p>
+<p>围棋是一个强调大局观的游戏，每一手都要从全盘评估价值最大的点，不要只盯着局部。</p>
+<p>比如，你在某个战场已经投入了不少，突然发现，另外一个地方价值更大，你就应该立即转移，不能有任何留恋。</p>
+<p>这方面，围棋AI阿尔法狗做得最好，因为AI毫无感情牵挂。所以，AI下围棋，以前人们以为是局部算力强，其实人家是大局观好。</p>
+<p>在决策中，优先级不仅是对事情轻重缓急的判断，更是资源配置的艺术。一个好的决策者，总能在众多选择中找到最具价值的方向，既不会被眼前的小利所迷惑，也不会错过真正改变格局的机会。</p>
+<p>但是，在现实决策中，有大局观为什么那么难呢？</p>
+<p>我想和你分享两个围棋的概念，大场和急所。</p>
+<p>所谓“大场”，是围棋的布局阶段，全盘之中效力最大的一手棋；所谓“急所”，在围棋术语中，指对于攻守双方都至关重要的点。</p>
+<p>下围棋的人都知道，急所比大场更重要。你可能会感觉有些奇怪，不是应该优先下在价值更大的大场吗？</p>
+<p>这是因为，急所，指的是关乎生死、不得不走的一手棋。</p>
+<p>你看，这就引出了一个现实难题，很多人之所以总是陷入“占便宜陷阱”，其实就是被困在了“急所”里。当一个人资源稀缺、选择有限时，往往就不得不在意那些小便宜。为了基本生存需求而疲于奔命，根本无暇去考虑更大的发展机会。</p>
+<h2 id="四、不要被“急所”绑住"><a href="#四、不要被“急所”绑住" class="headerlink" title="四、不要被“急所”绑住"></a>四、不要被“急所”绑住</h2><p>其实，很多人并不是出于贪小利的天性，而是因为窘迫、稀缺，迫不得已“抓住眼前能抓住的一切”。</p>
+<p>就像围棋中，被对手死死牵制在局部的“急所”，他们根本顾不上大场。</p>
+<p>举个例子：月光族为了撑到发薪日，不惜在超市排队抢打折食品；家境不宽裕的学生，为了节省生活费，牺牲宝贵的学习时间去赚零花钱；甚至一些职场人，为了短期工资，把精力投入到眼前碎片的“小利上”，结果陷入“穷忙循环”，难以抽身去做更高层次的规划。</p>
+<p>问题是，如果我们永远被“急所”拖住，就不能选择更有价值的“大场”。能否跳出那些短期小利的诱惑，让自己真正升维，跳出“穷忙循环”，才是关键。</p>
+<p>具体如何做？德鲁克的一些思路可供参考：</p>
+<ol>
+<li><strong>优先做最重要的事</strong>：先列出你当前的“急所”，它们或许不得不处理，但请尽可能压缩时间、用更高效的方式解决。然后把省下的注意力集中在能改善未来的“要事”上。</li>
+<li><strong>以强项为中心</strong>：别把大量资源投入低价值、低成长空间的领域，要看到你真正擅长或长期有潜力的方向，将有限资源集中在那里。</li>
+<li><strong>不断检视目标</strong>：目标实现时并非庆祝的终点，当前你解决“活下去”时，也要思考下一步怎样改善根本条件，别让自己一直停留在靠小便宜过日子的循环。</li>
+</ol>
+<p>在这一点上，围棋给了我们一个重要启示。《棋经》有句话：“宁失数子不失一先”，就是说，不要因小处纠缠而丧失“先手”的主动。</p>
+<p>这提醒我们，即便身处困境，也要想办法为自己保留一些战略空间。哪怕只能省出很少的时间或资源，也要把它们用在最具突破性的地方。</p>
+<p>比如，不管工作和生活多么紧张，也要给自己留一个窗口，主动学习一些新知，发展一些爱好，种下一些希望。</p>
+<p>保持这种“先手意识”很重要，它能让我们在应对“急所”的同时，也不忘记给自己留下转圈的余地，为未来的发展创造机会。只有这样，我们才能真正走出“占便宜陷阱”，实现生活的根本改善。</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>我很喜欢弗兰克·R·科维的一句话：<strong>我不是环境的产物，而是自己决策的产物。</strong></p>
+<p>的确，每个人的家庭出身、成长环境和当下的处境，都各不相同。但是，我们都可以通过改善自己的决策，来改变命运的走向。</p>
+<p>德鲁克说过一段让我难忘的话——在他13岁那年，一位老师向他的每个学生问道：“你希望被人记住的是什么？”结果谁也没答上来。老师笑着说：“现在不用急着回答。但是，如果到了50岁还答不不上来的话，那就糟了，因为你虚度了人生。”</p>
+<p>假如你知道自己想要成为一个什么样的人，你就有了人生目标；有了目标，你就会构建人生的价值体系，就知道自己真正想要什么，就不会那么容易被小便宜和陷阱迷惑。</p>
+<p>这正是决策有趣的地方。决策不止是帮助你解决生活中的一些难题，决策其实就是如何塑造你自己。</p>
+<p>以上就是这一讲的全部内容，我是老喻，我们下一讲再见。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>在面对“便宜”时，大脑会出现三大典型偏差：即时满足偏误、损失厌恶偏误和确定性偏好。</li>
+<li>如何跳出永远被“急所”拖住的困境？德鲁克的思路可以参考：优先做最重要的事，以强项为中心，不断检视目标。</li>
+<li>“我不是环境的产物，而是自己决策的产物。”决策不止是帮助你解决生活中的一些难题，决策其实就是如何塑造你自己。</li>
+</ol>
+<h2 id="用户留言"><a href="#用户留言" class="headerlink" title="用户留言"></a>用户留言</h2><h3 id="左星星"><a href="#左星星" class="headerlink" title="左星星"></a>左星星</h3><p>在职场中，我们常常容易感到能够使你快速升迁的人。许多人认为，他们之所以能第一时间看见位置，是因为“有硬货”“爱资源”。然而，如果仔细观察就会发现，真正帮助比如一位职场中的人走上更高的位置，往往不是能力本身，而是个人在某个团队中扮演的角色。</p>
+<p>反观那些虽然和专业资源不强的人，问题可能正出在冰冷的专业数据上：对任何技术上存在的问题，他们每次都能够控制成功，却没有冲突中留下任何可以在关键时刻帮助自己的深刻影响。</p>
+<p>“减少蓝球”的理念对于职场中也很有启发。许多职场者或许需要做“全面能力”，在简历中列出许多证书和项目，但实际上并非什么都要做。专业化需要聚焦，建立自己的含金量。</p>
+<h3 id="魏红亮"><a href="#魏红亮" class="headerlink" title="魏红亮"></a>魏红亮</h3><p>曾经的“宁愿人才”大发展已经演化成了“宁愿人才”的大数据观点，其核心是要有一个有比较优势的领域，只有这样一个人的特点才鲜明。</p>
+<h3 id="Scott"><a href="#Scott" class="headerlink" title="Scott"></a>Scott</h3><p>相对优势本质就是非对称战略，全局上我们肯定不如行业里面的最强者，但是在受到时间、空间限制的约束的局部我们完全可以利用自己的比较优势成为最强者获得胜利和资源，从红军长征到抗日战争、到最后的解放战争，我们的兵力是越打越多，战力是越打越强，就是利用局部优势积小胜为大胜。除了集中资源的加法之外，也要学会做乘法和减法，挣掉那些无用的枷锁，专注于自己的重心，才会让自己的核心竞争力得到成长。</p>
+<h3 id="林同学的思考"><a href="#林同学的思考" class="headerlink" title="林同学的思考"></a>林同学的思考</h3><p>老喻老师本讲主题是被动决策，即我们需主动地设计可以“被动执行”的正确策略。为什么要这么做呢？老师给了解释：承认人性的弱点，用理性的自己去捆住感性的自己，或者是用外部力量担任自己，而不是去考验自己的人性。</p>
+<p>所以，如果想学习，可以把自己远离手机，或者直接去图书馆学习，毕竟大家都在学习，自己也不好看视频。</p>
+<p>如果想减少消费，就设置多个账号（存款、投资、房贷房租等），并减少手机里空白的APP，遇到不得不买的东西，可以用家人的账号买，当然，也要发个红包。</p>
+<p>如果要开始定投指数基金，虽然场内手续费更低，但是较好从场外基金开始，因为场外基金有自动定投的按钮，而一开始就在场内，就容易受K线影响，总想着抄底而迟迟不出手。</p>
+<p>工作方面，可以使用番茄工作法，设定固定的工作时间段，同时番茄工作时间（20分钟）提供信息，邮件客户端隐藏起来，番茄休息时间才看，以此让自己更专注。</p>
+<p>以上几个例子本质都是“防呆机制”的延伸，通过物理限制、流程约束或心理暗示，将正确行为路径设计为唯一选择。</p>
+<h3 id="七色黑白"><a href="#七色黑白" class="headerlink" title="七色黑白"></a>七色黑白</h3><p>不要相信自己，自我是个幻觉。提前设置好一切，无脑执行即可，心念一动，必败给随机性。所谓原则就是不能因为任何理由改变的执行法则。</p>
+<h3 id="幸福小松树"><a href="#幸福小松树" class="headerlink" title="幸福小松树"></a>幸福小松树</h3><p>感谢前老师的分享，赢得比最重要的是减少错误，防守比进攻在某种程度上更关键。被动决策就是一种减少错误的决策！人的决策往往出现单一和联合不一致的情况，很多时候被心理账户或者沉默成本的情绪左右，出现失误。坚决和耐心很重要，但是不能陷入一种优柔寡断的误区！</p>
+<h3 id="周卫"><a href="#周卫" class="headerlink" title="周卫"></a>周卫</h3><p>思维会计的方式我一直用了很多年，特别是最近8年分类更清楚，执行更彻底，所以随着时间的积累，经济压力越来越小，而各项投资带来的回报也越来越稳定当当的，自己在工作和家庭的时间更多，生活和工作也越来越顺利了。</p>
+<p>另外就是严格不参与赌博。实际上，我也是经不住诱惑，参与过几次，基本都是大亏而终，还好有严格的本金限制，不然所有的被动收益都主动的输光了。被动决策，捆住自己，不参与数学期望为负的事。自由其实能带来最多的自由。</p>
+<h3 id="李坚"><a href="#李坚" class="headerlink" title="李坚"></a>李坚</h3><p>从力量上来比较，理性根本战胜不了感性，所以才说不要考验人性。但理性很聪明，可以通过对感性习惯的研究，利用感性的弱点达到目的，这种被设计的第二习惯，是人生智慧的体现。</p>
+<h3 id="王勇先"><a href="#王勇先" class="headerlink" title="王勇先"></a>王勇先</h3><p>个人对理性的管束能力是会有边界的，而感性的力量爆发则常常是无法预测的。在理性外寻找力量管理约束感性的“任性”，才可能让自己的思想不脱离理性的轨道，行为有边界，习惯有根基，决策有章法，命运有希望。</p>
+<hr>
+<p><a href="/book/decision-algorithm/065/">← 065｜老好人陷阱：为什么善良却没有好报？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/067/">067｜内耗陷阱：如何跳出人生的死循环？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>033｜弃子争先：怎样抢回人生的主动权？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》033：弃子争先：怎样抢回人生的主动权？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="033｜弃子争先：怎样抢回人生的主动权？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/033/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》033：弃子争先：怎样抢回人生的主动权？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:45.201Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/033/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '033｜弃子争先：怎样抢回人生的主动权？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">033｜弃子争先：怎样抢回人生的主动权？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">033｜弃子争先：怎样抢回人生的主动权？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>老喻·决策算法100讲　时长：13分20秒　首次发布：今天</p>
+</blockquote>
+<h2 id="老喻-叙述"><a href="#老喻-叙述" class="headerlink" title="老喻 叙述"></a>老喻 叙述</h2><p>你好，我是老喻，欢迎来到《决策算法》课。</p>
+<p>这一讲讲围棋里的“弃子”，以及怎样用弃子争先抢回人生的主动权。</p>
+<p>假如你买了一个小时的停车时间，却提前半小时办完了事，你会离开还是继续停着？很多人会因为已经付了钱，就觉得离开是“浪费”；在关系和工作里也一样：“这事儿我已经坚持几年了，投入那么多钱，怎么可能舍弃？”“这个人我已经付出那么多，怎么能说分就分？”</p>
+<p>人容易陷入两个陷阱：到了“不知道怎么办”的时候舍不得放弃，以及缺乏大局观，只盯着已经投入的局部。</p>
+<h2 id="一、什么是弃子争先"><a href="#一、什么是弃子争先" class="headerlink" title="一、什么是弃子争先"></a>一、什么是弃子争先</h2><p>围棋高手常对学生说：“想成为高手，必须学会弃子。”《围棋十诀》里有三句话：</p>
+<ul>
+<li><strong>弃子争先</strong>：行棋时舍弃过去的一些残子，去争夺未来的先机；</li>
+<li><strong>舍小就大</strong>：先占价值大的地方，而不是纠缠于小地方；</li>
+<li><strong>逢危须弃</strong>：棋子无法挽救时要立即立断，不要浪费更多棋子去救，更不要因此搭进去全部。</li>
+</ul>
+<p>弃子争先，是主动放弃一些意义不大或很难处理的棋子，换取先手之利，从而获得全局胜利。这个放弃不是逃命，也不是认输，而是换回主动权。水平高的是弃子，水平低的是被吃。</p>
+<p>真正的对局，不是局部赢一块棋，而是控制全局。弃子的核心是“舍得”，关键在于“舍弃”。所以问题不是“要不要放弃”，而是：“放弃什么？为什么放弃？”</p>
+<h2 id="二、手割：切断惯性路径"><a href="#二、手割：切断惯性路径" class="headerlink" title="二、手割：切断惯性路径"></a>二、手割：切断惯性路径</h2><p>围棋里的“手割”，可以理解为把原有的手数次序暂时切开，重新审视局部与全局的关系。</p>
+<p>《决策的智慧》里讲过一场婚礼的故事：1999 年夏天，斯坦福大学教师俱乐部举办婚礼，225 名宾客正在餐厅聊天、用餐、畅饮，正要切蛋糕、新娘抛花束时，新人宣布下午 5 点前必须离开。原因是接送他们的豪华轿车司机规定，迟到乘客每迟到 1 分钟罚 1 美元。经过一年的准备，宴请数百人、花费数万美元，这对新人却为了避免支付 1 分钟 1 美元的罚款，缩短了本来会铭记一生的时光。</p>
+<p>这就是路径依赖和沉没成本：他们被眼前的一小笔费用绑住，却忽略了整场婚礼的价值。手割的思路包括：</p>
+<ol>
+<li>打破惯性，不再依赖原来的路径；</li>
+<li>忽略已经付出的沉没成本，关注未来的收益；</li>
+<li>重新打开选择空间，跳出局部陷阱。</li>
+</ol>
+<p>“手割”改变的是策略和路径，暂时中断当前路线，重新判断全局。</p>
+<h2 id="三、身份清零：为新可能让路"><a href="#三、身份清零：为新可能让路" class="headerlink" title="三、身份清零：为新可能让路"></a>三、身份清零：为新可能让路</h2><p>弃子的第二种方法，是重新思考自己的身份，必要时“身份清零”。</p>
+<p>安迪·格鲁夫带领英特尔从存储器业务转向 CPU。有人问他，如果离开原来的业务怎么办？他的回答是：既然如此，为什么不由我们自己舍弃原来的业务？</p>
+<p>现代人也常被身份困住：</p>
+<ul>
+<li>“我是部门负责人，怎么能去基层重新开始？”</li>
+<li>“我有这么多年的经验，怎么能放弃熟悉的领域？”</li>
+</ul>
+<p>原来的身份和经验可能成为负担。高手以“放空”迎接新可能，敢于在必要时清零，换取重新选择的主动权。</p>
+<h2 id="四、用大局观做选择"><a href="#四、用大局观做选择" class="headerlink" title="四、用大局观做选择"></a>四、用大局观做选择</h2><p>面对选择，可以反复问自己两个问题：</p>
+<ol>
+<li>我做的是正确的事情吗？如果不对，就知错就改。</li>
+<li>我做的是最重要的事情吗？如果不是，就放下，换到最重要的事上。</li>
+</ol>
+<p>资源有限，决定必须从全局看。不要因为一件事困难，就把它误认为是正确的事；也不要用忙碌逃避真正重要的事情。</p>
+<p>围棋高手有一句类似的经验：“我只向前看一步，但总是正确的一步。”这里还可以用马尔可夫性质来理解：未来状态取决于当前状态，而不取决于到达当前状态之前的全部历史。下棋时，下一步主要考虑当前棋局，不必被之前每一步绑住。</p>
+<p>在人生中，可以做两件事：</p>
+<ol>
+<li>面对未来，以终局为目标，但只操心下一步；</li>
+<li>停止回望过去，压缩可用价值，忘掉得失和情绪。</li>
+</ol>
+<p>作家 E. L. 多克托罗说，写小说就像开夜车：视线只局限于车头灯照得到的范围，但仍然可以开完整段路。</p>
+<h2 id="五、先走下一步：用反馈强化行动"><a href="#五、先走下一步：用反馈强化行动" class="headerlink" title="五、先走下一步：用反馈强化行动"></a>五、先走下一步：用反馈强化行动</h2><p>面对复杂任务，最容易被后悔和贪婪拦住：贪婪让人想做出周密计划、万无一失；后悔让人总惦记过去，想着“要是那样就好了”。</p>
+<p>行动本身是一种强化学习。每个动作都会得到奖励或惩罚，持续的行动—反馈循环会让策略逐步改进。人不可能把所有可能性都模拟完，只需选择最接近的行动，然后根据反馈调整。</p>
+<p>所以，面对复杂任务，不要追逐完美，只要做两件事：</p>
+<ul>
+<li>面对未来，以终局为目标，只操心下一步；</li>
+<li>停止回望过去，压缩可用价值，忘掉得失和情绪。</li>
+</ul>
+<p>正如胡适所说：<strong>进一步有一寸的愉快，进一步有一尺的满足。</strong></p>
+<p>我是老喻，我们下一讲再见！</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li><strong>小概率厌恶症</strong>：绝大多数人处在有“小概率可能”的环境里，就会放弃思考，失去向前选择的动力，只想躺平。</li>
+<li>不管复杂任务或局面多不理想，只需做两件事：面对未来，以终局为目标，只操心下一步；停止回望过去，压缩可用价值，忘掉得失和情绪。</li>
+<li>进一步有一寸的愉快，进一步有一尺的满足。</li>
+</ol>
+<h2 id="用户留言"><a href="#用户留言" class="headerlink" title="用户留言"></a>用户留言</h2><h3 id="左星星"><a href="#左星星" class="headerlink" title="左星星"></a>左星星</h3><p>当团队被复杂项目压得喘不过气时，很多人会花大量时间开会、制定详细计划，希望一步到位解决问题，反而陷入不敢开始的状态。更有效的方法是聚焦第一步，比如整理信息、找到关键利益相关方、起草初步提案；小突破会让团队开始行动，也看到希望。</p>
+<p>个人生活也是如此。想开始锻炼或学习新技能时，与其制定很远的计划，不如立即从最小行动开始，比如换好跑鞋走到户外。微小行动降低门槛，也能建立行动惯性。</p>
+<p>错误是一种反馈机制。每次行动后主动总结“什么做对了？什么需要改进？”，就能从试错中获益，并对未来行动更有信心。这和 AI 的反馈循环相似。</p>
+<h3 id="美君"><a href="#美君" class="headerlink" title="美君"></a>美君</h3><p>不要追求完美和确定性，先接受不那么完美的方案，做下一步。经常成功，就能成功；每天小幅进步也会形成变化。减肥时，与其反复计划，不如少吃一块冰淇淋、先去运动。</p>
+<h3 id="鸿涛"><a href="#鸿涛" class="headerlink" title="鸿涛"></a>鸿涛</h3><p>在不确定性里，选择和行动往往胜过等待。即使只能控制一部分，也可以先行动；保持清晰目标和长期视角，依靠理性、韧性，做一个理性的贝叶斯主义者。</p>
+<h3 id="炎帝"><a href="#炎帝" class="headerlink" title="炎帝"></a>炎帝</h3><p>万事开头难，难在两种情绪：一个是贪婪，想靠周密计划达到万无一失；一个是后悔，总惦记过去，觉得“要是那样就好了”。行动方法是：勇敢迈出第一步，专注当前选择，建立强化学习与反馈循环。</p>
+<h3 id="Scott"><a href="#Scott" class="headerlink" title="Scott"></a>Scott</h3><p>不管现实多么艰难，我们永远都有最好的下一步。正如“如何把大象关进冰箱”的经典问题，答案是：一步一步来！</p>
+<h3 id="伴昕"><a href="#伴昕" class="headerlink" title="伴昕"></a>伴昕</h3><p>“万事开头难”就是被贪婪和后悔阻碍。学习和工作中可以用“就近原则”，先找到眼前可做的下一步，再在行动中修正。其余文字：【原图此处需放大复核】。</p>
+<h3 id="进化菌"><a href="#进化菌" class="headerlink" title="进化菌"></a>进化菌</h3><p>万事开头难，“干就对了”！很多事情是干着干着才启动，想着想着反而不想做。聚焦未来和下一步，停止回望过去，复杂度就会降低，也更利于实践。</p>
+<h3 id="李嘉"><a href="#李嘉" class="headerlink" title="李嘉"></a>李嘉</h3><p>课程不只是理论，也关注人的真实感受。面对内心挣扎时，先行动、再反馈，能把抽象方法落到生活中。其余文字：【原图此处需放大复核】。</p>
+<h3 id="JerryLuo"><a href="#JerryLuo" class="headerlink" title="JerryLuo"></a>JerryLuo</h3><p>第一步很重要。工作和教学中，即使读过 PMP、做了培训计划，也可能只做到 50%；“done is better than perfect”。</p>
+<h3 id="菊本小百合"><a href="#菊本小百合" class="headerlink" title="菊本小百合"></a>菊本小百合</h3><p>如果是和自己竞争，历史会不断变化，未来仍可继续；如果是和别人竞争，则要停下来计算成本，选择沉没成本更少的路径。</p>
+<h3 id="李祭酒"><a href="#李祭酒" class="headerlink" title="李祭酒"></a>李祭酒</h3><p>有效的方法有三个：小步走、奇迹提问、逆向回看。奇迹提问可以让自己回望并重新发现可用资源。其余文字：【原图此处需放大复核】。</p>
+<h3 id="Tony-to-ni"><a href="#Tony-to-ni" class="headerlink" title="Tony to ni"></a>Tony to ni</h3><ol>
+<li>两害相权取其轻；</li>
+<li>耳听为虚，眼见为实；</li>
+<li>不要被未来的成功牵着走，先定位下一步，专注于当前资源。</li>
+</ol>
+<h3 id="万雄"><a href="#万雄" class="headerlink" title="万雄"></a>万雄</h3><p>万事开头难，是因为基础概率和对犯错的恐惧。准确性要求不必一开始就很高，先得到反馈、再迭代。其余文字：【原图此处需放大复核】。</p>
+<h3 id="上官孚儿"><a href="#上官孚儿" class="headerlink" title="上官孚儿"></a>上官孚儿</h3><p>留言继续讨论开头难和“就近原则”，强调先找到能够马上做的动作，再逐步推进。其余文字：【原图此处需放大复核】。</p>
+<h3 id="阿繁达1043"><a href="#阿繁达1043" class="headerlink" title="阿繁达1043"></a>阿繁达1043</h3><p>写作时可以采用老师的方法：先做早期草稿、先输出，让事情先动起来，后面会越来越好。初稿不必完美，逐渐就能完成。</p>
+<h3 id="爱艺术的李达拉"><a href="#爱艺术的李达拉" class="headerlink" title="爱艺术的李达拉"></a>爱艺术的李达拉</h3><p>“小概率厌恶症”会让人因为成功概率不高而放弃，但不应因此停止行动。改变成功概率、先走一步，才有机会看到后续结果。其余文字：【原图此处需放大复核】。</p>
+<h3 id="Todd"><a href="#Todd" class="headerlink" title="Todd"></a>Todd</h3><p>推动事件的可能是压力差，而不是压力本身。其余留言：【原图此处需放大复核】。</p>
+<hr>
+<p><a href="/book/decision-algorithm/032/">← 032｜渡劫：如何在不确定性中逆风翻盘？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/034/">034｜识别立场：为什么“屁股”赚钱比“脑袋”多？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

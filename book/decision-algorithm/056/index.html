@@ -1,0 +1,415 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>056｜态度第一：怎样拿回你的决策权？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》056：态度第一：怎样拿回你的决策权？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="056｜态度第一：怎样拿回你的决策权？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/056/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》056：态度第一：怎样拿回你的决策权？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:45.585Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/056/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '056｜态度第一：怎样拿回你的决策权？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">056｜态度第一：怎样拿回你的决策权？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">056｜态度第一：怎样拿回你的决策权？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>来源：老喻·决策算法100讲</p>
+<p>音频时长：14:21</p>
+<p>以下依据 PDF 页面原图逐段人工视觉阅读整理。</p>
+</blockquote>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>喻老师，你好。</p>
+<p>我是老喻，欢迎来到《决策算法》课。</p>
+<p>有一样东西，一旦拥有，人就可以实现梦寐以求的自由，甚至能够发现人生的意义。有趣的是，这样东西其实每个人生下来就拥有，但是大多数人却放弃了。这是什么呢？</p>
+<p>这样东西就是：<strong>决策权。</strong></p>
+<p>如果你是《人生算法》的老同学，应该还记得我讲过一个自己原创的概念“概率权”。所谓概率权，看的是你能不能算出一件事的概率，根据概率做出对你更有利的选择，并且忍受风险的存在。如果你承担不了一点风险，希望百分百都是确定性的答案，那你就放弃了自己的概率权。</p>
+<p>而决策权，就是你能否真正为自己的人生做主、自主选择的能力。它不仅仅是表面上的“做决定”，更是一种深层的心理状态和能力。</p>
+<p>很多人表面上在“做决定”，但其实只是重复别人的选择，或者被外界的压力和期待所主导。比如：</p>
+<ul>
+<li>选大学专业时，因为父母说“学医好”就去学医；</li>
+<li>买房时，因为“大家都在买”就跟风购房；</li>
+<li>找工作时，因为身边人都说“某某行业吃香”，就去做同样的事。</li>
+</ul>
+<p>这些看似自主的决定，其实决策权早已旁落。你很可能连“我究竟为什么要这么选”都没认真想过。</p>
+<p>就像概率权教会我们接受不确定性一样，决策权则教会我们在不确定中保持自主。它们共同构成了掌控人生的核心能力。</p>
+<p>但是，如何才能真正拿回自己的决策权呢？</p>
+<h2 id="一、用“按钮”理解决策权"><a href="#一、用“按钮”理解决策权" class="headerlink" title="一、用“按钮”理解决策权"></a>一、用“按钮”理解决策权</h2><p>为了更直观地理解决策权，我喜欢用“按钮”来做比喻。</p>
+<p>其实，我们的人生中无时无刻不在“按按钮”。一旦按下按钮，就意味着在某条轨道上投入了时间、精力或金钱，也让我们的未来更偏向某个方向。</p>
+<p>概括而言，决策按钮大体上可以分为五类：</p>
+<h3 id="第一类：有确定选项的“按钮”"><a href="#第一类：有确定选项的“按钮”" class="headerlink" title="第一类：有确定选项的“按钮”"></a>第一类：有确定选项的“按钮”</h3><p>例如在麦当劳或奶茶店点单，所有可选项都在菜单里，你只需要根据当下喜好和预算直接选择。即使是这么简单的“点单”，若你带着“我有权选择”的心态去做，也能培养自己的决策意识。</p>
+<h3 id="第二类：模糊且充满不确定性的“按钮”"><a href="#第二类：模糊且充满不确定性的“按钮”" class="headerlink" title="第二类：模糊且充满不确定性的“按钮”"></a>第二类：模糊且充满不确定性的“按钮”</h3><p>例如买股票，不同股票涨跌难测。这时你需要根据对市场走势、企业价值的判断，以及风险偏好来决策。</p>
+<h3 id="第三类：你要“自己创造按钮”"><a href="#第三类：你要“自己创造按钮”" class="headerlink" title="第三类：你要“自己创造按钮”"></a>第三类：你要“自己创造按钮”</h3><p>当你想解决一个难题或抓住一个空白机会时，选项常常并不存在。比如创业；或者在日常生活中，为了改善健康状况，决策高手会看书、咨询营养师，甚至研发属于自己的健身饮食方案。这就是“创造选项”，而不是在现有方案里将就。</p>
+<h3 id="第四类：博弈型按钮"><a href="#第四类：博弈型按钮" class="headerlink" title="第四类：博弈型按钮"></a>第四类：博弈型按钮</h3><p>这在下棋或商业竞争中最常见。你的一次行动，会影响对手或市场的反应，对手的应对又会倒逼你做出下一步决策。学会换位思考，厘清多方意图，是做出高水平博弈决策的关键。</p>
+<h3 id="第五类：号召众人的“按钮”"><a href="#第五类：号召众人的“按钮”" class="headerlink" title="第五类：号召众人的“按钮”"></a>第五类：号召众人的“按钮”</h3><p>最后害的决策，往往能带动一大群人一起行动。比如创业时的淘宝鼓励大家开网店；一个家长群发起公益活动，也是一种“集体决策”。你发动越多人，决策的影响力越大。</p>
+<p>从简单的“点单”，到复杂的创业或领导决策，这五种“按钮”几乎囊括了人生中最重要的场景。理解它们，你就能更有意识地把每一次决定都当成“主动出击”的过程。</p>
+<p>把决策比喻成“按下按钮”，看似简单，却蕴含深意。每一次按下按钮，都是一次郑重的人生选择。</p>
+<p>按下的瞬间虽只需一秒，却能改变未来。这个简单的动作提醒我们：决策权是一种需要珍惜的特权。就像那些精密仪器上的按钮一样，我们要心怀敬畏地使用它，既不能因为顾虑太多而错过机会，也不能轻率鲁莽地乱按一气。</p>
+<p>按钮的设计告诉我们：<strong>决策贵在及时、果断，但按下按钮的后果，却需要我们长期承担。</strong></p>
+<p>理解了这一点，你就会对每一次决策负起责任，在决策前多一分思考，在决策后多一分担当。这就是拥有决策权的真谛。</p>
+<h2 id="二、为什么我们会放弃决策权？"><a href="#二、为什么我们会放弃决策权？" class="headerlink" title="二、为什么我们会放弃决策权？"></a>二、为什么我们会放弃决策权？</h2><p>然而，很遗憾，在决策这件事儿上，大多人都放弃了自己的决策权，让命运随波逐流：</p>
+<ul>
+<li>有的人整天处在无意识的状态，别人说什么他做什么，像是在梦游；</li>
+<li>有的人生活就像踩着西瓜皮，滑到哪里算哪里。</li>
+</ul>
+<p>以上两种，基本属于彻底放弃决策权，自暴自弃。</p>
+<p>还有的人呢，也知道决策很重要，但是被“无知、害怕、盲目”这三个词儿拴住了手脚，没法做决策：</p>
+<ul>
+<li>因为无知，所以根本就不知道决策是怎么回事；</li>
+<li>因为害怕，所以不敢面对决策后的不确定性，于是干脆不做决策；</li>
+<li>因为盲目，所以做的是自欺欺人的假决策。</li>
+</ul>
+<p>瑞典隆德大学的两位心理学家做过一个好玩的实验：他们让参与者从两位女士照片中，选出自己觉得好看的那一张。然后心理学家偷偷要了小魔术，故意把不好看的那个照片递给参与者，还问他为什么觉得这个好看。</p>
+<p>结果，超过 70% 的参与者，压根儿没发现自己拿到的是起初认为不好看的那位女士的照片。更好玩的是，他们还认真地找出理由，来说明自己为什么这么选。</p>
+<p>这个实验揭示了一个深刻的心理现象：我们不仅可能会做出盲目的选择，还会为这些选择编造“合理化”的解释。这种“后见之明偏差”让我们产生一种错觉，仿佛所有决定都是经过深思熟虑的。</p>
+<p>而更危险的是，这种自欺欺人的假决策会形成一种恶性循环：</p>
+<ol>
+<li>做出盲目决策；</li>
+<li>为决策找借口；</li>
+<li>产生“我很理性”的错觉；</li>
+<li>继续做出更多盲目决策。</li>
+</ol>
+<p>所以，真正的决策权，首先是一种清醒的自我认知。当你意识到自己在决策时可能陷入无知、害怕或盲目的状态，你就已经迈出了重获决策权的重要一步。</p>
+<h2 id="三、决策权首先是自我观察"><a href="#三、决策权首先是自我观察" class="headerlink" title="三、决策权首先是自我观察"></a>三、决策权首先是自我观察</h2><p>承认了我们在决策中的盲区和局限，下一个问题就来了：怎样才能真正拿回我们的决策权？</p>
+<p>这个问题的关键，在于理解决策权的本质。</p>
+<p>候世达在研究人类意识时提出了一个重要观点：人类之所以拥有意识，是因为我们具有“自我指涉”的能力。也就是说，我们不仅能思考，还能思考自己在思考，甚至能思考自己在思考自己的思考……正是这种层层递进的自我觉知，让我们成为有意识的个体。</p>
+<p>决策权也是如此。它首先是一种自我觉察的能力，而不是外在条件的叠加。很多人以为，有更多的钱、更大的权、更好的机会，就等于拥有更强的决策权。但事实恰恰相反：当选项太多，反而容易让人迷失。那些看似“人生赢家”的大人物，常常会因为选择成本太高、决策压力太大而倍感煎熬。</p>
+<p>这告诉我们一个重要的真相：**决策权不是你拥有多少选项，而是你对自己的选择有多少觉察和掌控。**它存在于每个人的生命中，不分贫富贵贱。即使是在最艰难的处境下，我们依然拥有决策权——至少可以决定以什么样的态度来面对现实。</p>
+<p>这就是为什么说，态度第一。</p>
+<p>但在现实生活中，我们却常常在不知不觉间丢失了这份权利。</p>
+<p>所幸的是，找回决策权的第一步其实很简单：重新开启自我觉察。具体来说，就是诚实地回答三个基本问题：</p>
+<ul>
+<li>我本来想要什么？</li>
+<li>我现在在哪里？</li>
+<li>我还能做什么？</li>
+</ul>
+<p>这些问题看似简单，却直指决策权的核心：它不需要你有超人的智慧或特殊的才能，只需要一样品质：对自己诚实。</p>
+<p>当你开始认真面对这些问题，哪怕处境再艰难，你也会感受到一种特殊的自由。因为你已经从被动的“被决策”状态，转向了主动的“做决策”状态。而这种转变本身，就是决策权的最好证明。</p>
+<p>更重要的是，这种自我观察会像滚雪球一样，带来更多的机会，让你获得更大的决策空间。</p>
+<p>当你在这条自我觉察与行动的道路上不断前进，就会发现，真正的决策权一直都在那里，等着你去“按下按钮”。</p>
+<h2 id="四、重新掌握决策权的三个步骤"><a href="#四、重新掌握决策权的三个步骤" class="headerlink" title="四、重新掌握决策权的三个步骤"></a>四、重新掌握决策权的三个步骤</h2><p>前面我们理解了决策权的本质，现在我们从实践层面，学习三个具体步骤，重新掌握决策权。</p>
+<h3 id="第一步：创造“白色空间”"><a href="#第一步：创造“白色空间”" class="headerlink" title="第一步：创造“白色空间”"></a>第一步：创造“白色空间”</h3><p>这个概念来自洛杉矶一家保镖公司的老板贝克的经验。他发现，保镖工作的关键在于确保“白色空间”——即威胁与目标之间的安全距离。空间越大，保镖的反应时间就越充足。</p>
+<p>就像里根遇刺时，从保镖意识到危险到袭击发生，只有 1.8 秒。这种紧迫状态下，任何决策都无法做出。</p>
+<p>决策权也是如此。当我们没给自己留出思考的“白色空间”，就容易陷入被动和盲目。我有个做生意的朋友，每当遇到重要决策，必定站起来踱步思考。这不仅给了他决策的空间，更向外界传递信息：我在认真决策，请勿打扰。</p>
+<p>创造“白色空间”，就是为自己的决策权划出一片净土，把自己从“无意识”踩西瓜皮的状态里拽出来，远离外界的喧嚣和压力。</p>
+<h3 id="第二步：构建“反思循环”"><a href="#第二步：构建“反思循环”" class="headerlink" title="第二步：构建“反思循环”"></a>第二步：构建“反思循环”</h3><p>哲学家舍恩提出的“反思实践”理论告诉我们：决策能力是可以通过持续反思来提升的。具体来说：</p>
+<ul>
+<li>**决策中反思：**像下棋时的“悔棋”功能，随时观察和调整自己的决策过程；</li>
+<li>**决策后反思：**像游戏通关后的“复盘”，总结经验教训，为下一次决策积累智慧。</li>
+</ul>
+<p>这里有两个实用小技巧：</p>
+<ul>
+<li>在做决策时，你不断对自己说：“我是个决策者，我要按下按钮。”这样做的好处，是让自己“看见”自己的决策行为；</li>
+<li>**记“决策笔记”：**不管大小的决策，你都记下来，写下自己决策的目的，以及做决策的理由，事后再来看，当时的决策哪些对，哪些不对。</li>
+</ul>
+<p>决策是可以通过“刻意练习”来强化的。就像打游戏一样，按键按得越多，越会积累手感。每一次反思都让你的决策更加成熟。</p>
+<h3 id="第三步：积累决策资本"><a href="#第三步：积累决策资本" class="headerlink" title="第三步：积累决策资本"></a>第三步：积累决策资本</h3><p>拥有决策权不仅是一种意识，更需要实力的支持。就像打牌需要好牌一样，决策也需要资本。这里的“资本”不是物质层面的，包括三类：</p>
+<ul>
+<li>**硬资本：**财富、人脉、专业技能；</li>
+<li>**软资本：**智慧、信誉、勇气、同理心；</li>
+<li>**心理资本：**自信、定力、抗压能力。</li>
+</ul>
+<p>重要的是，这些资本是相互促进的：好的决策带来更多资源，更多资源又能支持更好的决策。这就形成了决策权的良性循环。</p>
+<p>以上三个步骤环环相扣：</p>
+<ul>
+<li>“白色空间”让你有独立思考的余地；</li>
+<li>“反思循环”帮你提升决策的质量；</li>
+<li>“决策资本”则为你提供更大的选择空间。</li>
+</ul>
+<p>记住，拿回决策权不是一蹴而就的事，而是一个渐进的过程。每完成一个步骤，你就离真正的决策自主更近一步。</p>
+<h2 id="最后：态度第一"><a href="#最后：态度第一" class="headerlink" title="最后：态度第一"></a>最后：态度第一</h2><p>在结束这一讲之前，我想和你分享《高效能人士的七个习惯》作者柯维讲过的一个故事：</p>
+<p>有人问柯维：“如果我不爱我的老婆了，我该怎么办？”</p>
+<p>柯维说：“那你就爱她吧。”</p>
+<p>这人说：“老师，你没听明白，我问的是我不爱我的老婆了，该怎么办。”</p>
+<p>柯维说：“不是我没听明白，而是你没听明白。我是说，如果你不爱她了，那你就去爱她吧。”</p>
+<p>这个故事启发我们：爱，首先是一个决定，是一个态度，而不仅是一种被动的感受。同样的道理也适用于决策权：它首先是一个态度选择。</p>
+<p>很多人问我：“老喻，我不会做决策，你能不能教教我方法？”</p>
+<p>其实，最重要的决策方法就是<strong>当回事儿地去决策</strong>。</p>
+<p>当你从此刻起，每次面对选择都认真对待，敢于下手、主动承担，那么你已经在“决策课”上合格了。</p>
+<p>所以，从今天开始，不要再把自己当作一个被动的接受者。哪怕是选择今天午餐吃什么这样的小事，也请认真对待，当作一次决策实践的机会。</p>
+<p>工具、模型、经验，这些都可以慢慢补充，最核心的，永远是那份态度。</p>
+<p>愿你在这条觉醒之路上，重新找回属于自己的决策权。也愿你通过一次次主动的决策，发现生命更多的可能。</p>
+<p>我是老喻，我们下一讲再见。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>对每一次决策负起责任，在决策前多一分思考，在决策后多一分担当，这就是拥有决策权的真谛。</li>
+<li>真正的决策权，首先是一种清醒的自我认知。当你意识到自己在决策时可能陷入无知、害怕或盲目的状态，你就已经迈出了重获决策权的重要一步。</li>
+<li>最重要的决策方法就是当回事儿地去决策：每次面对选择都认真对待，敢于下手、主动承担。</li>
+</ol>
+<h2 id="用户留言（原图精选）"><a href="#用户留言（原图精选）" class="headerlink" title="用户留言（原图精选）"></a>用户留言（原图精选）</h2><h3 id="左星星"><a href="#左星星" class="headerlink" title="左星星"></a>左星星</h3><p>重新夺回决策权的第一步，先认清我们为什么做出某种选择，我们的选择是不是基于内心的真实需求，还是在顺应外界的期望。这种清醒的自我觉知，才是掌控自己人生的开端。很多时候，我们所谓的“选择”，其实只是条件反射的反应，而一旦能够有意识地剖析这些反应的来源，就能慢慢找回那个真正能“按下按钮”的自己。</p>
+<p>按下一个按钮看似简单，但它所触发的后果可能是深远的。我们是否敢按这个按钮，取决于我们是否愿意承担按下后的结果。这意味着，决策权并不是单一时刻的事，而是一种贯穿始终的责任。</p>
+<h3 id="魏红亮"><a href="#魏红亮" class="headerlink" title="魏红亮"></a>魏红亮</h3><p>这节课让我想到一个非常关键的训练：无论是投资、工作还是人生选择，真正重要的不是选择一个完美答案，而是让自己保持在可以继续修正的状态。决策权不是一次性获得，而是每一次认真面对选择、记录选择、复盘选择后逐渐形成。</p>
+<h3 id="黄泊淳-Only"><a href="#黄泊淳-Only" class="headerlink" title="黄泊淳 Only"></a>黄泊淳 Only</h3><p>态度第一。决策权几乎是每个人都拥有的东西，但我们却常常把它交给环境、父母、朋友和所谓的专家。真正有决策权的人，并不是从不犯错，而是愿意面对未知、承认错误、持续反思，并在不断选择中找到自己的人生方向。</p>
+<h3 id="方兴（阳光荞草）"><a href="#方兴（阳光荞草）" class="headerlink" title="方兴（阳光荞草）"></a>方兴（阳光荞草）</h3><p>决策权不是选项越多越好，而是自己真正知道想要什么，知道自己现在在哪里，也知道还能够做什么。要把人生放在旷野中，而不是让自己被一条预设轨道锁住。</p>
+<h3 id="李泰"><a href="#李泰" class="headerlink" title="李泰"></a>李泰</h3><p>决策权是处理我们与世界、他人和自己的三重关系。它首先需要诚实：对世界保持真实，对他人保持真诚，对自己保持诚实。自我观察、创造白色空间、建立反思循环，都是把决策权重新拿回来的办法。</p>
+<h3 id="炎帝"><a href="#炎帝" class="headerlink" title="炎帝"></a>炎帝</h3><p>我们会有一个奇怪的现象：明明有些人对我们不好，甚至给我们带来麻烦，但我们依然笑脸相迎；相反，真正对我们好的人却常常被忽视。保护自己的方法，是勇敢说“不”、识别核心关系、动态调整。面对不确定性时，不能只等待别人替我们按下按钮。</p>
+<h3 id="六芥（阳光荞草）"><a href="#六芥（阳光荞草）" class="headerlink" title="六芥（阳光荞草）"></a>六芥（阳光荞草）</h3><p>对自己的生活负责，不要把所有的决定都交给别人。遇到选择时，先问自己：这个选择对我的价值是什么？损失是什么？如果一个选择带给我们持续的不安和损耗，就应该立刻止损。</p>
+<h3 id="其他留言要点"><a href="#其他留言要点" class="headerlink" title="其他留言要点"></a>其他留言要点</h3><ul>
+<li>不要把决策权交给“无知、害怕、盲目”这三个因素；</li>
+<li>要给重要决策留出“白色空间”，减少外界干扰；</li>
+<li>写决策笔记，把决策目的、理由和事后结果记录下来；</li>
+<li>决策资本包括硬资本、软资本和心理资本，三者相互促进；</li>
+<li>真正的自由不是没有风险，而是愿意为自己的选择承担后果。</li>
+</ul>
+<p>——以上留言由作者筛选显示。</p>
+<hr>
+<p><a href="/book/decision-algorithm/055/">← 055｜道路选择：为什么人生不是轨道，而是旷野？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/057/">057｜选择VS努力：怎样找到你人生的α和β？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

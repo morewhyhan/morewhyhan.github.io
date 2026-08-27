@@ -1,0 +1,466 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>007｜四维：为什么决策高手都是贝叶斯主义者？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》007：四维：为什么决策高手都是贝叶斯主义者？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="007｜四维：为什么决策高手都是贝叶斯主义者？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/007/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》007：四维：为什么决策高手都是贝叶斯主义者？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:44.797Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/007/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '007｜四维：为什么决策高手都是贝叶斯主义者？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">007｜四维：为什么决策高手都是贝叶斯主义者？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">007｜四维：为什么决策高手都是贝叶斯主义者？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>来源：老喻·决策算法100讲</p>
+<p>音频时长：13分41秒</p>
+</blockquote>
+<h2 id="老喻亲述"><a href="#老喻亲述" class="headerlink" title="老喻亲述"></a>老喻亲述</h2><p>你好。</p>
+<p>我是老喻，欢迎回到《决策算法》课。</p>
+<p>前面两讲，我们讲了怎样计算期望收益，以及怎样用凯利公式计算最佳的下注比例。</p>
+<p>这一讲，我们来讲如何运用贝叶斯定理，成为决策高手。</p>
+<h2 id="一"><a href="#一" class="headerlink" title="一"></a>一</h2><p>贝叶斯定理，你未必熟悉，但其实你无时无刻不在运用。</p>
+<p>有一天晚上，我走到家里前院的葡萄架下，听见上方有动物的声音，心想：是不是老鼠或者松鼠在偷吃成熟的葡萄？</p>
+<p>于是，我拿了根棍子，敲打了几下，想要赶走。但没有听见它们离开。</p>
+<p>这时，我家的金毛冲了过来，对着葡萄架的上方猛吼，还想要爬上去。</p>
+<p>我意识到，要是老鼠和松鼠，早就吓走了。肯定是别的什么动物。</p>
+<p>“会不会是浣熊？”我推测到。前阵子在附近也见到过浣熊，这种动物，既会攀爬，胆子又大。</p>
+<p>这时候，一条大大的花尾巴从葡萄架上垂下来，果然是一只【原图此处动物名称需放大复核】。</p>
+<p>你看，这样一个过程，由果及因，用证据来调整判断，就是典型的贝叶斯推理。</p>
+<p>《园丁与木匠》的作者高普尼克认为，婴儿天生就会贝叶斯推理：</p>
+<blockquote>
+<p>先对一个事情的发生有某种预先的猜测，然后基于新的信息来修正这个猜测的概率，以获得对于这件事情的原因更加正确的认识。</p>
+</blockquote>
+<p>贝叶斯定理与人类大脑的推理过程非常相似，所以被称为接近人类感觉的统计学。</p>
+<p>我们在《决策算法》开篇时提到，决策并非是因果分明的，选择背后，对应的是结果的可能性，也就是概率，而不是确定性的结果。</p>
+<p>于是，我们接着谈到《决策算法》的框架，涉及到胜率、赔率、期望值、凯利公式。</p>
+<p>但这里面最大的挑战是：现实世界又不是简单的掷硬币游戏，对于那些未知事物，你怎么知道概率是多少？</p>
+<p>贝叶斯的哲学，是概率是你对某件事的信念。</p>
+<p>想象一下，你在街头看见一个人在摆摊儿玩儿抛硬币的游戏，有不少人围观。你观察了一下，那个人连续抛出了5次硬币正面朝上，请问下一次再朝上的概率是多少？</p>
+<p>按照传统的频率派概率思维，你一定会说：当然还是50%，因为每一次硬币的抛出都是独立的，和前面的5次无关。</p>
+<p>但是，如果是一个贝叶斯主义者，则会思考：这个摆摊儿的人是否作弊了？</p>
+<p>没错，一个标准的硬币，抛出正面的概率是50%。但是，在街头这个不确定性的环境下，考虑到摆摊者的动机，极有可能这个硬币被动了手脚。</p>
+<p>我们做决策时，面对的信息总是不完备的，未来总是不确定的，我们不可能通过事先的精密计算，预判结果，做出不会出错的决策。</p>
+<p>我们只能先形成某种信念，然后不断实践和反馈，来更新我们的信念。</p>
+<p>贝叶斯定理的工作原理，可以归纳为：</p>
+<blockquote>
+<p>过去的经验 + 新的证据 &#x3D; 得到修正后的判断。</p>
+</blockquote>
+<p>诺奖得主【原图此处人名需放大复核】说：“如今的失败是为了将来的成功，每失败一次，就离成功更进一步。”</p>
+<p>但是，为什么对于大多数人而言，失败并不是成功之母呢？</p>
+<p>那是因为，你需要一个决策框架，将每一次探索，不管是成功还是失败，都转换为你的系统优势。</p>
+<p>贝叶斯定理，就可以为我们提供一套这样的决策系统。</p>
+<h2 id="二"><a href="#二" class="headerlink" title="二"></a>二</h2><p>贝叶斯公式：</p>
+<p>$$P(A\mid B)&#x3D;\frac{P(A)P(B\mid A)}{P(B)}$$</p>
+<p>其中：</p>
+<ul>
+<li>$P(A\mid B)$：事件B发生时，事件A发生的概率（后验概率）；</li>
+<li>$P(B\mid A)$：事件A发生时，事件B发生的概率；</li>
+<li>$P(A)$：事件A的先验概率；</li>
+<li>$P(B)$：事件B的总概率。</li>
+</ul>
+<p>我们的重点，不是计算，而是思考方式。所以，我们直奔主题，来看看，贝叶斯定理，带给我们的决策方法。</p>
+<p>概括而言，就是十个字：</p>
+<ol>
+<li>尊重先验；</li>
+<li>保持开放；</li>
+<li>先干为敬；</li>
+<li>持续更新。</li>
+</ol>
+<h2 id="三"><a href="#三" class="headerlink" title="三"></a>三</h2><h3 id="先看第一条：尊重先验"><a href="#先看第一条：尊重先验" class="headerlink" title="先看第一条：尊重先验"></a>先看第一条：尊重先验</h3><p>先验概率是我们在未得到新信息前对事件可能性的估计，这个概率通常基于我们已有的知识、经验和对世界的基本认识。</p>
+<p>比如说，你的表姐怀了老二，不管老大是男孩还是女孩，老二是女孩的概率，都是50%。</p>
+<p>尊重先验概率意味着我们要尽可能地通过历史数据、统计信息或经验来构建一个初始的模型，而不是凭空做出判断。</p>
+<p>有一位著名的创业人，曾经用贝叶斯定理的先验概率，来解释自己为什么要做饮料：</p>
+<ol>
+<li>饮料领域看起来很老土，但是基数大。中国饮料市场规模当时超过一万亿。</li>
+<li>对比而言，美国SaaS市场看起来很性感，可市场规模仅为百亿级别。</li>
+<li>所以，做饮料叫小一点的巨头，做SaaS做到老大也很小。</li>
+</ol>
+<p>你看，他就是把行业的基础概率，作为先验概率的初始值，来做出判断。</p>
+<p>医学界有句格言：“当你听到马蹄声时，想想马，而不是骆驼。”啥意思呢：我们判断未知事物时，应该想更大的可能性，而不是被更特别的可能性所吸引。</p>
+<p>你可能会说，我要做的那个决策，根本没有基础概率，那该怎么办？</p>
+<p>贝叶斯统计有一个“不充分推理原则”：若没有其他可作为依据的数据，可以把主观预测当作数据使用。</p>
+<p>然后，再根据新的信息，不断更新概率，结果就会越来越准确。啥意思呢？就是先蒙一个再说。</p>
+<p>这背后还有一种这样的精神，你遇到一个自己不懂的东西，你可以说：我不懂，但我可以边做边学。</p>
+<h2 id="四"><a href="#四" class="headerlink" title="四"></a>四</h2><p>说完第一条“尊重先验”，我们再看第二条：保持开放。</p>
+<p>现实是复杂且不确定的，贝叶斯主义告诉我们，所有的模型和理论都只是我们对世界的信念和假设，而不是真理。</p>
+<p>所以，我们必须保持开放，不断收集新的证据，来调整我们的假设。</p>
+<p>说一个有趣的小故事：有一个人到了一个陌生的小镇上，他特别想和这个镇上的人套近乎，然后他就走到广场上，发现有个老人坐在【原图此处地点需放大复核】，他旁边趴着一只狗，那狗特乖。他走上去问那个老人，你的狗咬人吗？</p>
+<p>老人说不咬，然后他就去摸了一下那个狗，结果被狗咬了一口，他就很生气，质问老人：“你刚才不是说这个狗不咬人吗？”</p>
+<p>那个人老头说：“这不是我的狗。”</p>
+<p>这个小故事，往深来说，涉及到人类思维中的一个根本性问题。这个世界上，人类很难知道确切的因果关系，我们看到的一切，都只是某种相关性。</p>
+<p>然而，人类的本能是靠近因果，我们喜欢清晰的前因后果，似乎只要弄清楚了因果链，就能够做出好的决策。但可惜的是，世界并不是这样运行的。</p>
+<p>所以，决策上所谓保持开放，就是无论什么情况下，都不能过于先入为主，非此即彼，而是用概率，作为决策的依据。</p>
+<p>没有什么是100%，任何的可能，哪怕微弱，也都有可能发生。</p>
+<p>所以，对于一名贝叶斯主义的决策高手，假如有人怀疑、反对他，提出不一样的证据，他不会恼怒，反而会有收获。他会使用这一证据，更新自己的先验概率。</p>
+<h2 id="五"><a href="#五" class="headerlink" title="五"></a>五</h2><p>接下来，是贝叶斯决策系统的第三条方法论：先干为敬。</p>
+<p>贝叶斯思想强调快速迭代、快速行动。只有通过实践，我们才能得到反馈，从而更新自己的判断。</p>
+<p>我们总是说“知行合一”，强调要知，更要行，知中有行，行中有知。</p>
+<p>贝叶斯定理，则给出了“知行合一”的动力学模型。</p>
+<p>对高手而言，贝叶斯公式描述的是一个观念更新的过程：初始信念（先验概率）→ 大胆行动（获得新信息）→ 更新信念（后验概率）。然后，再重复如此过程。</p>
+<p>我画了一个示意图在文稿中，你可以点开查看。</p>
+<p>这个图也可以这样理解：人（包括AI智能体）通过贝叶斯公式，把知识和行动、经验和决策整合在一起了。</p>
+<p>所以，当我们面对一件未知事物，与其在那里猜来想去，不如先干再说。</p>
+<p>然后，通过行动中获得的信息，来更新我们最初的信念，这些都管用。</p>
+<h2 id="六"><a href="#六" class="headerlink" title="六"></a>六</h2><p>贝叶斯决策系统的第四条方法论是：持续更新。</p>
+<p>如果仅从道理角度看，贝叶斯定理，讲的似乎也是那些老生常谈的东西。</p>
+<p>真正的关键在哪儿呢？在于系统。</p>
+<p>假如没有自己的模型，不是基于一个系统，贝叶斯公式并不能帮助一个人成为真正的决策高手。</p>
+<p>在某个论坛上，有人问了埃隆·马斯克一个问题：“你生命中最大的挑战是什么？”</p>
+<p>马斯克足足想了30秒，给出了一个非常精彩的回答：“确保你有一个可纠错的反馈闭环。”</p>
+<blockquote>
+<p>可纠错的反馈闭环，几乎是创业决策、投资决策、成长决策的核心答案。</p>
+</blockquote>
+<p>而贝叶斯定理对于我们做决策最大的意义也在于此，它就是“可纠错的反馈闭环”的模型化表达。</p>
+<p>基于贝叶斯定理，建立起你的可纠错的反馈闭环，就像拥有了一个人生的船，尽管一路惊涛骇浪，有顺风也有逆风，但你终究有机会顺风破浪，抵达你的目的地。</p>
+<p>对于贝叶斯主义者来说，没有成功和失败的概念。</p>
+<p>成功和失败就像这个方向盘左一点、向右一点而已，关键在于你根据反馈如何去优化自己的下一步的行动。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>现在，让我们再回望一下EKB决策算法，这三个字母，正是期望值、凯利公式和贝叶斯定理的英文单词首字母。</p>
+<p>我们说过，胜率和赔率，是一维的；而期望值就像是面积的计算，是二维的；凯利公式，则通过分阶段投入筹码，也就是随着时间的进度分配你的人生资源，这是三维的；而这里面的关键，是我们决策当中的概率判断。</p>
+<p>贝叶斯定理告诉我们，这个概率可以在知行合一的推进过程中，不断得到更新，一步步逼近真相，所以我们称之为四维链。</p>
+<p>有一种说法，在所有的数学发现中，贝叶斯定理是应用最多的之一，它广泛应用于各个领域，包括海洋搜救，以及当下大火的人工智能。</p>
+<p>贝叶斯定理有一种理性的乐观主义精神，教我们在未知中前行。</p>
+<p>未知令人恐惧，但贝叶斯定理告诉我们，只要有一缕微弱的光线，概率也可以作为生活的向导，带我们穿越人生的迷雾。</p>
+<p>贝叶斯主义假设“现实”的所有模型、理论和概念都不过是某种信念。这不会让人成为虚无主义者，反而能让我们在相信中怀疑，在怀疑中相信。</p>
+<p>在生活中，很多时候，那些看上去疑虑重重的人也许有更坚定的信念，有些信誓旦旦的家伙每每却见证失败。</p>
+<p>也许你会觉得，这个世界很混蛋，但鲁迅如此刚刚好，这个星球很残忍，却总能给我们留下一扇门。</p>
+<p>贝叶斯定理告诉我们，面对我们所处的、既有确定性又有不确定性的世界，我们需要不断更新自己的信念和判断。</p>
+<p>以上就是这一讲的全部内容，我是老喻，我们下一讲再见。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>尊重先验概率意味着我们要尽可能地通过历史数据、统计信息或经验来构建一个初始的模型，而不是凭空做出判断。</li>
+<li>决策上所谓保持开放，就是无论什么情况下，都不能过于先入为主，非此即彼，而是用概率，作为决策的依据。</li>
+<li>当我们面对一件未知事物，与其在那里猜来想去，不如先干再说。然后，通过行动中获得的信息，来更新我们最初的信念。</li>
+<li>对于贝叶斯主义者来说，没有成功和失败的概念。成功和失败就像这个方向盘左一点、向右一点而已，关键在于你根据反馈如何去优化自己的下一步的行动。</li>
+</ol>
+<h2 id="课程导航"><a href="#课程导航" class="headerlink" title="课程导航"></a>课程导航</h2><ul>
+<li>上一期：06 三维：怎样用凯利公式找到最佳下注比例？</li>
+</ul>
+<h2 id="精选留言"><a href="#精选留言" class="headerlink" title="精选留言"></a>精选留言</h2><h3 id="左星星"><a href="#左星星" class="headerlink" title="左星星"></a>左星星</h3><p>要成为贝叶斯主义者，关键在于构建一种“开放且更新”的思维方式。贝叶斯定理的基本思想是通过每次获取的新信息不断修正自己的信念，并在变化中及时调整自己的方向。这种心态让我们在面对未知时不至于过于自信或过于保守，而是对同样保持开放，接纳新的信息，实时对自己的判断进行微调。</p>
+<p>在现实生活中，我们习惯依赖有经验做出判断，但计划往往会因为一些不确定因素而偏离。假设有一个新朋友，初次认识时你对其有50%的信任度，但随着相处的增加，你发现他总是思维谨慎，也不轻易推脱承诺。这一观察为你提供了新的证据，可以逐步提升对他的信任度。反之，如果他经常失约或言行不一，你的信任度则会随之降低。</p>
+<p>通过贝叶斯定理，你会在每次互动后重新评估对朋友的信任，先验信任的建立并非一次，而是根据新信息不断调整。在这个过程中，你既不会因为一次失败就彻底否定对方，也不会因为一时的善意互动就过度依赖。这种逐步调整的方式能够帮助我们在复杂的人际关系中找到更为客观的平衡。</p>
+<h3 id="Tony-to-ni"><a href="#Tony-to-ni" class="headerlink" title="Tony to ni"></a>Tony to ni</h3><p>我最近开车的时候，总是听到车里有什么东西在震动，咯嗒咯的。</p>
+<p>在我听来，就是在我的手边，好像是在副驾驶那有东西在震动。然后我爱人坐在副驾，说她听到的是在左边有东西震动。我感觉就她说的在右侧，这个时候我儿子说，既然你们一个说在右侧，一个说在左侧，那肯定要中间了。</p>
+<p>于是我们就在中控台的下边找，像充电口、杯托那，都没有找到。</p>
+<p>有一天我把中控台上方装眼镜的盒子打开，把里面的眼镜拿下来，果然不停震动了。原来是那个眼镜盒在震动，然后不断修正，最后得到正确结论的一个过程。</p>
+<h3 id="伴听"><a href="#伴听" class="headerlink" title="伴听"></a>伴听</h3><p>于我而言，可以把一维到四维的决策思维，用指数基金投资。</p>
+<ol>
+<li>一维，关注胜率和赔率，那么定投的标的来说，既要看胜率不低（买安全性高的，如货币基金、债券基金），也要看有赔率（注重高赔率的，如宽基指数和行业指数）。</li>
+<li>二维，关注期望值，就是投入和回报的比例高，应该关注的，有一定波动的，比如股票基金、债券基金。</li>
+<li>三维，关注凯利公式，就是投对不同标的时，每次下注多少，不要一下子All in，这样才能从时间维度分阶段，穿越牛熊。</li>
+<li>四维，关注贝叶斯公式，就是定投的及时态势评估，如何根据估值适当调整仓位，比如股市估值高时，少投股票；整体估值低反向操作。</li>
+</ol>
+<p>老师那张四维链图非常形象，太赞。</p>
+<h3 id="鸿涛"><a href="#鸿涛" class="headerlink" title="鸿涛"></a>鸿涛</h3><p>贝叶斯定理的目的是对于概率的不断修正，也就是不断地纠正未知中的反馈出来的概率。这个概率的初始值就是先验概率，然后在开放性的原则下通过快速迭代持续更新概率值，以使这个后验概率更接近真实。运用贝叶斯定理得到的后验概率才能够得到凯利公式的计算更准确，这保障了决策的准确性。</p>
+<h3 id="杨蓓蓓·职场高管教练"><a href="#杨蓓蓓·职场高管教练" class="headerlink" title="杨蓓蓓·职场高管教练"></a>杨蓓蓓·职场高管教练</h3><p>对我来讲，善于思考的是提升我们在所有课程里最大限度的展开，并且及时复盘。这个里边需要记录，甚至要通过做题来验证、锻炼自己的逻辑过程，确实是很有收获，哈哈😅</p>
+<h3 id="炎帝"><a href="#炎帝" class="headerlink" title="炎帝"></a>炎帝</h3><p>贝叶斯定理：当我们面对新的信息时，应该如何调整我们对某一事件发生概率的估计。</p>
+<p>根据老喻老师的贝叶斯定理，总结4点：</p>
+<ol>
+<li>尊重先验：贝叶斯主义者会根据已有的知识和经验设定一个先验概率，这是在没有任何新证据之前对事件发生概率的估计。决策高手尊重先验，并为它们提供一个起点。</li>
+<li>保持开放：随着新证据的出现，贝叶斯主义者会保持开放的态度，不断根据这些证据调整自己的先验信念。这种灵活性是决策高手的关键特质，使他们能够适应变化，而不是固守过时的观点。</li>
+<li>先干为敬：贝叶斯思想强调快速迭代和行动。决策高手知道，只有通过实践，才能获得反馈，从而更新自己的判断。这种“先干为敬”的态度使他们能够快速学习和适应。</li>
+<li>持续更新：决策高手会持续根据新的数据和信息更新自己的概率判断。这种持续的更新过程使他们能够逐步逼近真相，做出更准确的决策。</li>
+</ol>
+<h3 id="学习机器"><a href="#学习机器" class="headerlink" title="学习机器"></a>学习机器</h3><p>在某个论坛上，有人问了埃隆·马斯克一个问题：“你生命中最大的挑战是什么？”</p>
+<p>马斯克足足想了30秒，给出了一个非常精彩的回答：“确保你有一个可纠错的反馈闭环。”</p>
+<p>前段时间在知乎上有人问，成为一个投资、交易高手（股市、期货、外汇），需要具备哪些条件呢？我给出的答案是：</p>
+<p>第一，你需要有一套正期望值的可纠错的反馈交易系统；</p>
+<p>第二，你要始终都能够按照这个反馈交易系统来执行。</p>
+<p>也许有人会质疑，就这么简单，就可以成为交易高手？没错，有且只需要这两个条件，但在市场中能够满足这两个条件的人少之又少！第一个条件可以淘汰绝大部分人，因为很多市场交易者，压根就没有一个完善的反馈交易系统，更多的是凭感觉、听消息做交易，或是别的交易系统的期望值为负；第二个条件需要你有可纠错反馈系统的执行力，起初的反馈系统并不完善，你需要根据市场的反馈持续的迭代，而且你要把对的反馈系统给出的指令，对人性是莫大的考验。</p>
+<p>其实无论是做市场投资，还是创业，或者教育等几乎任何领域，成功的关键在于你要有一套可纠错的反馈系统，然后在现实中让这套系统不断升级迭代。那升级迭代什么时候结束呢？也许永远在升级迭代的路上，也许只要让系统的期望值为正就可以了。</p>
+<h3 id="方兴（阳光茅草）"><a href="#方兴（阳光茅草）" class="headerlink" title="方兴（阳光茅草）"></a>方兴（阳光茅草）</h3><ol>
+<li>尊重先验概率意味着我们要尽可能地通过历史数据、统计信息或经验来构建一个初始的模型，而不是凭空做出判断。</li>
+<li>决策上所谓保持开放，就是无论什么情况下，都不能过于先入为主，非此即彼，而是用概率，作为决策的依据。</li>
+<li>当我们面对一件未知事物，与其在那里猜来想去，不如先干再说。然后，通过行动中获得的信息，来更新初始信念。</li>
+<li>对于贝叶斯主义者来说，没有成功和失败的概念。成功和失败就像这个方向盘左一点、向右一点而已，关键在于你根据反馈如何去优化自己的下一步的行动。</li>
+</ol>
+<h3 id="JerryLuo"><a href="#JerryLuo" class="headerlink" title="JerryLuo"></a>JerryLuo</h3><p>贝叶斯定理，带给我们的决策方法论，概括而言，就是十六个字：尊重先验；保持开放；先干为敬；持续更新。</p>
+<p>我所在的团队最近在做一个相对复杂的新的项目，不知不觉也在使用贝叶斯定理。</p>
+<ol>
+<li>尊重先验。因为项目相对复杂，我们首先是看公司曾经有无类似项目资料可供参考。</li>
+<li>保持开放。即使历史上有相关资料，但是不能照搬经验。而是要保持开放心态，结合这次项目的特殊性开展工作。</li>
+<li>先干为敬。项目的特点是“渐进明细”。不能等到所有信息都掌握后，再开展工作，得先干起来。</li>
+<li>持续更新。项目开展起来后，会得到更多的信息。所以，不管是项目计划，还是具体工作内容，在实际工作中都需要不断迭代，才能确保项目如期交付。</li>
+</ol>
+<p>其他学习：</p>
+<ol>
+<li><p>刘嘉老师在“得到”的课程《贝叶斯推理：概率是对信息的度量》最后，留下的一道思考题：日常生活里，有些人看到喜鹊就开心，看到乌鸦就难受；还有些人相信“左眼跳财，右眼跳灾”。你能用贝叶斯推理解释一下这样的行为吗？</p>
+<p>引用左星星同学的回复：“喜鹊代表着喜事，左眼跳意味着好事，这些都是‘祖训’，也就是人们一直以来不断被‘灌输’的一个说法，所以当一个人看到喜鹊的时候，他心里的先验概率可能已经是，今天要发生好事80%，今天要发生坏事20%。”</p>
+</li>
+<li><p>书籍《决策的智慧》中引入了一个例子，说明在日常生活中，如果只是“尊重先验”，但是没有“持续更新”，而闹出的笑话。</p>
+<p>一位新婚妻子正在准备晚餐，她决定炖红烧火腿。她的丈夫看到她，先是把火腿的两端切掉，然后把切下来的两端放入锅中。他很好奇，于是问妻子为何要切掉火腿的两端。“我不知道为什么，但我妈妈总是这样做。我过会儿打电话问妈妈为什么要这样做。”于是她打电话问妈妈，妈妈给出了几乎相同的答案。“我也不知道，但我的妈妈就是这样做的。”后来，她又联系到祖母，祖母告诉了她自己之所以这样做的确切原因：“我经常将火腿的两端切掉，是因为我家的锅太小了。”</p>
+</li>
+</ol>
+<h3 id="shen"><a href="#shen" class="headerlink" title="shen"></a>shen</h3><p>失败是成功之母，还是成功不成功之父呢？</p>
+<p>小时候，我们听到最多的一句话就是，失败是成功之母。言外之意，要大胆去干，边干边学，不要害怕失败。</p>
+<p>而现在的说法发生了一个大转折，认为不论多少次失败，都没有意义和价值。不如一次成功的作用大，因为成功具有复制粘贴，一步步扩散。</p>
+<p>这话固然很有道理，但是，成功从哪里来呢？是从天而降的吗？显然不是，造成成功成为之父之义，是肯定成功的作用和意义。举个例子，成功发明了一件产品，让这件产品发挥最大的意义。</p>
+<p>成功的背后仍离不开一次次失败尝试，跌倒了，站起来，拍拍身上的土，重新前行。跌倒一次，就得修整一次。这个过程，就是贝叶斯定理的运用和实践。</p>
+<p>失败是成功之母，这个“母”字的核心，是可纠错的反馈闭环，每一次失败，都会增大一次成功的概率。</p>
+<blockquote>
+<p>以上留言由作者筛选显示</p>
+</blockquote>
+<hr>
+<p><a href="/book/decision-algorithm/006/">← 006｜三维：怎样用凯利公式找到最佳下注比例？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/008/">008｜重新理解复利：为什么复利很多时候是一个“谎言”？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

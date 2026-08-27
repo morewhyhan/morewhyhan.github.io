@@ -1,0 +1,516 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>087｜面对意外：什么是“突击考试悖论”？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》087：面对意外：什么是“突击考试悖论”？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="087｜面对意外：什么是“突击考试悖论”？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/087/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》087：面对意外：什么是“突击考试悖论”？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:46.054Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/087/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '087｜面对意外：什么是“突击考试悖论”？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">087｜面对意外：什么是“突击考试悖论”？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">087｜面对意外：什么是“突击考试悖论”？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>老喻·决策算法100讲｜老喻亲述</p>
+<p>【知识福利社】你的私人书院，微信：312005650（全网热门课程分享；页面底部重复出现）</p>
+</blockquote>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>你好，我是老喻，欢迎来到决策算法课。</p>
+<p>回忆起学生时代，最让我们心生恐惧的莫过于“突击考试”了。</p>
+<p>记得高二那年，一个雷雨交加的夜晚，数学老师突然宣布要进行一次突击测试。教室里立刻哗然一片——有人慌忙翻开课本复习，有人偷偷传纸条讨论对策……我清楚记得当时自己心里冒汗的感觉，甚至有一刻荒谬地希望：老师会不会把试卷掉进水里？</p>
+<p>这种“意外”带来的恐慌感，其实伴随着我们的一生。股市突然暴跌、公司意外裁员、合作伙伴临时变卦……生活中的每一个突如其来的转折，都像那场突击考试，让我们措手不及。</p>
+<p>今天，我想带你深入探讨一个和这类场景密切相关的思想悖论——“突击考试悖论”。它不仅有趣，更蕴含着应对人生诸多不确定性的智慧密码。</p>
+<p>想象这样一个场景：你回到了中学时代，老师在课堂上严肃宣布：“下周某一天会有一次突击考试，考试日会在周一到周五之间，但具体哪一天不会提前告诉你。考试将是一个‘意外’。”</p>
+<p>班上同学顿时紧张起来。但很快，一位头脑敏锐的同学站起来，自信地提出了一个令人吃惊的推理：“老师，按照您的条件，这次考试实际上是不可能发生的！”</p>
+<p>他开始解释：“考虑周五那天，如果到了周四晚上考试还没进行，那么我们就能百分百确定周五会考试，这就不再是意外了。所以，周五不可能是考试日。”</p>
+<p>既然周五被排除，再看周四。如果到了周三晚上还没考试，那么根据同样的逻辑，周四就成了唯一选择，也不再是意外。</p>
+<p>以此类推，周三、周二、甚至周一，都不可能是考试日。结论是：在“意外”的条件下，这个考试根本无法安排！</p>
+<p>这个推理看似严密无懈，却得出一个与现实经验完全矛盾的结论——因为我们都知道，突击考试在现实中确实频繁发生。那么，问题究竟出在哪里？</p>
+<p>这个被哲学家和逻辑学家广泛讨论的“突击考试悖论”，本质上是一个“反身性逻辑”的陷阱。</p>
+<p>所谓“反身性”，是指人的预判本身会改变被预判的结果。金融大师索罗斯曾用这一概念解释市场波动：投资者的预期会影响市场，而市场变化又会反过来影响预期，形成一个自我强化的循环。</p>
+<p>在突击考试案例中，学生推断“考试不会发生”时，恰恰是这种确信创造了意外发生的条件。因为当学生认为“周五不可能考试”而放松警惕时，周五举行的考试正因此变得真正“出人意料”。</p>
+<p>这揭示了一个深刻道理：当你过于确信某事不会发生，往往正是它发生的最佳时机。</p>
+<p>在现实中，这种反身性陷阱比比皆是。2008年金融危机前，许多专家坚信房地产永远不会大跌，这种集体盲目乐观恰恰埋下了危机的种子。柯达曾确信数码技术不会对其核心业务构成威胁，结果错失转型良机，最终黯然退场。诺基亚，认为触屏手机只是昙花一现，低估了触屏手机，这一判断导致它在智能手机革命中落后。</p>
+<p>真正的风险，不是意外本身，而是你认定“意外不可能发生”的那份自信。</p>
+<p>要真正理解并应对这个悖论，我们需要借助“条件概率”这个强大工具——它是应对意外的决策基石。</p>
+<p>条件概率回答的是一个关键问题：当环境突变时，我们应该如何调整判断？它告诉我们“在已知某事发生的情况下，另一事件发生的可能性”。</p>
+<p>比如，一副扑克牌中随机抽出一张牌是红桃A的概率是 1&#x2F;52，但如果已知抽出的是红桃，那么抽到红桃A的条件概率立刻变为 1&#x2F;13。</p>
+<p>这种“根据新条件更新概率”的能力，正是我们应对意外的关键。想象你计划出门，最初天气晴朗，准时赴约的概率是95%。突然，暴雨如注——这是一个外条件。条件概率思维会立刻调整：在“暴雨”这一新条件下，准时概率可能降至40%。于是你改变路线，提前出发，增加准时的可能。</p>
+<p>回到突击考试问题，条件概率如何发挥作用？</p>
+<p>周一早晨，考试可能性均匀分布：每天20%。周一晚上没有考试，条件改变了：周二至周五的考试概率各上升至25%。周二中午得知老师周四会， 又一个意外条件！周二已过，周三、周五的概率重新调整。</p>
+<p>在现实中，意外不断，条件不停变化。而我们已经很熟悉的贝叶斯思维——条件概率的系统化应用——正是处理这种动态变化的最佳框架。它通过一个优雅公式教我们如何精确更新判断：</p>
+<blockquote>
+<p><strong>后验概率 &#x3D;（先验概率 × 新证据的似然度）&#x2F; 证据的总体概率</strong></p>
+</blockquote>
+<p>这看似复杂，但本质上是告诉我们：当意外出现时，不要完全抛弃原判断，也不要无视新情况，而是根据新旧信息的可靠度找到最优平衡点。</p>
+<p>贝叶斯思维对付意外的价值在于：它不试图预测每一个意外（这是不可能的），而是提供一个持续适应的动态系统。就像免疫系统不可能预知所有病毒，但能识别并应对新出现的威胁。</p>
+<p>在充满意外的世界中，条件概率和贝叶斯思维给了我们一个核心启示：最强大的不是预测未来的能力，而是在条件变化时快速更新判断的能力。</p>
+<p>就像一艘航行中的船，面对突然的风暴，不是执着于原航线，而是根据新风向动态调整——在意外中保持航向，最终抵达彼岸。</p>
+<h3 id="四"><a href="#四" class="headerlink" title="四"></a>四</h3><p>意外为何会发生？这个看似简单的问题背后，隐藏着认知科学与概率论的深刻洞见。当我们深入探究，会发现所谓“意外”，其实是条件概率世界中的必然现象。</p>
+<p>从概率论视角看，每一个“意外”都是一种概率分布的心理表征。我们习惯将高概率事件视为“必然”，低概率事件视为“不可能”，这种二元思维是意外产生的第一重根源。</p>
+<p>如塔勒布所言，人类本质上对“灰度概率”的感知力极差——我们倾向于将90%的概率四舍五入为100%，将10%的概率四舍五入为0%。</p>
+<p>但在条件概率的视角下，真实世界中不存在无条件的100%。即使是“明天太阳会升起”这样看似确定的事件，也隐含了大量前提条件——从天文学规律到个人生存状态。当我们说“明天太阳会升起”时，实际上是在说“在当前物理规律持续有效、地球自转正常、个人存活且视力正常的条件下，太阳会升起的概率接近100%”。</p>
+<p>你也许会说，谁会这么神经，天天这样思考问题啊？</p>
+<p>我自己的感悟是，假如你要成为一个决策高手，你就要对那些理所当然的事情进行重新思考。</p>
+<p>这个世界是基于意外的，而不是基于理所当然的。</p>
+<p>我们对某件事情付出了很多，认为付出总有回报，认为种瓜得瓜，但是突然出现了某个政策变化，某个市场大调整，于是意外发生；</p>
+<p>我们对某个人付出很多，总以为将心比心，不会有人做出辜负自己良心的事情，然而，你视为知己的朋友居然背叛了你，于是意外发生；</p>
+<p>……</p>
+<p>生活中，总会持续不断地发生如上意外。为什么呢？并非“意外”太不可琢磨，而是我们的意料过于“理所当然”。我们对人对事的期待过于简单化，忽略了假设的脆弱性，更忽视了假设条件发生变化之后，我们最开始的“意料”早已经不成立了。</p>
+<p>更关键的是，真实世界中的条件概率是动态变化的。回到突击考试悖论，学生推理的错误在于将“意外性”视为静态条件，而非随信息变化的动态变量。</p>
+<p>想一想：当全班同学都确信“周五不可能考试”而放松警惕时，周五的考试不正好符合了“出其不意”的条件吗？这种认知与现实的互动舞蹈，创造了我们称之为“意外”的现象。</p>
+<p>生活中的意外频发，很大程度上源于我们的三重认知局限：</p>
+<ol>
+<li><p><strong>条件假设的透明度错觉</strong>——我们常忘记自己的预期建立在大量隐含条件之上。</p>
+<p>小A坚信自己的升职是板上钉钉的事，因为他工作表现出色，直属上司也多次暗示。然而当公司突然被收购，管理层大换血，他的升职计划落空。</p>
+<p>小A的预期建立在“公司架构稳定”这一他从未明确意识到的条件之上，当这一条件变化时，原本“确定”的未来顷刻崩塌。</p>
+</li>
+<li><p><strong>不确定性的结构性低估</strong>——我们倾向于用简单因果解释复杂世界。</p>
+<p>李先生精心规划了一次家庭旅行，考虑了天气、交通、住宿等各方面因素，自信一切尽在掌控。然而，一场远在万里之外的小型罢工引发了航空调度连锁反应，导致他们的航班取消。</p>
+<p>在高度关联的现代系统中，看似不相关的小变量，可能通过难以预见的路径，对我们的生活产生重大影响。</p>
+</li>
+<li><p><strong>条件更新的惰性</strong>——我们的信念更新速度远慢于现实变化。</p>
+<p>王女士经营一家传统零售店二十年，始终相信“只要产品好，顾客自然会来”。即使看到越来越多顾客转向线上购物，她仍坚持原有经营模式，认为这只是暂时现象。</p>
+<p>当直播带货兴起，消费者行为急剧变化，她的商店陷入困境。尽管条件已经彻底改变，她的经营理念却未能及时更新，最终付出了沉重代价。</p>
+</li>
+</ol>
+<p>这不是假想，而是正在我们身边发生的事情。前阵子，我在深圳街头，网约车司机指着一片凋零的商铺说，原来这里生意特别火爆，现在不行了。我问为啥？他说，人家都是直播带流量，然后租一个便宜地方线下接待客户就行了。</p>
+<p>你看，条件的变化，带来了商业的逻辑的变化，竟产生如此大的冲击。</p>
+<p>真正的智慧不在于试图预测每一个意外——这在本质上不可能实现，而在于构建能够在条件变化而灵活调整的决策系统。</p>
+<p>条件概率思维告诉我们：当条件变化时，概率分布也必然改变。掌握这一思维方式，我们就能在意外面前保持韧性和适应力。</p>
+<p>就像一艘航行在大海中的船，无法预知每一阵风浪，但可以通过不断观测风向和洋流，及时调整航向。面对突如其来的风暴，不是抱怨命运无常，而是问自己：“基于这个新条件，我需要如何更新我的航线？”</p>
+<p>在不确定的海洋中，最好的指南针不是确定性的幻觉，而是对条件变化的敏感性和适应能力。</p>
+<p>正如量子物理学向我们展示的：观测本身会改变被观测的实相。当我们过于确信某事不会发生，这种确信本身可能正是改变条件概率的关键变量。接受条件概率的流动本质，我们会发现所谓的“意外”，其实就如同量子世界中粒子的波函数坍缩。</p>
+<h3 id="五"><a href="#五" class="headerlink" title="五"></a>五</h3><p>生活中充满了意外，有惊也有喜。</p>
+<p>事实上，我们来到这个世界，本身就是一场充满偶然的奇妙旅程。接受并拥抱这些意外，不仅是一种智慧，更是人生的必修课。</p>
+<p>里尔克说：“我们必须全力以赴，同时又不抱持任何希望。……不管做什么事，都要它是全世界最重要的一件事，但同时又知道这件事根本无关紧要。”</p>
+<p>或者我们可以在此基础上，再加上条件概率的智慧：全力以赴是我们的主观努力，而结果则取决于无数条件变量的叠加。认识到这一点，我们既不会因成功而狂妄，也不会因失败而沮丧。</p>
+<p>当我们学会以条件概率的眼光看待世界，就能从容地应对变化，不再被意外击溃，而是从意外中看到机会和成长的契机。</p>
+<p>祝福你，去拥抱人生的意外之喜。</p>
+<p>我是老喻，我们下一讲再见。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>所谓“反身性”，是指人的预判本身会改变被预判的结果。</li>
+<li>生活中的意外频发，很大程度上源于我们的三重认知局限：首先是“条件假设的透明度错觉”，我们常忘记自己的预期建立在大量隐含条件之上；其次是“不确定性的结构性低估”，我们倾向于用简单因果解释复杂世界；第三是“条件更新的惰性”，我们的信念更新速度远慢于现实变化。</li>
+<li>条件概率思维告诉我们：当条件变化时，概率分布也必然改变。掌握这一思维方式，我们就能在意外面前保持韧性和适应力。</li>
+</ol>
+<h2 id="PDF-内用户留言"><a href="#PDF-内用户留言" class="headerlink" title="PDF 内用户留言"></a>PDF 内用户留言</h2><h3 id="左星星（16小时前·上海）"><a href="#左星星（16小时前·上海）" class="headerlink" title="左星星（16小时前·上海）"></a>左星星（16小时前·上海）</h3><p>很多创业者和职场人习惯设定一个长期目标，并按部就班地推进，期待一切按计划进行。然而，现实是，行业环境、市场需求、个人兴趣都会不断变化，最初制定的路径，很可能会因为外部环境的改变而变得不可行。此时，倘若我们固执地坚持原计划，拒绝调整，最终只会被变化的世界淘汰。聪明的做法不是预测自己五年后会在哪个职位，而是不断观察行业趋势，在每个关键节点上，根据新的条件调整策略，确保自己始终处于有利的位置。</p>
+<p>“意外”不是问题，真正的问题是我们对意外的预期管理。当我们以为事情一定会按照某种方式发展时，实际上我们已经陷入了“僵固型思维”的陷阱。股市的暴跌、企业的裁员、突如其来的危机，之所以让人手足无措，不是因为这些事情本身不可预测，而是因为我们在心里默认了某种“理所当然”，而没有给自己留出足够的弹性去应对变局。</p>
+<p>我们无法控制意外是否发生，但可以控制自己面对意外时的反应。与其把精力花在试图预测每一个意外，不如锻炼自己在新条件下迅速调整决策的能力。这样，意外就不再是让人惊慌失措的黑天鹅，而是复杂系统中自然发生的现象。接受这一点，我们就不会在挫折中迷失方向，而是能够在每一次意外中寻找新的可能性。</p>
+<h3 id="美君（11小时前·上海）"><a href="#美君（11小时前·上海）" class="headerlink" title="美君（11小时前·上海）"></a>美君（11小时前·上海）</h3><p>当条件变化时，概率分布也必然改变。所以我很多因为条件变化而发生意外的情况，比如：</p>
+<ul>
+<li>疫情期间公司实体生意无人问津，疫情造成人流量少 + 房租水电成本高 + 公司其他业务发展也不好，最后全体员工半薪；</li>
+<li>商场房租租金更高 + 企业内部不盈利 + 缺乏信誉，我给女儿充钱办卡的游泳馆、照顾兔子馆、VR馆纷纷跑路；</li>
+<li>女儿在家里正常玩耍，从沙发上一次次往下跳，太过激烈 + 跳下来角度有问题 + 力度很大，造成胳膊脱臼，去了医院……</li>
+</ul>
+<p>按照“正常”的情况：薪水只增不少；商家信誉第一；女儿在家里从沙发上跳也很安全。</p>
+<p>然而现实世界是“一环扣一环”，一个条件改变，一堆变量跟着改变，所以面对突如其来的风暴，我们需要基于眼前的新条件，增强敏感性、适应力、觉察能力和行动力，更新自己的航线。</p>
+<p>在事情发生一点点变化或出现一点点信号时，我们就要防患于未然：</p>
+<ul>
+<li>比如疫情期间周围很多公司降薪，但我们了解公司的情况，就要在公司宣布半薪前多做些准备；</li>
+<li>经历过几次办卡跑路，我们该意识到尽量少充会员才更稳妥；</li>
+<li>在家里看到孩子玩儿有一点点安全隐患的游戏，要放更柔软的垫子、清空杂物，或提醒孩子换个其他安全的游戏……</li>
+</ul>
+<p>总之，吃一堑长一智，过去发生的意外，不管如何应对，都变成了我们的经验和智慧。</p>
+<h3 id="白青（9小时前·四川）"><a href="#白青（9小时前·四川）" class="headerlink" title="白青（9小时前·四川）"></a>白青（9小时前·四川）</h3><p>2009年5月31日晚10点，法航447航班不幸坠毁，搜救人员动用当时的最新技术，找了一周后，才发现少量残骸碎片和29具遇难者遗体，并没有发现飞机的主要残骸和黑匣子。</p>
+<p>一筹莫展之时，贝叶斯主义者登场了，他们的方法和美军找氢弹的方法如出一辙：为飞机失事建立一个数学模型；整合评估各种导致失事的原因的概率；根据更新信息，改进模型。</p>
+<p>首先，假设基于已经有的条件，残骸在ABCD四个区域的概率分别是30%、50%、5%和15%。显然，在B区域的可能性（50%）是最高的。但如果搜索B区域后没找到，这时就存在两种可能性：</p>
+<ol>
+<li>的确不在B区域；</li>
+<li>在B区域但是被漏掉了。</li>
+</ol>
+<p>我们假设漏掉的概率是25%。搜索了B区域，由此更新的信息是：</p>
+<ol>
+<li>的确不在B区域的概率是 50% × (1 − 25%) &#x3D; 37.5%；</li>
+<li>还是在B区域但是被漏掉的概率是 50% × 25% &#x3D; 12.5%。</li>
+</ol>
+<p>这里要注意，既然不在B区域的概率变化了，在其他区域的可能性，也会跟着变化。也就是，不在B区域的37.5%可能性，就要在ABCD四个区域重新分配。</p>
+<p>计算过程就是简单的加权分配。重新分配之后，在A区域的概率，就变成了最高的48%，接下来，搜索人员继续搜索A区域。根据概率动态调整搜索人员找到了黑匣子。这是一个贝叶斯模型现实应用的例子。</p>
+<p>贝叶斯主义者将概率理解为对某件事情的信念，他们承认自己的“信念”是灰度的，而非绝对的判断，他们会根据观察到的信息更新自己的信念。</p>
+<p>对于“突击考试悖论”，告诉我们当你过于确信某事不会发生，往往正是它发生的最佳时机。</p>
+<p>我们中国人喜欢说“祸兮福所倚，福兮祸所伏”。并不是说有一个神秘的力量在冥冥中把世界拉平，而是因为动作都有两面性，加强一个趋势的同时，另一个相反的趋势也在酝酿。</p>
+<p>稳定就是不稳定，安全就是危险。我们需要时刻保持对事物敏锐的判断力，建立动态决策系统，从容应对变化。</p>
+<h3 id="晓蒙（1小时前·山东）"><a href="#晓蒙（1小时前·山东）" class="headerlink" title="晓蒙（1小时前·山东）"></a>晓蒙（1小时前·山东）</h3><p>“意外”本身，很可能是“不愿意发生意外”的思维创造出来的。当我们以为“不一定会发生时”，发生了，这就是周星驰电影的经典台词“惊不惊喜，意不意外？”</p>
+<p>基于上述背景，“意外”发生源于三个词的拓展，分别是：错觉，低估，惰性。条件假设的透明度错觉，不确定性的结构性低估，条件更新的惰性。分别可对应不同的专业名词。于是，以下公式尤为重要：后验概率 &#x3D;（先验概率 × 新证据的似然度）&#x2F; 证据的总体概率。用公式可以对应前述的描述，这个公式，包含了代表假设之先验概率，代表条件更新之新证据，以及代表结构性的总体概率。总而言之，当条件变化时，概率分布也必然改变，这就是条件概率思维告诉我们的。</p>
+<p>里尔克说：“我们必须全力以赴，同时又不抱持任何希望。……不管做什么事，都要它是全世界最重要的一件事，但同时又知道这件事根本无关紧要。”通俗说，尽理智之人事，听意外随行之天命。不放弃，也不沮丧。意外，之喜！</p>
+<h3 id="觉者（11小时前·福建）"><a href="#觉者（11小时前·福建）" class="headerlink" title="觉者（11小时前·福建）"></a>觉者（11小时前·福建）</h3><p>意外本质上是主观与客观的关系问题，是思维或预期与动态变化的世界的不匹配。是让世界变化成我们所愿的心想事成，还是让我们的思维及预期如水流动适应变化，从理性上人们都会选择后者，可是从情感上人们都希望前者发生，但预期和现实总有落差，抹平两者的鸿沟更多的时候不是改变现实，而是动态地管理预期，正如孙子兵法所说：兵形若水，水无常势，兵无常形，能因敌变化而取胜者谓之神。</p>
+<h3 id="JerryLuo（9小时前·湖北）"><a href="#JerryLuo（9小时前·湖北）" class="headerlink" title="JerryLuo（9小时前·湖北）"></a>JerryLuo（9小时前·湖北）</h3><p>书籍《刘嘉概率论通识讲义》可以作为这节课程的延展学习资料。以下内容摘自该本书。</p>
+<ol>
+<li>所谓的条件概率，简单来讲就是，如果一个随机事件发生的概率会因为某个条件而发生变化，那么在这个条件发生的情况下，这个随机事件发生的概率就称为条件概率。</li>
+<li>本质上，现实世界所有的概率都是条件概率。我们错误估计了一件事的概率，往往就是因为忽略了这件事的前提条件，导致对概率的计算或预估发生了错误。前提条件需注意的三个方面：<ul>
+<li>（1）注意时间或空间的变化。书中介绍了课程里提到的“突击考试悖论”。</li>
+<li>（2）注意个体和整体的差异。比如，我们说“一个人一生中被闪电击中的概率是三十万分之一”，这是一个整体概率，是所有地球人被闪电击中的平均概率。具体到每个个体，这个概率显然是不同的。我每天待在办公室工作，被闪电击中的概率自然就会更低；而美国弗吉尼亚州有个叫萨利文的护林员，因为当地雷雨很多，而他又天天在空旷的森林边工作，因此被闪电击中的概率就远比我高。不幸的是，他一生中被闪电击中了7次。</li>
+<li>（3）注意某些被忽略的隐含信息。比如，一种传染病的致死率是70%以上，另一种传染病的致死率是2%，同时对世界更危险？很多人会脱口而出，当然是第一种更危险。但其实这里有个我们常常会忽略的隐含条件，那就是这两种传染病传播的范围和影响是不一样的。其实，第一种传染病是埃博拉，第二种是新型冠状病毒肺炎。虽然埃博拉病毒的致死率极高，但它远比新型冠状病毒性肺炎容易预防和诊断，传播效率远低于后者，影响的人群也远远小于后者。所以，虽然新型冠状病毒性肺炎的致死率低，但它对世界的影响更大。</li>
+</ul>
+</li>
+</ol>
+<h3 id="礼之贤士（3小时前·广东）"><a href="#礼之贤士（3小时前·广东）" class="headerlink" title="礼之贤士（3小时前·广东）"></a>礼之贤士（3小时前·广东）</h3><p>去年，母亲遭遇了几次意外，其中最严重的一次，险些让我们失去她。据父亲描述，那次在半夜，母亲想要翻身，却惊觉自己几乎无法动弹，双眼无法睁开，身体也不听使唤。当时，她的意识一片混沌，恍惚间觉得生命即将终结。所幸，身旁的【原图此处需放大复核】察觉到母亲呼吸异常，赶忙叫醒了父亲。经过及时抢救，母亲才从鬼门关前被拉了回来。</p>
+<p>为什么会发生这样的意外呢？原来，母亲的血糖不稳定，半夜时血糖降至警戒线以下，从而导致意识模糊。这种情况十分凶险，随时可能危及生命。我进一步询问得知，白天胰岛素注射量过多，致使夜间血糖大幅下降。</p>
+<p>那么，如何避免此类情况再次发生呢？减少胰岛素的注射量，并在睡前适量食用含糖食物，这样就能使血糖趋于稳定，降低意外发生的几率。此后，母亲很少再遭遇类似事件。</p>
+<p>这表明，意外并非完全无法掌控。只要我们探寻到背后的原因，就有可能减少意外的发生。这也是我们更好地掌握人生的重要途径。</p>
+<h3 id="空（10小时前·广东）"><a href="#空（10小时前·广东）" class="headerlink" title="空（10小时前·广东）"></a>空（10小时前·广东）</h3><h4 id="反身性理论"><a href="#反身性理论" class="headerlink" title="反身性理论"></a>反身性理论</h4><p>反身性理论这个词是金融大鳄索罗斯的独创，也是他在金融市场创造金融神话的投资哲学。如何理解反身性理论呢？索罗斯在他的著作《金融炼金术》中这样解释道：“意识塑造事实，事实改变意识”，这是一个循环往复的过程。</p>
+<p>如果你还是没有太明白这个词的意思，你可以粗粝的理解为“逆向羊群的共识”。比如说当市场中所有人都觉得牛市要来的时候，牛市可能就来不了；当市场中所有人都觉得熊市还没有结束时，市场可能即将见底。</p>
+<p>2024年中国股市的9.24行情，不论是从涨幅、还是从【原图此处需放大复核】来看，都创造了历史。于是市场中就出现了一种久违的声音，历史上大牛市要来了，这种情绪的蔓延在国庆期间发挥的淋漓尽致，新开户数暴增，证券人员加班开户。大家都等待着国庆节后的第一天进股市，坐上牛市赚钱的快车。</p>
+<p>在国庆期间，就有人问我，节后杀进股市是否是一个好时机。当时我就说，不是好时机，现在的股市太疯狂了，让我感受到了一种莫名的危险，你还是等一段时间再看吧。至于市场中很多人呼呼的牛市要来了，我并没有那么乐观。</p>
+<p>当时我做出这种判断的依据就是：逆向羊群的共识。作为投资者，虽然我没有一个固定的算法让你知道如何成功，但如果想要失败就很简单，跟着大众走。别人贪婪时你贪婪，别人恐惧时你也恐惧，那你就一定会失败。</p>
+<h3 id="李察酒（8小时前·吉林）"><a href="#李察酒（8小时前·吉林）" class="headerlink" title="李察酒（8小时前·吉林）"></a>李察酒（8小时前·吉林）</h3><p>这一讲的警示，就是当你在决策的时候，一定要注意两点内容，一是在你做决策的时候会蕴含各种隐含的假设，这些假设一定要在决策的时候考虑进去，因为一旦某个假设变了，可能你的所有决策过程都会崩塌；二是条件会随着现实世界而变化，所以要保持开放的心态，一旦注意到了某些条件的改变，【原图此处需放大复核】，立刻要抛弃原有的观点，不要维护自己以前的正确性，马上改变自己的决策，让自己跟上时代。</p>
+<h3 id="林同学的思考（9小时前·广东）"><a href="#林同学的思考（9小时前·广东）" class="headerlink" title="林同学的思考（9小时前·广东）"></a>林同学的思考（9小时前·广东）</h3><p>老喻老师本讲分享过如何用概率思维应对人生中的“突击考”。就像学生时代的考试充满未知，人生也处处是考场，黑天鹅事件就像超纲题目，传统经验常常失灵，投资领域的意外更是如此。</p>
+<p>不过，贝叶斯公式为我们提供了一个动态认知框架：保持开放的概率空间，让新证据不断修正先验判断。要掌握这个思维模型，得先突破三重认知屏障。</p>
+<p>首先是透明幻觉，就是把条件假设当成了既定事实，比如天气预报显示晴天，我们就默认明天一定是好天气，却忽略了预报可能出错、大气变化等隐含条件。</p>
+<p>其次是因果简配，倾向于用简单因果解释复杂世界。比如认为只要努力工作就一定会升职，却没考虑到公司战略、领导决策树等复杂因素。</p>
+<p>最后是更新迟滞，认知迭代速度跟不上环境变化。比如一直相信某个行业前景好，却没跟上新技术、市场需求变化导致的行业竞争力下降。</p>
+<p>概率权变的本质，是给认知系统装上“熔断机制”。当学生遇到超纲题，本质是复习内容和考题的系统偏差；创业者失败，也是市场参数突变。</p>
+<p>生命的韧性，就藏在那道永不停歇的后验概率计算公式里。它教会我们：在确定性与随机性交织中，持续更新认知系统，才能更好地应对人生的种种挑战。</p>
+<h3 id="智刚（7小时前·河北）"><a href="#智刚（7小时前·河北）" class="headerlink" title="智刚（7小时前·河北）"></a>智刚（7小时前·河北）</h3><p>正如量子物理学向我们展示的：观测本身会改变被观测的实相。当我们过于确信某事不会发生，这种确信本身可能正是改变条件概率的关键变量。接受条件概率的流动本质，我们会发现所谓的“意外”，其实就如同量子世界中粒子的波函数坍缩。</p>
+<h3 id="陈宇星（10小时前·福建）"><a href="#陈宇星（10小时前·福建）" class="headerlink" title="陈宇星（10小时前·福建）"></a>陈宇星（10小时前·福建）</h3><p>条件概率思维告诉我们：当条件变化时，概率分布也必然改变。掌握这一思维方式，我们就能在意外面前保持韧性和适应力。</p>
+<p>然而条件在随机性和复杂性的动态演化中，必然产生变化。所以时时刷新当下条件动态演化的过程，应该变成一种思维习惯。</p>
+<p>但是也要注意不要过度细节化，这样容易被噪音，或者无关紧要的条件变化影响，而忘了当时为何出发。</p>
+<h3 id="山峰（8小时前·江西）"><a href="#山峰（8小时前·江西）" class="headerlink" title="山峰（8小时前·江西）"></a>山峰（8小时前·江西）</h3><p>反身性是指人的思维、态度和方法本身在塑造人的现实。</p>
+<p>生活中的意外频发，很大程度上源于人的思维、态度、手段的本身才是要解决的问题最初的原因。最初的原因——人的三重认知局限：未看到或忽视了预期背后的条件，强用简单的因果性来解释未知复杂性的世界，抱残守缺和迭代缓慢的信念体系应对不断变化中的世界。</p>
+<h3 id="元气小土（8小时前·广东）"><a href="#元气小土（8小时前·广东）" class="headerlink" title="元气小土（8小时前·广东）"></a>元气小土（8小时前·广东）</h3><p>意料之外，情理之中；当下不杂，既往不恋。</p>
+<p>意料之外的事情，是让人惊讶的，特别是对【原图此处需放大复核】的事情的反驳。</p>
+<p>回想过往的突击考试，我记得班里确实有些恐慌的声音。不过，次数多了之后，变得平常，我倒是觉得没什么所谓，什么时候考都可以。</p>
+<p>贝叶斯是动态的考量事情发生的概率，我们面对事情，也应当如此。</p>
+<p>我们必须全力以赴，同时又不抱持任何希望。做最坏的打算，行最好的探索，接受任意安排。就好像这句“因上努力，果上随缘”！</p>
+<h3 id="炎帝（8小时前·河北）"><a href="#炎帝（8小时前·河北）" class="headerlink" title="炎帝（8小时前·河北）"></a>炎帝（8小时前·河北）</h3><p>我们总以为生活是按揭贷款——付出首付就能按月收获安稳，却不知世界早已变成无抵押的信用贷。</p>
+<p>那些被冠以“意外”之名的黑天鹅事件，本质上都是人类认知模型的破产清算。</p>
+<p>我们习惯用过去十年的数据预测未来十年的走势，但真正颠覆游戏规则的，往往是样本库之外的0.01%可能性。</p>
+<p>规避意外的终极悖论在于：越是追求绝对安全，越会陷入更大的风险敞口。</p>
+<p>所以，我们需要从以下4个方面调整心理状态：</p>
+<ol>
+<li><strong>接受不确定性</strong>：首先，我们要认识到生活中的不确定性是常态，而不是例外。接受这一点，可以帮助我们减少对意外的恐慌感。正如哲学家苏格拉底所言：“唯一确定的，就是不确定。”</li>
+<li><strong>增强心理韧性</strong>：心理韧性是指在面对压力和挫折时，能够迅速恢复和适应的能力。通过培养积极的心态、乐观的态度和良好的应对策略，我们可以增强自己的心理韧性，更好地应对意外。</li>
+<li><strong>培养灵活性</strong>：在面对意外时，灵活性是关键。我们需要学会快速调整自己的计划和策略，以适应新的情况。正如水流遇到障碍时会改变方向，我们也需要学会随遇而安，灵活应对。</li>
+<li><strong>建立支持系统</strong>：在面对意外时，有一个可靠的支持系统是非常重要的。朋友、家人、同事，甚至专业的心理咨询师，都可以在我们需要时提供帮助和支持。</li>
+</ol>
+<p>真正的生存智慧，不在于修建滴水不漏的诺亚方舟，而在于培养与风浪共舞的平衡术。当我们学会：</p>
+<ul>
+<li>用金融思维管理情感风险；</li>
+<li>用投资理念经营心理波动；</li>
+<li>用创业心态面对人生变故。</li>
+</ul>
+<p>那些曾让我们夜不能寐的“意外”，终将显影为命运图纸上的导航标记。或许生命的终极安全，恰恰在于拥抱那份人生战栗的不确定——就像冲浪者深知，没有浪涛的托举，再完美的技巧也只能沉入海底。</p>
+<h3 id="Tony-to-ni（8小时前·北京）"><a href="#Tony-to-ni（8小时前·北京）" class="headerlink" title="Tony to ni（8小时前·北京）"></a>Tony to ni（8小时前·北京）</h3><ol>
+<li>尽最大的努力做好最坏的打算。</li>
+<li>人类的感知系统，决定了我们所看到的世界，是外部世界的内部心理建模，并非真实世界的客观反映。你实际上是在用你的认知框架去看待世界，但所有的认知框架都是有局限性的。</li>
+<li>人类的大脑喜欢简单，喜欢确定性，倾向于用简单的因果去解释复杂的世界，所以常常忽视概率的存在。</li>
+<li>但是人类大脑的这个缺陷，在未来可能会通过AI来弥补。因为AI就是概率思维，它可以进行大量的数据统计和复杂的计算来生成概率，而这个是人类无法做到的。</li>
+</ol>
+<p>人类只会感性的去判断一个概率范围或者区间，所以未来人的决策，是一定会和AI的计算分不开的。</p>
+<h3 id="王茂荣（8小时前·云南）"><a href="#王茂荣（8小时前·云南）" class="headerlink" title="王茂荣（8小时前·云南）"></a>王茂荣（8小时前·云南）</h3><p>“突击考试悖论”的讲解，引申出应对生活中意外事件的思维方式和决策策略：</p>
+<h4 id="一、突击考试悖论的引入"><a href="#一、突击考试悖论的引入" class="headerlink" title="一、突击考试悖论的引入"></a>一、突击考试悖论的引入</h4><ul>
+<li><strong>背景</strong>：老师宣布下周某一天会有一次突击考试，但不会提前告知具体日期，考试必定是“意外”。</li>
+<li><strong>学生推理</strong>：学生通过逻辑推理认为考试不可能发生。推理过程如下：<ul>
+<li>如果周四还没考试，那么周五必然是考试日，这就不符合“意外”条件，因此周五不可能是考试日。</li>
+<li>既然周五不可能，那么周四如果还没考试，就必然会在周四，这也不符合“意外”条件，因此周四也不可能。</li>
+<li>以此类推，周三、周二、周一都不可能是考试日。</li>
+</ul>
+</li>
+<li><strong>悖论所在</strong>：尽管学生通过逻辑推理得出考试不可能发生，但现实中突击考试却确实会发生，这与推理结果矛盾。</li>
+</ul>
+<h4 id="二、反身性逻辑陷阱"><a href="#二、反身性逻辑陷阱" class="headerlink" title="二、反身性逻辑陷阱"></a>二、反身性逻辑陷阱</h4><ul>
+<li><strong>反身性定义</strong>：人的预判本身会改变被预判的结果。例如，学生认为周五不可能考试而放松警惕，但这种确信反而使得周五的考试变得“出人意料”。</li>
+<li><strong>现实中的反身性例子</strong>：<ul>
+<li>2008年金融危机前，专家坚信房地产不会大跌，这种盲目乐观导致了危机。</li>
+<li>柯达低估数码技术的威胁，错失转型良机。</li>
+<li>诺基亚低估触屏手机的发展，导致在智能手机革命中落后。</li>
+</ul>
+</li>
+</ul>
+<h4 id="三、条件概率与贝叶斯思维"><a href="#三、条件概率与贝叶斯思维" class="headerlink" title="三、条件概率与贝叶斯思维"></a>三、条件概率与贝叶斯思维</h4><ul>
+<li><strong>条件概率</strong>：在已知某事发生的情况下，另一事件发生的可能性。例如，从一副扑克牌中抽到红桃A的概率是1&#x2F;52，但如果已知抽出的是红桃，那么抽到红桃A的条件概率变为1&#x2F;13。</li>
+<li><strong>贝叶斯公式</strong>：后验概率 &#x3D;（先验概率 × 新证据的似然度）&#x2F; 证据的总体概率。它教导我们在意外出现时，不要完全抛弃原判断，也不要无视新情况，而是根据新旧信息的可靠度找到最优平衡点。</li>
+<li><strong>应用</strong>：在突击考试问题中，随着每天的过去，考试的概率分布会发生变化。例如，如果周一没有考试，那么周二至周五的考试概率会重新分配。</li>
+</ul>
+<h4 id="四、意外的本质与认知局限"><a href="#四、意外的本质与认知局限" class="headerlink" title="四、意外的本质与认知局限"></a>四、意外的本质与认知局限</h4><ul>
+<li><strong>意外的定义</strong>：意外是意料之外的事情，而意料是基于概率的、有条件的、主观的判断。</li>
+<li><strong>认知局限</strong>：<ol>
+<li><strong>条件假设的透明度错觉</strong>：我们常忘记自己的预期建立在大量隐含条件之上。例如，小A认为升职是板上钉钉的事，但公司被收购导致管理层变动，他的升职计划落空。</li>
+<li><strong>不确定性的结构性低估</strong>：我们倾向于用简单因果解释复杂世界。例如，李先生精心规划家庭旅行，但一场远在万里之外的小型罢工导致航班取消。</li>
+<li><strong>条件更新的惰性</strong>：我们的信念更新速度远慢于现实变化。例如，王女士坚持传统零售模式，没有及时适应线上购物的兴起，导致商店陷入困境。</li>
+</ol>
+</li>
+</ul>
+<h4 id="五、应对意外的策略"><a href="#五、应对意外的策略" class="headerlink" title="五、应对意外的策略"></a>五、应对意外的策略</h4><ul>
+<li><strong>条件概率思维</strong>：当条件变化时，概率分布也必然改变。掌握这一思维方式，我们就能在意外面前保持韧性和适应力。</li>
+<li><strong>动态决策系统</strong>：构建能够随条件变化而灵活调整的决策系统，而不是试图预测每一个意外。</li>
+<li><strong>接受意外</strong>：接受并拥抱意外，将其视为成长和机会的契机，而不是被意外击溃。</li>
+</ul>
+<h4 id="六、总结"><a href="#六、总结" class="headerlink" title="六、总结"></a>六、总结</h4><ul>
+<li><strong>反身性</strong>：人的预判会改变结果。</li>
+<li><strong>条件概率与贝叶斯思维</strong>：根据新条件动态调整判断。</li>
+<li><strong>意外的本质</strong>：意外是基于概率的，是条件概率变化的结果。</li>
+<li><strong>应对意外的智慧</strong>：构建动态决策系统，接受并拥抱意外。</li>
+</ul>
+<h3 id="小丑-不才（1小时前·新加坡）"><a href="#小丑-不才（1小时前·新加坡）" class="headerlink" title="小丑-不才（1小时前·新加坡）"></a>小丑-不才（1小时前·新加坡）</h3><p>在金融市场中，投资者需要警惕“群体思维”和“自我验证循环”。当市场集体看涨或看跌时，往往意味着市场已处于沸沸或即将反转的边缘。聪明的投资者会在市场情绪极端时选择反向操作，避免被“市场共识”裹挟。当你发现自己对某种趋势或结论“深信不疑”时，正是停下来思考反面可能性的时候。引导自己思考：“如果我错了，后果是什么？”</p>
+<h3 id="阿繁达1043（7小时前·广东）"><a href="#阿繁达1043（7小时前·广东）" class="headerlink" title="阿繁达1043（7小时前·广东）"></a>阿繁达1043（7小时前·广东）</h3><p>反身性在社会科学中比比皆是。比如我们想选拔聪明的孩子进大学，于是就发明了高考这个选拔方法。如果所有孩子都不搞备考，你来个突然袭击，上来就考，那么这个方法确实能选拔聪明孩子，很科学。但是孩子们一旦知道你选拔方法之后，纷纷开始刷题备考，以至于原本应该用来学习新知识、探索世界的时间也被用来刷题，而且刷题能力并不是你想要的那种聪明，结果“高考”这个选拔方法就失效了。所以我们想要的确定性，往往就是现实世界意外的来源。知道了这层原理，当我们将来面对意外时就能多一套防备，多一些释然。</p>
+<ol>
+<li>我们痴迷于明确因果关系的完美叙事，殊不知所有事情的达成都基于无数隐含条件的同时成立。我们虽然不必插手每一件事情，但必须有意识地觉知到它们的存在。这样每天都能找到许多值得感恩的理由，即使失败也不会把一切不顺都归咎到某个人或某件事上，产生过激情绪或反应。</li>
+<li>世界本质上就是混沌和随机的，其中的不确定超过了我们大脑的认知。这也许就是许多大科学家依然信仰、皈依宗教的原因，这让他们既心怀敬畏和谦卑，又能保持对未知世界无尽探索的求知欲和好奇心。</li>
+<li>要想让自己保持积极主动，你必须拥有强大的贝叶斯精神。初始条件改变，你对某件事的信念和这件事的分布概率必须做出相应调整。但大脑天生是个认知吝啬鬼，它有强烈的倾向跟原有认知保持一致，即使初始条件已经发生了显著的变化，大脑也会主动去寻找支持原有观点的证据。所以往往是那些提前感受到变化、主动采取行动并且及时做出相应调整的鸭子，才能捕获最新鲜的鱼儿。从快速感知，到迅速调整认知，再到快速调整行动计划。所谓的计划赶不上变化，只不过是你自己战术上偷懒的结果罢了。</li>
+</ol>
+<h3 id="欢喜我就好（8小时前·北京）"><a href="#欢喜我就好（8小时前·北京）" class="headerlink" title="欢喜我就好（8小时前·北京）"></a>欢喜我就好（8小时前·北京）</h3><p>最强大的不是预测未来的能力，而是在条件变化时快速更新判断的能力。就像一艘航行中的船，面对突然而来的风暴，不是执着于原航线，而是根据新风向动态调整——在意外中保持航向，最终抵达彼岸。</p>
+<hr>
+<p><a href="/book/decision-algorithm/086/">← 086｜婚姻决策：怎样和Ta更好地共度一生？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/088/">088｜移居决策：怎样择一邻处，放大你的优势？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

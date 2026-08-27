@@ -1,0 +1,515 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>078｜决策之“嗔”：如何成为一个内核稳定的人？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》078：决策之“嗔”：如何成为一个内核稳定的人？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="078｜决策之“嗔”：如何成为一个内核稳定的人？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/078/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》078：决策之“嗔”：如何成为一个内核稳定的人？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:45.912Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/078/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '078｜决策之“嗔”：如何成为一个内核稳定的人？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">078｜决策之“嗔”：如何成为一个内核稳定的人？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">078｜决策之“嗔”：如何成为一个内核稳定的人？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<p><strong>时长：16分01秒</strong></p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>老喻亲述。</p>
+<p>我早年做生意的时候，在广州体育东横街有一间办公室。那附近有一家我很喜欢的餐馆，主打猪肉饭。有一天中午，老板突然把几个厨师骂得狗血淋头：大厨很恼人，扔下手上的活儿，用掉毛巾，掉头就走，走之前还叫走了所有的厨师。顾客们都很震惊，我也担心这家店以后再也吃不到猪肉饭了。</p>
+<p>没想到，老板很快又招来了几个厨师和服务员，大家把头发扎起来，把厨房收拾好，餐馆继续营业。</p>
+<p>这个故事让我意识到，人与人真正的差距，很多时候不在于资源，而在于能不能控制自己的情绪，尤其是愤怒。</p>
+<p>什么是天才？有人给出过一个定义：当周围所有人都陷入非理性状态时，他依然能够正常行事。按照这个定义，那家餐馆老板就是一个天才。</p>
+<p>佛教里把愤怒称为“嗔”，是三毒之一。《华严经》说：“一念嗔心起，百万障门开。”意思是，一个人被愤怒左右时，往往会丧失理性，陷入自我毁灭的深渊。</p>
+<p>美国弗吉尼亚大学的研究显示，人在生气时开车，发生车祸的几率是正常情况下的9.8倍。约翰·戈特曼对夫妻沟通的长期研究也发现，沟通中一旦出现轻微的愤怒、恼怒，离婚概率会高达94%以上。</p>
+<p>“嗔”不只是情绪，它更像一个决策黑洞，会吞噬人的理性和智慧。一个成功的领导者未必是最聪明的人，但通常是能够在情绪风暴中保持决策稳定的人。</p>
+<p>在这个复杂多变的世界里，真正的超级能力不是永不愤怒，而是在愤怒中依然能做出卓越决策。这，才是你真正的稳定内核。</p>
+<h2 id="一、嗔怒如何劫持决策"><a href="#一、嗔怒如何劫持决策" class="headerlink" title="一、嗔怒如何劫持决策"></a>一、嗔怒如何劫持决策</h2><p>想象一下：一次重要的会议或谈判原本进行得很顺利，突然有人提到你最近的一次失败。愤怒瞬间涌上来，血液加速，心跳加快，思维开始模糊。你说出了一些无法挽回的重话，事情彻底崩盘。</p>
+<p>这不一定是你能力不够，而是你的大脑被劫持了。</p>
+<p>丹尼尔·戈尔曼说，当大脑的警报中心——杏仁核被激活时，战斗或逃跑反应会在前额叶来得及介入之前就启动。在远古环境中，这种机制有助于生存；但在今天，它很容易把我们带入糟糕的决策。</p>
+<p>我认识的一位创业者，因为别人质疑他的商业模式，一时愤怒，拒绝了一笔本来可以让公司缓过来的融资。半年后，公司因为资金链断裂而倒闭。他后来承认：“那一刻，我内心有个声音在说这是错误的，但另一个声音完全盖过了它。”</p>
+<p>《三国演义》里“诸葛亮三气周瑜”的故事，也是一个典型案例。周瑜是一个极其聪明的人，却因为情绪失控而输掉了全部。</p>
+<p>而且，愤怒很少单独出现，它经常带着一个“朋友圈”一起到来。</p>
+<p>第一是自怜。它会在你耳边说：“看他们怎么对你的，你是受害者。”这样一来，你就会认同受害者身份，把主动权交出去。</p>
+<p>第二是过度敏感。这是现代人的一种常见心理疾病。塞涅卡曾提醒我们，人往往会因为过度在意别人的看法而受苦。</p>
+<p>第三是过度自尊。这是一个隐藏得很深的变体，看起来很强大，实际上非常脆弱。卡罗尔·德韦克的“固定型思维”研究表明，过度自尊的人害怕失败，会坚持错误的决定，也不愿意改变。</p>
+<p>这些负面情绪会交织成一个恶性循环：愤怒 → 自怜 → 敏感 → 自尊受损或过度自尊 → 愤怒。</p>
+<p>俗话说：“生气是拿别人的错误来惩罚自己。”但这种惩罚是什么？是气得跳脚、摔杯子，还是整夜睡不着？更糟糕的是，每一次愤怒背后，都可能藏着一个糟糕的决定，而决定带来的后果远大于情绪本身的伤害。</p>
+<p>餐馆老板没有让自己陷入愤怒，而是控制住情绪、保护了长期的生活。控制情绪，从来不是为了迁就他人，而是为了保护自己不被短暂的愤怒摧毁长期的幸福。</p>
+<h2 id="二、嗔怒的根源：对“我”的执着"><a href="#二、嗔怒的根源：对“我”的执着" class="headerlink" title="二、嗔怒的根源：对“我”的执着"></a>二、嗔怒的根源：对“我”的执着</h2><p>佛教认为，愤怒源自强烈的自我中心和执着。</p>
+<p>我们会愤怒，是因为觉得自己受到了伤害、不被尊重、被不公平对待——也就是把“我”看得太实在。</p>
+<p>我们之所以愤怒，本质上是拿现实的不完美与自己的预期硬碰。</p>
+<p>在一个充满不确定性的世界里，事情偏离预期才是常态。行为经济学家丹尼尔·卡尼曼指出，人类往往高估自己认知的确定性，却低估环境的不确定性，这种错觉正是情绪波动的根源。诺贝尔奖得主理查德·塞勒也强调：“我们必须接受自身认知局限这一现实，决策才可能理性。”</p>
+<p>佛教的“无我”观念，与现代决策科学有相通之处：放下对自我和确定性的执着，不要被“本该如此”困住，才能保持理性和灵活。</p>
+<p>“无我”不是说“我”不存在，而是认识到“我”只是暂时的身心组合，并没有一个固定不变的本质。当你这样理解时，愤怒就失去了牢固的根。</p>
+<p>《金刚经》说：“一切有为法，如梦幻泡影，如露亦如电，应作如是观。”</p>
+<p>禅宗的核心是“观”，也就是止息妄念、观察内心。</p>
+<p>这些古老智慧，与现代情绪管理的研究可以互相印证。斯坦福大学情绪调节专家詹姆斯·格罗斯提出了情绪调节的过程模型，分为五个阶段：情境选择、情境修正、注意力部署、认知改变、反应调节。</p>
+<h3 id="情绪决策的五层防火墙"><a href="#情绪决策的五层防火墙" class="headerlink" title="情绪决策的五层防火墙"></a>情绪决策的五层防火墙</h3><ol>
+<li><strong>情境选择</strong>：观察自己的触发点，避开已知会引发强烈情绪的场景。比如疲惫时不要做重要决策。</li>
+<li><strong>情境修正</strong>：无法避开时，就改变情境的某些方面。比如特朗普和泽连斯基的对话，如果中间有个翻译，会不会就吵不起来了？</li>
+<li><strong>注意力部署</strong>：被触发时，使用佛教的“止”，把注意力放在呼吸上，让自己安住当下。深呼吸、数数、观察身边五个细节，都可以转移注意力。</li>
+<li><strong>认知改变</strong>：重新解释事件。把“他是故意贬低我”改成“他帮助我看到了盲点”。</li>
+<li><strong>反应调节</strong>：这是最后一道防线，控制外在表达，即使内心仍不平静，也选择建设性的行动。</li>
+</ol>
+<p>这五层防火墙把东方的内省和西方的行为科学结合起来。它不是要消灭情绪，而是避免情绪劫持，让智慧把情绪的能量转化为清晰决策的燃料。</p>
+<h2 id="三、应对嗔怒的生理方法"><a href="#三、应对嗔怒的生理方法" class="headerlink" title="三、应对嗔怒的生理方法"></a>三、应对嗔怒的生理方法</h2><p>应对嗔怒的难点在于，道理都懂，控制起来很难。我自己平时很少生气，但一旦真的生气，常常很难控制。那是一种生理层面的情绪爆炸，理性在当时几乎不起作用。</p>
+<p>这里分享四个直接、强制的方法。</p>
+<h3 id="1-神经重置呼吸法"><a href="#1-神经重置呼吸法" class="headerlink" title="1. 神经重置呼吸法"></a>1. 神经重置呼吸法</h3><p>采用“4-7-8呼吸法”：吸气4秒，屏息7秒，呼气8秒，连续做三次。它可以激活副交感神经，让身体在大约90秒内从战斗或逃跑状态回到理性状态。更长的呼气会向身体传递“危险已经过去”的信号。</p>
+<h3 id="2-林肯的“热信”宣泄法"><a href="#2-林肯的“热信”宣泄法" class="headerlink" title="2. 林肯的“热信”宣泄法"></a>2. 林肯的“热信”宣泄法</h3><p>像林肯一样，当怒不可遏时，把所有怒火倾泻在纸上或录音里。写完后不要发送，而是搁置。这种“情绪转移”让愤怒有出口，又不会伤人伤己。我上次对生意伙伴生气时用了这招，第二天重读那封“怒信”，庆幸自己没有发出去。</p>
+<p>这其实也是决策拖延法。总之，不要在“嗔怒”的时候做任何重要决策，这是自我惩罚。</p>
+<h3 id="3-物理降温按钮"><a href="#3-物理降温按钮" class="headerlink" title="3. 物理降温按钮"></a>3. 物理降温按钮</h3><p>愤怒时体温升高、面部发热，直接物理降温就能“冷却”情绪。有一次我正要发飙，立刻冲进洗手间用冷水洗脸，怒气瞬间减半。</p>
+<p>另一个小经验是，多运动，尤其是做一些激烈的运动，例如拳击。既释放压力，又能让你的身心更强大。</p>
+<p>这几招直接作用于生理层面，不靠意志力，适合“明知不该生气却控制不住”的时刻。它们就像情绪急刹车，在大脑被劫持时能立刻生效。</p>
+<p>先用这些方法降温，再用前面讲的认知方法重建理性，你就能在情绪风暴中保持决策清醒。</p>
+<h2 id="四、对情绪的重新理解"><a href="#四、对情绪的重新理解" class="headerlink" title="四、对情绪的重新理解"></a>四、对情绪的重新理解</h2><p>关于情绪，弗洛伊德表达过类似的观点：未经表达的情绪永远不会消失，它们只是以更丑陋的方式重新显现。</p>
+<p>人总会愤怒，这说明你有正义感，说明你还年轻，也说明你对这个世界并没有失望。</p>
+<p>愤怒是一种燃料。这种燃料装进炮弹里，就是破坏性极强的炮弹；但是如果装进发动机里，则能够产生巨大的正向能量。</p>
+<p>对于决策而言，情绪的确是个复杂的东西。我们对期待值的设定，往往来自与感性有关的愿望；而在决策过程中，理性往往又意味着要消除情绪。</p>
+<p>这看上去似乎有些矛盾。</p>
+<p>我在阅读《禅者的初心》时，在开始的简介中看到：</p>
+<blockquote>
+<p>禅者的心应该始终是一颗初心，不受各种习性的羁绊，随时准备好去接受、去怀疑，并对所有的可能性敞开。只有保持这样的心，我们才能如实看待万物的本然面貌，在一闪念中证悟万物的原初本性。</p>
+</blockquote>
+<p>这段话里，我最喜欢的是“对所有的可能性敞开”。</p>
+<p>在基于概率的决策理论中，“对所有的可能性敞开”意味着承认任何事情都有可能发生。概率论的核心就在于不确定性，每个事件都有一个发生的概率。</p>
+<p>禅者的“初心”要求对一切可能的结果保持开放，不论这些结果看似多么不可能。在现实生活中，这种心态可以帮助我们避免预判和偏见，客观地面对每种可能的情况。</p>
+<p>“对所有的可能性敞开”也反映了贝叶斯思想的核心，即在面对新的证据时调整信念。</p>
+<p>当你理解了这些，不再执迷于“本该如此”，而对所有可能性保持敞开的态度时，你就掌握了一个稳定决策者的核心智慧：<strong>在未知与愤怒面前，坦然接纳，将怒火变为你的真火。</strong></p>
+<p>以上就是这一讲的全部内容，我是老喻，我们下一讲再见。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>在这个复杂多变的世界里，真正的超级能力不是永不愤怒，而是在愤怒中依然能做出卓越决策的能力。</li>
+<li>控制情绪，从来不是为了迁就他人，而是为了保护自己不被短暂的愤怒摧毁长期的幸福。</li>
+<li>真正的智慧不是没有情绪，而是能将情绪能量转化为清明决断的燃料。</li>
+</ol>
+<h2 id="PDF-内用户留言"><a href="#PDF-内用户留言" class="headerlink" title="PDF 内用户留言"></a>PDF 内用户留言</h2><h3 id="左星星"><a href="#左星星" class="headerlink" title="左星星"></a>左星星</h3><p>情绪是我们身体和心理的自然反应，它们并不是“敌人”，也不是必须被消灭的对象。与其压抑愤怒或假装平静，不如正视自己的情绪，学会与它们共处。在这一过程中，觉察是关键。只有当我们能够觉察到自己正处于愤怒、焦虑或其他强烈情绪中时，才可能采取措施引导情绪走向更健康的方向。</p>
+<p>内核稳定也并不意味着压抑个性或放弃原则，恰恰相反，它意味着拥有一种更深层次的自信。这种自信不是基于表面上的强势，而是源于对自己能力和价值的深刻理解。一个内核稳定的人，知道自己为什么而做，知道什么是重要的，因而能够在压力之下坚持正确的选择，而不会轻易被他人的言语、外界的挑战或一时的挫折所击垮。</p>
+<p>内核稳定并不是一蹴而就的状态，而是一个持续精进的过程。每次我们成功地在情绪爆发中保持冷静，每次我们在困境中找到适合自己的解决方案，每次我们面对批评或挑战时没有一味防御，而是从中学习，我们的内核都会变得更加坚韧。它不是从不愤怒或从不犯错，而是能够从每一次失误和情绪波动中汲取教训，不断向内寻找力量，向外寻找解决之道。</p>
+<p>内核稳定是一种内外兼修的智慧。内核稳定不是要消灭情绪，而是让情绪成为推动我们智慧前行的动力。</p>
+<h3 id="魏红亮"><a href="#魏红亮" class="headerlink" title="魏红亮"></a>魏红亮</h3><p>78 决策之“嗔”：如何成为一个内核稳定的人？</p>
+<p>我们经常能看到三种场景，对控制情绪也是有价值的。</p>
+<ol>
+<li>坐下。争执的时候如果是站着的话，彼此之间的身高落差也容易刺激人，而且打或者递抬腿的事，请这些人坐下，彼此就“平等”了很多。</li>
+<li>喝点水。这点和“4-7-8呼吸法”底层逻辑相似，喝水的过程其实也是呼入空气的过程，大脑供氧量上来人回归理性的概率就高。</li>
+<li>共同利益。在一些影视剧里面我们能看到一些场景，大概是两帮要火拼的时候来了个第三方，口口声声“大家求财，大家求财”很快就能把大家拉回谈判桌，打拼只是手段求财才是目的。</li>
+</ol>
+<h3 id="白青"><a href="#白青" class="headerlink" title="白青"></a>白青</h3><p>万老师在精英日课5提到一本书《内部掌控，外部影响》，作者是哥伦比亚大学商学院教授希腾德拉·瓦德瓦（Hitendra Wadhwa）。这本书核心思想是你得有一个强大的精神内核，成为一个“大人物”，也就是对他人有领导力，对社会有影响力的人。</p>
+<p>“内部掌控，外部影响”，即你能在多大程度上掌控自己的内心，才能在多大程度上支配外部事物。用中国话来说这就叫内圣外王，“内圣”不是说你非得当个圣人，而是说你要有强大的内心修养和内核稳定；“外王”不是说你要当皇帝，而是说你要有领导力和影响力。</p>
+<p>人脑是个多元政体，人在每一时刻都有各种各样的想法和欲念，你必须在众多想要的东西之中追问自己真正想要的东西。有这样的自我发现，我们面对各种局面就不再只有本能的反应。</p>
+<p>你在刺激和回应之间找到了自主的余地，能做出正确的选择。这就是瓦德瓦说的对自己内心的掌控。这也是从纳粹集中营中幸存的心理学家维克多·弗兰克（Viktor Frankl）说过的、也是史蒂芬·柯维在《高效能人士的七个习惯》一书中反复讲过的那个道理——“在刺激和回应之间，你还有选择如何回应的自由与能力。”这就是“内圣”。</p>
+<h3 id="觉者"><a href="#觉者" class="headerlink" title="觉者"></a>觉者</h3><p>情绪的背后是需求，每个情绪背后都有一个未被满足的需求。愤怒是想保护自己而攻击他人。愤怒是可以的，但攻击他人或伤害自己就不对了。有三个方法可以应愤怒：</p>
+<ol>
+<li>点头：人只要在愤怒时不断地点头，愤怒就能快速下降。</li>
+<li>倒数：愤怒时要倒着间隔数数，比如11-9-7等。</li>
+<li>表达：要表达情绪，而不是带着情绪表达。当人说出自己很愤怒的时候，就不会在语言和行为上带来破坏和攻击。</li>
+</ol>
+<h3 id="李察酒"><a href="#李察酒" class="headerlink" title="李察酒"></a>李察酒</h3><p>情绪控制，我个人使用比较好的两个方法，一个是正念冥想，在日常生活中用正念冥想保持心态，并且在要发火的时候，可以使用正念冥想的呼吸法，来保障自己在刺激和回应之间，还有选择如何回应的自由与能力；另一个就是外部归因，虽然这个方法在复盘的时候最好少采用，因为你会把所有的失败都归结于各种外部因素，但在情绪控制的时候，怪罪于外人或者外部条件，能够迅速的平息自己的心情。</p>
+<h3 id="礼之贤士"><a href="#礼之贤士" class="headerlink" title="礼之贤士"></a>礼之贤士</h3><p>这节课的内容让我感触颇深，特别是昨晚发生的一件事。我儿子与妻子之间发生了激烈冲突，事情的经过是这样的：</p>
+<p>原本晚上十点半是儿子的就寝时间，可他仍在玩游戏，而妻子想给他吹干头发，因为头发还未干。在催促过程中，儿子情绪十分激动，说了些狠话，甚至言语伤人。妻子也被激怒，两人差点动起手来。后来，将近一个小时过去了，他们的情绪才逐渐平复。</p>
+<p>事后，我与爱人沟通，提醒她要把控好自己的情绪。孩子在做自己热衷之事时，大脑处于兴奋状态，此时他们的行为往往缺乏理性。况且，孩子的前额叶尚未发育成熟，很难在这种状态下进行平和的交流。</p>
+<p>换位思考一下，倘若我们自己在专注做一件渴望完成的事情时被突然打断，反应也不会太好，即便不会像孩子那般激烈，也会感到不悦。所以，我们真应该多理解孩子。</p>
+<p>同时，这件事也警示我们，做任何决定时都切勿冲动行事，这或许是让我感触最深之处。接下来，我也要深刻反思。当遭遇冲突或情绪失控时，务必避免做出决策，尤其是重大决定。</p>
+<h3 id="苏晓晓"><a href="#苏晓晓" class="headerlink" title="苏晓晓"></a>苏晓晓</h3><p>情绪失控的根源，对“自我”的过度保护。</p>
+<p>当别人质疑我们时，大脑会瞬间触发远古基因里的“生存警报”。</p>
+<p>仿佛被攻击的不是观点，而是自己这个人。</p>
+<p>本能地进入“战斗模式”，加快语速、抬高音量、用攻击性语言回击，证明“我是对的”。</p>
+<p>越是用力捍卫“自我”，越容易陷入孤立。</p>
+<p>比如，伴侣抱怨你陪伴太少，立刻反驳：“我天天加班还不是为了这个家？”</p>
+<p>这场对话就会变成“谁更委屈”的辩论赛。</p>
+<p>你能停下来问自己：“Ta的抱怨背后，是不是藏着不安？是不是在表达‘我需要你’？”</p>
+<p>沟通就会从对抗转向理解。</p>
+<p>心理学中有一个“缩小自我”练习。</p>
+<p>想象自己站在高空俯瞰地球，街道上的人群如蚂蚁般渺小，而自己只是其中之一。</p>
+<p>这时你会突然发现，那些让你焦虑的事，对世界而言不过是一粒尘埃。</p>
+<p>这种“无我”的心态，能帮你做到两件事：</p>
+<p>✓ 承认自己无法控制一切（比如他人的看法、关系的结果）；</p>
+<p>✓ 专注能控制的部分（比如自己的反应、沟通的方式）。</p>
+<p>举个例子：同事当众批评你的方案，如果你满脑子想着“他在针对我”，就会立刻反击。</p>
+<p>能退一步想：“他是不是担心项目风险？我能否用数据消除他的疑虑？”</p>
+<p>观察那些内核稳定的人，发现他们有个共同点，越是关键时刻，说话越慢。</p>
+<p>他们悟一个道理：</p>
+<p>✓ 赞扬的话要快（立即肯定对方“你这个角度很有趣”）。</p>
+<p>✕ 攻击的话要慢（先问自己“这句话会让关系更好还是更糟？”）。</p>
+<p>比如面对父母的催婚，可以说：“我知道你们担心我，其实我最近在思考……”</p>
+<p>不执着于控制所有事，把能量用在如何让当下更好。</p>
+<p>下一次情绪即将失控时，试着对自己说：世界很大，我很小，此刻的选择，很重要。</p>
+<h3 id="鸿涛"><a href="#鸿涛" class="headerlink" title="鸿涛"></a>鸿涛</h3><p>嗔怒起于我们敏感脆弱的内心自尊，强烈的屈辱情绪劫持一切理性，导致智慧和决策陷入黑洞。一种应对是“扬汤止沸”，延缓或是转移情绪，用生理型方式、情境选择、情境修正、注意力部署都属于此；再一种应对是“釜底抽薪”，尽量化解情绪，认知改变、反应调节和禅修的止观都是此法；第三种是“反脆弱”，把强烈的冲动情绪装进发动机里，形成推进有利形式的正向能量，诸如背水一战、知耻后勇、贝叶斯分析。</p>
+<h3 id="王茂荣"><a href="#王茂荣" class="headerlink" title="王茂荣"></a>王茂荣</h3><p>“决策之‘嗔’”：如何成为一个内核稳定的人”探讨了愤怒（“嗔”）对决策的影响，以及如何通过情绪管理提升决策能力：</p>
+<p>一、<strong>愤怒对决策的影响</strong></p>
+<ol>
+<li><strong>愤怒的本质</strong><ul>
+<li>佛教将“嗔”（愤怒）视为人生烦恼的三大根源之一，认为愤怒会使人丧失理性，导致自我破坏。</li>
+<li>现代研究也表明，愤怒对决策具有极大的破坏性，如生气时开车发生车祸的几率是正常情况的9.8倍，夫妻沟通过程中出现愤怒情绪时离婚概率高达94%以上。</li>
+</ul>
+</li>
+<li><strong>愤怒与决策失误</strong><ul>
+<li>愤怒是一种情绪黑洞，会吞噬理性与智慧，导致人们在冲动之下做出错误决策，如冲动发送信息、在股票亏损时盲目补仓等。</li>
+<li>成功的领导者往往不是最聪明的人，而是能在情绪风暴中保持决策稳定性的人。</li>
+</ul>
+</li>
+<li><strong>情绪劫持</strong><ul>
+<li>丹尼尔·戈尔曼在《情商》中提到“杏仁核劫持”，即当感知到威胁时，大脑的杏仁核会触发战斗或逃跑反应，甚至在理性思考的前额叶皮质介入之前，导致决策失误。</li>
+<li>愤怒常常伴随着自怜、过度敏感和过度自尊等负面情绪，形成恶性循环，进一步影响决策。</li>
+</ul>
+</li>
+</ol>
+<p>二、<strong>情绪管理与决策</strong></p>
+<ol>
+<li><strong>情绪管理的重要性</strong><ul>
+<li>控制情绪不是为了迁就他人，而是为了保护自己不被短暂的愤怒摧毁长期的幸福。</li>
+<li>真正的智慧是将情绪能量转化为清明决断的燃料，而不是被情绪劫持。</li>
+</ul>
+</li>
+<li><strong>情绪决策防火墙</strong><ul>
+<li><strong>情境选择</strong>：避开已知会引发强烈情绪的场景，如避免在疲惫时做重要决策。</li>
+<li><strong>情境修正</strong>：改变情境的某些方面，如增加沟通的中间环节。</li>
+<li><strong>注意力部署</strong>：通过深呼吸、数到十等方式转移注意力，降低情绪强度。</li>
+<li><strong>认知改变</strong>：重新解读事件的意义，例如将批评视为帮助自己看到盲点。</li>
+<li><strong>反应调节</strong>：控制情绪的外在表现，即使内心不平静，也要采取建设性行动。</li>
+</ul>
+</li>
+<li><strong>生理型情绪管理方法</strong><ul>
+<li><strong>神经重置呼吸法</strong>：使用4-7-8呼吸法（吸气4秒，屏息7秒，呼气8秒）激活副交感神经，快速恢复平静。</li>
+<li><strong>林肯的“热信”宣泄法</strong>：将怒火倾泻在纸上或录音里，但不发送，通过情绪转移避免冲动决策。</li>
+<li><strong>物理降温按钮</strong>：愤怒时用冷水洗脸或进行激烈运动，释放压力并冷却情绪。</li>
+</ul>
+</li>
+</ol>
+<p>三、<strong>佛教智慧与现代决策科学的结合</strong></p>
+<ol>
+<li><strong>佛教的“无我”观念</strong><ul>
+<li>嗔怒源于对“自我”的强烈执着，而“无我”观念认为“我”只是暂时的身心组合，并无固定本质。</li>
+<li>修习“无我”观可以削弱愤怒的根基，帮助人们接受现实的不完美，避免因执迷于“本该如此”而陷入情绪困境。</li>
+</ul>
+</li>
+<li><strong>禅修的止观方法</strong><ul>
+<li>“止”：通过呼吸练习止息妄念，安住当下。</li>
+<li>“观”：观察情绪的生起、变化与消失，重新解读事件的意义。</li>
+</ul>
+</li>
+<li><strong>现代情绪调节理论</strong><ul>
+<li>斯坦福大学的詹姆斯·格罗斯提出“过程模型理论”，强调在情绪产生的五个阶段进行干预，这与佛教的禅修方法有相似之处。</li>
+</ul>
+</li>
+</ol>
+<p>四、<strong>情绪与决策的关系</strong></p>
+<ol>
+<li><strong>情绪的双重性</strong><ul>
+<li>情绪本身并非完全负面，它可以是一种燃料，关键在于如何引导和转化。</li>
+<li>情绪需要疏导和转化，否则可能以更丑陋的方式爆发。</li>
+</ul>
+</li>
+<li><strong>禅者的初心</strong><ul>
+<li>禅者的心应保持开放，随时准备接受、怀疑并拥抱所有可能性。</li>
+<li>这种心态与贝叶斯思想相似，即在面对新证据时调整信念，避免预判和偏见。</li>
+</ul>
+</li>
+<li><strong>内核稳定的本质</strong><ul>
+<li>内核稳定不是压抑情绪，而是学会与情绪共处，将情绪转化为智慧前行的动力。</li>
+<li>内核稳定是一种内外兼修的智慧，源于对自己能力和价值的深刻理解，能够在压力下坚持正确的选择。</li>
+</ul>
+</li>
+</ol>
+<p>五、<strong>总结</strong></p>
+<p>通过佛教智慧与现代科学的结合，强调了情绪管理在决策中的重要性。愤怒是一种强大的情绪，但如果能通过情境选择、注意力转移、认知改变等方法进行管理，就可以避免情绪劫持，做出更理性的决策。同时，文章也指出，情绪本身并非敌人，而是可以转化为决策动力的资源。</p>
+<h3 id="Gaven（建平）"><a href="#Gaven（建平）" class="headerlink" title="Gaven（建平）"></a>Gaven（建平）</h3><p>贪嗔痴是佛学思想中进行修行必须面对并跨越的三个重要门槛。我自己也因为嗔怒而做出了不少令自己事后悔的决定。</p>
+<p>为什么嗔怒会发生？人类天生倾向于高估自身认知的确定性，低估环境的不确定性，这种错觉才是情绪波动的真正根源。</p>
+<p>如何避免嗔怒的陷阱？首先是在思想上保持足够的开放性，尽可能接受一切事情发生的可能性，也就是环境的不确定性；其次是在嗔怒到来的时候对自己的情绪进行认知，我现在在生气，我为什么生气？除了生气，我还可以做什么？最后，对事情进行复盘，进一步提升自己掌控情绪的能力。</p>
+<p>在未知与愤怒面前，坦然接纳，将怒火变为你的真火。</p>
+<h3 id="我是谁，我要去何方"><a href="#我是谁，我要去何方" class="headerlink" title="我是谁，我要去何方"></a>我是谁，我要去何方</h3><p>情绪是一个人的底层操作系统，一旦情绪失控，再厉害的决策系统也将崩溃。</p>
+<p>怎样防止情绪失控造成决策失误呢？老喻给我们提供了一套情绪决策防火墙：在情绪产生的五个阶段进行干预——情境选择、情境修正、注意力部署、认知改变和反应调节。我们不是逃避情绪，而是避免被情绪劫持，进而转化为清明决断的燃料。</p>
+<p>最后，老喻给我们提供了几个生理型的、强制性地克服“嗔怒”的方法，非常实用。一旦发现负面情绪即将爆炸，试着去做一做：</p>
+<ol>
+<li>神经重置呼吸法——4-7-8呼吸法：吸气4秒，屏息7秒，呼气8秒，连续三次。</li>
+<li>林肯的“热信”宣泄法——把所有怒火倾泻在纸上或录音里。写完后不要发送，而是搁置。</li>
+<li>物理降温按钮——直接物理降温“冷却”情绪。</li>
+</ol>
+<p>最后，记住“未经表达的情绪永远不会消失，它们只是以更丑陋的方式重新显现。”不要压制情绪，情绪需要流动起来，我们需要运用一些合理的方式把情绪宣泄出去，进而转化为正能量，而不是强制压制它。</p>
+<h3 id="Shaper-杨"><a href="#Shaper-杨" class="headerlink" title="Shaper 杨"></a>Shaper 杨</h3><p>我在愤怒的时候，时常会反问自己——现在这个事情通过愤怒可以解决吗？如果我能接受最坏的结果，并且通过愤怒能推进事态的发展，那么我就会毫不犹豫表达自己的情绪。反之，我宁愿选择抽身离开，不做言语上的无谓争锋。大多数时候，我还是发现，愤怒情绪往往让我们反复陷入负面心态的糟粕泥泞当中，我们要想做好事情，控制情绪、内核稳定很重要。让别人能看到自己成熟稳重的一面往往是自己职业、生活的加分项，我们的内心也会更加从容淡定。</p>
+<h3 id="幸福小松树"><a href="#幸福小松树" class="headerlink" title="幸福小松树"></a>幸福小松树</h3><p>Prodigy天才就是当身边所有人都进入非理性状态时还能够正常行事的人。“一念嗔心起，百万障门开。”在这个复杂多变的世界里，真正的超级能力不是永不愤怒，而是在愤怒中依然能做出卓越决策的能力。</p>
+<p>“杏仁核劫持”——当我们感知到威胁时，杏仁核（大脑的警报中心）会立即触发战斗或逃跑反应，甚至在我们的前额叶皮质（负责理性思考的区域）来得及介入之前。一个案例，诸葛亮“三气周瑜”，一个绝顶聪明的人因情绪失控全盘皆输。自怜，过度自尊，嗔引发自怜，自怜导致敏感，敏感强化自尊，自尊又激发嗔怒。我们之所以愤怒，本质上是拿现实的不完美与自己的预期碰撞。</p>
+<p>人类天生倾向于高估自身认知的确定性，低估环境的不确定性，这种错觉才是情绪波动的真正根源。做到无我！“一切有为法，如梦幻泡影，如露亦如电，应作如是观。”所以，禅修的核心是止观，即“止息妄念”与“观察内心”。</p>
+<p>模型，在情绪产生的五个阶段进行干预——情境选择、情境修正、注意力部署（转移注意力）、认知改变和反应调节。正如禅宗所教导的，真正的智慧不是没有情绪，而是能将情绪能量转化为清明决断的燃料。</p>
+<p>一，呼吸重置法，愤怒时，试试特种部队都在用的4-7-8呼吸法：吸气4秒，屏息7秒，呼气8秒，连续三次。</p>
+<p>二，林肯的“热信”宣泄法，这其实也是决策拖延法。</p>
+<p>三，物理降温按钮，比如运动，洗脸等。</p>
+<p>“对所有的可能性敞开”也反映了贝叶斯思想的核心，即在面对新的证据时调整信念。闻过则喜。</p>
+<h3 id="李坚"><a href="#李坚" class="headerlink" title="李坚"></a>李坚</h3><p>个人体验来看，非常认同情绪是一种力量和燃料，必须有渠道进行疏导和转化，如果一味压抑和控制，一旦爆发将不可收拾。中医里面情绪既是“内因情志”病的起因，也是治疗他们的良药。</p>
+<h3 id="victory"><a href="#victory" class="headerlink" title="victory"></a>victory</h3><p>愤怒是对于无法改变事实的一种不甘、无奈，其实是自我预期就是一种执拗，一种固执己见的自我执念。强者从不抱怨环境，就是在打破我执适应环境，根据环境改变自己的行为，是一个贝叶斯主义者的形态，事实既然成型，那么接受、尊重就是最优的策略。同时情绪不会自然的消失，长期积压也会把身体压垮，情绪需要释放，我自己的方法就是坚持健身通过运动来释放情绪，每次锻炼完心里面就会非常平静。</p>
+<h3 id="阿繁达1043"><a href="#阿繁达1043" class="headerlink" title="阿繁达1043"></a>阿繁达1043</h3><p>通过不断地看书学习，我自诩是一个理性的人。可前阵子开车在路上被其他车别了一下，我竟火速被切换到战斗模式，心跳加速，肌肉绷紧，下意识地踩下油门想冲上去骂他。大约过了几秒钟才反应过来，我刚刚是被愤怒情绪给绑架了，于是才渐渐平息怒火，不断问自己刚才是怎么了。从行为主义角度来说，这是我过往一点就着的行为模式的延续，是底层心理逻辑在作祟；从脑神经科学角度来说，是因为血液从心脏泵发出去先冲到掌管情绪的边缘系统，然后才到掌管理性的大脑皮层。</p>
+<p>著名作家维克多·弗兰克说过：在刺激和回应之间，我们永远有如何回应的自由和能力。拿破仑也曾经说过：能控制自己情绪的人，其成就不亚于拿下一座城池。</p>
+<p>然而这并不代表我们应该无条件地压抑自己的情绪，情绪伴随我们经历过亿万年的演化，是我们行动的风向标，引导我们趋利避害。所以我们应该敏锐地识别出当前的情绪，准确而具体地描述该情绪状态，如此方能跳出它的控制，主动地驾驭它。要让情绪成为我们发动机里的燃料，而不是火药桶里的炸药。</p>
+<p>下次当你被强烈情绪，特别是愤怒情绪挟持急着做决定时，不妨试试下面几招：</p>
+<ol>
+<li>从1数到10，留足时间让理性的大脑皮层介入决策；</li>
+<li>深吸一口凉气让杏仁核冷却，及时解除或降低警报信号；</li>
+<li>把吸气和呼气时常控制为1∶2，启动副交感神经系统，让人平静下来；</li>
+<li>转换场景。你在跟别人争吵而怒不可遏的时候，跟对方说一句：我现在控制不了自己了，我需要换个地方冷静一下；</li>
+<li>认知升级。你为多大的事情生气直接体现了你有多大的格局。多读书，尤其是多读读历史、哲学，你才会知道什么才是真正的大事，你会为自己之前为鸡毛蒜皮的事情斤斤计较而感到羞愧。</li>
+</ol>
+<h3 id="刘文印-登录易"><a href="#刘文印-登录易" class="headerlink" title="刘文印@登录易"></a>刘文印@登录易</h3><p>太聪明的人不能与团队成员或周围的人在认知上同频，共情，所以成功的领导者往往不是最聪明的人，而是情商更高的人，能及时发现并鼓励、激励、运用团队成员的聪明，特别是在出现分歧时，还能发挥协调作用，在情绪风暴中保持决策稳定性。</p>
+<p>（以上留言由作者筛选显示）</p>
+<hr>
+<p>日更、防断更、更多低价好课 加微信：coc36666 &#x2F; coc3678</p>
+<hr>
+<p><a href="/book/decision-algorithm/077/">← 077｜决策之“贪”：为什么这是你做决策的最大障碍？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/079/">079｜决策之“痴”：怎样掌握知与不知的边界？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

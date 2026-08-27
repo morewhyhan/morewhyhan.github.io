@@ -1,0 +1,392 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>048｜满意就好：如何成为一个不纠结的人？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》048：满意就好：如何成为一个不纠结的人？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="048｜满意就好：如何成为一个不纠结的人？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/048/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》048：满意就好：如何成为一个不纠结的人？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:45.449Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/048/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '048｜满意就好：如何成为一个不纠结的人？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">048｜满意就好：如何成为一个不纠结的人？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">048｜满意就好：如何成为一个不纠结的人？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>来源：老喻·决策算法100讲</p>
+<p>音频时长：13分52秒</p>
+</blockquote>
+<h2 id="老喻亲述"><a href="#老喻亲述" class="headerlink" title="老喻亲述"></a>老喻亲述</h2><p>你好。</p>
+<p>我是老喻，欢迎来到《决策算法》课。</p>
+<p>最近我在整理房间，发现书架抽屉里有不少孩子小时候的涂鸦和手工，舍不得扔，打算装在盒子里收藏起来。</p>
+<p>先上好市多（Costco）的网站看那种牛皮纸做的收纳盒，居然每个要5—6加币，一组10个，太贵了，简直接近塑料收纳盒的价格。又去亚马逊上看了一眼，同样的牌子一组12个，有大有小，横向对比一下，尺寸还不一样……比来比去，一不留神，半小时过去了。</p>
+<p>我突然意识到，自己掉进“网购纠结”陷阱里了。我不是要买一组纸盒，当作孩子成长的记忆胶囊。购物的目的是为了完成这个任务，而不是要精益求精找到最高性价比的盒子。虽然这些纸盒相对价格不低，但绝对价值也不高，而且又不是常买，根本不值得花这么多时间。</p>
+<p>类似这种生活决策中的小纠结，是不是觉得很熟悉？</p>
+<p>我们每天都面临海量决策：早饭吃啥，午餐外卖点谁家，网购衣服要不要比价。研究表明，一个成年人每天要做数百个有意识的决策，其中约三分之一与饮食相关；加上微小的、半自动化的决策，数量更加惊人。</p>
+<p>信息渠道越多，选择越多，也让人越纠结：一方面担心错过更好选项，另一方面搜索太久又疲惫不堪，迟迟无法下手。更糟糕的是，越纠结，越难决策。一家著名的决策实验室研究发现，当我们网购时，浏览页数越多，购买决策难度越大，后悔概率越高。</p>
+<p>这有点像围棋里说的：长考出臭手。意思是下棋时想得太久了，反而走出了大臭棋。</p>
+<p>生活中，一个小小的选择往往耗费我们数小时甚至数天。在信息过载、比较焦虑与决策疲劳的三重夹击下，你我都成了决策困境中“纠结的人”。</p>
+<p>怎样摆脱这种纠结？</p>
+<h2 id="一、有限理性与满意原则"><a href="#一、有限理性与满意原则" class="headerlink" title="一、有限理性与满意原则"></a>一、有限理性与满意原则</h2><p>在现代社会里，我们常常将“理性决策”视为理所当然，甚至认为只要搜集完备信息、综合比较优秀，就能找到所谓的“最优解”。</p>
+<p>然而，这种基于“完全理性”的假设，其实是一种美好却不切实际的幻想。想想看：有几个人真能像超级计算机一样，瞬间算出所有可能性、无漏地评估每个方案的优劣？现实中信息经常并不完备，有些资料可能模糊不清，或干脆不存在。</p>
+<p>诺贝尔经济学奖得主赫伯特·西蒙（Herbert A. Simon）指出，真正的决策往往受限于时间、认知与资源的约束，“有限理性”才是我们的常态。</p>
+<p>人并不是完全理性的。由于大脑计算能力的局限，人们会在有限的经验里挑选能满足当前条件的决策。人类决策的最终目标不是理性最优解（optimization），而是有限理性下的最令人满意的解（satisficing）。</p>
+<p>所谓“满意原则”（Satisficing），就是当选项达到我们事先设定的及格线后，就可以停下来，而不必再死磕有没有更高性价比、更多功能、更完美的存在。</p>
+<p>为什么“满意就好”反而可能更理性？因为，当信息无限时，若要穷举所有选项、算出绝对最优，搜寻成本往往会远超决策本身的价值。买纸盒时花半小时找“最好”的纸盒，真的比花5分钟找“差不多”的更划算吗？不会。</p>
+<p>更多时候，我们应该找的并不是“全网最低价”或“十全十美”，而是“差不多够用，让自己舒心”。这就是满意原则带来的现实关照，也是现代人从“纠结”走向“轻松”的关键一步。</p>
+<h2 id="二、成为不纠结的人：三步法"><a href="#二、成为不纠结的人：三步法" class="headerlink" title="二、成为不纠结的人：三步法"></a>二、成为不纠结的人：三步法</h2><p>西蒙的“满意原则”听起来很简单，但因为缺少清晰的决策系统，我们常常做不到。今天就用三步法，帮助自己成为“不纠结的人”：</p>
+<ol>
+<li><strong>第一步：定标准；</strong></li>
+<li><strong>第二步：控参考；</strong></li>
+<li><strong>第三步：敢决定。</strong></li>
+</ol>
+<h3 id="第一步：定标准——你的“满意”到底是啥？"><a href="#第一步：定标准——你的“满意”到底是啥？" class="headerlink" title="第一步：定标准——你的“满意”到底是啥？"></a>第一步：定标准——你的“满意”到底是啥？</h3><p>我们常常因为“随大流”或追求“别人觉得好”而犯难，却忽视了决定是否值得选的第一关：弄清自我标准。</p>
+<p>这就像巴菲特所说的“内部记分卡”：你的满意你做主。不随市场起舞，建立个人标准，采用更长期、更内在的思考模式。</p>
+<p>决策系统，就是用一个清晰的结构，帮助我们明智高效地达到目标，完成决策要完成的任务。设定标准这一步可以拆成：</p>
+<ul>
+<li><strong>设定“满意”标准</strong>：先想好哪些是“非做不可”或“非买不可”的底线要求，以及哪些是“可以有，最好有”的加分项目。</li>
+<li><strong>界定时间&#x2F;精力预算</strong>：决定要花多少时间搜索、对比多少个选项，不要超过这个范围。</li>
+<li><strong>三大维度评估</strong>：结果、过程、心理。<ul>
+<li>结果维度（必要条件）：如买房，最低面积、预算及地段优先；</li>
+<li>过程维度（决策成本）：如时间、精力及金钱花费；</li>
+<li>心理维度（内在感受）：你对这件事是否焦虑，是否符合内心价值观。</li>
+</ul>
+</li>
+</ul>
+<p>根据上述标准和评估方法，给自己的选择打分，至少要及格，但也不必追求完美高分。这样能避免纠结于更好，也能更客观地认定“我已经找到一个不错的方案”。</p>
+<p>拿买纸盒为例：基本要求是够大、不难看。因为装满后肯定是堆在某个角落，购买时应该选个评分靠前的就行了，速战速决。</p>
+<p>《道德经》里说：“知足不辱，知止不殆，可以长久。”意思是：懂得满足就不会受到屈辱，懂得适可而止就不会遇到危险，这样才可以长久平安。</p>
+<p>以我的人生经验看，自下而上地去思考生活基本的满意标准，往往比自上而下定更高标准靠谱，甚至结果也更好。以投资理财为例，定个“保本基础上争取能跑赢定存”的基本满意度，到最后没准儿还战胜了“十年赚10倍”这种宏伟目标。</p>
+<h3 id="第二步：控参考——别让比较毁了好心情"><a href="#第二步：控参考——别让比较毁了好心情" class="headerlink" title="第二步：控参考——别让比较毁了好心情"></a>第二步：控参考——别让比较毁了好心情</h3><p>我们常犯的第二个错是“与他人攀比”，或让外部标准无休止拉高期望。</p>
+<p>当你看到朋友或博主买了更好、更优惠的东西，就开始怀疑自己的选择不够完美，陷入“参考点依赖”陷阱。</p>
+<p>经济学家卡尼曼发现，我们对事物的判断，往往不取决于它的绝对价值，而是取决于参考点。一个商品标价100块，很少人买；同样的商品标注“原价200，现价100”，立刻就有很多人觉得划算。工资涨了一块，本来很开心，后来听说同事小王涨了一千元，马上就不好过了。</p>
+<p>常见参考点包括：</p>
+<ul>
+<li>原价 vs 现价；</li>
+<li>别人的选择 vs 自己的选择；</li>
+<li>理想状态 vs 现实状况。</li>
+</ul>
+<p>一旦陷入参考点依赖，我们就会过分在意他人的选择，被营销手段轻易影响，用不恰当的标准评判自己。</p>
+<p>一个朋友买车，会根据自己的需求和预算选择大品牌的合适车型，然后买其中安全配置与顶配一样的基本款，也就是所谓“丐版”。他看过三十万的、加一万多就升级豪华版的、再加两万的限量版，最后开回去一辆四万多的车。他的原则是：进4S店之前选好合适的车型，只要基本款，不管销售如何说“这款更超值”，也不掉入“比较陷阱”。</p>
+<p>“控参考”这一步的决策结构是：</p>
+<ul>
+<li><strong>减少外部干扰</strong>：尽量屏蔽朋友圈、博主或广告的诱惑，专注于真正的需求；</li>
+<li><strong>过滤不当比较</strong>：警惕那些不相干的“更好”案例，避免用他人的选择当作自己的标准；</li>
+<li><strong>回归自我期望</strong>：把决定拉回自己设定的“满意线”，别被噪音拉高或拉低参考点。</li>
+</ul>
+<h3 id="第三步：敢决定——用37-法则告别纠结"><a href="#第三步：敢决定——用37-法则告别纠结" class="headerlink" title="第三步：敢决定——用37%法则告别纠结"></a>第三步：敢决定——用37%法则告别纠结</h3><p>即使定了标准，又管住了外部比较，有些人仍卡在最后一步：不敢“下手”。这时，37%法则就可以派上用场。</p>
+<p>这个法则有严格的数学证明，主要用来解决“何时停止寻找并做出决定”的问题，可以用于求职、购房、选择伴侣等。37%法则的精髓是：让你选到“最优解”的概率最大化，也避免“无限观望”。</p>
+<p>结合37%法则，“敢决定”的结构是：</p>
+<ul>
+<li><strong>先设“观察期”</strong>：在前37%的选项或时段，仅用来了解行情，不要急着拍板。</li>
+<li><strong>见到超越标准就立刻出手</strong>：一旦后续63%选项中有超过前面最好水准的，就当机立断，不再犹豫观望。</li>
+<li><strong>决定完成后停止搜索</strong>：做完决定后要刻意屏蔽后续干扰，否则又会陷入“是不是还有更好”的悔恨中。</li>
+</ul>
+<p>当然，并不是所有决定都适合用37%法则，但是，基于算法来快速拍板，的确会更加明确有效。比如有位父亲给孩子选辅导老师，只要有另外三个家长说某位老师好，他就拍板定下来：从概率角度看，三个好评已经有说服力；再说，不合适再换即可。</p>
+<p>三步法可以简化为：</p>
+<ul>
+<li>定标准：别指望面面俱到，想清你最重视什么；</li>
+<li>控参考：摆脱无谓的比较与外界干扰，减少攀比；</li>
+<li>敢决定：时机到了就出手，“够好”胜过停留在完美幻想的纠结里。</li>
+</ul>
+<p>记住，“满意就好”并不是“毫无进取心”，而是让你在有限理性和现实资源中找到最适合自己的方案。当你学会在适当时候对自己说“这样就够了”，你会发现生活可以轻松许多，心境也随之变得豁达。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>狄更斯写的《大卫·科波菲尔》是一部带有自传性质的小说。里面的角色米考伯，是主角小时候的朋友，曾经遭遇过债务问题。事实上，这个角色的原型，是狄更斯自己的父亲。</p>
+<p>在小说里，米考伯说过：</p>
+<blockquote>
+<p>如果年收入二十英镑，每年花销十九英镑十九先令便士，那就是幸福。如果年收入二十英镑，每年花销二十英镑六便士，那就是贫困。</p>
+</blockquote>
+<p>多么简单而精辟的描述啊！难怪有人说，满意原则，是幸福生活的第一原则。</p>
+<p>在这个时代，我们面临着一个无奈的悖论：选择越多，反而越难选择。</p>
+<p>与其穷尽一生去追求可能存在的“最好”，不如学会接受眼前的“够好”。更不值得为了追求“最好”，而牺牲“够好”。</p>
+<p>因为真正的智慧，不在于如何做出完美的选择，而在于如何在有限条件下做出满意的决策。</p>
+<p>有时候，人生中最重要的决定往往不是你做了什么，而是你及时决定不再做什么。</p>
+<p>记住：不是所有机会都需要你抓住，不是所有选择都值得你穷尽。有时候，说“够好了”，恰恰是最理性的选择。</p>
+<p>人生在世，满意就好。</p>
+<p>我是老喻，我们下一讲再见。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>自下而上地去思考生活基本的满意标准，往往比自上而下定更高标准靠谱，甚至结果也更好。</li>
+<li>与其穷尽一生去追求可能存在的“最好”，不如学会接受眼前的“够好”。更不值得为了追求“最好”，而牺牲“够好”。</li>
+<li>不是所有机会都需要你抓住，不是所有选择都值得你穷尽。有时候，说“够好了”，恰恰是最理性的选择。</li>
+</ol>
+<h2 id="PDF-内用户留言"><a href="#PDF-内用户留言" class="headerlink" title="PDF 内用户留言"></a>PDF 内用户留言</h2><h3 id="左星星"><a href="#左星星" class="headerlink" title="左星星"></a>左星星</h3><p>“满意就好”是一种智慧，而非妥协。我们需要区分重要性，用有限精力解决真正关键的问题；满意原则也提醒我们接受选择带来的结果，保持对不确定性的开放态度。幸福不是来自完美的选择，而是来自对自己选择的接受与满足。</p>
+<h3 id="黄泊淳-Only"><a href="#黄泊淳-Only" class="headerlink" title="黄泊淳 Only"></a>黄泊淳 Only</h3><p>这节内容让我想到《苏格拉底的麦穗》：苏格拉底要柏拉图走一趟麦田，不能回头，只能摘到一颗最大的麦穗；最后柏拉图空手而归，因为一直想找到“最好”的麦穗。用37%的策略，前37%参考什么是好的麦穗，后面的路找到一个跟前面一样好的就拿走，不让自己空手而归。爱情也可以如此，更何况爱情还不是人生中最重要的事。</p>
+<h3 id="美君"><a href="#美君" class="headerlink" title="美君"></a>美君</h3><p>小富即安，如何定义“富”？如果按世俗标准划分，容易陷入盲目。小富即安更多不在于赚了多少钱，而在于存款足以支撑现在的生活，并且用最优决策保证这些钱带来幸福感、愉悦感，以及精神追求。并非要极度节省，而是在消费决策上多下功夫，想清楚最重视什么，整体达到满意就好。</p>
+<h3 id="蜗牛"><a href="#蜗牛" class="headerlink" title="蜗牛"></a>蜗牛</h3><p>人生最重要的大概是自己的时间，时间是稀缺资源。选择越多，越难选择，选择后失望也更多。真正的智慧不在于做出完美选择，而在于有限条件下做出满意决策；人生最重要的决定往往是及时决定不再做什么。</p>
+<h3 id="Keiko-璟"><a href="#Keiko-璟" class="headerlink" title="Keiko.璟"></a>Keiko.璟</h3><p>人的理性是有限的，没有一种选择是永远的最优解。在有限资源和信息下，可以选择满足基本需求的“足够好”，不必非得追求最完美的结果。设定满意线，减少外部和情绪干扰，果断决定，才能减少不必要的内耗。</p>
+<h3 id="耿金"><a href="#耿金" class="headerlink" title="耿金"></a>耿金</h3><p>自己的决策标准是：在自己的能力范围内可以接受事情失败的损失，这样可以让自己不后悔。定标准、控参考、敢决定，是行动指南。</p>
+<h3 id="鸿涛"><a href="#鸿涛" class="headerlink" title="鸿涛"></a>鸿涛</h3><p>满意的标准是够好，追求最好的成本往往过高，会耗费太多资源，难以长期持久。定标准是为“够好”定下限，控参考是为“够好”定下独立锚点，敢决定则是把够好拿到手，用37%法则快速而不费劲地拿到中上水平的结果。</p>
+<h3 id="方兴（阳光芳草）"><a href="#方兴（阳光芳草）" class="headerlink" title="方兴（阳光芳草）"></a>方兴（阳光芳草）</h3><p>人生智慧在于选择什么对自己最重要、什么值得精雕细琢全力投入、什么根本不重要不用纠结。乔布斯每天穿一样的衣服，是为了把时间和精力专注在最重要的事情上；用雷军的方法给时间定价，可以帮助自己权衡投入与回报。</p>
+<h3 id="学习机器"><a href="#学习机器" class="headerlink" title="学习机器"></a>学习机器</h3><p>择偶的满意度原则是找到核心需求，而不是什么都想要。人不可能十全十美，也没有人能满足所有物质、肉体和精神需求；择偶和经营婚姻时要认清核心需求，控制欲望，懂得知足和感恩。</p>
+<h3 id="Jerryluo"><a href="#Jerryluo" class="headerlink" title="Jerryluo"></a>Jerryluo</h3><p>学到的三点：满意就好，不做纠结的人；网购选纸盒时，达到基本要求就买，不再比较；“定标准、控参考、敢决定”中，最有触动的是控参考和敢决定。孩子的成绩应该和自己比，保持学习兴趣，而不是和别人家的孩子比。</p>
+<h3 id="新月"><a href="#新月" class="headerlink" title="新月"></a>新月</h3><p>这节课让我发现自己总在追求最好、总在比较内耗，最后化成一句对自己的话：我已经够好了，这样就够了！</p>
+<h3 id="陈克彪"><a href="#陈克彪" class="headerlink" title="陈克彪"></a>陈克彪</h3><p>有时候极度想做好一件事，在执行中浪费太多无谓时间和选择，最终忘了达成目标。人生像二八法则，无论多努力，决策选择失败概率都很高；不要幻想一次成功，把每次选择当成成功率20%的无限游戏。</p>
+<h3 id="伴听"><a href="#伴听" class="headerlink" title="伴听"></a>伴听</h3><p>用“定标准、控参考、敢决定”减少因选择困难带来的时间精力消耗。像《小猴子下山》的故事一样，什么都想要，最后往往空手而归；投资也应接受“够好”的回报，设置退出标准，果断执行。</p>
+<h3 id="李嘉酒"><a href="#李嘉酒" class="headerlink" title="李嘉酒"></a>李嘉酒</h3><p>“满意”的真正对立面不是“不满意”，而是“后悔”。后悔会让人不断回头看，害怕“万一选错”，从而陷入反复纠结。满意是一种选择，也是一种能力：放下后悔，接受眼前结果，专注如何让生活变好。</p>
+<h3 id="爱艺术的李达拉"><a href="#爱艺术的李达拉" class="headerlink" title="爱艺术的李达拉"></a>爱艺术的李达拉</h3><p>当期待超过实际所得，就容易失落和不满；当实际所得高于期待，就会感到惊喜和满足。生活的快乐不完全来自期待的满足，而来自如何看待和处理期待与现实的差距。</p>
+<h3 id="陈克彪（补充）"><a href="#陈克彪（补充）" class="headerlink" title="陈克彪（补充）"></a>陈克彪（补充）</h3><p>不要过度追求最优解；不靠感觉做判断；对当下事情拆解成两三个维度去做决策。失败是必然，成功是偶然，能做的是用满意原则提升偶然的成功概率。</p>
+<h3 id="张"><a href="#张" class="headerlink" title="张"></a>张</h3><p>生活中常见的纠结包括：网购浏览越久越难决定，求职信息越多越难选择，谈恋爱见到对象越多越难决定。信息渠道越多，选择越多，越容易担心错过更好选项。追求所谓最优解的理性决策本质上是一种幻觉；真正的决策受时间、认知和资源约束，应以满意原则为核心。三步法带来减少内耗、聚焦专注、发挥优势的好处。</p>
+<h3 id="爱艺术的李达拉、万雄、知东东、victory、明智锻念、掷包子曰"><a href="#爱艺术的李达拉、万雄、知东东、victory、明智锻念、掷包子曰" class="headerlink" title="爱艺术的李达拉、万雄、知东东、victory、明智锻念、掷包子曰"></a>爱艺术的李达拉、万雄、知东东、victory、明智锻念、掷包子曰</h3><p>这些留言分别从期待与现实、减少消费纠结、买车场景、承认能力边界和加入时间成本等角度，认同“够好”比“最好”更经济、更理性：先明确核心需求，再过滤外界比较，达到标准就停止搜索。</p>
+<hr>
+<p><a href="/book/decision-algorithm/047/">← 047｜六十分哲学：不是每一场人生的战斗都要你全力以赴</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/049/">049｜漂亮撤退：全身而退即胜利 →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

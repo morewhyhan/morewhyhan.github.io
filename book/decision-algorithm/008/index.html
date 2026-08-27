@@ -1,0 +1,454 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>008｜重新理解复利：为什么复利很多时候是一个“谎言”？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》008：重新理解复利：为什么复利很多时候是一个“谎言”？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="008｜重新理解复利：为什么复利很多时候是一个“谎言”？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/008/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》008：重新理解复利：为什么复利很多时候是一个“谎言”？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:44.812Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/008/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '008｜重新理解复利：为什么复利很多时候是一个“谎言”？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">008｜重新理解复利：为什么复利很多时候是一个“谎言”？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">008｜重新理解复利：为什么复利很多时候是一个“谎言”？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>来源：老喻·决策算法100讲</p>
+<p>音频时长：13分29秒</p>
+</blockquote>
+<h2 id="老喻亲述"><a href="#老喻亲述" class="headerlink" title="老喻亲述"></a>老喻亲述</h2><p>你好。</p>
+<p>我是老喻，欢迎回到《决策算法》课。</p>
+<p>从这一讲开始，我们来讲大家最关心的一类决策——财富决策。</p>
+<p>假如你去问100个赚钱高手，财富决策最大的秘密是什么？大部分答案，都可能提到一个词儿，这就是“复利”。</p>
+<p>复利也是我研究最多的话题之一。所以在“财富决策模块”的开头两讲，我们来深入探讨一下：复利的谎言和真相。</p>
+<p>查理·芒格说：</p>
+<blockquote>
+<p>理解复利的魔力和获得它的困难，是理解许多事情的核心和灵魂。</p>
+</blockquote>
+<p>人们总是关注这句话的前半截，也就是复利的魔力。但是却会忽略后半截：也就是获得复利的困难。</p>
+<p>事实上，现实中的复利极其罕见。</p>
+<p>著名投资人彼得·林奇提出过一个词“10倍股”，这是他心目中的好股票。</p>
+<p>多长时间赚10倍呢？假设是10年。</p>
+<p>10年赚10倍靠谱吗？假如2011年前后你买了茅台股票，拿上10年，就有10倍；或者2010年买了特斯拉股票，更短时间你就能赚10倍。</p>
+<p>计算一下，假如你想在股市10年变10倍，每年“只”要26%回报即可。</p>
+<p>于是，关于复利的传说，又多了一个美妙的数字：26%。</p>
+<p>然而，假如你相信这种简单化的“复利法则”，也许就掉入了一个谎言的陷阱。</p>
+<p>不止在投资领域，关于个人的“成长”，也流传着类似的梦想。</p>
+<p>有人问过我：</p>
+<blockquote>
+<p>一个人可以做到持续地每天进步百分之0.1或者说百分之0.05吗？如果可以或者说有可能达成的话，关键点在哪里呢？难点在哪里呢？</p>
+</blockquote>
+<p>我回答：不可能。</p>
+<p>曾经看到有博主发：成功的秘诀是：如果没有天赋，那就一直重复！</p>
+<p>那位博主说，他自己坚持做着一件事：读书、看书、写作……</p>
+<p>这类鸡汤的核心逻辑是努力、坚持和重复，而是找到值得重复的事儿，然后才是通过重复实现指数增长。</p>
+<p>比如说，人们讨论起ChatGPT，喜欢提“规模效应”，说“大力出奇迹”。</p>
+<p>但事实上，并非大力就可以出奇迹，而是OpenAI找到了让“大力出奇迹”变得有效的方法。</p>
+<p>这才是复利最艰难的地方。</p>
+<p>财富也好，人生也好，极少有人能够靠复利获利。</p>
+<p>当然，复利的谎言，并非是说“复利本身是谎言”。</p>
+<p>的确，复利可能是人生最重要的公式。即使是普通人的努力，在复利作用下，也能累积成奇迹。</p>
+<p>然而，能做到这一点的，可能就不是“普通人”了。</p>
+<p>聪明人呢？年轻时不甘心于做“大量重复的事情”，年长后又很难实现自己巅峰时刻的连续性。</p>
+<p>讲到这里，你可能要说了，老喻，你说平常关于复利的传说是谎言，又说复利很重要。那复利的真相到底是什么呢？</p>
+<p>复利的真相，和世界的几个底层约束有关。这五个真相分别是：</p>
+<ol>
+<li>宇宙被随机性主宰；</li>
+<li>连续性很难实现；</li>
+<li>世界是不均匀的；</li>
+<li>现实是非线性的；</li>
+<li>回报是不对称的。</li>
+</ol>
+<p>我们一个一个来讲。</p>
+<h2 id="真相1：宇宙被随机性主宰"><a href="#真相1：宇宙被随机性主宰" class="headerlink" title="真相1：宇宙被随机性主宰"></a>真相1：宇宙被随机性主宰</h2><p>未来是极度不确定的。</p>
+<p>并不存在一个清晰的轨迹，让你像爬坡一样每天进步一点点。</p>
+<p>“复利思维”为什么看起来如此有吸引力呢？</p>
+<p>因为“复利”制造了一种虚幻的确定性。</p>
+<p>我们在工作、生活、投资中，都有一种潜在的冲动，寻求确定性。</p>
+<p>在漫长的进化过程中，人类的大脑逐渐变成了一部预测机器，它通过对过去的总结和对未来的想象，来分配资源，采取行动。</p>
+<p>但可惜的是，人类大脑中的确定性，跟现实是两码事儿，现实并不会按照人类预测的那样展开。</p>
+<p>早在上个世纪，物理学家爱丁顿就说：</p>
+<blockquote>
+<p>近年来，物理学领域中某些最伟大的成就被公认为源于统计学法则，而不是依靠于因果律。而且，迄今作为因果关系所接受的某些重要的法则经过仔细研究后，可以认为均是具有统计学特征。</p>
+</blockquote>
+<p>随机性，是宇宙的底层主宰，这是这个世界的出场设置，哪怕掌握了规律，也难以完全逃脱随机性的影响。</p>
+<p>所以，即便是你觉得很确定的事儿，假如你不能在这个“确定性”之前，加上一个概率数值，那么这个确定性就可能成为一个大坑。</p>
+<p>这一点，我们在贝叶斯定理那一讲也强调过。本质上，人类只能知道相关性，而不能确定100%的因果。</p>
+<p>当你过分依赖所谓确定性，那一点点被你忽视的“不确定性”，可能会让你的预期，全盘落空。</p>
+<p>而这，正是平常人们说起复利这一概念时的幻觉和陷阱。</p>
+<h2 id="真相2：连续性很难实现"><a href="#真相2：连续性很难实现" class="headerlink" title="真相2：连续性很难实现"></a>真相2：连续性很难实现</h2><p>复利有一个重要的假设，那就是连续性。</p>
+<p>前面提到，复利的幻想一个是：只要你每年赚26%，连续十年，你就可以赚10倍……</p>
+<p>然而，连续性太难了。</p>
+<p>对于随机游走的股市投资而言，“连续性”更难实现。别说连续十年每年回报达26%，就连年化10%，也没多少人做到。</p>
+<p>2020年有人根据万得（Wind）的数据分析，整个中国市场只有33位基金经理，连续十年做到年化收益率超过10%。（《每日经济新闻》2020年统计）</p>
+<p>过于简化的复利，极大地高估了“连续性”。</p>
+<p>投资圈有句话：一年翻一倍，容易；三年翻一倍，难。</p>
+<blockquote>
+<p>时间并不总是复利的朋友，更多时候是敌人。</p>
+</blockquote>
+<p>宇宙是熵增的，趋向无序，我们这个世界的资源也是有限的，所以复利的增长，总会遭遇一道看不见的屏障。</p>
+<h2 id="真相3：世界是不均匀的"><a href="#真相3：世界是不均匀的" class="headerlink" title="真相3：世界是不均匀的"></a>真相3：世界是不均匀的</h2><p>复利的神话里，还包含着一个假设：这个世界是均匀的。</p>
+<p>所谓均匀，这里的意思是，赚钱的机会也好，亏钱的风险也好，不会集中出现，而是在时间上平均分布。</p>
+<p>然而，现实不仅是不均匀的，而且连“不均匀”的那部分，也很不均匀。</p>
+<p>据晨星（Morningstar）等多个权威机构统计：从2008年11月27日到2018年11月27日，标普500指数涨幅达202.16%。</p>
+<p>但是，如果错过了其间涨幅最大的20个交易日，收益就只剩下31.15%。如果错过这20天，就错过了10年超级大牛市。问题是，你无法知道到底是哪20天。</p>
+<p>反之，最糟糕的日子，也是密度极大，破坏性极强。</p>
+<p>均匀性的幻觉，对追求稳健的聪明人，也会造成伤害。</p>
+<p>许多聪明人都是一直在赚钱，而且赚得貌似非常稳定，但却会在某一把因为极小概率事件的发生而亏掉所有的利润。</p>
+<p>我有一个投资人朋友，有一次在朋友圈发出感慨：</p>
+<blockquote>
+<p>在市场中想赚高确定性的小钱往往是很危险的，因为一旦确定性没有自己想得那么高，可能就会亏一大笔钱。</p>
+</blockquote>
+<h2 id="真相4：现实是非线性的"><a href="#真相4：现实是非线性的" class="headerlink" title="真相4：现实是非线性的"></a>真相4：现实是非线性的</h2><p>我们从小接受的教育，最主要的一条，就是“付出就有回报”。这是一种深入骨髓的“线性思维”。</p>
+<p>但真实的世界是非线性的。付出未必有回报，种瓜可能得豆，更可能是一无所获。</p>
+<p>一家餐馆比另外一家餐馆的味道好10%，但客户可能多一倍，利润则可能多十倍。二八法则、马太效应，无情地支配着我们的世界。</p>
+<p>我们自小形成的“线性思维”，还会影响我们对复利的理解。</p>
+<p>实际上，复利是一种非线性的回报曲线，但是，因为我们的“线性思维”，有时候会机械地、一厢情愿地试图画出完美的复利曲线。</p>
+<h2 id="真相5：回报是不对称的"><a href="#真相5：回报是不对称的" class="headerlink" title="真相5：回报是不对称的"></a>真相5：回报是不对称的</h2><p>说到这里，很多人也许会赞同，现实的确是起起伏伏的。但很多人可能没意识到的是，更大的难题还在于，起伏之间并不对称。</p>
+<p>我们知道，复利的计算是一个乘法。但是，连续相乘的，可不是收益，还有亏损。假如我们今年的资产下降了50%，那么明年要上涨100%才能够回来。</p>
+<p>你看，涨和跌之间并不对称。并不是说，我今年跌50%，明年涨50%就可以打平。更要命的是：即使今年涨100%，甚至涨1000%，明年跌一个100%，就全部归零了。</p>
+<p>所以，在“不对称”的现实中，复利的实现，首先必须做到：不等太大的利益，都不值得冒“彻底爆掉”的风险。</p>
+<p>不然，复利的非法链条，就会彻底断掉。</p>
+<p>稍微总结一下，对“随机性”的漠视，对“连续性”的幻觉，对“均匀性”的幻想，以及忽视“非线性”和“非对称”的风险，造成了复利的谣言，并且经常成为财富的致命杀手。</p>
+<p>在上面这五个“不确定性”杀手的围剿之下，复利的谣言走不了多远，就粉身碎骨了。</p>
+<p>的确，仔细想想，我们总在说复利，身边有多少人实现了复利？</p>
+<p>我曾经有套房子，在20年内涨到十倍，听起来还可以吧？但是，仔细一算，年化回报率也“不过”是12%左右。</p>
+<p>这还是在一线城市，赶上了房地产大牛市。而且之所以能够持有那么久，享受到复利，还因为房子的流动性不像股票，不然可能早就卖掉了。</p>
+<p>既然复利这么罕见，为什么大家还是总在说呢？</p>
+<p>在我看来，最主要的原因是：人们试图用勤奋来替代思考。</p>
+<p>希望每天进步0.1%，进而叠加出惊人的复利，与其说是一种幻想，不如说是一种懒惰，不是行动上的懒惰，而是智力上的懒惰。复利传说，其实是一种反智的智力贩卖。</p>
+<p>为什么呢？</p>
+<p>因为要获取世俗上的成功，除了运气之外，你需要两个步骤：</p>
+<ol>
+<li>做正确的事情；</li>
+<li>把事情做正确。</li>
+</ol>
+<p>复利神话过于强调第二点，让人忽略了第一点。</p>
+<p>例如设定目标，其基本理念是对的。但是，假如你在一件错误的东西上坚持，做得再正确也没用。</p>
+<blockquote>
+<p>在捕鼠夹上雕花，你做得再极致也买不到大象。</p>
+</blockquote>
+<p>如果你没有方向，任何方向的风都是逆风。</p>
+<p>人生也许像是滚球球，可惜不是顺着坡往下滚，而像西弗斯那样，往山上推雪球。而且，这雪球随时可能砸下来。</p>
+<p>指数型的崩溃，往往比指数型的增长容易得多。</p>
+<p>所以，即使我们能够有足够耐心慢慢变富，慢慢成长，也不能令“变富”和“成长”因为“慢慢”而变得容易。</p>
+<p>忘掉复利神话吧。</p>
+<p>人生就像逆水行舟。可以期待复利，但也请理解复利实现之难。</p>
+<p>然而，既然复利从数学意义上是存在的，假如我们能够意识到复利的本质和挑战，是否可以设计出自己的人生复利呢？我们下一讲再讲讲。</p>
+<p>我是老喻，我们下一讲再见。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>复利的重点，不止是努力、坚持和重复，而是先找到值得重复的事，然后才是通过重复实现指数增长。</li>
+<li>真实世界中，复利的实现存在五大障碍：宇宙被随机性主宰；连续性很难实现；世界是不均匀的；现实是非线性的；回报是不对称的。</li>
+<li>人生也许像滚球球，可惜不是顺着坡往下滚，而是像西弗斯那样，往山上推雪球。而且，这雪球随时可能砸下来。</li>
+</ol>
+<h2 id="课程导航"><a href="#课程导航" class="headerlink" title="课程导航"></a>课程导航</h2><ul>
+<li>上一期：07 四维：为什么决策高手都是贝叶斯主义者？</li>
+</ul>
+<h2 id="精选留言"><a href="#精选留言" class="headerlink" title="精选留言"></a>精选留言</h2><h3 id="Keiko·璟"><a href="#Keiko·璟" class="headerlink" title="Keiko·璟"></a>Keiko·璟</h3><p>指望所谓“复利”发家致富，纯粹是让人自我安慰的心灵鸡汤。</p>
+<p>每当听人说用复利挣钱，就会想起一个关于鸡蛋的故事：从前有个人得到一个鸡蛋，但他没有吃。他想等这个鸡蛋孵出小鸡，小鸡长大后，再生出好多蛋，那些蛋再孵出小鸡，由此鸡生蛋、蛋生鸡，就发大财了。他这么想着，不小心，鸡蛋掉地上摔碎了。这个人非常难过，因为他损失的不是一个鸡蛋，而是一笔巨额的财富。</p>
+<p>其实指望复利致富和指望一个鸡蛋发家致富是一样不靠谱的，是不肯接受世界不是确定的事实。正所谓花无百日红，潮起又潮落。真实世界根本就没有持续的长期高速增长这件事，这是根本不符合自然规律的。</p>
+<p>复利效应，就像“只要努力就会成功”一样，看起来没毛病，其实都是战略上懒惰的口号。你要懂得，你有你的计划，而世界另有计划。</p>
+<h3 id="黄泊淳-Only"><a href="#黄泊淳-Only" class="headerlink" title="黄泊淳 Only"></a>黄泊淳 Only</h3><p>想要透过复利，让人生的财富或成就有翻倍的成长，就需要好好思考很多复利的特性。</p>
+<p>这讲喻老师，帮助我们拆掉复利这个糖果的包装，看到里面还是有一些坑，需要考虑清楚。</p>
+<p>每天进步一点点，要成功的充分条件是，这件事情值得长期主义，超过了一个趋向好的公司的投资或上班，那结局往往不是指数增长。</p>
+<p>再来复利的五个误区，最让我感受深刻的总结是，人类很想追求因果，这又让我们想去画、去解因果。因为世界的复杂，想要找到绝对的因果，感觉就是妄念。</p>
+<p>不如，一直有品质的思考，什么是做正确的事，好好努力，那增长自然成。</p>
+<h3 id="方兴（阳光茅草）"><a href="#方兴（阳光茅草）" class="headerlink" title="方兴（阳光茅草）"></a>方兴（阳光茅草）</h3><p>为什么复利是一个谎言？</p>
+<ol>
+<li><p>自身认知和智慧的局限</p>
+<p>巴菲特和查理·芒格和普通人不同，就是他们能够看清楚事物本质的水平，而这一点是他们长期每天坚持学习阅读、提升自己智慧的结果，带着这样的智慧，能够让他们在投资的时候，更审慎地判断，能够在难得的投资机会出现时出手。但问题是，这个世界上没有几个人能够有这样的认知和智慧，能够辨别这样难得的投资的机会。</p>
+</li>
+<li><p>世界的不确定性</p>
+<p>这个世界有着极大的不确定性，数学是一门非常神奇的学科，因为它所研究的其实是这种世界和命运的不确定性。真理往往掌握在少数人的手里，我常常觉得为什么数学没有被广泛用于投资，更是一件非常遗憾的事情。不能运用数学来保持长期复利投资，就如同没有X光而能够看清病人的五脏六腑一样，其实是艰难而不可能的任务，能够运用数学来投资获得财富，这也是需要福报的，要有福之人才 能够得到这样的财富，而西也是非常矛盾的。</p>
+<p>这个世界是我们内部世界的投射，我们内部世界会为我们吸引所有外部世界而来的一切，因此，当我们对于自己有更多投入更多的投资，让自己成为一个更有智慧、更加热爱生活、享受生活的人，它也许会改变我们对于这个世界的看法。</p>
+<p>比如说我们在投资的时候真的需要实现长期复利的增长吗？我们真的需要那样级别的巨大财富吗？以巴菲特来说他富甲天下，投资智慧超乎常人，然而他的爱情生活并不美满，由于他过于专注自己的工作在他孩子小的时候，他也并没有给予孩子很多陪伴，他的第一个太太就曾经劝自己的孩子说，你们要认清自己的爸爸是什么样的人，这方面不要对他有太多的期望。</p>
+<p>从这个意义上说投资复利的不可能，其实也许是宇宙给我们的一个提醒，那就是也许美好的人生是需要平衡的，对于财富我们不要太过于贪婪，只有那?有心?，在吴?老师的世界文明课程里就提到过，这个世界，其实宝贵和永远不会磨灭的就是文明的进程，和那些为了世界文明所贡献的人，从这个角度来说，投资自己的智慧，让自己最大程度的接近智慧和文明，以及创造和推进文明的进程，可以给我们带来人生的大喜乐，而在这个过程当中，也许我们就会不知不觉的吸引更多的财富以及平衡无悔的人生。</p>
+</li>
+</ol>
+<h3 id="李慕"><a href="#李慕" class="headerlink" title="李慕"></a>李慕</h3><p>复利的神话里，还包含着一个假设：这个世界是均匀的。</p>
+<p>所谓均匀，这里的意思是，赚钱的机会也好，亏钱的风险也好，不会集中出现，而是在时间上平均分布。</p>
+<p>然而，现实不仅是不均匀的，而且连“不均匀”的那部分，也很不均匀。</p>
+<p>学到以上这段内容，我不禁对复利的“均匀”假设有了更深的理解。</p>
+<p>在复利的理想状态下，我们仿佛可以通过持续的小努力，稳定地积累出巨大的成果。然而，现实的“不均匀”揭示了一个残酷的真相——无论是机会还是风险，它们往往是以突发和集中的方式出现，完全无法按照期待均匀分布。</p>
+<p>即使是在相对确定性的领域，如“个人成长”和“终身学习”，这个不均匀的规律依然存在。</p>
+<p>我们可能持续学习数年，但并不是每一门课程、每一节课都会带来启发。有时在APP的学习中，某一门课的某一节内容，才真正与自己的需求和问题契合，带来深刻的启发，而其他部分则不一定。</p>
+<p>学习的回报并不总是线性的，它也是一个不均匀的积累过程。</p>
+<p>这种不均匀的规律，恰恰提醒我们不要迷信稳定增长的神话，而是需要学会在学习和成长中识别那些关键的、具有高回报的时刻和内容。真正的成长或许并非靠单纯的复利累积，而是在不确定性中寻找那几次关键的“跃迁”点，把握住那些少数真正能产生深远影响的机会。</p>
+<h3 id="迥风奔跑的兔子"><a href="#迥风奔跑的兔子" class="headerlink" title="迥风奔跑的兔子"></a>迥风奔跑的兔子</h3><p>扎心了，我就是那个期待着复利的人。“复利思维”带来了一定确定性——仿佛一切只要持续努力，就有不错的结果。却无视现实难度和不确定性。</p>
+<p>比起“坚持和努力”，更重要的是做正确的事。我对的“标”，坚持定投才有意义。</p>
+<h3 id="补充留言"><a href="#补充留言" class="headerlink" title="补充留言"></a>补充留言</h3><p>昨天学习的贝叶斯决策系统今天就能用上了。</p>
+<p>初始信念（先验概率）→大胆行动（获得新信息）→更新信念（后验概率）。</p>
+<p>初始信念（复利思维——用正确的方法做正确的事情就会有好结果）；获得新信息（复利思维的不确定与执行的困难）；更新信念（注重前提——正确的事情，正确看待“复利”神话）。</p>
+<p>虽然复利只是“美好的愿望”，但我愿意相信，找到“正确的事情”，坚持去做，即使后面没有想象中那么好，结果也不会太差。</p>
+<p>Aim for the moon. If you miss, you may hit a star.</p>
+<p>期待后续学习能不断更新观念，进行迭代。</p>
+<h3 id="七色黑白"><a href="#七色黑白" class="headerlink" title="七色黑白"></a>七色黑白</h3><p>但凡以确定性思维来理解复利效应，几乎都是错误的模型。跳跃的，断崖式的，幂率分布的，只有不断跳舞才能留在原地的。或许这些才是世界的真相，而人类被困在时间里，所见一切都不是本质。</p>
+<h3 id="爱艺术的李达拉"><a href="#爱艺术的李达拉" class="headerlink" title="爱艺术的李达拉"></a>爱艺术的李达拉</h3><p>今天的话题的确有些震碎我对于复利这一概念的理解。仔细想想，说的真的很有道理。过于追求复利反而会让我们陷入其中，纠结于那些自我感动和付出，反而失去判断这是不是正确的事情了。</p>
+<p>果然，人还是要多出去看看，多思考，尊重世界的随机性，接受世界是不均匀、回报是不对称的。在此基础上去找去做那些正确的、能为别人或者世界带来价值的事情，这个过程中减少all in的行为，多增加在行动中的思考。在这些事情上投入一定的资源，然后静静等待。</p>
+<blockquote>
+<p>以上留言由作者筛选显示</p>
+</blockquote>
+<hr>
+<p><a href="/book/decision-algorithm/007/">← 007｜四维：为什么决策高手都是贝叶斯主义者？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/009/">009｜真正获得复利：怎么用对复利公式？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>061｜避免无效努力：为什么重复再多也未必成功？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》061：避免无效努力：为什么重复再多也未必成功？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="061｜避免无效努力：为什么重复再多也未必成功？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/061/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》061：避免无效努力：为什么重复再多也未必成功？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:45.663Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/061/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '061｜避免无效努力：为什么重复再多也未必成功？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">061｜避免无效努力：为什么重复再多也未必成功？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">061｜避免无效努力：为什么重复再多也未必成功？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>《老喻·决策算法100讲》</p>
+</blockquote>
+<h2 id="老喻：决策算法100讲"><a href="#老喻：决策算法100讲" class="headerlink" title="老喻：决策算法100讲"></a>老喻：决策算法100讲</h2><p>你好，我是老喻，欢迎来到《决策算法》课。</p>
+<p>关于成功，有一种相信合理却又存在误区的说法：<strong>单次成功率只有1%的事，重复100次后成功率可达63.3%。</strong></p>
+<p>一看很励志，也有数学依据。然而，为什么在现实生活中，有很多事儿，我们尝试得越多，最后还是失败？</p>
+<p>如何看待这种概率计算与实际行动的差异？</p>
+<p>我们先从概率的角度来算一下。</p>
+<p>用数学语言来描述，上面意思是：做一件事情的成功率是1%，重复做100次，至少成功1次的概率是多少？</p>
+<p>计算这个概率，我们要通过公式，至少成功一次，反之则是一次都不成功，也就是每次都失败。</p>
+<p>所以，只要算出100次都不成功的概率，然后用100%减去这个数值就可以了。</p>
+<p>具体计算如下：</p>
+<ul>
+<li>如果成功率是1%，意味着单次失败率是99%；</li>
+<li>按照反复尝试100次来计算，那100次每次都失败的概率是99%的100次方，约等于37%；</li>
+<li>所以，我们的成功率应该是100%减去37%，即63%。</li>
+</ul>
+<p>63%，是不是很不错了。一件成功率本来只有1%的事儿，反复尝试，成功率竟然上升到63%，已经可以说是奇迹了。</p>
+<p>到目前为止，一切看起来都还好。</p>
+<p>但是你要是仔细琢磨，可能会生出疑惑，在现实中，许多事情成功率远高于1%，而在重复的次数还不止100次，为什么成功还是那么难呢？</p>
+<p>真正的问题就在于，这个概率计算的前提是：<strong>每一次尝试都是独立的。</strong></p>
+<h2 id="一、独立性假设"><a href="#一、独立性假设" class="headerlink" title="一、独立性假设"></a>一、独立性假设</h2><p>我们先来温习一下，上面的计算涉及的概率的“乘法定理”。</p>
+<p>如果两个随机事件A、B是否发生不影响，就认为它们是独立的。这时，它们同时发生的概率等于它们各自发生的概率的乘积，即：</p>
+<p><code>P(A∩B)=P(A)·P(B)</code></p>
+<p>举个例子：你掷一个标准的硬币随机两次，两次都朝上的概率是 <code>1/2 × 1/2 = 1/4</code>，这里特别需要强调一个词：<strong>独立性</strong>。</p>
+<p>只有当两个事件是独立的，才能够通过乘法定理，计算二者同时发生的概率。</p>
+<p>独立性意味着什么？</p>
+<p>让我们通过下面的例子说明，这个例子来自一本《牛津通识课：概率学》：</p>
+<p>假设在一所大学的哲学专业中，一半的学生是女生，并且1&#x2F;5的学生学习工程科学。随机选择一个学生，请问这个学生是女生的概率是多少？</p>
+<p>一听到这个问题，许一扇最简单的问学可能会想：既然这个学生是女生的概率是1&#x2F;2，这个学生学习工程科学的概率是1&#x2F;5，那么这个工程学的概率不就是 <code>1/2×1/5=1/10</code> 吗？</p>
+<p>然而，这是错的。因为传统上来说，“是女生”和“学习工程学”并不是两个独立的事件，相比男生，女生一般更少选择学习工程学。</p>
+<p>再举一个例，整体上，波士顿女生有1&#x2F;5的学生学习工程科学这没错，可是单独考虑女生的女生，女生学习工程科学的比例，大概率远低于整体值1&#x2F;5。</p>
+<p>这个时候，我们再回到乘法定理的定义，就知道正确的计算应该是：</p>
+<blockquote>
+<p>“这个学生是女生的概率”与“女生学习工程学的概率”的乘积。比如，如果女生学习工程学的概率是1&#x2F;6，那么计算结果是 <code>1/2×1/6=1/12</code>。</p>
+</blockquote>
+<p>由于“女生学习工程学的概率”来自1&#x2F;2的独立性，所以我们还可以这样算，如果我们以这整体算不出具体的值。但可以肯定的是两个事件之间并不独立，故这种二个学生，是女生是女生学习工程学的概率要小于1&#x2F;10。</p>
+<p>现实中，各国因素彼此关联，比如“比例”与“专业选择”，或行业背景与“市场需求”，都可能相互影响。这种关联，或独立而相互牵制，所以在实际决策中，若直接套用概率理论并直接套用到现实中，也会出现偏差。</p>
+<h2 id="二、重复努力真的有效吗？"><a href="#二、重复努力真的有效吗？" class="headerlink" title="二、重复努力真的有效吗？"></a>二、重复努力真的有效吗？</h2><p>绕了一圈，回到我们的主题，“重复努力”能让人成功的概率更大吗？</p>
+<p>考虑到“乘法定理”还需要“独立性”这个条件，答案并不一定。</p>
+<p>一个人重复做一件事100次，这100次是独立的吗？现实中很可能并不是。所以，我们不能简单地套用概率的乘法定理。</p>
+<p>对比，我们可以用一个有100面骰子的骰子来打比方。这个骰子每一面的数字是从1到100，假如投掷100次，其中数字为88，就算成功，成功率是1%。</p>
+<p>假如这是一种“游戏”，重复投掷、重新使用概率的乘法原理，当然重复100次，至少成功一次的概率约为63%（100次-37%）。这就是重复努力可以成功的概率状态。</p>
+<p>但是，玩儿这样一个掷骰子游戏，有两个基本的前提：</p>
+<ol>
+<li>你确实有一个标准的100面骰子，包含了你想要的成功数字88；</li>
+<li>你每次都能随机地掷出骰子，每一次的结果都是独立的。</li>
+</ol>
+<p>可是，如果你的骰子没有100面，例如只有50面，并且你这50面中，根本没有数字88呢？再如果，你的这个骰子，重心分布有问题，导致你掷出的结果不断偏低，比如1～50出现的概率，远大于51以上的大数概率。</p>
+<p>那么，不管重复多少次，你都得不到88，你成功的概率是0。</p>
+<p>为了更好地理解为什么现实中会失败，我把抽象的“概率—独立性”问题，翻译成一个真实的创业场景。</p>
+<p>假如你想开火锅店，你想通过重复努力来找到成功之路。但是很有可能你不知道自己到底需要哪些基本前提：</p>
+<ol>
+<li>你或者合伙人是否有餐饮经验？如果你是一个餐饮新手，没有任何成功的经验，又如何保证经营一家餐饮店？所以，不能停留在“不断尝试”，而要努力学习、积累经验。</li>
+<li>你可能会说，海底捞的老板也不会做火锅，后来才成功了。那种偶然性，不是你能简单复制的。它是无数次试错、重大机会、团队能力、非随机因素的结果。</li>
+<li>你不能总在一个地方挖，而是要把牌子里的各个角落都挖到。对应到现实中，相当于你在尝试所有的可能性。然而现实会更复杂：你如果重复在同一个方向上努力，却是同样的结果。</li>
+<li>你还要明确地试错。你要找寻一个算法，利用即时反馈，帮助你从可能性最大的地方开始，而不是每次都盲目地重复。</li>
+<li>你要让结果能被改进。简单来说，就是不断拧紧不可能的地方，逐渐缩小搜索范围，并在这一过程中不断获得更多数据。</li>
+</ol>
+<p>物理学家波利·卢、何可认为，只有不断降低成本和扩大前面的5点：“专家就是一个很窄的领域把所有可能的范围清的入。”</p>
+<p>只有当你的重复努力足够聚焦，并且是在一个个地排除其他失败的可能性，重复努力才能让你逐步成功。</p>
+<p>说到这里，我的脑中联想到一个模型，这就是大家都熟悉的**“精益创业”**。</p>
+<p>这个模型，其实也是一直通过重复努力，减少可变的成本，把小规模事件变成大规模事件的方法。</p>
+<h2 id="三、精益创业的三个阶段"><a href="#三、精益创业的三个阶段" class="headerlink" title="三、精益创业的三个阶段"></a>三、精益创业的三个阶段</h2><ol>
+<li><strong>价值假设</strong>：拥有一个洞见，发现一个秘密，但还是一个小规模成功的种子。</li>
+<li><strong>价值验证</strong>：快速推出一个最小化产品，通过重复的尝试、反馈、迭代，让价值假设从小概率变成大概率。在这个阶段，要调整小投入、快速犯错，聪明犯错。</li>
+<li><strong>价值复制</strong>：迭代后的价值假设已经被验证是大概率成功的，确认可以进一步复制产品规模化，进入“规模复制”的阶段。</li>
+</ol>
+<p>这套思路也适用于个人成长：投入越小，反馈越快，越能迅速调整方向，不要用一次投入就把全部人生押上。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>最后，我们来总结一下这一讲的内容。</p>
+<p>“马太效应”如同：如果有人认为数学并不简单，只是因为他还没有理解生活有多复杂。</p>
+<p>用数学来模拟工作和生活，会非常有启发，但它有背后的假设，因为自然科学和社会科学之间的某些二元性，这种差异会相互感染。</p>
+<p>我们今天对一个广泛的“重复努力”的概率来进行了解析。我们的结论是，并不是所有的努力都能有回报。</p>
+<p><strong>如果你的骰子是，重复均等你那次也会成功。但如果你的骰子不均匀，墨厚也成天，你可能成功在起点等其他，当然，重复成功和产出。</strong></p>
+<p>我们要的并非简单重复，而是能让成功概率不断提高的努力。</p>
+<p>事实上，假如一个成功未效，就不是一个笨办法。</p>
+<p>平凡人的确可以做不平凡的事情，但这背后，一定有某个要素上，发现了某个算法，实现了不凡。只有这样，重复努力才可以让成功的概率越变越大。</p>
+<p>换而言之，自目重复不一定是成功的。只有在夯实条件充分理解、做好尝试方法的时候，并在过程中有效排除错误，不断优化反馈时，重复努力才真正能把小概率事件变成大概率事件。</p>
+<p>以上就是这一讲的全部内容，我是老喻，我们下一讲再见。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>只有当你的重复努力足够聚焦，并且是在一个一个地排除其他失败的可能性，重复努力才能让你逐步成功。</li>
+<li>并不是所有的重复努力都有回报。如果你的骰子是均匀的，重复再多次也会成功；但如果你的骰子不均匀，重复努力也可能在起点等候，当然，努力和产出。</li>
+</ol>
+<h2 id="用户留言"><a href="#用户留言" class="headerlink" title="用户留言"></a>用户留言</h2><h3 id="Christy"><a href="#Christy" class="headerlink" title="Christy"></a>Christy</h3><p>稻盛和夫有句话：“最诚实的成功方法，就是保持对一件事情的专注，不停地重复，不停地尝试，只要看透了时间的复利效应，每个人都可以是一个小领域的佼佼者。”</p>
+<p>聚焦自己的长期，摸索和调整仍然是自己擅长的事情上，然后把它做到极致。人的价值就来自于此。重复是一种力量，带着思考重复做事情，通过不断的反馈找到成功的路径，持续改进。你的时间和精力都是有限的，与其不断在多个方向尝试，不如在一个深度里做到极致。</p>
+<p>把自己当成一件作品反复打磨，投资自己才是持续积累的唯一手段。同一件事情，不断的只有自己，打磨的越好，才能有持续价值。有个能够持续发展且增长的职场投资是一种积累，可以结合核心技能换取投入到下一个阶段。重复是一种必然，不断训练自己，掌握高效的工作方法，最终一事无成。</p>
+<h3 id="左星星"><a href="#左星星" class="headerlink" title="左星星"></a>左星星</h3><p>“重复”指的“坚持”与“或者”冰海石”的故事，似乎只要坚持下去，终有一天能见到曙光。然而，现实往往干错与规律不符，重复可能让我们失望，甚至在失败的关键时刻，洞见人生终极，开启新路径。</p>
+<p>行为主义反馈告诉他是常见的问题，如果没有从失败中提炼新的信号，并基于反馈调整行动，就不会有真正的进步。但重复不会自动产生结果，重复努力是有前提的：基础的判断、稳定的执行、及时复盘，才能够让人越积越强。</p>
+<h3 id="断牛"><a href="#断牛" class="headerlink" title="断牛"></a>断牛</h3><p>有一种观点认为单次成功率1%的事，重复100次成功率可达63.3%，现实中许多成功率高于1%的事情却100次都未成功。概率乘法定理需要事件相互独立，现实中许多事情不独立，事件互相拖累。重点在于独立性。</p>
+<p>成功要基于：</p>
+<ol>
+<li>明确目标与方向；</li>
+<li>首要要搞清楚、具体、可量化的目标，知道自己真正想达成什么；</li>
+<li>先设定一个可实践的小目标；</li>
+<li>坚持专注与坚持，不断尝试，及时复盘；</li>
+<li>把“成长”从一句口号变成实际行动。</li>
+</ol>
+<h3 id="Keiko-璐"><a href="#Keiko-璐" class="headerlink" title="Keiko.璐"></a>Keiko.璐</h3><p>成功并不是不努力，也不是努力得足够多就可以成功。是需要抓住正确的事，且做到极致，才可能走向成功的阶梯。</p>
+<p>坚持做正确的事，是要有目标和成功的可能性；自己在做努力且坚持，但结果一点也不理想的简单重复，可能是要调整思路和探索未知。去帮助地突破，在每一次的重复中不断改进和提升；同时要降低试错成本，注重主动反馈，避免同样的错误；最后不断迭代，轮作用一次作为方法上的改进来替代。</p>
+<h3 id="晨霞"><a href="#晨霞" class="headerlink" title="晨霞"></a>晨霞</h3><p>对于自己第一次听到重复努力的话，感觉很有道理。如果我一开始就没有找到成功的底层规律，只是重复做同样的事情，可能只是徒劳。</p>
+<p>努力与重复是需要建立在成功的底层逻辑上的，只有不断修正，才能更大概率获得成功。对于行为主义来讲，成功是可以从反馈中得到的；对于个人来说，则需要把失败看成数据，而不是看成否定。</p>
+<h3 id="黄圆圆"><a href="#黄圆圆" class="headerlink" title="黄圆圆"></a>黄圆圆</h3><p>避免“无效努力”这让我想到自己看老喻讲的一个故事。</p>
+<p>有这么一个姑娘，把一只鸡蛋和一只卷筒，分别放到两个装水的玻璃杯里面。把鸡蛋装到杯子里，因为底部是空心的，它一直有机会向下沉；把卷筒放进去，沿着固定轨迹滚到杯底。当然鸡蛋会在某种情况下中止，卷筒是无法下沉的，说明同一个东西，可能会受到不同因素的影响。</p>
+<p>我们要把自己放在一个“在玻璃中”辛苦所有的可能性里，并不断做出反馈和优化，而不是做一个“重复努力”的有毒方案。</p>
+<h3 id="阿繁达1043"><a href="#阿繁达1043" class="headerlink" title="阿繁达1043"></a>阿繁达1043</h3><p>信用一句来宇老师的话：“商业以利益为中心，人性以意为中心。人生进福万金利益逻辑。”其实是很多人看到行为主义被数据驱动这件事，看到别人踏步的增长曲线，却没有去思考算法的应该是不应该继续做，甚至进行一个反馈。</p>
+<p>正如牛老师说的：“独立思考建立在认知中产生，或决定就是一件事。”有了清晰的方向，我们才能知道重复的意义是什么。如果没有目标、没有反馈、没有改变路径，重复只会放大错误。</p>
+<h3 id="李杰"><a href="#李杰" class="headerlink" title="李杰"></a>李杰</h3><p>为什么要求被称为事件的独立性呢？因为相关事件的次数要比独立事件的次数少，如果是简单的重复，我们在刻意坚持、刻意做同一件事，成功的概率就会逐渐下降。只有一次次相对独立的尝试，才能形成真正的复利。</p>
+<h3 id="山峰"><a href="#山峰" class="headerlink" title="山峰"></a>山峰</h3><p>在中间历史上，运用成功的典型是曾国藩。具体如下：</p>
+<ol>
+<li>曾国藩自知之明，知道自己是一个笨拙的人。笨拙的人没有智商高，因此比别人更应当，渐渐的从小处接受并锻炼，因依仗才能特别强；笨拙的人不像聪明人，遇到问题只错过过去，因此不管先难。</li>
+<li>曾国藩的学习方法。不求懂一遍，不求下一句。不求沧沧过本，不锻一不松，不夸观一天天学什么。只讲应不足，不懂什么书，十二段，一点一滴，积累一生。只有每一步踏实了，才能不断向前。</li>
+<li>曾国藩一生只做一件事，故不打马虎。他曾一生专于从无到有、无疑至有，慢慢地从一个小处做起，才有了大的成就。</li>
+</ol>
+<h3 id="Todd"><a href="#Todd" class="headerlink" title="Todd"></a>Todd</h3><ol>
+<li>你知道骰子里有一璞黄金。也就是说，在你的骰子里有隐藏的价值，你只要不断尝试，就能把它找到。但如果你的骰子本身不均匀，重复再多也没有意义。</li>
+<li>这套理论可能很实用，但如果你无法确定自己的成功路径，就要先明确目标，找到能量点。</li>
+<li>你不能总在一个地方挖，而是要把牌子里的各个角落都挖到。现实中要根据反馈及时换方向。</li>
+<li>你还要明确地试错。你要从失败中找到成本，不能让错误成为沉没成本。</li>
+<li>你要让结果能被改进。把成功的经验固化，把失败的原因记录下来，持续优化。</li>
+</ol>
+<h3 id="无敌虫虫"><a href="#无敌虫虫" class="headerlink" title="无敌虫虫"></a>无敌虫虫</h3><p>避免无效努力的方法，是要有良好的反馈系统，根据反馈进行调整。</p>
+<p>不得不说的是，我当年高考刷题的情形，真让人大头！每天刷题，很努力，但是漫无目的的去重复，结果真的没有多少作用。缺少有效反馈和目标路径，努力就只是努力，虽然可能比不努力好一点。</p>
+<h3 id="FF"><a href="#FF" class="headerlink" title="FF"></a>FF</h3><p>数学的复杂性是可控的，但生活的复杂性往往是不可控的。所以生活的真相远比数学更难，充满不确定性和黑天鹅，但可通过即时评估去战胜边界，在边界中找出可能出现的盲点，不断的试错，重新审视模型，换位挖掘，当然也要考虑挖掘累计次数的成本和宝贵的价值，价值大于成本就是决策的核心算法。</p>
+<p>数学只能是工具，抽象简单的我们思考、指导方向和决策，提高我们到终点的成功率。如果最后真的成功了，那只是我们很幸运，平行宇宙的另一个你却还是失败了，因为世界没有100%似的成功率，世界本质是充满不确定性的，不同的时间空间系统都存在时效改变，刚好凑集了这些要素，所以幸运的成功了。</p>
+<h3 id="虚舟"><a href="#虚舟" class="headerlink" title="虚舟"></a>虚舟</h3><p>这没有疑问啊——你不能总在一个地方挖，而是要把牌子里的各个角落都挖到。对应到现实中，相当于你在尝试所有的可能性。然而，现实中失败概率极大的事情，却期望得到不同的结果。</p>
+<p>真正的高概率，要求不断更新周期、找到不同的答案。如果输入的信息本身有问题，就算重复也不会得到正确答案。要分辨自己是在重复努力，还是在复制错误。</p>
+<hr>
+<p><a href="/book/decision-algorithm/060/">← 060｜突破中年：怎样在重围中选择更精彩的人生？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/062/">062｜个人含金量：为什么相对优势比绝对优势更重要？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>021｜驾驭熵增：为什么世界的意义在于事与愿违？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》021：驾驭熵增：为什么世界的意义在于事与愿违？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="021｜驾驭熵增：为什么世界的意义在于事与愿违？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/021/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》021：驾驭熵增：为什么世界的意义在于事与愿违？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:45.004Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/021/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '021｜驾驭熵增：为什么世界的意义在于事与愿违？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">021｜驾驭熵增：为什么世界的意义在于事与愿违？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">021｜驾驭熵增：为什么世界的意义在于事与愿违？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>来源：老喻·决策算法100讲<br>音频时长：13分42秒</p>
+</blockquote>
+<p>从这一讲开始，我们来看一组新的决策难题：成事决策。</p>
+<h2 id="一、事与愿违是大概率"><a href="#一、事与愿违是大概率" class="headerlink" title="一、事与愿违是大概率"></a>一、事与愿违是大概率</h2><p>你下注、排队、买东西、养育孩子时，都会遇到一个问题：事情真的会按照愿望发展吗？庄子说：“以为‘总不至于’的事，一步步成了真的了。”</p>
+<p>墨菲定律常被表述为：“任何可能出错的事情，最终都会出错。”它并不是说坏事必然发生，而是说：只要错误有可能发生，在足够多次的行动和足够长的时间里，它就可能出现。</p>
+<p>当代环境也常用BANI来描述：Brittle（脆弱）、Anxious（焦虑）、Nonlinear（非线性）和Incomprehensible（难以理解）。在这样的环境里，事与愿违并不奇怪。</p>
+<h3 id="概率模拟"><a href="#概率模拟" class="headerlink" title="概率模拟"></a>概率模拟</h3><p>假设有1024个人同时抛硬币，输的人淘汰，赢家继续下一轮。连续进行10轮后，理论上会剩下一个人，因为1024&#x3D;2^10。这个人不是因为永远正确，而是因为在连续的随机事件中恰好胜出。</p>
+<p>现实社会比这个游戏更复杂：人们有不同偏好，社会有多种备选方案，许多人的行动还会相互影响。因此，“所有人都满意”的结果很难出现。正如相关论述所说：“如果众多的社会成员具有不同的偏好，而且社会又有多种备选方案，那么……不可能得到所有人都满意的结果。”</p>
+<p>不管是在宇宙之间，还是在社会中生存，“事与愿违”本身就是小概率的事儿，不如意是大概率的。</p>
+<h2 id="二、熵增与墨菲定律"><a href="#二、熵增与墨菲定律" class="headerlink" title="二、熵增与墨菲定律"></a>二、熵增与墨菲定律</h2><p>热力学第二定律告诉我们，在孤立系统中，熵不会自发减少，总是增加或保持不变；系统会趋向平衡，也就是趋向更大的无序。这就是熵增原理。</p>
+<p>一个杯子随着时间推移有可能被打碎，碎片重新自动组合成完整杯子的概率极低，但不是逻辑上的绝对不可能。熵增原理以“墨菲定律”的面貌潜入人间：维持秩序需要持续投入，放任不管则更容易走向混乱。</p>
+<p>《存在与科学》中有一段关于熵和生命的讨论，大意是：自然的无序扩散也可能创造精致的结构；当熵增加果发生在种子里，分子可能形成花朵；发生在身体和大脑中，随机的电流和分子也可能被组织成复杂的生命活动。原图引文较小，其中若干字句：【原图此处需放大复核】</p>
+<p>正如阿尔·德波顿所说：不要因为事与愿违而感到惊讶，因为这个宇宙比你大得多。</p>
+<p>电影《星际穿越》中有一句话：“墨菲定律并非指的是那些变坏的事情就会发生……而是指那些可能发生的事情，就会发生。”</p>
+<p>我们每个人都是幸运的墨菲定律的受益者。我们能够出生、成长、遇到机会，本身就是无数随机事件叠加后的结果。理性的决策，是驾驭熵增的途径。</p>
+<p>哥德尔曾在手稿里写道：“世界的意义就在于事实与愿望的分离，以及克服这种分离的努力。”</p>
+<h2 id="三、对抗熵增的积极策略"><a href="#三、对抗熵增的积极策略" class="headerlink" title="三、对抗熵增的积极策略"></a>三、对抗熵增的积极策略</h2><p>在熵增的世界里，成功往往是小概率事件。积极策略，是寻找小概率机会，并通过方法把它变成较高概率的结果。</p>
+<ol>
+<li><strong>发现小概率机会</strong>：通过提升感知能力和跨学科视角，在随机性中发现隐藏的可能性。</li>
+<li><strong>提高试验频率</strong>：通过增加试验次数、降低单次成本，将小概率事件转化为大概率事件。</li>
+<li><strong>构建熵减系统</strong>：将成功经验转化为系统化流程，打造属于自己的“发动机”。</li>
+<li><strong>大规模复制成功</strong>：通过标准化、杠杆化和多样化扩展规模，在熵增环境中保持竞争优势。</li>
+<li><strong>拥抱随机性</strong>：接受事与愿违的现实，将不确定性视为生命的意义来源。</li>
+</ol>
+<p>作者以“孤独大脑”为例：先写公众号，把偶然的内容产出变成持续运转的“发动机”；再通过标准化、做专栏、出书等方式放大影响力和收入。当孤独大脑的IP稍有影响力，作者在得到开了专栏，在中信出版社出了书，放大了影响力和收入。</p>
+<p>现在，“孤独大脑”就像作者生命中的一叶孤舟，不知道驶向何方，但未来充满各种可能性。</p>
+<h2 id="四、防守策略：冗余度与对冲"><a href="#四、防守策略：冗余度与对冲" class="headerlink" title="四、防守策略：冗余度与对冲"></a>四、防守策略：冗余度与对冲</h2><p>积极寻找机会之外，还要防止系统因一次意外而崩溃。设置冗余度，正是可靠性工程的核心。</p>
+<p>日常生活中可以有备用方案：系安全带，不把所有资产押在一个项目上，不把全部股票买成一家公司，也不要把所有鸡蛋放在同一个篮子里。多一个备份、多一条路径，成本可能增加，但系统的抗风险能力也会增加。</p>
+<p>另一个防守方法是对冲：承认预测可能错误，不把全部结果寄托在单一判断上。投资、工作和生活都可以通过分散、保险、备用现金流等方式降低单点失败的影响。</p>
+<h2 id="五、带着枷锁起舞"><a href="#五、带着枷锁起舞" class="headerlink" title="五、带着枷锁起舞"></a>五、带着枷锁起舞</h2><p>作者把“种树”作为自己的方法。树的成长有时间流，有自身节奏，也常常和人的预期不一致。人无法消除熵增，只能接受事实与愿望之间的差距，并在差距中持续行动。</p>
+<p>卢梭说：“人生而自由，却无往不在枷锁之中。”熵增，也是那些枷锁中的一种。</p>
+<p>既然如此，我们何妨带着枷锁起舞，在事实和愿望之间，去发现这个随机世界里难以捉摸的意义。</p>
+<h2 id="本讲重点"><a href="#本讲重点" class="headerlink" title="本讲重点"></a>本讲重点</h2><ol>
+<li>不管是在宇宙之间，还是在社会中生存，“事与愿违”本身就是小概率的事儿，不如意是大概率的。</li>
+<li>世界的意义就在于事实与愿望的分离，以及克服这种分离的努力。</li>
+<li>对抗熵增的积极策略是，构建一个熵减系统；防守策略是，设置冗余度和对冲。</li>
+</ol>
+<h2 id="PDF-内留言"><a href="#PDF-内留言" class="headerlink" title="PDF 内留言"></a>PDF 内留言</h2><h3 id="左星星"><a href="#左星星" class="headerlink" title="左星星"></a>左星星</h3><p>熵增（Entropy increase）是指在一个孤立系统中，熵的值不会减少，总是增加或者保持不变。这是热力学第二定律的核心内容，也被称为熵增定律。熵增定律表明，一个自然过程中，孤立系统的总混乱度（即熵）不会减少。</p>
+<h3 id="关于墨菲定律起源的留言"><a href="#关于墨菲定律起源的留言" class="headerlink" title="关于墨菲定律起源的留言"></a>关于墨菲定律起源的留言</h3><p>留言提到，20世纪中叶，美国空军工程师和航天专家爱德华·墨菲进行火箭试验，需要将16个加速度计固定在支架上。两种固定方法中，最终错误地选择了会导致安装失败的一种，试验因此失败。墨菲随后提出：如果有两种以上的方法可以执行某项任务，其中一种可能导致灾难，那么一定会有人选择那种可能导致灾难的方法。</p>
+<h3 id="李霖"><a href="#李霖" class="headerlink" title="李霖"></a>李霖</h3><p>“事与愿违”是理性决策的前提。投资、健康和保险都需要同时准备积极策略与防守策略：寻找小概率机会，也要给意外留下冗余。</p>
+<h3 id="伴听"><a href="#伴听" class="headerlink" title="伴听"></a>伴听</h3><p>人生如梦，世界上有很多混乱和不如意是不可避免的。墨菲定律提醒我们可能发生意外，而它的好处是让我们可以定性地为可能发生的事情做好准备。【原图此处需放大复核】</p>
+<h3 id="方兴（阳光芳草）"><a href="#方兴（阳光芳草）" class="headerlink" title="方兴（阳光芳草）"></a>方兴（阳光芳草）</h3><p>留言从六个角度谈熵增与小概率：世界存在随机性；事与愿违是常态；熵减需要主动投入；要提高试验次数；要把偶然经验系统化；还要给系统设置冗余。原图中部分编号后的细句较小：【原图此处需放大复核】</p>
+<h3 id="进化菌"><a href="#进化菌" class="headerlink" title="进化菌"></a>进化菌</h3><p>人生不如意十之八九。人生很贫苦，既要又要还想要，能成的就比较少。反过来想，如果事事都顺心，那不会很无聊？大部分不成，不是更让人珍惜、努力吗？墨菲定律并非指的是那些变坏的事情就会发生，而是指那些可能发生的事情，就会发生。驾驭熵增，做减熵的事情，让自己动起来。</p>
+<h3 id="Keystone"><a href="#Keystone" class="headerlink" title="Keystone"></a>Keystone</h3><p>这一讲太精彩了。熵增、熵平、熵冲、束缚，把平日经常瞥到却没有认识到的专有名词，以深入浅出的章节生动地展现出来。来到得到近五年了，每每有如醍醐般的精进与启发，就会深刻相信李笑来老师的那句话：“付费就是捡便宜。”老喻这一讲融合的知识面、含金量爆表，建议睡二次。</p>
+<h3 id="学习机器"><a href="#学习机器" class="headerlink" title="学习机器"></a>学习机器</h3><p>随机世界的决策框架之防守策略：1.设置冗余度；2.对冲。留言还谈到期货和对冲的作用：用相对低的成本，为不可预测的风险准备备用方案。【原图此处需放大复核】</p>
+<h3 id="李察酒"><a href="#李察酒" class="headerlink" title="李察酒"></a>李察酒</h3><p>积极策略篇很好地联系到了价值投资方法：发现机会、增加试验频率、构建系统、复制成功、拥抱随机性。</p>
+<h3 id="鸿涛"><a href="#鸿涛" class="headerlink" title="鸿涛"></a>鸿涛</h3><p>随机性是世界的底层逻辑，而墨菲定律是我们面对随机性时的主观反应。概率决定结果，熵增是世界的终极走向；人只能在其中建立减少混乱的系统。</p>
+<h3 id="太阳之子"><a href="#太阳之子" class="headerlink" title="太阳之子"></a>太阳之子</h3><p>薛定谔说：“生命以熵减为主。”作为法律工作者，留言把信息理解成降低不确定性的工具；刑事案件中的证据，就是通过不断增加信息来减少判断的不确定性。</p>
+<h3 id="菊本小百合"><a href="#菊本小百合" class="headerlink" title="菊本小百合"></a>菊本小百合</h3><p>留言谈到课程带来的启发，以及自己在生活中面对随机性和事与愿违的经历。接受不确定性之后，反而更能持续行动。【原图此处需放大复核】</p>
+<h3 id="JerryLuo"><a href="#JerryLuo" class="headerlink" title="JerryLuo"></a>JerryLuo</h3><p>留言以工作中负责四个片区为例，把目标拆成五步：发现小概率机会、提高试验频率、构建熵减系统、复制成功、拥抱随机性。先在一个片区验证方法，再把有效经验推广到其他片区，以减少试错成本和单点风险。【原图此处需放大复核】</p>
+<hr>
+<p><a href="/book/decision-algorithm/020/">← 020｜机会成本：你愿意花多少钱买一台印钞机？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/022/">022｜应对逆境：为什么帆船可以逆风前行？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

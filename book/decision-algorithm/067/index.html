@@ -1,0 +1,375 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>067｜内耗陷阱：如何跳出人生的死循环？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》067：内耗陷阱：如何跳出人生的死循环？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="067｜内耗陷阱：如何跳出人生的死循环？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/067/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》067：内耗陷阱：如何跳出人生的死循环？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:45.753Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/067/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '067｜内耗陷阱：如何跳出人生的死循环？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">067｜内耗陷阱：如何跳出人生的死循环？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">067｜内耗陷阱：如何跳出人生的死循环？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>老喻·决策算法100讲　时长：13分08秒　首次发布：今天</p>
+</blockquote>
+<h2 id="老喻-叙述"><a href="#老喻-叙述" class="headerlink" title="老喻 叙述"></a>老喻 叙述</h2><p>你好，我是老喻，欢迎来到《决策算法》课。</p>
+<p>在这纷繁复杂的时代，我们每个人都可能被爱情、工作、家庭，甚至自我身份的一系列问题困扰：一边慌乱应付外部挑战，一边又在内心反复纠结——到底要不要跳槽？这段感情还能挽回吗？我的未来怎么办？</p>
+<p>于是，我们的大脑就像一台无休止的“念头放映机”，播放的全是焦虑与自责的内心戏。没错，这时候我们就陷入了精神内耗。</p>
+<h2 id="一、什么是精神内耗"><a href="#一、什么是精神内耗" class="headerlink" title="一、什么是精神内耗"></a>一、什么是精神内耗</h2><p>简单说，精神内耗就是一场你与自己的消耗战。当我们把大量心理能量耗费在“对付自己”上，就会陷入一个看不见的黑洞：能量不断流失，却找不到出口。</p>
+<p>这不是身体的疲惫，而是纯粹的心理损耗，最终可能让我们失去做出正确决定的力量。有没有办法避免内耗影响决策？这就是这一讲要讨论的话题。</p>
+<p>内耗在生活中无孔不入：站在公司电梯里反复琢磨上年会议中的失误，面对卖飞的股票心里懊恼，深夜刷朋友圈不断想自己要不要给人点赞……现代人的大脑似乎总在进行某种无形的能量消耗。</p>
+<p>从科学角度看，内耗不是一个简单现象，而是多种心理机制共同作用的结果，主要表现为三种形式：</p>
+<ol>
+<li><strong>决策疲劳</strong>：每当需要做选择，大脑都会消耗能量。一个人每天要做数百个大小决定，决策过于频繁或复杂时，心理资源会逐渐耗竭，导致后续决策质量下降。这也解释了为什么工作一天后，连“吃什么”这样的简单问题都变得困难。</li>
+<li><strong>认知过载</strong>：在信息爆炸的时代，大脑每天要处理海量信息，刷短剧、听播客、看直播，甚至开会时手机不断弹出消息，都会让认知资源超负荷。</li>
+<li><strong>反刍思维</strong>：对负面事件或情绪反复思考。比如和朋友聚会后躺在床上反复回想：“刚才那句玩笑是不是太过了？”“他们笑得好像不太自然……”这种无休止的自我检查，就是典型的反刍思维。</li>
+</ol>
+<p>这三个概念共同勾勒出“内耗陷阱”的多重面貌：当一个人长时间纠缠于相同念头，或在选项繁多的境地里头脑杂乱、无法决断，就会陷入一种“空转”状态。更糟的是，越思考越焦虑，越难保持理性判断，恰恰阻碍我们做出正确选择。</p>
+<h2 id="二、如何跳出死循环"><a href="#二、如何跳出死循环" class="headerlink" title="二、如何跳出死循环"></a>二、如何跳出死循环</h2><p>在“反刍思维”里，人往往对同一个负面念头反复琢磨，却无法获得新的解决方案。用计算机语言说，就像不断调用自己的函数，却没有设置出口，陷入“死循环”。</p>
+<p>想象你是一台电脑，运行着一个没有终止条件的程序：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">“刚才的会议表现太差了”</span><br><span class="line">        ↓</span><br><span class="line">“同事一定觉得我能力不行”</span><br><span class="line">        ↓</span><br><span class="line">“我是不是不适合这份工作”</span><br><span class="line">        ↓</span><br><span class="line">“要不要辞职算了”</span><br><span class="line">        ↓</span><br><span class="line">“但辞职后又能做什么……”</span><br><span class="line">        ↓</span><br><span class="line">回到“我真的太差劲了”</span><br></pre></td></tr></table></figure>
+
+<p>这就是典型的“递归式内耗”。同一个念头不断被翻炒，每转一圈就消耗一分能量，却始终找不到出口。刚开始可能只是纠结一个小细节，最后会演变成对整个人生的怀疑；像站在镜子前反复检查自己的着装，原本只是担心领带歪了，最后连自己的整体形象都开始怀疑。</p>
+<h3 id="第一招：设置“思维的终止条件”"><a href="#第一招：设置“思维的终止条件”" class="headerlink" title="第一招：设置“思维的终止条件”"></a>第一招：设置“思维的终止条件”</h3><p>当你发现自己第三次在想同一个问题时，可以对自己说：“暂停！这个问题我已经思考了 15 分钟，现在先去喝杯咖啡。”</p>
+<p>就像给程序加上终止条件，主动截断无休止的信息搜索。</p>
+<h3 id="第二招：把抽象担忧转化为具体行动"><a href="#第二招：把抽象担忧转化为具体行动" class="headerlink" title="第二招：把抽象担忧转化为具体行动"></a>第二招：把抽象担忧转化为具体行动</h3><p>与其纠结“昨天晚上喝酒时好像对老板说错了话”，不如直接去敲他的办公室门，说：“昨晚喝多了，要是有啥冒犯请别介意。”一次具体沟通，可能比反复猜测更能解决问题。</p>
+<p>说起电脑，对付死机的大招就是“重启系统”。当发现自己陷入死循环时，也不妨暂时重启：</p>
+<ul>
+<li>约上朋友去打场篮球；</li>
+<li>整理一下久未收拾的书桌；</li>
+<li>学习一个新的烘焙配方；</li>
+<li>或者简单地做个深呼吸。</li>
+</ul>
+<p>过度思考就像反复打开同一个文档。与其在空白文档前焦虑，不如写下第一个标题、敲下第一行代码。走出内耗的关键，不在于完全停止思考，而在于让每一次思考都带来一点进展，哪怕是很小的一步。</p>
+<h2 id="三、接受内耗，建立行动闭环"><a href="#三、接受内耗，建立行动闭环" class="headerlink" title="三、接受内耗，建立行动闭环"></a>三、接受内耗，建立行动闭环</h2><p>其实，想要彻底避免精神内耗，根本不可能。因为人就是思考的动物，只要思考，就会有内耗。</p>
+<p>叔本华说：“人生就像摆钟一样，在痛苦与无聊之间摆荡，当欲望得不到满足时就痛苦，当欲望得到满足时就无聊。”所以一辈子不管顺利还是不顺利，开心还是不开心，都会像钟摆一样：要么因为痛苦而内耗，要么因为无聊而内耗。</p>
+<p>在接受内耗本能的基础上，可以采用两个心理学方法。</p>
+<h3 id="第一招：溪流冥想法"><a href="#第一招：溪流冥想法" class="headerlink" title="第一招：溪流冥想法"></a>第一招：溪流冥想法</h3><p>想象你坐在小溪边（对，就跟度假似的），看着树叶一片片落在水面上，随着溪水漂走。</p>
+<p>每当有烦心事冒出来：</p>
+<ul>
+<li>把它想象成一片叶子上的文字；</li>
+<li>看着它顺着水流慢慢飘走；</li>
+<li>不用赶它，也不用追它；</li>
+<li>就这样静静地看着就好。</li>
+</ul>
+<p>这样做的好处是，你既不是在跟想法对抗，也不是在逃避，而是用一种更平和的方式让它自然流走。</p>
+<h3 id="第二招：约会法"><a href="#第二招：约会法" class="headerlink" title="第二招：约会法"></a>第二招：约会法</h3><p>给自己的精神内耗“预约一个时间”。例如：</p>
+<ul>
+<li>每周日上午 11 点，给自己半小时；</li>
+<li>找个安静的地方坐下来；</li>
+<li>把所有烦心事都写下来；</li>
+<li>到点就开始，到点就结束。</li>
+</ul>
+<p>平时有烦心事，就记下来告诉自己：“等到周日再说。”这样反而能让平时的生活更轻松。人不可能彻底摆脱内耗，但可以把它限制在一个小圈子里。</p>
+<h2 id="四、让认知闭环重新运转"><a href="#四、让认知闭环重新运转" class="headerlink" title="四、让认知闭环重新运转"></a>四、让认知闭环重新运转</h2><p>时不时的精神内耗并不可怕，可怕的是内耗让决策陷入死循环，让人生停止前行。除了前面的心理学方法，更重要的是拥有一套在内耗环境中依然可以运行的“决策算法”。</p>
+<p>《人生算法》里提出过“认知闭环”：<strong>感知、认知、决策、行动</strong>。</p>
+<p>我们每做一个决定，其实就是完成一个认知闭环，像四个人在进行接力赛：</p>
+<ol>
+<li>感知：负责收集信息，初步体验世界；</li>
+<li>认知：对信息进行处理、理解；</li>
+<li>决策：在有限时间与资源下做出判断；</li>
+<li>行动：不再犹豫，付诸实施，得到结果并带回新的感知。</li>
+</ol>
+<p>问题是，精神内耗会让这四个环节都“跑偏”，干扰我们的决策。可以把它们理解为四棒接力，并分别调整：</p>
+<ul>
+<li><strong>第一棒，从“过敏”到“好奇”</strong>：内耗让我们对一个眼神、一句话过度解读，变成持续心理负担。破解之道是培养“钝感力”，用好奇心替代过度敏感；与其纠结老板为什么皱眉，不如好奇地想：“这个项目虽然没做好，但有没有发现另一个新方向？”</li>
+<li><strong>第二棒，从“贪婪”到“适度”</strong>：认知阶段的内耗表现为信息饥渴，总想了解更多、掌握一切，像计算机搜索不设限、耗尽系统资源。解决办法类似“停止搜索”：设置阈值或时间限制，到点就停止无边界的信息查找。</li>
+<li><strong>第三棒，从“完美”到“完成”</strong>：决策阶段最大的内耗陷阱是追求完美。我们总想找到“最好”的选择，结果好的选择错过了，完美的选择没等到。记住，“相对好”的决策胜过“完美”的犹豫。就像创业，先把产品做出来投入市场，再在实践中不断完善。</li>
+<li><strong>第四棒，从“迟疑”到“行动”</strong>：行动阶段的内耗表现为纠结、迟疑、畏惧。破解之道是“小步快跑”，把大目标分解成小行动，每次只关注眼前这一小步。比如担心换工作，不妨先更新简历、和猎头聊聊，而不是一开始就纠结“要不要辞职”这么大的问题。</li>
+</ul>
+<p>感知要有好奇心，认知要有边界，决策要有取舍，行动要有勇气。这样，即使在内耗状态下，仍然能够向前推进，而不是陷在原地空转。</p>
+<p>在这个过程中，可以给自己设定一个原则：宁可犯错，也不要原地踏步。因为只有在行动中，才能获得真实反馈，从而做出更好的决策。</p>
+<h2 id="五、找到意义，走出内耗"><a href="#五、找到意义，走出内耗" class="headerlink" title="五、找到意义，走出内耗"></a>五、找到意义，走出内耗</h2><p>我自己在生命中也经历过严重精神内耗。那种感觉既不是遇到困难时的痛苦，也不是奋斗拼搏时的孤独，而是突然失去了方向感，不知道自己到底在为什么努力、为谁而战。</p>
+<p>那时候我想到心理学家维克多·弗兰克。弗兰克强调，意义感是心理承受力的源泉。他说过：</p>
+<blockquote>
+<p><strong>生命从来不会因环境而变得无法忍受，只会因缺乏意义和目标而无法忍受。</strong></p>
+</blockquote>
+<p>换言之，让人崩溃的不是打击本身，而是缺乏面对打击的意义。弗兰克本人经历纳粹集中营的极端磨难，他的理念对内耗有很强的指导性：人类可以忍受任何生活处境，只要能找到意义。</p>
+<p>找到意义并不是容易的事，需要漫长的旅程，但这是值得经历的旅程。也许在很长时间内，我们仍然必须与内耗共处，但只要坚持走下去，不断排除错误选项，终有一天，我们寻找的人生北极星会在远方天空中出现。那一刻，我们将与内耗和解。</p>
+<p>我的方法是：<strong>坚持做自己（意义），始终向前看（目标）。</strong></p>
+<p>坚持做自己，就得以自己为中心，凡事都从“我”出发，不必总顾虑“他笑得好像不太自然”。这会有弊端，会得罪人，毕竟没有人能看见别人的脸色；但相比较“我”而言，“他”并不重要。</p>
+<p>始终向前看，就是对过去决策的延续或修正，不纠结“刚才表现得太差了”，而是锚定下一步如何做得更好。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>内耗的三种表现形式：首先是决策疲劳，其次是认知过载，然后是反刍思维。</li>
+<li>打破内耗的死循环：首先学会设置“思维的终止条件”；其次把抽象的担忧转化为具体行动；三是接受内耗是人的本能，掌握应对内耗的心理学方法和决策算法。</li>
+<li>“生命从来不会因环境而变得无法忍受，只会因缺乏意义和目标而无法忍受。”“找到意义”，这是应对内耗陷阱的终极方案。</li>
+</ol>
+<h2 id="用户留言"><a href="#用户留言" class="headerlink" title="用户留言"></a>用户留言</h2><h3 id="左星星"><a href="#左星星" class="headerlink" title="左星星"></a>左星星</h3><p>摆脱内耗让我想到一个经典商业案例。1985 年，英特尔公司的内存业务受到日本厂商冲击，安迪·格鲁夫想退出内存业务、进军 CPU 市场。但开始时内存业务仍有惯性，转型并不容易。这个故事提醒我们，识别惯性、跳出旧路径，往往需要重新定义自己。</p>
+<h3 id="魏红亮"><a href="#魏红亮" class="headerlink" title="魏红亮"></a>魏红亮</h3><p>温水煮青蛙是常态，可怕的是当青蛙意识到时也很难跳出来。前几天遇到一位在房地产行业从业的朋友，公司已经一年没发工资，他是 1984 年生人，有心想换行业却不得其门而入。40 岁出来找工作、换行业做基层，即便自己愿意，能否被用人方接受也是问题。</p>
+<p>解决死循环最好的办法是靠外力强制打破，像温水煮青蛙，指望青蛙本身是不可能的，突然间锅破了，或者有别的力量出现才行。</p>
+<h3 id="美君"><a href="#美君" class="headerlink" title="美君"></a>美君</h3><p>每次被外界和不可控的事情影响、产生内耗时，我会把教训当作经验。一次在电商平台买到质量很差的书，退货又要承担高额运费，只能留下，之后几天一直内耗。后来发现钱已经回不来，就把注意力拉回自己，做一些以自己为中心的事情，增强掌控感和秩序感，把教训变成经验。之后买东西会比较淘宝、京东、拼多多：销量评价高、价格适中才加入购物车；详情页不完整直接跳过；不支持退货退款也跳过。</p>
+<h3 id="Scott"><a href="#Scott" class="headerlink" title="Scott"></a>Scott</h3><p>人生意义是应对内耗陷阱的终极方案。认知重构也是一种方式，把内耗重构为成长的机会。内耗的本质是心理能量的自我消耗，害怕错误是重要原因。错误常与失败、羞耻联系在一起；但如《原则》中所说，进步等于痛苦加反思，错误不可避免，能教给我们东西，所以学无止境。</p>
+<h3 id="李祭酒"><a href="#李祭酒" class="headerlink" title="李祭酒"></a>李祭酒</h3><p>我在培养自己的钝感力，减少过度揣测和内耗。一是游戏化这个世界：游戏任务失败没有什么，现实世界失败和游戏有什么关系？只要不威胁生命、不违法犯罪，就可以在框架中探索。二是把脱不开心的事拆开，按照“课题分离”处理：对方做什么与你无关，自己只按自己的想法和行动完成任务。</p>
+<h3 id="得到学生"><a href="#得到学生" class="headerlink" title="得到学生"></a>得到学生</h3><p>内耗像在脑子里循环播放无数个“假如”“如果”，深陷短期内无法改变的既定事实。把人生方向当作游戏主线任务，其他 NPC 的行为无法掌控，就别让自己困在非对错里。</p>
+<h3 id="知东东"><a href="#知东东" class="headerlink" title="知东东"></a>知东东</h3><p>老师说目标和意义是应对内耗陷阱的终极方案。内耗本质上是对过去和未来的过度关注，明确当前要做的事，才能走出循环。</p>
+<h3 id="Gaven（建平）"><a href="#Gaven（建平）" class="headerlink" title="Gaven（建平）"></a>Gaven（建平）</h3><p>内耗往往是针对过去行动不足、对未来焦虑和犹豫带来的无意义消耗，也是人性的弱点。认知闭环“感知、认知、决策、行动”提供了切实可行的模式；避免内耗最有效的方法是行动起来。同时要明确目标，以及达成目标的意义。</p>
+<h3 id="林同学的思考"><a href="#林同学的思考" class="headerlink" title="林同学的思考"></a>林同学的思考</h3><p>惯性思维会让人自动执行一些动作：购物 App 下单后仍继续刷屏，短视频看完一道教程仍不停滑动，吃饱后还会多吃几口。惯性让人忽略真正需要长期坚持的事。可以转换视角，思考事情能学到什么、如何拓展能力、如何找到杠杆，并在行动中迭代。</p>
+<h3 id="山峰"><a href="#山峰" class="headerlink" title="山峰"></a>山峰</h3><p>惯性陷阱让我想到柯达。柯达 1975 年发明第一台数码相机，却担心数码技术冲击胶卷业务而雪藏。进入 21 世纪后，数码摄影发展，胶卷市场下降；柯达虽尝试数码相机，却因缺乏战略眼光和持续投入，最终于 2012 年申请破产。企业生命力不在曾经辉煌，而在能否随时代持续进化。</p>
+<h3 id="其他留言"><a href="#其他留言" class="headerlink" title="其他留言"></a>其他留言</h3><p>其余留言围绕“坚持与适时退出”“现实扭曲力场”“先行动再迭代”“对自己诚实、对他人坦率”等主题展开；看不清的字句：【原图此处需放大复核】。</p>
+<hr>
+<p><a href="/book/decision-algorithm/066/">← 066｜占便宜陷阱：怎样用大局观克服贪婪？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/068/">068｜惯性陷阱：为什么你无法做出自己想要的选择？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

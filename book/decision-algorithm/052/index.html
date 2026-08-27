@@ -1,0 +1,413 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>052｜约翰·博格：一生赚多少钱才算“足够”？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》052：约翰·博格：一生赚多少钱才算“足够”？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="052｜约翰·博格：一生赚多少钱才算“足够”？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/052/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》052：约翰·博格：一生赚多少钱才算“足够”？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:45.515Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/052/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '052｜约翰·博格：一生赚多少钱才算“足够”？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">052｜约翰·博格：一生赚多少钱才算“足够”？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">052｜约翰·博格：一生赚多少钱才算“足够”？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>来源：老喻·决策算法100讲</p>
+<p>音频时长：13:45</p>
+<p>以下依据 PDF 页面原图逐段人工视觉阅读整理。</p>
+</blockquote>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>喻老师，你好。</p>
+<p>我是老喻，欢迎来到《决策算法》课。</p>
+<p>美国著名作家保罗·肯尼迪曾经评价约翰·博格：冯·诺依曼等人为我们带来了原子弹，而约翰·博格则将一位亿万富翁式的思想带给了普通人。</p>
+<p>海岛国应邀道：“你知道吗？据说我们气门百进在一夫之间的鲨鱼有几万条。”他仍然坚持着，仿佛他“等 22 条军规”从出版到现在的所有版权总和还要多。</p>
+<p>我是在线的喻老师的一本书的最开头，看到了其实故事中的他，是第一只指数基金的建立者。作为一个名字可以作为“财富”符号的人，他为啥叫“道则”?【原图此处字样需复核】</p>
+<p>这也是我们每个人都关心的话题：一个人一生赚多少钱才算足够？</p>
+<p>有人说：“100 年以后的历史学家可能只会记住两位投资大师——沃伦·巴菲特和约翰·博格。他们会把任何同类的《聪明的投资者》和约翰·博格写的所有内容。”</p>
+<p>你看，一下子把《决策算法》前两节“理财决策”的课程全部串起来了。</p>
+<p>这三位大师，基本理念一脉相承，都是坚信常识，认为股票的增长效率来自企业的盈利，而不是短期的涨跌。连续好的企业，长期拥有，财富自然会不断复利。</p>
+<p>不过，比起格雷厄姆和巴菲特，博格更钟情的地方在于：他的理念更简单，每个人都可以运用他的方法，实现了不起的财富增长。</p>
+<p>具体而言就是：购买一只涵盖全市场组合的基金，然后长期持有。这样的基金被人们称为指数基金（index fund）。</p>
+<p>说起指数基金，你一定不会陌生，也听说过指数基金的理念。</p>
+<p>这种方法同样被大师们所推崇。诺贝尔经济学奖获得者保罗·萨缪尔森就说过：“博格所主张的理性投资，可以让大多数人受益，20 年后，我仍然会成为为团体服务的对象。”与此同时，他仍然能够在多事之秋投资人中脱颖而出。</p>
+<p>听起来真好，既简单又安全还惠民。</p>
+<p>但是，我想问你两个问题：</p>
+<ol>
+<li>你自己投资指数基金了吗？</li>
+<li>你身边哪些朋友能直接投指数基金赚到了钱？</li>
+</ol>
+<h2 id="一、指数基金的世界"><a href="#一、指数基金的世界" class="headerlink" title="一、指数基金的世界"></a>一、指数基金的世界</h2><p>说到这里，我们需要先探寻一下指数基金的前世今生。</p>
+<p>1900 年，法国学者路易斯·巴舍利耶在博士论文中讲开了对金融市场的基础分析和技术分析，用概率论建立了金融市场价格的随机游走模型。</p>
+<p>整整过了 60 年，这个模型才被博格尔亲教授再次发现。他提出，股票历史的表现对未来没有影响，股价的变化是随机游走的。</p>
+<p>这意味着：历史走势对未来并不提供可被利用的“确定性模式”，短期的随机涨跌在很大程度上是不可预测的，带有噪音与随机性。</p>
+<p>接着，著名经济学家尤金·法玛提出了“有效市场假说”，该假说认为，股价充分反映所有已知信息，市场不可能被战胜。一道道很简单，市场由所有投资者组成，既不能自己打败自己。</p>
+<p>1975 年，富尔斯·凯斯科发现了“成本理论”，基金的管理费等各种成本，长期看几乎抵消了股票基金平均 20% 的收益。</p>
+<p>看起来，以理论都是来给资本市场泼冷水的：</p>
+<ul>
+<li>巴舍利耶和博格尔亲家的“随机游走”理论，说短期预测市场几乎不可能；</li>
+<li>法玛的“市场有效”理论，说明星无法持续战胜市场；</li>
+<li>埃利斯的研究显示，高成本会慢慢侵蚀收益。</li>
+</ul>
+<p>都这样了，约尔还运作吗？</p>
+<p>所有的“坏事情”，倒过来讲，没准儿就成了好事情。</p>
+<p>约翰·博格后来从上面的理论中受到启发，以“被动复制”的思路开辟投资。</p>
+<p>既然“打不赢市场”，那么“干脆躺着走”？</p>
+<p>博格意识到，如果绝大多数人无法真正赢市场，那么与其主动去寻找“明星投资者”，不如投资跟踪市场，以尽可能低的成本复制市场平均水平。</p>
+<p>1976 年，约翰·博格率先尝试，推出了全球第一只指数基金——先锋 500 指数基金。</p>
+<p>指数基金起初并不顺利，还被华尔街称为“Bogle’s Folly”（“博格的愚蠢”）。但随着时间推移，指数投资逐渐认可，成为投资领域里“最简单、成本最低、最能让普通人得到安稳的投资方式之一”。</p>
+<p>对博格来说，这不只是一种商业模式的成功，也是一种更符合投资者利益的“知足之道”。</p>
+<h2 id="二、为什么指数基金这么好，但是直到今天仍然没有太多人做？"><a href="#二、为什么指数基金这么好，但是直到今天仍然没有太多人做？" class="headerlink" title="二、为什么指数基金这么好，但是直到今天仍然没有太多人做？"></a>二、为什么指数基金这么好，但是直到今天仍然没有太多人做？</h2><p>排在第一的原因就是：<strong>不甘心。</strong></p>
+<p>大多数人都会认为自己的水平至少在中上，怎么可以接受指数基金这种平庸的回报水平呢？</p>
+<p>聪明人可能更无法接受：我怎么可能只拿到平均数？</p>
+<p>在约翰·博格的论述中，“均值回归”（Mean Reversion）是一个比重大更常被投资者忽略的概念。他反复强调：无论基金表现如何，短期的极好或极坏最终都会向长期平均回归。从长期来看，它们的业绩将回归到市场的平均水平。</p>
+<p>换句话而言，我们常见的“昨日之星”可能会成为“明日落后者”，而市场公认的投资对象，也可能在时机成熟时重新回到均值附近。</p>
+<p>一些投资者总想不同的策略、市场风格、行业主题来获得超额回报，但做到长期看，往往谁都是劳而无功。</p>
+<p>回到定量的主题，如果明白投资最终是以摆脱“均值回归”的引力，那么投资者就要一直追逐“短期第一名”或“热点板块”，因为大概率会受到均值回归的反噬。</p>
+<p>所以，拥抱市场整体，用更低的成本、更少的交易去拥抱伟大的市场平均值，在长期里面能跑赢大部分非专业投资者，追涨杀跌的对手。</p>
+<p>这正是博格的指数基金之道：与其指望自己预测未来，不如让市场成为你的长期伙伴。</p>
+<p>你可能会说，我是个足够聪明的人，也总觉得市场平均回报，那么我是不是只要坚持地定投指数基金就能慢慢变富呢？</p>
+<p>很遗憾，也未必。</p>
+<p>博格的理论来自美国股票市场。各个市场并不完全相同。</p>
+<p>比如说，尽管在某个时间区间，标普 500 和沪深 300 的领先表现不错，但是标普 500 的长期表现稳定，沪深 300 波动大，长期很难有漂亮的回报；同沪深 300 波动较大，数据很多年都原地不动。</p>
+<p>这时候，你可能就能简单通过指数基金实现财富，连定投都能稳稳地盈利。</p>
+<p>你看，这就是决策最重要的一个特征：没有哪种方法，能让你完全不用通过自己的独立判断去决策。</p>
+<p>指数基金在一个相对成熟、长期向上的市场里，确实能给普通人提供一条低成本、低风险的投资路径。</p>
+<p>但在新兴市场或者波动性较高、结构分化严重的环境下，仍然需要对市场特点进行适度调整和组合优化。</p>
+<h2 id="三、投资指数基金的策略"><a href="#三、投资指数基金的策略" class="headerlink" title="三、投资指数基金的策略"></a>三、投资指数基金的策略</h2><h3 id="第一，选对指数：宽基优先，兼顾行业或主题。"><a href="#第一，选对指数：宽基优先，兼顾行业或主题。" class="headerlink" title="第一，选对指数：宽基优先，兼顾行业或主题。"></a>第一，选对指数：宽基优先，兼顾行业或主题。</h3><ul>
+<li>宽基指数：这些指数涵盖大部分市值或不同规模的优质公司，分散度高，也是定投的常用标的。</li>
+<li>行业主题指数：若你对某一板块的长期前景有信心，并且具备得、可持续作为补充配置，提高整体组合的成长性。</li>
+</ul>
+<h3 id="第二，做好全球化多资产配置。"><a href="#第二，做好全球化多资产配置。" class="headerlink" title="第二，做好全球化多资产配置。"></a>第二，做好全球化多资产配置。</h3><ul>
+<li>如果条件允许，可以适当投资国外市场，分散单一市场风险。</li>
+<li>即便不出海，也可以通过 QDII 基金、港股通等部分分散在 FT 未来实现多地域增长的机会。</li>
+</ul>
+<h3 id="第三，认识并评估你的市场特点，拉长周期。"><a href="#第三，认识并评估你的市场特点，拉长周期。" class="headerlink" title="第三，认识并评估你的市场特点，拉长周期。"></a>第三，认识并评估你的市场特点，拉长周期。</h3><ul>
+<li>A 股常常在短期内出现急速拉升，然后漫长横盘或回调，指数在较长时间里却可能创新高。</li>
+<li>如果定投了半年、一年，正好遇到高点，收益很可能不理想。要有至少 3～5 年以上的投资周期，最好经历一个完整牛熊，才能体会到成长度本年可逆的好处。</li>
+<li>对于多资产或多市场配置的投资者，可以每半年或一年做一次平衡。</li>
+</ul>
+<h3 id="第四，设定安全垫：避免流动性冲击。"><a href="#第四，设定安全垫：避免流动性冲击。" class="headerlink" title="第四，设定安全垫：避免流动性冲击。"></a>第四，设定安全垫：避免流动性冲击。</h3><ul>
+<li>千万别重仓或加杠杆投入指数基金，如果资金周转出现问题，需要用钱，却赶上股市下跌，你就只能割肉卖出。</li>
+<li>建议保留相当比例的现金流动性工具，让你在市场大跌时，不至于被迫卖出，反而能逆势买入低成本。</li>
+</ul>
+<p>现实非常重要，不管是一份工作，还是租金收入，都能为你提供源源不断的弹药。</p>
+<h3 id="第五，选安心的、管理费低的指数基金。"><a href="#第五，选安心的、管理费低的指数基金。" class="headerlink" title="第五，选安心的、管理费低的指数基金。"></a>第五，选安心的、管理费低的指数基金。</h3><ul>
+<li>优先选国内最大的几家基金公司的指数产品，名字我就不说了，你得查好研究，对其过往业绩和相对较大的，成立时间长的指数基金，减少流动的风险。</li>
+<li>指数基金的管理费用通常都差不多，当然越便宜越好。</li>
+</ul>
+<h2 id="四、博格的“知足”"><a href="#四、博格的“知足”" class="headerlink" title="四、博格的“知足”"></a>四、博格的“知足”</h2><p>博格在书中分享了他人演讲中的一个故事，叫《不过其数的钻石》：</p>
+<p>在古代波斯，一个富有的农场主离开乡野寻找财富，他买了一生能找到的钻石。他骑着车开过去，他看到的只有没有波斯地的钻石。他成为了一个两手空空、一块如沉的宅子，最终绝望地投海自尽。</p>
+<p>那么，为什么，在这位农场主的后院中，可能有一个巨大的钻石？</p>
+<p>一个，是指着自己；另一个，是指常识。</p>
+<p>这两样东西，看似都高手可得，但又都不容易。自己最难，常识不常见。</p>
+<p>对于你自己区分钻石：你要了解自己的风险承受能力、投资期限和资金需求，才能设计出最适合自己的投资策略。正如<strong>格雷厄姆的“知足”，不是不思进取，而是从清醒自己，找到最适合自己的投资之道。</strong></p>
+<p>对于常识识别钻石：投资的成功往往在于不多么复杂的策略，而在于最基本的常识。低成本、分散风险、长期持有，这些都是人人皆知的道理，却很少有人能真正坚持。</p>
+<p>回到这一讲的开头：一生赚多少钱才算“足够”？</p>
+<p>约翰·博格给出的答案是：与其追求“超额收益”，不如踏踏实实地拿到那份属于你的市场回报。</p>
+<p>这正是他所说的“知足”：<strong>并非停止追求，而是选择最务实、最符合常识的路径；并非贪恋奇迹般的高收益，而是珍惜稳定可得的长期复利。</strong></p>
+<p>钱也从来不是用“多”与“小”来区分的，很多时候，够用就好。</p>
+<p>对于普通人，依靠常识，构建好人生的财富的体系，享受“足够”带来的从容与自在，远胜无休止的攀比与追逐。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>知道什么是“足够”，并且能够构建和守护这种“足够”，可能是一个人在财富上最完美的状况。</p>
+<p>以上就是这一讲的全部内容。我是老喻，我们下一讲再见。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>真正让指数基金中受益的人不多，排在第一的原因就是：不甘心。</li>
+<li>约翰·博格的三点建议：先形成认知，验证并大规模复制。除非有正期望值，否则不要用彩票一样的赔率去投资。</li>
+<li>知道什么是“足够”，并且能够构建和守护这种“足够”，可能是一个人在财富上最完美的状况。</li>
+</ol>
+<h2 id="用户留言（原图精选）"><a href="#用户留言（原图精选）" class="headerlink" title="用户留言（原图精选）"></a>用户留言（原图精选）</h2><h3 id="左星星"><a href="#左星星" class="headerlink" title="左星星"></a>左星星</h3><p>约翰·博格对指数基金的核心观点是：投资者不应该试图战胜市场，而应该通过低成本、分散化的方式获得市场平均回报。这种理念的背后，是对市场有效性的承认，也是对普通投资者局限性的尊重。</p>
+<p>指数基金不是让人一夜暴富的工具，而是让人在漫长的时间里，以最低的成本参与经济增长。真正的财富积累，往往来自长期坚持，而不是短期投机。</p>
+<h3 id="鸿涛"><a href="#鸿涛" class="headerlink" title="鸿涛"></a>鸿涛</h3><p>股票市场的一个重要常识是均值回归。各热点板块、题材和投资明星大多会回到均值水平，不当的追逐热点，往往是在重复别人的亏损。</p>
+<p>如果我们有足够的智慧，认识到市场回报下的波动，我们就应该接受均值回归。指数基金会被动地跟踪市场，避免主动管理的成本和情绪影响。</p>
+<h3 id="Keiko璟"><a href="#Keiko璟" class="headerlink" title="Keiko璟"></a>Keiko璟</h3><p>“知足者富”。如果是使穷人富有，不知道是使富人贫穷。</p>
+<p>投资宽基，现实是雅谑的，无穷的道理需要最大风险向两处打破，只要再低于远处的风险和不确定性，最喜欢的人往往不是市场的波动，而是自己内心的贪婪。</p>
+<p>实际上，投资者还是主要的风险来源。在资产配置上需要考虑风险边际，需要确定合适的资产比例。安全边际是保守的必要，也是投资中的重要原则。</p>
+<h3 id="方兴（阳光荞草）"><a href="#方兴（阳光荞草）" class="headerlink" title="方兴（阳光荞草）"></a>方兴（阳光荞草）</h3><ol>
+<li>得到财富和驾驭财富，是需要认知和智慧的，而一个人如果没有智慧，就很难把握，克服贪婪，无法真正驾驭财富。</li>
+<li>为什么我们面对财富懂得足够？这是因为财富其实并不是一个人幸福快乐的唯一来源。因为智慧特别对一个人幸福快乐的生活非常重要。所以如果想获得幸福快乐，应该要认识和理解幸福快乐的价值，并且能够懂得感知和驾驭幸福快乐，这样才能够给我们带来一个人的智慧和认知。</li>
+<li>这个不懂配资策略的覃老师巴菲特等理解家。他们为什么把上面最高一点的股票买了就好了？换句话说，为什么选择在世上是抱持万事有价值的东西，因为它最关心的是在乎时间的沉淀。任何事情，都不是一蹴而就的，只有真正积累才有价值。</li>
+</ol>
+<h3 id="李泰"><a href="#李泰" class="headerlink" title="李泰"></a>李泰</h3><p>学习博格的指数基金战略，就是要把选择的难题交给市场。长期回报并不一定来自最聪明的预测，而是来自低成本、低波动、长期持有。</p>
+<h3 id="识我所言"><a href="#识我所言" class="headerlink" title="识我所言"></a>识我所言</h3><p>博格基金的核心是指数基金的前世今生，以及提出选择指数基金的思路和原则。这个对普通投资者来说，真的很实战。</p>
+<p>具体地说：</p>
+<ol>
+<li>选好指数：以宽指为核心，主题指数为卫星，这样可以保证低风险的同时，适当提高收益。</li>
+<li>做好全球资产配置：既买本国指数，也买美国宽基指数，分散单一市场风险。</li>
+<li>拉长投资周期：这意味着我们需要用时间换空间，三年、五年，甚至更长。</li>
+<li>设定安全垫：保留流动性工具，避免在资金问题上被迫割肉。</li>
+<li>选安心的、管理费低的机构：一般选基金规模大、成立时间长、管理费低一点的基金。</li>
+</ol>
+<h3 id="万雄"><a href="#万雄" class="headerlink" title="万雄"></a>万雄</h3><p>定投策略的渣价源自算术平均数大于几何平均数，价格波动越大，收益越好。这样看，A 股其实比美股更适合定投，却又更难践行。</p>
+<p>个人在股市中主要是指数基金（定投），对交易费用比较关注，交易费用是投资中获得的具有确定性的事。之所以选择指数基金，95% 的考量，就是交易费用便宜，特别对于长期投资，若选择的是主动基金，费用会吃掉大多数的收益。虽然指数基金也有费用，但仍能为投资者提供管理的服务费用，无法避免。</p>
+<h3 id="陈守星"><a href="#陈守星" class="headerlink" title="陈守星"></a>陈守星</h3><p>了解自己，尊重常识。你要了解自己的风险承受能力、投资期限和资金需求，才能设计出最适合自己的投资策略。正如博格所说的“知足”，不是不思进取，而是认清自己，找到最适合自己的投资之道。</p>
+<p>投资的成功往往不在于多么复杂的策略，而在于最基本的常识。低成本、分散风险、长期持有，这些都是人人皆知的道理，却很少有人能真正坚持。</p>
+<h3 id="其他留言要点"><a href="#其他留言要点" class="headerlink" title="其他留言要点"></a>其他留言要点</h3><ul>
+<li>选择指数基金要注意成本，主动型基金通常申购费、赎回费、管理费和托管费更高；</li>
+<li>低成本、分散化和长期持有，是普通人最容易执行的投资常识；</li>
+<li>“足够”不是躺平，而是知道自己的需求、能力圈和风险边界；</li>
+<li>只有构建好自己的财富体系，才能享受时间带来的复利。</li>
+</ul>
+<p>——以上留言由作者筛选显示，原图中部分昵称及长评论存在遮挡，无法稳定辨认处以概括和复核标记保留。</p>
+<hr>
+<p><a href="/book/decision-algorithm/051/">← 051｜巴菲特：如何在不确定性中构建确定性？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/053/">053｜大卫·斯文森：为什么资产组合会主导投资结果？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

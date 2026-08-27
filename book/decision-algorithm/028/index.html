@@ -1,0 +1,468 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>028｜看清本质：怎样用奥卡姆剃刀砍掉复杂？ | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《老喻·决策算法100讲》028：看清本质：怎样用奥卡姆剃刀砍掉复杂？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="028｜看清本质：怎样用奥卡姆剃刀砍掉复杂？">
+<meta property="og:url" content="https://morewhyhan.github.io/book/decision-algorithm/028/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="《老喻·决策算法100讲》028：看清本质：怎样用奥卡姆剃刀砍掉复杂？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T19:41:45.113Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/decision-algorithm/028/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '028｜看清本质：怎样用奥卡姆剃刀砍掉复杂？',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page type-page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">028｜看清本质：怎样用奥卡姆剃刀砍掉复杂？</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">028｜看清本质：怎样用奥卡姆剃刀砍掉复杂？</div><div class="container" id="article-container"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>13分26秒</p>
+</blockquote>
+<p>🌶️，你好</p>
+<p>我是老喻，欢迎来到《决策算法》课。</p>
+<p>相信你肯定知道“奥卡姆剃刀原则”。通俗来说，这个原则建议我们在解释现象时，应接受最简单的解释，避免不必要的复杂性。</p>
+<p>但其实，奥卡姆剃刀不只是一个解释模型，也是一个决策模型。怎样用奥卡姆剃刀提高做成事儿的概率？这一讲，我们就来看一看。</p>
+<h2 id="一、复杂的解释与现实的概率"><a href="#一、复杂的解释与现实的概率" class="headerlink" title="一、复杂的解释与现实的概率"></a>一、复杂的解释与现实的概率</h2><p>让我们从2024年发生的一个震惊全世界的事件说起：“特朗普被刺杀”。</p>
+<p>事件发生后，有人猜测说：有没有可能，特朗普面对的提词器里面预埋了一些小炸药，配合枪声引爆，就能实现很危险但又不伤及生命的效果。</p>
+<p>你看，这就是一个典型的“阴谋论”：假设事情没表面看起来那么简单，后面有更加丰富的故事情节。</p>
+<p>这种想法很常见，也很有吸引力。你想想看，假如拍一部电影，你会选择哪个情节：</p>
+<ol>
+<li>一个刚成年的20岁美国普通青年，动机不明地射杀总统候选人；</li>
+<li>特朗普竞选团队为了获胜，巧妙设计了一盘惊天大棋。</li>
+</ol>
+<p>显然，第二个可能要房更高。</p>
+<p>然而，现实不是电影，现实的关键，在于发生的概率。</p>
+<p>像阴谋论或者电影假设的情节，往往更加复杂，实现的概率更低，出现差错的可能性更大。</p>
+<p>所以，电影和阴谋论的解释，往往复杂而且有戏剧性；而现实的解释则通常是简单且无聊的，这也是奥卡姆剃刀有道理的原因。</p>
+<h2 id="二、越是简单，越需要深的洞见"><a href="#二、越是简单，越需要深的洞见" class="headerlink" title="二、越是简单，越需要深的洞见"></a>二、越是简单，越需要深的洞见</h2><p>再来看一个例子：外星人来过的痕迹。</p>
+<p>情境：假设你有一天早上发现自家的花园里有一块草地被压得扁扁的，图案很特别，像一个特殊符号，就像有什么智能体压过。你想找出导致这种情况的原因。</p>
+<p><strong>假设1：</strong> 昨晚，一只大猫进入了你的花园，在那块草地上玩耍和躺了一会儿，碰巧压出了某个特殊的形状。</p>
+<p><strong>假设2：</strong> 昨晚，外星人驾驶着飞碟来到地球，选择了你的花园作为着陆点。在这个过程中，飞碟稍微触及了那块草地，但由于某种原因他们决定放弃在此停留，然后又飞走了。所以，那个特殊符号是飞碟的某个部位压出来的，或是外星人留下的信号。</p>
+<p>虽然两个假设都可以解释草地被压扁的现象，但显然，假设2需要许多额外的假设：外星人存在、他们会来地球、他们刚好选择了你的花园、他们只是轻轻触碰草地而没有留下其他痕迹，等等。</p>
+<p>而假设1则更为简单，只需要一个常见动物——大猫作为解释。</p>
+<p>根据奥卡姆剃刀原则，我们应该选择假设1作为更可能的解释。</p>
+<p>但这并不意味着简单的解释总是正确的。事实上，有时候真实的解释可能是复杂的。</p>
+<p>在这里，很多人对“奥卡姆剃刀”的错误理解也冒头了。</p>
+<p>奥卡姆剃刀原理经常被简化为“最简单的解释往往往是正确的”，但事实上，这个原则的真正意义更为微妙。</p>
+<p>奥卡姆的威廉的话，直译成中文，大意是：</p>
+<blockquote>
+<p>不必要时，勿增实体。</p>
+</blockquote>
+<p>“勿增实体”，“实体”指的是形而上学意义上的存在、本质或属性等理论假设。</p>
+<p>例如，在威廉生活的时代，经院哲学家经常假设出类似“红色的本质”“人性的本质”这样的抽象概念，把哲学搞得叠床架屋，犹如迷雾缭绕的森林。</p>
+<p>威廉抛弃这些假设，直接研究现象，大大简化了当时的哲学讨论。</p>
+<p><strong>所以，“奥卡姆剃刀”的关键是少做假设，而不是尽量简单。</strong></p>
+<h2 id="三、简单是复杂的终极形式"><a href="#三、简单是复杂的终极形式" class="headerlink" title="三、简单是复杂的终极形式"></a>三、简单是复杂的终极形式</h2><p>我们在现实中遇到的很多麻烦，来自太多的假设。</p>
+<p>克里斯坦森在《你要如何衡量你的人生》一书中讲了一个案例：巴黎迪士尼乐园的致命假设。</p>
+<p>迪士尼的前三个乐园都很成功，第四个选址是在巴黎郊区，头两年里，他们损失了将近10亿美元。</p>
+<p>复盘时发现，失败源自项目的规划有如下假设：每年有1100万游客，平均逗留3天。于是便用1100万乘以3，设想出每年有3300万人次“游客逗留”，并据此建酒店和基础设施。</p>
+<p>现实呢？第一年的确有接近1100万游客参观迪士尼，但是，平均每个游客逗留的时间只有一天。</p>
+<p>为什么？其他迪士尼乐园有45个游乐设施，人们可以玩儿3天；而巴黎迪士尼乐园只有15个游乐设施，一天就够了。</p>
+<p>可是，在决策时，人们默认了每个迪士尼乐园的游客数据都是一样的。</p>
+<p>正确的做法是，盘点决策时所作的所有默认假设，并且追问：</p>
+<blockquote>
+<p>如果这个假设成立，最重要的条件是什么？怎样跟踪落实呢？</p>
+</blockquote>
+<p>由此，克里斯坦森为我们分享了一个简单而宝贵的方法：当你要做一项新的决策时，先做一下“测试前提假设”。</p>
+<p>认真问自己：“在哪些前提假设得到验证的条件下，才能证明你的策略是正确的？”</p>
+<p>很多时候，我们都是默认一些选项，然后慢慢就忘记了这些默认选项的假设前提和适用环境。</p>
+<p>拷问自己的观念和决策的默认假设，是奥卡姆剃刀在现实生活中最有效的应用场景。</p>
+<p>事实上，有很多我们犯下的错误，起初看起来很正确，一路也都很正确，然而却是建立在错误的假设基础之上的。</p>
+<p>我们一开始就默认了这些假设，越往后就越不记得来质疑这些假设成立的前提。</p>
+<p>所以，奥卡姆剃刀砍向的，是过多的、不靠谱的假设。</p>
+<p>假设的量越多，需要被确认的东西也越多。所以，反过来，也就容易被证伪。</p>
+<p>这才是奥卡姆剃刀的关键。</p>
+<p>现实中充满了奥卡姆剃刀的“谎言”，例如：</p>
+<ul>
+<li>各种“复杂生活简单化”的人生鸡汤；</li>
+<li>“像乔布斯那样追求极致简单”的创业箴言；</li>
+<li>聪明人追求简单，傻瓜把问题搞复杂；</li>
+<li>甚至连“头脑简单”也借奥卡姆剃刀大行其道。</li>
+</ul>
+<p>有人可能会误认为，由于奥卡姆剃刀鼓励我们选择最简单的解释，那么我们在生活或工作中也应该尽量避免复杂性。</p>
+<p><strong>但是，简单是一种结果，是一种目标，而不是一种方法。</strong></p>
+<p>在某些情况下，我们可能需要面对并处理复杂性，因为某些问题本身就是复杂的，我们不能过于简化它们。</p>
+<p>iPhone 的确很简单，然而里面的芯片很复杂。简单指的是用户体验，而非工作不复杂。</p>
+<p>所以任正非说，简单留给客户，复杂留给自己。</p>
+<p>乔布斯的确能够挥舞“奥卡姆剃刀”砍来砍去，那是因为他有一群顶级人才，解决复杂性问题。iPhone 最初一样有很多复杂功能和设计，这样乔布斯的大刀才有挥舞之处。</p>
+<p>奥卡姆剃刀的本质是“选择”，但是如果没有“多样性”，哪里来的选择？</p>
+<h2 id="四、简单的背后是复杂的功夫"><a href="#四、简单的背后是复杂的功夫" class="headerlink" title="四、简单的背后是复杂的功夫"></a>四、简单的背后是复杂的功夫</h2><p>在上一个模块中，我们讲价值投资时提到过，人们总是爱说：你看，巴菲特的投资道理多简单？那么简单为什么很少有人能做到呢？只是因为不想慢慢变富吗？</p>
+<p>显然没那么简单。</p>
+<p>就像围棋，规则最简单，但却是最复杂的棋类游戏。</p>
+<p>价值投资的确有极少的假设，这一点符合奥卡姆剃刀的原则。</p>
+<p>然而要做好价值投资并不容易，某些投资人喜欢让自己显得云淡风轻，是因为按捺不住“成神成仙”的优越感。这样做其实误导了许多“普通人”。</p>
+<p><strong>越是“简单”的道理，越需要极深的洞见。</strong> 这仿佛是某种能量守恒。正所谓“功不到不为财”，又省力，又省“距离”，从物理上说不通。</p>
+<p>事实上，巴菲特不仅在专业领域有极深的功底，并且过的是一种苦行僧似的生活。</p>
+<p>价值投资者段永平的网名叫“大道无形我有型”，他的投资生活看上去很简单轻松，买的股票也只有几个，而且长期持有。然而，做到这一点太难了。而且，他看似轻松的投资背后，也付出过数亿美元的代价。</p>
+<p>更关键的是，他在做投资之前的企业经营管理经历，打下了坚实的基础。</p>
+<p><strong>只有从小道中走出来，才有可能达至大道。</strong></p>
+<p>就像苹果公司早期的一句 slogan：</p>
+<blockquote>
+<p>简单是复杂的终极形式。</p>
+</blockquote>
+<h2 id="五、假设与证伪"><a href="#五、假设与证伪" class="headerlink" title="五、假设与证伪"></a>五、假设与证伪</h2><p>说到这里，我们来对奥卡姆剃刀的两个关键词再做一次梳理：</p>
+<p>第一个关键词是：假设。</p>
+<p>我很喜欢一句话：“假设是伪装成已知的未知”。</p>
+<p>人类是依靠假设来生存的，我们假设太阳明天照常升起，概率接近100%；我们假设股票未来会涨，概率可能低于50%；我们假设遇见的是一个值得信任的人，概率起伏不定。</p>
+<p>正确的假设带给我们回报，错误的假设带来损失，而那些看起来非常正确的错误假设则带来灾难。</p>
+<p><strong>奥卡姆剃刀，要砍掉的，就是多余的假设、脆弱的假设。</strong></p>
+<p>那么，假设为什么要少呢？</p>
+<p>这就要涉及到第二个关键词：证伪。</p>
+<p>假设越多，需要证明的东西也就越多。</p>
+<p>比如说，有个男生对女朋友说，昨晚一直在和几个哥们儿喝酒。那么，他说的哥们儿的数量越多，的确证据也就越充分。但是，女朋友可能会提出要求：你现在就一个个给他们打电话证实这件事儿。</p>
+<p>这个时候，假如有一个哥们儿说漏了嘴，就被证伪了。</p>
+<p>我们总是用各种信念和模型来理解这个世界，模型要的不是完备性，而是在现实环境中的可证伪性。这才是奥卡姆剃刀的真正逻辑。</p>
+<h2 id="六、在现实决策中使用奥卡姆剃刀"><a href="#六、在现实决策中使用奥卡姆剃刀" class="headerlink" title="六、在现实决策中使用奥卡姆剃刀"></a>六、在现实决策中使用奥卡姆剃刀</h2><p>奥卡姆剃刀并非是一个科学原则，也不是一个关于“理论越简单越好”的铁律。</p>
+<p>比如说，现在计算机这么厉害，而计算机是基于二进制的，也就是仅仅用二进制的0和1，就可以建立起所有的人类知识。那么，是不是可以用奥卡姆剃刀砍掉所有的“实体”，只留下0和1？</p>
+<p>又比如说，大模型得益于规模效应。巨大的数据量，有赖于足够复杂的数学模型。大模型出现之前，基于浅层神经网络的人工智能水平之所以不高，就是因为那个网络过于简单。更庞大而复杂的深度学习，借助于更强大的算力，实现了惊人的智能。</p>
+<p>所以，<strong>奥卡姆剃刀，是指在正确的基础之上简化。而所谓正确，是指用真实的情境去测试，去检验，去证伪。</strong></p>
+<p>最后，如何在现实决策中使用奥卡姆剃刀原则？我为你提炼了6条建议：</p>
+<ol>
+<li><strong>尽量做那些假设较少的事情。</strong> 白日梦很好，但先从现实出发。</li>
+<li><strong>去检查自己做出的假设，尤其是那些默认的假设。</strong> 否则，就会成为先入为主，并变成一厢情愿。</li>
+<li><strong>KISS原则</strong>（Keep it simple, stupid）：保持简单，傻瓜！记得经常对自己说这句话。</li>
+<li><strong>一次只做一件事，但确保是最重要的事情。</strong></li>
+<li><strong>关键的决策要简单，而生活和工作中也需要多样性。</strong> 某些事物需要保持灰度，留有冗余。</li>
+<li><strong>最后一点建议，让自己的心态简单，总是没错的。</strong> 别太担心别人的眼光，也别在意世俗的评价。</li>
+</ol>
+<p>作家马克·鲍尔莱恩说：</p>
+<blockquote>
+<p>一个人成熟的标志之一，就是明白每天发生在自己身上的99%的事情，对于别人而言，根本毫无意义。</p>
+</blockquote>
+<p>既然如此，就用奥卡姆剃刀砍掉自己的那99%的烦恼吧。</p>
+<p>以上就是这一讲的全部内容。</p>
+<p>我是老喻，我们下一讲再见。</p>
+<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><ol>
+<li>奥卡姆剃刀的关键是少做假设，而不是尽量简单。奥卡姆剃刀，要砍掉的是多余的假设、脆弱的假设。</li>
+<li>奥卡姆剃刀，是指在正确的基础之上简化。而所谓正确，是指用真实的情境去测试，去检验，去证伪。</li>
+</ol>
+<hr>
+<p>上一讲：27 胶带纸思维：为什么高手都在用这个笨办法？</p>
+<h2 id="PDF-内用户留言"><a href="#PDF-内用户留言" class="headerlink" title="PDF 内用户留言"></a>PDF 内用户留言</h2><h3 id="左星星（21小时前·上海）"><a href="#左星星（21小时前·上海）" class="headerlink" title="左星星（21小时前·上海）"></a>左星星（21小时前·上海）</h3><p>在现代社会，复杂性往往被当作一种能力的象征。复杂的计划、华丽的语言，甚至不必要的技术术语，都会让人觉得“高大上”。然而，复杂背后隐藏的可能是浅薄的内容。比如，在企业战略中，管理者可能为了展示自己的深度，罗列出许多假设、指标和计划，但真正重要的往往只是几个核心问题：客户的真实需求是什么？企业的核心价值是什么？奥卡姆剃刀能够帮助我们从表面的复杂性中剥离出真正有意义的内容。它不仅是一种简化的策略，更是一种聚焦的能力。</p>
+<p>奥卡姆剃刀也揭示了“假设经济学”中的权衡问题。每一个假设都是一种认知成本，维护这些假设需要消耗资源，比如时间、精力甚至情感。当假设变得过多时，我们的认知负担也会随之增加，而这种负担往往会让我们失去清晰的判断力。</p>
+<p>试想一个在人际关系中苦苦挣扎的人，如果他假设“每个人都可能在算计我”，那么他的生活将充满疲惫和防备。而一旦他使用奥卡姆剃刀砍掉那些没有根据的假设，他的内心将变得更轻松，也更能专注于真正值得关注的关系。这种“减负”不仅是理论上的精简，更是一种实践中的解放。</p>
+<h3 id="鸿涛（22小时前）"><a href="#鸿涛（22小时前）" class="headerlink" title="鸿涛（22小时前）"></a>鸿涛（22小时前）</h3><p>奥卡姆剃刀要求的就如同我们作数学题，少假设就是不要跳步，省略太多不容易看懂还容易出错；可证伪就是只用坚实的公理、定理做依据，不能用似是而非的推论。奥卡姆剃刀砍掉的是推断中的不坚实的设想，进而建立起用可靠逻辑推导出的成事决策。</p>
+<h3 id="李豪（17小时前·河南）"><a href="#李豪（17小时前·河南）" class="headerlink" title="李豪（17小时前·河南）"></a>李豪（17小时前·河南）</h3><p>听完今天的课，让我倒吸一口凉气。原来自己以为知道的、经常挂在嘴边的奥卡姆剃刀原理，其实我什么都不知道，而且理解极其片面甚至是错误的。</p>
+<p>我重新思考了“简单”与“复杂”的关系。所谓“勿增实体”，表面上看似追求简单的生活哲学，实际上却是一种对复杂性的深刻理解和精准选择。</p>
+<p>马克·鲍尔莱恩的观点让我印象深刻：“每天发生在自己身上的99%的事情，对于别人而言，根本毫无意义。”听到这句话的瞬间，我不禁想到：我们为许多无意义的细节而烦恼，为不必要的假设而纠结，却忘了把握真正重要的1%。所以，与其困于细枝末节，不如挥舞奥卡姆剃刀，砍掉那冗余的99%，轻装上阵。</p>
+<p>然而，“简单”并不等同于“草率”。我们在生活中总是容易陷入一种误区：追求表面的简单化，却忽视了复杂性背后的深度价值。例如，当有人用“像乔布斯一样简单”来指导创业，或者过度贩卖“生活简单化”的鸡汤时，他们忽略了乔布斯的“简单”是基于无数复杂设定的打磨，而非空中楼阁。简单是一种结果，而非方法。复杂性的价值体现在选择的可能性。奥卡姆剃刀不是要否定复杂，而是帮助我们找到复杂中真正重要的部分。</p>
+<h3 id="炎帝（15小时前·北京）"><a href="#炎帝（15小时前·北京）" class="headerlink" title="炎帝（15小时前·北京）"></a>炎帝（15小时前·北京）</h3><p>万sir是经常讲奥卡姆剃刀的。</p>
+<p>奥卡姆剃刀，“如无必要，勿增实体”，但凡事又不能过头，对于追求简单，要有度。爱因斯坦曾说过：“凡事尽可能简洁，但不能太过简单。”这句话完美地诠释了奥卡姆剃刀的应用原则——追求简洁而不失深度。</p>
+<p>奥卡姆剃刀是一个很好用的工具，比如购物时，可以问自己几个关键问题：我真的需要它吗？它会给我带来什么样的价值？如果不买它会有怎样的后果？通过这种方式，我们可以避免冲动消费，并确保每一分钱都花得有价值。</p>
+<p>工作上，以项目管理为例，当团队成员遇到困难时，领导者往往会倾向于寻找复杂的解决方案，但实际上，很多时候最直接有效的办法往往是那些看起来最简单的选择。正如杰克·韦尔奇所强调的那样：“成功属于精简敏捷的组织。”他坚信企业不必复杂化，而是要致力于“去复杂化”，让每一个决策都能迅速转化为实际行动。</p>
+<p>比如说做项目报告，有些人总喜欢把各种数据、图表、文字一股脑地往上堆，不管有没有关联，就为了显示自己“做了很多工作”。结果呢，老板或者客户一看，一头雾水，根本抓不住重点。这时候要是运用奥卡姆剃刀，把那些无关紧要的数据删除，只留下最能说明项目成果、问题和解决方案的核心内容，简洁明了，一目了然。就像建房子，不是材料堆得越多越好，而是精准地选用合适的材料，才能搭建出坚固又美观的建筑。</p>
+<p>奥卡姆剃刀为我们提供了一种思考问题的有效方式，但它并不是万能钥匙。有时候过于追求简化可能会导致忽略事物本身的复杂性。在实际操作过程中，我们需要结合具体情况灵活运用这一原则，既不能因为害怕麻烦而放弃深入探究，也不能为了显示专业而故意制造障碍。</p>
+<h3 id="伴听（22小时前·广东）"><a href="#伴听（22小时前·广东）" class="headerlink" title="伴听（22小时前·广东）"></a>伴听（22小时前·广东）</h3><p>越是“简单”的道理，越需要极深的洞见。这仿佛是某种能量守恒。正所谓“功不到不为财”，又省力，又省“距离”，从物理上说不通。</p>
+<p>看完本讲，想到了定投这个看似简单笠立的投资方法。如果使用奥卡姆剃刀，只留一个定投成功的假设前提，那留什么？大家也可以想想。上次问了朋友，他说了三个答案，都没说上。此前我们还一起看过一本书，讨论了定投的简单性和重要性。</p>
+<p>定投最重要的是投资纪律，是本金，还是时间？其实是选一个能跟着经济发展的定投工具，如果不能涨回来，那再多的本金，再多的坚持，也取不到一个好的收益。现在想想，朋友为啥没答上，根据老师这讲的知识，估计是把涨回来当做前提假设条件了，但实际投资中，如果没有验证这个长期看涨的假设前提，投的越多，可能越难过。</p>
+<p>简单是结果，是目标，定投满足这两点，但为什么要定投，定投什么好，这个思考的过程，虽不困难，会可能比想象的复杂，否则大部分人为什么不用呢，用了又拿不住呢。</p>
+<h3 id="万雄（14小时前·福建）"><a href="#万雄（14小时前·福建）" class="headerlink" title="万雄（14小时前·福建）"></a>万雄（14小时前·福建）</h3><p>在本文之前，一直误解了奥卡姆剃刀，误解主要在于“实体”，将勿增“实体”的“实体”当作了整体的部分。在本文得知，“实体”指形而上学意义上的存在、本质或属性等理论假设。</p>
+<p>奥卡姆剃刀，不在于尽量简单，而在于少做假设。因为假设越多，证伪的可能性越大。</p>
+<h3 id="太阳之子（15小时前·四川）"><a href="#太阳之子（15小时前·四川）" class="headerlink" title="太阳之子（15小时前·四川）"></a>太阳之子（15小时前·四川）</h3><p>关于“简单是复杂的终极形式”的案例，不仅有本文所说的芯片，也有生物医药领域的药片。</p>
+<p>薄世宁医生说：“药片，是医学对于疾病的所有医学解决方案的物质载体。病人不需要了解一片药背后复杂的知识体系，只需要简单地按照医嘱吃药就可以了。药用一种简单形式，交付给病人一个复杂的认知体系。”</p>
+<p>一片看似小小简单的药片和芯片，都凝聚着最复杂的前沿科技～</p>
+<h3 id="方兴（阳光芳草）（15小时前·澳大利亚）"><a href="#方兴（阳光芳草）（15小时前·澳大利亚）" class="headerlink" title="方兴（阳光芳草）（15小时前·澳大利亚）"></a>方兴（阳光芳草）（15小时前·澳大利亚）</h3><ol>
+<li><p>能够区别事实和假设，能够区别正确和错误的假设，这是非常重要的智慧。很多悲剧错误的决定都来自错误的假设，没有在现实里去验证自己的假设。林黛玉那么喜欢贾宝玉，但她从来没有去试探过贾母和王夫人的心意，从来没有去尽早发现真相，但她内心一直有一个非常不符合事实的假设，那就是她有一天可能嫁给贾宝玉，穆念慈的人生最大悲剧，就是建立在两个错误的假设上，杨康是个好人，以及杨康可能改好。</p>
+<p>这就是为什么追求真理很重要，因为真理是事实，是不需要验证的，假设很危险，因为我们的假设有可能出错。所以，智慧的人都有很强的行动力，这是因为我们只有在行动里才能够去区别事实和自己的假设，才能够将那些不准确的假设一步步的化成正确的假设。</p>
+</li>
+<li><p>清晰的理解自己的动机，自己的假设，在现实里去验证自己的假设，构筑最好的策略，让自己的策略建立在那些正确的真理和假设，砍掉错误的假设。</p>
+</li>
+<li><p>只有自己的思考，越系统化越复杂，才有可能越接近简单的真理和假设，化繁为简返璞归真，这是要有大数据的基础才能够进行的归纳和提炼，缺乏数据的支持，那就是苍白和局限。</p>
+</li>
+<li><p>砍掉错误的假设，让自己的思考越来越接近真相和真理，看清全局以后，那就砍掉非重要的因素，聚焦关键点，因为时间和资源有限，让自己的时间和资源投放在最重要最大回报的因素和事情上。</p>
+<p>巴菲特有一个非常好的建议，就是把你需要在未来一年实现的10个目标写下来，然后把后面七个毫不犹豫地划掉，只聚焦前三个。在我看来这是奥卡姆剃刀的一个很好的体现，因为前期有很复杂的思考和决定过程才能够列出10个目标，在这样的复杂性的前提下，我们还要砍掉七个目标，聚焦前三个。巴菲特专注的能力，超越这个世界绝大多数的人，他的这个建议我也很需要能够实施起来。</p>
+</li>
+</ol>
+<h3 id="你当像🦉飞往你的山（15小时前·江苏）"><a href="#你当像🦉飞往你的山（15小时前·江苏）" class="headerlink" title="你当像🦉飞往你的山（15小时前·江苏）"></a>你当像🦉飞往你的山（15小时前·江苏）</h3><p>有些人喜欢让自己显得云淡风轻，这么做其实误导了许多“普通人”——简单是复杂的终极形式。</p>
+<p>如何在现实决策中使用奥卡姆剃刀原则？</p>
+<p>①尽量做那些假设较少的事情。从现实出发。</p>
+<p>②检查自己做出的假设，不先入为主，一厢情愿；</p>
+<p>③KISS 原则 Keep it simple, stupid：保持简单，傻瓜！记得经常对自己说这句话。一次只做一件事，但确保是最重要的事情。简单是复杂的终极形式。</p>
+<p>④关键的决策要简单，保持灰度和冗余。</p>
+<p>⑤让自己的心态简单。“一个人成熟的标志之一，就是明白每天发生在自己身上的99%的事情，对于别人而言，根本毫无意义。”既然如此，用奥卡姆剃刀砍掉自己的那99%的烦恼。</p>
+<h3 id="学习机器（16小时前·IP未知）"><a href="#学习机器（16小时前·IP未知）" class="headerlink" title="学习机器（16小时前·IP未知）"></a>学习机器（16小时前·IP未知）</h3><p>为什么说，看一个人有没有撒谎，要多问其细节呢？很简单，因为如果这个人在撒谎，为了证明自己没有撒谎，一定会在细节中增加大量的假设。而从奥卡姆剃刀的原理来看，假设越多，被证伪的可能性就越高。自然就很容易识别对方有没有撒谎，而且你会发现对方的很多假设简直牛头不对马嘴哈哈哈。</p>
+<h3 id="JerryLuo（15小时前·湖北）"><a href="#JerryLuo（15小时前·湖北）" class="headerlink" title="JerryLuo（15小时前·湖北）"></a>JerryLuo（15小时前·湖北）</h3><p>在选择投资项目时，有多种复杂的投资策略和产品可供选择。比如，一些金融机构可能会推出结构非常复杂的金融衍生品，这些产品往往涉及很多假设条件，如复杂的利率波动假设、市场环境假设以及各种风险对冲机制。按照奥卡姆剃刀原则，投资者可以简化决策过程。</p>
+<p>例如，对于普通投资者来说，比起复杂的金融衍生品，简单的指数基金就是一种更符合该原则的选择。指数基金的核心假设相对简单，主要基于市场的整体发展趋势，通过跟踪市场指数来获取平均收益，不需要对个别公司的复杂情况或复杂的金融模型进行大量分析，从而避免了许多不确定因素和复杂的假设前提。</p>
+<h3 id="知东东（10小时前·黑龙江）"><a href="#知东东（10小时前·黑龙江）" class="headerlink" title="知东东（10小时前·黑龙江）"></a>知东东（10小时前·黑龙江）</h3><p>感觉到的课程设置就是运用了奥卡姆剃刀定律，通过简化的课程设置分类，减少挑选负担，使用户更容易掌握核心知识。用户在选课过程中，也要运用这个定律，不能贪多求大，而是要注重小而精的听懂会用。延伸到日常生活中，就是选择最简单和最直接的解决方案，以避免过度的复杂性和繁琐的步骤。比如如何将鸡蛋立在桌子上，那就是打碎它的一头。</p>
+<h3 id="魏宇-创业者（13小时前·江苏）"><a href="#魏宇-创业者（13小时前·江苏）" class="headerlink" title="魏宇-创业者（13小时前·江苏）"></a>魏宇-创业者（13小时前·江苏）</h3><p>对于创业者，每天大量的事务是没有意义的，而唯有“找人、找钱、找方向”才是最重要但不紧急的事务，所以创业者要会使用奥卡姆剃刀模型砍掉每天大量的事务。如奈飞 CEO 多次说：只要努力就能获得成功是谬误，大多数时候努力都是瞎忙活，重点的事情决定了99%的结果！</p>
+<h3 id="victory（4小时前·四川）"><a href="#victory（4小时前·四川）" class="headerlink" title="victory（4小时前·四川）"></a>victory（4小时前·四川）</h3><p>从概率学上来说越少的假设就意味着不确定性越低，就越容易验证真伪，而越多的假设一旦确定性受到几个因素的叠加影响自然是变低的趋势，同时也难以判断出哪个假设是错的，就没有办法去改进。一次验证一个，小步快跑逐渐迭代，控制变量，无疑是一个明智的选择。</p>
+<h3 id="百年学者（4小时前·广东）"><a href="#百年学者（4小时前·广东）" class="headerlink" title="百年学者（4小时前·广东）"></a>百年学者（4小时前·广东）</h3><p>简单是一种结果，是一种目标，而不是一种方法。越是“简单”的道理，越需要极深的洞见。</p>
+<p>简单是复杂的终极形式。</p>
+<p>奥卡姆剃刀，是指在正确的基础之上简化。而所谓正确，是指用真实的情境去测试，去检验，去证伪。</p>
+<p>奥卡姆剃刀的6条建议：</p>
+<ol>
+<li>尽量做假设较少的事情。白日梦很好，但先从现实出发。</li>
+<li>检验自己的假设，尤其是那些默认的假设。避免先入为主的谬误。</li>
+<li>KISS 原则（Keep it simple, stupid）：保持简单，傻瓜！</li>
+<li>一次只做一件事，但确保是最重要的事情。</li>
+<li>关键的决策要简单，而生活和工作中也需要多样性。保持灰度，留有冗余。</li>
+<li>让自己的心态简单。别太担心别人的眼光，也别在意世俗的评价。</li>
+</ol>
+<h3 id="阿繁达1043（9小时前·福建）"><a href="#阿繁达1043（9小时前·福建）" class="headerlink" title="阿繁达1043（9小时前·福建）"></a>阿繁达1043（9小时前·福建）</h3><p>📖万老师曾经有一篇文章是《能解释为愚蠢的就不要解释为恶意》，就是奥卡姆剃刀应用的很好的例子。因为大多数人在大多数情况下运用的是系统1的快思考，本能地就会忽略他人的感受，自以为是地做事情，伤害到别人还不自知，这一切就可以简单地归结为愚蠢；但如果解释为恶意，就要一堆的前提假设，比如对方是早就看我不顺眼了，这么做就是故意为难我，并且他还要确保这么做不会遭到报复，还要准备一系列的应对措施……而以上所有的假设都没法证伪，只能带着自己越想越复杂，越想越极端，由此带来更多的麻烦和情绪内耗。</p>
+<p>📖我一个人吃饭时也遵循奥卡姆剃刀原则，烫个青菜保证维生素和膳食纤维的摄入，两个鸡蛋保证优质蛋白，一碗燕麦保证能量来源，只有真正必要的东西，没有多余的脂肪、盐和糖给身体造成负担，也省去不知道点什么外卖的纠结，省下做复杂饭菜的时间去做更重要的事。现在我更理解了为什么像巴菲特那些大佬为什么要过苦行僧一样的极简生活，就是要砍掉生活中那些不必要的精力和时间消耗，专注于真正重要的事。</p>
+<p>📖简单只是一种结果，是精华的沉淀，但真正做到的人才知道背后曾经经历过怎样的兜兜转转，内心冲突，痛苦抉择，所有经历过的复杂是通往最后的和谐、简约的必由之路。</p>
+<h3 id="新月（11小时前·四川）"><a href="#新月（11小时前·四川）" class="headerlink" title="新月（11小时前·四川）"></a>新月（11小时前·四川）</h3><p>奥卡姆剃刀砍向的，是过多的、不靠谱的假设。–这句话让我想到曾奇峰老师课里的一句话：精神分析就是要切断与过去的链接。为什么要切断？就是因为过去形成的观念、内在关系模式的环境和条件早就变了，但人们依然不自觉地在此基础上去判断现在、用过去的“成功经验”处理当下的事情，这是心理上的刻舟求剑，也是无法活在当下的原因。这些深植于内心的观念和模式其实就是假设，甚至可以说是幻想，因为它们与现实已经不相符了。</p>
+<p>写到这里，心里很是高兴，原来知识的底层逻辑真的是相通的，打通时的快感就是学习时的最大乐趣和满足了。</p>
+<p>以上留言由作者筛选显示</p>
+<p>【知识福利社】你的私人书院，微信：312005650 全网热门课程众筹共享！</p>
+<hr>
+<p><a href="/book/decision-algorithm/027/">← 027｜胶带纸思维：为什么高手都在用这个笨办法？</a> · <a href="/book/">返回目录</a> · <a href="/book/decision-algorithm/029/">029｜反事实思维：条件不够如何突围？ →</a></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"></div></div><div class="card-widget card-archives"></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">0</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-27T19:51:40.501Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>
