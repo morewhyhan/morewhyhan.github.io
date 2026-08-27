@@ -2,7 +2,7 @@
 title: 虚船向远
 layout: page
 type: rain-home
-top_img: /img/home-hero-loop-poster.jpg
+top_img: /img/home-hero-static.webp
 comments: false
 ---
 
