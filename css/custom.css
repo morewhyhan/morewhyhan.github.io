@@ -8,7 +8,7 @@ body {
 }
 
 /* Homepage looping-video hero. The poster remains as a no-motion fallback. */
-#body-wrap.type-rain-home #page-header {
+#page-header.full_page {
   height: 100vh;
   height: 100svh;
   min-height: 580px;
@@ -20,27 +20,18 @@ body {
   background-attachment: scroll;
 }
 
-#body-wrap.type-rain-home #page-header::before {
+#page-header.full_page::before {
   z-index: 1;
   background: rgba(0, 0, 0, 0.24);
 }
 
-#body-wrap.type-rain-home #nav,
-#body-wrap.type-rain-home #page-site-info,
-#body-wrap.type-rain-home #scroll-down {
+#page-header.full_page #nav,
+#page-header.full_page #site-info,
+#page-header.full_page #scroll-down {
   z-index: 3;
 }
 
-#body-wrap.type-rain-home #page-site-info {
-  text-wrap: balance;
-}
-
-#body-wrap.type-rain-home #page-site-info #site-title {
-  letter-spacing: 0.14em;
-  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.72);
-}
-
-#body-wrap.type-rain-home .home-hero-video {
+#page-header.full_page .home-hero-video {
   position: absolute;
   inset: 0;
   z-index: 0;
@@ -53,17 +44,13 @@ body {
 }
 
 @media (max-width: 768px) {
-  #body-wrap.type-rain-home #page-header {
+  #page-header.full_page {
     min-height: 520px;
-  }
-
-  #body-wrap.type-rain-home #page-site-info #site-title {
-    letter-spacing: 0.09em;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  #body-wrap.type-rain-home .home-hero-video {
+  #page-header.full_page .home-hero-video {
     display: none;
   }
 }
