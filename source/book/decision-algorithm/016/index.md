@@ -321,4 +321,4 @@ description: "《老喻·决策算法100讲》016：价值投资：为什么巴�
 
 ---
 
-[← 015｜彩票的诱惑：怎样寻找彩票之外的概率套利机会？](/book/decision-algorithm/015/) · [返回目录](/book/) · [017｜耐心和格局：为什么赚大钱需要宽框架思维？ →](/book/decision-algorithm/017/)
+[← 015｜彩票的诱惑：怎样寻找彩票之外的概率套利机会？](/book/decision-algorithm/015/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [017｜耐心和格局：为什么赚大钱需要宽框架思维？ →](/book/decision-algorithm/017/)

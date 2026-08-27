@@ -240,4 +240,4 @@ description: "《老喻·决策算法100讲》069：委托陷阱：为什么最�
 
 ---
 
-[← 068｜惯性陷阱：为什么你无法做出自己想要的选择？](/book/decision-algorithm/068/) · [返回目录](/book/) · [070｜借力决策：向旅行者一号学习 →](/book/decision-algorithm/070/)
+[← 068｜惯性陷阱：为什么你无法做出自己想要的选择？](/book/decision-algorithm/068/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [070｜借力决策：向旅行者一号学习 →](/book/decision-algorithm/070/)

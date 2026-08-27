@@ -353,4 +353,4 @@ description: "《老喻·决策算法100讲》091：一剑斩断：如何摆脱�
 
 ---
 
-[← 090｜知行合一：你无法假装成一个你不是的人](/book/decision-algorithm/090/) · [返回目录](/book/) · [092｜教育决策：AI时代教育需要怎样的改变？ →](/book/decision-algorithm/092/)
+[← 090｜知行合一：你无法假装成一个你不是的人](/book/decision-algorithm/090/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [092｜教育决策：AI时代教育需要怎样的改变？ →](/book/decision-algorithm/092/)

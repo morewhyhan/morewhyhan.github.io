@@ -313,4 +313,4 @@ description: "《老喻·决策算法100讲》040：决策根基：怎样打破�
 
 ---
 
-[← 039｜混合策略：怎样用随机性成为更强大的自己？](/book/decision-algorithm/039/) · [返回目录](/book/) · [041｜可证伪性：为什么你要成为自己的杠精？ →](/book/decision-algorithm/041/)
+[← 039｜混合策略：怎样用随机性成为更强大的自己？](/book/decision-algorithm/039/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [041｜可证伪性：为什么你要成为自己的杠精？ →](/book/decision-algorithm/041/)

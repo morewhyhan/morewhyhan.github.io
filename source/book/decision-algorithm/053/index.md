@@ -262,4 +262,4 @@ description: "《老喻·决策算法100讲》053：大卫·斯文森：为什�
 
 ---
 
-[← 052｜约翰·博格：一生赚多少钱才算“足够”？](/book/decision-algorithm/052/) · [返回目录](/book/) · [054｜查尔斯·埃利斯：如何成为真正的财富赢家？ →](/book/decision-algorithm/054/)
+[← 052｜约翰·博格：一生赚多少钱才算“足够”？](/book/decision-algorithm/052/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [054｜查尔斯·埃利斯：如何成为真正的财富赢家？ →](/book/decision-algorithm/054/)

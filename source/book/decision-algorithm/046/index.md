@@ -455,4 +455,4 @@ $$P(获胜)\approx\boxed{0.758}.$$
 
 ---
 
-[← 045｜避风港：怎样在暴风雨中变得更加强大？](/book/decision-algorithm/045/) · [返回目录](/book/) · [047｜六十分哲学：不是每一场人生的战斗都要你全力以赴 →](/book/decision-algorithm/047/)
+[← 045｜避风港：怎样在暴风雨中变得更加强大？](/book/decision-algorithm/045/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [047｜六十分哲学：不是每一场人生的战斗都要你全力以赴 →](/book/decision-algorithm/047/)

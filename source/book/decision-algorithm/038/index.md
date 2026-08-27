@@ -302,4 +302,4 @@ description: "《老喻·决策算法100讲》038：极大极小原理：怎样�
 
 ---
 
-[← 037｜快速决策：怎样治好你的选择困难症？](/book/decision-algorithm/037/) · [返回目录](/book/) · [039｜混合策略：怎样用随机性成为更强大的自己？ →](/book/decision-algorithm/039/)
+[← 037｜快速决策：怎样治好你的选择困难症？](/book/decision-algorithm/037/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [039｜混合策略：怎样用随机性成为更强大的自己？ →](/book/decision-algorithm/039/)

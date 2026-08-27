@@ -140,4 +140,4 @@ TikTok、股权激励和跟投机制都体现了利益绑定，但也有员工�
 
 ---
 
-[← 033｜弃子争先：怎样抢回人生的主动权？](/book/decision-algorithm/033/) · [返回目录](/book/) · [035｜赢得客户：为什么说诚实是最好的策略？ →](/book/decision-algorithm/035/)
+[← 033｜弃子争先：怎样抢回人生的主动权？](/book/decision-algorithm/033/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [035｜赢得客户：为什么说诚实是最好的策略？ →](/book/decision-algorithm/035/)

@@ -264,4 +264,4 @@ description: "《老喻·决策算法100讲》056：态度第一：怎样拿回�
 
 ---
 
-[← 055｜道路选择：为什么人生不是轨道，而是旷野？](/book/decision-algorithm/055/) · [返回目录](/book/) · [057｜选择VS努力：怎样找到你人生的α和β？ →](/book/decision-algorithm/057/)
+[← 055｜道路选择：为什么人生不是轨道，而是旷野？](/book/decision-algorithm/055/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [057｜选择VS努力：怎样找到你人生的α和β？ →](/book/decision-algorithm/057/)

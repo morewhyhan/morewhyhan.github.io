@@ -211,4 +211,4 @@ description: "《老喻·决策算法100讲》047：六十分哲学：不是每�
 
 ---
 
-[← 046｜费德勒的秘密：为什么54%得分率能成为世界第一？](/book/decision-algorithm/046/) · [返回目录](/book/) · [048｜满意就好：如何成为一个不纠结的人？ →](/book/decision-algorithm/048/)
+[← 046｜费德勒的秘密：为什么54%得分率能成为世界第一？](/book/decision-algorithm/046/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [048｜满意就好：如何成为一个不纠结的人？ →](/book/decision-algorithm/048/)

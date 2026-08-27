@@ -270,4 +270,4 @@ description: "《老喻·决策算法100讲》000：发刊词：做好决策，�
 
 ---
 
-[返回目录](/book/) · [001｜理解决策：好决策和好运气是什么关系？ →](/book/decision-algorithm/001/)
+[返回《决策算法100讲》目录](/book/decision-algorithm/) · [001｜理解决策：好决策和好运气是什么关系？ →](/book/decision-algorithm/001/)

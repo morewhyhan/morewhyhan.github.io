@@ -377,4 +377,4 @@ description: "《老喻·决策算法100讲》031：两眼论：怎样找到你�
 
 ---
 
-[← 030｜关键时刻：怎样把握最佳出手时机？](/book/decision-algorithm/030/) · [返回目录](/book/) · [032｜渡劫：如何在不确定性中逆风翻盘？ →](/book/decision-algorithm/032/)
+[← 030｜关键时刻：怎样把握最佳出手时机？](/book/decision-algorithm/030/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [032｜渡劫：如何在不确定性中逆风翻盘？ →](/book/decision-algorithm/032/)

@@ -456,4 +456,4 @@ PLACE五要素不仅适用于选择城市，而且适用于选择行业，选择
 
 ---
 
-[← 087｜面对意外：什么是“突击考试悖论”？](/book/decision-algorithm/087/) · [返回目录](/book/) · [089｜赚钱机器：你拥有“生产性资产”吗？ →](/book/decision-algorithm/089/)
+[← 087｜面对意外：什么是“突击考试悖论”？](/book/decision-algorithm/087/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [089｜赚钱机器：你拥有“生产性资产”吗？ →](/book/decision-algorithm/089/)

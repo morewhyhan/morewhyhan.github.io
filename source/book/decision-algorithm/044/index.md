@@ -487,4 +487,4 @@ description: "《老喻·决策算法100讲》044：聪明的傻瓜：为什么�
 
 ---
 
-[← 043｜黑天鹅：如何从意外事件中“逆势狂赚”？](/book/decision-algorithm/043/) · [返回目录](/book/) · [045｜避风港：怎样在暴风雨中变得更加强大？ →](/book/decision-algorithm/045/)
+[← 043｜黑天鹅：如何从意外事件中“逆势狂赚”？](/book/decision-algorithm/043/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [045｜避风港：怎样在暴风雨中变得更加强大？ →](/book/decision-algorithm/045/)

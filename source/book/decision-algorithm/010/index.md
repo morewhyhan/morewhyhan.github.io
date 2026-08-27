@@ -382,4 +382,4 @@ description: "《老喻·决策算法100讲》010：提前退休：“25倍法�
 
 ---
 
-[← 009｜真正获得复利：怎么用对复利公式？](/book/decision-algorithm/009/) · [返回目录](/book/) · [011｜处置效应：为什么你会拔掉玫瑰，灌溉杂草？ →](/book/decision-algorithm/011/)
+[← 009｜真正获得复利：怎么用对复利公式？](/book/decision-algorithm/009/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [011｜处置效应：为什么你会拔掉玫瑰，灌溉杂草？ →](/book/decision-algorithm/011/)

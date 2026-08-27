@@ -178,4 +178,4 @@ description: "《老喻·决策算法100讲》033：弃子争先：怎样抢回�
 
 ---
 
-[← 032｜渡劫：如何在不确定性中逆风翻盘？](/book/decision-algorithm/032/) · [返回目录](/book/) · [034｜识别立场：为什么“屁股”赚钱比“脑袋”多？ →](/book/decision-algorithm/034/)
+[← 032｜渡劫：如何在不确定性中逆风翻盘？](/book/decision-algorithm/032/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [034｜识别立场：为什么“屁股”赚钱比“脑袋”多？ →](/book/decision-algorithm/034/)

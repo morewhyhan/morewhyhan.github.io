@@ -100,4 +100,4 @@ Costco 新任 CEO Craig Jelinek 说过：“好事将会降临在你身上。”
 
 ---
 
-[← 034｜识别立场：为什么“屁股”赚钱比“脑袋”多？](/book/decision-algorithm/034/) · [返回目录](/book/) · [036｜生存下去：怎样利用冗余设计“求生舱”？ →](/book/decision-algorithm/036/)
+[← 034｜识别立场：为什么“屁股”赚钱比“脑袋”多？](/book/decision-algorithm/034/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [036｜生存下去：怎样利用冗余设计“求生舱”？ →](/book/decision-algorithm/036/)

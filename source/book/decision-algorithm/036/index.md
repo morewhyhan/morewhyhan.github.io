@@ -306,4 +306,4 @@ PACE 法则在生活中也很有用。最常见的场景可能是：我们做任
 
 ---
 
-[← 035｜赢得客户：为什么说诚实是最好的策略？](/book/decision-algorithm/035/) · [返回目录](/book/) · [037｜快速决策：怎样治好你的选择困难症？ →](/book/decision-algorithm/037/)
+[← 035｜赢得客户：为什么说诚实是最好的策略？](/book/decision-algorithm/035/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [037｜快速决策：怎样治好你的选择困难症？ →](/book/decision-algorithm/037/)

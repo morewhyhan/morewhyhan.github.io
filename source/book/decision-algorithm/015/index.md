@@ -218,4 +218,4 @@ Winfall 彩票跟所有彩票一样，整体的期望值当然是负的，只有
 
 ---
 
-[← 014｜买房的逻辑：房子还是投资的好选择吗？](/book/decision-algorithm/014/) · [返回目录](/book/) · [016｜价值投资：为什么巴菲特你学不会？ →](/book/decision-algorithm/016/)
+[← 014｜买房的逻辑：房子还是投资的好选择吗？](/book/decision-algorithm/014/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [016｜价值投资：为什么巴菲特你学不会？ →](/book/decision-algorithm/016/)

@@ -346,4 +346,4 @@ description: "《老喻·决策算法100讲》004：一维：胜率和赔率为�
 
 ---
 
-[← 003｜有限道德：为什么你要先小人后君子？](/book/decision-algorithm/003/) · [返回目录](/book/) · [005｜二维：怎样用期望值衡量决策收益？ →](/book/decision-algorithm/005/)
+[← 003｜有限道德：为什么你要先小人后君子？](/book/decision-algorithm/003/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [005｜二维：怎样用期望值衡量决策收益？ →](/book/decision-algorithm/005/)

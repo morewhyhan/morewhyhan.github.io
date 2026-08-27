@@ -262,4 +262,4 @@ V（最终）= V（初始）+ 2U
 
 ---
 
-[← 069｜委托陷阱：为什么最信任的人却带来更大伤害？](/book/decision-algorithm/069/) · [返回目录](/book/) · [071｜确定性陷阱：怎样在不确定性中生存？ →](/book/decision-algorithm/071/)
+[← 069｜委托陷阱：为什么最信任的人却带来更大伤害？](/book/decision-algorithm/069/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [071｜确定性陷阱：怎样在不确定性中生存？ →](/book/decision-algorithm/071/)

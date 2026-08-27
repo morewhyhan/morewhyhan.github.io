@@ -258,4 +258,4 @@ description: "《老喻·决策算法100讲》052：约翰·博格：一生赚�
 
 ---
 
-[← 051｜巴菲特：如何在不确定性中构建确定性？](/book/decision-algorithm/051/) · [返回目录](/book/) · [053｜大卫·斯文森：为什么资产组合会主导投资结果？ →](/book/decision-algorithm/053/)
+[← 051｜巴菲特：如何在不确定性中构建确定性？](/book/decision-algorithm/051/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [053｜大卫·斯文森：为什么资产组合会主导投资结果？ →](/book/decision-algorithm/053/)

@@ -412,4 +412,4 @@ description: "《老喻·决策算法100讲》087：面对意外：什么是“�
 
 ---
 
-[← 086｜婚姻决策：怎样和Ta更好地共度一生？](/book/decision-algorithm/086/) · [返回目录](/book/) · [088｜移居决策：怎样择一邻处，放大你的优势？ →](/book/decision-algorithm/088/)
+[← 086｜婚姻决策：怎样和Ta更好地共度一生？](/book/decision-algorithm/086/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [088｜移居决策：怎样择一邻处，放大你的优势？ →](/book/decision-algorithm/088/)

@@ -566,4 +566,4 @@ C计划是兜底的，是保险存款。
 
 ---
 
-[← 080｜社交决策：怎样构建你的四级社交圈？](/book/decision-algorithm/080/) · [返回目录](/book/) · [082｜消费决策：怎样聪明花钱，让幸福最大化？ →](/book/decision-algorithm/082/)
+[← 080｜社交决策：怎样构建你的四级社交圈？](/book/decision-algorithm/080/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [082｜消费决策：怎样聪明花钱，让幸福最大化？ →](/book/decision-algorithm/082/)

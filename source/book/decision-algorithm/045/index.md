@@ -203,4 +203,4 @@ description: "《老喻·决策算法100讲》045：避风港：怎样在暴风�
 
 ---
 
-[← 044｜聪明的傻瓜：为什么绝大多数赢家靠的都是运气？](/book/decision-algorithm/044/) · [返回目录](/book/) · [046｜费德勒的秘密：为什么54%得分率能成为世界第一？ →](/book/decision-algorithm/046/)
+[← 044｜聪明的傻瓜：为什么绝大多数赢家靠的都是运气？](/book/decision-algorithm/044/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [046｜费德勒的秘密：为什么54%得分率能成为世界第一？ →](/book/decision-algorithm/046/)

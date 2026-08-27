@@ -236,4 +236,4 @@ Hold，挺住，不仅是一种勇气，更是一种智慧。
 
 ---
 
-[← 029｜反事实思维：条件不够如何突围？](/book/decision-algorithm/029/) · [返回目录](/book/) · [031｜两眼论：怎样找到你的人生杠杆？ →](/book/decision-algorithm/031/)
+[← 029｜反事实思维：条件不够如何突围？](/book/decision-algorithm/029/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [031｜两眼论：怎样找到你的人生杠杆？ →](/book/decision-algorithm/031/)

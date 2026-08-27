@@ -281,4 +281,4 @@ description: "《老喻·决策算法100讲》084：锚点选择：为什么比�
 
 ---
 
-[← 083｜面对冲突：为什么你要遵循“幸福者退让原则”？](/book/decision-algorithm/083/) · [返回目录](/book/) · [085｜恋爱决策：遇到渣男后你是否还相信男人？ →](/book/decision-algorithm/085/)
+[← 083｜面对冲突：为什么你要遵循“幸福者退让原则”？](/book/decision-algorithm/083/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [085｜恋爱决策：遇到渣男后你是否还相信男人？ →](/book/decision-algorithm/085/)

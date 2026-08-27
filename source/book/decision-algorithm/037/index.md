@@ -343,4 +343,4 @@ FOBO，就是“更佳选择恐惧症”，即（fear of a better option）。�
 
 ---
 
-[← 036｜生存下去：怎样利用冗余设计“求生舱”？](/book/decision-algorithm/036/) · [返回目录](/book/) · [038｜极大极小原理：怎样应对零和博弈？ →](/book/decision-algorithm/038/)
+[← 036｜生存下去：怎样利用冗余设计“求生舱”？](/book/decision-algorithm/036/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [038｜极大极小原理：怎样应对零和博弈？ →](/book/decision-algorithm/038/)

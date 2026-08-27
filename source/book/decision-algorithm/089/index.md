@@ -477,4 +477,4 @@ description: "《老喻·决策算法100讲》089：赚钱机器：你拥有“�
 
 ---
 
-[← 088｜移居决策：怎样择一邻处，放大你的优势？](/book/decision-algorithm/088/) · [返回目录](/book/) · [090｜知行合一：你无法假装成一个你不是的人 →](/book/decision-algorithm/090/)
+[← 088｜移居决策：怎样择一邻处，放大你的优势？](/book/decision-algorithm/088/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [090｜知行合一：你无法假装成一个你不是的人 →](/book/decision-algorithm/090/)

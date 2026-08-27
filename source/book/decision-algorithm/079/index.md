@@ -451,4 +451,4 @@ NBA playoff最后不是拼进攻而是拼防守，拼谁失误更少。“停止
 
 ---
 
-[← 078｜决策之“嗔”：如何成为一个内核稳定的人？](/book/decision-algorithm/078/) · [返回目录](/book/) · [080｜社交决策：怎样构建你的四级社交圈？ →](/book/decision-algorithm/080/)
+[← 078｜决策之“嗔”：如何成为一个内核稳定的人？](/book/decision-algorithm/078/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [080｜社交决策：怎样构建你的四级社交圈？ →](/book/decision-algorithm/080/)

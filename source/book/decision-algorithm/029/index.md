@@ -251,4 +251,4 @@ IBM 在1981年推出了个人电脑，需要操作系统，于是找到了微软
 
 ---
 
-[← 028｜看清本质：怎样用奥卡姆剃刀砍掉复杂？](/book/decision-algorithm/028/) · [返回目录](/book/) · [030｜关键时刻：怎样把握最佳出手时机？ →](/book/decision-algorithm/030/)
+[← 028｜看清本质：怎样用奥卡姆剃刀砍掉复杂？](/book/decision-algorithm/028/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [030｜关键时刻：怎样把握最佳出手时机？ →](/book/decision-algorithm/030/)

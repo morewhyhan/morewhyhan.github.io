@@ -345,4 +345,4 @@ $$P(A\mid B)=\frac{P(A)P(B\mid A)}{P(B)}$$
 
 ---
 
-[← 006｜三维：怎样用凯利公式找到最佳下注比例？](/book/decision-algorithm/006/) · [返回目录](/book/) · [008｜重新理解复利：为什么复利很多时候是一个“谎言”？ →](/book/decision-algorithm/008/)
+[← 006｜三维：怎样用凯利公式找到最佳下注比例？](/book/decision-algorithm/006/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [008｜重新理解复利：为什么复利很多时候是一个“谎言”？ →](/book/decision-algorithm/008/)

@@ -201,4 +201,4 @@ description: "《老喻·决策算法100讲》064：牛人陷阱：你才是自�
 
 ---
 
-[← 063｜被动决策：怎样让好决策自动发生？](/book/decision-algorithm/063/) · [返回目录](/book/) · [065｜老好人陷阱：为什么善良却没有好报？ →](/book/decision-algorithm/065/)
+[← 063｜被动决策：怎样让好决策自动发生？](/book/decision-algorithm/063/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [065｜老好人陷阱：为什么善良却没有好报？ →](/book/decision-algorithm/065/)

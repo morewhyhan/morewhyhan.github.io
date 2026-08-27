@@ -218,4 +218,4 @@ description: "《老喻·决策算法100讲》066：占便宜陷阱：怎样用�
 
 ---
 
-[← 065｜老好人陷阱：为什么善良却没有好报？](/book/decision-algorithm/065/) · [返回目录](/book/) · [067｜内耗陷阱：如何跳出人生的死循环？ →](/book/decision-algorithm/067/)
+[← 065｜老好人陷阱：为什么善良却没有好报？](/book/decision-algorithm/065/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [067｜内耗陷阱：如何跳出人生的死循环？ →](/book/decision-algorithm/067/)

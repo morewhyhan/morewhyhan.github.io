@@ -175,4 +175,4 @@ Airbnb 最早由两个找不到工作的设计师创办。他们把三个气垫�
 
 ---
 
-[← 031｜两眼论：怎样找到你的人生杠杆？](/book/decision-algorithm/031/) · [返回目录](/book/) · [033｜弃子争先：怎样抢回人生的主动权？ →](/book/decision-algorithm/033/)
+[← 031｜两眼论：怎样找到你的人生杠杆？](/book/decision-algorithm/031/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [033｜弃子争先：怎样抢回人生的主动权？ →](/book/decision-algorithm/033/)

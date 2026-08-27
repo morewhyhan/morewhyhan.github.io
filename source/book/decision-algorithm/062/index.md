@@ -287,4 +287,4 @@ P(A3|Red) = (1/3·1/3) / (19/36) = 4/19
 
 ---
 
-[← 061｜避免无效努力：为什么重复再多也未必成功？](/book/decision-algorithm/061/) · [返回目录](/book/) · [063｜被动决策：怎样让好决策自动发生？ →](/book/decision-algorithm/063/)
+[← 061｜避免无效努力：为什么重复再多也未必成功？](/book/decision-algorithm/061/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [063｜被动决策：怎样让好决策自动发生？ →](/book/decision-algorithm/063/)

@@ -298,4 +298,4 @@ description: "《老喻·决策算法100讲》085：恋爱决策：遇到渣男�
 
 ---
 
-[← 084｜锚点选择：为什么比较是万恶之源？](/book/decision-algorithm/084/) · [返回目录](/book/) · [086｜婚姻决策：怎样和Ta更好地共度一生？ →](/book/decision-algorithm/086/)
+[← 084｜锚点选择：为什么比较是万恶之源？](/book/decision-algorithm/084/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [086｜婚姻决策：怎样和Ta更好地共度一生？ →](/book/decision-algorithm/086/)

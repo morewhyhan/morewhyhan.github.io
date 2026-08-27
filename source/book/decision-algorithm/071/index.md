@@ -324,4 +324,4 @@ description: "《老喻·决策算法100讲》071：确定性陷阱：怎样在�
 
 ---
 
-[← 070｜借力决策：向旅行者一号学习](/book/decision-algorithm/070/) · [返回目录](/book/) · [072｜操控陷阱：怎样识破别人设计好的轨道？ →](/book/decision-algorithm/072/)
+[← 070｜借力决策：向旅行者一号学习](/book/decision-algorithm/070/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [072｜操控陷阱：怎样识破别人设计好的轨道？ →](/book/decision-algorithm/072/)

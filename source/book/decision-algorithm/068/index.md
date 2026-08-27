@@ -182,4 +182,4 @@ description: "《老喻·决策算法100讲》068：惯性陷阱：为什么你�
 
 ---
 
-[← 067｜内耗陷阱：如何跳出人生的死循环？](/book/decision-algorithm/067/) · [返回目录](/book/) · [069｜委托陷阱：为什么最信任的人却带来更大伤害？ →](/book/decision-algorithm/069/)
+[← 067｜内耗陷阱：如何跳出人生的死循环？](/book/decision-algorithm/067/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [069｜委托陷阱：为什么最信任的人却带来更大伤害？ →](/book/decision-algorithm/069/)

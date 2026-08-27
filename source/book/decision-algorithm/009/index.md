@@ -332,4 +332,4 @@ OpenAI的CEO说：“如果你在聪明和勤奋中占了一项，就能超过90
 
 ---
 
-[← 008｜重新理解复利：为什么复利很多时候是一个“谎言”？](/book/decision-algorithm/008/) · [返回目录](/book/) · [010｜提前退休：“25倍法则”能让你财务自由吗？ →](/book/decision-algorithm/010/)
+[← 008｜重新理解复利：为什么复利很多时候是一个“谎言”？](/book/decision-algorithm/008/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [010｜提前退休：“25倍法则”能让你财务自由吗？ →](/book/decision-algorithm/010/)

@@ -161,4 +161,4 @@ description: "《老喻·决策算法100讲》049：漂亮撤退：全身而退�
 
 ---
 
-[← 048｜满意就好：如何成为一个不纠结的人？](/book/decision-algorithm/048/) · [返回目录](/book/) · [050｜格雷厄姆：如何成为聪明的投资者？ →](/book/decision-algorithm/050/)
+[← 048｜满意就好：如何成为一个不纠结的人？](/book/decision-algorithm/048/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [050｜格雷厄姆：如何成为聪明的投资者？ →](/book/decision-algorithm/050/)

@@ -353,4 +353,4 @@ description: "《老喻·决策算法100讲》039：混合策略：怎样用随�
 
 ---
 
-[← 038｜极大极小原理：怎样应对零和博弈？](/book/decision-algorithm/038/) · [返回目录](/book/) · [040｜决策根基：怎样打破因果的迷信？ →](/book/decision-algorithm/040/)
+[← 038｜极大极小原理：怎样应对零和博弈？](/book/decision-algorithm/038/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [040｜决策根基：怎样打破因果的迷信？ →](/book/decision-algorithm/040/)

@@ -317,4 +317,4 @@ description: "《老喻·决策算法100讲》019：赌技的幻觉：马丁·�
 
 ---
 
-[← 017｜耐心和格局：为什么赚大钱需要宽框架思维？](/book/decision-algorithm/017/) · [返回目录](/book/) · [020｜机会成本：你愿意花多少钱买一台印钞机？ →](/book/decision-algorithm/020/)
+[← 017｜耐心和格局：为什么赚大钱需要宽框架思维？](/book/decision-algorithm/017/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [020｜机会成本：你愿意花多少钱买一台印钞机？ →](/book/decision-algorithm/020/)

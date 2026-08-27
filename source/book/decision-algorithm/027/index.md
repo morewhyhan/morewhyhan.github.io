@@ -251,4 +251,4 @@ Python 很符合胶带纸思维。
 
 ---
 
-[← 026｜工程思维：怎样完成看似不可能的任务？](/book/decision-algorithm/026/) · [返回目录](/book/) · [028｜看清本质：怎样用奥卡姆剃刀砍掉复杂？ →](/book/decision-algorithm/028/)
+[← 026｜工程思维：怎样完成看似不可能的任务？](/book/decision-algorithm/026/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [028｜看清本质：怎样用奥卡姆剃刀砍掉复杂？ →](/book/decision-algorithm/028/)

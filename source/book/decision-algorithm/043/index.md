@@ -305,4 +305,4 @@ AI企业通常会通过多元化战略、风险管理和持续的创新来应对
 
 ---
 
-[← 042｜思维格栅：为什么你误读了芒格最重要的智慧？](/book/decision-algorithm/042/) · [返回目录](/book/) · [044｜聪明的傻瓜：为什么绝大多数赢家靠的都是运气？ →](/book/decision-algorithm/044/)
+[← 042｜思维格栅：为什么你误读了芒格最重要的智慧？](/book/decision-algorithm/042/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [044｜聪明的傻瓜：为什么绝大多数赢家靠的都是运气？ →](/book/decision-algorithm/044/)

@@ -266,4 +266,4 @@ description: "《老喻·决策算法100讲》055：道路选择：为什么人�
 
 ---
 
-[← 054｜查尔斯·埃利斯：如何成为真正的财富赢家？](/book/decision-algorithm/054/) · [返回目录](/book/) · [056｜态度第一：怎样拿回你的决策权？ →](/book/decision-algorithm/056/)
+[← 054｜查尔斯·埃利斯：如何成为真正的财富赢家？](/book/decision-algorithm/054/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [056｜态度第一：怎样拿回你的决策权？ →](/book/decision-algorithm/056/)

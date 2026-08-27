@@ -372,4 +372,4 @@ iPhone 的确很简单，然而里面的芯片很复杂。简单指的是用户�
 
 ---
 
-[← 027｜胶带纸思维：为什么高手都在用这个笨办法？](/book/decision-algorithm/027/) · [返回目录](/book/) · [029｜反事实思维：条件不够如何突围？ →](/book/decision-algorithm/029/)
+[← 027｜胶带纸思维：为什么高手都在用这个笨办法？](/book/decision-algorithm/027/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [029｜反事实思维：条件不够如何突围？ →](/book/decision-algorithm/029/)

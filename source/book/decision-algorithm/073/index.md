@@ -546,4 +546,4 @@ description: "《老喻·决策算法100讲》073：成功陷阱：怎样找到�
 
 ---
 
-[← 072｜操控陷阱：怎样识破别人设计好的轨道？](/book/decision-algorithm/072/) · [返回目录](/book/) · [074｜AI陷阱：怎样不丢失决策的主导权？ →](/book/decision-algorithm/074/)
+[← 072｜操控陷阱：怎样识破别人设计好的轨道？](/book/decision-algorithm/072/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [074｜AI陷阱：怎样不丢失决策的主导权？ →](/book/decision-algorithm/074/)

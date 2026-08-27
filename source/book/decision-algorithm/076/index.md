@@ -502,4 +502,4 @@ description: "《老喻·决策算法100讲》076：自由意志：你真的是�
 
 ---
 
-[← 075｜永恒轮回：假如人生重来，你会过得更好吗？](/book/decision-algorithm/075/) · [返回目录](/book/) · [077｜决策之“贪”：为什么这是你做决策的最大障碍？ →](/book/decision-algorithm/077/)
+[← 075｜永恒轮回：假如人生重来，你会过得更好吗？](/book/decision-algorithm/075/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [077｜决策之“贪”：为什么这是你做决策的最大障碍？ →](/book/decision-algorithm/077/)

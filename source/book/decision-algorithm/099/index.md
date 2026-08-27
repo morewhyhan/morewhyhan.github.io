@@ -224,4 +224,4 @@ EKB 决策算法是信息时代的“理性罗盘”，但有效性取决于三�
 
 ---
 
-[← 098｜二阶智慧：怎样作出对未来负责的决策？](/book/decision-algorithm/098/) · [返回目录](/book/) · [100｜决策终极之战：打一场你必定胜利的战争 →](/book/decision-algorithm/100/)
+[← 098｜二阶智慧：怎样作出对未来负责的决策？](/book/decision-algorithm/098/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [100｜决策终极之战：打一场你必定胜利的战争 →](/book/decision-algorithm/100/)

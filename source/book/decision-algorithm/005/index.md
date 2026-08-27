@@ -284,4 +284,4 @@ description: "《老喻·决策算法100讲》005：二维：怎样用期望值�
 
 ---
 
-[← 004｜一维：胜率和赔率为什么重要？](/book/decision-algorithm/004/) · [返回目录](/book/) · [006｜三维：怎样用凯利公式找到最佳下注比例？ →](/book/decision-algorithm/006/)
+[← 004｜一维：胜率和赔率为什么重要？](/book/decision-algorithm/004/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [006｜三维：怎样用凯利公式找到最佳下注比例？ →](/book/decision-algorithm/006/)

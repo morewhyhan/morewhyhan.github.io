@@ -359,4 +359,4 @@ MIH 愿意在寒冬里给腾讯估值 6000 万美元，这是 11 倍的退出溢
 
 ---
 
-[← 010｜提前退休：“25倍法则”能让你财务自由吗？](/book/decision-algorithm/010/) · [返回目录](/book/) · [012｜人际资产：为什么你会讨好“不对的人”，疏远好人？ →](/book/decision-algorithm/012/)
+[← 010｜提前退休：“25倍法则”能让你财务自由吗？](/book/decision-algorithm/010/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [012｜人际资产：为什么你会讨好“不对的人”，疏远好人？ →](/book/decision-algorithm/012/)

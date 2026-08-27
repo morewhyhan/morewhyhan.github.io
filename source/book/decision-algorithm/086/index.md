@@ -464,4 +464,4 @@ description: "《老喻·决策算法100讲》086：婚姻决策：怎样和Ta�
 
 ---
 
-[← 085｜恋爱决策：遇到渣男后你是否还相信男人？](/book/decision-algorithm/085/) · [返回目录](/book/) · [087｜面对意外：什么是“突击考试悖论”？ →](/book/decision-algorithm/087/)
+[← 085｜恋爱决策：遇到渣男后你是否还相信男人？](/book/decision-algorithm/085/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [087｜面对意外：什么是“突击考试悖论”？ →](/book/decision-algorithm/087/)

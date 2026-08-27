@@ -264,4 +264,4 @@ description: "《老喻·决策算法100讲》057：选择VS努力：怎样找�
 
 ---
 
-[← 056｜态度第一：怎样拿回你的决策权？](/book/decision-algorithm/056/) · [返回目录](/book/) · [058｜告别童年：怎样像成年人一样决策？ →](/book/decision-algorithm/058/)
+[← 056｜态度第一：怎样拿回你的决策权？](/book/decision-algorithm/056/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [058｜告别童年：怎样像成年人一样决策？ →](/book/decision-algorithm/058/)

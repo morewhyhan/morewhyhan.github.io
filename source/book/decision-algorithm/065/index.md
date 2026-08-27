@@ -244,4 +244,4 @@ description: "《老喻·决策算法100讲》065：老好人陷阱：为什么�
 
 ---
 
-[← 064｜牛人陷阱：你才是自己人生的决策者](/book/decision-algorithm/064/) · [返回目录](/book/) · [066｜占便宜陷阱：怎样用大局观克服贪婪？ →](/book/decision-algorithm/066/)
+[← 064｜牛人陷阱：你才是自己人生的决策者](/book/decision-algorithm/064/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [066｜占便宜陷阱：怎样用大局观克服贪婪？ →](/book/decision-algorithm/066/)

@@ -294,4 +294,4 @@ Nick其实同时做了两件事儿：
 
 ---
 
-[← 002｜二阶理性：什么样的人能做出好决策？](/book/decision-algorithm/002/) · [返回目录](/book/) · [004｜一维：胜率和赔率为什么重要？ →](/book/decision-algorithm/004/)
+[← 002｜二阶理性：什么样的人能做出好决策？](/book/decision-algorithm/002/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [004｜一维：胜率和赔率为什么重要？ →](/book/decision-algorithm/004/)

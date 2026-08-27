@@ -205,4 +205,4 @@ description: "《老喻·决策算法100讲》054：查尔斯·埃利斯：如�
 
 ---
 
-[← 053｜大卫·斯文森：为什么资产组合会主导投资结果？](/book/decision-algorithm/053/) · [返回目录](/book/) · [055｜道路选择：为什么人生不是轨道，而是旷野？ →](/book/decision-algorithm/055/)
+[← 053｜大卫·斯文森：为什么资产组合会主导投资结果？](/book/decision-algorithm/053/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [055｜道路选择：为什么人生不是轨道，而是旷野？ →](/book/decision-algorithm/055/)

@@ -207,4 +207,4 @@ description: "《老喻·决策算法100讲》067：内耗陷阱：如何跳出�
 
 ---
 
-[← 066｜占便宜陷阱：怎样用大局观克服贪婪？](/book/decision-algorithm/066/) · [返回目录](/book/) · [068｜惯性陷阱：为什么你无法做出自己想要的选择？ →](/book/decision-algorithm/068/)
+[← 066｜占便宜陷阱：怎样用大局观克服贪婪？](/book/decision-algorithm/066/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [068｜惯性陷阱：为什么你无法做出自己想要的选择？ →](/book/decision-algorithm/068/)

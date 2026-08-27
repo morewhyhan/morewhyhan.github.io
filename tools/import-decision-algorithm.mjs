@@ -6,7 +6,8 @@ const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '
 const inputDir = path.resolve(process.argv[2] || '')
 const outputDir = path.join(projectRoot, 'source', 'book', 'decision-algorithm')
 const obsoleteDir = path.join(projectRoot, 'source', 'book', 'original')
-const indexPath = path.join(projectRoot, 'source', 'book', 'index.md')
+const collectionIndexPath = path.join(outputDir, 'index.md')
+const libraryIndexPath = path.join(projectRoot, 'source', 'book', 'index.md')
 
 if (!process.argv[2]) {
   throw new Error('Usage: node tools/import-decision-algorithm.mjs <markdown-directory>')
@@ -81,7 +82,7 @@ for (let lessonIndex = 0; lessonIndex < lessons.length; lessonIndex += 1) {
   const next = lessons[lessonIndex + 1]
   const navigation = [
     previous ? `[← ${previous[0]}｜${previous[1][0].title.replace(/\(1\)$/u, '')}](/book/decision-algorithm/${previous[0]}/)` : '',
-    `[返回目录](/book/)`,
+    `[返回《决策算法100讲》目录](/book/decision-algorithm/)`,
     next ? `[${next[0]}｜${next[1][0].title.replace(/\(1\)$/u, '')} →](/book/decision-algorithm/${next[0]}/)` : ''
   ].filter(Boolean).join(' · ')
 
@@ -108,16 +109,16 @@ ${navigation}
   indexItems.push(`  <li><a href="/book/decision-algorithm/${sequence}/"><span>${sequence}</span>${escapeHtml(primaryTitle)}</a></li>`)
 }
 
-const index = `---
-title: 图书笔记
-date: 2026-08-24 00:00:00
+const collectionIndex = `---
+title: 决策算法100讲
+date: 2026-08-28 00:00:00
 type: page
 comments: false
 ---
 
-这里集中存放值得长期保留的图书资料，以及我在阅读、整理和研究过程中形成的笔记。
+[← 返回图书笔记](/book/)
 
-## 决策算法100讲
+## 全部章节
 
 以下是《老喻·决策算法100讲》的外部原文资料，共 100 个编号页面。资料按原始编号排列，同一编号的拆分文件已合并渲染；原资料没有编号 018。
 
@@ -128,5 +129,29 @@ ${indexItems.join('\n')}
 </ol>
 `
 
-await writeFile(indexPath, index, 'utf8')
+const libraryIndex = `---
+title: 图书笔记
+date: 2026-08-24 00:00:00
+type: page
+comments: false
+---
+
+这里集中存放值得长期保留的图书资料，以及我在阅读、整理和研究过程中形成的笔记。每一本书或每一套资料都有自己的独立目录，不会彼此混在一起。
+
+## 专题书目
+
+<div class="book-collection-list">
+  <a class="book-collection-card" href="/book/decision-algorithm/">
+    <span class="book-collection-kicker">专题 01</span>
+    <strong>决策算法100讲</strong>
+    <p>老喻关于概率、风险、博弈与人生选择的系统课程资料。</p>
+    <span class="book-collection-meta">100 讲 · 外部原文资料 →</span>
+  </a>
+</div>
+
+以后加入的其他书籍与资料，会作为新的专题继续排列在这里。
+`
+
+await writeFile(collectionIndexPath, collectionIndex, 'utf8')
+await writeFile(libraryIndexPath, libraryIndex, 'utf8')
 console.log(`Generated ${lessons.length} rendered lesson pages from ${filenames.length} numbered Markdown files.`)

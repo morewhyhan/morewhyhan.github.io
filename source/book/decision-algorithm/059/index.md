@@ -401,4 +401,4 @@ description: "《老喻·决策算法100讲》059：驾驭青春：怎样少做�
 
 ---
 
-[← 058｜告别童年：怎样像成年人一样决策？](/book/decision-algorithm/058/) · [返回目录](/book/) · [060｜突破中年：怎样在重围中选择更精彩的人生？ →](/book/decision-algorithm/060/)
+[← 058｜告别童年：怎样像成年人一样决策？](/book/decision-algorithm/058/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [060｜突破中年：怎样在重围中选择更精彩的人生？ →](/book/decision-algorithm/060/)

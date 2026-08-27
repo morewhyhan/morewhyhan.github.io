@@ -507,4 +507,4 @@ AI如何影响人类决策过程、带来的决策陷阱，以及如何在AI时�
 
 ---
 
-[← 073｜成功陷阱：怎样找到真正属于自己的选择？](/book/decision-algorithm/073/) · [返回目录](/book/) · [075｜永恒轮回：假如人生重来，你会过得更好吗？ →](/book/decision-algorithm/075/)
+[← 073｜成功陷阱：怎样找到真正属于自己的选择？](/book/decision-algorithm/073/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [075｜永恒轮回：假如人生重来，你会过得更好吗？ →](/book/decision-algorithm/075/)

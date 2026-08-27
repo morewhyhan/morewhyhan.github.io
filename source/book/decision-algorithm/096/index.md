@@ -353,4 +353,4 @@ SMART原则：明确具体事务、可衡量、可实现、相关、设定时间
 
 ---
 
-[← 095｜五种资源：怎样真正掌控自己的人生？](/book/decision-algorithm/095/) · [返回目录](/book/) · [097｜平常心：决策高手的最高境界 →](/book/decision-algorithm/097/)
+[← 095｜五种资源：怎样真正掌控自己的人生？](/book/decision-algorithm/095/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [097｜平常心：决策高手的最高境界 →](/book/decision-algorithm/097/)

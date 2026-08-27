@@ -498,4 +498,4 @@ description: "《老喻·决策算法100讲》075：永恒轮回：假如人生�
 
 ---
 
-[← 074｜AI陷阱：怎样不丢失决策的主导权？](/book/decision-algorithm/074/) · [返回目录](/book/) · [076｜自由意志：你真的是由自己做出选择吗？ →](/book/decision-algorithm/076/)
+[← 074｜AI陷阱：怎样不丢失决策的主导权？](/book/decision-algorithm/074/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [076｜自由意志：你真的是由自己做出选择吗？ →](/book/decision-algorithm/076/)

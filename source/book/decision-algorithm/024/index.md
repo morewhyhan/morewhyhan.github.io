@@ -345,4 +345,4 @@ description: "《老喻·决策算法100讲》024：贝叶斯最优决策：大�
 
 ---
 
-[← 023｜万事开头难：为什么你永远都有最好的下一步？](/book/decision-algorithm/023/) · [返回目录](/book/) · [025｜对数思维：怎么抓住二十万分之一的机会？ →](/book/decision-algorithm/025/)
+[← 023｜万事开头难：为什么你永远都有最好的下一步？](/book/decision-algorithm/023/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [025｜对数思维：怎么抓住二十万分之一的机会？ →](/book/decision-algorithm/025/)

@@ -503,4 +503,4 @@ A方案为何给出更高的收益？它的风险是否远超B方案？如果你
 
 ---
 
-[← 076｜自由意志：你真的是由自己做出选择吗？](/book/decision-algorithm/076/) · [返回目录](/book/) · [078｜决策之“嗔”：如何成为一个内核稳定的人？ →](/book/decision-algorithm/078/)
+[← 076｜自由意志：你真的是由自己做出选择吗？](/book/decision-algorithm/076/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [078｜决策之“嗔”：如何成为一个内核稳定的人？ →](/book/decision-algorithm/078/)

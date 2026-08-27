@@ -139,4 +139,4 @@ description: "《老喻·决策算法100讲》021：驾驭熵增：为什么世�
 
 ---
 
-[← 020｜机会成本：你愿意花多少钱买一台印钞机？](/book/decision-algorithm/020/) · [返回目录](/book/) · [022｜应对逆境：为什么帆船可以逆风前行？ →](/book/decision-algorithm/022/)
+[← 020｜机会成本：你愿意花多少钱买一台印钞机？](/book/decision-algorithm/020/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [022｜应对逆境：为什么帆船可以逆风前行？ →](/book/decision-algorithm/022/)

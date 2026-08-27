@@ -596,4 +596,4 @@ description: "《老喻·决策算法100讲》072：操控陷阱：怎样识破�
 
 ---
 
-[← 071｜确定性陷阱：怎样在不确定性中生存？](/book/decision-algorithm/071/) · [返回目录](/book/) · [073｜成功陷阱：怎样找到真正属于自己的选择？ →](/book/decision-algorithm/073/)
+[← 071｜确定性陷阱：怎样在不确定性中生存？](/book/decision-algorithm/071/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [073｜成功陷阱：怎样找到真正属于自己的选择？ →](/book/decision-algorithm/073/)

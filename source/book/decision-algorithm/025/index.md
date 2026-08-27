@@ -400,4 +400,4 @@ log₂(262144) = log₂(2¹⁸) = 18
 
 ---
 
-[← 024｜贝叶斯最优决策：大海如何捞针？](/book/decision-algorithm/024/) · [返回目录](/book/) · [026｜工程思维：怎样完成看似不可能的任务？ →](/book/decision-algorithm/026/)
+[← 024｜贝叶斯最优决策：大海如何捞针？](/book/decision-algorithm/024/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [026｜工程思维：怎样完成看似不可能的任务？ →](/book/decision-algorithm/026/)

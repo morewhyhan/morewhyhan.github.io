@@ -264,4 +264,4 @@ description: "《老喻·决策算法100讲》002：二阶理性：什么样的�
 
 ---
 
-[← 001｜理解决策：好决策和好运气是什么关系？](/book/decision-algorithm/001/) · [返回目录](/book/) · [003｜有限道德：为什么你要先小人后君子？ →](/book/decision-algorithm/003/)
+[← 001｜理解决策：好决策和好运气是什么关系？](/book/decision-algorithm/001/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [003｜有限道德：为什么你要先小人后君子？ →](/book/decision-algorithm/003/)

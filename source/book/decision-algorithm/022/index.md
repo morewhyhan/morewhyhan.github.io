@@ -314,4 +314,4 @@ description: "《老喻·决策算法100讲》022：应对逆境：为什么帆�
 
 ---
 
-[← 021｜驾驭熵增：为什么世界的意义在于事与愿违？](/book/decision-algorithm/021/) · [返回目录](/book/) · [023｜万事开头难：为什么你永远都有最好的下一步？ →](/book/decision-algorithm/023/)
+[← 021｜驾驭熵增：为什么世界的意义在于事与愿违？](/book/decision-algorithm/021/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [023｜万事开头难：为什么你永远都有最好的下一步？ →](/book/decision-algorithm/023/)

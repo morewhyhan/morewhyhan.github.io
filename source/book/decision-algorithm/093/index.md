@@ -258,4 +258,4 @@ description: "《老喻·决策算法100讲》093：生活决策：植物教会�
 
 ---
 
-[← 092｜教育决策：AI时代教育需要怎样的改变？](/book/decision-algorithm/092/) · [返回目录](/book/) · [094｜禅思决策：永远去做余生最重要的事情 →](/book/decision-algorithm/094/)
+[← 092｜教育决策：AI时代教育需要怎样的改变？](/book/decision-algorithm/092/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [094｜禅思决策：永远去做余生最重要的事情 →](/book/decision-algorithm/094/)

@@ -125,4 +125,4 @@ description: "《老喻·决策算法100讲》020：机会成本：你愿意花�
 
 ---
 
-[← 019｜赌技的幻觉：马丁·格尔策略为什么不能让你翻盘？](/book/decision-algorithm/019/) · [返回目录](/book/) · [021｜驾驭熵增：为什么世界的意义在于事与愿违？ →](/book/decision-algorithm/021/)
+[← 019｜赌技的幻觉：马丁·格尔策略为什么不能让你翻盘？](/book/decision-algorithm/019/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [021｜驾驭熵增：为什么世界的意义在于事与愿违？ →](/book/decision-algorithm/021/)

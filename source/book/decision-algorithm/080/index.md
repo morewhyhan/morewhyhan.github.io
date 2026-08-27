@@ -645,4 +645,4 @@ description: "《老喻·决策算法100讲》080：社交决策：怎样构建�
 
 ---
 
-[← 079｜决策之“痴”：怎样掌握知与不知的边界？](/book/decision-algorithm/079/) · [返回目录](/book/) · [081｜安全决策：守护岁月静好的四大支柱系统 →](/book/decision-algorithm/081/)
+[← 079｜决策之“痴”：怎样掌握知与不知的边界？](/book/decision-algorithm/079/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [081｜安全决策：守护岁月静好的四大支柱系统 →](/book/decision-algorithm/081/)

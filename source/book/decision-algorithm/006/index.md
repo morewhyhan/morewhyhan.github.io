@@ -317,4 +317,4 @@ $$f^*=\frac{1\times0.6-0.4}{1}=\frac{0.2}{1}=0.2$$
 
 ---
 
-[← 005｜二维：怎样用期望值衡量决策收益？](/book/decision-algorithm/005/) · [返回目录](/book/) · [007｜四维：为什么决策高手都是贝叶斯主义者？ →](/book/decision-algorithm/007/)
+[← 005｜二维：怎样用期望值衡量决策收益？](/book/decision-algorithm/005/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [007｜四维：为什么决策高手都是贝叶斯主义者？ →](/book/decision-algorithm/007/)

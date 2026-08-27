@@ -339,4 +339,4 @@ description: "《老喻·决策算法100讲》001：理解决策：好决策和�
 
 ---
 
-[← 000｜发刊词：做好决策，成为命运的主人](/book/decision-algorithm/000/) · [返回目录](/book/) · [002｜二阶理性：什么样的人能做出好决策？ →](/book/decision-algorithm/002/)
+[← 000｜发刊词：做好决策，成为命运的主人](/book/decision-algorithm/000/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [002｜二阶理性：什么样的人能做出好决策？ →](/book/decision-algorithm/002/)

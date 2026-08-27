@@ -200,6 +200,7 @@ inject:
     - <link rel="stylesheet" href="/css/custom.css">
   bottom:
     - <script defer src="/js/home-video.js?v=2"></script>
+    - <script defer src="/js/home-library.js?v=1"></script>
 
 CDN:
   internal_provider: local

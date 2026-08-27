@@ -578,4 +578,4 @@ description: "《老喻·决策算法100讲》013：对冲思维：做错决策�
 
 ---
 
-[← 012｜人际资产：为什么你会讨好“不对的人”，疏远好人？](/book/decision-algorithm/012/) · [返回目录](/book/) · [014｜买房的逻辑：房子还是投资的好选择吗？ →](/book/decision-algorithm/014/)
+[← 012｜人际资产：为什么你会讨好“不对的人”，疏远好人？](/book/decision-algorithm/012/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [014｜买房的逻辑：房子还是投资的好选择吗？ →](/book/decision-algorithm/014/)

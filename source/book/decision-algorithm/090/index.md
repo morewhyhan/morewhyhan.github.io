@@ -406,4 +406,4 @@ description: "《老喻·决策算法100讲》090：知行合一：你无法假�
 
 ---
 
-[← 089｜赚钱机器：你拥有“生产性资产”吗？](/book/decision-algorithm/089/) · [返回目录](/book/) · [091｜一剑斩断：如何摆脱无能为力的自我？ →](/book/decision-algorithm/091/)
+[← 089｜赚钱机器：你拥有“生产性资产”吗？](/book/decision-algorithm/089/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [091｜一剑斩断：如何摆脱无能为力的自我？ →](/book/decision-algorithm/091/)

@@ -239,4 +239,4 @@ description: "《老喻·决策算法100讲》026：工程思维：怎样完成�
 
 ---
 
-[← 025｜对数思维：怎么抓住二十万分之一的机会？](/book/decision-algorithm/025/) · [返回目录](/book/) · [027｜胶带纸思维：为什么高手都在用这个笨办法？ →](/book/decision-algorithm/027/)
+[← 025｜对数思维：怎么抓住二十万分之一的机会？](/book/decision-algorithm/025/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [027｜胶带纸思维：为什么高手都在用这个笨办法？ →](/book/decision-algorithm/027/)

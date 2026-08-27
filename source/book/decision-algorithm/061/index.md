@@ -244,4 +244,4 @@ description: "《老喻·决策算法100讲》061：避免无效努力：为什�
 
 ---
 
-[← 060｜突破中年：怎样在重围中选择更精彩的人生？](/book/decision-algorithm/060/) · [返回目录](/book/) · [062｜个人含金量：为什么相对优势比绝对优势更重要？ →](/book/decision-algorithm/062/)
+[← 060｜突破中年：怎样在重围中选择更精彩的人生？](/book/decision-algorithm/060/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [062｜个人含金量：为什么相对优势比绝对优势更重要？ →](/book/decision-algorithm/062/)

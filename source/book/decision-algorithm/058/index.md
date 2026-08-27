@@ -315,4 +315,4 @@ X的故事让我想起了一本发人深省的心理学寓言——《给婴儿�
 
 ---
 
-[← 057｜选择VS努力：怎样找到你人生的α和β？](/book/decision-algorithm/057/) · [返回目录](/book/) · [059｜驾驭青春：怎样少做让自己后悔的决策？ →](/book/decision-algorithm/059/)
+[← 057｜选择VS努力：怎样找到你人生的α和β？](/book/decision-algorithm/057/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [059｜驾驭青春：怎样少做让自己后悔的决策？ →](/book/decision-algorithm/059/)

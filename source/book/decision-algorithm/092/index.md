@@ -413,4 +413,4 @@ What：这是末端产品的层面，是具体执行的步骤。值得警惕的�
 
 ---
 
-[← 091｜一剑斩断：如何摆脱无能为力的自我？](/book/decision-algorithm/091/) · [返回目录](/book/) · [093｜生活决策：植物教会我的7个决策算法 →](/book/decision-algorithm/093/)
+[← 091｜一剑斩断：如何摆脱无能为力的自我？](/book/decision-algorithm/091/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [093｜生活决策：植物教会我的7个决策算法 →](/book/decision-algorithm/093/)

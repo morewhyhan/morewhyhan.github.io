@@ -404,4 +404,4 @@ description: "《老喻·决策算法100讲》060：突破中年：怎样在重�
 
 ---
 
-[← 059｜驾驭青春：怎样少做让自己后悔的决策？](/book/decision-algorithm/059/) · [返回目录](/book/) · [061｜避免无效努力：为什么重复再多也未必成功？ →](/book/decision-algorithm/061/)
+[← 059｜驾驭青春：怎样少做让自己后悔的决策？](/book/decision-algorithm/059/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [061｜避免无效努力：为什么重复再多也未必成功？ →](/book/decision-algorithm/061/)

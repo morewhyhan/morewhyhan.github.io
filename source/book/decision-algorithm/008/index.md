@@ -335,4 +335,4 @@ Aim for the moon. If you miss, you may hit a star.
 
 ---
 
-[← 007｜四维：为什么决策高手都是贝叶斯主义者？](/book/decision-algorithm/007/) · [返回目录](/book/) · [009｜真正获得复利：怎么用对复利公式？ →](/book/decision-algorithm/009/)
+[← 007｜四维：为什么决策高手都是贝叶斯主义者？](/book/decision-algorithm/007/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [009｜真正获得复利：怎么用对复利公式？ →](/book/decision-algorithm/009/)

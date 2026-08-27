@@ -172,4 +172,4 @@ description: "《老喻·决策算法100讲》014：买房的逻辑：房子还�
 
 ---
 
-[← 013｜对冲思维：做错决策时如何还能赢？](/book/decision-algorithm/013/) · [返回目录](/book/) · [015｜彩票的诱惑：怎样寻找彩票之外的概率套利机会？ →](/book/decision-algorithm/015/)
+[← 013｜对冲思维：做错决策时如何还能赢？](/book/decision-algorithm/013/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [015｜彩票的诱惑：怎样寻找彩票之外的概率套利机会？ →](/book/decision-algorithm/015/)

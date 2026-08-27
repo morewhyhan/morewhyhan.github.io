@@ -541,4 +541,4 @@ description: "《老喻·决策算法100讲》050：格雷厄姆：如何成为�
 
 ---
 
-[← 049｜漂亮撤退：全身而退即胜利](/book/decision-algorithm/049/) · [返回目录](/book/) · [051｜巴菲特：如何在不确定性中构建确定性？ →](/book/decision-algorithm/051/)
+[← 049｜漂亮撤退：全身而退即胜利](/book/decision-algorithm/049/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [051｜巴菲特：如何在不确定性中构建确定性？ →](/book/decision-algorithm/051/)

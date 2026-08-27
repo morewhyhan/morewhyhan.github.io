@@ -293,4 +293,4 @@ description: "《老喻·决策算法100讲》051：巴菲特：如何在不确�
 
 ---
 
-[← 050｜格雷厄姆：如何成为聪明的投资者？](/book/decision-algorithm/050/) · [返回目录](/book/) · [052｜约翰·博格：一生赚多少钱才算“足够”？ →](/book/decision-algorithm/052/)
+[← 050｜格雷厄姆：如何成为聪明的投资者？](/book/decision-algorithm/050/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [052｜约翰·博格：一生赚多少钱才算“足够”？ →](/book/decision-algorithm/052/)

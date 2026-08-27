@@ -276,4 +276,4 @@ description: "《老喻·决策算法100讲》100：决策终极之战：打一�
 
 ---
 
-[← 099｜概率思维：支撑决策的三个神奇公式](/book/decision-algorithm/099/) · [返回目录](/book/)
+[← 099｜概率思维：支撑决策的三个神奇公式](/book/decision-algorithm/099/) · [返回《决策算法100讲》目录](/book/decision-algorithm/)

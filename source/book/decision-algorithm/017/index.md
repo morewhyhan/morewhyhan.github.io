@@ -365,4 +365,4 @@ description: "《老喻·决策算法100讲》017：耐心和格局：为什么�
 
 ---
 
-[← 016｜价值投资：为什么巴菲特你学不会？](/book/decision-algorithm/016/) · [返回目录](/book/) · [019｜赌技的幻觉：马丁·格尔策略为什么不能让你翻盘？ →](/book/decision-algorithm/019/)
+[← 016｜价值投资：为什么巴菲特你学不会？](/book/decision-algorithm/016/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [019｜赌技的幻觉：马丁·格尔策略为什么不能让你翻盘？ →](/book/decision-algorithm/019/)

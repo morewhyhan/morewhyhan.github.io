@@ -342,4 +342,4 @@ description: "《老喻·决策算法100讲》042：思维格栅：为什么你�
 
 ---
 
-[← 041｜可证伪性：为什么你要成为自己的杠精？](/book/decision-algorithm/041/) · [返回目录](/book/) · [043｜黑天鹅：如何从意外事件中“逆势狂赚”？ →](/book/decision-algorithm/043/)
+[← 041｜可证伪性：为什么你要成为自己的杠精？](/book/decision-algorithm/041/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [043｜黑天鹅：如何从意外事件中“逆势狂赚”？ →](/book/decision-algorithm/043/)

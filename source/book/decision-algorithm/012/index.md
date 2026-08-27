@@ -336,4 +336,4 @@ description: "《老喻·决策算法100讲》012：人际资产：为什么你�
 
 ---
 
-[← 011｜处置效应：为什么你会拔掉玫瑰，灌溉杂草？](/book/decision-algorithm/011/) · [返回目录](/book/) · [013｜对冲思维：做错决策时如何还能赢？ →](/book/decision-algorithm/013/)
+[← 011｜处置效应：为什么你会拔掉玫瑰，灌溉杂草？](/book/decision-algorithm/011/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [013｜对冲思维：做错决策时如何还能赢？ →](/book/decision-algorithm/013/)

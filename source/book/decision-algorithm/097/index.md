@@ -212,4 +212,4 @@ Annie Duke 的《Thinking in Bets》提醒我们，决策质量不能完全由�
 
 ---
 
-[← 096｜敢于说不：为什么成功的关键是选择性放弃？](/book/decision-algorithm/096/) · [返回目录](/book/) · [098｜二阶智慧：怎样作出对未来负责的决策？ →](/book/decision-algorithm/098/)
+[← 096｜敢于说不：为什么成功的关键是选择性放弃？](/book/decision-algorithm/096/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [098｜二阶智慧：怎样作出对未来负责的决策？ →](/book/decision-algorithm/098/)

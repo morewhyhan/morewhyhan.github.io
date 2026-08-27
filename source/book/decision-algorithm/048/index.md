@@ -237,4 +237,4 @@ description: "《老喻·决策算法100讲》048：满意就好：如何成为�
 
 ---
 
-[← 047｜六十分哲学：不是每一场人生的战斗都要你全力以赴](/book/decision-algorithm/047/) · [返回目录](/book/) · [049｜漂亮撤退：全身而退即胜利 →](/book/decision-algorithm/049/)
+[← 047｜六十分哲学：不是每一场人生的战斗都要你全力以赴](/book/decision-algorithm/047/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [049｜漂亮撤退：全身而退即胜利 →](/book/decision-algorithm/049/)

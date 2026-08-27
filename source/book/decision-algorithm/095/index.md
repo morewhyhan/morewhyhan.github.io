@@ -336,4 +336,4 @@ OpenAI的创始人奥特曼的工作效率极高，他的系统有三个关键�
 
 ---
 
-[← 094｜禅思决策：永远去做余生最重要的事情](/book/decision-algorithm/094/) · [返回目录](/book/) · [096｜敢于说不：为什么成功的关键是选择性放弃？ →](/book/decision-algorithm/096/)
+[← 094｜禅思决策：永远去做余生最重要的事情](/book/decision-algorithm/094/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [096｜敢于说不：为什么成功的关键是选择性放弃？ →](/book/decision-algorithm/096/)

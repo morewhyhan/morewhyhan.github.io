@@ -398,4 +398,4 @@ AI永远不会因为概率低而放弃选择，它总是会选择概率最高的
 
 ---
 
-[← 022｜应对逆境：为什么帆船可以逆风前行？](/book/decision-algorithm/022/) · [返回目录](/book/) · [024｜贝叶斯最优决策：大海如何捞针？ →](/book/decision-algorithm/024/)
+[← 022｜应对逆境：为什么帆船可以逆风前行？](/book/decision-algorithm/022/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [024｜贝叶斯最优决策：大海如何捞针？ →](/book/decision-algorithm/024/)

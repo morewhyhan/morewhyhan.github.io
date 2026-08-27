@@ -351,4 +351,4 @@ description: "《老喻·决策算法100讲》041：可证伪性：为什么你�
 
 ---
 
-[← 040｜决策根基：怎样打破因果的迷信？](/book/decision-algorithm/040/) · [返回目录](/book/) · [042｜思维格栅：为什么你误读了芒格最重要的智慧？ →](/book/decision-algorithm/042/)
+[← 040｜决策根基：怎样打破因果的迷信？](/book/decision-algorithm/040/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [042｜思维格栅：为什么你误读了芒格最重要的智慧？ →](/book/decision-algorithm/042/)

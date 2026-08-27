@@ -343,4 +343,4 @@ description: "《老喻·决策算法100讲》094：禅思决策：永远去做�
 
 ---
 
-[← 093｜生活决策：植物教会我的7个决策算法](/book/decision-algorithm/093/) · [返回目录](/book/) · [095｜五种资源：怎样真正掌控自己的人生？ →](/book/decision-algorithm/095/)
+[← 093｜生活决策：植物教会我的7个决策算法](/book/decision-algorithm/093/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [095｜五种资源：怎样真正掌控自己的人生？ →](/book/decision-algorithm/095/)

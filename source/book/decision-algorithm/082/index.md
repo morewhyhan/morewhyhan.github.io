@@ -332,4 +332,4 @@ description: "《老喻·决策算法100讲》082：消费决策：怎样聪明�
 
 ---
 
-[← 081｜安全决策：守护岁月静好的四大支柱系统](/book/decision-algorithm/081/) · [返回目录](/book/) · [083｜面对冲突：为什么你要遵循“幸福者退让原则”？ →](/book/decision-algorithm/083/)
+[← 081｜安全决策：守护岁月静好的四大支柱系统](/book/decision-algorithm/081/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [083｜面对冲突：为什么你要遵循“幸福者退让原则”？ →](/book/decision-algorithm/083/)

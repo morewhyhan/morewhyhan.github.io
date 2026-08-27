@@ -186,4 +186,4 @@ description: "《老喻·决策算法100讲》098：二阶智慧：怎样作出�
 
 ---
 
-[← 097｜平常心：决策高手的最高境界](/book/decision-algorithm/097/) · [返回目录](/book/) · [099｜概率思维：支撑决策的三个神奇公式 →](/book/decision-algorithm/099/)
+[← 097｜平常心：决策高手的最高境界](/book/decision-algorithm/097/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [099｜概率思维：支撑决策的三个神奇公式 →](/book/decision-algorithm/099/)

@@ -399,4 +399,4 @@ Prodigy天才就是当身边所有人都进入非理性状态时还能够正常�
 
 ---
 
-[← 077｜决策之“贪”：为什么这是你做决策的最大障碍？](/book/decision-algorithm/077/) · [返回目录](/book/) · [079｜决策之“痴”：怎样掌握知与不知的边界？ →](/book/decision-algorithm/079/)
+[← 077｜决策之“贪”：为什么这是你做决策的最大障碍？](/book/decision-algorithm/077/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [079｜决策之“痴”：怎样掌握知与不知的边界？ →](/book/decision-algorithm/079/)

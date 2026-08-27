@@ -222,4 +222,4 @@ description: "《老喻·决策算法100讲》083：面对冲突：为什么你�
 
 ---
 
-[← 082｜消费决策：怎样聪明花钱，让幸福最大化？](/book/decision-algorithm/082/) · [返回目录](/book/) · [084｜锚点选择：为什么比较是万恶之源？ →](/book/decision-algorithm/084/)
+[← 082｜消费决策：怎样聪明花钱，让幸福最大化？](/book/decision-algorithm/082/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [084｜锚点选择：为什么比较是万恶之源？ →](/book/decision-algorithm/084/)

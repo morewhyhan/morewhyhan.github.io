@@ -261,4 +261,4 @@ description: "《老喻·决策算法100讲》063：被动决策：怎样让好�
 
 ---
 
-[← 062｜个人含金量：为什么相对优势比绝对优势更重要？](/book/decision-algorithm/062/) · [返回目录](/book/) · [064｜牛人陷阱：你才是自己人生的决策者 →](/book/decision-algorithm/064/)
+[← 062｜个人含金量：为什么相对优势比绝对优势更重要？](/book/decision-algorithm/062/) · [返回《决策算法100讲》目录](/book/decision-algorithm/) · [064｜牛人陷阱：你才是自己人生的决策者 →](/book/decision-algorithm/064/)
