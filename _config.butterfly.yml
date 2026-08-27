@@ -38,7 +38,7 @@ avatar:
   effect: false
 
 default_top_img: /img/hua.png
-index_img: /img/hua.png
+index_img: /img/home-hero-loop-poster.jpg
 archive_img: /img/hua.png
 footer_img: /img/hua.png
 
@@ -173,7 +173,7 @@ search:
 lightbox: fancybox
 
 canvas_nest:
-  enable: true
+  enable: false
   color: '0,0,255'
   opacity: 0.7
   zIndex: -1
@@ -198,8 +198,12 @@ inject:
   head:
     - <link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css">
     - <link rel="stylesheet" href="/css/custom.css">
+  bottom:
+    - <script defer src="/js/home-video.js"></script>
 
 CDN:
   internal_provider: local
   third_party_provider: jsdelivr
   version: true
+  option:
+    busuanzi: https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
