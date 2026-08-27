@@ -5,7 +5,6 @@
   const VIDEO_CLASS = 'home-hero-video'
   const VIDEO_URL = '/media/home-hero-loop.mp4'
   const POSTER_URL = '/img/home-hero-loop-poster.jpg'
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
 
   function removeStaleVideo(activeHeader) {
     document.querySelectorAll(`.${VIDEO_CLASS}`).forEach(video => {
@@ -20,14 +19,12 @@
     const header = document.querySelector(HOME_HEADER)
     removeStaleVideo(header)
 
-    if (!header || reduceMotion.matches) return
+    if (!header) return
 
     let video = header.querySelector(`.${VIDEO_CLASS}`)
     if (!video) {
       video = document.createElement('video')
       video.className = VIDEO_CLASS
-      video.src = VIDEO_URL
-      video.poster = POSTER_URL
       video.autoplay = true
       video.defaultMuted = true
       video.muted = true
@@ -35,11 +32,15 @@
       video.playsInline = true
       video.preload = 'auto'
       video.disablePictureInPicture = true
+      video.setAttribute('autoplay', '')
       video.setAttribute('aria-hidden', 'true')
       video.setAttribute('muted', '')
+      video.setAttribute('loop', '')
       video.setAttribute('playsinline', '')
       video.setAttribute('webkit-playsinline', '')
       video.setAttribute('disableRemotePlayback', '')
+      video.poster = POSTER_URL
+      video.src = VIDEO_URL
       header.prepend(video)
     }
 
@@ -56,6 +57,4 @@
   document.addEventListener('visibilitychange', () => {
     if (!document.hidden) mountHomeVideo()
   })
-
-  reduceMotion.addEventListener?.('change', mountHomeVideo)
 })()
