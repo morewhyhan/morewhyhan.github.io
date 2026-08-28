@@ -109,5 +109,5 @@ search:
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/morewhyhan/morewhyhan.github.io.git
+  repo: git@github.com:morewhyhan/morewhyhan.github.io.git
   branch: gh-pages
