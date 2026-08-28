@@ -160,6 +160,7 @@ hexo.extend.generator.register('knowledge-graph-data', locals => {
       aliases: aliasesOf(data),
       description: String(data.description || '').trim(),
       original: data.original !== false,
+      graphParent: String(data.graph_parent || '').trim(),
       raw: sourceText(data),
       links: []
     }
@@ -189,11 +190,13 @@ hexo.extend.generator.register('knowledge-graph-data', locals => {
   }
 
   nodes.forEach(node => {
-    const resolved = [...wikiTargets(node.raw), ...markdownTargets(node.raw)]
+    const resolved = [...wikiTargets(node.raw), ...markdownTargets(node.raw), node.graphParent]
+      .filter(Boolean)
       .map(target => resolveTarget(target, node.url))
       .filter(Boolean)
       .filter(target => target !== node.id)
     node.links = [...new Set(resolved)]
+    delete node.graphParent
     delete node.raw
   })
 

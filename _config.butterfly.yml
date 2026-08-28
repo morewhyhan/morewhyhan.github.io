@@ -178,11 +178,11 @@ search:
 lightbox: fancybox
 
 canvas_nest:
-  enable: false
-  color: '0,0,255'
-  opacity: 0.7
+  enable: true
+  color: '150,170,190'
+  opacity: 0.42
   zIndex: -1
-  count: 99
+  count: 88
   mobile: false
 
 mermaid:
