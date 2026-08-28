@@ -1,8 +1,22 @@
 ---
 title: 决策算法100讲
 date: 2026-08-28 00:00:00
-type: page
+permalink: book/decision-algorithm/
+categories:
+  - 图书笔记
+tags:
+  - 决策
+  - 概率
+  - 博弈
+description: 老喻关于概率、风险、博弈与人生选择的系统课程资料；全套资料在本站按一个专题收录。
+cover: /img/hua.png
+original: false
+copyright: false
 comments: false
+graph: true
+aliases:
+  - 决策算法
+  - 老喻决策算法100讲
 ---
 
 [← 返回图书笔记](/book/)
@@ -12,6 +26,12 @@ comments: false
 以下是《老喻·决策算法100讲》的外部原文资料，共 100 个编号页面。资料按原始编号排列，同一编号的拆分文件已合并渲染；原资料没有编号 018。
 
 > **版权说明**：这些内容不是我的原创文章，相关著作权归原作者及原发布方所有。后续会在原文之外，逐步补充我自己的摘要、批注与方法论整理。
+
+这套资料在首页、时间轴、文章统计与知识图谱中只作为**一个专题**计算；下面的 100 个章节只是专题内部的阅读页。
+
+这套资料与本站的 [[有限信息下的决策]]、[[机会成本]] 和 [[复盘]] 等机制卡片相互关联。
+
+<!-- more -->
 
 <ol class="book-note-list">
   <li><a href="/book/decision-algorithm/000/"><span>000</span>发刊词：做好决策，成为命运的主人</a></li>

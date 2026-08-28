@@ -12,6 +12,7 @@ menu:
   时间轴: /archives/ || fas fa-archive
   分类: /categories/ || fas fa-folder-open
   标签: /tags/ || fas fa-tags
+  知识图谱: /knowledge-graph/ || fas fa-project-diagram
   清单||fas fa-heartbeat:
     图书笔记: /book/ || fas fa-book-open
   支持我: /reward/ || fas fa-thumbs-up
@@ -48,6 +49,10 @@ cover:
   archives_enable: true
   default_cover:
     - /img/hua.png
+
+index_post_content:
+  method: 2
+  length: 500
 
 error_404:
   enable: true
@@ -200,7 +205,7 @@ inject:
     - <link rel="stylesheet" href="/css/custom.css">
   bottom:
     - <script defer src="/js/home-video.js?v=2"></script>
-    - <script defer src="/js/home-library.js?v=2"></script>
+    - <script defer src="/js/knowledge-graph.js?v=1"></script>
 
 CDN:
   internal_provider: local

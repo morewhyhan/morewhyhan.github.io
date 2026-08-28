@@ -85,6 +85,7 @@ npm run deploy
 | --- | --- |
 | `source/_posts/` | 自己写的普通文章 |
 | `source/book/` | 图书笔记与专题资料 |
+| `source/knowledge/cards/` | 机制卡片（进入图谱，不计入文章数） |
 | `source/img/` | 图片 |
 | `source/media/` | 首页视频等媒体 |
 | `_config.yml` | Hexo 主配置 |
@@ -92,6 +93,14 @@ npm run deploy
 | `source/css/custom.css` | 自定义样式 |
 | `source/js/` | 首页等自定义功能 |
 | `themes/butterfly/` | Butterfly 主题子模块，通常不要直接修改 |
+
+## 知识图谱与双向链接
+
+在任何公开 Markdown 里写 `[[另一篇文章标题]]`，或者写 `[[另一篇文章标题|显示文字]]`，就会建立一条双向可发现的关系。
+
+构建时，`scripts/knowledge-graph.js` 会扫描普通文章、图书专题与机制卡片，生成全局图谱、当前文章的局部图谱和反向链接。普通文章默认进入图谱；机制卡片使用 `graph: true`；不希望进入图谱的页面可以使用 `graph: false`。
+
+图书资料采用“一个专题文章 + 多个内部阅读页”的结构。这样整套资料在首页、时间轴和文章统计中只计算一次。
 
 ## 四个最常用的 Git 词
 
