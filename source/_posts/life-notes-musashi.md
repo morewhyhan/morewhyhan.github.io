@@ -4,7 +4,6 @@ date: "2026-08-10 06:53:53"
 categories:
   - 生活随笔
 description: "宫本武藏十三岁的时候，杀了第一个人。"
-cover: /img/hua.png
 graph_parent: 生活随笔
 ---
 宫本武藏十三岁的时候，杀了第一个人。

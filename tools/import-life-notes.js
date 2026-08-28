@@ -77,7 +77,6 @@ for (const filename of files) {
     'categories:',
     '  - 生活随笔',
     `description: ${JSON.stringify(description)}`,
-    'cover: /img/hua.png',
     'graph_parent: 生活随笔',
     '---',
     ''

@@ -44,7 +44,7 @@ archive_img: /img/hua.png
 footer_img: /img/hua.png
 
 cover:
-  index_enable: true
+  index_enable: false
   aside_enable: true
   archives_enable: true
   default_cover:

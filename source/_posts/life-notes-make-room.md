@@ -4,7 +4,6 @@ date: "2026-08-10 21:19:42"
 categories:
   - 生活随笔
 description: "小时候放学最怕下雨。"
-cover: /img/hua.png
 graph_parent: 生活随笔
 ---
 小时候放学最怕下雨。

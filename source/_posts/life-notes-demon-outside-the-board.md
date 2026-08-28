@@ -4,7 +4,6 @@ date: "2026-08-08 23:02:43"
 categories:
   - 生活随笔
 description: "如果一切重来，命运还会一样吗？"
-cover: /img/hua.png
 graph_parent: 生活随笔
 ---
 如果一切重来，命运还会一样吗？

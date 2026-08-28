@@ -4,7 +4,6 @@ date: "2026-07-29 11:29:49"
 categories:
   - 生活随笔
 description: "我有一个朋友，很擅长从一件小事看出一个人的本质。"
-cover: /img/hua.png
 graph_parent: 生活随笔
 ---
 我有一个朋友，很擅长从一件小事看出一个人的本质。
