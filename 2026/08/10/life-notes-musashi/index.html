@@ -1,0 +1,848 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>武藏之死在天下无双 | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="宫本武藏十三岁的时候，杀了第一个人。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="武藏之死在天下无双">
+<meta property="og:url" content="https://morewhyhan.github.io/2026/08/10/life-notes-musashi/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="宫本武藏十三岁的时候，杀了第一个人。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/hua.png">
+<meta property="article:published_time" content="2026-08-09T22:53:53.000Z">
+<meta property="article:modified_time" content="2026-08-28T12:40:09.684Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/hua.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "武藏之死在天下无双",
+  "url": "https://morewhyhan.github.io/2026/08/10/life-notes-musashi/",
+  "image": "https://morewhyhan.github.io/img/hua.png",
+  "datePublished": "2026-08-09T22:53:53.000Z",
+  "dateModified": "2026-08-28T12:40:09.684Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "涵千",
+      "url": "https://github.com/morewhyhan"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/2026/08/10/life-notes-musashi/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '武藏之死在天下无双',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/knowledge-graph/"><i class="fa-fw fas fa-project-diagram"></i><span> 知识图谱</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/hua.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a><a class="nav-page-title" href="/"><span class="site-name">武藏之死在天下无双</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/knowledge-graph/"><i class="fa-fw fas fa-project-diagram"></i><span> 知识图谱</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">武藏之死在天下无双</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-08-09T22:53:53.000Z" title="发表于 2026-08-10 06:53:53">2026-08-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-08-28T12:40:09.684Z" title="更新于 2026-08-28 20:40:09">2026-08-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/">生活随笔</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">6.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>17分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>宫本武藏十三岁的时候，杀了第一个人。</p>
+<p>六十岁那年，他在《五轮书》开篇重新提起这件事，写得极淡。</p>
+<p>十三岁，与有马喜兵卫决斗，胜。</p>
+<p>十六岁，又与人交手，胜。</p>
+<p>二十一岁上京都，与诸流兵法者交锋，还是胜。</p>
+<p>此后负剑周游诸国，风尘来去，前后六十余战，无一败绩。</p>
+<p>寥寥几笔，平静得像一个老人深夜独坐灯下，翻着一本早已发黄的旧账。</p>
+<p>这里赢了一场。</p>
+<p>那里又赢了一场。</p>
+<p>哦，还有这个。</p>
+<p>也赢了。</p>
+<p>他没有写十三岁的自己第一次看见死人时是什么感觉，也没写旁边围观之人究竟惊呼还是退避。那些后来被小说电影反复渲染的刀光剑影、血雨腥风，在本人笔下反而轻得很。</p>
+<p>像暮秋几片叶子。</p>
+<p>风一吹。</p>
+<p>过去了。</p>
+<p>大概人老了以后都是这样。</p>
+<p>少年时恨不得击鼓鸣金、教全天下都知道的事，几十年后再回首，也不过淡淡一句：</p>
+<p>那时候我赢了。</p>
+<p>可十三岁的武藏当然不会这么想。</p>
+<p>那时他还不是后来那个天下皆知的剑豪。</p>
+<p>没有显赫家门，没有俸禄，没有门生，更没有人远远看见他从街上走来，便敛了笑意压低声音：</p>
+<p>“宫本武藏来了。”</p>
+<p>他只是播磨乡间一个脾气很坏的少年。</p>
+<p>无官无爵，无门无派，一身蛮力，满腹孤勇。</p>
+<p>有马喜兵卫来到当地，竖起比武的牌子。</p>
+<p>武藏看见了。</p>
+<p>那便打吧。</p>
+<p>关于那场决斗，后来的记载众说纷纭。那根木棒到底怎样挥下，有马喜兵卫又究竟怎样倒在尘土里，今日已经很难考清。</p>
+<p>唯一能确定的是：</p>
+<p>他输了。</p>
+<p>于是一个原本无人知晓的少年，第一次有了名字。</p>
+<p>这是一个极古老，也极简单的办法。</p>
+<p>你没有家世，就拿本事换。</p>
+<p>你没有位置，就从别人手里打一个下来。</p>
+<p>别人看不见你，那便做一件惊动四方的事，让他们不得不转过头来看。</p>
+<p>少年人的世界向来如此明快。</p>
+<p>人群在那里。</p>
+<p>你在这里。</p>
+<p>中间横着一个敌人。</p>
+<p>把他打倒。</p>
+<p>路就出来了。</p>
+<p>那时候天地似乎很大，又似乎很小。</p>
+<p>大的地方可以任你负剑远游，山川万里。</p>
+<p>小的地方则只容得下两个人。</p>
+<p>一个站着。</p>
+<p>一个倒下。</p>
+<p>所以之后很多年里，武藏一直在赶路。</p>
+<p>十六岁，他又赢了一场。</p>
+<p>二十一岁进入京都以后，他开始挑战声名显赫的吉冈一门。</p>
+<p>吉冈家世代教授兵法，在京都经营多年，门生故旧盘根错节。门墙高，名望重，几代人的声势积在那里，已经不是一个人那么简单。</p>
+<p>那是一堵墙。</p>
+<p>偏偏宫本武藏这一生最喜欢干的事，就是撞墙。</p>
+<p>后来关于吉冈一门的故事越传越神。</p>
+<p>有夜战。</p>
+<p>有伏击。</p>
+<p>有数十人围攻。</p>
+<p>有武藏一人挥着木刀，在刀丛人海中一路杀出去。</p>
+<p>真真假假，虚虚实实，到今天已经如雾里看花，很难逐一辨清。</p>
+<p>不过传奇这种东西，本来就不太在乎这些。</p>
+<p>它不问当天风往哪边吹，不问谁先拔刀，更不会耐着性子替败者留下辩词。</p>
+<p>传奇只记一件事：</p>
+<p>最后谁还站着。</p>
+<p>吉冈一门败了。</p>
+<p>宫本武藏这个名字，于是又重了一分。</p>
+<p>一点一点。</p>
+<p>从乡野到京都。</p>
+<p>从无人知晓，到声闻四方。</p>
+<p>别人倒下得越多，他的名字便越响。</p>
+<p>之后他继续旅行。</p>
+<p>没有固定主君，也没有真正安顿下来的地方。</p>
+<p>今日过山，明日渡水。听说哪里出了个厉害剑客，便背着刀往那里去。</p>
+<p>山河万里，不过一场又一场胜负。</p>
+<p>对于一个年轻武者来说，这大概是世上最痛快的日子。</p>
+<p>一个陌生地方。</p>
+<p>一个陌生高手。</p>
+<p>两把刀。</p>
+<p>一场胜负。</p>
+<p>打完继续赶路。</p>
+<p>不用处理那些缠缠绕绕的人情，不需要揣摩上司一句话到底是什么意思，也不用猜一句笑脸之后究竟藏了几个心眼。</p>
+<p>输就是输。</p>
+<p>赢就是赢。</p>
+<p>白刃当前，生死一线，反而没有那么多虚头巴脑。</p>
+<p>剑这种东西，实在比人诚实多了。</p>
+<p>直到船岛。</p>
+<p>1612年前后，武藏与佐佐木小次郎相约决斗。</p>
+<p>后来这一战几乎成了日本剑客故事里最著名的一幕。</p>
+<p>人们说武藏故意迟到。</p>
+<p>说他坐在船头，拿船桨慢悠悠削出一根长木刀。</p>
+<p>说小次郎久候不至，早已怒火中烧，见武藏终于上岸便猛然拔刀，把刀鞘往沙滩上一掷。</p>
+<p>武藏见状便说：</p>
+<p>你已经输了。</p>
+<p>因为一个还准备活着回去的人，怎么会先把刀鞘丢掉呢？</p>
+<p>这些细节实在太好了。</p>
+<p>好到让人怀疑后人实在舍不得浪费这么精彩的一生，索性替他把台子也搭好了。</p>
+<p>沧海横流。</p>
+<p>孤岛一片。</p>
+<p>远处一叶小舟破浪而来。</p>
+<p>岸上一个剑客怒不可遏。</p>
+<p>船上一个浪人拎着木刀，姗姗来迟。</p>
+<p>海风卷衣。</p>
+<p>白浪拍岸。</p>
+<p>然后两人交手。</p>
+<p>不过一瞬。</p>
+<p>小次郎倒下。</p>
+<p>旁边的大海照旧潮来潮去。</p>
+<p>一浪覆一浪。</p>
+<p>仿佛什么都没有发生。</p>
+<p>那一年武藏大约二十八岁。</p>
+<p>从十三岁第一次决斗算起，已经过去十五年。</p>
+<p>十五年前，他需要打倒一个人，才能让附近几个村子知道这小子叫什么。</p>
+<p>十五年后，他击败了佐佐木小次郎。</p>
+<p>宫本武藏四个字，已经不需要任何人介绍了。</p>
+<p>如果这是一部英雄电影，拍到这里其实刚刚好。</p>
+<p>少年离乡。</p>
+<p>负剑远游。</p>
+<p>败尽名门。</p>
+<p>最后在茫茫海上，与一生最强的对手决战孤岛。</p>
+<p>海风猎猎。</p>
+<p>长天寥廓。</p>
+<p>小次郎伏地。</p>
+<p>武藏收刀。</p>
+<p>镜头缓缓拉远。</p>
+<p>一叶孤舟重新驶入苍茫烟水。</p>
+<p>字幕升起。</p>
+<p>完。</p>
+<p>可问题在于，宫本武藏没死。</p>
+<p>他后来又活了三十多年。</p>
+<p>而我一直觉得，这三十多年其实比前面的故事更有意思。</p>
+<p>因为一个人尚未得到什么的时候，人生往往特别清楚。</p>
+<p>往前。</p>
+<p>再往前。</p>
+<p>打败下一个人。</p>
+<p>得到一个位置。</p>
+<p>挣更多的钱。</p>
+<p>让更多人听见自己的名字。</p>
+<p>只要前面还悬着一样东西，人就很少有闲心去想什么人生意义。</p>
+<p>山高便登山。</p>
+<p>水阔便渡水。</p>
+<p>前面有人挡着便打过去。</p>
+<p>跑就是了。</p>
+<p>真正麻烦的是，有一天你终于跑到了少年时一直想去的地方。</p>
+<p>风尘落定。</p>
+<p>四顾茫然。</p>
+<p>抬头一看。</p>
+<p>没路牌了。</p>
+<p>武藏大概就是在那几年遇见了这种事。</p>
+<p>船岛决斗之后不久，大坂城陷落。</p>
+<p>丰臣氏灭亡。</p>
+<p>绵延百余年的战国时代终于走到了尽头。</p>
+<p>铁马金戈，烽烟狼藉，百年乱世就此一点点沉进历史。</p>
+<p>后人为这个时代的到来取了个很好听的名字：</p>
+<p>元和偃武。</p>
+<p>偃武。</p>
+<p>收刀。</p>
+<p>天下百姓当然高兴。</p>
+<p>农民终于可以安心种田，商人终于可以沿街开铺，城镇重新有了灯火。晚上关门睡觉，也不用担心哪位大名第二天突然兴兵，又把自己拉出去填进某场莫名其妙的战争。</p>
+<p>刀枪入库。</p>
+<p>四海渐平。</p>
+<p>总归是好事。</p>
+<p>只是对武藏这种人来说，多少有些不是时候。</p>
+<p>他练了一辈子最擅长的东西，突然成了新时代最不缺的东西。</p>
+<p>过去，一个武士可以从战阵尸山里杀出位置。</p>
+<p>现在幕府想要的是秩序。</p>
+<p>过去诸侯喜欢猛将。</p>
+<p>现在诸侯更需要会治理、懂行政、听指挥、最好别给主家惹麻烦的家臣。</p>
+<p>一个人寒来暑往苦练二十年，终于把自己磨成了天下最锋利的一把刀。</p>
+<p>出山一看。</p>
+<p>太平了。</p>
+<p>命运有时候就是这么缺德。</p>
+<p>它从不在乎你这一身本事究竟练了多少年。</p>
+<p>你终于磨好了剑。</p>
+<p>它却把江湖收了。</p>
+<p>当然，这并不是说武藏从此混不下去了。</p>
+<p>他声名太盛，许多大名依然礼遇他，也曾在不同势力中担任客将、教授兵法。</p>
+<p>高朋满座时有人敬酒。</p>
+<p>登堂入室时有人称先生。</p>
+<p>可被尊敬和有归宿，从来不是一回事。</p>
+<p>别人敬你的刀，不代表愿意永远给你留一张椅子。</p>
+<p>盛名可以传遍四海，让无数素未谋面的人知道你。</p>
+<p>却未必能告诉你：</p>
+<p>今夜该宿何处。</p>
+<p>明日该往何方。</p>
+<p>“人生如逆旅，我亦是行人。”</p>
+<p>苏轼说这句话的时候，大概没有想过一个日本浪人。</p>
+<p>可千百年来，在路上的人其实都差不多。</p>
+<p>看起来走了很远。</p>
+<p>关山万里，风尘满衣。</p>
+<p>心里却未必知道哪里才算抵达。</p>
+<p>武藏还是一直走。</p>
+<p>只是年轻时的走，是为了寻找下一个敌人。</p>
+<p>中年之后，他似乎渐渐不知道该找什么了。</p>
+<p>然后人生偏偏又在这个时候，给了他另外一道题。</p>
+<p>他收养了一个儿子，叫三木之助。</p>
+<p>武藏自己一生漂泊，居无定所，没有建立一个传统意义上安稳的家庭，却很喜欢收养、提携年轻人。</p>
+<p>三木之助后来进入本多家，侍奉本多忠刻。</p>
+<p>年轻。</p>
+<p>有才华。</p>
+<p>又深受主君信任。</p>
+<p>怎么看，都算得上一段很好的归宿。</p>
+<p>武藏前半生始终没有真正得到的东西，养子似乎替他得到了。</p>
+<p>一个家。</p>
+<p>一个位置。</p>
+<p>一个可以长久侍奉的人。</p>
+<p>仿佛这一路颠沛流离，到下一代终于可以停下来。</p>
+<p>可1626年，本多忠刻去世。</p>
+<p>三木之助选择殉死。</p>
+<p>那时候他才二十多岁。</p>
+<p>我不知道武藏听到这个消息时正在做什么。</p>
+<p>史料也没兴趣替我们记。</p>
+<p>历史就是这么讨厌。</p>
+<p>它可以一本正经地告诉你某年某月，一个人在谁手下做什么差事，拿多少俸禄，住哪座城。</p>
+<p>却从来懒得记录一个父亲夜半独坐时是什么表情。</p>
+<p>庭前有没有风。</p>
+<p>灯火有没有晃。</p>
+<p>他有没有伸手去拿刀，又慢慢放下。</p>
+<p>这些都没人知道。</p>
+<p>我们只知道一件事。</p>
+<p>三木之助死了。</p>
+<p>而这是武藏拔刀解决不了的问题。</p>
+<p>他一生都在研究如何战胜死亡。</p>
+<p>怎样比别人快一点。</p>
+<p>怎样在刀锋落下来以前，先一步夺走对方的性命。</p>
+<p>怎样判断距离。</p>
+<p>怎样捕捉时机。</p>
+<p>怎样从一个人的呼吸、脚步、眼神最细微的变化里，看见那条只存在一瞬的缝隙。</p>
+<p>一息。</p>
+<p>一念。</p>
+<p>一刀。</p>
+<p>生死立判。</p>
+<p>这些东西曾让一个又一个敌人倒在他面前。</p>
+<p>可有一天，他自己的孩子走向死亡。</p>
+<p>刀突然没用了。</p>
+<p>人生大概总有这么一个时刻。</p>
+<p>你辛辛苦苦练了一辈子，把某样东西炼成了自己最大的依仗。</p>
+<p>寒暑不辍。</p>
+<p>昼夜不休。</p>
+<p>甚至觉得只要此物在手，世上便没有什么真正过不去的关。</p>
+<p>然后命运抬手给你出了一道完全不考这个的题。</p>
+<p>你能击倒敌人。</p>
+<p>却留不住想留下的人。</p>
+<p>你能在刀光里夺命。</p>
+<p>却不能从黄泉边把一个人拉回来。</p>
+<p>昔日那些百试百验的本事，此刻竟连一寸都使不上。</p>
+<p>三木之助死后，武藏越来越少出现在决斗故事中。</p>
+<p>取而代之的，是一些和他前半生看起来八竿子打不着的东西。</p>
+<p>书法。</p>
+<p>雕刻。</p>
+<p>绘画。</p>
+<p>他开始拿笔了。</p>
+<p>武藏留下的画里，我最喜欢一幅《枯木鸣鵙图》。</p>
+<p>画很空。</p>
+<p>一根枯枝从纸上斜斜探出去。</p>
+<p>枝头停着一只伯劳。</p>
+<p>它微微低头，看向下方。</p>
+<p>更下面一根细枝上，有一只小虫。</p>
+<p>枯枝。</p>
+<p>孤鸟。</p>
+<p>小虫。</p>
+<p>大片留白。</p>
+<p>如果一定要问这幅画里发生了什么，那答案大概是：</p>
+<p>什么都没发生。</p>
+<p>鸟没有扑下去。</p>
+<p>虫没有逃。</p>
+<p>没有刀锋相交。</p>
+<p>没有人血溅三尺。</p>
+<p>没有围观者屏息凝神。</p>
+<p>甚至连一丝风都没有。</p>
+<p>四野俱寂。</p>
+<p>只有大片大片不曾沾墨的白纸。</p>
+<p>我第一次看见这幅画时，总觉得这玩意儿实在不像宫本武藏。</p>
+<p>后来再看，又觉得没有什么比它更像宫本武藏。</p>
+<p>因为武藏前半生研究来研究去，其实也就是这些东西。</p>
+<p>距离。</p>
+<p>轻重。</p>
+<p>动静。</p>
+<p>进退。</p>
+<p>什么时候该动。</p>
+<p>什么时候该静。</p>
+<p>敌人肩膀微沉意味着什么，脚步偏了半寸又意味着什么，下一瞬刀锋该从哪里进去。</p>
+<p>只是过去，这些判断最后总要落在一个人的死上。</p>
+<p>如今却落在了一只鸟身上。</p>
+<p>伯劳停在枯枝。</p>
+<p>俯视虫豸。</p>
+<p>它当然随时可以扑下去。</p>
+<p>但它没有。</p>
+<p>武藏也懒得告诉我们，后来那只鸟到底有没有吃掉那条虫。</p>
+<p>一切都停在那一瞬间。</p>
+<p>似动未动。</p>
+<p>欲发未发。</p>
+<p>杀意还在。</p>
+<p>胜负却已经不见了。</p>
+<p>兵法像是忽然从刀锋上化了下来，沿着腕骨淌进笔尖，又从笔尖渗进一团墨色。</p>
+<p>年轻时的武藏，要一个人倒在尘土里，才能证明自己真的看准了那一瞬。</p>
+<p>老年的武藏，只需要落下一笔。</p>
+<p>浓淡枯润。</p>
+<p>黑白之间。</p>
+<p>没有人死。</p>
+<p>照样成立。</p>
+<p>这看起来不过是一点微小变化。</p>
+<p>他却走了几十年。</p>
+<p>真正让我觉得这件事有意思的，是《五轮书》的开头。</p>
+<p>六十岁的武藏在那里重新回忆自己年轻时六十多战不败。</p>
+<p>正常人写到这里，多少该总结一下自己有多牛了。</p>
+<p>六十余战全胜。</p>
+<p>这还不开课等什么？</p>
+<p>放到今天，高低得整一个：</p>
+<p>《从零开始掌握兵法底层逻辑：我如何实现六十连胜》。</p>
+<p>原价1999。</p>
+<p>今晚直播间只要99。</p>
+<p>可武藏没有。</p>
+<p>他说自己到了三十岁以后，回头再看过去，发现那些胜利其实不能证明他真的懂兵法。</p>
+<p>也许只是自己天资好一点。</p>
+<p>也许碰上天意。</p>
+<p>也许单纯就是那些对手水平不太行。</p>
+<p>所以三十岁以后，他重新开始研究。</p>
+<p>一岁一岁磨。</p>
+<p>一年一年想。</p>
+<p>一直研究到五十岁，才觉得自己逐渐摸到所谓兵法之道。</p>
+<p>我第一次读到这里的时候愣了很久。</p>
+<p>这大概是《五轮书》里最狠的一段。</p>
+<p>不是因为谦虚。</p>
+<p>谦虚这种东西没什么意思。</p>
+<p>真正狠的是，他把自己前半生唯一确定无疑的东西，亲手给拆了。</p>
+<p>过去武藏不知道自己到底算不算厉害。</p>
+<p>那就去打。</p>
+<p>赢了。</p>
+<p>这总能证明吧。</p>
+<p>继续打。</p>
+<p>又赢。</p>
+<p>六十多场。</p>
+<p>尸骨在后，盛名在前。</p>
+<p>全天下都知道你强了。</p>
+<p>这总该算铁证了吧。</p>
+<p>结果三十岁的武藏站在自己那一地胜绩前，看了很久，说：</p>
+<p>不一定。</p>
+<p>我赢了。</p>
+<p>可我未必知道自己为什么赢。</p>
+<p>这就麻烦大了。</p>
+<p>因为如果连胜利都不能解释胜利，一个人到底还拿什么判断自己？</p>
+<p>年轻时的人都喜欢结果。</p>
+<p>因为结果实在太方便了。</p>
+<p>考上了，那就叫厉害。</p>
+<p>赚到了，那就算成功。</p>
+<p>有人爱，那便值得被爱。</p>
+<p>文章十万阅读，那当然是写得好。</p>
+<p>比赛赢了，那自然比别人强。</p>
+<p>人世间大多数时候都靠这些东西计数。</p>
+<p>功名有榜。</p>
+<p>俸禄有数。</p>
+<p>胜负有输赢。</p>
+<p>连爱憎似乎都恨不得有个回音。</p>
+<p>这套判断不能说错。</p>
+<p>大部分时候还挺好用。</p>
+<p>只是人一旦活得久一点，山河看多一点，总会遇见一些结果解决不了的事情。</p>
+<p>就像武藏。</p>
+<p>六十多场胜利可以告诉他：</p>
+<p>你确实赢了。</p>
+<p>可它回答不了：</p>
+<p>为什么？</p>
+<p>如果下一次没有敌人了呢？</p>
+<p>如果天下已经太平了呢？</p>
+<p>如果诸侯再也不需要你的刀呢？</p>
+<p>如果那个你最想留下的人，偏偏怎么都留不住呢？</p>
+<p>到了那时候，那些原本锣鼓喧天的胜利，会忽然一场一场安静下来。</p>
+<p>昔日刀鸣如雷。</p>
+<p>如今四野无声。</p>
+<p>我想武藏真正的晚年，大概便是从这种安静里开始的。</p>
+<p>他还是研究兵法。</p>
+<p>只是兵法慢慢不再只是如何砍倒一个人。</p>
+<p>《五轮书》里开始谈木匠。</p>
+<p>谈节奏。</p>
+<p>谈观看。</p>
+<p>谈不同技艺里那些暗自相通的东西。</p>
+<p>他画鸟。</p>
+<p>画芦苇。</p>
+<p>画达摩。</p>
+<p>练字。</p>
+<p>做雕刻。</p>
+<p>年轻的时候，他一直在找更厉害的敌人。</p>
+<p>天下高手如林，便一人一人走过去。</p>
+<p>老了以后，他却开始寻找同一件事藏在万物里的影子。</p>
+<p>一呼一吸有节奏。</p>
+<p>一横一竖有进退。</p>
+<p>木匠落斧有轻重。</p>
+<p>枯鸟临枝有动静。</p>
+<p>结果这条路反而越走越宽。</p>
+<p>刀是。</p>
+<p>笔也是。</p>
+<p>木头也是。</p>
+<p>一只停在枯枝上的鸟，也是。</p>
+<p>1645年，武藏病重。</p>
+<p>临死以前，他又写了一篇很短的东西。</p>
+<p>《独行道》。</p>
+<p>一共二十一条。</p>
+<p>没有什么绝世剑招，也没教后人怎样名扬天下。</p>
+<p>大多只是一些很简单，甚至简单得有些冷酷的规则。</p>
+<p>不要嫉妒。</p>
+<p>不要沉溺欲望。</p>
+<p>不要贪求老后的财物。</p>
+<p>尊敬神佛，却别指望神佛。</p>
+<p>不要偏离自己的道。</p>
+<p>很像一个马上要远行的人，在天将破晓之前独自坐在那里，慢慢清点自己的行囊。</p>
+<p>这个留下。</p>
+<p>那个扔掉。</p>
+<p>这个跟了我几十年，原来没什么用。</p>
+<p>那个看着不起眼，却得带到最后。</p>
+<p>六十多年的人生，刀来剑往，荣辱浮沉，到这里已经没有什么豪言壮语。</p>
+<p>曾经以为重若千钧的东西，到最后也不过一件件从手里放下。</p>
+<p>年轻的武藏当然不会写这些。</p>
+<p>他那时候也根本不需要。</p>
+<p>十三岁的时候，判断自己太容易了。</p>
+<p>有马喜兵卫躺地上。</p>
+<p>我站着。</p>
+<p>所以我赢。</p>
+<p>二十八岁时也是如此。</p>
+<p>小次郎倒在船岛。</p>
+<p>我站着。</p>
+<p>所以我又赢。</p>
+<p>人立于生死之间，黑白分明。</p>
+<p>再简单不过。</p>
+<p>可六十岁时，屋子里已经没有敌人了。</p>
+<p>没有围观的人群。</p>
+<p>没有刀刃相撞的铮然一声。</p>
+<p>只有一个病得快拿不动刀的老人。</p>
+<p>灯影萧疏。</p>
+<p>纸墨在案。</p>
+<p>这时候再问：</p>
+<p>宫本武藏是谁？</p>
+<p>终于不能再叫别人来回答了。</p>
+<p>我写东西久了之后，慢慢发现人特别容易把一些本来只是工具的东西，莫名其妙供成法官。</p>
+<p>阅读量本来只是个数字。</p>
+<p>它只负责告诉你有多少人点开了这篇文章。</p>
+<p>后来不知怎么便变成：</p>
+<p>这么多人看，所以我写得好。</p>
+<p>再后来：</p>
+<p>怎么只有这么点人看，我是不是不行？</p>
+<p>收入也是。</p>
+<p>成绩也是。</p>
+<p>职位也是。</p>
+<p>别人回不回消息也是。</p>
+<p>这些东西一开始明明只是负责向你报告：</p>
+<p>外面现在发生了什么。</p>
+<p>可用着用着，它们忽然穿上官服，坐上公堂，拿起惊堂木，开始判你：</p>
+<p>你这个人，到底算不算数。</p>
+<p>这事最麻烦的地方在于，我们又不可能像一些廉价鸡汤说的那样：</p>
+<p>不要在乎数字。</p>
+<p>怎么可能不在乎。</p>
+<p>武藏也不可能不在乎胜负。</p>
+<p>一个剑客连输赢都不在乎，那一般不叫通透。</p>
+<p>大概率叫打不过。</p>
+<p>写东西当然希望有人看。</p>
+<p>做生意当然希望赚钱。</p>
+<p>考试自然希望考高分。</p>
+<p>一个人披星戴月走了这么久，自然也会希望天地之间传来一点回音。</p>
+<p>哪怕很轻。</p>
+<p>至少告诉你：</p>
+<p>我看见了。</p>
+<p>这些都没问题。</p>
+<p>只是早晚有一天，我们得把两件事分开。</p>
+<p>世界有没有回应我。</p>
+<p>和我是不是必须靠这个回应才能存在。</p>
+<p>前一件事很重要。</p>
+<p>后一件事实在太重了。</p>
+<p>重到什么数字都扛不起。</p>
+<p>我以前一直想不太明白，宫本武藏晚年为什么一定要写《五轮书》。</p>
+<p>他都这么有名了。</p>
+<p>兵法也有弟子往下传。</p>
+<p>一个六十多岁的老人，身体已经不好，何苦还跑去山洞里，把几十年的东西重新一条一条整理？</p>
+<p>青灯一盏。</p>
+<p>古洞幽深。</p>
+<p>山外草木荣枯，寒暑往复。</p>
+<p>他还有什么非写不可的呢？</p>
+<p>后来反而觉得，也许根本不是为了证明。</p>
+<p>恰恰是因为，终于不用证明了。</p>
+<p>年轻人写完东西，总想赶紧交出去。</p>
+<p>想看评论。</p>
+<p>想看反馈。</p>
+<p>想有人告诉自己：</p>
+<p>不错。</p>
+<p>你是对的。</p>
+<p>可老人一个人坐在灯下慢慢写。</p>
+<p>外面没有擂台。</p>
+<p>没有对手。</p>
+<p>也没有谁等着给分。</p>
+<p>这些字以后有没有人看，他甚至未必知道。</p>
+<p>但该改的还是改。</p>
+<p>没想明白的还是继续想。</p>
+<p>一句不对便重来。</p>
+<p>一念未通便再坐一夜。</p>
+<p>不是因为明天有一场决斗。</p>
+<p>也不是因为门外站着一个考官。</p>
+<p>只是他自己知道：</p>
+<p>这里还不对。</p>
+<p>这种感觉大概有点寂寞。</p>
+<p>却也很自由。</p>
+<p>以前一剑挥下，总有回声。</p>
+<p>要么敌人倒下。</p>
+<p>要么自己倒下。</p>
+<p>如今笔落纸上，却只有灯花偶尔爆开一声轻响。</p>
+<p>没人鼓掌。</p>
+<p>也没人喝彩。</p>
+<p>于是人终于不得不认真听见自己的声音。</p>
+<p>然后自己为它负责。</p>
+<p>所以后来我总觉得，《枯木鸣鵙图》才是宫本武藏一生真正的决斗图。</p>
+<p>船岛当然好看。</p>
+<p>沧海。</p>
+<p>孤岛。</p>
+<p>长刀。</p>
+<p>白浪翻涌间，小次郎倒下。</p>
+<p>那一刻，全天下都知道宫本武藏赢了。</p>
+<p>可《枯木鸣鵙图》里什么都没有。</p>
+<p>一根枯枝。</p>
+<p>一只鸟。</p>
+<p>一条虫。</p>
+<p>大片空白。</p>
+<p>无人倒下。</p>
+<p>无人喝彩。</p>
+<p>没有史官落笔，也没有旁人惊叹。</p>
+<p>伯劳只是静静立在枝头，看着。</p>
+<p>从有马喜兵卫到佐佐木小次郎，武藏用了十五年，让天下知道宫本武藏是谁。</p>
+<p>从船岛到晚年的山洞，他又用了三十多年，才一点点发现：</p>
+<p>即使天下不回答这个问题，好像也没什么。</p>
+<p>十三岁时，他需要一个人的倒下，才能第一次听见自己的名字。</p>
+<p>后来那个名字越来越响。</p>
+<p>响到京都知道。</p>
+<p>诸侯知道。</p>
+<p>天下知道。</p>
+<p>名满四方。</p>
+<p>声震一时。</p>
+<p>最后却又一点一点安静下来。</p>
+<p>刀声没有了。</p>
+<p>战鼓没有了。</p>
+<p>昔日敌人早已化作荒冢寒烟。</p>
+<p>那些曾经围观他胜负的人，也各自在光阴里老去、离散、死去。</p>
+<p>屋里只剩下纸。</p>
+<p>一方砚。</p>
+<p>几笔未干的墨。</p>
+<p>窗外或许有风。</p>
+<p>山中或许有鸟。</p>
+<p>我想宫本武藏这一生，大概真的有过两次无敌。</p>
+<p>第一次是在船岛。</p>
+<p>海天之间，一人倒下，一人独立。</p>
+<p>所有人都看见了。</p>
+<p>第二次究竟发生在哪一天，我不知道。</p>
+<p>也许是写《五轮书》的某一个深夜。</p>
+<p>山月照壁。</p>
+<p>灯火将残。</p>
+<p>他忽然把一个困了自己许久的问题想通了。</p>
+<p>也许是画那只伯劳的时候。</p>
+<p>笔锋落下。</p>
+<p>枯枝横斜。</p>
+<p>天地忽然安静。</p>
+<p>也许只是生命最后几天，他一个人把那二十一条规矩写完，又从头看了一遍，然后轻轻把笔放下。</p>
+<p>没有敌人倒下。</p>
+<p>没有掌声雷动。</p>
+<p>甚至没有任何值得史书记上一笔的大事发生。</p>
+<p>窗外草木自青黄。</p>
+<p>人间风雨照旧。</p>
+<p>枯枝上，那只鸟还站在那里。</p>
+<p>武藏也是。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://github.com/morewhyhan">涵千</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://morewhyhan.github.io/2026/08/10/life-notes-musashi/">https://morewhyhan.github.io/2026/08/10/life-notes-musashi/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://morewhyhan.github.io" target="_blank">虚船向远</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img/hua.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>感谢你的支持</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2026/08/10/life-notes-make-room/" title="再挤挤"><img class="cover" src="/img/hua.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">再挤挤</div></div><div class="info-2"><div class="info-item-1">小时候放学最怕下雨。</div></div></div></a><a class="pagination-related" href="/2026/08/09/life-notes-autumn-fruit/" title="给春稗以秋实"><img class="cover" src="/img/hua.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">给春稗以秋实</div></div><div class="info-2"><div class="info-item-1">余秀华有一句诗我记了很多年："告诉你稻子和稗子的区别，告诉你一棵稗子提心吊胆的春天。"第一次读到只觉得漂亮，后来才发现，我好像就是那棵稗子。</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/08/28/life-notes-prologue/" title="生活随笔：把未经整理的真实留下来"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="生活随笔：把未经整理的真实留下来"/></a><div class="content"><a class="title" href="/2026/08/28/life-notes-prologue/" title="生活随笔：把未经整理的真实留下来">生活随笔：把未经整理的真实留下来</a><time datetime="2026-08-28T06:00:00.000Z" title="发表于 2026-08-28 14:00:00">2026-08-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/08/28/ruo-wo-zai-chang-prologue/" title="若我在场：一个关于历史决策的思想实验"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="若我在场：一个关于历史决策的思想实验"/></a><div class="content"><a class="title" href="/2026/08/28/ruo-wo-zai-chang-prologue/" title="若我在场：一个关于历史决策的思想实验">若我在场：一个关于历史决策的思想实验</a><time datetime="2026-08-28T04:30:00.000Z" title="发表于 2026-08-28 12:30:00">2026-08-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/book/decision-algorithm/" title="决策算法100讲"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="决策算法100讲"/></a><div class="content"><a class="title" href="/book/decision-algorithm/" title="决策算法100讲">决策算法100讲</a><time datetime="2026-08-27T16:00:00.000Z" title="发表于 2026-08-28 00:00:00">2026-08-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/08/23/life-notes-odyssey/" title="奥德赛意识流"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="奥德赛意识流"/></a><div class="content"><a class="title" href="/2026/08/23/life-notes-odyssey/" title="奥德赛意识流">奥德赛意识流</a><time datetime="2026-08-23T12:50:01.000Z" title="发表于 2026-08-23 20:50:01">2026-08-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/08/10/life-notes-make-room/" title="再挤挤"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="再挤挤"/></a><div class="content"><a class="title" href="/2026/08/10/life-notes-make-room/" title="再挤挤">再挤挤</a><time datetime="2026-08-10T13:19:42.000Z" title="发表于 2026-08-10 21:19:42">2026-08-10</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script defer src="/js/knowledge-graph.js?v=1"></script><script id="canvas_nest" defer="defer" color="150,170,190" opacity="0.42" zIndex="-1" count="88" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

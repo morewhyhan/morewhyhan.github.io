@@ -1,0 +1,622 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>棋盘外有妖之命 | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="如果一切重来，命运还会一样吗？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="棋盘外有妖之命">
+<meta property="og:url" content="https://morewhyhan.github.io/2026/08/08/life-notes-demon-outside-the-board/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="如果一切重来，命运还会一样吗？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/hua.png">
+<meta property="article:published_time" content="2026-08-08T15:02:43.000Z">
+<meta property="article:modified_time" content="2026-08-28T12:40:09.657Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/hua.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "棋盘外有妖之命",
+  "url": "https://morewhyhan.github.io/2026/08/08/life-notes-demon-outside-the-board/",
+  "image": "https://morewhyhan.github.io/img/hua.png",
+  "datePublished": "2026-08-08T15:02:43.000Z",
+  "dateModified": "2026-08-28T12:40:09.657Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "涵千",
+      "url": "https://github.com/morewhyhan"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/2026/08/08/life-notes-demon-outside-the-board/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '棋盘外有妖之命',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/knowledge-graph/"><i class="fa-fw fas fa-project-diagram"></i><span> 知识图谱</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/hua.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a><a class="nav-page-title" href="/"><span class="site-name">棋盘外有妖之命</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/knowledge-graph/"><i class="fa-fw fas fa-project-diagram"></i><span> 知识图谱</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">棋盘外有妖之命</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-08-08T15:02:43.000Z" title="发表于 2026-08-08 23:02:43">2026-08-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-08-28T12:40:09.657Z" title="更新于 2026-08-28 20:40:09">2026-08-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/">生活随笔</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">4.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>13分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>如果一切重来，命运还会一样吗？</p>
+<p>假如现在有一个按钮。</p>
+<p>按下去以后，时间倒退十分钟。</p>
+<p>你不会带着记忆回到十分钟前，也不是游戏里重新读取了一个差不多的存档。</p>
+<p>是一切真的回去了。</p>
+<p>窗外那阵风退回原来的位置，杯子里的水恢复原来的温度，刚刚从你脑海里一闪而过的念头，也重新沉回十分钟前。</p>
+<p>远处一辆你没有看见的车，重新驶过那个路口。</p>
+<p>楼下一只野猫，再一次从墙头跳下。</p>
+<p>那些与你无关，甚至从未进入你视野的事情，也全部各归其位。</p>
+<p>天地还原。</p>
+<p>然后重新开始。</p>
+<p><strong>接下来的十分钟，还会和刚才一模一样吗？</strong></p>
+<p>你还会在那个时候拿起手机吗？</p>
+<p>刚刚被你碰倒的杯子，还会再倒一次吗？</p>
+<p>那枚从手里抛出去的硬币，还会落在同一面吗？</p>
+<p>如果把整个宇宙反复倒带一万次，我们最后看见的，会是一万场分毫不差的旧梦，还是其中某一次，风吹错了一寸，硬币翻了另一面，于是往后山河皆异？</p>
+<p>这个问题想深了，有些吓人。</p>
+<p>因为问到最后，问的已经不是那十分钟。</p>
+<p>而是：</p>
+<p><strong>未来，到底是一步一步发生出来的，还是早已藏在此刻之中？</strong></p>
+<p>两百多年前，拉普拉斯想象过一个几乎不可能存在的观察者。</p>
+<p>它知道宇宙此刻全部的状态，也知道支配这一切的全部规律。</p>
+<p>星辰怎样运行，尘埃往哪里飘，每一个微小事物此刻正处于怎样的位置，它一概知晓。</p>
+<p>如果一切运动皆有所因，一切变化都可以从前一刻推出，那么对于这样的存在而言，所谓未来，不过是一个尚未计算到的地方。</p>
+<p>我们看到偶然。</p>
+<p>它看到因果。</p>
+<p>我们坐在光阴里等事情发生。</p>
+<p>它只需要低头继续算。</p>
+<p>后人将它称作“拉普拉斯妖”。</p>
+<p>在这样的世界里，今日从昨日而来，明日又从今日而去。</p>
+<p>一个现在拖着无数个过去，又悄无声息地成为下一个现在的缘起。</p>
+<p>万事各有所因，诸果皆有来处。</p>
+<p>假使所有条件都确定，所有规律也确定，那么未来似乎也就随之确定了。</p>
+<p>当然，这里说的是一个决定论的世界。</p>
+<p>如果世界的规律本身便藏着真正的随机，那么哪怕把天地重新摆回原来的模样，再按一次播放键，故事也未必照旧。</p>
+<p>所以开头那个问题，到此处仍没有答案。</p>
+<p>可如果拉普拉斯是对的，“命”这个字突然便没那么神神叨叨了。</p>
+<p>如果今日之我是昨日一点点推出来的，明日之我又从今日继续生长，那么所谓命运，兴许不过是一条太长的因果，我们身在其中，看不见首尾罢了。</p>
+<p>如此想来，算命倒有一点像严重缩水的人类版本拉普拉斯妖。</p>
+<p>它也想做同一件事。</p>
+<p>从现在，看以后。</p>
+<p>只是这里横着一道很大的坎。</p>
+<p><strong>未来由现在决定，和我们能够从现在看见未来，并不是一回事。</strong></p>
+<p>差得远了。</p>
+<p>先看一个很小的世界。</p>
+<p>一张黑白棋盘。</p>
+<p>每个格子只有两种状态。</p>
+<p>活。</p>
+<p>或者死。</p>
+<p>没有性格，没有意志，没有吉凶祸福，也不会某日忽然心有所感，逆天改命。</p>
+<p>每一轮，所有格子只看周围八个邻居，再依照几条固定的规则，决定下一轮是活着，死去，还是重新出生。</p>
+<p>这就是康威生命游戏。</p>
+<p>它甚至不需要玩家。</p>
+<p>只要给出最初的图案，余下的事情便由它自己往下走。</p>
+<p>有的结构几步之后灰飞烟灭。</p>
+<p>有的周而复始，明灭不休。</p>
+<p>还有一些会在棋盘上缓缓移动，像夜里赶路的小虫，从这一头走向另一头。</p>
+<p>再复杂一点，不同结构还会彼此相撞，转向，破碎，又生成新的东西。</p>
+<p>后来人们甚至能够用这几条简单得近乎寒酸的规则，搭出逻辑电路，进行通用计算。</p>
+<p>很奇怪。</p>
+<p>这个世界的天条明明只有那么几条，而且全都写在纸上。</p>
+<p>没有天机。</p>
+<p>没有秘密。</p>
+<p>每一个格子的下一步都由现在决定。</p>
+<p>初始状态一样，运行一遍、十遍、一万遍，也不会突然有哪个黑格大彻大悟，说我命由我不由天。</p>
+<p>可一旦棋盘大起来，结构复杂起来，我们很快又会遇见一种熟悉的无力感。</p>
+<p><strong>规则我知道。</strong></p>
+<p><strong>后来如何，我不知道。</strong></p>
+<p>原来“未来已经确定”和“未来能够被提前知道”，从来不是一句话。</p>
+<p>规则只告诉你答案如何生长。</p>
+<p>却不会把十万步之后的结果提前写好，装进锦囊交给你。</p>
+<p>知道一个程序所有的运行规则，也不意味着看一眼最初的状态，就能知道它一亿步后会跑成怎样一片人间。</p>
+<p>人的生活自然比棋盘更复杂。</p>
+<p>我们可以知道一个人的家庭、教育、性格，甚至知道他过去许多重要经历，却依然很难说清楚十年以后，他会在哪座城市，和谁生活，做什么工作。</p>
+<p>这些事情未必没有原因。</p>
+<p>恰恰相反。</p>
+<p>原因也许太多了。</p>
+<p>认识一个人，于是换了一份工作。</p>
+<p>换了一份工作，于是去了另一座城市。</p>
+<p>去了另一座城市，又碰见了原本此生都不会相逢的人。</p>
+<p>一念生一事。</p>
+<p>一事又生百端。</p>
+<p>缘起缘灭，枝蔓横生。</p>
+<p>回头看时仿佛一切都有来处，可站在当初，却谁也不知道那条小路最后会绕到哪里。</p>
+<p>因果没有消失。</p>
+<p>只是线太多了。</p>
+<p>最后纠缠成一张我们看不清的网。</p>
+<p>于是两个问题必须分开。</p>
+<p><strong>未来是否唯一确定，是一个问题。</strong></p>
+<p><strong>我们有没有能力看见这个未来，是另一个问题。</strong></p>
+<p>这大概也是康威生命游戏最有意思的地方。</p>
+<p>它将规则尽数示人。</p>
+<p>半点不藏。</p>
+<p>可你依然未必看得见结局。</p>
+<p>再往前想一步。</p>
+<p>假如生命游戏里的那些黑色方格，有一天真组成了一个能够思考的生命。</p>
+<p>它醒了。</p>
+<p>开始观察自己的天地。</p>
+<p>它自然看不见我们的电脑屏幕，也不知道自己其实只是屏幕上一群正在运行的格子。</p>
+<p>它只能用这个世界里的材料制造仪器，用这个世界里的资源做计算，再一点一点摸索规律。</p>
+<p>慢慢地，它会知道一些事情。</p>
+<p>哪些结构会重复。</p>
+<p>哪些东西一旦出现，之后大约如何。</p>
+<p>它也许因此越来越自信，觉得天道渐明，万物可测。</p>
+<p>可有件事情一直没变。</p>
+<p><strong>它自己也在棋盘上。</strong></p>
+<p>它的大脑是这个世界的一部分。</p>
+<p>它造出来的计算机也是。</p>
+<p>它想看清整个系统，却只能站在系统之中，用手里那一点有限的信息往外望。</p>
+<p>如同人在山中，只见一峰一壑。</p>
+<p>云气开时，自以为窥见天地。</p>
+<p>其实山外仍是山。</p>
+<p>到这里，拉普拉斯妖和普通观察者之间的差别，已经不只是聪明与否了。</p>
+<p>拉普拉斯妖生来就拿着全图。</p>
+<p>我们没有。</p>
+<p>人也是如此。</p>
+<p>我们从来没有站在宇宙之外看宇宙。</p>
+<p>我们一边猜测这个世界，一边又是这个世界里正在发生的一件事。</p>
+<p>颇有几分当局者迷的意思。</p>
+<p>更麻烦的是，人生还不允许你因为没有看懂，就先停下来等等。</p>
+<p>下午可能下雨，早上便得决定带不带伞。</p>
+<p>一家公司十年以后可能倒闭，投资却发生在今天。</p>
+<p>一段感情以后也许会结束，可你不能等到白发苍苍，把结局全看完，再回到二十五岁决定当初要不要开始。</p>
+<p>我们几乎所有重要的决定，都发生在答案出现以前。</p>
+<p>浮生如此。</p>
+<p>从来都是先落子，再看棋局。</p>
+<p>所以问题慢慢变了。</p>
+<p>不再只是：</p>
+<p><strong>未来是什么？</strong></p>
+<p>而是：</p>
+<p><strong>我看不见未来的时候，怎么办？</strong></p>
+<p>人类很早便开始回答这个问题。</p>
+<p>龟甲。</p>
+<p>卦象。</p>
+<p>星辰。</p>
+<p>出生年月日时。</p>
+<p>这些东西看似风马牛不相及，背后却藏着一个很相似的念头：</p>
+<p><strong>如此纷繁的世界，总不至于全无章法。</strong></p>
+<p>也许在那些密密麻麻、肉眼看不清的因果之下，真的藏着某种可以理解的秩序。</p>
+<p>从这个角度看，玄学和拉普拉斯妖竟没有想象中那么遥远。</p>
+<p>至少愿望是相似的。</p>
+<p>都相信现在与未来之间，应该系着一根线。</p>
+<p>拉普拉斯妖的办法极其豪横。</p>
+<p>天地万象，全给我。</p>
+<p>所有状态，所有规律，一样也别漏。</p>
+<p>我算给你看。</p>
+<p>玄学走的是另一条路。</p>
+<p>它说也许不用知道那么多。</p>
+<p>有些东西虽然少，却可能是纲。</p>
+<p>提纲而众目张。</p>
+<p>出生时间、星辰位置、卦象变化……</p>
+<p>从一叶而知秋，从一点而窥全局。</p>
+<p>一个想拿走全部信息。</p>
+<p>一个想找到关键信息。</p>
+<p>乍听似乎都有道理。</p>
+<p>可问题也恰恰在这里。</p>
+<p><strong>你凭什么知道，这些真的是关键信息？</strong></p>
+<p>康威生命游戏已经告诉我们，复杂的结果确实可以由极简单的规则生长出来。</p>
+<p>可简单规则，并不等于少量信息便足够看见遥远的未来。</p>
+<p>天道也许只有几条。</p>
+<p>可众生万象，仍旧要看最初究竟如何落子。</p>
+<p>你不能随手抄下棋盘上三五个格子，便说自己已看见十万步后的兴亡荣辱。</p>
+<p>所以真正麻烦的，从来不是：</p>
+<p>人生有没有规律。</p>
+<p>而是：</p>
+<p><strong>你怎么知道自己抓到的，真的是规律？</strong></p>
+<p>再多问一句。</p>
+<p>如果抓错了呢？</p>
+<p>人类后来有了一种很不一样的处理办法。</p>
+<p>概率。</p>
+<p>它没有继续逼问那个唯一答案藏在哪里。</p>
+<p>反倒先承认一件不怎么威风的事情。</p>
+<p>我不知道。</p>
+<p>但“不知道”也有深浅。</p>
+<p>明天下不下雨，我不知道。</p>
+<p>可我可以说六成会下。</p>
+<p>这家公司十年后还在不在，我不知道。</p>
+<p>可根据眼下的信息，我可以认为它活下去的可能稍高一些。</p>
+<p>概率没有让未知消失。</p>
+<p>它只是在人类最喜欢的“我知道”和“我一无所知”之间，硬生生开出了一片灰色地带。</p>
+<p>天地不肯把答案给我。</p>
+<p>那我至少可以说：</p>
+<p>依照现在所知，我信几分。</p>
+<p>更有意思的是，这个“几分”还不是刻在石头上的。</p>
+<p>新的信息出现，判断便应该改变。</p>
+<p>原本三成。</p>
+<p>来了一条新证据。</p>
+<p>五成。</p>
+<p>又来一条。</p>
+<p>七成。</p>
+<p>忽然出现一个反证。</p>
+<p>四成。</p>
+<p>这便是贝叶斯主义里我很喜欢的一点。</p>
+<p><strong>天下没有哪一个判断，非要一言既出，驷马难追。</strong></p>
+<p>证据变了。</p>
+<p>我就变。</p>
+<p>昨日之我是昨日之我，今日又有今日所见。</p>
+<p>这并不可耻。</p>
+<p>反倒是明明山河已经改色，还抱着旧地图说天下本该如此，多少有些可笑。</p>
+<p>于是“预测”这件事，也慢慢从“我到底有没有说中”，变成了几个更难的问题。</p>
+<p>你原本有多大把握？</p>
+<p>凭什么有这个把握？</p>
+<p>后来风向变了，你改没改？</p>
+<p>再狠一点。</p>
+<p>如果一个人日日说自己“七成把握”，那么一百次、一千次以后，他说的那些七成，最好真有七成左右发生。</p>
+<p>否则这个“七成”，说到底与掐指一算也未必差得多远。</p>
+<p>现实终于有资格回头抽我们一耳光。</p>
+<p>这是很重要的事情。</p>
+<p>人最怕的，从来不是犯错。</p>
+<p>是永远都有办法解释自己为什么没有错。</p>
+<p>但即便知道概率，人生的问题也没结束。</p>
+<p>因为最后你总得做点什么。</p>
+<p>一件事有七成概率成功，就一定值得做吗？</p>
+<p>未必。</p>
+<p>七成概率赚十块。</p>
+<p>三成概率亏一万。</p>
+<p>胜率看着甚是喜庆，实则很有几分壮士一去兮不复还的意思。</p>
+<p>所以除了概率，还得看结果。</p>
+<p>这就是期望值想处理的事情。</p>
+<p>不只问：</p>
+<p><strong>哪件事更容易发生？</strong></p>
+<p>还要问：</p>
+<p><strong>发生以后，值多少？</strong></p>
+<p>再往前，还有赔率。</p>
+<p>同样的胜率，回报不同，结论也会不同。</p>
+<p>而即使真找到了一个长期占便宜的机会，也不意味着应该典房卖地，把祖传玉佩一起压上去。</p>
+<p>你可能是对的。</p>
+<p>可你也可能还没熬到“长期”二字兑现，先被一次意外送出牌桌。</p>
+<p>凯利公式讨论的，大概就是这种很俗，也很现实的问题：</p>
+<p>有优势以后，到底押多少？</p>
+<p>不是问你有没有胆。</p>
+<p>而是问你怎么才能活着看到下一局。</p>
+<p>古人云留得青山在，不怕没柴烧。</p>
+<p>数学家大约说得复杂一点。</p>
+<p>意思其实差不多。</p>
+<p>说到底，概率、贝叶斯、期望值、赔率、凯利，看起来一大串名头，绕来绕去都在问同一件事：</p>
+<p><strong>我们不知道未来，可日子还得过。</strong></p>
+<p>概率告诉我们信几分。</p>
+<p>贝叶斯告诉我们什么时候该改。</p>
+<p>期望值把可能性和结果放在一起。</p>
+<p>赔率让我们比较付出与回报。</p>
+<p>凯利再敲敲桌子：</p>
+<p>就算自觉胜券在握，也莫把身家性命全压上去。</p>
+<p>它们没有消灭未知。</p>
+<p>更没有把我们变成拉普拉斯妖。</p>
+<p>只是想让一个什么都看不全的人，在茫茫夜色里少撞几棵树。</p>
+<p>如此而已。</p>
+<p>所以对我们而言，最普遍的经验大概从来不是：</p>
+<p>世界毫无规律。</p>
+<p>而是：</p>
+<p><strong>规律也许在那里，只是我们手里的信息永远残缺。</strong></p>
+<p>这时候再回头看那些古老的预测方式，问题反倒简单了。</p>
+<p>某些有限的信息，当然可能真的与更长远的人生存在联系。</p>
+<p>为什么一定不可能呢？</p>
+<p>但既然说有，就得继续问下去。</p>
+<p>这种联系如何发现？</p>
+<p>错了怎么办？</p>
+<p>出现新证据，会不会改？</p>
+<p>重复百次千次，还能不能站得住？</p>
+<p>否则所谓规律，很容易变成一个天下无敌的东西。</p>
+<p>说中了，是我算得准。</p>
+<p>没说中，是你悟得浅。</p>
+<p>横竖都赢。</p>
+<p>倒也潇洒。</p>
+<p>只是和“认识世界”已经没多少关系了。</p>
+<p>所以“命”未必是一册早已写完，只待我们一页页翻下去的书。</p>
+<p>未来是否唯一确定，是一个问题。</p>
+<p>未来能不能预测，是第二个问题。</p>
+<p>我们究竟能够知道多少关于未来的信息，是第三个问题。</p>
+<p>而即使未来真的由此前的条件决定，也不意味着人的选择毫无意义。</p>
+<p>选择本身也是条件。</p>
+<p>今日这一念，也是明日诸果中的一因。</p>
+<p>一个人出生的时候，许多东西已经在那里了。</p>
+<p>家庭。</p>
+<p>时代。</p>
+<p>身体。</p>
+<p>地域。</p>
+<p>资源。</p>
+<p>像一开局便发到手里的牌。</p>
+<p>好坏由不得你。</p>
+<p>后来遇见谁，去了哪里，读过什么，爱过什么，又做出怎样的选择，则一张一张继续加入手中。</p>
+<p>有些牌救你。</p>
+<p>有些牌害你。</p>
+<p>有时自以为妙手，后来才知是昏招。</p>
+<p>有时一步走错，以为满盘皆输，十年后回头，却发现那条歧路反倒通向另一片天地。</p>
+<p>人生这东西，最喜欢事后诸葛亮。</p>
+<p>当时却谁也不知道。</p>
+<p>过去推着现在。</p>
+<p>现在又流入未来。</p>
+<p>逝者如斯。</p>
+<p>没人能把江水重新倒回上游，看看另一条支流到底通向哪里。</p>
+<p>我们只能顺流而下。</p>
+<p>所以命运才让人着迷。</p>
+<p>我们永远站在现在。</p>
+<p>只看得到眼前一小段水面。</p>
+<p>却知道这条河终究要流向某个我们尚未见过的地方。</p>
+<p>我们有科学。</p>
+<p>有概率论。</p>
+<p>有统计学。</p>
+<p>也有许多古老到来路都已模糊的解释方式。</p>
+<p>千百年来，人一直站在这条河边，想看清雾里的彼岸。</p>
+<p>有人观星。</p>
+<p>有人卜卦。</p>
+<p>有人计算。</p>
+<p>有人记录。</p>
+<p>归根结底，皆因心有不甘。</p>
+<p>不甘心生于天地之间，却连明日会如何都一无所知。</p>
+<p>这愿望或许相似。</p>
+<p>可靠性却未必相同。</p>
+<p>如果一定要选一种面对未知的姿势，我大概还是愿意做一个贝叶斯主义者。</p>
+<p>不是因为它能让我参透天机。</p>
+<p>恰恰因为它允许我承认：</p>
+<p>我现在这么想。</p>
+<p>可我未必对。</p>
+<p>明日山川又给我看见一些东西，我便再改一些。</p>
+<p>不求一言断生死。</p>
+<p>不求一卦知穷通。</p>
+<p>只是此刻有此刻的判断，来日有来日的证据。</p>
+<p>俯仰之间，随事而变。</p>
+<p>如此而已。</p>
+<p>我们终究不会成为拉普拉斯妖。</p>
+<p>没有全图。</p>
+<p>没有答案。</p>
+<p>更没有那个可以把十分钟前重新来过的按钮。</p>
+<p>能做的，无非是依照眼下所知，暂且相信些什么。</p>
+<p>然后往前走。</p>
+<p>看春花落了。</p>
+<p>看秋月升了。</p>
+<p>看事情究竟如何发生。</p>
+<p>再回来改。</p>
+<p>所以真正值得区分的，也许从来不是：</p>
+<p><strong>我们究竟看见了怎样的未来。</strong></p>
+<p>而是：</p>
+<p><strong>我们用什么方法理解未知，又允许现实怎样纠正我们的理解。</strong></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://github.com/morewhyhan">涵千</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://morewhyhan.github.io/2026/08/08/life-notes-demon-outside-the-board/">https://morewhyhan.github.io/2026/08/08/life-notes-demon-outside-the-board/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://morewhyhan.github.io" target="_blank">虚船向远</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img/hua.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>感谢你的支持</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2026/08/09/life-notes-autumn-fruit/" title="给春稗以秋实"><img class="cover" src="/img/hua.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">给春稗以秋实</div></div><div class="info-2"><div class="info-item-1">余秀华有一句诗我记了很多年："告诉你稻子和稗子的区别，告诉你一棵稗子提心吊胆的春天。"第一次读到只觉得漂亮，后来才发现，我好像就是那棵稗子。</div></div></div></a><a class="pagination-related" href="/2026/08/06/life-notes-civilization-on-graves/" title="墓地上的文明"><img class="cover" src="/img/hua.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">墓地上的文明</div></div><div class="info-2"><div class="info-item-1">很久以前，人类没有明年。 狩猎落空便是饥饿，河流干涸便要迁徙。老人跟不上队伍，孩子熬不过寒冬。人逐鹿群，鹿逐水草，天地辽阔，处处可容身，又处处不能久留。 后来，一粒种子落进泥土。麦田蔓延，仓廪立起；墙内有了市廛、文字、律令、礼乐与王权…</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/08/28/life-notes-prologue/" title="生活随笔：把未经整理的真实留下来"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="生活随笔：把未经整理的真实留下来"/></a><div class="content"><a class="title" href="/2026/08/28/life-notes-prologue/" title="生活随笔：把未经整理的真实留下来">生活随笔：把未经整理的真实留下来</a><time datetime="2026-08-28T06:00:00.000Z" title="发表于 2026-08-28 14:00:00">2026-08-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/08/28/ruo-wo-zai-chang-prologue/" title="若我在场：一个关于历史决策的思想实验"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="若我在场：一个关于历史决策的思想实验"/></a><div class="content"><a class="title" href="/2026/08/28/ruo-wo-zai-chang-prologue/" title="若我在场：一个关于历史决策的思想实验">若我在场：一个关于历史决策的思想实验</a><time datetime="2026-08-28T04:30:00.000Z" title="发表于 2026-08-28 12:30:00">2026-08-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/book/decision-algorithm/" title="决策算法100讲"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="决策算法100讲"/></a><div class="content"><a class="title" href="/book/decision-algorithm/" title="决策算法100讲">决策算法100讲</a><time datetime="2026-08-27T16:00:00.000Z" title="发表于 2026-08-28 00:00:00">2026-08-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/08/23/life-notes-odyssey/" title="奥德赛意识流"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="奥德赛意识流"/></a><div class="content"><a class="title" href="/2026/08/23/life-notes-odyssey/" title="奥德赛意识流">奥德赛意识流</a><time datetime="2026-08-23T12:50:01.000Z" title="发表于 2026-08-23 20:50:01">2026-08-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/08/10/life-notes-make-room/" title="再挤挤"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="再挤挤"/></a><div class="content"><a class="title" href="/2026/08/10/life-notes-make-room/" title="再挤挤">再挤挤</a><time datetime="2026-08-10T13:19:42.000Z" title="发表于 2026-08-10 21:19:42">2026-08-10</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script defer src="/js/knowledge-graph.js?v=1"></script><script id="canvas_nest" defer="defer" color="150,170,190" opacity="0.42" zIndex="-1" count="88" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

@@ -1,6 +1,143 @@
 {
-  "generatedAt": "2026-08-28T11:18:45.209Z",
+  "generatedAt": "2026-08-28T12:43:19.954Z",
   "nodes": [
+    {
+      "id": "/book/decision-algorithm/",
+      "title": "决策算法100讲",
+      "url": "/book/decision-algorithm/",
+      "kind": "图书笔记",
+      "categories": [
+        "图书笔记"
+      ],
+      "tags": [
+        "决策",
+        "概率",
+        "博弈"
+      ],
+      "aliases": [
+        "决策算法",
+        "老喻决策算法100讲"
+      ],
+      "description": "老喻关于概率、风险、博弈与人生选择的系统课程资料；全套资料在本站按一个专题收录。",
+      "original": false,
+      "links": [
+        "/knowledge/cards/有限信息下的决策/",
+        "/knowledge/cards/机会成本/",
+        "/knowledge/cards/复盘/"
+      ]
+    },
+    {
+      "id": "/2026/08/09/life-notes-autumn-fruit/",
+      "title": "给春稗以秋实",
+      "url": "/2026/08/09/life-notes-autumn-fruit/",
+      "kind": "生活随笔",
+      "categories": [
+        "生活随笔"
+      ],
+      "tags": [],
+      "aliases": [],
+      "description": "余秀华有一句诗我记了很多年：\"告诉你稻子和稗子的区别，告诉你一棵稗子提心吊胆的春天。\"第一次读到只觉得漂亮，后来才发现，我好像就是那棵稗子。",
+      "original": true,
+      "links": [
+        "/2026/08/28/life-notes-prologue/"
+      ]
+    },
+    {
+      "id": "/2026/08/10/life-notes-make-room/",
+      "title": "再挤挤",
+      "url": "/2026/08/10/life-notes-make-room/",
+      "kind": "生活随笔",
+      "categories": [
+        "生活随笔"
+      ],
+      "tags": [],
+      "aliases": [],
+      "description": "小时候放学最怕下雨。",
+      "original": true,
+      "links": [
+        "/2026/08/28/life-notes-prologue/"
+      ]
+    },
+    {
+      "id": "/2026/08/08/life-notes-demon-outside-the-board/",
+      "title": "棋盘外有妖之命",
+      "url": "/2026/08/08/life-notes-demon-outside-the-board/",
+      "kind": "生活随笔",
+      "categories": [
+        "生活随笔"
+      ],
+      "tags": [],
+      "aliases": [],
+      "description": "如果一切重来，命运还会一样吗？",
+      "original": true,
+      "links": [
+        "/2026/08/28/life-notes-prologue/"
+      ]
+    },
+    {
+      "id": "/2026/08/06/life-notes-civilization-on-graves/",
+      "title": "墓地上的文明",
+      "url": "/2026/08/06/life-notes-civilization-on-graves/",
+      "kind": "生活随笔",
+      "categories": [
+        "生活随笔"
+      ],
+      "tags": [],
+      "aliases": [],
+      "description": "很久以前，人类没有明年。 狩猎落空便是饥饿，河流干涸便要迁徙。老人跟不上队伍，孩子熬不过寒冬。人逐鹿群，鹿逐水草，天地辽阔，处处可容身，又处处不能久留。 后来，一粒种子落进泥土。麦田蔓延，仓廪立起；墙内有了市廛、文字、律令、礼乐与王权…",
+      "original": true,
+      "links": [
+        "/2026/08/28/life-notes-prologue/"
+      ]
+    },
+    {
+      "id": "/2026/07/29/life-notes-not-lonely/",
+      "title": "我们不是不孤独，只是不想从“你好”重新开始",
+      "url": "/2026/07/29/life-notes-not-lonely/",
+      "kind": "生活随笔",
+      "categories": [
+        "生活随笔"
+      ],
+      "tags": [],
+      "aliases": [],
+      "description": "我有一个朋友，很擅长从一件小事看出一个人的本质。",
+      "original": true,
+      "links": [
+        "/2026/08/28/life-notes-prologue/"
+      ]
+    },
+    {
+      "id": "/2026/08/10/life-notes-musashi/",
+      "title": "武藏之死在天下无双",
+      "url": "/2026/08/10/life-notes-musashi/",
+      "kind": "生活随笔",
+      "categories": [
+        "生活随笔"
+      ],
+      "tags": [],
+      "aliases": [],
+      "description": "宫本武藏十三岁的时候，杀了第一个人。",
+      "original": true,
+      "links": [
+        "/2026/08/28/life-notes-prologue/"
+      ]
+    },
+    {
+      "id": "/2026/08/23/life-notes-odyssey/",
+      "title": "奥德赛意识流",
+      "url": "/2026/08/23/life-notes-odyssey/",
+      "kind": "生活随笔",
+      "categories": [
+        "生活随笔"
+      ],
+      "tags": [],
+      "aliases": [],
+      "description": "我中了特洛伊木马病毒。",
+      "original": true,
+      "links": [
+        "/2026/08/28/life-notes-prologue/"
+      ]
+    },
     {
       "id": "/2026/08/28/life-notes-prologue/",
       "title": "生活随笔：把未经整理的真实留下来",
@@ -31,9 +168,9 @@
         "若我在场"
       ],
       "tags": [
-        "历史",
         "决策",
-        "博弈"
+        "博弈",
+        "历史"
       ],
       "aliases": [
         "若我在场"
@@ -47,28 +184,19 @@
       ]
     },
     {
-      "id": "/book/decision-algorithm/",
-      "title": "决策算法100讲",
-      "url": "/book/decision-algorithm/",
-      "kind": "图书笔记",
+      "id": "/2026/08/01/life-notes-ten-years-later/",
+      "title": "十年后的我",
+      "url": "/2026/08/01/life-notes-ten-years-later/",
+      "kind": "生活随笔",
       "categories": [
-        "图书笔记"
+        "生活随笔"
       ],
-      "tags": [
-        "决策",
-        "博弈",
-        "概率"
-      ],
-      "aliases": [
-        "决策算法",
-        "老喻决策算法100讲"
-      ],
-      "description": "老喻关于概率、风险、博弈与人生选择的系统课程资料；全套资料在本站按一个专题收录。",
-      "original": false,
+      "tags": [],
+      "aliases": [],
+      "description": "第一次在终端里敲出\"Hello World\"，黑色屏幕上只有一行白字。 天地初开，混沌退散。 那是世界回应我的第一声。 此后浏览器上的窗口越开越多。教程是粮仓，文档是舆图，论坛是驿站，密密麻麻的标签栏灯火连营，一直铺到屏幕尽头。 递归…",
+      "original": true,
       "links": [
-        "/knowledge/cards/有限信息下的决策/",
-        "/knowledge/cards/机会成本/",
-        "/knowledge/cards/复盘/"
+        "/2026/08/28/life-notes-prologue/"
       ]
     },
     {
@@ -106,6 +234,23 @@
       ]
     },
     {
+      "id": "/knowledge/cards/机会成本/",
+      "title": "机会成本",
+      "url": "/knowledge/cards/机会成本/",
+      "kind": "机制卡片",
+      "categories": [],
+      "tags": [
+        "决策机制"
+      ],
+      "aliases": [],
+      "description": "",
+      "original": true,
+      "links": [
+        "/knowledge/cards/有限信息下的决策/",
+        "/book/decision-algorithm/"
+      ]
+    },
+    {
       "id": "/knowledge/cards/有限信息下的决策/",
       "title": "有限信息下的决策",
       "url": "/knowledge/cards/有限信息下的决策/",
@@ -123,23 +268,6 @@
         "/2026/08/28/ruo-wo-zai-chang-prologue/",
         "/book/decision-algorithm/",
         "/knowledge/cards/机会成本/"
-      ]
-    },
-    {
-      "id": "/knowledge/cards/机会成本/",
-      "title": "机会成本",
-      "url": "/knowledge/cards/机会成本/",
-      "kind": "机制卡片",
-      "categories": [],
-      "tags": [
-        "决策机制"
-      ],
-      "aliases": [],
-      "description": "",
-      "original": true,
-      "links": [
-        "/knowledge/cards/有限信息下的决策/",
-        "/book/decision-algorithm/"
       ]
     }
   ]

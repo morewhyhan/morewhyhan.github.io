@@ -1,0 +1,466 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>再挤挤 | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="小时候放学最怕下雨。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="再挤挤">
+<meta property="og:url" content="https://morewhyhan.github.io/2026/08/10/life-notes-make-room/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="小时候放学最怕下雨。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/hua.png">
+<meta property="article:published_time" content="2026-08-10T13:19:42.000Z">
+<meta property="article:modified_time" content="2026-08-28T12:40:09.695Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/hua.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "再挤挤",
+  "url": "https://morewhyhan.github.io/2026/08/10/life-notes-make-room/",
+  "image": "https://morewhyhan.github.io/img/hua.png",
+  "datePublished": "2026-08-10T13:19:42.000Z",
+  "dateModified": "2026-08-28T12:40:09.695Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "涵千",
+      "url": "https://github.com/morewhyhan"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/2026/08/10/life-notes-make-room/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '再挤挤',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/knowledge-graph/"><i class="fa-fw fas fa-project-diagram"></i><span> 知识图谱</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/hua.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a><a class="nav-page-title" href="/"><span class="site-name">再挤挤</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/knowledge-graph/"><i class="fa-fw fas fa-project-diagram"></i><span> 知识图谱</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">再挤挤</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-08-10T13:19:42.000Z" title="发表于 2026-08-10 21:19:42">2026-08-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-08-28T12:40:09.695Z" title="更新于 2026-08-28 20:40:09">2026-08-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/">生活随笔</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">2.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>小时候放学最怕下雨。</p>
+<p>校门口全是伞，红的蓝的，挤成一团。没带伞的人把书包扣在头上，低着脑袋往雨里冲。</p>
+<p>要是朋友恰好有伞，雨就从天气问题变成了排列组合问题。</p>
+<p>“挤挤”</p>
+<p>“你过去点”</p>
+<p>“再过去我就没了”</p>
+<p>嘴上骂着，伞还是往中间挪。</p>
+<p>三个人挤一把，结果是谁都没淋透，谁也没干着。</p>
+<p>那时候不觉得这是什么值得写的事情。朋友本来就这样。</p>
+<p>零食掰一半，作业抄一眼，忘带钱先替你垫着。东西借出去，也很少郑重其事地写下归还日期。</p>
+<p>“明天还你”</p>
+<p>“滚吧”</p>
+<p>小孩子好像很早就会一种大人没教过的算法：有些账，可以先欠着。</p>
+<p>反正明天再见。</p>
+<p>……</p>
+<p>长大以后，学到的东西却慢慢反过来。</p>
+<p>别麻烦别人。能自己解决就自己解决。能花钱办掉的事，最好不要欠人情。关系要有边界，别人帮你是情分，不帮也是本分。</p>
+<p>这些话当然都对。</p>
+<p>世界也越来越照着这套道理生长。搬家可以下单，迷路有导航；到了陌生城市，不认识司机也敢上车，不认识医生照样挂号。</p>
+<p>我们依旧仰仗着无数陌生人过活，却不必知道他们姓甚名谁。</p>
+<p>这其实是一件很好的事。</p>
+<p>看病若非得认识医生，办事若非得托熟人，机会若因为一句“这是我朋友”便偷偷多开一道门，那所谓人情味，对认识人的人是春风，对不认识人的人便是寒雨。</p>
+<p>朋友的伞可以偏。</p>
+<p>公共的屋檐不能。</p>
+<p>可再往下想，又有点不对劲。</p>
+<p>那些从前非得开口求人帮忙的事，一件件被扫码、下单、流程接走了。</p>
+<p>那么朋友呢？</p>
+<p>最后还剩什么？</p>
+<p>……</p>
+<p>黄庭坚写：</p>
+<p>“桃李春风一杯酒，江湖夜雨十年灯”</p>
+<p>我很喜欢这两句放在一起。</p>
+<p>前一句热闹得很。桃李春风，人就在眼前，酒一倒，话便说不完。</p>
+<p>后一句却忽然空了。</p>
+<p>江湖，夜雨，十年，一盏灯。</p>
+<p>一杯酒很快。</p>
+<p>十年灯很慢。</p>
+<p>有些人天天说话，真出了事，却未必会找他。另一些人的聊天框早沉到下面去了，上一次可能只有：</p>
+<p>“到了”</p>
+<p>“行”</p>
+<p>再往上翻，已是很久以前。</p>
+<p>可日子真坏到某个程度，脑子里偏偏会先跳出那个名字。</p>
+<p>为什么？</p>
+<p>我以前以为，是因为他更懂我。</p>
+<p>人长大以后，会开始往朋友手里塞一些很奇怪的东西。</p>
+<p>小时候的事</p>
+<p>父母</p>
+<p>嫉妒</p>
+<p>羞耻</p>
+<p>失恋以后那些很难看的念头。</p>
+<p>那些东西没有快递员来搬。</p>
+<p>也没有售后。</p>
+<p>于是我们把箱子打开一点，给某个人看。</p>
+<p>这里烂过</p>
+<p>这里别碰</p>
+<p>这一块我自己都嫌难看</p>
+<p>亲近这件事，其实颇有点引狼入室的意思。</p>
+<p>一个人知道你哪里最软，也就知道刀从哪里进去最快。</p>
+<p>陌生人当然也能伤你。</p>
+<p>但只有你信过的人，才谈得上背叛。</p>
+<p>所谓信任，有时不是觉得他伤不到你。</p>
+<p>是你把伤口给他看过，把秘密交到他手里，把自己的后背露给他。</p>
+<p>他一直都有机会。</p>
+<p>这些年了，他不用。</p>
+<p>……</p>
+<p>可这套答案很快也不够用了。</p>
+<p>尤其男人。</p>
+<p>你说最近状态不好。</p>
+<p>“早点睡”</p>
+<p>你说跟家里吵架。</p>
+<p>“出去走走”</p>
+<p>你说我觉得人生很迷茫。</p>
+<p>“别想那么多”</p>
+<p>语言系统像是只安装了试用版。</p>
+<p>功能不多，客服态度还一般。</p>
+<p>能评分的话该和三国杀坐一桌。</p>
+<p>可晚上你发一句：</p>
+<p>“打不到车”</p>
+<p>“位置”</p>
+<p>搬东西缺个人。</p>
+<p>“几点？”</p>
+<p>喝多了发来一串自己第二天都听不懂的语音。</p>
+<p>“你别动！”</p>
+<p>古人还有一句“晚来天欲雪，能饮一杯无”</p>
+<p>到有些人这里，诗已经死得只剩一个动词。</p>
+<p>来。</p>
+<p>可这个字挺贵。</p>
+<p>因为说出口以后，游戏真得退，裤子真得重新穿，觉也真得起来重睡。</p>
+<p>有人把伤口递给朋友。</p>
+<p>也有人不太会说，只会拿自己的时间、睡眠，甚至钱，去接住你的麻烦。</p>
+<p>一个人在问：你到底懂不懂我？</p>
+<p>另一个满腹冤屈：你每次有事，我哪次没来？</p>
+<p>两个人都没撒谎。</p>
+<p>不过一个人在问“你知道我多少”，另一个回答“我替你抗过多少”。</p>
+<p>谁也没看懂谁的卷子。</p>
+<p>……</p>
+<p>可“有事叫我”也会失灵。</p>
+<p>它很会处理那些一下子有了形状的麻烦。</p>
+<p>搬东西，可以叫。</p>
+<p>半夜回不去，可以叫。</p>
+<p>喝多了，可以叫。</p>
+<p>电脑蓝屏了都能理直气壮地叫。</p>
+<p>可如果什么都没发生呢？</p>
+<p>只是连续一个月睡不好。只是忽然不太想见人。只是群里照样发“哈哈哈哈”，手机放下以后，一个人坐很久。</p>
+<p>这个怎么叫？</p>
+<p>“我最近没什么事，就是有点撑不住，你能不能陪我待会儿”</p>
+<p>打完。</p>
+<p>看一遍。</p>
+<p>有点矫情。</p>
+<p>删掉。</p>
+<p>换成：</p>
+<p>“在干嘛？”</p>
+<p>想想还是算了。</p>
+<p>最后发了个表情包。</p>
+<p>我们越来越会处理暴雨，却常常败给梅雨。</p>
+<p>那个能跨半个城来接你的人，也许根本不知道你已经很久没有睡好了。</p>
+<p>所有人都等着一句“有事叫我”。</p>
+<p>偏偏人真正往下沉的时候，有时没有一个足够像样的“事”。</p>
+<p>……</p>
+<p>我后来才慢慢觉得，所谓长大，大概也包括越来越不敢麻烦别人。</p>
+<p>小时候没带伞，往朋友伞下一钻便是。</p>
+<p>长大以后明明淋着雨，脑子倒先替别人开起了会：</p>
+<p>他明天有事。</p>
+<p>太远。</p>
+<p>我自己也行。</p>
+<p>就这点破事。</p>
+<p>算了算了。</p>
+<p>会议一致通过。</p>
+<p>继续淋。</p>
+<p>我们修了越来越长的屋檐，也越来越擅长假装自己根本不需要谁的伞。</p>
+<p>还有件事很怪。</p>
+<p>寻常生活越不需要朋友，事情越大，人反而越在乎旧人。</p>
+<p>几十块钱可以AA，普通合作可以签合同。可若真把几年时间、许多钱和彼此前途压到一张桌子上，再厚的合同也写不完未来。</p>
+<p>能想到的雨，总有伞。</p>
+<p>难办的是那些今天连名字都没有的天气。</p>
+<p>到这种地方，人转了一大圈，最后问的还是一句老话：</p>
+<p>这个人，可信么？</p>
+<p>这时候，十年忽然变贵了。</p>
+<p>并非认识得久便天然情深。十年太长，里面早已出现过无数次适合翻脸、占便宜、松手的时候。</p>
+<p>他见过你穷，也见过你得势；见过利益真摆到桌面以后，你是什么样子。</p>
+<p>十年不会自动生出信任。</p>
+<p>十年只是不断出题。</p>
+<p>一杯酒很快。</p>
+<p>十年灯很慢。</p>
+<p>……</p>
+<p>然后AI来了。</p>
+<p>它简直太适合我们了。</p>
+<p>凌晨三点找它，不必先试探一句“睡了吗”；一件破事讲八遍，不怕它听烦；不用考虑它明早几点起，更不用第二天醒来忽然脚趾抠地</p>
+<p>它甚至可能比朋友更懂我们。</p>
+<p>最妙的是，麻烦它，不欠人情。</p>
+<p>想到这里，我却有一点难过。</p>
+<p>如果有一天，我们越来越愿意向一个永远不会被麻烦的东西袒露自己，会不会不是因为我们不再需要人了，只是因为我们越来越不敢麻烦真正的人？</p>
+<p>友情偏偏给了另一种可能：</p>
+<p>可以麻烦一点。</p>
+<p>你失眠，他陪你到天亮，第二天是真的困。你的事情不会只停在他的理解里，会钻进他的日程、睡眠，偶尔钻进钱包，把他原本好好的一天撞歪一点。</p>
+<p>这很笨。</p>
+<p>甚至不大划算。</p>
+<p>可也许正因为如此，它才不是一种服务。</p>
+<p>我还是希望公共的屋檐越修越长，让一个没有朋友、没有关系、谁也不认识的人，也能体面地生活。</p>
+<p>只是私人生活里，我们或许不必把自己收拾得如此干净。</p>
+<p>也不用非等天塌下来，才觉得自己有资格问一句：</p>
+<p>“你有空吗？”</p>
+<p>小时候三个人挤一把伞，最后谁都湿。</p>
+<p>那时只觉得狼狈。</p>
+<p>到现在才发现，</p>
+<p>原来这件事最奇怪的地方从来不是伞太小。</p>
+<p>是一个人明明可以站得更干一点，</p>
+<p>却把伞往你这里偏了一点。</p>
+<p>而另一个人也没有站在雨里客客气气地说：</p>
+<p>“不用了，我自己可以”</p>
+<p>他直接挤了进去。</p>
+<p>雨落到了两个人肩上。</p>
+<p>所以以后若真有一天，话已经打到输入框里：</p>
+<p>“在干嘛？”</p>
+<p>先别急着删。</p>
+<p>往那把伞下面挤一点。</p>
+<p>没事的。</p>
+<p>小时候不就这样么。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://github.com/morewhyhan">涵千</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://morewhyhan.github.io/2026/08/10/life-notes-make-room/">https://morewhyhan.github.io/2026/08/10/life-notes-make-room/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://morewhyhan.github.io" target="_blank">虚船向远</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img/hua.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>感谢你的支持</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2026/08/23/life-notes-odyssey/" title="奥德赛意识流"><img class="cover" src="/img/hua.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">奥德赛意识流</div></div><div class="info-2"><div class="info-item-1">我中了特洛伊木马病毒。</div></div></div></a><a class="pagination-related" href="/2026/08/10/life-notes-musashi/" title="武藏之死在天下无双"><img class="cover" src="/img/hua.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">武藏之死在天下无双</div></div><div class="info-2"><div class="info-item-1">宫本武藏十三岁的时候，杀了第一个人。</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/08/28/life-notes-prologue/" title="生活随笔：把未经整理的真实留下来"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="生活随笔：把未经整理的真实留下来"/></a><div class="content"><a class="title" href="/2026/08/28/life-notes-prologue/" title="生活随笔：把未经整理的真实留下来">生活随笔：把未经整理的真实留下来</a><time datetime="2026-08-28T06:00:00.000Z" title="发表于 2026-08-28 14:00:00">2026-08-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/08/28/ruo-wo-zai-chang-prologue/" title="若我在场：一个关于历史决策的思想实验"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="若我在场：一个关于历史决策的思想实验"/></a><div class="content"><a class="title" href="/2026/08/28/ruo-wo-zai-chang-prologue/" title="若我在场：一个关于历史决策的思想实验">若我在场：一个关于历史决策的思想实验</a><time datetime="2026-08-28T04:30:00.000Z" title="发表于 2026-08-28 12:30:00">2026-08-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/book/decision-algorithm/" title="决策算法100讲"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="决策算法100讲"/></a><div class="content"><a class="title" href="/book/decision-algorithm/" title="决策算法100讲">决策算法100讲</a><time datetime="2026-08-27T16:00:00.000Z" title="发表于 2026-08-28 00:00:00">2026-08-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/08/23/life-notes-odyssey/" title="奥德赛意识流"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="奥德赛意识流"/></a><div class="content"><a class="title" href="/2026/08/23/life-notes-odyssey/" title="奥德赛意识流">奥德赛意识流</a><time datetime="2026-08-23T12:50:01.000Z" title="发表于 2026-08-23 20:50:01">2026-08-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/08/10/life-notes-make-room/" title="再挤挤"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="再挤挤"/></a><div class="content"><a class="title" href="/2026/08/10/life-notes-make-room/" title="再挤挤">再挤挤</a><time datetime="2026-08-10T13:19:42.000Z" title="发表于 2026-08-10 21:19:42">2026-08-10</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script defer src="/js/knowledge-graph.js?v=1"></script><script id="canvas_nest" defer="defer" color="150,170,190" opacity="0.42" zIndex="-1" count="88" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>
