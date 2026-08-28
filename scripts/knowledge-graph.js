@@ -143,7 +143,7 @@ hexo.extend.generator.register('knowledge-graph-data', locals => {
     if (shouldInclude(doc, false)) entries.push({ doc, isPost: false })
   })
 
-  const nodes = entries.map(({ doc, isPost }) => {
+  const contentNodes = entries.map(({ doc, isPost }) => {
     const data = doc
     const relationKey = String(doc._id)
     const categories = isPost ? (categoriesByPost.get(relationKey) || []) : listNames(doc.categories || data.categories)
@@ -165,6 +165,27 @@ hexo.extend.generator.register('knowledge-graph-data', locals => {
       links: []
     }
   })
+
+  const categoryCounts = new Map()
+  contentNodes.forEach(node => {
+    node.categories.forEach(category => categoryCounts.set(category, (categoryCounts.get(category) || 0) + 1))
+  })
+  const categoryNodes = [...categoryCounts.entries()].map(([title, count]) => ({
+    id: normalizeUrl(`/categories/${encodeURIComponent(title)}/`),
+    title,
+    url: normalizeUrl(`/categories/${encodeURIComponent(title)}/`),
+    kind: '分类',
+    categories: [],
+    tags: [],
+    aliases: [],
+    description: `${count} 篇内容`,
+    original: true,
+    virtual: true,
+    graphParent: '',
+    raw: '',
+    links: []
+  }))
+  const nodes = [...contentNodes, ...categoryNodes]
 
   const byName = new Map()
   const byUrl = new Map()
@@ -190,7 +211,7 @@ hexo.extend.generator.register('knowledge-graph-data', locals => {
   }
 
   nodes.forEach(node => {
-    const resolved = [...wikiTargets(node.raw), ...markdownTargets(node.raw), node.graphParent]
+    const resolved = [...wikiTargets(node.raw), ...markdownTargets(node.raw), node.graphParent, ...node.categories]
       .filter(Boolean)
       .map(target => resolveTarget(target, node.url))
       .filter(Boolean)

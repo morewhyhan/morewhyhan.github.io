@@ -288,11 +288,7 @@ body.knowledge-graph-fullscreen::after {
   font-size: 0.88rem;
 }
 
-.knowledge-graph-settings label:last-child {
-  display: flex;
-}
-
-.knowledge-graph-settings label:nth-last-child(2) {
+.knowledge-graph-settings label:has(input[type="checkbox"]) {
   display: flex;
 }
 

@@ -11,7 +11,7 @@ graph: false
 <div id="knowledge-graph-app" class="knowledge-graph-app" aria-label="知识图谱">
   <div class="knowledge-graph-brand">
     <strong>知识图谱</strong>
-    <span>拖动探索 · 滚轮缩放 · 点击阅读</span>
+    <span>分类成簇 · 拖动整理 · 点击阅读</span>
   </div>
   <div class="knowledge-graph-toolbar">
     <label class="knowledge-graph-search">
@@ -19,16 +19,15 @@ graph: false
       <input type="search" data-graph-search placeholder="搜索节点" autocomplete="off" />
     </label>
     <div class="knowledge-graph-actions">
-      <button type="button" data-graph-reset title="重新整理图谱"><i class="fas fa-redo-alt"></i><span>重置</span></button>
+      <button type="button" data-graph-reset title="恢复星图视角"><i class="fas fa-crosshairs"></i><span>归位</span></button>
       <button type="button" data-graph-fullscreen title="进入沉浸模式"><i class="fas fa-expand"></i><span>沉浸</span></button>
       <button type="button" data-graph-settings title="图谱设置"><i class="fas fa-sliders-h"></i><span>设置</span></button>
     </div>
   </div>
   <div class="knowledge-graph-settings" data-graph-settings-panel hidden>
-    <label>节点斥力 <input type="range" min="40" max="520" value="220" data-force="repel" /></label>
-    <label>中心引力 <input type="range" min="0" max="50" value="8" data-force="center" /></label>
-    <label>连线距离 <input type="range" min="40" max="220" value="105" data-force="distance" /></label>
-    <label><input type="checkbox" checked data-graph-motion /> 保持灵动</label>
+    <label>节点大小 <input type="range" min="70" max="150" value="100" data-graph-node-scale /></label>
+    <label><input type="checkbox" checked data-graph-labels /> 显示节点名称</label>
+    <label><input type="checkbox" checked data-graph-categories /> 显示分类中心</label>
     <label><input type="checkbox" checked data-graph-orphans /> 显示孤立节点</label>
   </div>
   <div class="knowledge-graph-legend" data-graph-legend></div>
