@@ -9,13 +9,29 @@ comments: false
 
 ## 专题书目
 
-<div class="book-collection-list">
-  <a class="book-collection-card" href="/book/decision-algorithm/">
-    <span class="book-collection-kicker">专题 01</span>
-    <strong>决策算法100讲</strong>
-    <p>老喻关于概率、风险、博弈与人生选择的系统课程资料。</p>
-    <span class="book-collection-meta">100 讲 · 外部原文资料 →</span>
-  </a>
+<div id="recent-posts" class="recent-posts nc">
+  <div class="recent-post-items">
+    <div class="recent-post-item">
+      <div class="post_cover left">
+        <a href="/book/decision-algorithm/" title="决策算法100讲">
+          <img class="post-bg" src="/img/hua.png" alt="决策算法100讲">
+        </a>
+      </div>
+      <div class="recent-post-info">
+        <a class="article-title" href="/book/decision-algorithm/" title="决策算法100讲">决策算法100讲</a>
+        <div class="article-meta-wrap">
+          <span class="article-meta">
+            <i class="fas fa-inbox"></i>
+            <span class="article-meta__categories">图书笔记</span>
+            <span class="article-meta-separator">|</span>
+            <i class="fas fa-book-open"></i>
+            <span>100 讲</span>
+          </span>
+        </div>
+        <div class="content">老喻关于概率、风险、博弈与人生选择的系统课程资料。点击进入专题目录，阅读全部 100 讲。</div>
+      </div>
+    </div>
+  </div>
 </div>
 
 以后加入的其他书籍与资料，会作为新的专题继续排列在这里。
