@@ -90,3 +90,371 @@ body {
   }
 
 }
+
+/* Obsidian-like knowledge graph, powered by D3 forces and PixiJS. */
+.wiki-link {
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 0.22em;
+}
+
+.wiki-link::before {
+  content: "↗";
+  margin-right: 0.18em;
+  font-size: 0.76em;
+  opacity: 0.65;
+}
+
+.wiki-link.is-unresolved {
+  color: #9a7d7d;
+  text-decoration-color: #9a7d7d;
+}
+
+.knowledge-graph-intro {
+  max-width: 760px;
+  margin: 0 auto 1rem;
+  color: var(--font-color);
+  text-align: center;
+  opacity: 0.82;
+}
+
+.knowledge-graph-app {
+  position: relative;
+  min-height: 680px;
+  overflow: hidden;
+  border: 1px solid rgba(135, 143, 158, 0.24);
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 50% 46%, rgba(123, 133, 151, 0.08), transparent 46%),
+    color-mix(in srgb, var(--card-bg) 94%, #10131a 6%);
+  box-shadow: 0 18px 55px rgba(17, 22, 31, 0.12);
+  isolation: isolate;
+}
+
+.knowledge-graph-app.is-fullscreen {
+  position: fixed;
+  inset: 18px;
+  z-index: 10002;
+  min-height: 0;
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+}
+
+body.knowledge-graph-fullscreen {
+  overflow: hidden;
+}
+
+body.knowledge-graph-fullscreen::after {
+  position: fixed;
+  inset: 0;
+  z-index: 10001;
+  content: "";
+  background: rgba(9, 11, 16, 0.72);
+  backdrop-filter: blur(8px);
+}
+
+.knowledge-graph-toolbar {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  left: 16px;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  pointer-events: none;
+}
+
+.knowledge-graph-search,
+.knowledge-graph-actions {
+  pointer-events: auto;
+}
+
+.knowledge-graph-search {
+  display: flex;
+  align-items: center;
+  width: min(320px, 52vw);
+  padding: 0 13px;
+  border: 1px solid rgba(135, 143, 158, 0.28);
+  border-radius: 9px;
+  background: color-mix(in srgb, var(--card-bg) 84%, transparent);
+  box-shadow: 0 8px 26px rgba(16, 20, 28, 0.12);
+  backdrop-filter: blur(14px);
+}
+
+.knowledge-graph-search i {
+  margin-right: 9px;
+  opacity: 0.62;
+}
+
+.knowledge-graph-search input {
+  width: 100%;
+  height: 38px;
+  border: 0;
+  outline: 0;
+  color: var(--font-color);
+  background: transparent;
+  font: inherit;
+}
+
+.knowledge-graph-actions {
+  display: flex;
+  gap: 7px;
+}
+
+.knowledge-graph-actions button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid rgba(135, 143, 158, 0.28);
+  border-radius: 9px;
+  color: var(--font-color);
+  background: color-mix(in srgb, var(--card-bg) 84%, transparent);
+  box-shadow: 0 8px 26px rgba(16, 20, 28, 0.1);
+  cursor: pointer;
+  backdrop-filter: blur(14px);
+}
+
+.knowledge-graph-actions button:hover {
+  border-color: var(--theme-color);
+  color: var(--theme-color);
+}
+
+.knowledge-graph-settings {
+  position: absolute;
+  top: 64px;
+  right: 16px;
+  z-index: 5;
+  width: min(290px, calc(100% - 32px));
+  padding: 14px 16px;
+  border: 1px solid rgba(135, 143, 158, 0.28);
+  border-radius: 11px;
+  background: color-mix(in srgb, var(--card-bg) 90%, transparent);
+  box-shadow: 0 16px 38px rgba(15, 19, 27, 0.2);
+  backdrop-filter: blur(18px);
+}
+
+.knowledge-graph-settings label {
+  display: grid;
+  grid-template-columns: 5.2rem 1fr;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0;
+  color: var(--font-color);
+  font-size: 0.88rem;
+}
+
+.knowledge-graph-settings label:last-child {
+  display: flex;
+}
+
+.knowledge-graph-settings input[type="range"] {
+  width: 100%;
+  accent-color: var(--theme-color);
+}
+
+.knowledge-graph-legend {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  z-index: 3;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 14px;
+  max-width: calc(100% - 36px);
+  padding: 8px 11px;
+  border-radius: 9px;
+  color: var(--font-color);
+  background: color-mix(in srgb, var(--card-bg) 76%, transparent);
+  font-size: 0.8rem;
+  backdrop-filter: blur(12px);
+}
+
+.knowledge-graph-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.knowledge-graph-legend i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--legend-color);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--legend-color) 22%, transparent);
+}
+
+.knowledge-graph-canvas {
+  position: absolute;
+  inset: 0;
+  min-height: 520px;
+  cursor: grab;
+}
+
+.knowledge-graph-canvas:active {
+  cursor: grabbing;
+}
+
+.knowledge-graph-pixi {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.knowledge-graph-loading,
+.knowledge-graph-empty {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--font-color);
+  opacity: 0.58;
+}
+
+.knowledge-graph-status {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  z-index: 3;
+  color: var(--font-color);
+  font-size: 0.78rem;
+  opacity: 0.62;
+}
+
+.local-knowledge-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(240px, 0.65fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.local-knowledge-graph-card,
+.knowledge-backlinks {
+  overflow: hidden;
+  border: 1px solid rgba(135, 143, 158, 0.2);
+  border-radius: 12px;
+  background: var(--card-bg);
+}
+
+.local-knowledge-heading,
+.knowledge-backlinks > h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  padding: 12px 15px 8px;
+  font-size: 1rem;
+}
+
+.local-knowledge-heading h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.local-knowledge-heading a {
+  font-size: 0.78rem;
+}
+
+.local-knowledge-canvas {
+  position: relative;
+  height: 290px;
+  background: radial-gradient(circle, rgba(120, 130, 148, 0.07), transparent 62%);
+}
+
+.knowledge-backlinks > h3 small {
+  display: inline-grid;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  place-items: center;
+  border-radius: 99px;
+  color: var(--theme-color);
+  background: color-mix(in srgb, var(--theme-color) 12%, transparent);
+}
+
+.knowledge-backlinks ul {
+  margin: 0;
+  padding: 0 15px 14px;
+  list-style: none;
+}
+
+.knowledge-backlinks li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px dashed rgba(135, 143, 158, 0.18);
+}
+
+.knowledge-backlinks li:last-child {
+  border-bottom: 0;
+}
+
+.knowledge-backlinks li span {
+  flex: 0 0 auto;
+  color: var(--font-color);
+  font-size: 0.72rem;
+  opacity: 0.52;
+}
+
+.knowledge-backlinks-empty {
+  padding: 0 15px 14px;
+  color: var(--font-color);
+  font-size: 0.86rem;
+  opacity: 0.62;
+}
+
+@media (max-width: 768px) {
+  .knowledge-graph-app {
+    min-height: 620px;
+    margin-right: -0.5rem;
+    margin-left: -0.5rem;
+    border-radius: 12px;
+  }
+
+  .knowledge-graph-app.is-fullscreen {
+    inset: 0;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .knowledge-graph-toolbar {
+    flex-wrap: wrap;
+  }
+
+  .knowledge-graph-search {
+    width: 100%;
+  }
+
+  .knowledge-graph-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .knowledge-graph-actions button span {
+    display: none;
+  }
+
+  .knowledge-graph-settings {
+    top: 106px;
+  }
+
+  .knowledge-graph-legend {
+    right: 12px;
+    bottom: 42px;
+    left: 12px;
+  }
+
+  .knowledge-graph-status {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .local-knowledge-panel {
+    grid-template-columns: 1fr;
+  }
+}

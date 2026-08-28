@@ -1,0 +1,125 @@
+{
+  "generatedAt": "2026-08-28T09:37:39.867Z",
+  "nodes": [
+    {
+      "id": "/book/decision-algorithm/",
+      "title": "决策算法100讲",
+      "url": "/book/decision-algorithm/",
+      "kind": "图书笔记",
+      "categories": [
+        "图书笔记"
+      ],
+      "tags": [
+        "决策",
+        "概率",
+        "博弈"
+      ],
+      "aliases": [
+        "决策算法",
+        "老喻决策算法100讲"
+      ],
+      "description": "老喻关于概率、风险、博弈与人生选择的系统课程资料；全套资料在本站按一个专题收录。",
+      "original": false,
+      "links": [
+        "/knowledge/cards/有限信息下的决策/",
+        "/knowledge/cards/机会成本/",
+        "/knowledge/cards/复盘/"
+      ]
+    },
+    {
+      "id": "/2026/08/28/ruo-wo-zai-chang-prologue/",
+      "title": "若我在场：一个关于历史决策的思想实验",
+      "url": "/2026/08/28/ruo-wo-zai-chang-prologue/",
+      "kind": "若我在场",
+      "categories": [
+        "若我在场"
+      ],
+      "tags": [
+        "决策",
+        "博弈",
+        "历史"
+      ],
+      "aliases": [
+        "若我在场"
+      ],
+      "description": "如果进入历史人物所处的平行时空，我会怎样判断局势、分配筹码并改变处境？",
+      "original": true,
+      "links": [
+        "/knowledge/cards/有限信息下的决策/",
+        "/knowledge/cards/机会成本/",
+        "/knowledge/cards/承诺机制/"
+      ]
+    },
+    {
+      "id": "/knowledge/cards/承诺机制/",
+      "title": "承诺机制",
+      "url": "/knowledge/cards/承诺机制/",
+      "kind": "机制卡片",
+      "categories": [],
+      "tags": [
+        "博弈机制"
+      ],
+      "aliases": [],
+      "description": "",
+      "original": true,
+      "links": [
+        "/2026/08/28/ruo-wo-zai-chang-prologue/",
+        "/knowledge/cards/有限信息下的决策/"
+      ]
+    },
+    {
+      "id": "/knowledge/cards/机会成本/",
+      "title": "机会成本",
+      "url": "/knowledge/cards/机会成本/",
+      "kind": "机制卡片",
+      "categories": [],
+      "tags": [
+        "决策机制"
+      ],
+      "aliases": [],
+      "description": "",
+      "original": true,
+      "links": [
+        "/knowledge/cards/有限信息下的决策/",
+        "/book/decision-algorithm/"
+      ]
+    },
+    {
+      "id": "/knowledge/cards/复盘/",
+      "title": "复盘",
+      "url": "/knowledge/cards/复盘/",
+      "kind": "机制卡片",
+      "categories": [],
+      "tags": [
+        "学习机制"
+      ],
+      "aliases": [],
+      "description": "",
+      "original": true,
+      "links": [
+        "/2026/08/28/ruo-wo-zai-chang-prologue/",
+        "/book/decision-algorithm/"
+      ]
+    },
+    {
+      "id": "/knowledge/cards/有限信息下的决策/",
+      "title": "有限信息下的决策",
+      "url": "/knowledge/cards/有限信息下的决策/",
+      "kind": "机制卡片",
+      "categories": [],
+      "tags": [
+        "决策机制"
+      ],
+      "aliases": [
+        "有限信息决策"
+      ],
+      "description": "",
+      "original": true,
+      "links": [
+        "/2026/08/28/ruo-wo-zai-chang-prologue/",
+        "/book/decision-algorithm/",
+        "/knowledge/cards/机会成本/"
+      ]
+    }
+  ]
+}
