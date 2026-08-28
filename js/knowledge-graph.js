@@ -1,19 +1,16 @@
-/*
- * Obsidian-style knowledge graph for this Hexo site.
- * Rendering and interaction are adapted from Quartz Community Graph (MIT):
- * https://github.com/quartz-community/graph
- */
+/* Stable semantic knowledge map rendered with Sigma.js + Graphology. */
 (() => {
   'use strict'
 
   const DATA_URL = '/knowledge-graph/data.json'
   const LIBRARIES = [
-    ['d3', 'https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js'],
-    ['ForceGraph', 'https://cdn.jsdelivr.net/npm/force-graph@1.43.3/dist/force-graph.min.js']
+    ['graphology', 'https://cdnjs.cloudflare.com/ajax/libs/graphology/0.25.4/graphology.umd.min.js'],
+    ['Sigma', 'https://cdnjs.cloudflare.com/ajax/libs/sigma.js/2.4.0/sigma.min.js']
   ]
   const COLORS = {
+    '分类': '#d0af78',
     '若我在场': '#d29b58',
-    '读书笔记': '#9b87d7',
+    '图书笔记': '#9b87d7',
     '生活随笔': '#67a6c9',
     '机制卡片': '#77ad88',
     '文章': '#7f9fbd',
@@ -59,19 +56,16 @@
   }
 
   function loadLibraries () {
-    if (!libraryPromise) {
-      libraryPromise = Promise.all(LIBRARIES.map(([name, src]) => loadScript(name, src)))
-    }
+    if (!libraryPromise) libraryPromise = LIBRARIES.reduce((promise, [name, src]) => promise.then(() => loadScript(name, src)), Promise.resolve())
     return libraryPromise
   }
 
   function getData () {
     if (!dataPromise) {
-      dataPromise = fetch(DATA_URL, { credentials: 'same-origin' })
-        .then(response => {
-          if (!response.ok) throw new Error(`HTTP ${response.status}`)
-          return response.json()
-        })
+      dataPromise = fetch(DATA_URL, { credentials: 'same-origin' }).then(response => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`)
+        return response.json()
+      })
     }
     return dataPromise
   }
@@ -79,9 +73,7 @@
   function byNames (nodes) {
     const map = new Map()
     nodes.forEach(node => {
-      ;[node.title, ...(node.aliases || [])].forEach(name => {
-        map.set(String(name).trim().toLocaleLowerCase('zh-CN'), node)
-      })
+      ;[node.title, ...(node.aliases || [])].forEach(name => map.set(String(name).trim().toLocaleLowerCase('zh-CN'), node))
     })
     return map
   }
@@ -89,14 +81,9 @@
   function resolveWikiLinks (nodes) {
     const names = byNames(nodes)
     document.querySelectorAll('a.wiki-link[data-wiki-target]').forEach(link => {
-      const target = link.dataset.wikiTarget.trim().toLocaleLowerCase('zh-CN')
-      const node = names.get(target)
-      if (!node) {
-        link.classList.add('is-unresolved')
-        return
-      }
-      link.href = node.url
-      link.classList.remove('is-unresolved')
+      const node = names.get(link.dataset.wikiTarget.trim().toLocaleLowerCase('zh-CN'))
+      link.classList.toggle('is-unresolved', !node)
+      if (node) link.href = node.url
     })
   }
 
@@ -118,15 +105,13 @@
     for (let level = 0; level < depth; level += 1) {
       const next = []
       links.forEach(link => {
-        const source = typeof link.source === 'string' ? link.source : link.source.id
-        const target = typeof link.target === 'string' ? link.target : link.target.id
-        if (frontier.includes(source) && !included.has(target)) {
-          included.add(target)
-          next.push(target)
+        if (frontier.includes(link.source) && !included.has(link.target)) {
+          included.add(link.target)
+          next.push(link.target)
         }
-        if (frontier.includes(target) && !included.has(source)) {
-          included.add(source)
-          next.push(source)
+        if (frontier.includes(link.target) && !included.has(link.source)) {
+          included.add(link.source)
+          next.push(link.source)
         }
       })
       frontier = next
@@ -134,457 +119,223 @@
     return nodes.filter(node => included.has(node.id))
   }
 
-  function stableAngle (text) {
+  function stableUnit (text) {
     let hash = 2166136261
-    for (let i = 0; i < text.length; i += 1) {
-      hash ^= text.charCodeAt(i)
+    for (let index = 0; index < text.length; index += 1) {
+      hash ^= text.charCodeAt(index)
       hash = Math.imul(hash, 16777619)
     }
-    return ((hash >>> 0) % 360) * Math.PI / 180
+    return (hash >>> 0) / 4294967295
   }
 
-  async function renderGraphLegacy (container, allNodes, options = {}) {
-    const d3 = window.d3
-    const PIXI = window.PIXI
-    const width = Math.max(container.clientWidth, 280)
-    const height = Math.max(container.clientHeight, options.local ? 280 : 520)
+  function layoutNodes (nodes, links, local) {
+    const degree = new Map(nodes.map(node => [node.id, 0]))
+    links.forEach(link => {
+      degree.set(link.source, (degree.get(link.source) || 0) + 1)
+      degree.set(link.target, (degree.get(link.target) || 0) + 1)
+    })
+
+    const categories = nodes.filter(node => node.kind === '分类').sort((left, right) => left.title.localeCompare(right.title, 'zh-CN'))
+    const centers = new Map()
+    categories.forEach((node, index) => {
+      const angle = categories.length === 1 ? 0 : ((Math.PI * 2 * index) / categories.length) - Math.PI / 2
+      const radius = categories.length === 1 ? 0 : 34 + categories.length * 3
+      centers.set(node.title, { x: Math.cos(angle) * radius, y: Math.sin(angle) * radius })
+    })
+
+    const groups = new Map(categories.map(node => [node.title, []]))
+    const ungrouped = []
+    nodes.filter(node => node.kind !== '分类').forEach(node => {
+      const category = (node.categories || []).find(name => centers.has(name))
+      if (category) groups.get(category).push(node)
+      else ungrouped.push(node)
+    })
+
+    const positions = new Map()
+    categories.forEach(node => positions.set(node.id, centers.get(node.title)))
+    groups.forEach((members, category) => {
+      const center = centers.get(category)
+      members.sort((left, right) => stableUnit(left.id) - stableUnit(right.id))
+      members.forEach((node, index) => {
+        const ring = Math.floor(index / 9)
+        const angle = Math.PI * 2 * stableUnit(`${node.id}:angle`)
+        const radius = (local ? 8 : 12) + ring * 9 + stableUnit(`${node.id}:radius`) * 5
+        positions.set(node.id, { x: center.x + Math.cos(angle) * radius, y: center.y + Math.sin(angle) * radius })
+      })
+    })
+    ungrouped.forEach((node, index) => {
+      const angle = Math.PI * 2 * stableUnit(`${node.id}:free`)
+      const radius = 18 + Math.sqrt(index + 1) * 10
+      positions.set(node.id, { x: Math.cos(angle) * radius, y: Math.sin(angle) * radius })
+    })
+
+    return { positions, degree }
+  }
+
+  function prepareVisibleGraph (allNodes, options) {
     const allLinks = graphLinks(allNodes)
-    let visibleNodes = neighbourhood(allNodes, allLinks, options.focusId, options.depth ?? -1)
-    let visibleIds = new Set(visibleNodes.map(node => node.id))
-    let visibleLinks = allLinks.filter(link => visibleIds.has(link.source) && visibleIds.has(link.target))
-
+    let nodes = neighbourhood(allNodes, allLinks, options.focusId, options.depth ?? -1)
+    if (options.showCategories === false) nodes = nodes.filter(node => node.kind !== '分类')
+    let ids = new Set(nodes.map(node => node.id))
+    let links = allLinks.filter(link => ids.has(link.source) && ids.has(link.target))
     if (options.showOrphans === false) {
-      const connected = new Set(visibleLinks.flatMap(link => [link.source, link.target]))
+      const connected = new Set(links.flatMap(link => [link.source, link.target]))
       if (options.focusId) connected.add(options.focusId)
-      visibleNodes = visibleNodes.filter(node => connected.has(node.id))
-      visibleIds = new Set(visibleNodes.map(node => node.id))
-      visibleLinks = visibleLinks.filter(link => visibleIds.has(link.source) && visibleIds.has(link.target))
+      nodes = nodes.filter(node => connected.has(node.id))
+      ids = new Set(nodes.map(node => node.id))
+      links = links.filter(link => ids.has(link.source) && ids.has(link.target))
     }
+    return { nodes, links }
+  }
 
+  function renderGraph (container, allNodes, options = {}) {
+    const { nodes, links } = prepareVisibleGraph(allNodes, options)
     container.replaceChildren()
-    if (!visibleNodes.length) {
+    if (!nodes.length) {
       container.innerHTML = '<div class="knowledge-graph-empty">还没有形成可显示的连接。</div>'
-      return { destroy () {}, focus () {} }
+      return { destroy () {}, focus () {}, reset () {}, resize () {} }
     }
 
-    const degrees = new Map(visibleNodes.map(node => [node.id, 0]))
-    visibleLinks.forEach(link => {
-      degrees.set(link.source, (degrees.get(link.source) || 0) + 1)
-      degrees.set(link.target, (degrees.get(link.target) || 0) + 1)
-    })
-
-    const radiusBase = Math.min(width, height) * (options.local ? 0.18 : 0.3)
-    const nodes = visibleNodes.map((node, index) => {
-      const angle = stableAngle(node.id)
-      const radius = radiusBase * (0.35 + ((index % 9) / 10))
-      return { ...node, x: Math.cos(angle) * radius, y: Math.sin(angle) * radius }
-    })
-    const links = visibleLinks.map(link => ({ ...link }))
-    const nodeMap = new Map(nodes.map(node => [node.id, node]))
-
-    const app = new PIXI.Application()
-    await app.init({
-      width,
-      height,
-      antialias: true,
-      backgroundAlpha: 0,
-      resolution: Math.min(window.devicePixelRatio || 1, 2),
-      autoDensity: true
-    })
-    app.canvas.className = 'knowledge-graph-pixi'
-    container.appendChild(app.canvas)
-
-    const stage = new PIXI.Container()
-    const edgeLayer = new PIXI.Graphics()
-    const nodeLayer = new PIXI.Container()
-    const labelLayer = new PIXI.Container()
-    stage.addChild(edgeLayer, nodeLayer, labelLayer)
-    app.stage.addChild(stage)
-
-    const config = {
-      repel: Number(options.repel ?? 105),
-      center: Number(options.center ?? 28) / 100,
-      distance: Number(options.distance ?? (options.local ? 55 : 62))
-    }
-    const simulation = d3.forceSimulation(nodes)
-      .velocityDecay(0.36)
-      .alphaDecay(0.022)
-      .force('charge', d3.forceManyBody().strength(-config.repel))
-      .force('center', d3.forceCenter(0, 0).strength(config.center))
-      .force('link', d3.forceLink(links).id(node => node.id).distance(config.distance).strength(0.56))
-      .force('collide', d3.forceCollide(node => 10 + Math.sqrt(degrees.get(node.id) || 0) * 2).iterations(2))
-
-    const nodeViews = new Map()
-    let hoveredId = null
-    let selectedId = options.focusId || null
-    let transform = d3.zoomIdentity.translate(width / 2, height / 2).scale(options.local ? 1.05 : 0.92)
-    let moved = false
-    let stopped = false
-
-    function nodeRadius (node) {
-      return 4.3 + Math.sqrt(degrees.get(node.id) || 0) * 1.75 + (node.id === options.focusId ? 1.8 : 0)
-    }
-
-    function neighboursOf (id) {
-      const set = new Set([id])
-      links.forEach(link => {
-        const source = typeof link.source === 'string' ? link.source : link.source.id
-        const target = typeof link.target === 'string' ? link.target : link.target.id
-        if (source === id) set.add(target)
-        if (target === id) set.add(source)
-      })
-      return set
-    }
-
-    function redrawStyle () {
-      const active = hoveredId ? neighboursOf(hoveredId) : null
-      nodeViews.forEach((view, id) => {
-        const dimmed = active && !active.has(id)
-        view.dot.alpha = dimmed ? 0.15 : 1
-        const important = id === hoveredId || id === selectedId || id === options.focusId
-        view.label.alpha = dimmed ? 0.05 : (important ? 1 : Math.max(0, Math.min(0.9, (transform.k - 0.52) / 1.5)))
-        view.label.scale.set(important ? 1.08 : 1)
-      })
-    }
-
+    const Graph = window.graphology.Graph
+    const graph = new Graph({ multi: false, type: 'undirected', allowSelfLoops: false })
+    const { positions, degree } = layoutNodes(nodes, links, options.local)
+    const nodeScale = Number(options.nodeScale || 100) / 100
     nodes.forEach(node => {
-      const dot = new PIXI.Graphics()
-      const radius = nodeRadius(node)
-      const color = COLORS[node.kind] || COLORS['知识页面']
-      dot.circle(0, 0, radius).fill({ color })
-      if (node.id === options.focusId) dot.circle(0, 0, radius + 3).stroke({ color: '#f1d4a4', width: 1.5, alpha: 0.85 })
-      dot.eventMode = 'static'
-      dot.cursor = 'pointer'
-      dot.on('pointerover', () => { hoveredId = node.id; redrawStyle() })
-      dot.on('pointerout', () => { hoveredId = null; redrawStyle() })
-      dot.on('pointerdown', () => { moved = false })
-      dot.on('pointerup', () => {
-        if (!moved) window.location.href = node.url
+      const point = positions.get(node.id) || { x: 0, y: 0 }
+      const category = node.kind === '分类'
+      graph.addNode(node.id, {
+        x: point.x,
+        y: point.y,
+        size: (category ? 12 : 5.5 + Math.sqrt(degree.get(node.id) || 0) * 1.7) * nodeScale,
+        label: node.title,
+        color: COLORS[node.kind] || COLORS['知识页面'],
+        forceLabel: category || node.id === options.focusId,
+        zIndex: category ? 2 : 1,
+        url: node.url,
+        kind: node.kind
       })
-      nodeLayer.addChild(dot)
-
-      const label = new PIXI.Text({
-        text: node.title,
-        style: {
-          fontFamily: '"LXGW WenKai Screen", system-ui, sans-serif',
-          fontSize: options.local ? 11 : 12,
-          fill: document.documentElement.getAttribute('data-theme') === 'dark' ? '#e6e7eb' : '#343842',
-          align: 'center'
-        },
-        resolution: Math.min((window.devicePixelRatio || 1) * 2, 4)
+    })
+    links.forEach((link, index) => {
+      if (!graph.hasNode(link.source) || !graph.hasNode(link.target) || graph.hasEdge(link.source, link.target)) return
+      graph.addUndirectedEdgeWithKey(`edge-${index}`, link.source, link.target, {
+        size: 0.8,
+        color: 'rgba(135,145,164,0.32)'
       })
-      label.anchor.set(0.5, 1.45)
-      label.alpha = node.id === options.focusId ? 1 : 0.2
-      labelLayer.addChild(label)
-      nodeViews.set(node.id, { dot, label, node })
     })
 
-    function draw () {
-      if (stopped) return
-      edgeLayer.clear()
-      links.forEach(link => {
-        const source = typeof link.source === 'string' ? nodeMap.get(link.source) : link.source
-        const target = typeof link.target === 'string' ? nodeMap.get(link.target) : link.target
-        if (!source || !target) return
-        const active = hoveredId && (source.id === hoveredId || target.id === hoveredId)
-        const alpha = hoveredId ? (active ? 0.9 : 0.07) : 0.3
-        edgeLayer.moveTo(source.x, source.y).lineTo(target.x, target.y).stroke({ color: active ? '#b9a071' : '#8a909c', width: active ? 1.4 : 0.7, alpha })
-      })
-      nodeViews.forEach(view => {
-        view.dot.position.set(view.node.x, view.node.y)
-        view.label.position.set(view.node.x, view.node.y)
-      })
-      requestAnimationFrame(draw)
+    let hoveredNode = null
+    let selectedNode = options.focusId || null
+    let draggedNode = null
+    const showLabels = options.showLabels !== false
+    const renderer = new window.Sigma(graph, container, {
+      allowInvalidContainer: true,
+      renderEdgeLabels: false,
+      labelFont: 'LXGW WenKai Screen, system-ui, sans-serif',
+      labelSize: options.local ? 11 : 13,
+      labelWeight: '500',
+      labelColor: { color: document.documentElement.getAttribute('data-theme') === 'dark' ? '#e8eaf0' : '#343841' },
+      labelRenderedSizeThreshold: showLabels ? (options.local ? 5 : 4) : Infinity,
+      defaultEdgeColor: 'rgba(135,145,164,0.32)',
+      defaultEdgeType: 'line',
+      enableEdgeEvents: false,
+      zIndex: true,
+      minCameraRatio: 0.06,
+      maxCameraRatio: 3.5,
+      nodeReducer (node, data) {
+        const result = { ...data }
+        if (!showLabels && node !== hoveredNode && node !== selectedNode) result.label = ''
+        if (hoveredNode) {
+          const related = node === hoveredNode || graph.areNeighbors(node, hoveredNode)
+          if (!related) {
+            result.color = 'rgba(118,126,141,0.14)'
+            result.label = ''
+            result.zIndex = 0
+          } else {
+            result.highlighted = node === hoveredNode
+            result.zIndex = 3
+          }
+        }
+        if (node === selectedNode) {
+          result.highlighted = true
+          result.size = data.size * 1.35
+          result.zIndex = 4
+        }
+        return result
+      },
+      edgeReducer (edge, data) {
+        if (!hoveredNode) return data
+        if (!graph.hasExtremity(edge, hoveredNode)) return { ...data, hidden: true }
+        return { ...data, color: 'rgba(219,190,132,0.88)', size: 1.8, zIndex: 3 }
+      }
+    })
+
+    renderer.on('enterNode', ({ node }) => {
+      hoveredNode = node
+      container.classList.add('is-node-hovered')
+      renderer.refresh()
+    })
+    renderer.on('leaveNode', () => {
+      hoveredNode = null
+      container.classList.remove('is-node-hovered')
+      renderer.refresh()
+    })
+    renderer.on('clickNode', ({ node }) => {
+      if (draggedNode) return
+      selectedNode = node
+      renderer.refresh()
+      const url = graph.getNodeAttribute(node, 'url')
+      if (url) window.location.href = url
+    })
+    renderer.on('clickStage', () => {
+      selectedNode = null
+      renderer.refresh()
+    })
+    renderer.on('downNode', ({ node }) => {
+      draggedNode = node
+      graph.setNodeAttribute(node, 'highlighted', true)
+    })
+
+    const mouse = renderer.getMouseCaptor()
+    mouse.on('mousemovebody', event => {
+      if (!draggedNode) return
+      const position = renderer.viewportToGraph(event)
+      graph.mergeNodeAttributes(draggedNode, position)
+      event.preventSigmaDefault()
+      if (event.original) event.original.preventDefault()
+    })
+    mouse.on('mouseup', () => {
+      if (draggedNode) graph.removeNodeAttribute(draggedNode, 'highlighted')
+      draggedNode = null
+    })
+    mouse.on('mousedown', () => {
+      if (!renderer.getCustomBBox()) renderer.setCustomBBox(renderer.getBBox())
+    })
+
+    function focus (id) {
+      if (!graph.hasNode(id)) return
+      selectedNode = id
+      const display = renderer.getNodeDisplayData(id)
+      if (display) renderer.getCamera().animate({ x: display.x, y: display.y, ratio: options.local ? 0.45 : 0.18 }, { duration: 620 })
+      renderer.refresh()
     }
 
-    const drag = d3.drag()
-      .container(app.canvas)
-      .subject(event => {
-        const x = (event.x - transform.x) / transform.k
-        const y = (event.y - transform.y) / transform.k
-        return nodes.find(node => Math.hypot(x - node.x, y - node.y) <= nodeRadius(node) + 8)
-      })
-      .on('start', event => {
-        if (!event.active) simulation.alphaTarget(0.28).restart()
-        event.subject.fx = event.subject.x
-        event.subject.fy = event.subject.y
-      })
-      .on('drag', event => {
-        moved = true
-        event.subject.fx = (event.x - transform.x) / transform.k
-        event.subject.fy = (event.y - transform.y) / transform.k
-      })
-      .on('end', event => {
-        if (!event.active) simulation.alphaTarget(0)
-        event.subject.fx = null
-        event.subject.fy = null
-      })
+    function reset () {
+      selectedNode = options.focusId || null
+      renderer.getCamera().animate({ x: 0.5, y: 0.5, ratio: 1, angle: 0 }, { duration: 520 })
+      renderer.refresh()
+    }
 
-    const zoom = d3.zoom()
-      .extent([[0, 0], [width, height]])
-      .scaleExtent([0.22, 4])
-      .on('zoom', event => {
-        transform = event.transform
-        stage.position.set(transform.x, transform.y)
-        stage.scale.set(transform.k)
-        redrawStyle()
-      })
-
-    d3.select(app.canvas).call(zoom).call(zoom.transform, transform).call(drag)
-    simulation.on('tick', () => {})
-    redrawStyle()
-    draw()
+    if (options.focusId) setTimeout(() => focus(options.focusId), 260)
 
     return {
       destroy () {
-        stopped = true
-        simulation.stop()
-        d3.select(app.canvas).on('.zoom', null).on('.drag', null)
-        try { app.destroy(true) } catch (_) {}
-      },
-      focus (id) {
-        const node = nodeMap.get(id)
-        if (!node) return
-        selectedId = id
-        const next = d3.zoomIdentity.translate(width / 2 - node.x * 1.55, height / 2 - node.y * 1.55).scale(1.55)
-        d3.select(app.canvas).transition().duration(520).call(zoom.transform, next)
-        redrawStyle()
-      },
-      reheat (next) {
-        if (next.repel != null) simulation.force('charge').strength(-Number(next.repel))
-        if (next.center != null) simulation.force('center').strength(Number(next.center) / 100)
-        if (next.distance != null) simulation.force('link').distance(Number(next.distance))
-        simulation.alpha(0.9).restart()
-      }
-    }
-  }
-
-  function rgba (hex, alpha) {
-    const value = hex.replace('#', '')
-    const number = Number.parseInt(value.length === 3 ? value.split('').map(char => char + char).join('') : value, 16)
-    return `rgba(${(number >> 16) & 255}, ${(number >> 8) & 255}, ${number & 255}, ${alpha})`
-  }
-
-  function ambientForce () {
-    let nodes = []
-    const force = alpha => {
-      const time = performance.now() / 5200
-      nodes.forEach(node => {
-        const phase = stableAngle(node.id)
-        node.vx += Math.sin(time + phase) * 0.0032 * Math.max(alpha, 0.18)
-        node.vy += Math.cos(time * 0.83 + phase * 1.7) * 0.0027 * Math.max(alpha, 0.18)
-      })
-    }
-    force.initialize = nextNodes => { nodes = nextNodes }
-    return force
-  }
-
-  async function renderGraph (container, allNodes, options = {}) {
-    const width = Math.max(container.clientWidth, 280)
-    const height = Math.max(container.clientHeight, options.local ? 280 : 620)
-    const allLinks = graphLinks(allNodes)
-    let visibleNodes = neighbourhood(allNodes, allLinks, options.focusId, options.depth ?? -1)
-    let visibleIds = new Set(visibleNodes.map(node => node.id))
-    let visibleLinks = allLinks.filter(link => visibleIds.has(link.source) && visibleIds.has(link.target))
-
-    if (options.showOrphans === false) {
-      const connected = new Set(visibleLinks.flatMap(link => [link.source, link.target]))
-      if (options.focusId) connected.add(options.focusId)
-      visibleNodes = visibleNodes.filter(node => connected.has(node.id))
-      visibleIds = new Set(visibleNodes.map(node => node.id))
-      visibleLinks = visibleLinks.filter(link => visibleIds.has(link.source) && visibleIds.has(link.target))
-    }
-
-    container.replaceChildren()
-    if (!visibleNodes.length) {
-      container.innerHTML = '<div class="knowledge-graph-empty">还没有形成可显示的连接。</div>'
-      return { destroy () {}, focus () {}, reheat () {} }
-    }
-
-    const degrees = new Map(visibleNodes.map(node => [node.id, 0]))
-    visibleLinks.forEach(link => {
-      degrees.set(link.source, (degrees.get(link.source) || 0) + 1)
-      degrees.set(link.target, (degrees.get(link.target) || 0) + 1)
-    })
-
-    const radiusBase = Math.min(width, height) * (options.local ? 0.12 : 0.22)
-    const nodes = visibleNodes.map(node => {
-      const angle = stableAngle(node.id)
-      const spread = 0.42 + ((stableAngle(`${node.id}:radius`) / (Math.PI * 2)) * 0.9)
-      return {
-        ...node,
-        x: Math.cos(angle) * radiusBase * spread,
-        y: Math.sin(angle) * radiusBase * spread
-      }
-    })
-    const links = visibleLinks.map(link => ({ ...link }))
-    const isDark = document.documentElement.getAttribute('data-theme') === 'dark'
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    const motion = options.motion !== false && !reducedMotion && !options.local
-    let hoveredId = null
-    let selectedId = options.focusId || null
-    let destroyed = false
-
-    function endpointId (endpoint) {
-      return typeof endpoint === 'string' ? endpoint : endpoint.id
-    }
-
-    function isActiveLink (link) {
-      if (!hoveredId && !selectedId) return false
-      const activeId = hoveredId || selectedId
-      return endpointId(link.source) === activeId || endpointId(link.target) === activeId
-    }
-
-    function neighboursOf (id) {
-      const neighbours = new Set([id])
-      links.forEach(link => {
-        const source = endpointId(link.source)
-        const target = endpointId(link.target)
-        if (source === id) neighbours.add(target)
-        if (target === id) neighbours.add(source)
-      })
-      return neighbours
-    }
-
-    function nodeRadius (node) {
-      return 4.6 + Math.sqrt(degrees.get(node.id) || 0) * 2.1 + (node.id === options.focusId ? 2 : 0)
-    }
-
-    function paintNode (node, context, globalScale) {
-      const activeNeighbours = hoveredId ? neighboursOf(hoveredId) : null
-      const dimmed = activeNeighbours && !activeNeighbours.has(node.id)
-      const active = node.id === hoveredId || node.id === selectedId || node.id === options.focusId
-      const color = COLORS[node.kind] || COLORS['知识页面']
-      const radius = nodeRadius(node)
-      const alpha = dimmed ? 0.14 : 1
-
-      context.save()
-      context.globalAlpha = alpha
-      if (active) {
-        const glow = context.createRadialGradient(node.x, node.y, radius * 0.4, node.x, node.y, radius * 3.2)
-        glow.addColorStop(0, rgba(color, 0.38))
-        glow.addColorStop(1, rgba(color, 0))
-        context.beginPath()
-        context.arc(node.x, node.y, radius * 3.2, 0, Math.PI * 2)
-        context.fillStyle = glow
-        context.fill()
-      }
-
-      context.beginPath()
-      context.arc(node.x, node.y, radius, 0, Math.PI * 2)
-      context.fillStyle = color
-      context.shadowColor = rgba(color, active ? 0.9 : 0.42)
-      context.shadowBlur = active ? 18 / globalScale : 8 / globalScale
-      context.fill()
-      context.shadowBlur = 0
-
-      if (active) {
-        context.beginPath()
-        context.arc(node.x, node.y, radius + 2.4 / globalScale, 0, Math.PI * 2)
-        context.strokeStyle = rgba('#f2e4ca', 0.78)
-        context.lineWidth = 1.2 / globalScale
-        context.stroke()
-      }
-
-      const important = active || (degrees.get(node.id) || 0) > 1 || globalScale > 1.05
-      if (important && !dimmed) {
-        const fontSize = (options.local ? 11 : 13) / globalScale
-        context.font = `${active ? 600 : 450} ${fontSize}px "LXGW WenKai Screen", system-ui, sans-serif`
-        context.textAlign = 'center'
-        context.textBaseline = 'bottom'
-        context.fillStyle = isDark ? 'rgba(239,241,246,0.94)' : 'rgba(42,46,55,0.92)'
-        context.fillText(node.title, node.x, node.y - radius - 5 / globalScale)
-      }
-      context.restore()
-    }
-
-    const graph = window.ForceGraph()(container)
-      .width(width)
-      .height(height)
-      .backgroundColor('rgba(0,0,0,0)')
-      .graphData({ nodes, links })
-      .nodeId('id')
-      .nodeVal(node => 1.2 + Math.sqrt(degrees.get(node.id) || 0))
-      .nodeCanvasObject(paintNode)
-      .nodePointerAreaPaint((node, color, context) => {
-        context.beginPath()
-        context.arc(node.x, node.y, nodeRadius(node) + 7, 0, Math.PI * 2)
-        context.fillStyle = color
-        context.fill()
-      })
-      .linkColor(link => isActiveLink(link) ? rgba('#d7bd87', 0.9) : rgba('#8e98aa', hoveredId ? 0.08 : 0.28))
-      .linkWidth(link => isActiveLink(link) ? 1.55 : 0.65)
-      .linkDirectionalParticles(link => isActiveLink(link) ? 2 : 0)
-      .linkDirectionalParticleColor(() => rgba('#f0d7a4', 0.9))
-      .linkDirectionalParticleWidth(1.8)
-      .linkDirectionalParticleSpeed(0.005)
-      .enableNodeDrag(true)
-      .enableZoomPanInteraction(true)
-      .onNodeHover(node => {
-        hoveredId = node ? node.id : null
-        container.classList.toggle('is-node-hovered', Boolean(node))
-        graph.refresh()
-      })
-      .onNodeClick(node => {
-        selectedId = node.id
-        graph.centerAt(node.x, node.y, 420)
-        graph.zoom(1.7, 420)
-        setTimeout(() => { if (!destroyed) window.location.href = node.url }, 180)
-      })
-      .onBackgroundClick(() => {
-        selectedId = null
-        graph.refresh()
-      })
-      .onNodeDragEnd(node => {
-        node.fx = null
-        node.fy = null
-        graph.d3ReheatSimulation()
-      })
-      .d3AlphaDecay(motion ? 0 : 0.018)
-      .d3AlphaMin(motion ? 0 : 0.001)
-      .d3VelocityDecay(motion ? 0.24 : 0.34)
-      .cooldownTicks(motion ? Infinity : 360)
-      .cooldownTime(motion ? Infinity : 15000)
-
-    const config = {
-      repel: Number(options.repel ?? (options.local ? 90 : 220)),
-      center: Number(options.center ?? (options.local ? 24 : 8)) / 100,
-      distance: Number(options.distance ?? (options.local ? 62 : 105))
-    }
-    graph.d3Force('charge').strength(-config.repel).distanceMax(options.local ? 360 : 820)
-    graph.d3Force('link').distance(config.distance).strength(options.local ? 0.45 : 0.24)
-    const centerForce = graph.d3Force('center')
-    if (centerForce && typeof centerForce.strength === 'function') centerForce.strength(config.center)
-    graph.d3Force('collision', window.d3.forceCollide(node => nodeRadius(node) + (options.local ? 10 : 22)).strength(0.72).iterations(2))
-    if (motion) graph.d3Force('ambient', ambientForce())
-    graph.d3ReheatSimulation()
-
-    const fitTimer = setTimeout(() => {
-      if (!destroyed) graph.zoomToFit(760, options.local ? 34 : 110)
-    }, options.local ? 260 : 520)
-
-    return {
-      destroy () {
-        destroyed = true
-        clearTimeout(fitTimer)
         container.classList.remove('is-node-hovered')
-        try { if (typeof graph._destructor === 'function') graph._destructor() } catch (_) {}
+        renderer.kill()
         container.replaceChildren()
       },
-      focus (id) {
-        const node = nodes.find(item => item.id === id)
-        if (!node) return
-        selectedId = id
-        graph.centerAt(node.x || 0, node.y || 0, 520)
-        graph.zoom(2, 520)
-        graph.refresh()
-      },
-      reheat (next) {
-        if (next.repel != null) graph.d3Force('charge').strength(-Number(next.repel))
-        if (next.center != null && centerForce && typeof centerForce.strength === 'function') centerForce.strength(Number(next.center) / 100)
-        if (next.distance != null) graph.d3Force('link').distance(Number(next.distance))
-        graph.d3ReheatSimulation()
-      }
+      focus,
+      reset,
+      resize () { renderer.resize() }
     }
   }
 
@@ -604,34 +355,32 @@
     const status = root.querySelector('[data-graph-status]')
     const settingsPanel = root.querySelector('[data-graph-settings-panel]')
     const controls = {
-      repel: root.querySelector('[data-force="repel"]'),
-      center: root.querySelector('[data-force="center"]'),
-      distance: root.querySelector('[data-force="distance"]'),
-      motion: root.querySelector('[data-graph-motion]'),
+      nodeScale: root.querySelector('[data-graph-node-scale]'),
+      labels: root.querySelector('[data-graph-labels]'),
+      categories: root.querySelector('[data-graph-categories]'),
       orphans: root.querySelector('[data-graph-orphans]')
     }
     makeLegend(root.querySelector('[data-graph-legend]'), nodes)
     status.textContent = `${nodes.length} 个节点 · ${graphLinks(nodes).length} 条连接`
 
-    let graph
+    let graphView
     const graphOptions = () => ({
-      repel: controls.repel.value,
-      center: controls.center.value,
-      distance: controls.distance.value,
-      motion: controls.motion.checked,
+      nodeScale: controls.nodeScale.value,
+      showLabels: controls.labels.checked,
+      showCategories: controls.categories.checked,
       showOrphans: controls.orphans.checked,
       depth: -1
     })
-    const rerender = async () => {
-      if (graph) graph.destroy()
-      graph = await renderGraph(canvas, nodes, graphOptions())
+    const rerender = () => {
+      if (graphView) graphView.destroy()
+      graphView = renderGraph(canvas, nodes, graphOptions())
     }
-    await rerender()
+    rerender()
 
-    root.querySelector('[data-graph-reset]').addEventListener('click', rerender)
-    root.querySelector('[data-graph-settings]').addEventListener('click', () => {
-      settingsPanel.hidden = !settingsPanel.hidden
-    })
+    root.querySelector('[data-graph-reset]').addEventListener('click', () => graphView && graphView.reset())
+    root.querySelector('[data-graph-settings]').addEventListener('click', () => { settingsPanel.hidden = !settingsPanel.hidden })
+    ;[controls.nodeScale, controls.labels, controls.categories, controls.orphans].forEach(control => control.addEventListener('change', rerender))
+
     const fullscreenButton = root.querySelector('[data-graph-fullscreen]')
     const handleFullscreen = () => {
       const active = document.fullscreenElement === root
@@ -639,43 +388,33 @@
       document.body.classList.toggle('knowledge-graph-fullscreen', active)
       fullscreenButton.querySelector('i').className = active ? 'fas fa-compress' : 'fas fa-expand'
       fullscreenButton.querySelector('span').textContent = active ? '退出' : '沉浸'
-      setTimeout(rerender, 90)
+      setTimeout(() => graphView && graphView.resize(), 100)
     }
     fullscreenButton.addEventListener('click', async () => {
       try {
         if (document.fullscreenElement === root) await document.exitFullscreen()
         else await root.requestFullscreen()
-      } catch (_) {
-        root.classList.toggle('is-fullscreen')
-        document.body.classList.toggle('knowledge-graph-fullscreen', root.classList.contains('is-fullscreen'))
-        setTimeout(rerender, 90)
-      }
+      } catch (_) {}
     })
     document.addEventListener('fullscreenchange', handleFullscreen)
-    ;[controls.repel, controls.center, controls.distance].forEach(control => {
-      control.addEventListener('input', () => graph && graph.reheat({ [control.dataset.force]: control.value }))
-    })
-    controls.motion.addEventListener('change', rerender)
-    controls.orphans.addEventListener('change', rerender)
 
     const names = byNames(nodes)
     const input = root.querySelector('[data-graph-search]')
     input.addEventListener('input', () => {
       const query = input.value.trim().toLocaleLowerCase('zh-CN')
       if (!query) return
-      const exact = names.get(query)
-      const match = exact || nodes.find(node => node.title.toLocaleLowerCase('zh-CN').includes(query))
-      if (match && graph) graph.focus(match.id)
+      const match = names.get(query) || nodes.find(node => node.title.toLocaleLowerCase('zh-CN').includes(query))
+      if (match && graphView) graphView.focus(match.id)
     })
 
     const focusQuery = new URLSearchParams(window.location.search).get('focus')
     if (focusQuery) {
       const focus = names.get(focusQuery.trim().toLocaleLowerCase('zh-CN'))
-      if (focus) setTimeout(() => graph.focus(focus.id), 550)
+      if (focus) setTimeout(() => graphView.focus(focus.id), 420)
     }
 
     return () => {
-      if (graph) graph.destroy()
+      if (graphView) graphView.destroy()
       document.removeEventListener('fullscreenchange', handleFullscreen)
       root.classList.remove('is-fullscreen')
       document.body.classList.remove('knowledge-graph-fullscreen')
@@ -693,7 +432,6 @@
   async function mountLocal (node, nodes) {
     const article = document.querySelector('#article-container')
     if (!article || document.querySelector('[data-local-knowledge-graph]')) return () => {}
-
     const section = document.createElement('section')
     section.className = 'local-knowledge-panel'
     section.dataset.localKnowledgeGraph = ''
@@ -705,17 +443,16 @@
       <div class="knowledge-backlinks" data-knowledge-backlinks></div>`
     article.insertAdjacentElement('afterend', section)
     mountBacklinks(section.querySelector('[data-knowledge-backlinks]'), node, nodes)
-    const graph = await renderGraph(section.querySelector('[data-local-graph-canvas]'), nodes, {
+    const graphView = renderGraph(section.querySelector('[data-local-graph-canvas]'), nodes, {
       local: true,
       focusId: node.id,
       depth: 1,
-      repel: 78,
-      center: 36,
-      distance: 52,
+      showCategories: true,
+      showLabels: true,
       showOrphans: true
     })
     return () => {
-      graph.destroy()
+      graphView.destroy()
       section.remove()
     }
   }
