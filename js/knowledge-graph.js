@@ -9,7 +9,7 @@
   const DATA_URL = '/knowledge-graph/data.json'
   const LIBRARIES = [
     ['d3', 'https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js'],
-    ['PIXI', 'https://cdn.jsdelivr.net/npm/pixi.js@8/dist/pixi.js']
+    ['ForceGraph', 'https://cdn.jsdelivr.net/npm/force-graph@1.43.3/dist/force-graph.min.js']
   ]
   const COLORS = {
     '若我在场': '#d29b58',
@@ -143,7 +143,7 @@
     return ((hash >>> 0) % 360) * Math.PI / 180
   }
 
-  async function renderGraph (container, allNodes, options = {}) {
+  async function renderGraphLegacy (container, allNodes, options = {}) {
     const d3 = window.d3
     const PIXI = window.PIXI
     const width = Math.max(container.clientWidth, 280)
@@ -359,6 +359,235 @@
     }
   }
 
+  function rgba (hex, alpha) {
+    const value = hex.replace('#', '')
+    const number = Number.parseInt(value.length === 3 ? value.split('').map(char => char + char).join('') : value, 16)
+    return `rgba(${(number >> 16) & 255}, ${(number >> 8) & 255}, ${number & 255}, ${alpha})`
+  }
+
+  function ambientForce () {
+    let nodes = []
+    const force = alpha => {
+      const time = performance.now() / 5200
+      nodes.forEach(node => {
+        const phase = stableAngle(node.id)
+        node.vx += Math.sin(time + phase) * 0.0032 * Math.max(alpha, 0.18)
+        node.vy += Math.cos(time * 0.83 + phase * 1.7) * 0.0027 * Math.max(alpha, 0.18)
+      })
+    }
+    force.initialize = nextNodes => { nodes = nextNodes }
+    return force
+  }
+
+  async function renderGraph (container, allNodes, options = {}) {
+    const width = Math.max(container.clientWidth, 280)
+    const height = Math.max(container.clientHeight, options.local ? 280 : 620)
+    const allLinks = graphLinks(allNodes)
+    let visibleNodes = neighbourhood(allNodes, allLinks, options.focusId, options.depth ?? -1)
+    let visibleIds = new Set(visibleNodes.map(node => node.id))
+    let visibleLinks = allLinks.filter(link => visibleIds.has(link.source) && visibleIds.has(link.target))
+
+    if (options.showOrphans === false) {
+      const connected = new Set(visibleLinks.flatMap(link => [link.source, link.target]))
+      if (options.focusId) connected.add(options.focusId)
+      visibleNodes = visibleNodes.filter(node => connected.has(node.id))
+      visibleIds = new Set(visibleNodes.map(node => node.id))
+      visibleLinks = visibleLinks.filter(link => visibleIds.has(link.source) && visibleIds.has(link.target))
+    }
+
+    container.replaceChildren()
+    if (!visibleNodes.length) {
+      container.innerHTML = '<div class="knowledge-graph-empty">还没有形成可显示的连接。</div>'
+      return { destroy () {}, focus () {}, reheat () {} }
+    }
+
+    const degrees = new Map(visibleNodes.map(node => [node.id, 0]))
+    visibleLinks.forEach(link => {
+      degrees.set(link.source, (degrees.get(link.source) || 0) + 1)
+      degrees.set(link.target, (degrees.get(link.target) || 0) + 1)
+    })
+
+    const radiusBase = Math.min(width, height) * (options.local ? 0.12 : 0.22)
+    const nodes = visibleNodes.map(node => {
+      const angle = stableAngle(node.id)
+      const spread = 0.42 + ((stableAngle(`${node.id}:radius`) / (Math.PI * 2)) * 0.9)
+      return {
+        ...node,
+        x: Math.cos(angle) * radiusBase * spread,
+        y: Math.sin(angle) * radiusBase * spread
+      }
+    })
+    const links = visibleLinks.map(link => ({ ...link }))
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark'
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const motion = options.motion !== false && !reducedMotion && !options.local
+    let hoveredId = null
+    let selectedId = options.focusId || null
+    let destroyed = false
+
+    function endpointId (endpoint) {
+      return typeof endpoint === 'string' ? endpoint : endpoint.id
+    }
+
+    function isActiveLink (link) {
+      if (!hoveredId && !selectedId) return false
+      const activeId = hoveredId || selectedId
+      return endpointId(link.source) === activeId || endpointId(link.target) === activeId
+    }
+
+    function neighboursOf (id) {
+      const neighbours = new Set([id])
+      links.forEach(link => {
+        const source = endpointId(link.source)
+        const target = endpointId(link.target)
+        if (source === id) neighbours.add(target)
+        if (target === id) neighbours.add(source)
+      })
+      return neighbours
+    }
+
+    function nodeRadius (node) {
+      return 4.6 + Math.sqrt(degrees.get(node.id) || 0) * 2.1 + (node.id === options.focusId ? 2 : 0)
+    }
+
+    function paintNode (node, context, globalScale) {
+      const activeNeighbours = hoveredId ? neighboursOf(hoveredId) : null
+      const dimmed = activeNeighbours && !activeNeighbours.has(node.id)
+      const active = node.id === hoveredId || node.id === selectedId || node.id === options.focusId
+      const color = COLORS[node.kind] || COLORS['知识页面']
+      const radius = nodeRadius(node)
+      const alpha = dimmed ? 0.14 : 1
+
+      context.save()
+      context.globalAlpha = alpha
+      if (active) {
+        const glow = context.createRadialGradient(node.x, node.y, radius * 0.4, node.x, node.y, radius * 3.2)
+        glow.addColorStop(0, rgba(color, 0.38))
+        glow.addColorStop(1, rgba(color, 0))
+        context.beginPath()
+        context.arc(node.x, node.y, radius * 3.2, 0, Math.PI * 2)
+        context.fillStyle = glow
+        context.fill()
+      }
+
+      context.beginPath()
+      context.arc(node.x, node.y, radius, 0, Math.PI * 2)
+      context.fillStyle = color
+      context.shadowColor = rgba(color, active ? 0.9 : 0.42)
+      context.shadowBlur = active ? 18 / globalScale : 8 / globalScale
+      context.fill()
+      context.shadowBlur = 0
+
+      if (active) {
+        context.beginPath()
+        context.arc(node.x, node.y, radius + 2.4 / globalScale, 0, Math.PI * 2)
+        context.strokeStyle = rgba('#f2e4ca', 0.78)
+        context.lineWidth = 1.2 / globalScale
+        context.stroke()
+      }
+
+      const important = active || (degrees.get(node.id) || 0) > 1 || globalScale > 1.05
+      if (important && !dimmed) {
+        const fontSize = (options.local ? 11 : 13) / globalScale
+        context.font = `${active ? 600 : 450} ${fontSize}px "LXGW WenKai Screen", system-ui, sans-serif`
+        context.textAlign = 'center'
+        context.textBaseline = 'bottom'
+        context.fillStyle = isDark ? 'rgba(239,241,246,0.94)' : 'rgba(42,46,55,0.92)'
+        context.fillText(node.title, node.x, node.y - radius - 5 / globalScale)
+      }
+      context.restore()
+    }
+
+    const graph = window.ForceGraph()(container)
+      .width(width)
+      .height(height)
+      .backgroundColor('rgba(0,0,0,0)')
+      .graphData({ nodes, links })
+      .nodeId('id')
+      .nodeVal(node => 1.2 + Math.sqrt(degrees.get(node.id) || 0))
+      .nodeCanvasObject(paintNode)
+      .nodePointerAreaPaint((node, color, context) => {
+        context.beginPath()
+        context.arc(node.x, node.y, nodeRadius(node) + 7, 0, Math.PI * 2)
+        context.fillStyle = color
+        context.fill()
+      })
+      .linkColor(link => isActiveLink(link) ? rgba('#d7bd87', 0.9) : rgba('#8e98aa', hoveredId ? 0.08 : 0.28))
+      .linkWidth(link => isActiveLink(link) ? 1.55 : 0.65)
+      .linkDirectionalParticles(link => isActiveLink(link) ? 2 : 0)
+      .linkDirectionalParticleColor(() => rgba('#f0d7a4', 0.9))
+      .linkDirectionalParticleWidth(1.8)
+      .linkDirectionalParticleSpeed(0.005)
+      .enableNodeDrag(true)
+      .enableZoomPanInteraction(true)
+      .onNodeHover(node => {
+        hoveredId = node ? node.id : null
+        container.classList.toggle('is-node-hovered', Boolean(node))
+        graph.refresh()
+      })
+      .onNodeClick(node => {
+        selectedId = node.id
+        graph.centerAt(node.x, node.y, 420)
+        graph.zoom(1.7, 420)
+        setTimeout(() => { if (!destroyed) window.location.href = node.url }, 180)
+      })
+      .onBackgroundClick(() => {
+        selectedId = null
+        graph.refresh()
+      })
+      .onNodeDragEnd(node => {
+        node.fx = null
+        node.fy = null
+        graph.d3ReheatSimulation()
+      })
+      .d3AlphaDecay(motion ? 0 : 0.018)
+      .d3AlphaMin(motion ? 0 : 0.001)
+      .d3VelocityDecay(motion ? 0.24 : 0.34)
+      .cooldownTicks(motion ? Infinity : 360)
+      .cooldownTime(motion ? Infinity : 15000)
+
+    const config = {
+      repel: Number(options.repel ?? (options.local ? 90 : 220)),
+      center: Number(options.center ?? (options.local ? 24 : 8)) / 100,
+      distance: Number(options.distance ?? (options.local ? 62 : 105))
+    }
+    graph.d3Force('charge').strength(-config.repel).distanceMax(options.local ? 360 : 820)
+    graph.d3Force('link').distance(config.distance).strength(options.local ? 0.45 : 0.24)
+    const centerForce = graph.d3Force('center')
+    if (centerForce && typeof centerForce.strength === 'function') centerForce.strength(config.center)
+    graph.d3Force('collision', window.d3.forceCollide(node => nodeRadius(node) + (options.local ? 10 : 22)).strength(0.72).iterations(2))
+    if (motion) graph.d3Force('ambient', ambientForce())
+    graph.d3ReheatSimulation()
+
+    const fitTimer = setTimeout(() => {
+      if (!destroyed) graph.zoomToFit(760, options.local ? 34 : 110)
+    }, options.local ? 260 : 520)
+
+    return {
+      destroy () {
+        destroyed = true
+        clearTimeout(fitTimer)
+        container.classList.remove('is-node-hovered')
+        try { if (typeof graph._destructor === 'function') graph._destructor() } catch (_) {}
+        container.replaceChildren()
+      },
+      focus (id) {
+        const node = nodes.find(item => item.id === id)
+        if (!node) return
+        selectedId = id
+        graph.centerAt(node.x || 0, node.y || 0, 520)
+        graph.zoom(2, 520)
+        graph.refresh()
+      },
+      reheat (next) {
+        if (next.repel != null) graph.d3Force('charge').strength(-Number(next.repel))
+        if (next.center != null && centerForce && typeof centerForce.strength === 'function') centerForce.strength(Number(next.center) / 100)
+        if (next.distance != null) graph.d3Force('link').distance(Number(next.distance))
+        graph.d3ReheatSimulation()
+      }
+    }
+  }
+
   function currentNode (nodes) {
     const current = normalizePath(window.location.pathname)
     return nodes.find(node => normalizePath(node.url) === current)
@@ -378,6 +607,7 @@
       repel: root.querySelector('[data-force="repel"]'),
       center: root.querySelector('[data-force="center"]'),
       distance: root.querySelector('[data-force="distance"]'),
+      motion: root.querySelector('[data-graph-motion]'),
       orphans: root.querySelector('[data-graph-orphans]')
     }
     makeLegend(root.querySelector('[data-graph-legend]'), nodes)
@@ -388,6 +618,7 @@
       repel: controls.repel.value,
       center: controls.center.value,
       distance: controls.distance.value,
+      motion: controls.motion.checked,
       showOrphans: controls.orphans.checked,
       depth: -1
     })
@@ -401,14 +632,30 @@
     root.querySelector('[data-graph-settings]').addEventListener('click', () => {
       settingsPanel.hidden = !settingsPanel.hidden
     })
-    root.querySelector('[data-graph-fullscreen]').addEventListener('click', () => {
-      root.classList.toggle('is-fullscreen')
-      document.body.classList.toggle('knowledge-graph-fullscreen', root.classList.contains('is-fullscreen'))
-      setTimeout(rerender, 80)
+    const fullscreenButton = root.querySelector('[data-graph-fullscreen]')
+    const handleFullscreen = () => {
+      const active = document.fullscreenElement === root
+      root.classList.toggle('is-fullscreen', active)
+      document.body.classList.toggle('knowledge-graph-fullscreen', active)
+      fullscreenButton.querySelector('i').className = active ? 'fas fa-compress' : 'fas fa-expand'
+      fullscreenButton.querySelector('span').textContent = active ? '退出' : '沉浸'
+      setTimeout(rerender, 90)
+    }
+    fullscreenButton.addEventListener('click', async () => {
+      try {
+        if (document.fullscreenElement === root) await document.exitFullscreen()
+        else await root.requestFullscreen()
+      } catch (_) {
+        root.classList.toggle('is-fullscreen')
+        document.body.classList.toggle('knowledge-graph-fullscreen', root.classList.contains('is-fullscreen'))
+        setTimeout(rerender, 90)
+      }
     })
+    document.addEventListener('fullscreenchange', handleFullscreen)
     ;[controls.repel, controls.center, controls.distance].forEach(control => {
       control.addEventListener('input', () => graph && graph.reheat({ [control.dataset.force]: control.value }))
     })
+    controls.motion.addEventListener('change', rerender)
     controls.orphans.addEventListener('change', rerender)
 
     const names = byNames(nodes)
@@ -429,6 +676,7 @@
 
     return () => {
       if (graph) graph.destroy()
+      document.removeEventListener('fullscreenchange', handleFullscreen)
       root.classList.remove('is-fullscreen')
       document.body.classList.remove('knowledge-graph-fullscreen')
     }
