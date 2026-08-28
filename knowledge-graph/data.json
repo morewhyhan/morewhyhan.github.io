@@ -1,28 +1,24 @@
 {
-  "generatedAt": "2026-08-28T09:37:39.867Z",
+  "generatedAt": "2026-08-28T11:18:45.209Z",
   "nodes": [
     {
-      "id": "/book/decision-algorithm/",
-      "title": "决策算法100讲",
-      "url": "/book/decision-algorithm/",
-      "kind": "图书笔记",
+      "id": "/2026/08/28/life-notes-prologue/",
+      "title": "生活随笔：把未经整理的真实留下来",
+      "url": "/2026/08/28/life-notes-prologue/",
+      "kind": "生活随笔",
       "categories": [
-        "图书笔记"
+        "生活随笔"
       ],
       "tags": [
-        "决策",
-        "概率",
-        "博弈"
+        "日常",
+        "观察"
       ],
       "aliases": [
-        "决策算法",
-        "老喻决策算法100讲"
+        "生活随笔"
       ],
-      "description": "老喻关于概率、风险、博弈与人生选择的系统课程资料；全套资料在本站按一个专题收录。",
-      "original": false,
+      "description": "生活随笔不追求完整体系，它负责留下日常经验、即时判断和那些尚未长成方法论的念头。",
+      "original": true,
       "links": [
-        "/knowledge/cards/有限信息下的决策/",
-        "/knowledge/cards/机会成本/",
         "/knowledge/cards/复盘/"
       ]
     },
@@ -35,9 +31,9 @@
         "若我在场"
       ],
       "tags": [
+        "历史",
         "决策",
-        "博弈",
-        "历史"
+        "博弈"
       ],
       "aliases": [
         "若我在场"
@@ -48,6 +44,31 @@
         "/knowledge/cards/有限信息下的决策/",
         "/knowledge/cards/机会成本/",
         "/knowledge/cards/承诺机制/"
+      ]
+    },
+    {
+      "id": "/book/decision-algorithm/",
+      "title": "决策算法100讲",
+      "url": "/book/decision-algorithm/",
+      "kind": "图书笔记",
+      "categories": [
+        "图书笔记"
+      ],
+      "tags": [
+        "决策",
+        "博弈",
+        "概率"
+      ],
+      "aliases": [
+        "决策算法",
+        "老喻决策算法100讲"
+      ],
+      "description": "老喻关于概率、风险、博弈与人生选择的系统课程资料；全套资料在本站按一个专题收录。",
+      "original": false,
+      "links": [
+        "/knowledge/cards/有限信息下的决策/",
+        "/knowledge/cards/机会成本/",
+        "/knowledge/cards/复盘/"
       ]
     },
     {
@@ -65,23 +86,6 @@
       "links": [
         "/2026/08/28/ruo-wo-zai-chang-prologue/",
         "/knowledge/cards/有限信息下的决策/"
-      ]
-    },
-    {
-      "id": "/knowledge/cards/机会成本/",
-      "title": "机会成本",
-      "url": "/knowledge/cards/机会成本/",
-      "kind": "机制卡片",
-      "categories": [],
-      "tags": [
-        "决策机制"
-      ],
-      "aliases": [],
-      "description": "",
-      "original": true,
-      "links": [
-        "/knowledge/cards/有限信息下的决策/",
-        "/book/decision-algorithm/"
       ]
     },
     {
@@ -119,6 +123,23 @@
         "/2026/08/28/ruo-wo-zai-chang-prologue/",
         "/book/decision-algorithm/",
         "/knowledge/cards/机会成本/"
+      ]
+    },
+    {
+      "id": "/knowledge/cards/机会成本/",
+      "title": "机会成本",
+      "url": "/knowledge/cards/机会成本/",
+      "kind": "机制卡片",
+      "categories": [],
+      "tags": [
+        "决策机制"
+      ],
+      "aliases": [],
+      "description": "",
+      "original": true,
+      "links": [
+        "/knowledge/cards/有限信息下的决策/",
+        "/book/decision-algorithm/"
       ]
     }
   ]
