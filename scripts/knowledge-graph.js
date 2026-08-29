@@ -185,7 +185,26 @@ hexo.extend.generator.register('knowledge-graph-data', locals => {
     raw: '',
     links: []
   }))
-  const nodes = [...contentNodes, ...categoryNodes]
+  const tagCounts = new Map()
+  contentNodes.forEach(node => {
+    node.tags.forEach(tag => tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1))
+  })
+  const tagNodes = [...tagCounts.entries()].map(([title, count]) => ({
+    id: normalizeUrl(`/tags/${encodeURIComponent(title)}/`),
+    title: `#${title}`,
+    url: normalizeUrl(`/tags/${encodeURIComponent(title)}/`),
+    kind: '标签',
+    categories: [],
+    tags: [],
+    aliases: [title],
+    description: `${count} 篇内容`,
+    original: true,
+    virtual: true,
+    graphParent: '',
+    raw: '',
+    links: []
+  }))
+  const nodes = [...contentNodes, ...categoryNodes, ...tagNodes]
 
   const byName = new Map()
   const byUrl = new Map()
@@ -211,7 +230,7 @@ hexo.extend.generator.register('knowledge-graph-data', locals => {
   }
 
   nodes.forEach(node => {
-    const resolved = [...wikiTargets(node.raw), ...markdownTargets(node.raw), node.graphParent, ...node.categories]
+    const resolved = [...wikiTargets(node.raw), ...markdownTargets(node.raw), node.graphParent, ...node.categories, ...node.tags.map(tag => `/tags/${encodeURIComponent(tag)}/`)]
       .filter(Boolean)
       .map(target => resolveTarget(target, node.url))
       .filter(Boolean)

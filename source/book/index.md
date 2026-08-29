@@ -33,12 +33,12 @@ comments: false
     </div>
     <div class="recent-post-item">
       <div class="post_cover left">
-        <a href="/book/english-original-library/" title="English Original Library">
-          <img class="post-bg" src="/img/hua.png" alt="English Original Library">
+        <a href="/book/english-original-library/" title="姜学勤心理史学">
+          <img class="post-bg" src="/img/hua.png" alt="姜学勤心理史学">
         </a>
       </div>
       <div class="recent-post-info">
-        <a class="article-title" href="/book/english-original-library/" title="English Original Library">English Original Library</a>
+        <a class="article-title" href="/book/english-original-library/" title="姜学勤心理史学">姜学勤心理史学</a>
         <div class="article-meta-wrap">
           <span class="article-meta">
             <i class="fas fa-inbox"></i>
@@ -48,7 +48,7 @@ comments: false
             <span>154 篇讲稿</span>
           </span>
         </div>
-        <div class="content">Predictive History 五门课程的英文原始讲稿资料库，按 Great Books、Civilization、Game Theory、Geo-Strategy 与 Secret History 分组。</div>
+        <div class="content">姜学勤老师从经典、文明、博弈、地缘与隐秘历史展开的心理史学系列课程，共 154 篇讲稿。</div>
       </div>
     </div>
   </div>

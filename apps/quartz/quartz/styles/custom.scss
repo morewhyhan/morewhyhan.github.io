@@ -1,0 +1,151 @@
+@use "./variables.scss" as *;
+
+:root {
+  --garden-glass: color-mix(in srgb, var(--light) 88%, transparent);
+  --garden-line: color-mix(in srgb, var(--gray) 32%, transparent);
+  --garden-shadow: 0 18px 50px rgba(37, 54, 64, 0.08);
+}
+
+[saved-theme="dark"] {
+  --garden-glass: color-mix(in srgb, var(--light) 92%, transparent);
+  --garden-line: color-mix(in srgb, var(--gray) 38%, transparent);
+  --garden-shadow: 0 20px 56px rgba(0, 0, 0, 0.24);
+}
+
+body {
+  background:
+    radial-gradient(circle at 12% 8%, color-mix(in srgb, var(--secondary) 9%, transparent), transparent 30rem),
+    radial-gradient(circle at 88% 22%, color-mix(in srgb, var(--tertiary) 8%, transparent), transparent 26rem),
+    var(--light);
+  background-attachment: fixed;
+}
+
+.page > #quartz-body {
+  max-width: 1500px;
+}
+
+.page-title a {
+  color: var(--dark);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+
+.page-title a::after {
+  color: var(--secondary);
+  content: "  /  知识花园";
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.sidebar.left,
+.sidebar.right {
+  scrollbar-color: var(--gray) transparent;
+}
+
+.sidebar.left::after {
+  background: linear-gradient(90deg, transparent, var(--garden-line), transparent);
+  content: "";
+  display: block;
+  height: 1px;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.center > article {
+  background: var(--garden-glass);
+  border: 1px solid var(--garden-line);
+  border-radius: 16px;
+  box-shadow: var(--garden-shadow);
+  padding: clamp(1.35rem, 3vw, 3rem);
+}
+
+.center > article > h1:first-child {
+  font-size: clamp(2rem, 5vw, 3.7rem);
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+  margin-bottom: 1.4rem;
+}
+
+.center > article h2 {
+  border-bottom: 1px solid var(--garden-line);
+  padding-bottom: 0.45rem;
+}
+
+.center > article blockquote {
+  background: color-mix(in srgb, var(--secondary) 7%, transparent);
+  border: 0;
+  border-left: 3px solid var(--secondary);
+  border-radius: 0 10px 10px 0;
+  color: var(--darkgray);
+  margin: 2rem 0;
+  padding: 0.8rem 1.1rem;
+}
+
+a.internal {
+  background-color: transparent;
+  text-decoration-color: color-mix(in srgb, var(--secondary) 42%, transparent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  transition: color 160ms ease, text-decoration-color 160ms ease;
+}
+
+a.internal:hover {
+  color: var(--tertiary);
+  text-decoration-color: var(--tertiary);
+}
+
+.explorer-content ul li > a {
+  border-radius: 7px;
+  padding: 0.16rem 0.3rem;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.explorer-content ul li > a:hover {
+  background: var(--highlight);
+}
+
+.graph > .graph-outer {
+  background: var(--garden-glass);
+  border: 1px solid var(--garden-line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.global-graph-container {
+  background:
+    radial-gradient(circle at 50% 45%, color-mix(in srgb, var(--secondary) 8%, transparent), transparent 30rem),
+    var(--light);
+  border: 1px solid var(--garden-line);
+  border-radius: 18px;
+  box-shadow: var(--garden-shadow);
+}
+
+.backlinks,
+.toc {
+  border-left: 1px solid var(--garden-line);
+  padding-left: 1rem;
+}
+
+footer {
+  border-top: 1px solid var(--garden-line);
+  color: var(--darkgray);
+  margin-top: 3rem;
+  padding-top: 1.2rem;
+}
+
+@media all and ($mobile) {
+  .center > article {
+    border-left: 0;
+    border-radius: 12px;
+    border-right: 0;
+    box-shadow: none;
+    padding: 1.25rem 1rem;
+  }
+
+  .page-title a::after {
+    content: none;
+  }
+}
