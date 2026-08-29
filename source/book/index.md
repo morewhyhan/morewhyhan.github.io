@@ -31,6 +31,26 @@ comments: false
         <div class="content">老喻关于概率、风险、博弈与人生选择的系统课程资料。点击进入专题目录，阅读全部 100 讲。</div>
       </div>
     </div>
+    <div class="recent-post-item">
+      <div class="post_cover left">
+        <a href="/book/english-original-library/" title="English Original Library">
+          <img class="post-bg" src="/img/hua.png" alt="English Original Library">
+        </a>
+      </div>
+      <div class="recent-post-info">
+        <a class="article-title" href="/book/english-original-library/" title="English Original Library">English Original Library</a>
+        <div class="article-meta-wrap">
+          <span class="article-meta">
+            <i class="fas fa-inbox"></i>
+            <span class="article-meta__categories">图书笔记</span>
+            <span class="article-meta-separator">|</span>
+            <i class="fas fa-book-open"></i>
+            <span>154 篇讲稿</span>
+          </span>
+        </div>
+        <div class="content">Predictive History 五门课程的英文原始讲稿资料库，按 Great Books、Civilization、Game Theory、Geo-Strategy 与 Secret History 分组。</div>
+      </div>
+    </div>
   </div>
 </div>
 
