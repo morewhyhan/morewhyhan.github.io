@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr"><head><title>077｜决策之“贪”：为什么这是你做决策的最大障碍？ · 虚船向远</title><meta charset="utf-8"/><link rel="preload" href="../../index-dd6f8a77.css" as="style"/><link rel="preload" href="../../prescript-2bfc6315.js" as="script"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="虚船向远"/><meta property="og:title" content="077｜决策之“贪”：为什么这是你做决策的最大障碍？ · 虚船向远"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="077｜决策之“贪”：为什么这是你做决策的最大障碍？ · 虚船向远"/><meta name="twitter:description" content="《老喻·决策算法100讲》077：决策之“贪”：为什么这是你做决策的最大障碍？"/><meta property="og:description" content="《老喻·决策算法100讲》077：决策之“贪”：为什么这是你做决策的最大障碍？"/><meta property="og:image:alt" content="《老喻·决策算法100讲》077：决策之“贪”：为什么这是你做决策的最大障碍？"/><meta property="twitter:domain" content="morewhyhan.github.io/notes"/><meta property="og:url" content="https://morewhyhan.github.io/notes/books/decision-algorithm/077"/><meta property="twitter:url" content="https://morewhyhan.github.io/notes/books/decision-algorithm/077"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="《老喻·决策算法100讲》077：决策之“贪”：为什么这是你做决策的最大障碍？"/><meta name="generator" content="Quartz"/><link href="../../index-dd6f8a77.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-34bdfded.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-11d41004.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-26a99b87.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-9857b007.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-d3a1a224.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../prescript-2bfc6315.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://morewhyhan.github.io/notes/books/decision-algorithm/077-og-image.webp"/><meta property="og:image:url" content="https://morewhyhan.github.io/notes/books/decision-algorithm/077-og-image.webp"/><meta name="twitter:image" content="https://morewhyhan.github.io/notes/books/decision-algorithm/077-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="books/decision-algorithm/077" data-basepath="/notes"><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../..">虚船向远</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="搜索" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>搜索</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="搜索内容..." placeholder="搜索内容..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="暗色模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="阅读模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="阅读模式"><title>阅读模式</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\n        numeric: true,\n        sensitivity: \&quot;base\&quot;\n      });\n    }\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\n      return 1;\n    }\n    return -1;\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\n    return node;\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-86" aria-label="探索"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-86" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../books/">图书笔记</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../books/decision-algorithm/">决策算法100讲</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>077｜决策之“贪”：为什么这是你做决策的最大障碍？</a></div></nav><h1 class="article-title">077｜决策之“贪”：为什么这是你做决策的最大障碍？</h1><p show-comma="true" class="content-meta"><time datetime="2026-08-27T16:00:00.000Z">2026年8月28日</time><span>64分钟阅读</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<ul>
+<li>时长：15分29秒</li>
+<li>来源：老喻·决策算法100讲</li>
+</ul>
+<h2 id="老喻亲述">老喻亲述<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#老喻亲述" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>你好，我是老喻，欢迎来到《决策算法》课。</p>
+<p>经典电影《盗火线》有个令人深思的结局。奥斯卡影帝罗伯特·德尼罗饰演的职业大盗尼尔·麦考利，本已安排好与爱人艾琳远走高飞。飞机就位，车已上路，自由美好的新生活似乎触手可及。</p>
+<p>尼尔一生精明冷静，信奉“不要对无法30秒内放弃的东西产生感情”的行为准则。他深谙生存法则，每次行动都计算精准，从不拖泥带水。在这个角色中，德尼罗展现的不是冲动的罪犯，而是近乎商业精英般的理性思考者。</p>
+<p>然而，就在飞往新生活的最后时刻，他做了职业生涯中最不理性的决定——改变路线，前去杀死伤害他团队的仇敌。这个“顺路复仇”的冲动决策，最终让他倒在了另一位影帝阿尔·帕西诺饰演的警探文森特·汉纳的枪下。</p>
+<p>尼尔的悲剧揭示了人类决策的核心陷阱：<strong>贪婪。</strong></p>
+<p>贪婪让他想要两全其美——既要与爱人远走高飞开启新生活，又要亲手复仇。明明知道选择会带来风险，却无法抵挡“都要”的诱惑。</p>
+<p>尼尔绝非贪婪之人，相反，他称得上是一个极有人格魅力的“侠盗”。然而，唯一的一次“贪婪”，让他赔上了生命。</p>
+<p>电影中的这个情节，很好地隐喻了贪婪作为决策障碍的普遍性与隐蔽性。它不仅影响那些公认的贪得无厌之徒，也能在关键时刻俘获最具理性、最自律的头脑。</p>
+<p>即使电影中尼尔这样严守职业准则的人，在生命的转折点，依然被那个“再加一件事”的微小贪念所击败。这正是<strong>贪婪最可怕之处——它往往不以贪婪的面目出现，而是伪装成“合理的期望”或“应得的机会”。</strong></p>
+<p>贪婪不仅仅是对金钱的渴望，而是一种根深蒂固的心理模式——我们总想拥有更多，无论是物质财富、情感满足还是生活选项。在决策中，贪婪常表现为“鱼与熊掌兼得”的幻想，让我们拒绝做出必要的取舍。</p>
+<p>谁都不愿承认自己贪婪，但事实上，贪的形态十分多样：有时它披着“进取心”的外衣，有时它打着“完美主义”的旗号，甚至有时它装成对他人的责任与承诺。我们对自己的欲望往往能找到合理化的解释，于是就放松了警惕，纵容它一步步膨胀。</p>
+<p>佛教的“三毒”——“贪嗔痴”，将贪放在首位。因为贪婪最为基础，也最为隐蔽。它是人类内心最原始的冲动，深植于我们的生存本能中。</p>
+<p>从进化角度看，对更多资源的渴望曾经是生存优势；在资源匮乏的环境中，那些“多拿一点”的祖先更可能活下来并传递基因。</p>
+<p>但从现代决策科学的角度看，**贪婪本质上是一种偏好倒置现象——短期偏好压倒长期目标，部分价值凌驾整体价值。**这种倾向已成为决策的绊脚石。</p>
+<h2 id="二">二<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#二" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>我知道，作为一个生活在现代的人，你对“贪婪”这个古老的词，多少会有一点矛盾心态。</p>
+<p>在另一部经典电影《华尔街》里，主角迈克·道格拉斯说：“贪婪是个好东西。”</p>
+<p>这个说法听起来有点儿刺耳，但似乎也说出了我们心里的一部分想法：难道我们每个人不都是希望让自己的生活更好吗？假如我们的股票能够十年赚10倍，孩子能够上清华上哈佛，有什么不可以呢？</p>
+<p>谁会嫌自己的财富太多吗？合法的金钱是无罪的。</p>
+<p>让我们从现实主义的角度来理解这一点：追求更好、更多、更高并非本身就是贪婪。<strong>贪婪的关键不在于“想要”，而在于代价与平衡的丧失。</strong></p>
+<p>很多时候，对金钱太贪婪，反而得不到金钱。这才是问题的关键。投资者因为贪图更高收益，不断切换投资标的，反而错过长期复利；创业者因为贪图快速扩张，透支企业资源，最终失去可持续发展的能力；职场人因贪图升职加薪，不惜牺牲健康和家庭，到头来却发现自己空有财富却无福享用。</p>
+<p>贪婪的决策特点是“短视”——它让我们陷入近期收益的陷阱，牺牲长远利益。就像电影中的尼尔，为了一时复仇的痛快，失去了整个未来。这正是贪婪指向的核心：因小失大，因眼前失长远，因局部失整体，因为想要赢每一场战役，最后输掉了整个战争。</p>
+<p>贪婪还会扭曲我们的目标设定。“拿第一”看似雄心壮志，实则是危险的陷阱，因为你早晚会被干翻。第一只有一个，这种基于比较的野心会带来永恒的不满足。</p>
+<p>有个朋友的朋友，拥有私人飞机，却因为不能直飞太平洋，中途需要加油而感到不好意思。这不正是比较心理导致的永恒不满足吗？</p>
+<p>财富像海水，越喝越渴。贪婪的本质不是想要更多，而是永远无法满足。当我们将自己的幸福建立在不断攀比和超越的基础上，我们就踏上了一台永无止境的跑步机，不管跑得多快，都永远无法到达终点。</p>
+<p>健康的野心与贪婪的区别在于边界感。前者有明确的目标和合理的代价，后者则永无止境，最终反噬自己。</p>
+<p>说起来，贪婪最容易表现为三种形态：</p>
+<ol>
+<li><strong>忽视代价</strong>：只看到可能的收益，完全低估潜在的成本，比如不计后果地加杠杆、过度扩张企业规模。</li>
+<li><strong>短视决策</strong>：被近期利益驱动，牺牲长期回报，就像尼尔为了复仇放弃未来的自由。</li>
+<li><strong>陷入无止境的比较</strong>：贪婪往往是相对的——不是因为“拥有不够”，而是因为“别人拥有更多”，这让我们不断推高自己的目标，最终陷入无尽焦虑。</li>
+</ol>
+<p>真正可怕的不是想要更多，而是不知道“多少才是足够”。</p>
+<h2 id="三">三<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#三" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>《围棋十诀》的第一条，就是“不得贪胜”。</p>
+<p>这似乎有点儿奇怪了，下棋不就是为了胜利吗？为什么又说不要贪胜呢？</p>
+<p>其实，这里说的是，不要因为贪图局部的“小胜”，而失去了终局的“大胜”。换句话说，不要因为一时的得失，忘了真正的目标。</p>
+<p>围棋界的传奇人物李昌镐，就是这方面的典范。他最可怕的地方在于，一旦领先，基本就能稳稳拿下胜利，让对手很难翻盘。</p>
+<p>他的秘密是什么？并不是靠激进搏杀，而是宁可局部吃点亏，也要把存在不确定性的变数尽早化解，锁定胜局。这在围棋里被称为“缩小战线”，确保最终胜利，而不是纠结于赢多赢少。</p>
+<p>为什么这么做？因为围棋里对终局胜利的定义：比对手多半目即可。</p>
+<p>对李昌镐来说，赢对手二十目，和赢对手半目，都是赢。有时候为了锁定胜局，宁可少赢点儿。</p>
+<p>这方面的反例，可能是房地产行业了。作为曾经的从业者，见到那么多行业巨头齐刷刷地栽跟头，的确觉得挺不可思议的。但是，仔细想想看，当这个行业红火的时候，哪家公司想过，到底大胜的定义是什么？难道增长真的可以没有尽头吗？</p>
+<p>这不仅仅是企业的困境，也是我们每个人都会面对的决策陷阱。</p>
+<p>就像在投资市场中，很多人把“赢得更多”当成唯一目标，却没有设定一个明确的“收手点”。本可以稳稳获得年化10%的长期收益，但看到市场火爆，总觉得还能再赚更多，于是不断加码、加杠杆，最终在市场震荡时遭遇毁灭性打击。</p>
+<p>归根结底，**贪婪的问题不在于“想赢”，而在于没有清晰的胜利定义。**我们很少停下来问自己：我究竟想赢什么？赢到什么程度就够了？我要如何确保最终能赢，而不是在途中被反噬？</p>
+<p>战胜贪婪不是要我们放弃追求，而是要我们明确什么是真正值得追求的，以及如何以最稳健的方式达成目标。</p>
+<h2 id="四">四<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#四" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>我们通过以下两个场景来说明“合理的追求”与“代价”之间的关系。</p>
+<p>假如你要去一个地方，有两种选择，一个是坐高铁，一个是坐绿皮火车，你选哪一个？</p>
+<p>我想现在大家基本上都会选高铁吧，这算不算贪婪呢？当然不是。</p>
+<p>但是，这里要注意一些隐藏的细节：</p>
+<p>坐高铁更快，符合现代人的高效习惯。高铁车票也要贵不少，当我们选高铁的时候，是因为认可用多出的票价换来了时间。</p>
+<p>假如一个人认为自己根本不用赶时间，而且很想坐在绿皮火车上慢悠悠地看一下风景，其实也是理性的选择。</p>
+<p>这里谈不上谁对谁错。关键在于：你是否真正理解自己在做怎样的决策，是否清楚自己在追求什么？你能够承担多大代价？</p>
+<p>换个场景：假如你有两个理财机会，A方案预期回报是年化15%，B方案预期回报是年化5%，你会选哪一个？</p>
+<p>许多人会本能地选择回报更高的A方案，但这里存在一个致命的盲点——风险。</p>
+<p>A方案为何给出更高的收益？它的风险是否远超B方案？如果你没有深入分析就做决定，你很可能已经掉入了贪婪的陷阱。</p>
+<p>在投资、商业甚至人生的很多决策中，我们常常低估了风险，或者干脆选择忽略它。</p>
+<p>高回报往往伴随着高风险，而人的大脑天生倾向于高估潜在的收益、低估可能的损失。</p>
+<p>这就是为什么赌场总能让赌徒前赴后继，股市泡沫总能吸引散户争相涌入——因为贪婪会遮蔽我们的风险意识，让我们只看到眼前的诱惑，而忽略背后的不确定性。</p>
+<p>面对这种风险盲点，<strong>“零风险思维”框架提供了有效解决方案：</strong></p>
+<ol>
+<li><strong>明确你的最终目标</strong>：如果目标实现，你的理想状态是什么？比如，有人就是想过一种很简单的田园生活，回老家盖个院子，养花种菜读书写作。</li>
+<li><strong>寻找“零风险”路径</strong>：有没有一种方式，可以在几乎没有风险的情况下实现目标？比如，如果你的目标是为孩子攒够上大学的钱，那么最安全的做法可能是存定期，而不是投入一个高风险的投资项目。</li>
+<li><strong>衡量可接受的风险</strong>：如果“零风险”选项不可行，或者不能满足你的需求，那你愿意承担多少风险来换取更高的回报？例如，如果你有100万元投资资金，你愿意用多少比例去博取更高收益，而不至于影响自己的基本生活？</li>
+</ol>
+<p>这种思维的精髓是：**先确保底线，再谋求突破。**你看，是不是有点儿想前面说的“只赢半目”？</p>
+<p>我自己很早就选择了退休，是因为想明白了，我没啥大的生活上的追求，也没奢侈消费的欲望，所以够用就行。但过去这些年，我也犯了一些错误，例如用不小比例的资金参与了一些高风险项目。其实，做点儿稳健理财已经够我过上“只赢半目”的简单生活了，为了根本不必要的更高回报而去冒风险，本身就是一种贪婪驱动的非理性。后来，我及时纠错，也算是亡羊补牢了。</p>
+<h2 id="五">五<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#五" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>贪婪并不总是坏事。事实上，生命本身就是一种贪婪。在森林里，我们贪婪地呼吸着清新的空气；面对美食，我们贪婪地品味每一口的滋味；在亲情里，我们贪婪地渴望孩子永远可爱，父母长命百岁，身边重要的人永远陪伴。</p>
+<p>可生命是有限的。为了守护我们对那些最重要的事情的美好“贪恋”，必须要舍弃一些东西。</p>
+<p><strong>真正的决策，不是选择，而是取舍。取的同时，也必定有舍弃。</strong></p>
+<p>不顾风险地啥都想要，就是贪婪。</p>
+<p>理性的贪婪不是坏事，谁会嫌自己越变越好呢？</p>
+<p>糟糕的是那些因小失大的贪婪。有些人因为贪婪，想得更多的东西，却把现在所有的也失掉了。</p>
+<p>经过多年观察，我发现了一个简单却有力的原则：<strong>不占小便宜，是一种投入产出比极高的行为。</strong></p>
+<p>那些特别诱人的小便宜，特别诱人的高回报，往往都会引发贪念，最终让我们失去更重要的东西。</p>
+<p>贪婪并不总是坏事，但要控制它，而不是被它控制。你可以用这个简单的三步法：</p>
+<ol>
+<li><strong>追求“赢半目”</strong>——问问自己：“如果我现在停手，是否已经足够？”80%的人栽在“再多一点”，而真正的高手，知道何时该知足。</li>
+<li><strong>确定“核心不可失”</strong>——什么才是你真正不能失去的？健康、家庭、基本的财务安全？别为了额外的回报，去冒你无法承受的风险。</li>
+<li><strong>设定“足够好”标准</strong>——用绝对值而非相对值衡量成功，别让比较和嫉妒毁了你的幸福感。</li>
+</ol>
+<p>我们都是时间的过客，根本无法真正占有什么，更不能带走什么。既然如此，人生最美好的贪婪，也许就是和最重要的人在一起，平安快乐地度过这三万多天。</p>
+<p>以上就是这一讲的全部内容，我是老喻，我们下一讲再见。</p>
+<h2 id="划重点">划重点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#划重点" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li>贪婪本质上是一种偏好倒置现象——短期偏好压倒长期目标，部分价值凌驾整体价值。</li>
+<li>面对人性中的贪婪，“零风险思维”框架提供了有效解决方案：明确你的最终目标，寻找“零风险”路径，衡量可接受的风险。这种思维的精髓是：先确保底线，再谋求突破。</li>
+<li>真正的决策，不是选择，而是取舍。取的同时，也必定有舍弃。</li>
+</ol>
+<h2 id="精选留言">精选留言<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#精选留言" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="左星星上海">左星星（上海）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#左星星上海" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>所谓的“贪婪”其实是一种内心深处的力量，它并不总是可怕或邪恶，而是取决于我们如何与之共处。这种力量既推动我们不断向前追求，又可能让我们失去真正重要的东西。</p>
+<p>从进化的角度看，贪婪曾帮助我们的祖先在资源稀缺时得以存活，但在现代社会，这种本能反而会在许多情境中使我们犯错。比如，我们不再是为了果腹而囤积食物，却可能为了毫无意义的比较而无止境地追求财富与地位；我们并非为了维持血脉存续而攫取资源，却在消耗自己和家庭幸福的同时，依然执着于攀登所谓的“成功”高峰。</p>
+<p>贪婪常常伪装成某种合理的期待，问题不在于这些期待本身，而在于我们对“足够”的标准往往模糊不清。当我们无法设定明确的界限，就很容易陷入一种“得到更多”的循环。最终，我们可能会失去当初最想守住的东西，比如健康、家庭关系、内心的平静等。</p>
+<p>避免贪婪，并不是要让自己毫无追求，而是学会清晰地认识自己的目标。我们是否知道自己为什么而追求？生活的美好往往并非来自一味地获取，而是源于对“够了”的深刻理解。更重要的是，我们要学会珍惜已经拥有的，并对潜在的风险保持敏感。</p>
+<p>最后，我们可能发现，美好生活的关键不在于多，而在于能够安然面对“得不到”的部分。</p>
+<h3 id="美君上海">美君（上海）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#美君上海" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>武志红总结出人性三个维度，自恋维度，关系维度和体验维度。在线性坐标系中，Y轴是自恋维度，X轴是关系维度。</p>
+<p>自恋维度和关系维度是根本性的。假如没有自恋维度，我们什么都没有；但如果只有自恋维度，没有关系维度，问题也很大。</p>
+<p>自恋维度的特质是高低、强弱、对错。比如有的人只想成为第一名，就是因为第一名就意味着我们在比较之中占据了绝对的优势。</p>
+<p>贪婪的三种表现，忽视代价、短视决策和陷入无止境的比较，就像我们在“人性坐标系”上过于在意自恋维度，非要争高低、强弱、对错，但对于关系和体验，往往没那么在意。</p>
+<p>这造成的结果就是：轻视过程和体验，忽视链接和合作，过度重视排名和结果，容易冲动和受挫。</p>
+<p>喻老师给的三种做法：追求“赢半目”让我们不那么在意过程；“不失核心”让我们重拾关系的温情；设定“足够好”的标准让我们一边体验一边提醒自己幸福的感受，而不是一路横冲直撞。</p>
+<p>注：部分内容参考来源于武志红公开访谈。</p>
+<h3 id="白青四川">白青（四川）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#白青四川" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>80后财富传奇胡钰元在《财富觉醒》提到关于决策的多谋善断内容，在决策时，把握一个核心：“机会成本”。</p>
+<p>一切事项均可用“机会成本”取代算价值。根据你的目标，可算出一个大概估值，那就是你投入这件事的时间价值。而根据目标估算出时间的价值，就是做选择的机会成本，每一分钟都是算得出来的。</p>
+<p>如果你按照时间投向与机会成本来构建思维系统，那么大事小事无非就是大资源小资源的算而已。</p>
+<p>什么时候押重注呢？你在做决策时，有没有计算概率和“风险报”？牢记一条核心原则：损失可承受，收益很大，那就值得放手干。</p>
+<p>人生就是大大小小选择的叠加，而选择意味着投入资源以期获得更大收益。</p>
+<p>决策取舍时，不妨问问自己：</p>
+<ul>
+<li>你知道自己有什么吗？</li>
+<li>你知道自己想要什么吗？</li>
+<li>以弱谋强，你敢于押注吗？</li>
+</ul>
+<p>觉得迷茫时，这三个问题会给你指引。</p>
+<p>多谋，离不开对事物的充分认知以及长时间的思考训练。决断比多谋更重要，尤其要做到“善断”。决断意味着取舍。世间并无万全法，能取舍，就能破局。</p>
+<p>谋和断，两种不同的性格特质，如能共济，会助你走到人群的前列。</p>
+<h3 id="keiko璟山西">Keiko.璟（山西）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#keiko璟山西" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>贪婪是一种失控的原始欲望，它像一团无方向的火焰，燃烧得越旺，破坏力越大。而健康的野心则是一种升华的欲望，它像一艘有罗盘的船，虽然也追求远方，但始终知道自己的航向。</p>
+<p>决策的本质是取舍，而不是都要。贪婪者总是觉得“不够”，即使已经拥有很多，仍然渴望拥有更多，永远处于不满足状态，因而无止境的追求不断地“更多”，最终导致短视、冒险和更大的损失，成为欲望的奴隶。</p>
+<p>野心家也有欲望，但他们懂得如何控制和驾驭它，不让自己被欲望牵着走，因小失大，而是把欲望变成一种工具，一种推动自己向上的力量。</p>
+<p>贪婪者被欲望吞噬，野心家则把欲望变成了自己的燃料。我们需要的不是压抑欲望，恐惧贪婪，而是学会驾驭它，让欲望成为我们的翅膀，而不是枷锁。</p>
+<h3 id="礼之贤士广东">礼之贤士（广东）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#礼之贤士广东" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>大约十年前，我获得了投资美股的机会。彼时，美股行情一片大好，我所看好的某支股票涨幅迅猛。仅仅一两个月的时间，我的投资收益便超过了百分之百。对于从未在股市获利的我而言，这无疑是个巨大的惊喜。</p>
+<p>然而，惊喜之余，我却面临资金不足的困境，无法继续加仓。就在这时，我发现美股可以通过杠杆投资，且回报率颇为可观，这让我心动不已。我盘算着，若能在当前的好行情下继续投入，必将大赚一笔，如此良机实在不容错过。</p>
+<p>就在我准备付诸行动时，爱人及时劝阻了我。她坚决反对我使用杠杆，理由是杠杆投资犹如无底深渊，一旦行情逆转，便可能背负巨额债务，陷入万劫不复之地。</p>
+<p>我十分庆幸听从了爱人的建议，没有借助杠杆继续投资，因其后果或许比我预想的更为严重。那时的我，根本不清楚自己的底线何在，只一心想着赚钱，对盈利目标毫无概念。这意味着，在行情向好时，我或许能盈利，还会不断追加投资。而一旦行情急转直下，我必将茫然无措，届时可能已追悔莫及。</p>
+<p>对我们而言，不借贷投资，坚守底线思维，能避免因贪婪而踏上不归路。这对于我们的人生之旅，意义深远。</p>
+<h3 id="晓蒙山东">晓蒙（山东）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#晓蒙山东" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>贪婪的问题不在于“想赢”，而在于没有清晰的胜利定义。那么胜利的定义可如下：基于目前的内外部环境，运用自己掌握的有限资源，设定了可以达到的目标，且达成了这个目标，就是胜利。那么具体做法，需要合理评估内外部环境，理性客观地分析自己拥有的资源，设立不过低也不过高的目标，达成了，便拥有了胜利的体验。接着再下一个。一个接一个的胜利，促成生命的幸福和意义。达成过程中，需要注意核心是什么，足够好的标准是什么，以及培养“赢半目”的心态。</p>
+<h3 id="scott广东">Scott（广东）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#scott广东" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>人有过度自信的认知偏差，以致认为自己可以鱼与熊掌兼得；亦有着即时满足的天性，以致短期偏好压倒长期目标，部分价值凌驾整体价值。</p>
+<p>但人的时间与精力都非常有限，因此要想有所成就，必须克制不合理的贪婪，需要做减法，需要专注，需要聚焦。</p>
+<h3 id="鸿涛福建">鸿涛（福建）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#鸿涛福建" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>贪婪深植于我们的生存本能中，我们不可能根除，只能合理控制。首先是在核心不可失的原则下，用风险换取收益，盈亏都是概率和运气的结果，都认；然后是确保底线，“赢半目”即可，第一目标已达成；再后是谋求突破，设定第二目标，仍然是担风险，以结果、达成即可……关键是设立好每一轮的心理账户，每次都有明确的目标，而不是与别人比，而且在规定回合内诚实面对输赢，不因输不起而恋战。</p>
+<h3 id="陈克彪安徽">陈克彪（安徽）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#陈克彪安徽" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>贪婪让我们陷入当下“局部最优”的短视思维，导致全局的“失衡”，从而丢掉整个未来。</p>
+<ol>
+<li>把目标设定在自己的能力边界内，不让贪婪的思维，把自己拖于无止境消耗的泥潭。</li>
+<li>“零风险”路径，《三体》刘慈欣，一边工作有稳定收入，一边空余时间写作，最终取得了写作上的巨大成功。</li>
+<li>不能押上口袋中的所有筹码，用不伤筋动骨的筹码，在可控风险内去试错。</li>
+</ol>
+<h3 id="李察酒吉林">李察酒（吉林）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#李察酒吉林" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>用纪律来约束贪婪，就比如理财中，我会用孟岩所说的四笔钱管理财富，为的就是先保证自己的现金流，再去追求超额收益，并且知道那些钱用于风险投资，利益和风险自己都能够承受的了。</p>
+<p>在实现目标的过程中，要既要设定好目标的标准，也要设定反目标，就是你守不到目标，也不能付出这个代价，为的就是当自己掉入贪婪的边缘时，拉自己一把。</p>
+<h3 id="你当像风往你的山江苏">你当像风往你的山（江苏）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#你当像风往你的山江苏" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>贪婪是永远无法满足。健康的野心有边界感。贪婪因为“别人拥有更多不知道”多少才是足够。</p>
+<p>简单有力的原则：“不占小便宜”是一种投入产出比极高的行为。80%的人栽在“再多一点”上，确定“核心不可失”、设定“足够好”绝对值标准。</p>
+<h3 id="幸福小松树陕西">幸福小松树（陕西）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#幸福小松树陕西" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>贪婪最可怕之处在于它往往不以贪婪的面目出现，而是伪装成“合理的期望”或“应得的机会”。贪嗔痴，人性三毒！贪婪本质上是一种偏好倒置现象——短期偏好压倒长期目标，部分价值凌驾整体价值。贪婪的关键不在于“想要”，而在于代价与平衡的丧失。贪婪指向的核心：因小失大，因眼前失长远，因局部失整体。</p>
+<p>需要明确的边界和最终目标，清楚风险。真正的决策，不是选择，而是取舍。取的同时，也必定有舍弃。三步法控制：追求“赢半目”，确定“核心不可失”，设定“足够好”标准。</p>
+<h3 id="闻思修广东">闻思修（广东）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#闻思修广东" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>贪婪是人的本性，潜能。在原始进化生存中，获得越多保留越多，生存的概率越大。人类的基因中就有一个基因专门指向贪婪。体现在生理上就是我们常说的多巴胺。它不是让我们获得快乐，而是想要更多的冲动。</p>
+<p>贪婪在思维层面诱因就是：没有思考应该在何时何地停止。也就是“enough”。具体表现在：缺少认知，没有想过应该在什么时候停止；还有：认知遮蔽，聚焦于巨大的目标，但是忽略了达成目标所需要付出的代价。第三是：认知不足导致短期透支，最后丧失了长期目标动力。</p>
+<p>这时候就自然会说到目标。设立目标是试一次人性的拷问，在行动中也还有悖论：到底什么时候应该贪婪，什么时候应该节制？</p>
+<ol>
+<li>一个成功的目标：其实有正反两面描述：正面：目的+目标。反面：约束条件。从目的出发做选择，而不是目标。约束条件是原则，是可承受的付出和最大损失。</li>
+<li>如果在目标清晰的情况下，并且长远目标已经被分解成为几个阶段性目标的情况下：这个工作可以为下一个阶段目标达成积累更多的冗余，可以贪婪。</li>
+<li>当遇到冲突时优先级排序：原则红线>最大可接受损失数学期望>核心目的>积累下一阶段冗余的贪婪>当前应该完成的目标。</li>
+</ol>
+<p>摸草顺便打兔子，要不要。不违反原则，不需要额外付出成本和风险，不影响核心目的达成，为下一阶段目的达成积累冗余，即便影响当前目标达成，贪婪一把也不妨。</p>
+<h3 id="shaper-杨湖南">Shaper 杨（湖南）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#shaper-杨湖南" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>别因为赢了每场战役，最后却输掉了整场战争。我认为，贪婪很多时候是人下意识的不理性，没有去反思自己真正需要什么，又真正可以拥有什么。家财万贯，一日不过三餐，广厦万间，夜眠仅需七尺。普通并不代表平庸，在这个世界里，明白自己只是一个普通人，降低期待，对于日常所得也许我们便会更加心存感激，日子也会更加平静而祥和。</p>
+<h3 id="炎帝北京">炎帝（北京）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#炎帝北京" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>贪婪——是刻在基因里的生存策略。</p>
+<p>智人永远不知道下一顿猎物何时出现，于是发展出“多巴胺—储存”的正反馈机制：囤积资源触发愉悦感，焦虑驱动持续获取。这种机制让人类走出草原，却在现代社会异化为“永不知足”的程序漏洞。</p>
+<p>当进入算法时代时，我们在超市打折时抢购根本用不完的洗衣液，在股市高位追涨早已泡沫化的股票，在职业发展中选择“我多多少离家近”的虚幻选项。决策科学揭示，这种“既要又要”的贪婪本质是大脑边缘系统劫持了前额叶皮层——杏仁核仍在执行十万年前的生存算法，而理性中枢已身处物质过剩的现代社会。</p>
+<p>我们正在集体陷入“道德贪婪”的陷阱：创业者以“改变世界”为名透支健康（实则恐惧阶层滑落）；家长以“为孩子负责”为由报满补习班（实则是自身成就焦虑的投射）；打工人用“追求完美”解释无休止加班（实则是丧失价值锚点的恐慌）。</p>
+<p>这些被文明包装过的贪欲，比赤裸裸的金钱欲望更具破坏性。它们像计算机病毒般修改决策系统的优先级，让“真正重要之事”永远排在待办清单末尾。</p>
+<p>邻居新买的特斯拉，同事孩子的名校offer，朋友圈的马尔代夫旅行……比较心理揭示，人类通过相对位置而非绝对价值感知幸福。这种“比上不足”的贪婪，驱使中产家庭将50%收入投入军备竞赛般的教育投资，却培养出抑郁的“鸡娃”。</p>
+<p>人们对损失的痛苦感是获得快乐的两倍。这种心理让股民在亏损时不断加仓，创业者对失败项目持续输血——贪婪在此披上“坚持”的外衣，实则是恐惧止损的遮羞布。</p>
+<p>那么如何解决贪婪呢？可以构建三重防御体系：</p>
+<ol>
+<li>空间隔离法：像对冲基金设置“冷静舱”——重大决策前强制物理隔离手机与社交网络（减少多巴胺干扰）。</li>
+<li>时间贴现术：用“十年后视角”审视当前选择，将“立即满足”转换为“延迟价值”（抑制边缘系统劫持）。</li>
+<li>价值锚定桩：建立不可交易的“人生基准线”，例如“健康权>薪资”“亲子时间>加班费”（防止目标漂移）。</li>
+</ol>
+<p>当我们意识到贪婪是预装在大脑里的过时软件，就能通过认知升级重写决策代码——这不是对欲望的阉割，而是对人性可能性的重新编程。</p>
+<p>在这个物质与信息双重过剩的时代，学会与贪婪共生或许是人类的新进化课题——我们既要感谢它推动文明跨越生存阈值，又要时刻提防它把灵魂囚禁在欲望的牢笼。毕竟，生而为人最珍贵的决策，是选择不被贪婪定义的人生。</p>
+<h3 id="菊本小百合广东">菊本小百合（广东）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#菊本小百合广东" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>对于我自己来说，确实最难克服的就是贪婪。</p>
+<p>比如最近我又玩了一下线上的德州扑克的游戏，我发现在自由模式和比赛模式中的表现差太远。</p>
+<p>在比赛模式中，因为只要进去年名前n名（就是陆续被淘汰，就是倒数第n个被淘汰就是第n名），就等于进入了奖金圈，然后开始有收益。我就有明确的目标，反正哪怕最后仅剩10个筹码，但是我苟活到前n名都算赢了。这种情况下，我很能忍，只要不是必胜的牌型，我都不all in。最终胜率高达40%以上（最低的比赛也有6人，大型比赛70人左右），意味着在这场比赛下，我能拿到奖金的概率接近一半。</p>
+<p>但是反过来，在自由模式下，我因为失去了目标，贪婪的欲望无限膨胀，我即使有时候好运气赢了，也会因为继续玩，碰上了更厉害的人或者一些冤家牌而一下子把盈利全亏光了。</p>
+<p>所以现在我只玩比赛了，自由模式基本不碰，这也是一种反思与决策。我觉得自己比其他人有那么一点优势就是，善于对自我分析与改善。</p>
+<h3 id="水门江苏">水门（江苏）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#水门江苏" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>无论是佛教的“贪嗔痴”，还是天主教的“七宗原罪”，都有着对贪婪的警醒，但人们还是在贪婪中乐不思蜀。这一点，我深有感触，我刚开始创业的时候，还算顺利，但我很快就不满足自己做的项目，一心想要做大，在自己做的项目还不是很稳定的时候，就找着新的项目。</p>
+<p>结果不仅老项目做的一塌糊涂，新的项目也亏的血本无归。</p>
+<p>我就像哀家之犬一样独自舔着伤口，后来我仔细反思，知道自己是过于贪婪了。</p>
+<p>自己明明是第一次创业，祖辈也没有创业的经历，就奢望一鸣惊人，真是太自大了。</p>
+<p>贪婪最大的问题是很多时候自己感觉不到，还以为这是合理的追求，实际上这远远超过了自己的能力，人总是很容易高估自己。</p>
+<p>对我来说，解决贪婪最好的办法是脚踏实地，日滚半尺，不断的打磨自己的基础，认真做好各个基础工作，提升自己的基本能力，让自己能够持续像好的方向发展。</p>
+<p>不贪多，不冒进，进一步有进一步的欢喜，退一步有退一步的收获，持续做大概率能赢的事情。</p>
+<h3 id="王惠玲广东">王惠玲（广东）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#王惠玲广东" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>自从副业做了职业咨询，我慢慢领悟“贪婪的关键不在于‘想要’，而在于代价与平衡的丧失”的意思，看看月入6位数的知识付费者（不知道是否真的月入6位数）每天工作超过12小时，非常清楚这种工作强度和生活不是我最想要的，我最想就是当下生活状态：正常工作8小时，双休，生活有保障，业余时间陪伴家人朋友、看看书、做个运动、做些公益，最担心是退休后生活没保障，为此，现在这样做：</p>
+<ol>
+<li>目标：退休后生活有工作和保障，每年淡季能出去旅游。</li>
+<li>“零风险”路径：买适量保险，多做储蓄。</li>
+<li>可接受的风险：适当定投基金，业余时间多做跟咨询有关的事情。</li>
+</ol>
+<p>我按照“先确保底线，再谋求突破”原则，多做储蓄和保险，适当做基金定投和自我增值，力保身心健康、家庭和睦。</p>
+<h3 id="元气小土广东">元气小土（广东）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#元气小土广东" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>想要赢每一场战役，最后输掉了整个战争。这个“贪”，就好像之前的每天忙忙碌碌，什么都想要，什么都抓不住！</p>
+<p>我们以为，想要得很多，就想什么都能做到。其实是没有评估的结果，甚至不知道选择之后的代价。假如有两个诱惑，没有说明任何条件，光看诱惑本身，让人觉得肯定要选那个更好的，“我又不傻”。不，得多想想隐藏了什么，才“不傻”。</p>
+<h3 id="山峰江西">山峰（江西）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#山峰江西" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>贪婪本质上不仅是一种偏好倒置的现象——短期偏好压倒长期目标，部分价值凌驾整体价值，还是一种德不配位的妄念——最少努力获得最大回报，对欲望的无止境追求。</p>
+<p>想要克制人性中的贪婪，需要认识自己，不断收敛，少就是多，学会做减法，学会放弃。</p>
+<p>世人贪婪，总想寻找两全，但这世间难有什么两全之策。人生百年，不过是教人如何取舍。</p>
+<h3 id="董耀北京">董耀（北京）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#董耀北京" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>当我们追求的不是幸福，而是比别人更幸福时，幸福就离我们远去了。</p>
+<h3 id="林同学的思考广东">林同学的思考（广东）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#林同学的思考广东" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>将“零风险思维”框架应用于基金投资，有助于我们在追求收益的同时有效管理风险，提高实现投资目标的可能性。</p>
+<ol>
+<li>明确最终目标，避免盲目追求高收益</li>
+</ol>
+<p>首先需要明确投资基金的具体目标：是为了长期财富增值、为退休做储蓄、子女教育基金，还是寻求短期收益？明确目标是制定合适投资策略的基础。</p>
+<ol start="2">
+<li>寻找接近“零风险”的路径，确保资金安全</li>
+</ol>
+<p>虽然完全“零风险”的投资几乎不存在，但通过选择低风险产品可以尽量接近这一理想状态。如果保本是首要目标，货币基金或债券基金是较好的选择，这类基金风险较低且收益相对稳定；然而需要注意的是，它们可能无法超越GDP增长，甚至可能跑输大盘，这也是一种潜在的风险。</p>
+<ol start="3">
+<li>衡量可接受的风险水平，追求更高收益</li>
+</ol>
+<p>若低风险选项不能满足收益期望，就需要评估自己愿意承担的风险程度。对于偏好中低风险的投资者来说，债券基金或混合基金是不错的选择，它们提供了回撤较小的稳定收益。而针对那些追求长期稳健增值的投资者，指数基金（如沪深300指数基金）是一个不错的选择，这类基金通过跟踪市场指数分散风险，尽管期间可能会遇到较大的回撤（例如20%），但同时也有较高的增长预期。</p>
+<ol start="4">
+<li>动态调整投资策略，坚守风险底线</li>
+</ol>
+<p>定期（如每季度或每年）审视投资组合，确保其与个人的风险承受能力和目标保持一致。当某类资产比例过高时，应及时调整恢复原设定的比例，以控制风险。</p>
+<p>贪婪往往源于无知和恐惧，认识自己的能力边界，并持续学习，能够帮助我们更加接近投资目标，在整个投资过程中保持理性与从容。</p>
+<h3 id="王勇先甘肃">王勇先（甘肃）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#王勇先甘肃" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>贪婪是对一类情绪的失控与纵容下，而导致对价值与平衡的丧失。</p>
+<p>贪婪的本质是永远无法满足，永远没有终点。“零风险思维”的框架，以终为始，清晰且锁住自己的期望上限，过程中抵制诱惑产生的贪婪风险，先确保底线，再谋突破，取舍有道。</p>
+<p>自己在创业过程中，因一时的贪婪数几年的痛苦还债，如今想起，依然犹如昨日刻骨在心，可能多数创业者都会在贪婪上踩过坑吧，如今听老师这一讲，对贪婪的概念有了更为深刻的理解和解读能力。</p>
+<h3 id="得到学生福建">得到学生（福建）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#得到学生福建" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>股市中的贪婪常以“合理”的外衣示人，但其本质是对风险的忽视和对人性弱点的妥协。</p>
+<h3 id="王茂荣云南">王茂荣（云南）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#王茂荣云南" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>关于“贪婪”对决策影响的讲解要点：</p>
+<p>一、贪婪的本质</p>
+<ul>
+<li><strong>心理模式</strong>：贪婪是一种根深蒂固的心理模式，表现为总想拥有更多，无论是物质财富、情感满足还是生活选项。它常伪装成“合理的期望”“应得的机会”或“对他人的责任与承诺”，让人放松警惕。</li>
+<li><strong>进化与现代决策的冲突</strong>：从进化角度看，对更多资源的渴望曾是生存优势，但在现代决策科学中，贪婪是一种偏好倒置现象，即短期偏好压倒长期目标，部分价值凌驾整体价值，成为决策的绊脚石。</li>
+</ul>
+<p>二、贪婪的表现形式</p>
+<ul>
+<li><strong>忽视代价</strong>：只看到可能的收益，完全低估潜在的成本，如不计后果地加杠杆、过度扩张企业规模。</li>
+<li><strong>短视决策</strong>：被近期利益驱动，牺牲长期回报，比如投资者因贪图更高收益而不断切换投资标的，错过长期复利。</li>
+<li><strong>陷入无止境的比较</strong>：贪婪往往是相对的，不是因为“拥有不够”，而是因为“别人拥有更多”，这让人不断推高目标，陷入无尽焦虑。</li>
+</ul>
+<p>三、贪婪对决策的影响</p>
+<ul>
+<li><strong>扭曲目标设定</strong>：“拿第一”看似雄心壮志，实则是危险的陷阱，因为这种基于比较的野心会带来永恒的不满足。</li>
+<li><strong>导致因小失大</strong>：贪婪让我们陷入近期收益的陷阱，牺牲长远利益，比如电影《盗火线》中尼尔为了复仇放弃未来的自由。</li>
+<li><strong>遮蔽风险意识</strong>：高回报往往伴随着高风险，而人的大脑天生倾向于高估潜在的收益、低估可能的损失，导致人们在决策时容易低估风险，忽略不确定性。</li>
+</ul>
+<p>四、如何应对贪婪</p>
+<ul>
+<li><strong>明确胜利定义</strong>：战胜贪婪不是放弃追求，而是明确什么是真正值得追求的，以及如何以最稳健的方式达成目标。比如投资市场中，要设定一个明确的“收手点”，而不是盲目追求更高收益。</li>
+<li><strong>“零风险思维”框架</strong>：
+<ul>
+<li><strong>明确最终目标</strong>：思考目标实现后的理想状态，如想过简单田园生活或为孩子攒够上大学的钱。</li>
+<li><strong>寻找“零风险”路径</strong>：在几乎没有风险的情况下实现目标，如存定期而不是投入高风险项目。</li>
+<li><strong>衡量可接受风险</strong>：如果“零风险”选项不可行或不能满足需求，确定愿意承担多少风险来换取更高回报。</li>
+</ul>
+</li>
+<li><strong>控制贪婪的三步法</strong>：
+<ul>
+<li><strong>追求“赢半目”</strong>：问问自己“如果现在停手，是否已经足够”，避免因“再多一点”而栽跟头。</li>
+<li><strong>确定“核心不可失”</strong>：明确什么是自己真正不能失去的，守住底线。</li>
+<li><strong>设定“足够好”标准</strong>：用绝对值而非相对值衡量成功，不被比较和嫉妒毁掉幸福感。</li>
+</ul>
+</li>
+</ul>
+<p>五、贪婪的积极面</p>
+<ul>
+<li><strong>生命中的美好“贪婪”</strong>：在森林里贪婪地呼吸空气、品味美食、渴望家人陪伴等，是对美好事物的追求，但生命有限，需要舍弃一些东西来守护这些美好。</li>
+<li><strong>理性贪婪的价值</strong>：理性的贪婪不是坏事，关键是要控制它，而不是被它控制。</li>
+</ul>
+<h3 id="阿繁达1043福建">阿繁达1043（福建）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阿繁达1043福建" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>世间大部分事情都遵循二八法则，即投入百分之二十的努力就可以收获百分之八十的回报。再想获得剩下百分之二十的回报，需要投入远超过百分之八十的努力和成本。可大多数在人性的贪婪驱使之下算不明白这笔账，把自己累得筋疲力竭。李嘉诚早就劝诫世人，不要试图赚到那最后一个铜板。影视剧里的侠客一旦决定铤而走险干完最后一票就金盆洗手，那这个人就必死无疑。</p>
+<p>万老师前两天在课程里介绍的“反目标”可以防止我们落入过度贪婪的陷阱。反目标是你在实现目标的过程中，绝对不希望发生的事情——你宁可达不到目标，也不能付出这个代价。</p>
+<p>世间最稀缺的一定是时间、自由和爱，它们才是你人生的基本盘。过于追逐在外的标准都是舍本逐末，大概率会被人割韭菜。世间最宝贵的阳光、空气和水，也便宜到几乎免费。你尽可以贪婪地去享受它们。</p>
+<h3 id="墨子坤湖北">墨子坤（湖北）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#墨子坤湖北" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>人在初期一定要破釜沉舟，用尽精力与魄力。人在中期一定要如履薄冰，谨小慎微，以免意气用事。人在后期需要功成身退，而不是被欲望无限的牵制走，避免一夜回到解放前。</p>
+<p>贪婪作为人的七宗罪之一，有好的一面，那就是一种能量，你能善用它就是动力，不能善用那是灾难。不管如何，你必须守住基本面，不能次次都梭哈，不要盲目自信，很多时候免费就是最贵的，便宜就是陷阱，你需要一颗识别心，更要有决策力。还有原则性，最好不杠杆，难道你的收益比巴菲特还多？避免一夜暴富一夜成名，超额的回报。</p>
+<p>决策就是为了我们感性的同时有一丝理性，能不被小我大脑所左右，此课精髓就是能在关键结点让你做出准确合理的判断从而少些遗憾多些回忆。</p>
+<p>人生最美好的贪婪，就是和最重要的人平安快乐的渡过这三万天，这句话真好。</p>
+<h3 id="ff马来西亚">FF（马来西亚）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#ff马来西亚" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>我们的问题不是“想要更多”，而是“不知道多少才够”。先立底线再利用贪婪，达到目标后再就离开。没有所有东西值得追求，我们只是时间的过客，因为人生是一场有限游戏，终点前我们必须想办法享受成果，而不是继续用有限的生命去追求无限的欲望。停下来，看看自己手上的成果，其实已经在这一生够用了。</p>
+<p>人生最悲哀的事，是到头来发现，拼尽全力换来的财富，没时间、没健康去享受。我们只是时间的过客，最终一切都会归零。</p>
+<h3 id="李坚四川">李坚（四川）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#李坚四川" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>“贪婪”的本质就是缺乏明确的目标，有时候即使是有明确目标，也会因为想再多一点而被“贪婪”所误导。</p>
+<p>个人认为人生的如果能理解并找到“舍得有度”的平衡点，才是真赢家。</p>
+<h3 id="刘伯伟北京">刘伯伟（北京）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#刘伯伟北京" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>贪婪的问题不在于“想赢”，而在于没有清晰的胜利定义。</p>
+<p>翻译一下，其实就是没有想明白清晰且可行的远期目标，也就是没找到“初心”。进而也就没办法把远期目标分解关联到每一天的一个个具体决策点，形成一直指向远期目标的连续正向反馈。</p>
+<p>也就只剩跟着本能走这一条路径，而这条路径没有“靶心”，只有随机的噪声偏差。</p>
+<p>以上留言由作者筛选显示。</p>
+<hr/>
+<p><a href="../../book/decision-algorithm/076/" class="internal internal-link alias" data-slug="book/decision-algorithm/076/index">← 076｜自由意志：你真的是由自己做出选择吗？</a> · <a href="../../book/decision-algorithm/" class="internal internal-link alias" data-slug="book/decision-algorithm/index">返回《决策算法100讲》目录</a> · <a href="../../book/decision-algorithm/078/" class="internal internal-link alias" data-slug="book/decision-algorithm/078/index">078｜决策之“嗔”：如何成为一个内核稳定的人？ →</a></p>
+<hr/>
+<p><a href="../../books/decision-algorithm/" class="internal internal-link alias" data-slug="books/decision-algorithm/index">《决策算法100讲》目录</a> · <a href="../../books/" class="internal internal-link alias" data-slug="books/index">全部图书笔记</a></p></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>关系图谱</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc"><button type="button" class="toc-header" aria-controls="toc-76" aria-expanded="true"><h3>目录</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#老喻亲述" data-for="老喻亲述">老喻亲述</a></li><li class="depth-0"><a href="#二" data-for="二">二</a></li><li class="depth-0"><a href="#三" data-for="三">三</a></li><li class="depth-0"><a href="#四" data-for="四">四</a></li><li class="depth-0"><a href="#五" data-for="五">五</a></li><li class="depth-0"><a href="#划重点" data-for="划重点">划重点</a></li><li class="depth-0"><a href="#精选留言" data-for="精选留言">精选留言</a></li><li class="depth-1"><a href="#左星星上海" data-for="左星星上海">左星星（上海）</a></li><li class="depth-1"><a href="#美君上海" data-for="美君上海">美君（上海）</a></li><li class="depth-1"><a href="#白青四川" data-for="白青四川">白青（四川）</a></li><li class="depth-1"><a href="#keiko璟山西" data-for="keiko璟山西">Keiko.璟（山西）</a></li><li class="depth-1"><a href="#礼之贤士广东" data-for="礼之贤士广东">礼之贤士（广东）</a></li><li class="depth-1"><a href="#晓蒙山东" data-for="晓蒙山东">晓蒙（山东）</a></li><li class="depth-1"><a href="#scott广东" data-for="scott广东">Scott（广东）</a></li><li class="depth-1"><a href="#鸿涛福建" data-for="鸿涛福建">鸿涛（福建）</a></li><li class="depth-1"><a href="#陈克彪安徽" data-for="陈克彪安徽">陈克彪（安徽）</a></li><li class="depth-1"><a href="#李察酒吉林" data-for="李察酒吉林">李察酒（吉林）</a></li><li class="depth-1"><a href="#你当像风往你的山江苏" data-for="你当像风往你的山江苏">你当像风往你的山（江苏）</a></li><li class="depth-1"><a href="#幸福小松树陕西" data-for="幸福小松树陕西">幸福小松树（陕西）</a></li><li class="depth-1"><a href="#闻思修广东" data-for="闻思修广东">闻思修（广东）</a></li><li class="depth-1"><a href="#shaper-杨湖南" data-for="shaper-杨湖南">Shaper 杨（湖南）</a></li><li class="depth-1"><a href="#炎帝北京" data-for="炎帝北京">炎帝（北京）</a></li><li class="depth-1"><a href="#菊本小百合广东" data-for="菊本小百合广东">菊本小百合（广东）</a></li><li class="depth-1"><a href="#水门江苏" data-for="水门江苏">水门（江苏）</a></li><li class="depth-1"><a href="#王惠玲广东" data-for="王惠玲广东">王惠玲（广东）</a></li><li class="depth-1"><a href="#元气小土广东" data-for="元气小土广东">元气小土（广东）</a></li><li class="depth-1"><a href="#山峰江西" data-for="山峰江西">山峰（江西）</a></li><li class="depth-1"><a href="#董耀北京" data-for="董耀北京">董耀（北京）</a></li><li class="depth-1"><a href="#林同学的思考广东" data-for="林同学的思考广东">林同学的思考（广东）</a></li><li class="depth-1"><a href="#王勇先甘肃" data-for="王勇先甘肃">王勇先（甘肃）</a></li><li class="depth-1"><a href="#得到学生福建" data-for="得到学生福建">得到学生（福建）</a></li><li class="depth-1"><a href="#王茂荣云南" data-for="王茂荣云南">王茂荣（云南）</a></li><li class="depth-1"><a href="#阿繁达1043福建" data-for="阿繁达1043福建">阿繁达1043（福建）</a></li><li class="depth-1"><a href="#墨子坤湖北" data-for="墨子坤湖北">墨子坤（湖北）</a></li><li class="depth-1"><a href="#ff马来西亚" data-for="ff马来西亚">FF（马来西亚）</a></li><li class="depth-1"><a href="#李坚四川" data-for="李坚四川">李坚（四川）</a></li><li class="depth-1"><a href="#刘伯伟北京" data-for="刘伯伟北京">刘伯伟（北京）</a></li><li class="overflow-end"></li></ul></div><div class="backlinks"><h3>反向链接</h3><ul id="list-0" class="overflow"><li><a href="../../books/decision-algorithm/" class="internal">决策算法100讲</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://morewhyhan.github.io/">返回虚船向远</a></li><li><a href="https://github.com/morewhyhan/">GitHub</a></li></ul></footer></div></div></body><script src="../../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../postscript-9114441b.js" type="module" data-persist="true"></script></html>

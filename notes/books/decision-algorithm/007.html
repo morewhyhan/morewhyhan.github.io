@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr"><head><title>007｜四维：为什么决策高手都是贝叶斯主义者？ · 虚船向远</title><meta charset="utf-8"/><link rel="preload" href="../../index-dd6f8a77.css" as="style"/><link rel="preload" href="../../prescript-2bfc6315.js" as="script"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="虚船向远"/><meta property="og:title" content="007｜四维：为什么决策高手都是贝叶斯主义者？ · 虚船向远"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="007｜四维：为什么决策高手都是贝叶斯主义者？ · 虚船向远"/><meta name="twitter:description" content="《老喻·决策算法100讲》007：四维：为什么决策高手都是贝叶斯主义者？"/><meta property="og:description" content="《老喻·决策算法100讲》007：四维：为什么决策高手都是贝叶斯主义者？"/><meta property="og:image:alt" content="《老喻·决策算法100讲》007：四维：为什么决策高手都是贝叶斯主义者？"/><meta property="twitter:domain" content="morewhyhan.github.io/notes"/><meta property="og:url" content="https://morewhyhan.github.io/notes/books/decision-algorithm/007"/><meta property="twitter:url" content="https://morewhyhan.github.io/notes/books/decision-algorithm/007"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="《老喻·决策算法100讲》007：四维：为什么决策高手都是贝叶斯主义者？"/><meta name="generator" content="Quartz"/><link href="../../index-dd6f8a77.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-34bdfded.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-11d41004.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-26a99b87.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-9857b007.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-d3a1a224.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../prescript-2bfc6315.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://morewhyhan.github.io/notes/books/decision-algorithm/007-og-image.webp"/><meta property="og:image:url" content="https://morewhyhan.github.io/notes/books/decision-algorithm/007-og-image.webp"/><meta name="twitter:image" content="https://morewhyhan.github.io/notes/books/decision-algorithm/007-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="books/decision-algorithm/007" data-basepath="/notes"><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../..">虚船向远</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="搜索" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>搜索</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="搜索内容..." placeholder="搜索内容..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="暗色模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="阅读模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="阅读模式"><title>阅读模式</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\n        numeric: true,\n        sensitivity: \&quot;base\&quot;\n      });\n    }\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\n      return 1;\n    }\n    return -1;\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\n    return node;\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-17" aria-label="探索"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-17" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../books/">图书笔记</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../books/decision-algorithm/">决策算法100讲</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>007｜四维：为什么决策高手都是贝叶斯主义者？</a></div></nav><h1 class="article-title">007｜四维：为什么决策高手都是贝叶斯主义者？</h1><p show-comma="true" class="content-meta"><time datetime="2026-08-27T16:00:00.000Z">2026年8月28日</time><span>34分钟阅读</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>来源：老喻·决策算法100讲</p>
+<p>音频时长：13分41秒</p>
+</blockquote>
+<h2 id="老喻亲述">老喻亲述<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#老喻亲述" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>你好。</p>
+<p>我是老喻，欢迎回到《决策算法》课。</p>
+<p>前面两讲，我们讲了怎样计算期望收益，以及怎样用凯利公式计算最佳的下注比例。</p>
+<p>这一讲，我们来讲如何运用贝叶斯定理，成为决策高手。</p>
+<h2 id="一">一<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#一" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>贝叶斯定理，你未必熟悉，但其实你无时无刻不在运用。</p>
+<p>有一天晚上，我走到家里前院的葡萄架下，听见上方有动物的声音，心想：是不是老鼠或者松鼠在偷吃成熟的葡萄？</p>
+<p>于是，我拿了根棍子，敲打了几下，想要赶走。但没有听见它们离开。</p>
+<p>这时，我家的金毛冲了过来，对着葡萄架的上方猛吼，还想要爬上去。</p>
+<p>我意识到，要是老鼠和松鼠，早就吓走了。肯定是别的什么动物。</p>
+<p>“会不会是浣熊？”我推测到。前阵子在附近也见到过浣熊，这种动物，既会攀爬，胆子又大。</p>
+<p>这时候，一条大大的花尾巴从葡萄架上垂下来，果然是一只【原图此处动物名称需放大复核】。</p>
+<p>你看，这样一个过程，由果及因，用证据来调整判断，就是典型的贝叶斯推理。</p>
+<p>《园丁与木匠》的作者高普尼克认为，婴儿天生就会贝叶斯推理：</p>
+<blockquote>
+<p>先对一个事情的发生有某种预先的猜测，然后基于新的信息来修正这个猜测的概率，以获得对于这件事情的原因更加正确的认识。</p>
+</blockquote>
+<p>贝叶斯定理与人类大脑的推理过程非常相似，所以被称为接近人类感觉的统计学。</p>
+<p>我们在《决策算法》开篇时提到，决策并非是因果分明的，选择背后，对应的是结果的可能性，也就是概率，而不是确定性的结果。</p>
+<p>于是，我们接着谈到《决策算法》的框架，涉及到胜率、赔率、期望值、凯利公式。</p>
+<p>但这里面最大的挑战是：现实世界又不是简单的掷硬币游戏，对于那些未知事物，你怎么知道概率是多少？</p>
+<p>贝叶斯的哲学，是概率是你对某件事的信念。</p>
+<p>想象一下，你在街头看见一个人在摆摊儿玩儿抛硬币的游戏，有不少人围观。你观察了一下，那个人连续抛出了5次硬币正面朝上，请问下一次再朝上的概率是多少？</p>
+<p>按照传统的频率派概率思维，你一定会说：当然还是50%，因为每一次硬币的抛出都是独立的，和前面的5次无关。</p>
+<p>但是，如果是一个贝叶斯主义者，则会思考：这个摆摊儿的人是否作弊了？</p>
+<p>没错，一个标准的硬币，抛出正面的概率是50%。但是，在街头这个不确定性的环境下，考虑到摆摊者的动机，极有可能这个硬币被动了手脚。</p>
+<p>我们做决策时，面对的信息总是不完备的，未来总是不确定的，我们不可能通过事先的精密计算，预判结果，做出不会出错的决策。</p>
+<p>我们只能先形成某种信念，然后不断实践和反馈，来更新我们的信念。</p>
+<p>贝叶斯定理的工作原理，可以归纳为：</p>
+<blockquote>
+<p>过去的经验 + 新的证据 = 得到修正后的判断。</p>
+</blockquote>
+<p>诺奖得主【原图此处人名需放大复核】说：“如今的失败是为了将来的成功，每失败一次，就离成功更进一步。”</p>
+<p>但是，为什么对于大多数人而言，失败并不是成功之母呢？</p>
+<p>那是因为，你需要一个决策框架，将每一次探索，不管是成功还是失败，都转换为你的系统优势。</p>
+<p>贝叶斯定理，就可以为我们提供一套这样的决策系统。</p>
+<h2 id="二">二<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#二" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>贝叶斯公式：</p>
+<p><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mopen">(</span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∣</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.53em;vertical-align:-0.52em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.01em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.1389em;">P</span><span class="mopen mtight">(</span><span class="mord mathnormal mtight" style="margin-right:0.0502em;">B</span><span class="mclose mtight">)</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.485em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.1389em;">P</span><span class="mopen mtight">(</span><span class="mord mathnormal mtight">A</span><span class="mclose mtight">)</span><span class="mord mathnormal mtight" style="margin-right:0.1389em;">P</span><span class="mopen mtight">(</span><span class="mord mathnormal mtight" style="margin-right:0.0502em;">B</span><span class="mrel mtight">∣</span><span class="mord mathnormal mtight">A</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.52em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></p>
+<p>其中：</p>
+<ul>
+<li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mopen">(</span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∣</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span><span class="mclose">)</span></span></span></span>：事件B发生时，事件A发生的概率（后验概率）；</li>
+<li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∣</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">A</span><span class="mclose">)</span></span></span></span>：事件A发生时，事件B发生的概率；</li>
+<li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mopen">(</span><span class="mord mathnormal">A</span><span class="mclose">)</span></span></span></span>：事件A的先验概率；</li>
+<li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span><span class="mclose">)</span></span></span></span>：事件B的总概率。</li>
+</ul>
+<p>我们的重点，不是计算，而是思考方式。所以，我们直奔主题，来看看，贝叶斯定理，带给我们的决策方法。</p>
+<p>概括而言，就是十个字：</p>
+<ol>
+<li>尊重先验；</li>
+<li>保持开放；</li>
+<li>先干为敬；</li>
+<li>持续更新。</li>
+</ol>
+<h2 id="三">三<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#三" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="先看第一条尊重先验">先看第一条：尊重先验<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#先看第一条尊重先验" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>先验概率是我们在未得到新信息前对事件可能性的估计，这个概率通常基于我们已有的知识、经验和对世界的基本认识。</p>
+<p>比如说，你的表姐怀了老二，不管老大是男孩还是女孩，老二是女孩的概率，都是50%。</p>
+<p>尊重先验概率意味着我们要尽可能地通过历史数据、统计信息或经验来构建一个初始的模型，而不是凭空做出判断。</p>
+<p>有一位著名的创业人，曾经用贝叶斯定理的先验概率，来解释自己为什么要做饮料：</p>
+<ol>
+<li>饮料领域看起来很老土，但是基数大。中国饮料市场规模当时超过一万亿。</li>
+<li>对比而言，美国SaaS市场看起来很性感，可市场规模仅为百亿级别。</li>
+<li>所以，做饮料叫小一点的巨头，做SaaS做到老大也很小。</li>
+</ol>
+<p>你看，他就是把行业的基础概率，作为先验概率的初始值，来做出判断。</p>
+<p>医学界有句格言：“当你听到马蹄声时，想想马，而不是骆驼。”啥意思呢：我们判断未知事物时，应该想更大的可能性，而不是被更特别的可能性所吸引。</p>
+<p>你可能会说，我要做的那个决策，根本没有基础概率，那该怎么办？</p>
+<p>贝叶斯统计有一个“不充分推理原则”：若没有其他可作为依据的数据，可以把主观预测当作数据使用。</p>
+<p>然后，再根据新的信息，不断更新概率，结果就会越来越准确。啥意思呢？就是先蒙一个再说。</p>
+<p>这背后还有一种这样的精神，你遇到一个自己不懂的东西，你可以说：我不懂，但我可以边做边学。</p>
+<h2 id="四">四<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#四" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>说完第一条“尊重先验”，我们再看第二条：保持开放。</p>
+<p>现实是复杂且不确定的，贝叶斯主义告诉我们，所有的模型和理论都只是我们对世界的信念和假设，而不是真理。</p>
+<p>所以，我们必须保持开放，不断收集新的证据，来调整我们的假设。</p>
+<p>说一个有趣的小故事：有一个人到了一个陌生的小镇上，他特别想和这个镇上的人套近乎，然后他就走到广场上，发现有个老人坐在【原图此处地点需放大复核】，他旁边趴着一只狗，那狗特乖。他走上去问那个老人，你的狗咬人吗？</p>
+<p>老人说不咬，然后他就去摸了一下那个狗，结果被狗咬了一口，他就很生气，质问老人：“你刚才不是说这个狗不咬人吗？”</p>
+<p>那个人老头说：“这不是我的狗。”</p>
+<p>这个小故事，往深来说，涉及到人类思维中的一个根本性问题。这个世界上，人类很难知道确切的因果关系，我们看到的一切，都只是某种相关性。</p>
+<p>然而，人类的本能是靠近因果，我们喜欢清晰的前因后果，似乎只要弄清楚了因果链，就能够做出好的决策。但可惜的是，世界并不是这样运行的。</p>
+<p>所以，决策上所谓保持开放，就是无论什么情况下，都不能过于先入为主，非此即彼，而是用概率，作为决策的依据。</p>
+<p>没有什么是100%，任何的可能，哪怕微弱，也都有可能发生。</p>
+<p>所以，对于一名贝叶斯主义的决策高手，假如有人怀疑、反对他，提出不一样的证据，他不会恼怒，反而会有收获。他会使用这一证据，更新自己的先验概率。</p>
+<h2 id="五">五<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#五" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>接下来，是贝叶斯决策系统的第三条方法论：先干为敬。</p>
+<p>贝叶斯思想强调快速迭代、快速行动。只有通过实践，我们才能得到反馈，从而更新自己的判断。</p>
+<p>我们总是说“知行合一”，强调要知，更要行，知中有行，行中有知。</p>
+<p>贝叶斯定理，则给出了“知行合一”的动力学模型。</p>
+<p>对高手而言，贝叶斯公式描述的是一个观念更新的过程：初始信念（先验概率）→ 大胆行动（获得新信息）→ 更新信念（后验概率）。然后，再重复如此过程。</p>
+<p>我画了一个示意图在文稿中，你可以点开查看。</p>
+<p>这个图也可以这样理解：人（包括AI智能体）通过贝叶斯公式，把知识和行动、经验和决策整合在一起了。</p>
+<p>所以，当我们面对一件未知事物，与其在那里猜来想去，不如先干再说。</p>
+<p>然后，通过行动中获得的信息，来更新我们最初的信念，这些都管用。</p>
+<h2 id="六">六<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#六" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>贝叶斯决策系统的第四条方法论是：持续更新。</p>
+<p>如果仅从道理角度看，贝叶斯定理，讲的似乎也是那些老生常谈的东西。</p>
+<p>真正的关键在哪儿呢？在于系统。</p>
+<p>假如没有自己的模型，不是基于一个系统，贝叶斯公式并不能帮助一个人成为真正的决策高手。</p>
+<p>在某个论坛上，有人问了埃隆·马斯克一个问题：“你生命中最大的挑战是什么？”</p>
+<p>马斯克足足想了30秒，给出了一个非常精彩的回答：“确保你有一个可纠错的反馈闭环。”</p>
+<blockquote>
+<p>可纠错的反馈闭环，几乎是创业决策、投资决策、成长决策的核心答案。</p>
+</blockquote>
+<p>而贝叶斯定理对于我们做决策最大的意义也在于此，它就是“可纠错的反馈闭环”的模型化表达。</p>
+<p>基于贝叶斯定理，建立起你的可纠错的反馈闭环，就像拥有了一个人生的船，尽管一路惊涛骇浪，有顺风也有逆风，但你终究有机会顺风破浪，抵达你的目的地。</p>
+<p>对于贝叶斯主义者来说，没有成功和失败的概念。</p>
+<p>成功和失败就像这个方向盘左一点、向右一点而已，关键在于你根据反馈如何去优化自己的下一步的行动。</p>
+<h2 id="总结">总结<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#总结" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>现在，让我们再回望一下EKB决策算法，这三个字母，正是期望值、凯利公式和贝叶斯定理的英文单词首字母。</p>
+<p>我们说过，胜率和赔率，是一维的；而期望值就像是面积的计算，是二维的；凯利公式，则通过分阶段投入筹码，也就是随着时间的进度分配你的人生资源，这是三维的；而这里面的关键，是我们决策当中的概率判断。</p>
+<p>贝叶斯定理告诉我们，这个概率可以在知行合一的推进过程中，不断得到更新，一步步逼近真相，所以我们称之为四维链。</p>
+<p>有一种说法，在所有的数学发现中，贝叶斯定理是应用最多的之一，它广泛应用于各个领域，包括海洋搜救，以及当下大火的人工智能。</p>
+<p>贝叶斯定理有一种理性的乐观主义精神，教我们在未知中前行。</p>
+<p>未知令人恐惧，但贝叶斯定理告诉我们，只要有一缕微弱的光线，概率也可以作为生活的向导，带我们穿越人生的迷雾。</p>
+<p>贝叶斯主义假设“现实”的所有模型、理论和概念都不过是某种信念。这不会让人成为虚无主义者，反而能让我们在相信中怀疑，在怀疑中相信。</p>
+<p>在生活中，很多时候，那些看上去疑虑重重的人也许有更坚定的信念，有些信誓旦旦的家伙每每却见证失败。</p>
+<p>也许你会觉得，这个世界很混蛋，但鲁迅如此刚刚好，这个星球很残忍，却总能给我们留下一扇门。</p>
+<p>贝叶斯定理告诉我们，面对我们所处的、既有确定性又有不确定性的世界，我们需要不断更新自己的信念和判断。</p>
+<p>以上就是这一讲的全部内容，我是老喻，我们下一讲再见。</p>
+<h2 id="划重点">划重点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#划重点" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li>尊重先验概率意味着我们要尽可能地通过历史数据、统计信息或经验来构建一个初始的模型，而不是凭空做出判断。</li>
+<li>决策上所谓保持开放，就是无论什么情况下，都不能过于先入为主，非此即彼，而是用概率，作为决策的依据。</li>
+<li>当我们面对一件未知事物，与其在那里猜来想去，不如先干再说。然后，通过行动中获得的信息，来更新我们最初的信念。</li>
+<li>对于贝叶斯主义者来说，没有成功和失败的概念。成功和失败就像这个方向盘左一点、向右一点而已，关键在于你根据反馈如何去优化自己的下一步的行动。</li>
+</ol>
+<h2 id="课程导航">课程导航<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#课程导航" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li>上一期：06 三维：怎样用凯利公式找到最佳下注比例？</li>
+</ul>
+<h2 id="精选留言">精选留言<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#精选留言" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="左星星">左星星<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#左星星" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>要成为贝叶斯主义者，关键在于构建一种“开放且更新”的思维方式。贝叶斯定理的基本思想是通过每次获取的新信息不断修正自己的信念，并在变化中及时调整自己的方向。这种心态让我们在面对未知时不至于过于自信或过于保守，而是对同样保持开放，接纳新的信息，实时对自己的判断进行微调。</p>
+<p>在现实生活中，我们习惯依赖有经验做出判断，但计划往往会因为一些不确定因素而偏离。假设有一个新朋友，初次认识时你对其有50%的信任度，但随着相处的增加，你发现他总是思维谨慎，也不轻易推脱承诺。这一观察为你提供了新的证据，可以逐步提升对他的信任度。反之，如果他经常失约或言行不一，你的信任度则会随之降低。</p>
+<p>通过贝叶斯定理，你会在每次互动后重新评估对朋友的信任，先验信任的建立并非一次，而是根据新信息不断调整。在这个过程中，你既不会因为一次失败就彻底否定对方，也不会因为一时的善意互动就过度依赖。这种逐步调整的方式能够帮助我们在复杂的人际关系中找到更为客观的平衡。</p>
+<h3 id="tony-to-ni">Tony to ni<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#tony-to-ni" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>我最近开车的时候，总是听到车里有什么东西在震动，咯嗒咯的。</p>
+<p>在我听来，就是在我的手边，好像是在副驾驶那有东西在震动。然后我爱人坐在副驾，说她听到的是在左边有东西震动。我感觉就她说的在右侧，这个时候我儿子说，既然你们一个说在右侧，一个说在左侧，那肯定要中间了。</p>
+<p>于是我们就在中控台的下边找，像充电口、杯托那，都没有找到。</p>
+<p>有一天我把中控台上方装眼镜的盒子打开，把里面的眼镜拿下来，果然不停震动了。原来是那个眼镜盒在震动，然后不断修正，最后得到正确结论的一个过程。</p>
+<h3 id="伴听">伴听<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#伴听" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>于我而言，可以把一维到四维的决策思维，用指数基金投资。</p>
+<ol>
+<li>一维，关注胜率和赔率，那么定投的标的来说，既要看胜率不低（买安全性高的，如货币基金、债券基金），也要看有赔率（注重高赔率的，如宽基指数和行业指数）。</li>
+<li>二维，关注期望值，就是投入和回报的比例高，应该关注的，有一定波动的，比如股票基金、债券基金。</li>
+<li>三维，关注凯利公式，就是投对不同标的时，每次下注多少，不要一下子All in，这样才能从时间维度分阶段，穿越牛熊。</li>
+<li>四维，关注贝叶斯公式，就是定投的及时态势评估，如何根据估值适当调整仓位，比如股市估值高时，少投股票；整体估值低反向操作。</li>
+</ol>
+<p>老师那张四维链图非常形象，太赞。</p>
+<h3 id="鸿涛">鸿涛<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#鸿涛" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>贝叶斯定理的目的是对于概率的不断修正，也就是不断地纠正未知中的反馈出来的概率。这个概率的初始值就是先验概率，然后在开放性的原则下通过快速迭代持续更新概率值，以使这个后验概率更接近真实。运用贝叶斯定理得到的后验概率才能够得到凯利公式的计算更准确，这保障了决策的准确性。</p>
+<h3 id="杨蓓蓓职场高管教练">杨蓓蓓·职场高管教练<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#杨蓓蓓职场高管教练" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>对我来讲，善于思考的是提升我们在所有课程里最大限度的展开，并且及时复盘。这个里边需要记录，甚至要通过做题来验证、锻炼自己的逻辑过程，确实是很有收获，哈哈😅</p>
+<h3 id="炎帝">炎帝<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#炎帝" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>贝叶斯定理：当我们面对新的信息时，应该如何调整我们对某一事件发生概率的估计。</p>
+<p>根据老喻老师的贝叶斯定理，总结4点：</p>
+<ol>
+<li>尊重先验：贝叶斯主义者会根据已有的知识和经验设定一个先验概率，这是在没有任何新证据之前对事件发生概率的估计。决策高手尊重先验，并为它们提供一个起点。</li>
+<li>保持开放：随着新证据的出现，贝叶斯主义者会保持开放的态度，不断根据这些证据调整自己的先验信念。这种灵活性是决策高手的关键特质，使他们能够适应变化，而不是固守过时的观点。</li>
+<li>先干为敬：贝叶斯思想强调快速迭代和行动。决策高手知道，只有通过实践，才能获得反馈，从而更新自己的判断。这种“先干为敬”的态度使他们能够快速学习和适应。</li>
+<li>持续更新：决策高手会持续根据新的数据和信息更新自己的概率判断。这种持续的更新过程使他们能够逐步逼近真相，做出更准确的决策。</li>
+</ol>
+<h3 id="学习机器">学习机器<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习机器" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>在某个论坛上，有人问了埃隆·马斯克一个问题：“你生命中最大的挑战是什么？”</p>
+<p>马斯克足足想了30秒，给出了一个非常精彩的回答：“确保你有一个可纠错的反馈闭环。”</p>
+<p>前段时间在知乎上有人问，成为一个投资、交易高手（股市、期货、外汇），需要具备哪些条件呢？我给出的答案是：</p>
+<p>第一，你需要有一套正期望值的可纠错的反馈交易系统；</p>
+<p>第二，你要始终都能够按照这个反馈交易系统来执行。</p>
+<p>也许有人会质疑，就这么简单，就可以成为交易高手？没错，有且只需要这两个条件，但在市场中能够满足这两个条件的人少之又少！第一个条件可以淘汰绝大部分人，因为很多市场交易者，压根就没有一个完善的反馈交易系统，更多的是凭感觉、听消息做交易，或是别的交易系统的期望值为负；第二个条件需要你有可纠错反馈系统的执行力，起初的反馈系统并不完善，你需要根据市场的反馈持续的迭代，而且你要把对的反馈系统给出的指令，对人性是莫大的考验。</p>
+<p>其实无论是做市场投资，还是创业，或者教育等几乎任何领域，成功的关键在于你要有一套可纠错的反馈系统，然后在现实中让这套系统不断升级迭代。那升级迭代什么时候结束呢？也许永远在升级迭代的路上，也许只要让系统的期望值为正就可以了。</p>
+<h3 id="方兴阳光茅草">方兴（阳光茅草）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#方兴阳光茅草" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>尊重先验概率意味着我们要尽可能地通过历史数据、统计信息或经验来构建一个初始的模型，而不是凭空做出判断。</li>
+<li>决策上所谓保持开放，就是无论什么情况下，都不能过于先入为主，非此即彼，而是用概率，作为决策的依据。</li>
+<li>当我们面对一件未知事物，与其在那里猜来想去，不如先干再说。然后，通过行动中获得的信息，来更新初始信念。</li>
+<li>对于贝叶斯主义者来说，没有成功和失败的概念。成功和失败就像这个方向盘左一点、向右一点而已，关键在于你根据反馈如何去优化自己的下一步的行动。</li>
+</ol>
+<h3 id="jerryluo">JerryLuo<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#jerryluo" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>贝叶斯定理，带给我们的决策方法论，概括而言，就是十六个字：尊重先验；保持开放；先干为敬；持续更新。</p>
+<p>我所在的团队最近在做一个相对复杂的新的项目，不知不觉也在使用贝叶斯定理。</p>
+<ol>
+<li>尊重先验。因为项目相对复杂，我们首先是看公司曾经有无类似项目资料可供参考。</li>
+<li>保持开放。即使历史上有相关资料，但是不能照搬经验。而是要保持开放心态，结合这次项目的特殊性开展工作。</li>
+<li>先干为敬。项目的特点是“渐进明细”。不能等到所有信息都掌握后，再开展工作，得先干起来。</li>
+<li>持续更新。项目开展起来后，会得到更多的信息。所以，不管是项目计划，还是具体工作内容，在实际工作中都需要不断迭代，才能确保项目如期交付。</li>
+</ol>
+<p>其他学习：</p>
+<ol>
+<li>
+<p>刘嘉老师在“得到”的课程《贝叶斯推理：概率是对信息的度量》最后，留下的一道思考题：日常生活里，有些人看到喜鹊就开心，看到乌鸦就难受；还有些人相信“左眼跳财，右眼跳灾”。你能用贝叶斯推理解释一下这样的行为吗？</p>
+<p>引用左星星同学的回复：“喜鹊代表着喜事，左眼跳意味着好事，这些都是‘祖训’，也就是人们一直以来不断被‘灌输’的一个说法，所以当一个人看到喜鹊的时候，他心里的先验概率可能已经是，今天要发生好事80%，今天要发生坏事20%。”</p>
+</li>
+<li>
+<p>书籍《决策的智慧》中引入了一个例子，说明在日常生活中，如果只是“尊重先验”，但是没有“持续更新”，而闹出的笑话。</p>
+<p>一位新婚妻子正在准备晚餐，她决定炖红烧火腿。她的丈夫看到她，先是把火腿的两端切掉，然后把切下来的两端放入锅中。他很好奇，于是问妻子为何要切掉火腿的两端。“我不知道为什么，但我妈妈总是这样做。我过会儿打电话问妈妈为什么要这样做。”于是她打电话问妈妈，妈妈给出了几乎相同的答案。“我也不知道，但我的妈妈就是这样做的。”后来，她又联系到祖母，祖母告诉了她自己之所以这样做的确切原因：“我经常将火腿的两端切掉，是因为我家的锅太小了。”</p>
+</li>
+</ol>
+<h3 id="shen">shen<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#shen" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>失败是成功之母，还是成功不成功之父呢？</p>
+<p>小时候，我们听到最多的一句话就是，失败是成功之母。言外之意，要大胆去干，边干边学，不要害怕失败。</p>
+<p>而现在的说法发生了一个大转折，认为不论多少次失败，都没有意义和价值。不如一次成功的作用大，因为成功具有复制粘贴，一步步扩散。</p>
+<p>这话固然很有道理，但是，成功从哪里来呢？是从天而降的吗？显然不是，造成成功成为之父之义，是肯定成功的作用和意义。举个例子，成功发明了一件产品，让这件产品发挥最大的意义。</p>
+<p>成功的背后仍离不开一次次失败尝试，跌倒了，站起来，拍拍身上的土，重新前行。跌倒一次，就得修整一次。这个过程，就是贝叶斯定理的运用和实践。</p>
+<p>失败是成功之母，这个“母”字的核心，是可纠错的反馈闭环，每一次失败，都会增大一次成功的概率。</p>
+<blockquote>
+<p>以上留言由作者筛选显示</p>
+</blockquote>
+<hr/>
+<p><a href="../../book/decision-algorithm/006/" class="internal internal-link alias" data-slug="book/decision-algorithm/006/index">← 006｜三维：怎样用凯利公式找到最佳下注比例？</a> · <a href="../../book/decision-algorithm/" class="internal internal-link alias" data-slug="book/decision-algorithm/index">返回《决策算法100讲》目录</a> · <a href="../../book/decision-algorithm/008/" class="internal internal-link alias" data-slug="book/decision-algorithm/008/index">008｜重新理解复利：为什么复利很多时候是一个“谎言”？ →</a></p>
+<hr/>
+<p><a href="../../books/decision-algorithm/" class="internal internal-link alias" data-slug="books/decision-algorithm/index">《决策算法100讲》目录</a> · <a href="../../books/" class="internal internal-link alias" data-slug="books/index">全部图书笔记</a></p></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>关系图谱</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc"><button type="button" class="toc-header" aria-controls="toc-7" aria-expanded="true"><h3>目录</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#老喻亲述" data-for="老喻亲述">老喻亲述</a></li><li class="depth-0"><a href="#一" data-for="一">一</a></li><li class="depth-0"><a href="#二" data-for="二">二</a></li><li class="depth-0"><a href="#三" data-for="三">三</a></li><li class="depth-1"><a href="#先看第一条尊重先验" data-for="先看第一条尊重先验">先看第一条：尊重先验</a></li><li class="depth-0"><a href="#四" data-for="四">四</a></li><li class="depth-0"><a href="#五" data-for="五">五</a></li><li class="depth-0"><a href="#六" data-for="六">六</a></li><li class="depth-0"><a href="#总结" data-for="总结">总结</a></li><li class="depth-0"><a href="#划重点" data-for="划重点">划重点</a></li><li class="depth-0"><a href="#课程导航" data-for="课程导航">课程导航</a></li><li class="depth-0"><a href="#精选留言" data-for="精选留言">精选留言</a></li><li class="depth-1"><a href="#左星星" data-for="左星星">左星星</a></li><li class="depth-1"><a href="#tony-to-ni" data-for="tony-to-ni">Tony to ni</a></li><li class="depth-1"><a href="#伴听" data-for="伴听">伴听</a></li><li class="depth-1"><a href="#鸿涛" data-for="鸿涛">鸿涛</a></li><li class="depth-1"><a href="#杨蓓蓓职场高管教练" data-for="杨蓓蓓职场高管教练">杨蓓蓓·职场高管教练</a></li><li class="depth-1"><a href="#炎帝" data-for="炎帝">炎帝</a></li><li class="depth-1"><a href="#学习机器" data-for="学习机器">学习机器</a></li><li class="depth-1"><a href="#方兴阳光茅草" data-for="方兴阳光茅草">方兴（阳光茅草）</a></li><li class="depth-1"><a href="#jerryluo" data-for="jerryluo">JerryLuo</a></li><li class="depth-1"><a href="#shen" data-for="shen">shen</a></li><li class="overflow-end"></li></ul></div><div class="backlinks"><h3>反向链接</h3><ul id="list-0" class="overflow"><li><a href="../../books/decision-algorithm/" class="internal">决策算法100讲</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://morewhyhan.github.io/">返回虚船向远</a></li><li><a href="https://github.com/morewhyhan/">GitHub</a></li></ul></footer></div></div></body><script src="../../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../postscript-9114441b.js" type="module" data-persist="true"></script></html>

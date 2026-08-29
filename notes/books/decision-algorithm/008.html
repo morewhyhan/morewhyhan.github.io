@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr"><head><title>008｜重新理解复利：为什么复利很多时候是一个“谎言”？ · 虚船向远</title><meta charset="utf-8"/><link rel="preload" href="../../index-dd6f8a77.css" as="style"/><link rel="preload" href="../../prescript-2bfc6315.js" as="script"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="虚船向远"/><meta property="og:title" content="008｜重新理解复利：为什么复利很多时候是一个“谎言”？ · 虚船向远"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="008｜重新理解复利：为什么复利很多时候是一个“谎言”？ · 虚船向远"/><meta name="twitter:description" content="《老喻·决策算法100讲》008：重新理解复利：为什么复利很多时候是一个“谎言”？"/><meta property="og:description" content="《老喻·决策算法100讲》008：重新理解复利：为什么复利很多时候是一个“谎言”？"/><meta property="og:image:alt" content="《老喻·决策算法100讲》008：重新理解复利：为什么复利很多时候是一个“谎言”？"/><meta property="twitter:domain" content="morewhyhan.github.io/notes"/><meta property="og:url" content="https://morewhyhan.github.io/notes/books/decision-algorithm/008"/><meta property="twitter:url" content="https://morewhyhan.github.io/notes/books/decision-algorithm/008"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="《老喻·决策算法100讲》008：重新理解复利：为什么复利很多时候是一个“谎言”？"/><meta name="generator" content="Quartz"/><link href="../../index-dd6f8a77.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-34bdfded.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-11d41004.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-26a99b87.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-9857b007.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-d3a1a224.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../prescript-2bfc6315.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://morewhyhan.github.io/notes/books/decision-algorithm/008-og-image.webp"/><meta property="og:image:url" content="https://morewhyhan.github.io/notes/books/decision-algorithm/008-og-image.webp"/><meta name="twitter:image" content="https://morewhyhan.github.io/notes/books/decision-algorithm/008-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="books/decision-algorithm/008" data-basepath="/notes"><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../..">虚船向远</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="搜索" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>搜索</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="搜索内容..." placeholder="搜索内容..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="暗色模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="阅读模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="阅读模式"><title>阅读模式</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\n        numeric: true,\n        sensitivity: \&quot;base\&quot;\n      });\n    }\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\n      return 1;\n    }\n    return -1;\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\n    return node;\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-18" aria-label="探索"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-18" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../books/">图书笔记</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../books/decision-algorithm/">决策算法100讲</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>008｜重新理解复利：为什么复利很多时候是一个“谎言”？</a></div></nav><h1 class="article-title">008｜重新理解复利：为什么复利很多时候是一个“谎言”？</h1><p show-comma="true" class="content-meta"><time datetime="2026-08-27T16:00:00.000Z">2026年8月28日</time><span>29分钟阅读</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>来源：老喻·决策算法100讲</p>
+<p>音频时长：13分29秒</p>
+</blockquote>
+<h2 id="老喻亲述">老喻亲述<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#老喻亲述" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>你好。</p>
+<p>我是老喻，欢迎回到《决策算法》课。</p>
+<p>从这一讲开始，我们来讲大家最关心的一类决策——财富决策。</p>
+<p>假如你去问100个赚钱高手，财富决策最大的秘密是什么？大部分答案，都可能提到一个词儿，这就是“复利”。</p>
+<p>复利也是我研究最多的话题之一。所以在“财富决策模块”的开头两讲，我们来深入探讨一下：复利的谎言和真相。</p>
+<p>查理·芒格说：</p>
+<blockquote>
+<p>理解复利的魔力和获得它的困难，是理解许多事情的核心和灵魂。</p>
+</blockquote>
+<p>人们总是关注这句话的前半截，也就是复利的魔力。但是却会忽略后半截：也就是获得复利的困难。</p>
+<p>事实上，现实中的复利极其罕见。</p>
+<p>著名投资人彼得·林奇提出过一个词“10倍股”，这是他心目中的好股票。</p>
+<p>多长时间赚10倍呢？假设是10年。</p>
+<p>10年赚10倍靠谱吗？假如2011年前后你买了茅台股票，拿上10年，就有10倍；或者2010年买了特斯拉股票，更短时间你就能赚10倍。</p>
+<p>计算一下，假如你想在股市10年变10倍，每年“只”要26%回报即可。</p>
+<p>于是，关于复利的传说，又多了一个美妙的数字：26%。</p>
+<p>然而，假如你相信这种简单化的“复利法则”，也许就掉入了一个谎言的陷阱。</p>
+<p>不止在投资领域，关于个人的“成长”，也流传着类似的梦想。</p>
+<p>有人问过我：</p>
+<blockquote>
+<p>一个人可以做到持续地每天进步百分之0.1或者说百分之0.05吗？如果可以或者说有可能达成的话，关键点在哪里呢？难点在哪里呢？</p>
+</blockquote>
+<p>我回答：不可能。</p>
+<p>曾经看到有博主发：成功的秘诀是：如果没有天赋，那就一直重复！</p>
+<p>那位博主说，他自己坚持做着一件事：读书、看书、写作……</p>
+<p>这类鸡汤的核心逻辑是努力、坚持和重复，而是找到值得重复的事儿，然后才是通过重复实现指数增长。</p>
+<p>比如说，人们讨论起ChatGPT，喜欢提“规模效应”，说“大力出奇迹”。</p>
+<p>但事实上，并非大力就可以出奇迹，而是OpenAI找到了让“大力出奇迹”变得有效的方法。</p>
+<p>这才是复利最艰难的地方。</p>
+<p>财富也好，人生也好，极少有人能够靠复利获利。</p>
+<p>当然，复利的谎言，并非是说“复利本身是谎言”。</p>
+<p>的确，复利可能是人生最重要的公式。即使是普通人的努力，在复利作用下，也能累积成奇迹。</p>
+<p>然而，能做到这一点的，可能就不是“普通人”了。</p>
+<p>聪明人呢？年轻时不甘心于做“大量重复的事情”，年长后又很难实现自己巅峰时刻的连续性。</p>
+<p>讲到这里，你可能要说了，老喻，你说平常关于复利的传说是谎言，又说复利很重要。那复利的真相到底是什么呢？</p>
+<p>复利的真相，和世界的几个底层约束有关。这五个真相分别是：</p>
+<ol>
+<li>宇宙被随机性主宰；</li>
+<li>连续性很难实现；</li>
+<li>世界是不均匀的；</li>
+<li>现实是非线性的；</li>
+<li>回报是不对称的。</li>
+</ol>
+<p>我们一个一个来讲。</p>
+<h2 id="真相1宇宙被随机性主宰">真相1：宇宙被随机性主宰<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#真相1宇宙被随机性主宰" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>未来是极度不确定的。</p>
+<p>并不存在一个清晰的轨迹，让你像爬坡一样每天进步一点点。</p>
+<p>“复利思维”为什么看起来如此有吸引力呢？</p>
+<p>因为“复利”制造了一种虚幻的确定性。</p>
+<p>我们在工作、生活、投资中，都有一种潜在的冲动，寻求确定性。</p>
+<p>在漫长的进化过程中，人类的大脑逐渐变成了一部预测机器，它通过对过去的总结和对未来的想象，来分配资源，采取行动。</p>
+<p>但可惜的是，人类大脑中的确定性，跟现实是两码事儿，现实并不会按照人类预测的那样展开。</p>
+<p>早在上个世纪，物理学家爱丁顿就说：</p>
+<blockquote>
+<p>近年来，物理学领域中某些最伟大的成就被公认为源于统计学法则，而不是依靠于因果律。而且，迄今作为因果关系所接受的某些重要的法则经过仔细研究后，可以认为均是具有统计学特征。</p>
+</blockquote>
+<p>随机性，是宇宙的底层主宰，这是这个世界的出场设置，哪怕掌握了规律，也难以完全逃脱随机性的影响。</p>
+<p>所以，即便是你觉得很确定的事儿，假如你不能在这个“确定性”之前，加上一个概率数值，那么这个确定性就可能成为一个大坑。</p>
+<p>这一点，我们在贝叶斯定理那一讲也强调过。本质上，人类只能知道相关性，而不能确定100%的因果。</p>
+<p>当你过分依赖所谓确定性，那一点点被你忽视的“不确定性”，可能会让你的预期，全盘落空。</p>
+<p>而这，正是平常人们说起复利这一概念时的幻觉和陷阱。</p>
+<h2 id="真相2连续性很难实现">真相2：连续性很难实现<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#真相2连续性很难实现" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>复利有一个重要的假设，那就是连续性。</p>
+<p>前面提到，复利的幻想一个是：只要你每年赚26%，连续十年，你就可以赚10倍……</p>
+<p>然而，连续性太难了。</p>
+<p>对于随机游走的股市投资而言，“连续性”更难实现。别说连续十年每年回报达26%，就连年化10%，也没多少人做到。</p>
+<p>2020年有人根据万得（Wind）的数据分析，整个中国市场只有33位基金经理，连续十年做到年化收益率超过10%。（《每日经济新闻》2020年统计）</p>
+<p>过于简化的复利，极大地高估了“连续性”。</p>
+<p>投资圈有句话：一年翻一倍，容易；三年翻一倍，难。</p>
+<blockquote>
+<p>时间并不总是复利的朋友，更多时候是敌人。</p>
+</blockquote>
+<p>宇宙是熵增的，趋向无序，我们这个世界的资源也是有限的，所以复利的增长，总会遭遇一道看不见的屏障。</p>
+<h2 id="真相3世界是不均匀的">真相3：世界是不均匀的<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#真相3世界是不均匀的" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>复利的神话里，还包含着一个假设：这个世界是均匀的。</p>
+<p>所谓均匀，这里的意思是，赚钱的机会也好，亏钱的风险也好，不会集中出现，而是在时间上平均分布。</p>
+<p>然而，现实不仅是不均匀的，而且连“不均匀”的那部分，也很不均匀。</p>
+<p>据晨星（Morningstar）等多个权威机构统计：从2008年11月27日到2018年11月27日，标普500指数涨幅达202.16%。</p>
+<p>但是，如果错过了其间涨幅最大的20个交易日，收益就只剩下31.15%。如果错过这20天，就错过了10年超级大牛市。问题是，你无法知道到底是哪20天。</p>
+<p>反之，最糟糕的日子，也是密度极大，破坏性极强。</p>
+<p>均匀性的幻觉，对追求稳健的聪明人，也会造成伤害。</p>
+<p>许多聪明人都是一直在赚钱，而且赚得貌似非常稳定，但却会在某一把因为极小概率事件的发生而亏掉所有的利润。</p>
+<p>我有一个投资人朋友，有一次在朋友圈发出感慨：</p>
+<blockquote>
+<p>在市场中想赚高确定性的小钱往往是很危险的，因为一旦确定性没有自己想得那么高，可能就会亏一大笔钱。</p>
+</blockquote>
+<h2 id="真相4现实是非线性的">真相4：现实是非线性的<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#真相4现实是非线性的" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>我们从小接受的教育，最主要的一条，就是“付出就有回报”。这是一种深入骨髓的“线性思维”。</p>
+<p>但真实的世界是非线性的。付出未必有回报，种瓜可能得豆，更可能是一无所获。</p>
+<p>一家餐馆比另外一家餐馆的味道好10%，但客户可能多一倍，利润则可能多十倍。二八法则、马太效应，无情地支配着我们的世界。</p>
+<p>我们自小形成的“线性思维”，还会影响我们对复利的理解。</p>
+<p>实际上，复利是一种非线性的回报曲线，但是，因为我们的“线性思维”，有时候会机械地、一厢情愿地试图画出完美的复利曲线。</p>
+<h2 id="真相5回报是不对称的">真相5：回报是不对称的<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#真相5回报是不对称的" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>说到这里，很多人也许会赞同，现实的确是起起伏伏的。但很多人可能没意识到的是，更大的难题还在于，起伏之间并不对称。</p>
+<p>我们知道，复利的计算是一个乘法。但是，连续相乘的，可不是收益，还有亏损。假如我们今年的资产下降了50%，那么明年要上涨100%才能够回来。</p>
+<p>你看，涨和跌之间并不对称。并不是说，我今年跌50%，明年涨50%就可以打平。更要命的是：即使今年涨100%，甚至涨1000%，明年跌一个100%，就全部归零了。</p>
+<p>所以，在“不对称”的现实中，复利的实现，首先必须做到：不等太大的利益，都不值得冒“彻底爆掉”的风险。</p>
+<p>不然，复利的非法链条，就会彻底断掉。</p>
+<p>稍微总结一下，对“随机性”的漠视，对“连续性”的幻觉，对“均匀性”的幻想，以及忽视“非线性”和“非对称”的风险，造成了复利的谣言，并且经常成为财富的致命杀手。</p>
+<p>在上面这五个“不确定性”杀手的围剿之下，复利的谣言走不了多远，就粉身碎骨了。</p>
+<p>的确，仔细想想，我们总在说复利，身边有多少人实现了复利？</p>
+<p>我曾经有套房子，在20年内涨到十倍，听起来还可以吧？但是，仔细一算，年化回报率也“不过”是12%左右。</p>
+<p>这还是在一线城市，赶上了房地产大牛市。而且之所以能够持有那么久，享受到复利，还因为房子的流动性不像股票，不然可能早就卖掉了。</p>
+<p>既然复利这么罕见，为什么大家还是总在说呢？</p>
+<p>在我看来，最主要的原因是：人们试图用勤奋来替代思考。</p>
+<p>希望每天进步0.1%，进而叠加出惊人的复利，与其说是一种幻想，不如说是一种懒惰，不是行动上的懒惰，而是智力上的懒惰。复利传说，其实是一种反智的智力贩卖。</p>
+<p>为什么呢？</p>
+<p>因为要获取世俗上的成功，除了运气之外，你需要两个步骤：</p>
+<ol>
+<li>做正确的事情；</li>
+<li>把事情做正确。</li>
+</ol>
+<p>复利神话过于强调第二点，让人忽略了第一点。</p>
+<p>例如设定目标，其基本理念是对的。但是，假如你在一件错误的东西上坚持，做得再正确也没用。</p>
+<blockquote>
+<p>在捕鼠夹上雕花，你做得再极致也买不到大象。</p>
+</blockquote>
+<p>如果你没有方向，任何方向的风都是逆风。</p>
+<p>人生也许像是滚球球，可惜不是顺着坡往下滚，而像西弗斯那样，往山上推雪球。而且，这雪球随时可能砸下来。</p>
+<p>指数型的崩溃，往往比指数型的增长容易得多。</p>
+<p>所以，即使我们能够有足够耐心慢慢变富，慢慢成长，也不能令“变富”和“成长”因为“慢慢”而变得容易。</p>
+<p>忘掉复利神话吧。</p>
+<p>人生就像逆水行舟。可以期待复利，但也请理解复利实现之难。</p>
+<p>然而，既然复利从数学意义上是存在的，假如我们能够意识到复利的本质和挑战，是否可以设计出自己的人生复利呢？我们下一讲再讲讲。</p>
+<p>我是老喻，我们下一讲再见。</p>
+<h2 id="划重点">划重点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#划重点" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li>复利的重点，不止是努力、坚持和重复，而是先找到值得重复的事，然后才是通过重复实现指数增长。</li>
+<li>真实世界中，复利的实现存在五大障碍：宇宙被随机性主宰；连续性很难实现；世界是不均匀的；现实是非线性的；回报是不对称的。</li>
+<li>人生也许像滚球球，可惜不是顺着坡往下滚，而是像西弗斯那样，往山上推雪球。而且，这雪球随时可能砸下来。</li>
+</ol>
+<h2 id="课程导航">课程导航<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#课程导航" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li>上一期：07 四维：为什么决策高手都是贝叶斯主义者？</li>
+</ul>
+<h2 id="精选留言">精选留言<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#精选留言" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="keiko璟">Keiko·璟<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#keiko璟" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>指望所谓“复利”发家致富，纯粹是让人自我安慰的心灵鸡汤。</p>
+<p>每当听人说用复利挣钱，就会想起一个关于鸡蛋的故事：从前有个人得到一个鸡蛋，但他没有吃。他想等这个鸡蛋孵出小鸡，小鸡长大后，再生出好多蛋，那些蛋再孵出小鸡，由此鸡生蛋、蛋生鸡，就发大财了。他这么想着，不小心，鸡蛋掉地上摔碎了。这个人非常难过，因为他损失的不是一个鸡蛋，而是一笔巨额的财富。</p>
+<p>其实指望复利致富和指望一个鸡蛋发家致富是一样不靠谱的，是不肯接受世界不是确定的事实。正所谓花无百日红，潮起又潮落。真实世界根本就没有持续的长期高速增长这件事，这是根本不符合自然规律的。</p>
+<p>复利效应，就像“只要努力就会成功”一样，看起来没毛病，其实都是战略上懒惰的口号。你要懂得，你有你的计划，而世界另有计划。</p>
+<h3 id="黄泊淳-only">黄泊淳 Only<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#黄泊淳-only" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>想要透过复利，让人生的财富或成就有翻倍的成长，就需要好好思考很多复利的特性。</p>
+<p>这讲喻老师，帮助我们拆掉复利这个糖果的包装，看到里面还是有一些坑，需要考虑清楚。</p>
+<p>每天进步一点点，要成功的充分条件是，这件事情值得长期主义，超过了一个趋向好的公司的投资或上班，那结局往往不是指数增长。</p>
+<p>再来复利的五个误区，最让我感受深刻的总结是，人类很想追求因果，这又让我们想去画、去解因果。因为世界的复杂，想要找到绝对的因果，感觉就是妄念。</p>
+<p>不如，一直有品质的思考，什么是做正确的事，好好努力，那增长自然成。</p>
+<h3 id="方兴阳光茅草">方兴（阳光茅草）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#方兴阳光茅草" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>为什么复利是一个谎言？</p>
+<ol>
+<li>
+<p>自身认知和智慧的局限</p>
+<p>巴菲特和查理·芒格和普通人不同，就是他们能够看清楚事物本质的水平，而这一点是他们长期每天坚持学习阅读、提升自己智慧的结果，带着这样的智慧，能够让他们在投资的时候，更审慎地判断，能够在难得的投资机会出现时出手。但问题是，这个世界上没有几个人能够有这样的认知和智慧，能够辨别这样难得的投资的机会。</p>
+</li>
+<li>
+<p>世界的不确定性</p>
+<p>这个世界有着极大的不确定性，数学是一门非常神奇的学科，因为它所研究的其实是这种世界和命运的不确定性。真理往往掌握在少数人的手里，我常常觉得为什么数学没有被广泛用于投资，更是一件非常遗憾的事情。不能运用数学来保持长期复利投资，就如同没有X光而能够看清病人的五脏六腑一样，其实是艰难而不可能的任务，能够运用数学来投资获得财富，这也是需要福报的，要有福之人才 能够得到这样的财富，而西也是非常矛盾的。</p>
+<p>这个世界是我们内部世界的投射，我们内部世界会为我们吸引所有外部世界而来的一切，因此，当我们对于自己有更多投入更多的投资，让自己成为一个更有智慧、更加热爱生活、享受生活的人，它也许会改变我们对于这个世界的看法。</p>
+<p>比如说我们在投资的时候真的需要实现长期复利的增长吗？我们真的需要那样级别的巨大财富吗？以巴菲特来说他富甲天下，投资智慧超乎常人，然而他的爱情生活并不美满，由于他过于专注自己的工作在他孩子小的时候，他也并没有给予孩子很多陪伴，他的第一个太太就曾经劝自己的孩子说，你们要认清自己的爸爸是什么样的人，这方面不要对他有太多的期望。</p>
+<p>从这个意义上说投资复利的不可能，其实也许是宇宙给我们的一个提醒，那就是也许美好的人生是需要平衡的，对于财富我们不要太过于贪婪，只有那?有心?，在吴?老师的世界文明课程里就提到过，这个世界，其实宝贵和永远不会磨灭的就是文明的进程，和那些为了世界文明所贡献的人，从这个角度来说，投资自己的智慧，让自己最大程度的接近智慧和文明，以及创造和推进文明的进程，可以给我们带来人生的大喜乐，而在这个过程当中，也许我们就会不知不觉的吸引更多的财富以及平衡无悔的人生。</p>
+</li>
+</ol>
+<h3 id="李慕">李慕<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#李慕" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>复利的神话里，还包含着一个假设：这个世界是均匀的。</p>
+<p>所谓均匀，这里的意思是，赚钱的机会也好，亏钱的风险也好，不会集中出现，而是在时间上平均分布。</p>
+<p>然而，现实不仅是不均匀的，而且连“不均匀”的那部分，也很不均匀。</p>
+<p>学到以上这段内容，我不禁对复利的“均匀”假设有了更深的理解。</p>
+<p>在复利的理想状态下，我们仿佛可以通过持续的小努力，稳定地积累出巨大的成果。然而，现实的“不均匀”揭示了一个残酷的真相——无论是机会还是风险，它们往往是以突发和集中的方式出现，完全无法按照期待均匀分布。</p>
+<p>即使是在相对确定性的领域，如“个人成长”和“终身学习”，这个不均匀的规律依然存在。</p>
+<p>我们可能持续学习数年，但并不是每一门课程、每一节课都会带来启发。有时在APP的学习中，某一门课的某一节内容，才真正与自己的需求和问题契合，带来深刻的启发，而其他部分则不一定。</p>
+<p>学习的回报并不总是线性的，它也是一个不均匀的积累过程。</p>
+<p>这种不均匀的规律，恰恰提醒我们不要迷信稳定增长的神话，而是需要学会在学习和成长中识别那些关键的、具有高回报的时刻和内容。真正的成长或许并非靠单纯的复利累积，而是在不确定性中寻找那几次关键的“跃迁”点，把握住那些少数真正能产生深远影响的机会。</p>
+<h3 id="迥风奔跑的兔子">迥风奔跑的兔子<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#迥风奔跑的兔子" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>扎心了，我就是那个期待着复利的人。“复利思维”带来了一定确定性——仿佛一切只要持续努力，就有不错的结果。却无视现实难度和不确定性。</p>
+<p>比起“坚持和努力”，更重要的是做正确的事。我对的“标”，坚持定投才有意义。</p>
+<h3 id="补充留言">补充留言<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#补充留言" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>昨天学习的贝叶斯决策系统今天就能用上了。</p>
+<p>初始信念（先验概率）→大胆行动（获得新信息）→更新信念（后验概率）。</p>
+<p>初始信念（复利思维——用正确的方法做正确的事情就会有好结果）；获得新信息（复利思维的不确定与执行的困难）；更新信念（注重前提——正确的事情，正确看待“复利”神话）。</p>
+<p>虽然复利只是“美好的愿望”，但我愿意相信，找到“正确的事情”，坚持去做，即使后面没有想象中那么好，结果也不会太差。</p>
+<p>Aim for the moon. If you miss, you may hit a star.</p>
+<p>期待后续学习能不断更新观念，进行迭代。</p>
+<h3 id="七色黑白">七色黑白<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#七色黑白" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>但凡以确定性思维来理解复利效应，几乎都是错误的模型。跳跃的，断崖式的，幂率分布的，只有不断跳舞才能留在原地的。或许这些才是世界的真相，而人类被困在时间里，所见一切都不是本质。</p>
+<h3 id="爱艺术的李达拉">爱艺术的李达拉<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#爱艺术的李达拉" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>今天的话题的确有些震碎我对于复利这一概念的理解。仔细想想，说的真的很有道理。过于追求复利反而会让我们陷入其中，纠结于那些自我感动和付出，反而失去判断这是不是正确的事情了。</p>
+<p>果然，人还是要多出去看看，多思考，尊重世界的随机性，接受世界是不均匀、回报是不对称的。在此基础上去找去做那些正确的、能为别人或者世界带来价值的事情，这个过程中减少all in的行为，多增加在行动中的思考。在这些事情上投入一定的资源，然后静静等待。</p>
+<blockquote>
+<p>以上留言由作者筛选显示</p>
+</blockquote>
+<hr/>
+<p><a href="../../book/decision-algorithm/007/" class="internal internal-link alias" data-slug="book/decision-algorithm/007/index">← 007｜四维：为什么决策高手都是贝叶斯主义者？</a> · <a href="../../book/decision-algorithm/" class="internal internal-link alias" data-slug="book/decision-algorithm/index">返回《决策算法100讲》目录</a> · <a href="../../book/decision-algorithm/009/" class="internal internal-link alias" data-slug="book/decision-algorithm/009/index">009｜真正获得复利：怎么用对复利公式？ →</a></p>
+<hr/>
+<p><a href="../../books/decision-algorithm/" class="internal internal-link alias" data-slug="books/decision-algorithm/index">《决策算法100讲》目录</a> · <a href="../../books/" class="internal internal-link alias" data-slug="books/index">全部图书笔记</a></p></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>关系图谱</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc"><button type="button" class="toc-header" aria-controls="toc-8" aria-expanded="true"><h3>目录</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#老喻亲述" data-for="老喻亲述">老喻亲述</a></li><li class="depth-0"><a href="#真相1宇宙被随机性主宰" data-for="真相1宇宙被随机性主宰">真相1：宇宙被随机性主宰</a></li><li class="depth-0"><a href="#真相2连续性很难实现" data-for="真相2连续性很难实现">真相2：连续性很难实现</a></li><li class="depth-0"><a href="#真相3世界是不均匀的" data-for="真相3世界是不均匀的">真相3：世界是不均匀的</a></li><li class="depth-0"><a href="#真相4现实是非线性的" data-for="真相4现实是非线性的">真相4：现实是非线性的</a></li><li class="depth-0"><a href="#真相5回报是不对称的" data-for="真相5回报是不对称的">真相5：回报是不对称的</a></li><li class="depth-0"><a href="#划重点" data-for="划重点">划重点</a></li><li class="depth-0"><a href="#课程导航" data-for="课程导航">课程导航</a></li><li class="depth-0"><a href="#精选留言" data-for="精选留言">精选留言</a></li><li class="depth-1"><a href="#keiko璟" data-for="keiko璟">Keiko·璟</a></li><li class="depth-1"><a href="#黄泊淳-only" data-for="黄泊淳-only">黄泊淳 Only</a></li><li class="depth-1"><a href="#方兴阳光茅草" data-for="方兴阳光茅草">方兴（阳光茅草）</a></li><li class="depth-1"><a href="#李慕" data-for="李慕">李慕</a></li><li class="depth-1"><a href="#迥风奔跑的兔子" data-for="迥风奔跑的兔子">迥风奔跑的兔子</a></li><li class="depth-1"><a href="#补充留言" data-for="补充留言">补充留言</a></li><li class="depth-1"><a href="#七色黑白" data-for="七色黑白">七色黑白</a></li><li class="depth-1"><a href="#爱艺术的李达拉" data-for="爱艺术的李达拉">爱艺术的李达拉</a></li><li class="overflow-end"></li></ul></div><div class="backlinks"><h3>反向链接</h3><ul id="list-0" class="overflow"><li><a href="../../books/decision-algorithm/" class="internal">决策算法100讲</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://morewhyhan.github.io/">返回虚船向远</a></li><li><a href="https://github.com/morewhyhan/">GitHub</a></li></ul></footer></div></div></body><script src="../../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../postscript-9114441b.js" type="module" data-persist="true"></script></html>

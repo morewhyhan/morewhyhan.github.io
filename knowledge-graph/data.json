@@ -1,22 +1,6 @@
 {
-  "generatedAt": "2026-08-29T23:00:14.610Z",
+  "generatedAt": "2026-08-29T23:06:49.343Z",
   "nodes": [
-    {
-      "id": "/2026/08/06/life-notes-civilization-on-graves/",
-      "title": "墓地上的文明",
-      "url": "/2026/08/06/life-notes-civilization-on-graves/",
-      "kind": "生活随笔",
-      "categories": [
-        "生活随笔"
-      ],
-      "tags": [],
-      "aliases": [],
-      "description": "很久以前，人类没有明年。 狩猎落空便是饥饿，河流干涸便要迁徙。老人跟不上队伍，孩子熬不过寒冬。人逐鹿群，鹿逐水草，天地辽阔，处处可容身，又处处不能久留。 后来，一粒种子落进泥土。麦田蔓延，仓廪立起；墙内有了市廛、文字、律令、礼乐与王权…",
-      "original": true,
-      "links": [
-        "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"
-      ]
-    },
     {
       "id": "/book/decision-algorithm/",
       "title": "决策算法100讲",
@@ -92,32 +76,16 @@
       ]
     },
     {
-      "id": "/2026/08/10/life-notes-musashi/",
-      "title": "武藏之死在天下无双",
-      "url": "/2026/08/10/life-notes-musashi/",
+      "id": "/2026/08/06/life-notes-civilization-on-graves/",
+      "title": "墓地上的文明",
+      "url": "/2026/08/06/life-notes-civilization-on-graves/",
       "kind": "生活随笔",
       "categories": [
         "生活随笔"
       ],
       "tags": [],
       "aliases": [],
-      "description": "宫本武藏十三岁的时候，杀了第一个人。",
-      "original": true,
-      "links": [
-        "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"
-      ]
-    },
-    {
-      "id": "/2026/08/01/life-notes-ten-years-later/",
-      "title": "十年后的我",
-      "url": "/2026/08/01/life-notes-ten-years-later/",
-      "kind": "生活随笔",
-      "categories": [
-        "生活随笔"
-      ],
-      "tags": [],
-      "aliases": [],
-      "description": "第一次在终端里敲出\"Hello World\"，黑色屏幕上只有一行白字。 天地初开，混沌退散。 那是世界回应我的第一声。 此后浏览器上的窗口越开越多。教程是粮仓，文档是舆图，论坛是驿站，密密麻麻的标签栏灯火连营，一直铺到屏幕尽头。 递归…",
+      "description": "很久以前，人类没有明年。 狩猎落空便是饥饿，河流干涸便要迁徙。老人跟不上队伍，孩子熬不过寒冬。人逐鹿群，鹿逐水草，天地辽阔，处处可容身，又处处不能久留。 后来，一粒种子落进泥土。麦田蔓延，仓廪立起；墙内有了市廛、文字、律令、礼乐与王权…",
       "original": true,
       "links": [
         "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"
@@ -140,6 +108,38 @@
       ]
     },
     {
+      "id": "/2026/08/01/life-notes-ten-years-later/",
+      "title": "十年后的我",
+      "url": "/2026/08/01/life-notes-ten-years-later/",
+      "kind": "生活随笔",
+      "categories": [
+        "生活随笔"
+      ],
+      "tags": [],
+      "aliases": [],
+      "description": "第一次在终端里敲出\"Hello World\"，黑色屏幕上只有一行白字。 天地初开，混沌退散。 那是世界回应我的第一声。 此后浏览器上的窗口越开越多。教程是粮仓，文档是舆图，论坛是驿站，密密麻麻的标签栏灯火连营，一直铺到屏幕尽头。 递归…",
+      "original": true,
+      "links": [
+        "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"
+      ]
+    },
+    {
+      "id": "/2026/08/10/life-notes-musashi/",
+      "title": "武藏之死在天下无双",
+      "url": "/2026/08/10/life-notes-musashi/",
+      "kind": "生活随笔",
+      "categories": [
+        "生活随笔"
+      ],
+      "tags": [],
+      "aliases": [],
+      "description": "宫本武藏十三岁的时候，杀了第一个人。",
+      "original": true,
+      "links": [
+        "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"
+      ]
+    },
+    {
       "id": "/2026/08/23/life-notes-odyssey/",
       "title": "奥德赛意识流",
       "url": "/2026/08/23/life-notes-odyssey/",
@@ -156,19 +156,6 @@
       ]
     },
     {
-      "id": "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/",
-      "title": "生活随笔",
-      "url": "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/",
-      "kind": "分类",
-      "categories": [],
-      "tags": [],
-      "aliases": [],
-      "description": "8 篇内容",
-      "original": true,
-      "virtual": true,
-      "links": []
-    },
-    {
       "id": "/categories/%E5%9B%BE%E4%B9%A6%E7%AC%94%E8%AE%B0/",
       "title": "图书笔记",
       "url": "/categories/%E5%9B%BE%E4%B9%A6%E7%AC%94%E8%AE%B0/",
@@ -177,6 +164,19 @@
       "tags": [],
       "aliases": [],
       "description": "1 篇内容",
+      "original": true,
+      "virtual": true,
+      "links": []
+    },
+    {
+      "id": "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/",
+      "title": "生活随笔",
+      "url": "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/",
+      "kind": "分类",
+      "categories": [],
+      "tags": [],
+      "aliases": [],
+      "description": "8 篇内容",
       "original": true,
       "virtual": true,
       "links": []

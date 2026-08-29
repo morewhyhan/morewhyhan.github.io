@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr"><head><title>024｜贝叶斯最优决策：大海如何捞针？ · 虚船向远</title><meta charset="utf-8"/><link rel="preload" href="../../index-dd6f8a77.css" as="style"/><link rel="preload" href="../../prescript-2bfc6315.js" as="script"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="虚船向远"/><meta property="og:title" content="024｜贝叶斯最优决策：大海如何捞针？ · 虚船向远"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="024｜贝叶斯最优决策：大海如何捞针？ · 虚船向远"/><meta name="twitter:description" content="《老喻·决策算法100讲》024：贝叶斯最优决策：大海如何捞针？"/><meta property="og:description" content="《老喻·决策算法100讲》024：贝叶斯最优决策：大海如何捞针？"/><meta property="og:image:alt" content="《老喻·决策算法100讲》024：贝叶斯最优决策：大海如何捞针？"/><meta property="twitter:domain" content="morewhyhan.github.io/notes"/><meta property="og:url" content="https://morewhyhan.github.io/notes/books/decision-algorithm/024"/><meta property="twitter:url" content="https://morewhyhan.github.io/notes/books/decision-algorithm/024"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="《老喻·决策算法100讲》024：贝叶斯最优决策：大海如何捞针？"/><meta name="generator" content="Quartz"/><link href="../../index-dd6f8a77.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-34bdfded.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-11d41004.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-26a99b87.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-9857b007.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-d3a1a224.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../prescript-2bfc6315.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://morewhyhan.github.io/notes/books/decision-algorithm/024-og-image.webp"/><meta property="og:image:url" content="https://morewhyhan.github.io/notes/books/decision-algorithm/024-og-image.webp"/><meta name="twitter:image" content="https://morewhyhan.github.io/notes/books/decision-algorithm/024-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="books/decision-algorithm/024" data-basepath="/notes"><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../..">虚船向远</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="搜索" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>搜索</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="搜索内容..." placeholder="搜索内容..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="暗色模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="阅读模式"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="阅读模式"><title>阅读模式</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\n        numeric: true,\n        sensitivity: \&quot;base\&quot;\n      });\n    }\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\n      return 1;\n    }\n    return -1;\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\n    return node;\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-33" aria-label="探索"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-33" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../books/">图书笔记</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../books/decision-algorithm/">决策算法100讲</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>024｜贝叶斯最优决策：大海如何捞针？</a></div></nav><h1 class="article-title">024｜贝叶斯最优决策：大海如何捞针？</h1><p show-comma="true" class="content-meta"><time datetime="2026-08-27T16:00:00.000Z">2026年8月28日</time><span>37分钟阅读</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><blockquote>
+<p><strong>资料说明</strong>：本文为《老喻·决策算法100讲》的外部原文资料，非本站原创。相关著作权归原作者及原发布方所有。</p>
+</blockquote>
+<blockquote>
+<p>来源：老喻·决策算法100讲</p>
+<p>音频：14分06秒</p>
+</blockquote>
+<h2 id="老喻亲述">老喻亲述<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#老喻亲述" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>你好，我是老喻，欢迎来到《决策算法》课。</p>
+<p>我们在做决策的时候，经常面对一个难题：信息不完整。</p>
+<p>比如，要做某件事，需要知道信息 ABCDEFG……但我们只知道信息 A，并且，甚至连 A 都很不确定。</p>
+<p>这种局面，有时候会有点像大海捞针。成功的可能性不是没有，但十分渺茫。似乎要么只能放弃，要么只能硬着头皮蒙，随便走一步，剩下就听天由命。</p>
+<p>但其实，有一种决策方法，就是专门来应对这类决策难题：这就是最优决策理论。</p>
+<p>什么是最优决策理论？先不着急介绍概念，还是先分享我自己的一个真实故事。</p>
+<hr/>
+<p>有一次，我家的金毛在院子里独自玩儿时找不到了。</p>
+<p>家人急得不行，亲朋好友们纷纷去社区周围找，去附近的森林找，还发动了“金毛群”的“狗友们”出谋划策。</p>
+<p>因为我家的金毛热爱社交，经常趴在门口和路过的人打招呼，所以还担心是不是被坏人抱走了，于是又赶紧查看监控录像。总之，大家一片忙乱。</p>
+<p>当时，我带着孩子去外地参加国际象棋比赛，不在现场，心急之余，给家人电话，听他们的进展。</p>
+<p>大约过了一个小时，到处都搜遍了，还是没找到。</p>
+<p>我想了一下，说：我觉得狗可能还在院子里。</p>
+<p>他们回应：院子的各个角落都找遍了，没有。而且平时一喊，金毛就会从角落里跑出来。</p>
+<p>我坚持说：再在院子里找一遍。</p>
+<p>后来，他们又回到院子里仔细搜索，突然听见角落里有微弱的声音，原来狗自己挖了个洞钻进木板下，被卡在里面了。</p>
+<p>于是马上打电话让消防队员来，用斧头劈开木板，救出了奄奄一息的金毛。</p>
+<p>朋友问：你怎么知道狗还在院子里呢？</p>
+<p>我说，丢失的金毛大概有三种可能性，按照概率大小排序如下：</p>
+<ol>
+<li>可能性1，还在院子里但没看到。它以前从未来跳出栅栏，所以一开始在院子里的概率大于90%；</li>
+<li>可能性2，跳出院子跑到附近或平时爱去的森林里，可能性大约7%；</li>
+<li>可能性3，被人抱走了。这种可能性最“戏剧化”，但本地人爱狗，可能性最低，姑且算3%。</li>
+</ol>
+<p>虽然一开始在院子里找过并且没找到，但还是有一定可能性是没有搜遍每个角落。（后来没想到还有被卡住的意外。）</p>
+<p>假设在院子里找过但没找到的概率是10%，那么根据贝叶斯定理，还在院子里的概率是：</p>
+<blockquote>
+<p>90% × 10% = 9%，这个数值仍然大于7%和3%。</p>
+</blockquote>
+<p>也就是说：（找过一遍没找到）狗仍然在院子里的可能性，还是大于“狗跑出去”或者“被偷走”的概率。</p>
+<p>所以，仍然应该在院子里寻找。</p>
+<p>运用决策算法，我们救回了可爱的金毛。</p>
+<hr/>
+<h2 id="一最优决策理论的核心">一、最优决策理论的核心<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#一最优决策理论的核心" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>在上面的真实故事里，我运用了最优决策理论。</p>
+<p><strong>最优决策理论的核心是，在现有的信息基础上，在备选方案中做出一个最好的决定，然后不断动态更新。</strong></p>
+<p>“最优决策”并不意味着完美，而是指决策者始终向着追求“最优结果”努力。哪怕在已知的信息里，最优结果看起来也不那么靠谱。就像我前面的案例，第二次去院子里搜寻，在当时的情况下是最优决策，但似乎也希望渺茫。</p>
+<p>听过我们前面的课程之后，你一定听出来了，最优决策理论的内核，跟贝叶斯定理密不可分。</p>
+<p>贝叶斯定理+最优决策理论，能够帮助我们解决很多现实中的问题。并且，由于这是一个可以持续优化的决策框架，也被广泛应用于机器学习系统。</p>
+<p>贝叶斯定理+最优决策理论，完成了很多看起来不可能的任务。</p>
+<p>1966年，美军的一枚氢弹落入海中，无法定位。于是专家使用“贝叶斯定理+最优决策理论”，展开了搜寻：</p>
+<ol>
+<li>将遗失氢弹附近的海域划分为几个小方格；</li>
+<li>请来一个专家小组，根据诸如氢弹的一个或两个降落是否打开等事件的概率，估计氢弹落在每个方格的可能性；</li>
+<li>从最高概率的区域开始搜寻，如果没有找到，更新起初的概率分布估算；</li>
+<li>不断重复以上动作。</li>
+</ol>
+<p>最终，人们成功找到了氢弹。</p>
+<h2 id="二贝叶斯定理如何更新搜寻">二、贝叶斯定理如何更新搜寻<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#二贝叶斯定理如何更新搜寻" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>除了找“氢弹”，贝叶斯定理+最优决策原理，还帮助过人类找到失联的飞机。</p>
+<p>2009年5月31日晚上10点，法航447航班不幸坠毁，搜救人员动用当时的最新技术，找了一周后，仅发现少量残骸碎片和29具遇难者遗体，并没有发现飞机的主要残骸和黑匣子。</p>
+<p>这时，贝叶斯主义者登场了，他们的方法和美军找氢弹的方法如出一辙：</p>
+<ol>
+<li>为飞机失事建立一个数学模型；</li>
+<li>整合评估各种导致失事的原因的概率；</li>
+<li>根据更新信息，改进模型。</li>
+</ol>
+<blockquote>
+<p>图示：贝叶斯方法在法航事件搜救过程中的应用。图中用不同颜色表示不同概率区域；图注来源标为《科学世界》杂志。</p>
+</blockquote>
+<p>说得更具体一点，搜索队首先根据已经有的信息，绘制一个概率分布图，把可能的区域，分成了一个个小方格。</p>
+<p>文稿中，我附上了一张图，你可以打开查看。按照概率大小，搜索队也会每个方格涂上红、橙、黄、绿、蓝不同的颜色。</p>
+<p>接下来，搜索队先从概率最大的区域搜索，如果没有发现，就在过往数据基础之上更新概率分布，然后再继续搜索最大概率区域。</p>
+<p>这就是一个典型贝叶斯更新的过程。</p>
+<p>不过，贝叶斯定理用起来比较抽象，这一次，我试着不用贝叶斯定理，而是用更容易理解的方式，带你演算一下。</p>
+<p>这个过程，或许也能让你理解贝叶斯定理的底层原理。</p>
+<p>首先，假设基于已经有的条件，残骸在 ABCD 四个区域的概率分别是30%、50%、5%和15%。显然，在 B 区域的可能性（50%）是最高的。</p>
+<p>但如果搜索 B 区域之后没找到，这时候就存在两种可能性：</p>
+<ol>
+<li>的确不在 B 区域；</li>
+<li>在 B 区域但是被漏掉了。（请注意，这是一个很重要的逻辑，我在搜救金毛时，就是评估了在院子里没找到但是被漏掉的概率）</li>
+</ol>
+<p>我们假设漏掉的概率是25%。</p>
+<p>再请注意，这里有趣的地方是，对于一个贝叶斯主义者，不仅是“我相信”，但我也怀疑我的相信，甚至于，连我对自己的怀疑也是怀疑的。</p>
+<p><strong>假如你知道自己愚蠢，并且能够定义出愚蠢的边界，例如这里“我漏了”的概率值25%，那么愚蠢就会成为智慧的一部分。</strong></p>
+<p>继续上面的不用公式的计算。搜索了 B 区域，由此更新的信息是：</p>
+<blockquote>
+<p>B：50%</p>
+<p>确认没有找到：50% ×（1－25%）= 37.5%</p>
+<p>漏掉的概率：50% × 25% = 12.5%</p>
+</blockquote>
+<ol>
+<li>的确不在 B 区域的概率是 50% ×（1－25%）=37.5%；</li>
+<li>还是在 B 区域但是被漏掉的概率是 50%×25%=12.5%。</li>
+</ol>
+<p>这里要注意，既然不在 B 区域的概率变化了，在其他区域的可能性，也会跟着变化。也就是，不在 B 区域的37.5%可能性，就要在 ABCD 四个区域重新分配。</p>
+<p>计算过程就是简单的加权分配，不过数字略微有点多，这里直接讲结果。</p>
+<p>重新分配之后，在 A 区域的概率，就变成了最高的48%，接下来，搜索人员继续搜索 A 区域。</p>
+<p>重新分配的基数是（30%+12.5%+5%+15%），以 A 区域为例，其因为重新分配37.5%而增加的概率是：</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="text" data-theme="github-light github-dark"><code data-language="text" data-theme="github-light github-dark" style="display:grid;"><span data-line><span>30% ÷（30%+12.5%+5%+15%）×37.5% = 18%</span></span></code></pre></figure>
+<p>于是，更新后 A 区域的概率是30%+18%=48%。</p>
+<p>我们可以想象，假如我们对飞机在某个区域的初始信念比较高，并且遗漏概率也比较高的话，即使搜索了该区域而不得，也有可能该区域更新后的概率仍然是最高的，所以仍然应该再次去寻找。</p>
+<p>举个例子，你找不到耳机了。你平时习惯把耳机放在书架上。你去书架找了，没找到。你又去别处找，还是没发现。这时你可以考虑在书架上重新找一遍。</p>
+<p>历史上的搜救案例里，的确出现过类似的状况，人们根据更新后的数据，重复去搜索此前找过但没找到的区域，结果最后找到了。</p>
+<p>这里，也再重复一下贝叶斯主义者对概率的理解。贝叶斯主义者将概率理解为对某件事情的信念。他们承认自己的“信念”是灰度的，而非绝对的判断，他们会根据观察到的信息更新自己的信念。</p>
+<p>贝叶斯推断保留不确定性，每一轮的估算也是模糊的，然而贝叶斯定理在模糊和犯错的情况下，依然可以发挥作用。并且，贝叶斯推断可以不断重复，帮助我们快速逼近真相。</p>
+<h2 id="三希望与毫无希望">三、希望与“毫无希望”<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#三希望与毫无希望" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>贝叶斯定理在现实世界中的很多应用，看起来都像是神迹。</p>
+<p>例如图示二战期间破解德国的密码，就运用了贝叶斯的理念。</p>
+<p>所有这些故事，我最喜欢下面这个搜救落水船员的传奇。</p>
+<p>2013年7月的一个晚上，一个捕虾船的船员失踪了。海岸警卫队发现自己要面对的是一项不可能的任务：</p>
+<ul>
+<li>没有确切的失踪时间和失踪地点；</li>
+<li>要在4000平方公里的海域里找到一个人。</li>
+</ul>
+<p>这真就是大海捞针了。</p>
+<p>警卫队采用了一个叫做“搜救优化计划系统”的工具，原理类似于我们上面提及的算法，根据模糊的线索，结合当时条件等因素，一点一点缩小搜救范围。</p>
+<p><strong>希望有时在毫无希望的地方孕育而生，是因为“毫无希望”剔除掉了那些“看起来似乎可以依附的希望”的幻想。</strong></p>
+<p>在这个故事里，7个小时过去了，搜救人员一无所获，决定返回基地加油。</p>
+<p>这时副驾驶突然大喊起来。他们调转方向，发现失踪船员正被裹在汹涌的大海中，拼命向飞机挥手。</p>
+<p>简单的贝叶斯定理，用很少的信息，就可以在汪洋大海中，救起一个人——这是一个关于命运、信息和决策算法的隐喻：</p>
+<p>我们的人生绝大多数时候，都犹如置身无边无际的大海，只拥有极少的已知条件，但我们有限的努力，笨拙的推理，也能令自己脱离险境。</p>
+<p>当然，这里也要讲究方法，核心就是“试错”。</p>
+<p><strong>生活通过（对你以为的“真相”）说不的方式，帮助你一步步逼近真相。</strong></p>
+<p>那个相信上帝的贝叶斯牧师创造出来的定理，仿佛在告诉我们：你的自由意志，恰恰存在于你在这个世界的每一次探索和挣扎中。</p>
+<p>可能性哪怕一开始细微而弱势，你依然可以通过永不放弃的微小努力，一步步逼近真相。</p>
+<p>从感性的角度，贝叶斯帮助我们避免陷入“一切命中注定”的虚无。我们每个人在宇宙间都很渺小，却可以完整地参与其中；我们现实中的奔波往往充满坎坷，有时候到处都是限制条件，却也并非看不见一点儿希望。</p>
+<p>只要你有一个希望的小火种，然后有一个理性的算法，进而通过不断重复的优化，就有可能一点点逼近目标，完成起初看起来不可能的任务。</p>
+<p>有天早晨，我对此颇有感慨，不由得写下：</p>
+<blockquote>
+<p>“这个世界只给我很小的一个角落，</p>
+<p>很短的一段时间，</p>
+<p>遇见很少一些人，</p>
+<p>经历很简单的事，</p>
+<p>却令我产生如此真实地感知了整个世界的幻觉。”</p>
+</blockquote>
+<p>即便这的确是一种幻觉，我们在这世界走一遭，也算不虚此行。</p>
+<p>以上就是这一讲的全部内容，如果你觉得有启发，欢迎转发给身边的朋友。</p>
+<p>我是老喻，我们下一讲再见。</p>
+<h2 id="划重点">划重点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#划重点" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li>最优决策理论的核心是，在现有的信息基础上，在备选方案中做出一个最好的决定，然后不断动态更新。</li>
+<li>假如你知道自己愚蠢，并且能够定义出愚蠢的边界，那么这愚蠢就会成为智慧的一部分。</li>
+<li>希望有时在毫无希望的地方孕育而生，是因为“毫无希望”剔除掉了那些“看起来似乎可以依附的希望”的幻想。</li>
+</ol>
+<h2 id="pdf-内用户留言">PDF 内用户留言<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#pdf-内用户留言" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="左星星">左星星<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#左星星" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>过去，我们习惯将模糊的、不明确的情境视作障碍，总希望掌握全面信息后再行动。然而现实生活往往不论我们这样参考，无论是行动中，还是生活中的琐事，我们面对的局面更多是信息不完整甚至相互矛盾的。在这样的情况下，贝叶斯理论提醒我们，即便已知条件不够完备，也可以在模糊中试探，并通过不断试错去修正方向。</p>
+<p>贝叶斯思维不仅是一种决策工具，更是一种价值观的体现。它隐含着一种对人的局限性的承认：我们永远不可能完全掌握真相，也永远不可能完全避免错误。但正因为如此，我们也可以在局限中找到一种谦逊的智慧。它启发我，不要对自己的能力和判断过于自信，而是应该学会留出余地，允许失败并接受不确定性。换句话说，贝叶斯思维教会我们如何在模糊和错漏中前进，而不是因为害怕失败而停滞不前。</p>
+<h3 id="黄泊淳-only">黄泊淳 Only<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#黄泊淳-only" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>喻老师您好，这讲讲的决策算法，收获是我们的信息不管用时，不该全部放弃，应该有贝叶斯思维，如果是方法错了，或是遗漏了，这样的概率也是要考虑进去，加入决策因素。</p>
+<p>生活中，不论找东西，或是做一些具体的事，往往概率最高的方式，不一定一次失败，就该用删去法删除，考虑了入可能在第一次行动时犯错，也是一种智慧的体现！</p>
+<h3 id="scott">Scott<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#scott" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>贝叶斯决策和信息论中的哈夫曼编码都涉及对概率的应用，有着异曲同工之妙。</p>
+<p>哈夫曼编码的本质是将最宝贵的资源给出现概率最大的信号。为了验证概率，需要如贝叶斯最优决策般，不断试错。</p>
+<h3 id="鸿涛">鸿涛<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#鸿涛" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>最优决策理论给了我们尝试行动的抓手，让我们有信心（概率最优）不断地试错。而贝叶斯定理通过不断地修正来校准，发挥的是不断提升判断力的作用。因此，贝叶斯定理+最优决策理论就是不断地按照概率去判断，然后再根据偏差情况不断校正的过程，经过不断的修正，最终可以射中靶心。</p>
+<h3 id="炎帝">炎帝<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#炎帝" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>在生活和工作的舞台上，我们常常如同在迷雾中摸索前行的行者，面临着信息不完整的决策困境。就像在黑暗中寻找丢失的物品，或是在复杂多变的局势里抉择下一步行动，每一个选择都像是一场冒险，成功的路径似乎若隐若现，让人感到迷茫与无助。</p>
+<p>老喻用案例分析的贝叶斯最优决策理论如一盏明灯，在这混沌之中为我们照亮了前行的道路。</p>
+<p>对我们而言，理解并应用贝叶斯原理并不需要高深的专业知识。以寻找丢失物品为例，我们可以先思考最有可能存放的地方，然后依次检查。如果初次检查未果，则重新考虑其他可能性较高的位置，并适当调整对该地点的信息程度。如此循环往复，直到最终定位到目标。这种方式看似简单，实则蕴含着深刻的哲理——承认自身的无知，同时又不失探索真相的决心；接受现实世界的复杂性，但仍然坚持用科学的方法解决问题。</p>
+<p>在职场环境中，贝叶斯思维同样具有重要意义。当我们面临选择或预测未来趋势时，往往缺乏足够的数据支持。此时，借助过往经验和行业洞察力构建一个合理的先验模型就显得尤为重要。之后，随着更多相关信息的积累，逐步优化我们的预判，从而制定出更加符合实际状况的战略规划。</p>
+<p>例如，在新产品开发过程中，企业可以根据市场调研结果设定初步销售预期，之后依据试销反馈及时调整营销方案，确保产品能够更好地满足消费者需求。</p>
+<p>在不确定性的世界里，贝叶斯最优决策理论为我们提供了一盏指路明灯。</p>
+<h3 id="学习机器">学习机器<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#学习机器" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>用贝叶斯大脑去相亲</p>
+<p>今天我想从贝叶斯的决策视角，来聊聊关于相亲这件事。在相亲的时候，会有一些高频问题，比如有些人（条件不差）相亲了很多，可就是没有成功的；有些人虽然相亲成功了，进入了恋爱、甚至是婚姻，相处久了却发现对方并不是自己想要找的那个人。接下来就聊聊这两个问题。</p>
+<p>对于第一个问题，相了很多亲，可就是没有成功的，这个问题的关键就是：相亲者没有一个择偶决策模型，简单说就是他并不知道自己想要什么，这就必然导致相了很多亲，却始终没有成功的现象发生。当然还有可能就是目标不够清晰、可行性不够，或者还没达到足够的相亲数量；不过还有一种可能就是择偶决策模型不太现实，需要更新迭代了，这就是后面要谈的内容了。</p>
+<p>对于第二个问题，相亲成功了，进入恋爱、婚姻后发现，和这个人并不合适。这个问题的关键是：你的择偶决策模型和你身想要的幸福并不匹配，需要更新迭代了。比如说有的人择偶看对方的身高、收入、颜值、学历、房车等这些，但对方满足了这些条件就会让你幸福吗？我答案是不定的。你需要做的就是用你的贝叶斯大脑，在相亲的大样本数据中，不断地去升级迭代自己的择偶模型。</p>
+<p>贝叶斯所传递的思想就是：当事实发生改变时，你愿意改变自己的模型、想法，这是一个不断升级迭代的动态过程。作为一个理性的决策者，要保持积极开放思维，这也是决策者最重要的品质。</p>
+<h3 id="李素">李素<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#李素" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>今天关于贝叶斯概率，尤其是其中关于“信念更新”的核心思想。贝叶斯主义者将概率理解为一种“信念”——而这种信念并不是一成不变的，而是随着我们所获得的信息不断更新和调整的。这种观点突破了传统概率论的思维方式，让我对概率有了更为灵活和动态的理解。</p>
+<p>假设我们对某个区域的初始信念较高，且该区域的遗漏概率也较大，那么即使在搜索过程中没有发现目标，我们仍然可能需要继续关注该区域。即使没有马上找到，也不能轻易放弃最初的信念，而是应该继续重点放在最有可能的地方，逐步更新我们的判断。</p>
+<p>这一点让我联想到自己日常生活中的一些亲身经历。我曾经在早上掉过耳机盒或者钥匙，明明记得它掉到了厨房某个地方，之后我却将厨房查过很多遍，也找了好几次，怎么也找不到。于是，我开始把注意力转移到别的地方，甚至以为它可能掉到车外去了。然而，当我在其他地方求而不得时，再一次回到最初的地方——副驾驶的缝隙，终于在角落里找到了那个耳机盒。</p>
+<p>学了今天的内容，下次再出现这种情况，我就不会只在前排缝隙找一次了，类似的事情，这种思维方式教会我们如何更好地应对现实中的模糊性和变化，避免过早放弃原本最有可能的选择。</p>
+<h3 id="todd">Todd<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#todd" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>想起来《思考，快与慢》中的一个案例：一辆出租车在夜晚肇事后逃逸。这座城市有两家出租车公司，其中一家公司出租车是绿色的，另一家是蓝色的。</p>
+<p>你知道以下数据：</p>
+<ul>
+<li>这座城市85%的出租车是绿色的，15%是蓝色的。</li>
+<li>一位目击证人辨认出那辆肇事出租车是蓝色的。当晚，警察在出事地点对证人的证词进行了测试，得出的结论是：目击者在当时能够正确辨认出这两种颜色的概率是80%，错误的概率是20%。</li>
+</ul>
+<p>这场事故的出租车是蓝色而不是绿色的概率是多少？</p>
+<p>这是“贝叶斯定理”的一个标准问题。我们可以从中得到两条信息：一个基础比率以及不完全可靠的目击者证词。若有目击者，肇事出租车是蓝色的概率（即蓝色出租车的基础比率）为15%。若两家公司规模一样大的话，基础比率就会变成无用信息，你就只需考虑目击者的证词，因而这个问题的概率就是80%。我们可以用贝叶斯定理将这两个信息结合起来，得出正确答案是41%。然而，你可能会想到当人们面对这个问题时是怎样做的：他们会忽略基础比率，只考虑目击者的因素。因此，最普通的答案是80%。</p>
+<p>看完犯罪，优秀侦探总会紧盯一切。电视剧中常把这归咎于侦探过太多的黑暗面，因此始终怀疑人性。但是，从贝叶斯最优决策的角度出发，结果未定之前，一切皆有可能。</p>
+<p>过去，如果一件事失败了，我就会把它从我的选择清单中删除。今天，这节课让我意识到一次失败可能存在偶然因素，并不意味着这个选择一定错了。如果一次失败就把这个选择彻底删除的话，就相当于自己把自己的一条出路堵死了。</p>
+<p>我应该把所有选择，包括失败的选择，都纳入考虑范围。运用贝叶斯最优决策理论，动态调整各种选择的概率，从中选择概率最大的，再次展开行动。从这个角度看，这是一种形式的忒悔沉没成本。</p>
+<h3 id="阿繁达1043">阿繁达1043<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#阿繁达1043" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>平庸大约就是因为你在人生每一次初始条件改变，需要更新新的信息（把手头的大部分资源重新分配给当前的最优决策时，你却选择遵循惯性或固于沉没成本继续留在原地，假装自己很努力，把最后的一无所获归结于命运的安排。你或许会看到那些从一而终、一直耕耘在某个领域最后获得成功的人，那可能只是人家动态评估后不断重新选择的结果，而你却把结果当成原因。</p>
+<p>选择最优决策是每个人都知道的道理，为什么鲜有人持</p>
+<h3 id="山峰">山峰<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#山峰" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>运用最优决策理论的关键是构筑一个“筛选信息—理性反馈”的决策系统。</p>
+<p>认识自己的无知和愚蠢，就是智慧的开始。</p>
+<p>希望有时存在绝望之中，原因在于绝望里不明，充满艰难与不确定性，但这并不意味着没有机会。而且这种机会，是没人来抢的，大多数人是不屑一顾的。只要你不会因为受挫、勇挑困难，筛选信息，理性思考，在逆境中奋斗，这种决策或许艰难，但努力过后，定能收获独属于自己的回报。有时这种回报就包含有希望。</p>
+<h3 id="victory">victory<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#victory" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>最优决策就是凯利公式加上贝叶斯主义，这个理论和维纳的控制论有共同的底层逻辑，都是用输出影响输入，不断接近自己的目标，通过上一次执行的结果来修正自己的胜率和策略，再做出综合期望最高的选择，拉出一下一次课程里面说的动起来，动起来才有输出，让输出再来指导我们的行为，反馈就像命运给我们的指引。</p>
+<h3 id="amy">Amy<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#amy" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>今天在路上听到老师写给自己的话，必须停下来把这句感谢写成留言，正是因为有这样的触动才有这样的课程，想在茫茫人海中点燃一个灵魂从来不可复制。</p>
+<h3 id="爱艺术的李达拉">爱艺术的李达拉<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#爱艺术的李达拉" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>基于最优决策理论，让我联想到了此理论与打麻将之间的一丝相似性。</p>
+<ol>
+<li>动态评估与适应性：在麻将中，随着每一张牌的出入，局势在不断变化。你必须实时评估自己的牌局，并根据新的信息调整策略。因此，最优决策不仅仅是依赖于初始的判断，更重要的是如何灵活地根据新的数据和变化来做出调整。</li>
+<li>信息的不对称性：在麻将中，每个玩家只有自己的手牌，并不知道其他玩家的具体牌面。决策者常常面临信息不对称的局面，必须基于有限的、甚至是模糊的信息做出最优选择。此时，如何从有限的信息中推断出有价值的结论，并从多个备选方案中选出最优方案，是决策的核心挑战。</li>
+<li>长远目标与短期决策的平衡：在麻将中，虽然每一轮的出牌都是为了最终的胡牌目标，但你需要在每一步的决策中考虑短期的得失与长期的布局。如何做好权衡，避免眼前的诱惑，而把目光放得更长远，往往是决定成败的关键。</li>
+</ol>
+<p>【知识福利社】你的私人书院，微信：312005650 全网热门课程免费共享！</p>
+<hr/>
+<p><a href="../../book/decision-algorithm/023/" class="internal internal-link alias" data-slug="book/decision-algorithm/023/index">← 023｜万事开头难：为什么你永远都有最好的下一步？</a> · <a href="../../book/decision-algorithm/" class="internal internal-link alias" data-slug="book/decision-algorithm/index">返回《决策算法100讲》目录</a> · <a href="../../book/decision-algorithm/025/" class="internal internal-link alias" data-slug="book/decision-algorithm/025/index">025｜对数思维：怎么抓住二十万分之一的机会？ →</a></p>
+<hr/>
+<p><a href="../../books/decision-algorithm/" class="internal internal-link alias" data-slug="books/decision-algorithm/index">《决策算法100讲》目录</a> · <a href="../../books/" class="internal internal-link alias" data-slug="books/index">全部图书笔记</a></p></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>关系图谱</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc"><button type="button" class="toc-header" aria-controls="toc-23" aria-expanded="true"><h3>目录</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#老喻亲述" data-for="老喻亲述">老喻亲述</a></li><li class="depth-0"><a href="#一最优决策理论的核心" data-for="一最优决策理论的核心">一、最优决策理论的核心</a></li><li class="depth-0"><a href="#二贝叶斯定理如何更新搜寻" data-for="二贝叶斯定理如何更新搜寻">二、贝叶斯定理如何更新搜寻</a></li><li class="depth-0"><a href="#三希望与毫无希望" data-for="三希望与毫无希望">三、希望与“毫无希望”</a></li><li class="depth-0"><a href="#划重点" data-for="划重点">划重点</a></li><li class="depth-0"><a href="#pdf-内用户留言" data-for="pdf-内用户留言">PDF 内用户留言</a></li><li class="depth-1"><a href="#左星星" data-for="左星星">左星星</a></li><li class="depth-1"><a href="#黄泊淳-only" data-for="黄泊淳-only">黄泊淳 Only</a></li><li class="depth-1"><a href="#scott" data-for="scott">Scott</a></li><li class="depth-1"><a href="#鸿涛" data-for="鸿涛">鸿涛</a></li><li class="depth-1"><a href="#炎帝" data-for="炎帝">炎帝</a></li><li class="depth-1"><a href="#学习机器" data-for="学习机器">学习机器</a></li><li class="depth-1"><a href="#李素" data-for="李素">李素</a></li><li class="depth-1"><a href="#todd" data-for="todd">Todd</a></li><li class="depth-1"><a href="#阿繁达1043" data-for="阿繁达1043">阿繁达1043</a></li><li class="depth-1"><a href="#山峰" data-for="山峰">山峰</a></li><li class="depth-1"><a href="#victory" data-for="victory">victory</a></li><li class="depth-1"><a href="#amy" data-for="amy">Amy</a></li><li class="depth-1"><a href="#爱艺术的李达拉" data-for="爱艺术的李达拉">爱艺术的李达拉</a></li><li class="overflow-end"></li></ul></div><div class="backlinks"><h3>反向链接</h3><ul id="list-0" class="overflow"><li><a href="../../books/decision-algorithm/" class="internal">决策算法100讲</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://morewhyhan.github.io/">返回虚船向远</a></li><li><a href="https://github.com/morewhyhan/">GitHub</a></li></ul></footer></div></div></body><script src="../../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../postscript-9114441b.js" type="module" data-persist="true"></script></html>
