@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29T07:20:36.439Z",
+  "generatedAt": "2026-08-29T23:00:14.610Z",
   "nodes": [
     {
       "id": "/2026/08/06/life-notes-civilization-on-graves/",
@@ -37,7 +37,26 @@
       "description": "老喻关于概率、风险、博弈与人生选择的系统课程资料；全套资料在本站按一个专题收录。",
       "original": false,
       "links": [
-        "/categories/%E5%9B%BE%E4%B9%A6%E7%AC%94%E8%AE%B0/"
+        "/categories/%E5%9B%BE%E4%B9%A6%E7%AC%94%E8%AE%B0/",
+        "/tags/%E5%86%B3%E7%AD%96/",
+        "/tags/%E6%A6%82%E7%8E%87/",
+        "/tags/%E5%8D%9A%E5%BC%88/"
+      ]
+    },
+    {
+      "id": "/2026/08/08/life-notes-demon-outside-the-board/",
+      "title": "棋盘外有妖之命",
+      "url": "/2026/08/08/life-notes-demon-outside-the-board/",
+      "kind": "生活随笔",
+      "categories": [
+        "生活随笔"
+      ],
+      "tags": [],
+      "aliases": [],
+      "description": "如果一切重来，命运还会一样吗？",
+      "original": true,
+      "links": [
+        "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"
       ]
     },
     {
@@ -73,16 +92,32 @@
       ]
     },
     {
-      "id": "/2026/08/08/life-notes-demon-outside-the-board/",
-      "title": "棋盘外有妖之命",
-      "url": "/2026/08/08/life-notes-demon-outside-the-board/",
+      "id": "/2026/08/10/life-notes-musashi/",
+      "title": "武藏之死在天下无双",
+      "url": "/2026/08/10/life-notes-musashi/",
       "kind": "生活随笔",
       "categories": [
         "生活随笔"
       ],
       "tags": [],
       "aliases": [],
-      "description": "如果一切重来，命运还会一样吗？",
+      "description": "宫本武藏十三岁的时候，杀了第一个人。",
+      "original": true,
+      "links": [
+        "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"
+      ]
+    },
+    {
+      "id": "/2026/08/01/life-notes-ten-years-later/",
+      "title": "十年后的我",
+      "url": "/2026/08/01/life-notes-ten-years-later/",
+      "kind": "生活随笔",
+      "categories": [
+        "生活随笔"
+      ],
+      "tags": [],
+      "aliases": [],
+      "description": "第一次在终端里敲出\"Hello World\"，黑色屏幕上只有一行白字。 天地初开，混沌退散。 那是世界回应我的第一声。 此后浏览器上的窗口越开越多。教程是粮仓，文档是舆图，论坛是驿站，密密麻麻的标签栏灯火连营，一直铺到屏幕尽头。 递归…",
       "original": true,
       "links": [
         "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"
@@ -105,22 +140,6 @@
       ]
     },
     {
-      "id": "/2026/08/10/life-notes-musashi/",
-      "title": "武藏之死在天下无双",
-      "url": "/2026/08/10/life-notes-musashi/",
-      "kind": "生活随笔",
-      "categories": [
-        "生活随笔"
-      ],
-      "tags": [],
-      "aliases": [],
-      "description": "宫本武藏十三岁的时候，杀了第一个人。",
-      "original": true,
-      "links": [
-        "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"
-      ]
-    },
-    {
       "id": "/2026/08/23/life-notes-odyssey/",
       "title": "奥德赛意识流",
       "url": "/2026/08/23/life-notes-odyssey/",
@@ -131,22 +150,6 @@
       "tags": [],
       "aliases": [],
       "description": "我中了特洛伊木马病毒。",
-      "original": true,
-      "links": [
-        "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"
-      ]
-    },
-    {
-      "id": "/2026/08/01/life-notes-ten-years-later/",
-      "title": "十年后的我",
-      "url": "/2026/08/01/life-notes-ten-years-later/",
-      "kind": "生活随笔",
-      "categories": [
-        "生活随笔"
-      ],
-      "tags": [],
-      "aliases": [],
-      "description": "第一次在终端里敲出\"Hello World\"，黑色屏幕上只有一行白字。 天地初开，混沌退散。 那是世界回应我的第一声。 此后浏览器上的窗口越开越多。教程是粮仓，文档是舆图，论坛是驿站，密密麻麻的标签栏灯火连营，一直铺到屏幕尽头。 递归…",
       "original": true,
       "links": [
         "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"
@@ -173,6 +176,51 @@
       "categories": [],
       "tags": [],
       "aliases": [],
+      "description": "1 篇内容",
+      "original": true,
+      "virtual": true,
+      "links": []
+    },
+    {
+      "id": "/tags/%E5%86%B3%E7%AD%96/",
+      "title": "#决策",
+      "url": "/tags/%E5%86%B3%E7%AD%96/",
+      "kind": "标签",
+      "categories": [],
+      "tags": [],
+      "aliases": [
+        "决策"
+      ],
+      "description": "1 篇内容",
+      "original": true,
+      "virtual": true,
+      "links": []
+    },
+    {
+      "id": "/tags/%E6%A6%82%E7%8E%87/",
+      "title": "#概率",
+      "url": "/tags/%E6%A6%82%E7%8E%87/",
+      "kind": "标签",
+      "categories": [],
+      "tags": [],
+      "aliases": [
+        "概率"
+      ],
+      "description": "1 篇内容",
+      "original": true,
+      "virtual": true,
+      "links": []
+    },
+    {
+      "id": "/tags/%E5%8D%9A%E5%BC%88/",
+      "title": "#博弈",
+      "url": "/tags/%E5%8D%9A%E5%BC%88/",
+      "kind": "标签",
+      "categories": [],
+      "tags": [],
+      "aliases": [
+        "博弈"
+      ],
       "description": "1 篇内容",
       "original": true,
       "virtual": true,

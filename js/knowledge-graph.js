@@ -15,13 +15,14 @@
     ['pixi', 'https://cdn.jsdelivr.net/npm/pixi.js@8/dist/pixi.js', 'PIXI']
   ]
   const COLORS = {
-    '分类': '#e5b56d',
-    '若我在场': '#d59b64',
-    '图书笔记': '#bc9bea',
-    '生活随笔': '#82b8de',
-    '机制卡片': '#84c49c',
-    '文章': '#8ba4bf',
-    '知识页面': '#a9afb9'
+    '分类': '#b8b8b8',
+    '若我在场': '#b8b8b8',
+    '图书笔记': '#b8b8b8',
+    '生活随笔': '#b8b8b8',
+    '标签': '#858585',
+    '机制卡片': '#a6a6a6',
+    '文章': '#a6a6a6',
+    '知识页面': '#a6a6a6'
   }
 
   let dataPromise
@@ -178,7 +179,8 @@
     }
 
     const width = Math.max(container.clientWidth, 320)
-    const height = Math.max(container.clientHeight, options.local ? 250 : 560)
+    const minimumHeight = options.local ? 250 : (container.closest('.knowledge-graph-overlay-window') ? 220 : 560)
+    const height = Math.max(container.clientHeight, minimumHeight)
     const degree = new Map(nodes.map(node => [node.id, 0]))
     links.forEach(link => {
       degree.set(link.source, degree.get(link.source) + 1)
@@ -188,7 +190,7 @@
     const simulationNodes = nodes.map((node, index) => ({
       ...node,
       text: node.title,
-      radius: ((node.kind === '分类' ? 5 : 2.7) + Math.sqrt(degree.get(node.id) || 0) * (node.kind === '分类' ? 1.6 : 1.05)) * nodeScale,
+      radius: ((node.kind === '分类' ? 4.2 : 2.5) + Math.sqrt(degree.get(node.id) || 0) * (node.kind === '分类' ? 1.15 : 0.82)) * nodeScale,
       x: (Math.random() - 0.5) * width * 0.6,
       y: (Math.random() - 0.5) * height * 0.55,
       index
@@ -197,10 +199,8 @@
     const simulationLinks = links.map(link => ({ source: nodeMap.get(link.source), target: nodeMap.get(link.target) }))
     const styles = getComputedStyle(document.documentElement)
     const bodyFont = styles.getPropertyValue('--bodyFont').trim() || 'system-ui, sans-serif'
-    const dark = document.documentElement.getAttribute('data-theme') === 'dark'
-    const primary = resolveColor(styles.getPropertyValue('--secondary').trim(), '#bc9bea')
-    const light = resolveColor(styles.getPropertyValue('--light').trim(), '#f4f1eb')
-    const gray = resolveColor(styles.getPropertyValue('--gray').trim(), '#858b98')
+    const primary = '#8b7cf6'
+    const gray = '#a6a6a6'
     const current = normalizePath(window.location.pathname)
     const visited = new Set(JSON.parse(window.localStorage.getItem('knowledge-graph-visited') || '[]'))
     const app = new window.PIXI.Application()
@@ -226,10 +226,10 @@
     const linkGraphics = []
 
     function nodeColor (node) {
-      if (normalizePath(node.url) === current) return toHex(primary, 0xbc9bea)
-      if (node.kind === '分类') return toHex(COLORS['分类'], 0xe5b56d)
-      if (visited.has(node.id)) return toHex(COLORS[node.kind], 0x82b8de)
-      return toHex(COLORS[node.kind], toHex(gray, 0x858b98))
+      if (normalizePath(node.url) === current) return toHex(primary, 0x8b7cf6)
+      if (node.kind === '标签') return 0x777777
+      if (visited.has(node.id)) return 0xc8c8c8
+      return toHex(COLORS[node.kind], toHex(gray, 0xa6a6a6))
     }
 
     function activeNeighbours (id) {
@@ -246,19 +246,17 @@
     function applyTransform () {
       world.position.set(transform.x, transform.y)
       world.scale.set(transform.k, transform.k)
-      const labelsOpacity = Math.max(0.18, Math.min(1, (transform.k - 0.28) / 1.45))
+      const labelsOpacity = Math.max(0.55, Math.min(0.92, (transform.k - 0.25) / 1.35))
       nodeGraphics.forEach(item => {
         const isActive = !hoveredId || activeNeighbours(hoveredId).has(item.node.id)
-        item.gfx.alpha = hoveredId && !isActive ? 0.16 : 1
-        item.label.alpha = options.showLabels === false ? 0 : item.node.kind === '分类'
-          ? Math.max(0.65, labelsOpacity)
-          : (hoveredId === item.node.id ? 1 : labelsOpacity)
+        item.gfx.alpha = hoveredId && !isActive ? 0.12 : 0.94
+        item.label.alpha = options.showLabels === false ? 0 : (hoveredId === item.node.id ? 1 : (item.node.kind === '分类' ? Math.max(0.62, labelsOpacity) : labelsOpacity))
         item.label.scale.set(1 / transform.k * (hoveredId === item.node.id ? 1.08 : 1))
       })
       linkGraphics.forEach(item => {
         const isActive = !hoveredId || item.link.source.id === hoveredId || item.link.target.id === hoveredId
-        item.gfx.alpha = hoveredId && !isActive ? 0.08 : (isActive && hoveredId ? 0.95 : 0.46)
-        item.gfx.tint = hoveredId && isActive ? 0xffffff : 0xb0b6c2
+        item.gfx.alpha = hoveredId && !isActive ? 0.04 : (isActive && hoveredId ? 0.92 : 0.55)
+        item.gfx.tint = hoveredId && isActive ? 0x8b7cf6 : 0x686868
       })
     }
 
@@ -293,7 +291,7 @@
       const gfx = new window.PIXI.Graphics()
       gfx.circle(0, 0, node.radius)
       gfx.fill({ color: nodeColor(node) })
-      if (node.kind === '分类') gfx.stroke({ width: 1.5, color: 0xf2d29d, alpha: 0.9 })
+      if (node.kind === '分类') gfx.stroke({ width: 1.1, color: 0xd0d0d0, alpha: 0.42 })
       gfx.eventMode = 'static'
       gfx.cursor = 'pointer'
       gfx.on('pointerover', () => setHovered(node.id))
@@ -321,7 +319,17 @@
 
       const label = new window.PIXI.Text({
         text: node.text,
-        style: { fontSize: node.kind === '分类' ? 13 : 12, fill: dark ? 0xdfe3eb : 0x3d4552, fontFamily: bodyFont, fontWeight: node.kind === '分类' ? '700' : '500' },
+        style: {
+          fontSize: node.kind === '分类' ? 12 : 11,
+          fill: 0xd6d6d6,
+          fontFamily: bodyFont,
+          fontWeight: node.kind === '分类' ? '600' : '400',
+          align: 'center',
+          lineHeight: 14,
+          wordWrap: true,
+          breakWords: true,
+          wordWrapWidth: node.kind === '分类' ? 118 : 96
+        },
         resolution: (window.devicePixelRatio || 1) * 3
       })
       label.anchor.set(0.5, 1.35)
@@ -336,12 +344,15 @@
       linkGraphics.push({ link, gfx })
     })
 
+    const orbitRadius = options.local ? 105 : Math.max(120, Math.min(210, Math.min(width, height) * 0.58))
     const simulation = window.d3.forceSimulation(simulationNodes)
-      .force('charge', window.d3.forceManyBody().strength(-105 * (options.local ? 0.78 : 1)))
+      .force('charge', window.d3.forceManyBody().strength(-118 * (options.local ? 0.78 : 1)))
       .force('center', window.d3.forceCenter(0, 0).strength(options.local ? 0.32 : 0.22))
-      .force('link', window.d3.forceLink(simulationLinks).distance(options.local ? 70 : 115).strength(0.65))
-      .force('collide', window.d3.forceCollide().radius(node => node.radius + (options.local ? 15 : 22)).iterations(3))
-      .force('orbit', window.d3.forceRadial(node => node.kind === '分类' ? 72 : (options.local ? 105 : 230), 0, 0).strength(0.18))
+      .force('link', window.d3.forceLink(simulationLinks).distance(options.local ? 70 : 108).strength(0.56))
+      .force('collide', window.d3.forceCollide().radius(node => options.local
+        ? node.radius + 15
+        : Math.max(node.radius + 24, Math.min(98, 18 + node.text.length * 3.8))).iterations(4))
+      .force('orbit', window.d3.forceRadial(node => node.kind === '分类' ? orbitRadius * 0.34 : orbitRadius, 0, 0).strength(0.18))
 
     function redraw () {
       if (stopped) return
@@ -354,7 +365,7 @@
         item.gfx.clear()
         item.gfx.moveTo(source.x, source.y)
         item.gfx.lineTo(target.x, target.y)
-        item.gfx.stroke({ width: 1, color: 0xb0b6c2, alpha: 0.46 })
+        item.gfx.stroke({ width: 0.8, color: 0x686868, alpha: 0.65 })
       })
       applyTransform()
       window.requestAnimationFrame(redraw)
@@ -369,7 +380,8 @@
     window.d3.select(app.canvas).call(zoom)
 
     function zoomTo (next) {
-      transform = { ...transform, k: Math.max(0.25, Math.min(4, next)) }
+      const k = Math.max(0.25, Math.min(4, next))
+      transform = window.d3.zoomIdentity.translate(transform.x, transform.y).scale(k)
       window.d3.select(app.canvas).call(zoom.transform, transform)
       applyTransform()
     }
@@ -377,19 +389,21 @@
       const node = nodeMap.get(id)
       if (!node) return
       const k = options.local ? 1.5 : 1.8
-      transform = { k, x: width / 2 - node.x * k, y: height / 2 - node.y * k }
+      transform = window.d3.zoomIdentity.translate(width / 2 - node.x * k, height / 2 - node.y * k).scale(k)
       window.d3.select(app.canvas).call(zoom.transform, transform)
       setHovered(id)
     }
     function fit () {
       const xs = simulationNodes.map(node => node.x)
       const ys = simulationNodes.map(node => node.y)
-      const minX = Math.min(...xs) - 45
-      const maxX = Math.max(...xs) + 45
-      const minY = Math.min(...ys) - 45
-      const maxY = Math.max(...ys) + 45
+      const minX = Math.min(...xs) - 72
+      const maxX = Math.max(...xs) + 72
+      const minY = Math.min(...ys) - 84
+      const maxY = Math.max(...ys) + 84
       const k = Math.max(0.45, Math.min(1.45, Math.min(width / (maxX - minX), height / (maxY - minY))))
-      transform = { k, x: width / 2 - ((minX + maxX) / 2) * k, y: height / 2 - ((minY + maxY) / 2) * k }
+      transform = window.d3.zoomIdentity
+        .translate(width / 2 - ((minX + maxX) / 2) * k, height / 2 - ((minY + maxY) / 2) * k)
+        .scale(k)
       window.d3.select(app.canvas).call(zoom.transform, transform)
       applyTransform()
     }
@@ -404,6 +418,7 @@
 
     simulation.restart()
     window.setTimeout(fit, options.local ? 200 : 900)
+    if (!options.local) window.setTimeout(fit, 2400)
     return {
       destroy () { stopped = true; simulation.stop(); try { app.destroy(true) } catch (_) {}; container.replaceChildren() },
       focus,
@@ -425,6 +440,8 @@
   }
 
   async function mountGlobal (root, nodes) {
+    const eventController = new AbortController()
+    const eventOptions = { signal: eventController.signal }
     const canvas = root.querySelector('[data-graph-canvas]')
     const status = root.querySelector('[data-graph-status]')
     const settingsPanel = root.querySelector('[data-graph-settings-panel]')
@@ -454,29 +471,34 @@
     }
     await rerender()
 
-    root.querySelector('[data-graph-reset]').addEventListener('click', () => graphView && graphView.reset())
-    root.querySelector('[data-graph-fit]').addEventListener('click', () => graphView && graphView.fit())
-    root.querySelector('[data-graph-zoom-in]').addEventListener('click', () => graphView && graphView.zoomBy(1.25))
-    root.querySelector('[data-graph-zoom-out]').addEventListener('click', () => graphView && graphView.zoomBy(0.8))
-    root.querySelector('[data-graph-settings]').addEventListener('click', () => { settingsPanel.hidden = !settingsPanel.hidden })
-    ;[controls.nodeScale, controls.labels, controls.categories, controls.orphans].forEach(control => control.addEventListener('change', rerender))
+    root.querySelector('[data-graph-reset]').addEventListener('click', () => graphView && graphView.reset(), eventOptions)
+    root.querySelector('[data-graph-fit]')?.addEventListener('click', () => graphView && graphView.fit(), eventOptions)
+    root.querySelector('[data-graph-zoom-in]')?.addEventListener('click', () => graphView && graphView.zoomBy(1.25), eventOptions)
+    root.querySelector('[data-graph-zoom-out]')?.addEventListener('click', () => graphView && graphView.zoomBy(0.8), eventOptions)
+    root.querySelector('[data-graph-settings]')?.addEventListener('click', () => { settingsPanel.hidden = !settingsPanel.hidden }, eventOptions)
+    ;[controls.nodeScale, controls.labels, controls.categories, controls.orphans].forEach(control => control.addEventListener('change', rerender, eventOptions))
 
     const fullscreenButton = root.querySelector('[data-graph-fullscreen]')
-    const handleFullscreen = () => {
-      const active = document.fullscreenElement === root
-      root.classList.toggle('is-fullscreen', active)
-      document.body.classList.toggle('knowledge-graph-fullscreen', active)
-      fullscreenButton.querySelector('i').className = active ? 'fas fa-compress' : 'fas fa-expand'
-      fullscreenButton.querySelector('span').textContent = active ? '退出' : '沉浸'
-      setTimeout(() => graphView && graphView.fit(), 100)
+    if (fullscreenButton) {
+      const handleFullscreen = () => {
+        const active = document.fullscreenElement === root
+        root.classList.toggle('is-fullscreen', active)
+        document.body.classList.toggle('knowledge-graph-fullscreen', active)
+        fullscreenButton.querySelector('i').className = active ? 'fas fa-compress' : 'fas fa-expand'
+        const buttonLabel = fullscreenButton.querySelector('span')
+        if (buttonLabel) buttonLabel.textContent = active ? '退出' : '沉浸'
+        fullscreenButton.setAttribute('aria-label', active ? '退出沉浸模式' : '进入沉浸模式')
+        fullscreenButton.title = active ? '退出沉浸模式' : '进入沉浸模式'
+        setTimeout(() => graphView && graphView.fit(), 100)
+      }
+      fullscreenButton.addEventListener('click', async () => {
+        try {
+          if (document.fullscreenElement === root) await document.exitFullscreen()
+          else await root.requestFullscreen()
+        } catch (_) {}
+      }, eventOptions)
+      document.addEventListener('fullscreenchange', handleFullscreen, eventOptions)
     }
-    fullscreenButton.addEventListener('click', async () => {
-      try {
-        if (document.fullscreenElement === root) await document.exitFullscreen()
-        else await root.requestFullscreen()
-      } catch (_) {}
-    })
-    document.addEventListener('fullscreenchange', handleFullscreen)
 
     const names = byNames(nodes)
     const input = root.querySelector('[data-graph-search]')
@@ -485,27 +507,163 @@
       if (!query) return
       const match = names.get(query) || nodes.find(node => node.title.toLocaleLowerCase('zh-CN').includes(query))
       if (match && graphView) graphView.focus(match.id)
-    })
+    }, eventOptions)
     input.addEventListener('keydown', event => {
       if (event.key === 'Escape') { input.value = ''; input.blur() }
-    })
+    }, eventOptions)
     document.addEventListener('keydown', event => {
       if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') {
         event.preventDefault()
         input.focus()
       }
-    })
-    const focusQuery = new URLSearchParams(window.location.search).get('focus')
+    }, eventOptions)
+    const focusQuery = root.dataset.graphInitialFocus || new URLSearchParams(window.location.search).get('focus')
     if (focusQuery) {
       const focus = names.get(focusQuery.trim().toLocaleLowerCase('zh-CN'))
       if (focus) setTimeout(() => graphView && graphView.focus(focus.id), 900)
     }
 
     return () => {
+      eventController.abort()
       if (graphView) graphView.destroy()
-      document.removeEventListener('fullscreenchange', handleFullscreen)
       root.classList.remove('is-fullscreen')
       document.body.classList.remove('knowledge-graph-fullscreen')
+    }
+  }
+
+  function overlayMarkup () {
+    return `
+      <div class="knowledge-graph-overlay" data-knowledge-graph-overlay hidden aria-hidden="true">
+        <button class="knowledge-graph-overlay-backdrop" type="button" data-graph-close aria-label="关闭知识图谱"></button>
+        <section class="knowledge-graph-app knowledge-graph-overlay-window" role="dialog" aria-modal="true" aria-labelledby="knowledge-graph-overlay-title">
+          <header class="knowledge-graph-window-bar">
+            <div class="knowledge-graph-window-title" id="knowledge-graph-overlay-title">
+              <i class="fas fa-project-diagram" aria-hidden="true"></i>
+              <span>知识图谱</span>
+            </div>
+            <div class="knowledge-graph-window-actions">
+              <button type="button" data-graph-settings title="显示或隐藏控制面板" aria-label="显示或隐藏控制面板"><i class="fas fa-sliders-h"></i></button>
+              <button type="button" data-graph-close title="关闭知识图谱" aria-label="关闭知识图谱"><i class="fas fa-times"></i></button>
+            </div>
+          </header>
+          <div class="knowledge-graph-workspace">
+            <aside class="knowledge-graph-settings" data-graph-settings-panel aria-label="图谱控制面板">
+              <details open>
+                <summary>筛选</summary>
+                <label class="knowledge-graph-search">
+                  <i class="fas fa-search" aria-hidden="true"></i>
+                  <input type="search" data-graph-search placeholder="搜索节点…" autocomplete="off" />
+                </label>
+              </details>
+              <details>
+                <summary>分组</summary>
+                <label class="knowledge-graph-check"><input type="checkbox" checked data-graph-categories /> <span>显示分类节点</span></label>
+                <label class="knowledge-graph-check"><input type="checkbox" checked data-graph-orphans /> <span>显示孤立节点</span></label>
+              </details>
+              <details open>
+                <summary>显示</summary>
+                <label class="knowledge-graph-check"><input type="checkbox" checked data-graph-labels /> <span>显示节点名称</span></label>
+                <label class="knowledge-graph-range"><span>节点大小</span><input type="range" min="70" max="150" value="100" data-graph-node-scale /></label>
+              </details>
+              <details>
+                <summary>力学</summary>
+                <div class="knowledge-graph-force-actions">
+                  <button type="button" data-graph-reset><i class="fas fa-redo-alt"></i> 重置</button>
+                  <button type="button" data-graph-fit><i class="fas fa-compress-arrows-alt"></i> 适应画布</button>
+                </div>
+              </details>
+            </aside>
+            <div class="knowledge-graph-canvas" data-graph-canvas>
+              <div class="knowledge-graph-loading">正在连接知识节点…</div>
+            </div>
+          </div>
+          <footer class="knowledge-graph-window-status">
+            <span data-graph-status></span>
+            <span>滚轮缩放 · 拖动画布 · 点击节点阅读</span>
+          </footer>
+        </section>
+      </div>`
+  }
+
+  function mountOverlay (nodes) {
+    const eventController = new AbortController()
+    const signal = eventController.signal
+    document.body.insertAdjacentHTML('beforeend', overlayMarkup())
+    const overlay = document.querySelector('[data-knowledge-graph-overlay]')
+    const root = overlay.querySelector('.knowledge-graph-app')
+    const canvas = root.querySelector('[data-graph-canvas]')
+    let graphCleanup
+    let opener
+    let openingToken = 0
+
+    const close = () => {
+      openingToken += 1
+      overlay.classList.remove('is-open')
+      overlay.hidden = true
+      overlay.setAttribute('aria-hidden', 'true')
+      document.body.classList.remove('knowledge-graph-overlay-open')
+      if (graphCleanup) graphCleanup()
+      graphCleanup = null
+      root.removeAttribute('data-graph-initial-focus')
+      canvas.innerHTML = '<div class="knowledge-graph-loading">正在连接知识节点…</div>'
+      if (opener && document.contains(opener)) opener.focus()
+    }
+
+    const open = async focusQuery => {
+      opener = document.activeElement
+      const token = ++openingToken
+      overlay.hidden = false
+      overlay.setAttribute('aria-hidden', 'false')
+      document.body.classList.add('knowledge-graph-overlay-open')
+      window.requestAnimationFrame(() => overlay.classList.add('is-open'))
+      if (focusQuery) root.dataset.graphInitialFocus = focusQuery
+      try {
+        await loadLibraries()
+        if (token !== openingToken) return
+        graphCleanup = await mountGlobal(root, nodes)
+        if (token !== openingToken) {
+          graphCleanup()
+          graphCleanup = null
+          return
+        }
+        const input = root.querySelector('[data-graph-search]')
+        if (focusQuery && input) {
+          input.value = focusQuery
+          input.dispatchEvent(new Event('input'))
+        }
+        overlay.querySelector('[data-graph-close]').focus()
+      } catch (error) {
+        console.error('[Knowledge graph overlay]', error)
+        canvas.innerHTML = '<div class="knowledge-graph-empty">图谱暂时无法载入，请刷新后重试。</div>'
+      }
+    }
+
+    overlay.querySelectorAll('[data-graph-close]').forEach(button => button.addEventListener('click', close, { signal }))
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && !overlay.hidden) close()
+    }, { signal })
+    document.addEventListener('click', event => {
+      if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return
+      const link = event.target.closest('a[href]')
+      if (!link) return
+      let target
+      try { target = new URL(link.href, window.location.href) } catch (_) { return }
+      if (target.origin !== window.location.origin || normalizePath(target.pathname) !== '/knowledge-graph/') return
+      event.preventDefault()
+      event.stopImmediatePropagation()
+      open(target.searchParams.get('focus'))
+    }, { capture: true, signal })
+
+    if (normalizePath(window.location.pathname) === '/knowledge-graph/') {
+      window.requestAnimationFrame(() => open(new URLSearchParams(window.location.search).get('focus')))
+    }
+
+    return () => {
+      eventController.abort()
+      openingToken += 1
+      if (graphCleanup) graphCleanup()
+      document.body.classList.remove('knowledge-graph-overlay-open')
+      overlay.remove()
     }
   }
 
@@ -542,12 +700,12 @@
       const payload = await getData()
       const nodes = payload.nodes || []
       resolveWikiLinks(nodes)
-      const globalRoot = document.querySelector('#knowledge-graph-app')
       const node = currentNode(nodes)
-      if (!globalRoot && !node) return
-      await loadLibraries()
-      if (globalRoot) cleanups.push(await mountGlobal(globalRoot, nodes))
-      if (node && !globalRoot) cleanups.push(await mountLocal(node, nodes))
+      cleanups.push(mountOverlay(nodes))
+      if (node && normalizePath(window.location.pathname) !== '/knowledge-graph/') {
+        await loadLibraries()
+        cleanups.push(await mountLocal(node, nodes))
+      }
     } catch (error) {
       console.error('[Knowledge graph]', error)
       document.querySelectorAll('[data-graph-canvas], [data-local-graph-canvas]').forEach(canvas => {
@@ -561,6 +719,8 @@
   document.addEventListener('pjax:complete', boot)
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimer)
-    resizeTimer = setTimeout(boot, 260)
+    resizeTimer = setTimeout(() => {
+      if (!document.body.classList.contains('knowledge-graph-overlay-open')) boot()
+    }, 260)
   })
 })()
