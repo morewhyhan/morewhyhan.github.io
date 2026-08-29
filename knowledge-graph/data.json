@@ -1,20 +1,27 @@
 {
-  "generatedAt": "2026-08-28T20:25:12.611Z",
+  "generatedAt": "2026-08-29T01:32:07.888Z",
   "nodes": [
     {
-      "id": "/2026/08/06/life-notes-civilization-on-graves/",
-      "title": "墓地上的文明",
-      "url": "/2026/08/06/life-notes-civilization-on-graves/",
-      "kind": "生活随笔",
+      "id": "/book/decision-algorithm/",
+      "title": "决策算法100讲",
+      "url": "/book/decision-algorithm/",
+      "kind": "图书笔记",
       "categories": [
-        "生活随笔"
+        "图书笔记"
       ],
-      "tags": [],
-      "aliases": [],
-      "description": "很久以前，人类没有明年。 狩猎落空便是饥饿，河流干涸便要迁徙。老人跟不上队伍，孩子熬不过寒冬。人逐鹿群，鹿逐水草，天地辽阔，处处可容身，又处处不能久留。 后来，一粒种子落进泥土。麦田蔓延，仓廪立起；墙内有了市廛、文字、律令、礼乐与王权…",
-      "original": true,
+      "tags": [
+        "决策",
+        "概率",
+        "博弈"
+      ],
+      "aliases": [
+        "决策算法",
+        "老喻决策算法100讲"
+      ],
+      "description": "老喻关于概率、风险、博弈与人生选择的系统课程资料；全套资料在本站按一个专题收录。",
+      "original": false,
       "links": [
-        "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"
+        "/categories/%E5%9B%BE%E4%B9%A6%E7%AC%94%E8%AE%B0/"
       ]
     },
     {
@@ -50,16 +57,16 @@
       ]
     },
     {
-      "id": "/2026/08/10/life-notes-make-room/",
-      "title": "再挤挤",
-      "url": "/2026/08/10/life-notes-make-room/",
+      "id": "/2026/08/06/life-notes-civilization-on-graves/",
+      "title": "墓地上的文明",
+      "url": "/2026/08/06/life-notes-civilization-on-graves/",
       "kind": "生活随笔",
       "categories": [
         "生活随笔"
       ],
       "tags": [],
       "aliases": [],
-      "description": "小时候放学最怕下雨。",
+      "description": "很久以前，人类没有明年。 狩猎落空便是饥饿，河流干涸便要迁徙。老人跟不上队伍，孩子熬不过寒冬。人逐鹿群，鹿逐水草，天地辽阔，处处可容身，又处处不能久留。 后来，一粒种子落进泥土。麦田蔓延，仓廪立起；墙内有了市廛、文字、律令、礼乐与王权…",
       "original": true,
       "links": [
         "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"
@@ -98,26 +105,19 @@
       ]
     },
     {
-      "id": "/book/decision-algorithm/",
-      "title": "决策算法100讲",
-      "url": "/book/decision-algorithm/",
-      "kind": "图书笔记",
+      "id": "/2026/08/10/life-notes-make-room/",
+      "title": "再挤挤",
+      "url": "/2026/08/10/life-notes-make-room/",
+      "kind": "生活随笔",
       "categories": [
-        "图书笔记"
+        "生活随笔"
       ],
-      "tags": [
-        "决策",
-        "概率",
-        "博弈"
-      ],
-      "aliases": [
-        "决策算法",
-        "老喻决策算法100讲"
-      ],
-      "description": "老喻关于概率、风险、博弈与人生选择的系统课程资料；全套资料在本站按一个专题收录。",
-      "original": false,
+      "tags": [],
+      "aliases": [],
+      "description": "小时候放学最怕下雨。",
+      "original": true,
       "links": [
-        "/categories/%E5%9B%BE%E4%B9%A6%E7%AC%94%E8%AE%B0/"
+        "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"
       ]
     },
     {
@@ -153,19 +153,6 @@
       ]
     },
     {
-      "id": "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/",
-      "title": "生活随笔",
-      "url": "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/",
-      "kind": "分类",
-      "categories": [],
-      "tags": [],
-      "aliases": [],
-      "description": "8 篇内容",
-      "original": true,
-      "virtual": true,
-      "links": []
-    },
-    {
       "id": "/categories/%E5%9B%BE%E4%B9%A6%E7%AC%94%E8%AE%B0/",
       "title": "图书笔记",
       "url": "/categories/%E5%9B%BE%E4%B9%A6%E7%AC%94%E8%AE%B0/",
@@ -174,6 +161,19 @@
       "tags": [],
       "aliases": [],
       "description": "1 篇内容",
+      "original": true,
+      "virtual": true,
+      "links": []
+    },
+    {
+      "id": "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/",
+      "title": "生活随笔",
+      "url": "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/",
+      "kind": "分类",
+      "categories": [],
+      "tags": [],
+      "aliases": [],
+      "description": "8 篇内容",
       "original": true,
       "virtual": true,
       "links": []

@@ -1,11 +1,13 @@
-/* Stable semantic knowledge map rendered with Sigma.js + Graphology. */
+/* Knowledge graph powered by Cytoscape.js and the fCoSE layout. */
 (() => {
   'use strict'
 
   const DATA_URL = '/knowledge-graph/data.json'
   const LIBRARIES = [
-    ['graphology', 'https://cdnjs.cloudflare.com/ajax/libs/graphology/0.25.4/graphology.umd.min.js'],
-    ['Sigma', 'https://cdnjs.cloudflare.com/ajax/libs/sigma.js/2.4.0/sigma.min.js']
+    ['cytoscape', 'https://cdn.jsdelivr.net/npm/cytoscape@3.34.2/dist/cytoscape.min.js', 'cytoscape'],
+    ['layout-base', 'https://cdn.jsdelivr.net/npm/layout-base@2.0.1/layout-base.js', 'layoutBase'],
+    ['cose-base', 'https://cdn.jsdelivr.net/npm/cose-base@2.2.0/cose-base.js', 'coseBase'],
+    ['cytoscape-fcose', 'https://cdn.jsdelivr.net/npm/cytoscape-fcose@2.2.0/cytoscape-fcose.js', null]
   ]
   const COLORS = {
     '分类': '#d0af78',
@@ -34,9 +36,9 @@
     return pathname
   }
 
-  function loadScript (globalName, src) {
-    if (window[globalName]) return Promise.resolve()
-    const existing = document.querySelector(`script[data-knowledge-graph-lib="${globalName}"]`)
+  function loadScript (key, src, globalName) {
+    if (globalName && window[globalName]) return Promise.resolve()
+    const existing = document.querySelector(`script[data-knowledge-graph-lib="${key}"]`)
     if (existing) {
       return new Promise((resolve, reject) => {
         existing.addEventListener('load', resolve, { once: true })
@@ -46,9 +48,9 @@
     return new Promise((resolve, reject) => {
       const script = document.createElement('script')
       script.src = src
-      script.async = true
+      script.async = false
       script.crossOrigin = 'anonymous'
-      script.dataset.knowledgeGraphLib = globalName
+      script.dataset.knowledgeGraphLib = key
       script.addEventListener('load', resolve, { once: true })
       script.addEventListener('error', reject, { once: true })
       document.head.appendChild(script)
@@ -56,7 +58,12 @@
   }
 
   function loadLibraries () {
-    if (!libraryPromise) libraryPromise = LIBRARIES.reduce((promise, [name, src]) => promise.then(() => loadScript(name, src)), Promise.resolve())
+    if (!libraryPromise) {
+      libraryPromise = LIBRARIES.reduce(
+        (promise, [key, src, globalName]) => promise.then(() => loadScript(key, src, globalName)),
+        Promise.resolve()
+      )
+    }
     return libraryPromise
   }
 
@@ -119,60 +126,7 @@
     return nodes.filter(node => included.has(node.id))
   }
 
-  function stableUnit (text) {
-    let hash = 2166136261
-    for (let index = 0; index < text.length; index += 1) {
-      hash ^= text.charCodeAt(index)
-      hash = Math.imul(hash, 16777619)
-    }
-    return (hash >>> 0) / 4294967295
-  }
-
-  function layoutNodes (nodes, links, local) {
-    const degree = new Map(nodes.map(node => [node.id, 0]))
-    links.forEach(link => {
-      degree.set(link.source, (degree.get(link.source) || 0) + 1)
-      degree.set(link.target, (degree.get(link.target) || 0) + 1)
-    })
-
-    const categories = nodes.filter(node => node.kind === '分类').sort((left, right) => left.title.localeCompare(right.title, 'zh-CN'))
-    const centers = new Map()
-    categories.forEach((node, index) => {
-      const angle = categories.length === 1 ? 0 : ((Math.PI * 2 * index) / categories.length) - Math.PI / 2
-      const radius = categories.length === 1 ? 0 : 34 + categories.length * 3
-      centers.set(node.title, { x: Math.cos(angle) * radius, y: Math.sin(angle) * radius })
-    })
-
-    const groups = new Map(categories.map(node => [node.title, []]))
-    const ungrouped = []
-    nodes.filter(node => node.kind !== '分类').forEach(node => {
-      const category = (node.categories || []).find(name => centers.has(name))
-      if (category) groups.get(category).push(node)
-      else ungrouped.push(node)
-    })
-
-    const positions = new Map()
-    categories.forEach(node => positions.set(node.id, centers.get(node.title)))
-    groups.forEach((members, category) => {
-      const center = centers.get(category)
-      members.sort((left, right) => stableUnit(left.id) - stableUnit(right.id))
-      members.forEach((node, index) => {
-        const ring = Math.floor(index / 9)
-        const angle = Math.PI * 2 * stableUnit(`${node.id}:angle`)
-        const radius = (local ? 8 : 12) + ring * 9 + stableUnit(`${node.id}:radius`) * 5
-        positions.set(node.id, { x: center.x + Math.cos(angle) * radius, y: center.y + Math.sin(angle) * radius })
-      })
-    })
-    ungrouped.forEach((node, index) => {
-      const angle = Math.PI * 2 * stableUnit(`${node.id}:free`)
-      const radius = 18 + Math.sqrt(index + 1) * 10
-      positions.set(node.id, { x: Math.cos(angle) * radius, y: Math.sin(angle) * radius })
-    })
-
-    return { positions, degree }
-  }
-
-  function prepareVisibleGraph (allNodes, options) {
+  function visibleGraph (allNodes, options) {
     const allLinks = graphLinks(allNodes)
     let nodes = neighbourhood(allNodes, allLinks, options.focusId, options.depth ?? -1)
     if (options.showCategories === false) nodes = nodes.filter(node => node.kind !== '分类')
@@ -189,153 +143,209 @@
   }
 
   function renderGraph (container, allNodes, options = {}) {
-    const { nodes, links } = prepareVisibleGraph(allNodes, options)
+    const { nodes, links } = visibleGraph(allNodes, options)
     container.replaceChildren()
     if (!nodes.length) {
       container.innerHTML = '<div class="knowledge-graph-empty">还没有形成可显示的连接。</div>'
       return { destroy () {}, focus () {}, reset () {}, resize () {} }
     }
 
-    const Graph = window.graphology.Graph
-    const graph = new Graph({ multi: false, type: 'undirected', allowSelfLoops: false })
-    const { positions, degree } = layoutNodes(nodes, links, options.local)
     const nodeScale = Number(options.nodeScale || 100) / 100
-    nodes.forEach(node => {
-      const point = positions.get(node.id) || { x: 0, y: 0 }
-      const category = node.kind === '分类'
-      graph.addNode(node.id, {
-        x: point.x,
-        y: point.y,
-        size: (category ? 12 : 5.5 + Math.sqrt(degree.get(node.id) || 0) * 1.7) * nodeScale,
-        label: node.title,
-        color: COLORS[node.kind] || COLORS['知识页面'],
-        forceLabel: category || node.id === options.focusId,
-        zIndex: category ? 2 : 1,
-        url: node.url,
-        kind: node.kind
-      })
+    const degrees = new Map(nodes.map(node => [node.id, 0]))
+    links.forEach(link => {
+      degrees.set(link.source, (degrees.get(link.source) || 0) + 1)
+      degrees.set(link.target, (degrees.get(link.target) || 0) + 1)
     })
-    links.forEach((link, index) => {
-      if (!graph.hasNode(link.source) || !graph.hasNode(link.target) || graph.hasEdge(link.source, link.target)) return
-      graph.addUndirectedEdgeWithKey(`edge-${index}`, link.source, link.target, {
-        size: 0.8,
-        color: 'rgba(135,145,164,0.32)'
-      })
-    })
+    const elements = [
+      ...nodes.map(node => ({
+        group: 'nodes',
+        data: {
+          id: node.id,
+          label: node.title,
+          url: node.url,
+          kind: node.kind,
+          color: COLORS[node.kind] || COLORS['知识页面'],
+          size: (node.kind === '分类' ? 30 : 13 + Math.sqrt(degrees.get(node.id) || 0) * 4) * nodeScale
+        }
+      })),
+      ...links.map((link, index) => ({
+        group: 'edges',
+        data: { id: `edge-${index}`, source: link.source, target: link.target }
+      }))
+    ]
 
-    let hoveredNode = null
-    let selectedNode = options.focusId || null
-    let draggedNode = null
-    const showLabels = options.showLabels !== false
-    const renderer = new window.Sigma(graph, container, {
-      allowInvalidContainer: true,
-      renderEdgeLabels: false,
-      labelFont: 'LXGW WenKai Screen, system-ui, sans-serif',
-      labelSize: options.local ? 11 : 13,
-      labelWeight: '500',
-      labelColor: { color: document.documentElement.getAttribute('data-theme') === 'dark' ? '#e8eaf0' : '#343841' },
-      labelRenderedSizeThreshold: showLabels ? (options.local ? 5 : 4) : Infinity,
-      defaultEdgeColor: 'rgba(135,145,164,0.32)',
-      defaultEdgeType: 'line',
-      enableEdgeEvents: false,
-      zIndex: true,
-      minCameraRatio: 0.06,
-      maxCameraRatio: 3.5,
-      nodeReducer (node, data) {
-        const result = { ...data }
-        if (!showLabels && node !== hoveredNode && node !== selectedNode) result.label = ''
-        if (hoveredNode) {
-          const related = node === hoveredNode || graph.areNeighbors(node, hoveredNode)
-          if (!related) {
-            result.color = 'rgba(118,126,141,0.14)'
-            result.label = ''
-            result.zIndex = 0
-          } else {
-            result.highlighted = node === hoveredNode
-            result.zIndex = 3
+    const dark = document.documentElement.getAttribute('data-theme') === 'dark'
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const cy = window.cytoscape({
+      container,
+      elements,
+      minZoom: 0.12,
+      maxZoom: 3.2,
+      wheelSensitivity: 0.24,
+      boxSelectionEnabled: true,
+      autoungrabify: false,
+      autounselectify: false,
+      style: [
+        {
+          selector: 'node',
+          style: {
+            width: 'data(size)',
+            height: 'data(size)',
+            'background-color': 'data(color)',
+            'border-width': 1.5,
+            'border-color': dark ? '#d8dde8' : '#556071',
+            'border-opacity': 0.34,
+            label: options.showLabels === false ? '' : 'data(label)',
+            color: dark ? '#edf0f5' : '#303641',
+            'font-family': 'LXGW WenKai Screen, system-ui, sans-serif',
+            'font-size': options.local ? 10 : 12,
+            'font-weight': 500,
+            'text-valign': 'top',
+            'text-halign': 'center',
+            'text-margin-y': options.local ? -7 : -10,
+            'text-wrap': 'ellipsis',
+            'text-max-width': options.local ? 120 : 180,
+            'text-background-color': dark ? '#111720' : '#f5f7fa',
+            'text-background-opacity': 0.72,
+            'text-background-padding': 3,
+            'text-background-shape': 'roundrectangle',
+            'min-zoomed-font-size': 6,
+            'overlay-opacity': 0,
+            'transition-property': 'opacity, border-width, border-color, width, height',
+            'transition-duration': '180ms'
           }
+        },
+        {
+          selector: 'node[kind = "分类"]',
+          style: {
+            'border-width': 3,
+            'border-color': '#f0d7a2',
+            'border-opacity': 0.9,
+            'font-size': options.local ? 11 : 15,
+            'font-weight': 700,
+            'text-margin-y': options.local ? -9 : -14,
+            'z-index': 10
+          }
+        },
+        {
+          selector: 'edge',
+          style: {
+            width: 1,
+            'line-color': dark ? '#7f899b' : '#8993a3',
+            opacity: 0.34,
+            'curve-style': 'bezier',
+            'overlay-opacity': 0,
+            'transition-property': 'opacity, width, line-color',
+            'transition-duration': '180ms'
+          }
+        },
+        { selector: '.kg-muted', style: { opacity: 0.08 } },
+        {
+          selector: 'node.kg-active',
+          style: {
+            opacity: 1,
+            'border-width': 4,
+            'border-color': '#f3d79e',
+            'border-opacity': 1,
+            'z-index': 20
+          }
+        },
+        {
+          selector: 'edge.kg-active',
+          style: { opacity: 0.94, width: 2.4, 'line-color': '#d7b873', 'z-index': 15 }
+        },
+        {
+          selector: 'node:selected',
+          style: { 'border-width': 5, 'border-color': '#f6dfb3', 'border-opacity': 1 }
         }
-        if (node === selectedNode) {
-          result.highlighted = true
-          result.size = data.size * 1.35
-          result.zIndex = 4
-        }
-        return result
-      },
-      edgeReducer (edge, data) {
-        if (!hoveredNode) return data
-        if (!graph.hasExtremity(edge, hoveredNode)) return { ...data, hidden: true }
-        return { ...data, color: 'rgba(219,190,132,0.88)', size: 1.8, zIndex: 3 }
-      }
+      ]
     })
 
-    renderer.on('enterNode', ({ node }) => {
-      hoveredNode = node
-      container.classList.add('is-node-hovered')
-      renderer.refresh()
-    })
-    renderer.on('leaveNode', () => {
-      hoveredNode = null
+    function runLayout () {
+      const layout = cy.layout({
+        name: 'fcose',
+        quality: options.local ? 'draft' : 'default',
+        randomize: true,
+        animate: !reducedMotion,
+        animationDuration: options.local ? 420 : 900,
+        animationEasing: 'ease-out-cubic',
+        fit: true,
+        padding: options.local ? 28 : 110,
+        nodeDimensionsIncludeLabels: true,
+        uniformNodeDimensions: false,
+        packComponents: false,
+        samplingType: true,
+        sampleSize: Math.min(25, nodes.length),
+        nodeSeparation: options.local ? 54 : 92,
+        nodeRepulsion: node => node.data('kind') === '分类' ? 9000 : 6200,
+        idealEdgeLength: () => options.local ? 68 : 125,
+        edgeElasticity: () => 0.38,
+        nestingFactor: 0.1,
+        numIter: options.local ? 1200 : 2500,
+        tile: true,
+        tilingPaddingVertical: 24,
+        tilingPaddingHorizontal: 24,
+        gravity: 0.22,
+        gravityRangeCompound: 1.5,
+        gravityCompound: 1,
+        gravityRange: 4.2,
+        initialEnergyOnIncremental: 0.3
+      })
+      layout.run()
+    }
+
+    function clearFocus () {
+      cy.elements().removeClass('kg-muted kg-active')
       container.classList.remove('is-node-hovered')
-      renderer.refresh()
-    })
-    renderer.on('clickNode', ({ node }) => {
-      if (draggedNode) return
-      selectedNode = node
-      renderer.refresh()
-      const url = graph.getNodeAttribute(node, 'url')
-      if (url) window.location.href = url
-    })
-    renderer.on('clickStage', () => {
-      selectedNode = null
-      renderer.refresh()
-    })
-    renderer.on('downNode', ({ node }) => {
-      draggedNode = node
-      graph.setNodeAttribute(node, 'highlighted', true)
-    })
+    }
 
-    const mouse = renderer.getMouseCaptor()
-    mouse.on('mousemovebody', event => {
-      if (!draggedNode) return
-      const position = renderer.viewportToGraph(event)
-      graph.mergeNodeAttributes(draggedNode, position)
-      event.preventSigmaDefault()
-      if (event.original) event.original.preventDefault()
+    cy.on('mouseover', 'node', event => {
+      const node = event.target
+      const neighbourhood = node.closedNeighborhood()
+      cy.elements().addClass('kg-muted')
+      neighbourhood.removeClass('kg-muted')
+      node.addClass('kg-active')
+      node.connectedEdges().addClass('kg-active')
+      container.classList.add('is-node-hovered')
     })
-    mouse.on('mouseup', () => {
-      if (draggedNode) graph.removeNodeAttribute(draggedNode, 'highlighted')
-      draggedNode = null
+    cy.on('mouseout', 'node', clearFocus)
+    cy.on('tap', event => {
+      if (event.target === cy) clearFocus()
     })
-    mouse.on('mousedown', () => {
-      if (!renderer.getCustomBBox()) renderer.setCustomBBox(renderer.getBBox())
+    cy.on('tap', 'node', event => {
+      const url = event.target.data('url')
+      if (url) window.location.href = url
     })
 
     function focus (id) {
-      if (!graph.hasNode(id)) return
-      selectedNode = id
-      const display = renderer.getNodeDisplayData(id)
-      if (display) renderer.getCamera().animate({ x: display.x, y: display.y, ratio: options.local ? 0.45 : 0.18 }, { duration: 620 })
-      renderer.refresh()
+      const node = cy.getElementById(id)
+      if (!node.length) return
+      cy.elements().unselect()
+      node.select()
+      cy.animate({ fit: { eles: node.closedNeighborhood(), padding: options.local ? 34 : 220 } }, { duration: 560 })
     }
 
     function reset () {
-      selectedNode = options.focusId || null
-      renderer.getCamera().animate({ x: 0.5, y: 0.5, ratio: 1, angle: 0 }, { duration: 520 })
-      renderer.refresh()
+      cy.elements().unselect()
+      clearFocus()
+      runLayout()
     }
 
-    if (options.focusId) setTimeout(() => focus(options.focusId), 260)
+    runLayout()
+    if (options.focusId) setTimeout(() => focus(options.focusId), options.local ? 380 : 760)
 
     return {
       destroy () {
-        container.classList.remove('is-node-hovered')
-        renderer.kill()
+        clearFocus()
+        cy.destroy()
         container.replaceChildren()
       },
       focus,
       reset,
-      resize () { renderer.resize() }
+      resize () {
+        cy.resize()
+        cy.fit(cy.elements(), options.local ? 28 : 110)
+      }
     }
   }
 
@@ -406,11 +416,10 @@
       const match = names.get(query) || nodes.find(node => node.title.toLocaleLowerCase('zh-CN').includes(query))
       if (match && graphView) graphView.focus(match.id)
     })
-
     const focusQuery = new URLSearchParams(window.location.search).get('focus')
     if (focusQuery) {
       const focus = names.get(focusQuery.trim().toLocaleLowerCase('zh-CN'))
-      if (focus) setTimeout(() => graphView.focus(focus.id), 420)
+      if (focus) setTimeout(() => graphView.focus(focus.id), 840)
     }
 
     return () => {
