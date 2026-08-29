@@ -1,0 +1,387 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>虚船向远 | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Great Books #7:  The Anti-HomerSource: https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;EBWTRvjZ1dw seg-0001 &#x2F; 00:00:00-00:01:45 &#x2F; SPEAKER_01We’ve read the Iliad and the Odyssey. So Homer becomes the basis f">
+<meta property="og:type" content="website">
+<meta property="og:title" content="虚船向远">
+<meta property="og:url" content="https://morewhyhan.github.io/book/english-original-library/1-Great-Books/007-07-the-anti-homer.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="Great Books #7:  The Anti-HomerSource: https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;EBWTRvjZ1dw seg-0001 &#x2F; 00:00:00-00:01:45 &#x2F; SPEAKER_01We’ve read the Iliad and the Odyssey. So Homer becomes the basis f">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-29T06:48:46.816Z">
+<meta property="article:modified_time" content="2026-08-29T06:48:46.816Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/english-original-library/1-Great-Books/007-07-the-anti-homer.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '虚船向远',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/knowledge-graph/"><i class="fa-fw fas fa-project-diagram"></i><span> 知识图谱</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(/img/hua.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/knowledge-graph/"><i class="fa-fw fas fa-project-diagram"></i><span> 知识图谱</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title"></h1></div></header><main class="layout" id="content-inner"><div id="page"><div class="container" id="article-container"><h1 id="Great-Books-7-The-Anti-Homer"><a href="#Great-Books-7-The-Anti-Homer" class="headerlink" title="Great Books #7:  The Anti-Homer"></a>Great Books #7:  The Anti-Homer</h1><p>Source: <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=EBWTRvjZ1dw">https://www.youtube.com/watch?v=EBWTRvjZ1dw</a></p>
+<h2 id="seg-0001-00-00-00-00-01-45-SPEAKER-01"><a href="#seg-0001-00-00-00-00-01-45-SPEAKER-01" class="headerlink" title="seg-0001 &#x2F; 00:00:00-00:01:45 &#x2F; SPEAKER_01"></a>seg-0001 &#x2F; 00:00:00-00:01:45 &#x2F; SPEAKER_01</h2><p>We’ve read the Iliad and the Odyssey. So Homer becomes the basis for Greek civilization, meaning that all educated Greeks, they memorize the Iliad and the Odyssey. People don’t read them right now at this point. They speak and they listen in front of an audience. And so Homer becomes basically the infrastructure of their mental worldview. And this leads to the greatest civilization in human history. But eventually the Romans will conquer the Greeks. The Romans will conquer the entire Mediterranean. And they will create the Roman Empire. The Romans are nothing like the Greeks. The Greeks are very open, very curious. They believe in the idea of Erette and Eudaimonia. Erette means excellence, to be the best at what you can. Eudaimonia means flourishing. You can only achieve human happiness if you achieve your Erette. You become your Erette. So think of Odysseus, who was a great speaker. That is his Erette. And he uses his speech in order to fulfill his destiny and to save his family.</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0001</p>
+<h2 id="seg-0002-00-01-45-00-03-09-SPEAKER-01"><a href="#seg-0002-00-01-45-00-03-09-SPEAKER-01" class="headerlink" title="seg-0002 &#x2F; 00:01:45-00:03:09 &#x2F; SPEAKER_01"></a>seg-0002 &#x2F; 00:01:45-00:03:09 &#x2F; SPEAKER_01</h2><p>And that achieves Eudaimonia. The Romans are very different. The Romans believe in the idea of piety. This means obedience to your father s, to history and to tradition. And so the Romans aren t extremely conservative people, but they re very good at fighting wars. And that s why they become the empire. But after the empire is established, what the Romans recognize is that Greek culture is vastly superior. And many well -educated Romans drift towards greek culture which in the roman perspective leads to the corruption of the roman soul and so augustus caesar who is really considered the first emperor of rome he recognizes that in the long term even though the romans have conquered the greeks physically spiritually the greeks will conquer the the romans and the main issue is homer so his solution is to destroy homer you can’t burn books because uh there</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0002</p>
+<h2 id="seg-0003-00-03-09-00-04-28-SPEAKER-01"><a href="#seg-0003-00-03-09-00-04-28-SPEAKER-01" class="headerlink" title="seg-0003 &#x2F; 00:03:09-00:04:28 &#x2F; SPEAKER_01"></a>seg-0003 &#x2F; 00:03:09-00:04:28 &#x2F; SPEAKER_01</h2><p>are that many books and also people have memorized homer so you need to corrupt homer and the solution that he devises is called the in the ad and we can consider the iniat as the the anti -Homer okay or the inversion of Homer taking the ideas of Homer and inverting them okay so this becomes the bible of the Roman empire meaning that if you’re a school boy you have to memorize the Iliad and this is the main way that you learn Latin the official language of the Roman Empire and so whereas Homer will give us Greek civilization and the birth of Western civilization the Iliad will create the Dark Ages about a thousand years when Western creativity ends and then someone will emerge who will recognize the evil that is the Iliad and he will create a antidote to the poison that is the Iliad and this person of course is called Dante okay and</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0003</p>
+<h2 id="seg-0004-00-04-29-00-05-19-SPEAKER-01"><a href="#seg-0004-00-04-29-00-05-19-SPEAKER-01" class="headerlink" title="seg-0004 &#x2F; 00:04:29-00:05:19 &#x2F; SPEAKER_01"></a>seg-0004 &#x2F; 00:04:29-00:05:19 &#x2F; SPEAKER_01</h2><p>so what we’ll do is we will read the Iliad for the next two weeks and understand how it poisons and corrupts Homer and then this will lead us to the divine comedy which is really the liberation of the human soul from the poison that is the Iliad okay all right so some basic background about the Iliad so the Iliad what it does is it takes the poison that is the Iliad and it takes the poison that is the Iliad and it takes the poison that is the Iliad and it takes the poison that is the Iliad and it replicates both the Odyssey and the Iliad the Iliad is 12 it’s 24 books the first 12 books models of the Odyssey the last 12 books models of the Iliad so the story begins when Aeneas he is one of the survivors of the fall of Troy okay and so he takes his father and his child</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0004</p>
+<h2 id="seg-0005-00-05-19-00-06-41-SPEAKER-01"><a href="#seg-0005-00-05-19-00-06-41-SPEAKER-01" class="headerlink" title="seg-0005 &#x2F; 00:05:19-00:06:41 &#x2F; SPEAKER_01"></a>seg-0005 &#x2F; 00:05:19-00:06:41 &#x2F; SPEAKER_01</h2><p>to go off to the Italian peninsula because the gods have told him that he is fated he is destined to found the Roman empire and that’s why the gods had to destroy Troy in order to create the Roman empire but as he sails to Italian peninsula there’s a shipwreck and he lands in Carthage okay Carthage and there he meets the Queen Diddle and the Carthaginians and Diddle are extremely hospitable to Aeneas this huge banquet and Aeneas is telling her of the story of the fall of Troy, how Troy fell. Remember that Homer doesn’t actually discuss the fall of Troy but Aeneas will discuss the fall of Troy and by discussing the fall of Troy his main purpose is to show how duplicitous, manipulative, deceptive the Greeks are. He’s also going to tell us why the values of Homer are evil, why love is evil, why love will lead you into tragedy. And then by telling the story what will happen is that Aeneas will seduce Dido.</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0005</p>
+<h2 id="seg-0006-00-06-42-00-07-21-SPEAKER-01"><a href="#seg-0006-00-06-42-00-07-21-SPEAKER-01" class="headerlink" title="seg-0006 &#x2F; 00:06:42-00:07:21 &#x2F; SPEAKER_01"></a>seg-0006 &#x2F; 00:06:42-00:07:21 &#x2F; SPEAKER_01</h2><p>Dido will fall in love with him because not only is he brave and handsome but he’s also a good man. He’s a good man. He’s a good man. He’s a good man. He’s a good man. He’s a good man. He’s a good man. He’s a good man. he’s a good man. He’s a good man. He’s a good man. He’s a good man. He’s a good man. He’s a great poet. He’s able to tell the story in a beautiful manner and so they fall in love. Okay? Alright, so this is the beginning of the Ineos and so what we’re gonna read first is Aeneas’s story of the fall of Troy. It begins when the Greeks pretend to leave the beaches of Troy and they leave behind a wooden horse. There’s a huge debate among the Trojans as to what to do with this horse and</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0006</p>
+<h2 id="seg-0007-00-07-21-00-08-24-SPEAKER-01"><a href="#seg-0007-00-07-21-00-08-24-SPEAKER-01" class="headerlink" title="seg-0007 &#x2F; 00:07:21-00:08:24 &#x2F; SPEAKER_01"></a>seg-0007 &#x2F; 00:07:21-00:08:24 &#x2F; SPEAKER_01</h2><p>they decide basically you know we can’t take a risk let’s just destroy this horse throw it into the sea and then what happens is that a greek soldier emerges and he’s a prisoner he was caught by some shepherds and he tells a story of the trojan horse and why it’s really not a threat to the trojans in fact it’s a gift from the greeks to the gods so because it’s a gift to the gods you cannot destroy it because then you piss off the gods okay and what this is going to show us is that the greek culture philosophy theater rhetoric it’s all one of deception the real trojan horse is greek culture you cannot let greek culture into rome because then it will corrupt and poison the the empire from within okay so that so again this is propaganda so it’s very blatant what they’re doing okay it’s very blatant what virgil um is</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0007</p>
+<h2 id="seg-0008-00-08-24-00-09-26-SPEAKER-01"><a href="#seg-0008-00-08-24-00-09-26-SPEAKER-01" class="headerlink" title="seg-0008 &#x2F; 00:08:24-00:09:26 &#x2F; SPEAKER_01"></a>seg-0008 &#x2F; 00:08:24-00:09:26 &#x2F; SPEAKER_01</h2><p>doing and okay something i i need to explain is like virgil is considered the poet who composed this uh in the ad but it was actually augustus caesar who wrote this basically augustus caesar was the one who provided virgil with a framework and then virgil um uh composed it into latin poetry and actually at the end of his life virgil actually want to burn this down burn this and the reason why is if you’re a poet what you believe is that your gift comes from the gods and so you represent the gods but if you actually work for the empire you actually use your gift for the emperor then maybe the gods will punish you right so virgil virgil was very much afraid and he wanted to like burn the uh in the ad um but augustus caesar would not let him and so this became the bible of the roman empire it is a</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0008</p>
+<h2 id="seg-0009-00-09-26-00-09-46-SPEAKER-01"><a href="#seg-0009-00-09-26-00-09-46-SPEAKER-01" class="headerlink" title="seg-0009 &#x2F; 00:09:26-00:09:46 &#x2F; SPEAKER_01"></a>seg-0009 &#x2F; 00:09:26-00:09:46 &#x2F; SPEAKER_01</h2><p>evil evil piece of work okay and it is the anti -homer so we’re going to study it um because it’s going to shape western civilization throughout the middle ages until the coming of dante okay so all right so ivory can you read please yeah suddenly in the</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0009</p>
+<h2 id="seg-0010-00-09-46-00-10-33-SPEAKER-00"><a href="#seg-0010-00-09-46-00-10-33-SPEAKER-00" class="headerlink" title="seg-0010 &#x2F; 00:09:46-00:10:33 &#x2F; SPEAKER_00"></a>seg-0010 &#x2F; 00:09:46-00:10:33 &#x2F; SPEAKER_00</h2><p>thick of it all a young soldier hands shackled behind his back with much shouting trojan shepherds were hauling him toward the king he’d come on demand by chance a total stranger he’d given himself up with one goal in mind to open troy to the greeks and lay her waist he trusted to courage nerved for either end to weave his lies or face a certain death young trojan recruits keen to have a look came scurrying up from all sides crowding round outdoing each other to make a mockery of the king’s throne and to be a great hero of the king’s throne and to be a hero of the of the captive. Now, hear the treachery of the Greeks and learn from a single crime the nature of the beast. Haggard, helpless, there in our midst he stood, all eyes riveting on him now, and turning a wary glance at the lines of Trojan troops, he groaned and spoke.</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0010</p>
+<h2 id="seg-0011-00-10-33-00-10-55-SPEAKER-00"><a href="#seg-0011-00-10-33-00-10-55-SPEAKER-00" class="headerlink" title="seg-0011 &#x2F; 00:10:33-00:10:55 &#x2F; SPEAKER_00"></a>seg-0011 &#x2F; 00:10:33-00:10:55 &#x2F; SPEAKER_00</h2><p>Where can I find some refuge? Where on land, on sea? What’s left for me now? A man of so much misery. Nothing among the Greeks, no place at all. And worse, I see my Trojan enemies crying for my blood. His groans convince us, cutting all our show of violence short. Okay, so there’s something in history, and this is about 30 BCE.</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0011</p>
+<h2 id="seg-0012-00-10-56-00-11-54-SPEAKER-01"><a href="#seg-0012-00-10-56-00-11-54-SPEAKER-01" class="headerlink" title="seg-0012 &#x2F; 00:10:56-00:11:54 &#x2F; SPEAKER_01"></a>seg-0012 &#x2F; 00:10:56-00:11:54 &#x2F; SPEAKER_01</h2><p>Greek theater is very, very popular. The Romans loved Greek theater, and Greek theater is really the very paragon of Greek civilization. And what this is telling us is that, no, Greek theater, is evil. It’s meant to deceive us. Okay, so this soldier, this Greek soldier, he is trained in theater. He’s trained in philosophy. He’s trained in rhetoric. And he’s using all his craft, all his skills, in order to ultimately deceive the good, but naive Trojans. Okay? All right, so he tells a story of how he came to be left behind in Troy. And the story is that he pissed off Odysseus. And Odysseus plotted against him. So when it came time for the Greeks to leave Troy and sell home, they needed to sacrifice a person. And that person was this guy. But somehow, this guy ran off. Okay? Okay, can you read? I’ll read.</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0012</p>
+<h2 id="seg-0013-00-11-55-00-12-55-SPEAKER-00"><a href="#seg-0013-00-11-55-00-12-55-SPEAKER-00" class="headerlink" title="seg-0013 &#x2F; 00:11:55-00:12:55 &#x2F; SPEAKER_00"></a>seg-0013 &#x2F; 00:11:55-00:12:55 &#x2F; SPEAKER_00</h2><p>The day of infamy soon came. The sacred rites were all performed for the victim, the salted meal strewn, the bands tied around my head. But I broke free of death, I tell you, burst my shackles, yes, and hid all night in the wreaths of a marshy lake, waiting for them to sail. If only they would sail. Well, no hope now of seeing the land where I was born or my sweet children, the father I longed for all these years. Maybe they’ll wring from them the price for my escape, avenge my guilt with my loved one’s blood, poor things. I beg you, King, by the powers who know the truth, by any trust still uncorrupt in the world of men, pity a man whose torment knows no bounds. Pity me in my pain. I know in my soul I don’t deserve to suffer. He wept and won his life, our pity too. Priam takes command, has him freed from the ropes and chains that bind him fast, and hails him warmly.</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0013</p>
+<h2 id="seg-0014-00-12-56-00-13-15-SPEAKER-00"><a href="#seg-0014-00-12-56-00-13-15-SPEAKER-00" class="headerlink" title="seg-0014 &#x2F; 00:12:56-00:13:15 &#x2F; SPEAKER_00"></a>seg-0014 &#x2F; 00:12:56-00:13:15 &#x2F; SPEAKER_00</h2><p>Whoever you are, from now on, you’ve lost the Greeks. Put them out of your mind and you’ll be one of us. But answer my questions. Tell me the whole truth. Why did they raise up this giant, monstrous horse? Who conceived it? What’s it for? Its purpose? What did it do? What does it give to the gods? A great engine of battle?</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0014</p>
+<h2 id="seg-0015-00-13-15-00-14-30-SPEAKER-01"><a href="#seg-0015-00-13-15-00-14-30-SPEAKER-01" class="headerlink" title="seg-0015 &#x2F; 00:13:15-00:14:30 &#x2F; SPEAKER_01"></a>seg-0015 &#x2F; 00:13:15-00:14:30 &#x2F; SPEAKER_01</h2><p>Okay, so again, this reminds us of the Iliad, where Priam the king of the Trojans is known for being a very generous, benevolent, open person. But this will lead to the doom of Troy. So remember in the Iliad, it is because of Prime’s generosity, his ability to forgive Achilles, leads to the great friendship between Priam and Achilles okay and again Virgil’s trying to reverse this and he’s trying to show us that no you think that generosity will lead to goodness no generosity will lead to evil you see how Prime is too trusting too generous and so he believes this Greek soldier and then he will allow the Trojans to bring the horse into Troy and at night the Greek soldiers will escape from the horse, open the gates of Troy, and now the Greeks are rushing in to kill everyone. okay and Aeneas hears this slaughtering and the tries to save as many people as he can.</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0015</p>
+<h2 id="seg-0016-00-14-31-00-14-46-SPEAKER-01"><a href="#seg-0016-00-14-31-00-14-46-SPEAKER-01" class="headerlink" title="seg-0016 &#x2F; 00:14:31-00:14:46 &#x2F; SPEAKER_01"></a>seg-0016 &#x2F; 00:14:31-00:14:46 &#x2F; SPEAKER_01</h2><p>And his first thought is, where is my king? How do I save my king? Okay so as the Greeks are ravaging the city killing as many prisoners as they can now and he is down at the town which people as they can, Aeneas is rushing to save his king Priam, all right? All right, so can you read Ivory?</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0016</p>
+<h2 id="seg-0017-00-14-46-00-15-49-SPEAKER-00"><a href="#seg-0017-00-14-46-00-15-49-SPEAKER-00" class="headerlink" title="seg-0017 &#x2F; 00:14:46-00:15:49 &#x2F; SPEAKER_00"></a>seg-0017 &#x2F; 00:14:46-00:15:49 &#x2F; SPEAKER_00</h2><p>Perhaps you wonder how Priam met his end. When he saw his city stormed and seized, his gates wrenched apart, the enemy camped in his palace depths. The old man donned his armor, long unused. He clamps it round his shoulders, shaking with age, and, all for nothing, straps his useless sword to his hip, then makes, for the thick of battle, out to meet his death. At the heart of the house, an ample altar stood, naked under disguise, an ancient laurel bending over the shrine, embracing our household gods within its shade. Here, flocking the altar, Hecuba and her daughters huddled, blown headlong down like doves by a black storm, clutching, all for nothing, the figures of their gods. Seeing Priam decked in the arms he’d worn as a young man, she cried, Are you insane? Poor husband, what impels you to strap that sword on now? Where are you rushing? Too late for such defense, such help, not even for my own Hector, if he came to the rescue now.</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0017</p>
+<h2 id="seg-0018-00-15-50-00-16-01-SPEAKER-00"><a href="#seg-0018-00-15-50-00-16-01-SPEAKER-00" class="headerlink" title="seg-0018 &#x2F; 00:15:50-00:16:01 &#x2F; SPEAKER_00"></a>seg-0018 &#x2F; 00:15:50-00:16:01 &#x2F; SPEAKER_00</h2><p>Come to me, Priam. This altar will shield us all, or else you’ll die with us. With those words drawing him towards her there, she made a place for the old man beside the holy shrine.</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0018</p>
+<h2 id="seg-0019-00-16-01-00-16-02-SPEAKER-01"><a href="#seg-0019-00-16-01-00-16-02-SPEAKER-01" class="headerlink" title="seg-0019 &#x2F; 00:16:01-00:16:02 &#x2F; SPEAKER_01"></a>seg-0019 &#x2F; 00:16:01-00:16:02 &#x2F; SPEAKER_01</h2><p>Okay, let’s continue.</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0019</p>
+<h2 id="seg-0020-00-16-04-00-16-10-SPEAKER-00"><a href="#seg-0020-00-16-04-00-16-10-SPEAKER-00" class="headerlink" title="seg-0020 &#x2F; 00:16:04-00:16:10 &#x2F; SPEAKER_00"></a>seg-0020 &#x2F; 00:16:04-00:16:10 &#x2F; SPEAKER_00</h2><p>Suddenly, look, a son of Priam, Polites, just escaped from slaughter at Pyrrhus’ hands.</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0020</p>
+<h2 id="seg-0021-00-16-10-00-16-43-SPEAKER-01"><a href="#seg-0021-00-16-10-00-16-43-SPEAKER-01" class="headerlink" title="seg-0021 &#x2F; 00:16:10-00:16:43 &#x2F; SPEAKER_01"></a>seg-0021 &#x2F; 00:16:10-00:16:43 &#x2F; SPEAKER_01</h2><p>Okay, so Pyrrhus is a son of Achilles, okay? So this is a rewriting of the ending of the Iliad, where Priam and Achilles have this great emotional battle where they forgive each other, and Priam’s love for Hector and Achilles’ love for his father unifies their soul, okay? This is gonna be a rewriting of that battle. So Achilles is dead, and now his son is seeking to kill Priam. Keep on going.</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0021</p>
+<h2 id="seg-0022-00-16-44-00-17-04-SPEAKER-00"><a href="#seg-0022-00-16-44-00-17-04-SPEAKER-00" class="headerlink" title="seg-0022 &#x2F; 00:16:44-00:17:04 &#x2F; SPEAKER_00"></a>seg-0022 &#x2F; 00:16:44-00:17:04 &#x2F; SPEAKER_00</h2><p>Comes racing through spheres Through enemy fighters Fleeing down the long arcades And deserted hallways Badly wounded Pyrrhus hot on his heels A weapon poised for the kill About to seize him About to run him through And pressing home As Polites reaches his parents And collapses Vomiting out his lifeblood Before their eyes</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0022</p>
+<h2 id="seg-0023-00-17-05-00-17-36-SPEAKER-01"><a href="#seg-0023-00-17-05-00-17-36-SPEAKER-01" class="headerlink" title="seg-0023 &#x2F; 00:17:05-00:17:36 &#x2F; SPEAKER_01"></a>seg-0023 &#x2F; 00:17:05-00:17:36 &#x2F; SPEAKER_01</h2><p>So again, this is a rewriting of the Iliad where now Polites becomes Hector, right? Because remember, Achilles kills Hector at the gates of Troy and Prime Hecuba are on the walls watching this. And then Achilles commits a war crime by basically tying Hector to his chariot and then dragging Hector all around the walls of Troy. So this is a reimagining of that scene. Okay, keep on going.</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0023</p>
+<h2 id="seg-0024-00-17-37-00-18-23-SPEAKER-00"><a href="#seg-0024-00-17-37-00-18-23-SPEAKER-00" class="headerlink" title="seg-0024 &#x2F; 00:17:37-00:18:23 &#x2F; SPEAKER_00"></a>seg-0024 &#x2F; 00:17:37-00:18:23 &#x2F; SPEAKER_00</h2><p>At that, Priam, trapped in the grip of death, not holding back, not checking his words, his rage. You, he cries, you and your vicious crimes. If any power on Hyle recoils with such an outrage, let the gods repay you for all your reckless work. Grant you the thanks, the rich reward you’ve earned. You’ve made me see my son’s death with my own eyes. Defile the father’s sight with his son’s lifeblood. You’ve made me see my son’s death with my own eyes. You say you’re Achilles’ son? You lie. Achilles never treated his enemy Priam so. No, he honored a suppliant’s right. He blessed to betray my trust. He restored my Hector’s bloodless corpse for burial. Sent me safely home to the land I rule.</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0024</p>
+<h2 id="seg-0025-00-18-23-00-18-53-SPEAKER-01"><a href="#seg-0025-00-18-23-00-18-53-SPEAKER-01" class="headerlink" title="seg-0025 &#x2F; 00:18:23-00:18:53 &#x2F; SPEAKER_01"></a>seg-0025 &#x2F; 00:18:23-00:18:53 &#x2F; SPEAKER_01</h2><p>Okay, so again, he is reminding us of the ending of the Iliad where in this great war, peace and love come to universe when Achilles and Prime Hecuba are on the walls. Achilles and Prime Hecuba are on the walls. He is telling us that the Iliad will be destroyed. He is saying that your father destroyed the legacy of your father. You’ve destroyed the friendship between us. Alright, keep on reading.</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0025</p>
+<h2 id="seg-0026-00-18-54-00-19-48-SPEAKER-00"><a href="#seg-0026-00-18-54-00-19-48-SPEAKER-00" class="headerlink" title="seg-0026 &#x2F; 00:18:54-00:19:48 &#x2F; SPEAKER_00"></a>seg-0026 &#x2F; 00:18:54-00:19:48 &#x2F; SPEAKER_00</h2><p>With that and with all his might, the old man flings his spear. But too impotent now to pierce. It merely grazes Pyrrhus’ brazen shield that blocks his way and clings there, dangling limb from the boss. All for nothing. It’s not like the Iliad is so weak. It’s not like the Iliad is so strong. It’s not like the Iliad is so weak. It’s not like the Iliad is so strong. It’s all for nothing. Pyrrhus shouts back, well then, down you go, a messenger to my father, Peleus’ son, tell him about my vicious work, how Neoptolemus degrades his father’s name, don’t you forget, now die, that said, he drags the old man straight to the altar, quaking, slithering on through slicks of his son’s blood, and twisting Priam’s hair in his left hand, his right hand sweeping forth his sword, a flash of steel, he buries his hilt deep in the king’s flank, such was the fate</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0026</p>
+<h2 id="seg-0027-00-19-48-00-20-07-SPEAKER-00"><a href="#seg-0027-00-19-48-00-20-07-SPEAKER-00" class="headerlink" title="seg-0027 &#x2F; 00:19:48-00:20:07 &#x2F; SPEAKER_00"></a>seg-0027 &#x2F; 00:19:48-00:20:07 &#x2F; SPEAKER_00</h2><p>of Priam, his death, his lot on earth, with Troy blazing before his eyes, her ramparts down, the monarch who once had ruled in all his glory the many lands of Asia, Asia’s many tribes, a powerful trunk is lying on the shore, the head wrenched from the shoulders, a corpse without a name,</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0027</p>
+<h2 id="seg-0028-00-20-34-00-21-53-SPEAKER-01"><a href="#seg-0028-00-20-34-00-21-53-SPEAKER-01" class="headerlink" title="seg-0028 &#x2F; 00:20:34-00:21:53 &#x2F; SPEAKER_01"></a>seg-0028 &#x2F; 00:20:34-00:21:53 &#x2F; SPEAKER_01</h2><p>is an extremely violent poetry, in fact, you can say it’s almost pornographic in the violence that it depicts, all right, and the Romans just love this, because they are a bloodthirsty people, all right, all right, so Priam is dead, and with its death, what it is doing is negating the moral lesson of the book, of the Iliad, to forgive one’s enemy, okay, so the Romans read this, and they remember reading the Iliad, and say, oh my God, I was wrong to think that Priam was heroic in forgiving Achilles, what I should be really thinking is, what a foolish old man, who deserves to die for thinking that his enemy should be forgiven, for thinking that his enemy has a good soul in him, okay, so again, this is negating, the Iliad, it’s actually poisoning, and corrupting the Iliad, all right, so, now, Aeneas is talking about his reaction, watching his king die, okay, keep on</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0028</p>
+<h2 id="seg-0029-00-21-53-00-21-53-SPEAKER-01"><a href="#seg-0029-00-21-53-00-21-53-SPEAKER-01" class="headerlink" title="seg-0029 &#x2F; 00:21:53-00:21:53 &#x2F; SPEAKER_01"></a>seg-0029 &#x2F; 00:21:53-00:21:53 &#x2F; SPEAKER_01</h2><p>reading, Ivory,</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0029</p>
+<h2 id="seg-0030-00-21-54-00-22-55-SPEAKER-00"><a href="#seg-0030-00-21-54-00-22-55-SPEAKER-00" class="headerlink" title="seg-0030 &#x2F; 00:21:54-00:22:55 &#x2F; SPEAKER_00"></a>seg-0030 &#x2F; 00:21:54-00:22:55 &#x2F; SPEAKER_00</h2><p>then, for the first time, the full horror came home to me at last, I froze, the thought of my own dear father filled my mind, when I saw the old king gasping out his life, with that raw wound, both men were the same age, and the thought of my cruza, alone, abandoned, our house plundered, our little Ilias’ fate, I look back, what forces still stood by me, none, totally spent in war, they’d all deserted, down from the roofs, they’ve clung themselves to earth, or hold their broken bodies in the flames, so, at just that moment, I was the one man left, and then I saw her, clinging to Vestas’ threshold, hiding, in silence, tucked away. Helen of Argos. Glare of the fires lit my view as I looked down, scanning the city left and right, and there she was. Terrified of the Trojans’ hate, now Troy was overpowered. Terrified of the Greeks’ revenge, her deserted husband’s rage.</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0030</p>
+<h2 id="seg-0031-00-22-56-00-23-15-SPEAKER-00"><a href="#seg-0031-00-22-56-00-23-15-SPEAKER-00" class="headerlink" title="seg-0031 &#x2F; 00:22:56-00:23:15 &#x2F; SPEAKER_00"></a>seg-0031 &#x2F; 00:22:56-00:23:15 &#x2F; SPEAKER_00</h2><p>That universal fury, a curse to Troy and her native land. And here she lurked, skulking, a thing of loathing, cowering at the altar. Helen. Out it flared, the fire inside my soul, my rage ablaze to avenge our fallen country. Pay Helen back, crime for crime.</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0031</p>
+<h2 id="seg-0032-00-23-15-00-24-29-SPEAKER-01"><a href="#seg-0032-00-23-15-00-24-29-SPEAKER-01" class="headerlink" title="seg-0032 &#x2F; 00:23:15-00:24:29 &#x2F; SPEAKER_01"></a>seg-0032 &#x2F; 00:23:15-00:24:29 &#x2F; SPEAKER_01</h2><p>Okay, so Aeneas is watching his entire civilization being destroyed, and he knows that his family will be destroyed as well. And he is taken aback. He’s sort of like paralyzed by his anger. And his hatred, and his fear. And then he sees Helen. And he’s like, this is her fault. Okay? This is why we are, we are destroyed as civilization, because of this whore. Okay? And so this is telling us what? The lesson from this is that love is a source of evil in the world. Okay? Love is a source of evil in this world. Remember the Odyssey. What is the Odyssey? What is the main lesson of the Odyssey? Love is the redemptive force of the world, right? If you are shattered as a person, it is love that will lead you home and heal you as a person. And what the Aeneas is saying instead is that love is what destroys civilization. Love is what corrupts you.</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0032</p>
+<h2 id="seg-0033-00-24-30-00-25-30-SPEAKER-01"><a href="#seg-0033-00-24-30-00-25-30-SPEAKER-01" class="headerlink" title="seg-0033 &#x2F; 00:24:30-00:25:30 &#x2F; SPEAKER_01"></a>seg-0033 &#x2F; 00:24:30-00:25:30 &#x2F; SPEAKER_01</h2><p>Love is what leads you to hell. Okay? All right, so he wants to kill Helen as revenge for the destruction of the world. And he wants to kill Helen as revenge for the destruction of Troy. But then what happens is that Aeneas’ mother, Venus, okay? So Venus is his mother, steps in, appears before him and says, no, you can’t do this. You have to go home and save your wife and your child. Okay? So Aeneas goes home. And what he does is he takes his family and takes them to the ship to escape Troy. But as they are running through the, um, um, streets of Troy, uh, what Aeneas does is he puts his father on his back. Okay? And he holds his son, his young son, uh, Ilias. And the, and Cresa, the wife, has to follow them. Okay? So that, that’s the Roman priority. Okay?</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0033</p>
+<h2 id="seg-0034-00-25-30-00-26-31-SPEAKER-01"><a href="#seg-0034-00-25-30-00-26-31-SPEAKER-01" class="headerlink" title="seg-0034 &#x2F; 00:25:30-00:26:31 &#x2F; SPEAKER_01"></a>seg-0034 &#x2F; 00:25:30-00:26:31 &#x2F; SPEAKER_01</h2><p>The most important person in the family is the patriarch, the father. Then is the son who inherits. And the wife is just someone who follows. Okay? So Aeneas’ job is to serve rather than being equal in the relationship. And this is, again, it’s very different from the Odyssey, where in many ways Penelope and Odysseus are equal to each other. Okay? All right. So what happens is that Aeneas gets to the ship and he, and he puts his father and his son on the ship ready to escape. But he recognizes at the, at the very last minute, his wife is missing. So he goes back and tries to save his wife, but his wife is dead. And why is she dead? Because she killed herself. Why did she kill herself? She killed herself because it is her duty not to burden her husband. Because her husband is destined for great things. He’s destined to found an empire. So he must marry into a new lineage, a new world family.</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0034</p>
+<h2 id="seg-0035-00-26-31-00-26-58-SPEAKER-01"><a href="#seg-0035-00-26-31-00-26-58-SPEAKER-01" class="headerlink" title="seg-0035 &#x2F; 00:26:31-00:26:58 &#x2F; SPEAKER_01"></a>seg-0035 &#x2F; 00:26:31-00:26:58 &#x2F; SPEAKER_01</h2><p>And therefore she has to kill herself to free him. But not only that, but if she were to become a slave to the Greeks, it would cost him embarrassment. For the rest of his life. Right? Okay. So that is the Roman perception of a wifely duty. Okay. If you’re not useful to your husband, just kill yourself. Okay. Can you read?</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0035</p>
+<h2 id="seg-0036-00-26-59-00-27-58-SPEAKER-00"><a href="#seg-0036-00-26-59-00-27-58-SPEAKER-00" class="headerlink" title="seg-0036 &#x2F; 00:26:59-00:27:58 &#x2F; SPEAKER_00"></a>seg-0036 &#x2F; 00:26:59-00:27:58 &#x2F; SPEAKER_00</h2><p>Creusa, nothing, no reply. And again, Creusa. But then as I mildly rushed from house to house, no one in sight, abruptly. Right before my eyes, I saw her stricken ghost, my own Creusa’s shade. But larger than life. the life I’d known so well. I froze. My hackles bristled, voice choked in my throat, and my wife spoke out to ease me of my anguish. My dear husband, why so eager to give yourself to such mad flights of grief? It’s not without the will of the gods these things have come to pass. But the gods forbid you to take Ryusa with you, bound from Troy together. The king of lofty Olympus won’t allow it. A long exile is your fate. The vast plains of the sea are yours to plow when you reach Hesperian land, where Lydian Tiber flows with a smooth march through rich and loamy fields, a land of hardy people. Their great joy and the kingdom are yours to claim, and the queen to make your wife.</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0036</p>
+<h2 id="seg-0037-00-27-59-00-28-24-SPEAKER-00"><a href="#seg-0037-00-27-59-00-28-24-SPEAKER-00" class="headerlink" title="seg-0037 &#x2F; 00:27:59-00:28:24 &#x2F; SPEAKER_00"></a>seg-0037 &#x2F; 00:27:59-00:28:24 &#x2F; SPEAKER_00</h2><p>Dispel your tears for Ryusa, whom you loved. I will never behold the high and mighty pride of their palaces, the Myrmidons, the Dilopians, or go as a slave to some Greek matron. No, not I, daughter of Dardanus that I am, the wife of Venus’ son. The great mother of gods detains me on these shores, and now farewell. Hold dear the son we share, we love together.</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0037</p>
+<h2 id="seg-0038-00-28-24-00-29-42-SPEAKER-01"><a href="#seg-0038-00-28-24-00-29-42-SPEAKER-01" class="headerlink" title="seg-0038 &#x2F; 00:28:24-00:29:42 &#x2F; SPEAKER_01"></a>seg-0038 &#x2F; 00:28:24-00:29:42 &#x2F; SPEAKER_01</h2><p>Again, this is very different from the Odyssey, where the Odyssey is really about a journey of two people, Penelope and Odysseus, to find each other again, because love is the greatest force in the universe, okay? Love is what compels the two to reunite and to find each other amidst all the chaos surrounding them. In the Iliad, the idea is that love is hell. So what is heaven, okay? If love is hell, what is heaven? Heaven is piety. Piety just means obedience to the prophecy of the gods, right? It is with the gods that Troy, destroyed, so that Rome can be created. It is the prophecy of the gods that Aeneas will be the one to lead the Trojans to found this Rome. And therefore, what is good, what is divine, is obedience to this prophecy, okay? So a long exile is your fate, all right? The king of lofty Olympus won’t allow Zeus, okay, or Jupiter, demands this of us.</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0038</p>
+<h2 id="seg-0039-00-29-42-00-30-47-SPEAKER-01"><a href="#seg-0039-00-29-42-00-30-47-SPEAKER-01" class="headerlink" title="seg-0039 &#x2F; 00:29:42-00:30:47 &#x2F; SPEAKER_01"></a>seg-0039 &#x2F; 00:29:42-00:30:47 &#x2F; SPEAKER_01</h2><p>If Jupiter demands us to sacrifice ourselves, then we must do so, okay? And so, this reverses the Odyssey, right? Where the gods willed that Penelope and Odysseus reunite. But here, the gods willed that Chryssa and Aeneas separate, all right? And the gods willed that Chryssa and Aeneas separate, all right? okay so um from our eyes this doesn’t sound that influential but the reality is remember this becomes a basis of roman civilization all right and what is civilization but a set of values a set of ideas that guide you in your life okay and what this is doing is inverting homer poison encrypting homer all right okay any questions guys okay so we’ll continue this next week okay</p>
+<p>Ref: video:predictive-history-ebwtrvjz1dw@transcript:v1#seg-0039</p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/book/decision-algorithm/" title="决策算法100讲"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="决策算法100讲"/></a><div class="content"><a class="title" href="/book/decision-algorithm/" title="决策算法100讲">决策算法100讲</a><time datetime="2026-08-27T16:00:00.000Z" title="发表于 2026-08-28 00:00:00">2026-08-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/08/23/life-notes-odyssey/" title="奥德赛意识流"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="奥德赛意识流"/></a><div class="content"><a class="title" href="/2026/08/23/life-notes-odyssey/" title="奥德赛意识流">奥德赛意识流</a><time datetime="2026-08-23T12:50:01.000Z" title="发表于 2026-08-23 20:50:01">2026-08-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/08/10/life-notes-make-room/" title="再挤挤"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="再挤挤"/></a><div class="content"><a class="title" href="/2026/08/10/life-notes-make-room/" title="再挤挤">再挤挤</a><time datetime="2026-08-10T13:19:42.000Z" title="发表于 2026-08-10 21:19:42">2026-08-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/08/10/life-notes-musashi/" title="武藏之死在天下无双"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="武藏之死在天下无双"/></a><div class="content"><a class="title" href="/2026/08/10/life-notes-musashi/" title="武藏之死在天下无双">武藏之死在天下无双</a><time datetime="2026-08-09T22:53:53.000Z" title="发表于 2026-08-10 06:53:53">2026-08-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/08/09/life-notes-autumn-fruit/" title="给春稗以秋实"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="给春稗以秋实"/></a><div class="content"><a class="title" href="/2026/08/09/life-notes-autumn-fruit/" title="给春稗以秋实">给春稗以秋实</a><time datetime="2026-08-08T23:41:53.000Z" title="发表于 2026-08-09 07:41:53">2026-08-09</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%9B%BE%E4%B9%A6%E7%AC%94%E8%AE%B0/"><span class="card-category-list-name">图书笔记</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"><span class="card-category-list-name">生活随笔</span><span class="card-category-list-count">8</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E5%8D%9A%E5%BC%88/" style="font-size: 1.1em; color: #999">博弈</a> <a href="/tags/%E5%86%B3%E7%AD%96/" style="font-size: 1.1em; color: #999">决策</a> <a href="/tags/%E6%A6%82%E7%8E%87/" style="font-size: 1.1em; color: #999">概率</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/08/">
+            <span class="card-archive-list-date">
+              八月 2026
+            </span>
+            <span class="card-archive-list-count">8</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/07/">
+            <span class="card-archive-list-date">
+              七月 2026
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">9</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">23.2k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-29T07:20:36.538Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script defer src="/js/knowledge-graph.js?v=5"></script><script id="canvas_nest" defer="defer" color="150,170,190" opacity="0.42" zIndex="-1" count="88" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

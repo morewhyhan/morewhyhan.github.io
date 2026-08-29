@@ -1,0 +1,371 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>虚船向远 | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Great Books #2:  Homer and the Invention of the HumanSource: https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;Ft2CuowGuYc seg-0001 &#x2F; 00:00:00-00:01:33 &#x2F; SPEAKER_00So together we’ve read the first half of the">
+<meta property="og:type" content="website">
+<meta property="og:title" content="虚船向远">
+<meta property="og:url" content="https://morewhyhan.github.io/book/english-original-library/1-Great-Books/002-02-homer-and-the-invention-of-the-human.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="Great Books #2:  Homer and the Invention of the HumanSource: https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;Ft2CuowGuYc seg-0001 &#x2F; 00:00:00-00:01:33 &#x2F; SPEAKER_00So together we’ve read the first half of the">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-29T06:48:46.805Z">
+<meta property="article:modified_time" content="2026-08-29T06:48:46.805Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/english-original-library/1-Great-Books/002-02-homer-and-the-invention-of-the-human.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '虚船向远',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/knowledge-graph/"><i class="fa-fw fas fa-project-diagram"></i><span> 知识图谱</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(/img/hua.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/knowledge-graph/"><i class="fa-fw fas fa-project-diagram"></i><span> 知识图谱</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title"></h1></div></header><main class="layout" id="content-inner"><div id="page"><div class="container" id="article-container"><h1 id="Great-Books-2-Homer-and-the-Invention-of-the-Human"><a href="#Great-Books-2-Homer-and-the-Invention-of-the-Human" class="headerlink" title="Great Books #2:  Homer and the Invention of the Human"></a>Great Books #2:  Homer and the Invention of the Human</h1><p>Source: <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=Ft2CuowGuYc">https://www.youtube.com/watch?v=Ft2CuowGuYc</a></p>
+<h2 id="seg-0001-00-00-00-00-01-33-SPEAKER-00"><a href="#seg-0001-00-00-00-00-01-33-SPEAKER-00" class="headerlink" title="seg-0001 &#x2F; 00:00:00-00:01:33 &#x2F; SPEAKER_00"></a>seg-0001 &#x2F; 00:00:00-00:01:33 &#x2F; SPEAKER_00</h2><p>So together we’ve read the first half of the Iliad and today I gave you an assignment, right? So I have three questions for you guys about Achilles. The first question is, imagine yourself as Achilles. How are you similar? What experience in your life is very similar to that of Achilles? And you said that Achilles is almost a mirror to you where you love playing soccer, but one day you felt humiliated so you stopped playing soccer and that tore at your heart. And your phrase was pride and vulnerability. And that shows that by reading the Iliad, it gives you tremendous insight into yourself as well. So that’s the nature of the human heart where arrogance and insecurity are two sides of the same coin, right? They’re bundled together, okay? Another question is, imagine Achilles’ childhood and you said that Achilles, when he was young, he was probably very rebellious, very imaginative, and that’s true, okay?</p>
+<p>Ref: video:predictive-history-ft2cuowguyc@transcript:v1#seg-0001</p>
+<h2 id="seg-0002-00-01-33-00-02-41-SPEAKER-00"><a href="#seg-0002-00-01-33-00-02-41-SPEAKER-00" class="headerlink" title="seg-0002 &#x2F; 00:01:33-00:02:41 &#x2F; SPEAKER_00"></a>seg-0002 &#x2F; 00:01:33-00:02:41 &#x2F; SPEAKER_00</h2><p>He’s always testing boundaries. He has a very vivid imagination. And the last question is, imagine Achilles today. What would he be doing, okay? And here the answer is very interesting. The answer is that he’s probably trying to be an Olympian athlete, okay? So the obvious answer would be he’s trying to be a soldier because he loves war. But what you recognize is that, no, what Achilles really wants is to stand out and be admired by everyone. He wants to be famous. And so it makes more sense to be an Olympian athlete than it does to be a soldier. But you also recognize that being an Olympian athlete has a lot of restrictions because you need coaches, you need sponsors, you need to follow a certain regiment. And Achilles is a very independent -minded person, and so he would rebel against all this authority, all this structure, all this conformity. And so he would probably fail in today’s society, okay?</p>
+<p>Ref: video:predictive-history-ft2cuowguyc@transcript:v1#seg-0002</p>
+<h2 id="seg-0003-00-02-41-00-03-52-SPEAKER-00"><a href="#seg-0003-00-02-41-00-03-52-SPEAKER-00" class="headerlink" title="seg-0003 &#x2F; 00:02:41-00:03:52 &#x2F; SPEAKER_00"></a>seg-0003 &#x2F; 00:02:41-00:03:52 &#x2F; SPEAKER_00</h2><p>So the entire point of this exercise is to show you that what a great book does is excite your imagination. It helps your imagination peer deeply into your own human heart and see how complicated, how complex, how dark it is. And that’s why it’s so important for you to be able to imagine Achilles as a whole person. You don’t know him, you’ve never met Achilles, and Achilles is honestly a fictional character. He never existed, but he’s real to you so that you’re able to imagine his past, his childhood, and you’re able to experience what he experienced. What’s even more powerful is that you’re able to imagine Achilles into our world and see him as a living and breathing human being. So that’s what a great book is. A great book is composed of characters that are real to you and make the world more real to you. They excite your imagination, that</p>
+<p>Ref: video:predictive-history-ft2cuowguyc@transcript:v1#seg-0003</p>
+<h2 id="seg-0004-00-03-52-00-05-13-SPEAKER-00"><a href="#seg-0004-00-03-52-00-05-13-SPEAKER-00" class="headerlink" title="seg-0004 &#x2F; 00:03:52-00:05:13 &#x2F; SPEAKER_00"></a>seg-0004 &#x2F; 00:03:52-00:05:13 &#x2F; SPEAKER_00</h2><p>allows you to think much more deeply into yourself, as well as more imaginatively understand the world around you. Okay? So now the question then is, how does this happen? What are the mechanisms behind all this? Okay, so there was a very famous American literary critic named Harold Bloom, he was at Yale. He actually taught at Yale when I was there. I studied English literature at Yale, and I actually sat in on a class of his. But he is considered the most famous American literary critic. Okay? And his explanation for what a great book is, what is a great book? A great book is something that helps us become human. So what he means by that is, in a great book, the characters are different because the characters are able to hear themselves speak. Okay? Hear yourself speak. Those are his words. What does it mean to hear yourself speak? It means that as I’m speaking to you.</p>
+<p>Ref: video:predictive-history-ft2cuowguyc@transcript:v1#seg-0004</p>
+<h2 id="seg-0005-00-05-14-00-06-35-SPEAKER-00"><a href="#seg-0005-00-05-14-00-06-35-SPEAKER-00" class="headerlink" title="seg-0005 &#x2F; 00:05:14-00:06:35 &#x2F; SPEAKER_00"></a>seg-0005 &#x2F; 00:05:14-00:06:35 &#x2F; SPEAKER_00</h2><p>There’s also a part of me that steps back and analyzes what I say. Okay? It has to make sense to me, it has to make sense to you. And we call this consciousness. Okay? To be human means to be conscious. But to be conscious is ultimately an act of imagination. Because while you’re speaking, you have to step back. Okay? We actually call this disassociation. You have to disassociate yourself. Disassociate, meaning basically that as you’re speaking, as you are in this world, a part of you, almost like a ghost, steps away and observes the entire scene. And not only am I imagining myself speaking, but I’m also imagining what is happening inside your mind, your heart, as I’m speaking. My effect on you. Okay? All right? So let’s look at how this applies to the Iliad. Okay. So remember in the first book of the Iliad, Agamemnon and Achilles, they are having an argument.</p>
+<p>Ref: video:predictive-history-ft2cuowguyc@transcript:v1#seg-0005</p>
+<h2 id="seg-0006-00-06-38-00-07-57-SPEAKER-00"><a href="#seg-0006-00-06-38-00-07-57-SPEAKER-00" class="headerlink" title="seg-0006 &#x2F; 00:06:38-00:07:57 &#x2F; SPEAKER_00"></a>seg-0006 &#x2F; 00:06:38-00:07:57 &#x2F; SPEAKER_00</h2><p>They’re having an argument because Agamemnon stole, kidnapped a girl. The father demanded to ransom her back. Agamemnon broke the rules of war, of piracy, and said, no, I like her. Screw you. I’m the king of kings. I’ll do whatever I want. The father is a priest of Apollo. Apollo starts a plague among the Greek soldiers. They’re all dying. And Achilles says to Agamemnon and says, we’re all dying on the shores of Troy. So you have to get the girl back. And Agamemnon says, sure, I’ll give her back. But now I want your girl in return. Okay? And this starts the main conflict of the Iliad. What’s interesting is that… How conscious he is. How conscious they are. So what’s happening is that this is a war council and in a war council, the Greek generals get together and decide on policy. And so as Agamemnon is speaking, okay, if you observe his speech, he’s doing three things at once.</p>
+<p>Ref: video:predictive-history-ft2cuowguyc@transcript:v1#seg-0006</p>
+<h2 id="seg-0007-00-07-57-00-09-04-SPEAKER-00"><a href="#seg-0007-00-07-57-00-09-04-SPEAKER-00" class="headerlink" title="seg-0007 &#x2F; 00:07:57-00:09:04 &#x2F; SPEAKER_00"></a>seg-0007 &#x2F; 00:07:57-00:09:04 &#x2F; SPEAKER_00</h2><p>Okay? The first and most important thing is that he’s responding to Achilles. Okay? Achilles says, you have to give the girl back. And Agamemnon says, fine, I’ll give the girl back. But in return, I want your girl. So that’s a response to Achilles. He feels as though Achilles made him lose face. So now he wants to make Achilles lose face as well. Okay? But also what’s important is that Agamemnon is considering how others are perceiving the interaction. And Achilles is not. Right? Why does Agamemnon require or demand Achilles’ girlfriend? Because Agamemnon does not want to lose face amongst the others. Okay? So he recognizes that if he just says to Achilles, you know what, Achilles, you’re right. He would lose face amongst the other generals. He would lose respect. And in this world, if no one respects you, you could get killed. Okay? These people are gangsters. So he recognizes that.</p>
+<p>Ref: video:predictive-history-ft2cuowguyc@transcript:v1#seg-0007</p>
+<h2 id="seg-0008-00-09-04-00-10-20-SPEAKER-00"><a href="#seg-0008-00-09-04-00-10-20-SPEAKER-00" class="headerlink" title="seg-0008 &#x2F; 00:09:04-00:10:20 &#x2F; SPEAKER_00"></a>seg-0008 &#x2F; 00:09:04-00:10:20 &#x2F; SPEAKER_00</h2><p>In order to save face, I must now demand something from Achilles to show that I am his superior. Okay? He’s so conscious of that as well. But also, at the same time, he’s going to step back. Okay? And he’s going to be conscious of his own words to make sure that his words together make sense. That for him, it is coherent. Okay? And so what he says to Achilles. Why am I doing this? Because I love my girlfriend. Okay? You stole from me who I love. And therefore, I must enact a vengeance on you. Okay? So you see how coherent all this. He is saying to Achilles to ensure that you understand that I’m your superior, I’m going to take what you most prize. Okay? And then he’s thinking about the reaction of the War Council to make sure that they understand that he’s still a top boss. But he’s also, in his head, ensuring that what he says is coherent in itself.</p>
+<p>Ref: video:predictive-history-ft2cuowguyc@transcript:v1#seg-0008</p>
+<h2 id="seg-0009-00-10-20-00-11-20-SPEAKER-00"><a href="#seg-0009-00-10-20-00-11-20-SPEAKER-00" class="headerlink" title="seg-0009 &#x2F; 00:10:20-00:11:20 &#x2F; SPEAKER_00"></a>seg-0009 &#x2F; 00:10:20-00:11:20 &#x2F; SPEAKER_00</h2><p>Okay? That what he’s doing has a rationale. And the rationale is because I loved her. Because you’re stealing from me my greatest love. I love her more than my own wife, Claude Mestre. Okay? So you can see how coherent all this. And this is amazing if you think about it. Right? And this is what makes Agamemnon a real character to us. All right? But the other thing is that Achilles behaves the same way. Okay? He is alive in the scene. He is listening to Agamemnon. And his response is this. Why are you stealing from me what is rightfully mine? Agamemnon. I came to Troy not because I hate the Trojans. I’m living against the Trojans. I came to Troy because you ordered me to come to Troy. And so I’m risking my life for you. You gain most of the treasure. You gain most of the profit from this war.</p>
+<p>Ref: video:predictive-history-ft2cuowguyc@transcript:v1#seg-0009</p>
+<h2 id="seg-0010-00-11-21-00-12-34-SPEAKER-00"><a href="#seg-0010-00-11-21-00-12-34-SPEAKER-00" class="headerlink" title="seg-0010 &#x2F; 00:11:21-00:12:34 &#x2F; SPEAKER_00"></a>seg-0010 &#x2F; 00:11:21-00:12:34 &#x2F; SPEAKER_00</h2><p>I take a little bit. And now you’re stealing that little bit from me as well. Okay? So why is Achilles saying this? Achilles is saying this as a response to Agamemnon. But he’s also saying this in order to win sympathy for the war. He’s saying this from the others as well. Right? And he’s also doing this because he’s conscious of who he is. Okay? They’re trying. It’s a battle of world views. Okay? World view. What they’re really trying to do is through their speeches, they’re trying to control reality. Okay? Through their speeches, they’re trying to impose the reality on others. And that’s why this is such an emotional, violent scene between the two. Okay? And then what happens, which is even more amazing, is that Agamemnon hears Achilles speak. And then what he does is that he responds to Achilles using his own memory and experience. Okay? And what he says to Achilles is, Achilles, you say that you came here to fight for me.</p>
+<p>Ref: video:predictive-history-ft2cuowguyc@transcript:v1#seg-0010</p>
+<h2 id="seg-0011-00-12-34-00-13-38-SPEAKER-00"><a href="#seg-0011-00-12-34-00-13-38-SPEAKER-00" class="headerlink" title="seg-0011 &#x2F; 00:12:34-00:13:38 &#x2F; SPEAKER_00"></a>seg-0011 &#x2F; 00:12:34-00:13:38 &#x2F; SPEAKER_00</h2><p>But we all know that you are vain. Okay? You’re a narcissist. You’re an asshole. You came here to win glory for yourself. You’re just using me as an excuse, as a pretext in order to win glory on the shores of Troy. That’s why you really came. So don’t give me this crap about you making all the sacrifices for me. You can’t make sacrifices for others because you’re a selfish asshole. Okay? And then Achilles’ response is that, fine, if you do that, then I won’t fight for you anymore. So you can see how real this is. Okay? And again, what’s amazing is that this all comes in the mind of one person, Homer, the poet. Okay? So imagine this, where as I’m speaking to you, I’m able to mentally lift off and observe the entire class, where not only am I hearing myself</p>
+<p>Ref: video:predictive-history-ft2cuowguyc@transcript:v1#seg-0011</p>
+<h2 id="seg-0012-00-13-38-00-15-00-SPEAKER-00"><a href="#seg-0012-00-13-38-00-15-00-SPEAKER-00" class="headerlink" title="seg-0012 &#x2F; 00:13:38-00:15:00 &#x2F; SPEAKER_00"></a>seg-0012 &#x2F; 00:13:38-00:15:00 &#x2F; SPEAKER_00</h2><p>speak, okay, and I’m measuring and observing the effect of my words, but I’m also able to go into your mind one by one and think about how my words are changing your reality. How they’re impacting your emotions, how they’re impacting your memory, and think about their impact on you and how they will guide your behavior and actions tomorrow, 10 years from now. Okay? So what’s even more amazing is that as this is happening, Nestor, right, Nestor, who is one of the older generals, he comes into this scene and he tries to reconcile Agamemnon and Achilles. Okay? So not only are the two main characters have a life of their own, but the observers have a life of their own as well. So in the Iliad, what’s amazing is that not only are the main characters alive, but every single character, whether it’s Odysseus, Hector, Priam, Nestor, they’re all alive as well with real emotions and real feelings and real experiences.</p>
+<p>Ref: video:predictive-history-ft2cuowguyc@transcript:v1#seg-0012</p>
+<h2 id="seg-0013-00-15-01-00-16-03-SPEAKER-00"><a href="#seg-0013-00-15-01-00-16-03-SPEAKER-00" class="headerlink" title="seg-0013 &#x2F; 00:15:01-00:16:03 &#x2F; SPEAKER_00"></a>seg-0013 &#x2F; 00:15:01-00:16:03 &#x2F; SPEAKER_00</h2><p>Okay? And the reason why we know this is that if this is true, then we’re able to understand what’s going on. We’re able to look back at how this came into being, the past, and we’re also able to make predictions about the future. And all this is coherent. Okay? So based on this, we will now know that the major conflict in the Iliad is the one between Agamemnon and Achilles, where they’re struggling for control over narrative, where Achilles wants everyone to believe that he is doing everything he can to control the world. Okay? To save the Greeks. He’s a hero. And Agamemnon is trying to get everyone to believe that Achilles is just a selfish asshole. Okay? And that’s what leads them to behave the way they do, including suicidal behavior. Because remember, as you read, Hector and the Trojans are coming to burn down the ships of the Greeks.</p>
+<p>Ref: video:predictive-history-ft2cuowguyc@transcript:v1#seg-0013</p>
+<h2 id="seg-0014-00-16-03-00-17-21-SPEAKER-00"><a href="#seg-0014-00-16-03-00-17-21-SPEAKER-00" class="headerlink" title="seg-0014 &#x2F; 00:16:03-00:17:21 &#x2F; SPEAKER_00"></a>seg-0014 &#x2F; 00:16:03-00:17:21 &#x2F; SPEAKER_00</h2><p>Okay? They do that, every single Greek will be killed by the Trojans. And even at this point in time. Both Agamemnon and Achilles refuses to give up their narrative. Okay? They insist they’re right. So that when Odysseus comes to Achilles and begs Achilles, please come back and join us. We’ll give you all the money in the world. Agamemnon has promised his daughter to you. We’ll give you all of Troy after we conquer Troy. And Achilles says, no, no, no, no. I want Agamemnon to come and apologize. If he’s not willing to come and apologize to me, then screw all of you. Okay? So you can see how human and how real this is. And this is important for us because now we’re able to step back and observe ourselves as well as others. We have greater imagination. We have greater empathy. We have greater curiosity. Okay? And that’s the power of a great book. And this is how the Iliad created the greatest civilization on earth in history, the Greek civilization.</p>
+<p>Ref: video:predictive-history-ft2cuowguyc@transcript:v1#seg-0014</p>
+<h2 id="seg-0015-00-17-22-00-18-29-SPEAKER-00"><a href="#seg-0015-00-17-22-00-18-29-SPEAKER-00" class="headerlink" title="seg-0015 &#x2F; 00:17:22-00:18:29 &#x2F; SPEAKER_00"></a>seg-0015 &#x2F; 00:17:22-00:18:29 &#x2F; SPEAKER_00</h2><p>Okay? All right. So any questions before I move on about this? Okay. Now what I want to discuss is, okay, how did Homer do this? Because this is a great mystery that has confused scholars for centuries. We all know the Iliad is one of the greatest books ever composed. But we don’t know who Homer is. And we don’t know how he did this. There are some who speculated that Homer were many people. Okay? So there’s confusion as to who Homer is. The Greeks themselves call Homer the teacher. And they consider him the father of the civilization. So we know that Homer was a real person. But we know almost nothing about him. Okay? So what I’m going to do now is speculate as to how he was able to do all this. Okay? How was one human mind able to construct an entire universe with real people by himself?</p>
+<p>Ref: video:predictive-history-ft2cuowguyc@transcript:v1#seg-0015</p>
+<h2 id="seg-0016-00-18-30-00-20-13-SPEAKER-00"><a href="#seg-0016-00-18-30-00-20-13-SPEAKER-00" class="headerlink" title="seg-0016 &#x2F; 00:18:30-00:20:13 &#x2F; SPEAKER_00"></a>seg-0016 &#x2F; 00:18:30-00:20:13 &#x2F; SPEAKER_00</h2><p>Okay. All right. So to understand this, let’s discuss how identity, how personality, how personality, how personality how consciousness is created. Okay? So basically what happens is that we have experiences. Okay? And these experiences become short -term memory. What happens is that our brains will filter these memories into emotions. Okay? So basically you will index your experiences according to their emotional strength or value. Okay? So happy, sad, angry, whatever. All right? So in other words, something really important for you to understand is that your memories are your emotions. Memories that create emotions in you will come into you and help create your identity. But memories that have no emotions, you will never remember. You’ll just throw it out. Okay? Okay? And then together, these memories will create your identity. Okay? And different combinations of these memories will create different identities. And the reason why is that different memories are indexed in different locations.</p>
+<p>Ref: video:predictive-history-ft2cuowguyc@transcript:v1#seg-0016</p>
+<h2 id="seg-0017-00-20-13-00-21-31-SPEAKER-00"><a href="#seg-0017-00-20-13-00-21-31-SPEAKER-00" class="headerlink" title="seg-0017 &#x2F; 00:20:13-00:21:31 &#x2F; SPEAKER_00"></a>seg-0017 &#x2F; 00:20:13-00:21:31 &#x2F; SPEAKER_00</h2><p>Okay? So your identity in a school will be different from your identity at home or your identity when you go to America. Okay? Because you need different identities to navigate different landscapes. Okay? Does that make sense? And together, this will create your worldview. Your worldview is just your identity, who you are, how you perceive the world, how you perceive yourself. And this helps you make decisions. This helps you navigate social relationships. And this determines how you behave. Okay? Does it make sense, right? Okay. All right. So this is basically the way that we understand how our personality develops. But there are sort of problems with this understanding. Okay? The first major problem with this is the sorting mechanism. Okay? Basically, why do we respond to different experiences with different emotions? It doesn’t make sense. So you have the same experience, but you respond to, but you can respond with different emotions.</p>
+<p>Ref: video:predictive-history-ft2cuowguyc@transcript:v1#seg-0017</p>
+<h2 id="seg-0018-00-21-32-00-22-27-SPEAKER-00"><a href="#seg-0018-00-21-32-00-22-27-SPEAKER-00" class="headerlink" title="seg-0018 &#x2F; 00:21:32-00:22:27 &#x2F; SPEAKER_00"></a>seg-0018 &#x2F; 00:21:32-00:22:27 &#x2F; SPEAKER_00</h2><p>Okay? So you might get a 50 on a test. Some of you will be really sad, but some of you will be like really happy. Like, well, I thought I was going to get 10%. Now I got 50%. Okay? All right. Some of you are like glass half empty. Some of you are like glass half full. So that determines how we perceive the world. But the question then is, why? Where does this personality come from? Okay? Why are some people optimistic? Why are some people pessimistic? And people are born like that. Now, people, and your response could be like, well, it’s just genetic because both your parents are optimistic. So you’re optimistic. Both your parents are pessimistic. Okay? Now, you think about your parents and ask yourself, does your personality come from your parents? And the answer is, it doesn’t. Okay? The answer is that you’re actually different from your parents. I have three kids.</p>
+<p>Ref: video:predictive-history-ft2cuowguyc@transcript:v1#seg-0018</p>
+<h2 id="seg-0019-00-22-27-00-23-53-SPEAKER-00"><a href="#seg-0019-00-22-27-00-23-53-SPEAKER-00" class="headerlink" title="seg-0019 &#x2F; 00:22:27-00:23:53 &#x2F; SPEAKER_00"></a>seg-0019 &#x2F; 00:22:27-00:23:53 &#x2F; SPEAKER_00</h2><p>I know this because all three of my kids are different from both my wife and myself. Okay? So the question is, where does this personality come from? That’s the question number one. We don’t know the answer. Question number two, which is more problematic is, okay, we know how this process works, but where are the values? Where are the memories stored inside the brain? Right? We know how this works psychologically, but the question then is, where in the brain does this happen? And the answer is, we don’t know. We don’t know. We know where in the brain breathing happens. We know in the brain where language acquisition happens, but we don’t know in the brain where memories are formed. And stored and accessed. We don’t know. That’s really weird, guys. Okay? All right? So that’s problem number two, storage of memories. Okay? And then question number three is empathy. Okay?</p>
+<p>Ref: video:predictive-history-ft2cuowguyc@transcript:v1#seg-0019</p>
+<h2 id="seg-0020-00-23-53-00-25-13-SPEAKER-00"><a href="#seg-0020-00-23-53-00-25-13-SPEAKER-00" class="headerlink" title="seg-0020 &#x2F; 00:23:53-00:25:13 &#x2F; SPEAKER_00"></a>seg-0020 &#x2F; 00:23:53-00:25:13 &#x2F; SPEAKER_00</h2><p>Or theory of mind. This isn’t really theory, but it doesn’t really help us explain how empathy works. Right? It doesn’t really help us understand how we’re able to perceive the emotions of others. Now, you can say, well, it’s because we have these different identities, and so we just look at our own identity. But that doesn’t really help us understand what’s going on. Okay? So we have these three major problems created by modern psychology. Okay? The first is, where does our personality come from? Because our personality, our filter, right? Our personality determines how we perceive the world emotionally. Second problem is, where does this all happen inside the brain? We don’t know. And the third problem is empathy. Okay? How are we able to perceive into the emotions of others? All right? Okay. And we don’t know. So I’m going to propose a theory to you today. Okay? Which goes back to last class. Okay? Imagine this. Imagine that we are composed essentially of two selves.</p>
+<p>Ref: video:predictive-history-ft2cuowguyc@transcript:v1#seg-0020</p>
+<h2 id="seg-0021-00-25-13-00-26-23-SPEAKER-00"><a href="#seg-0021-00-25-13-00-26-23-SPEAKER-00" class="headerlink" title="seg-0021 &#x2F; 00:25:13-00:26:23 &#x2F; SPEAKER_00"></a>seg-0021 &#x2F; 00:25:13-00:26:23 &#x2F; SPEAKER_00</h2><p>Okay? Two selves. There is the body, and the body comes materially. Right? Okay? We know that. We know that through evolution. But then our consciousness comes from our inactions with the universe. Okay? So our brain, it’s not a storage facility. It’s a for the vibrations of the universe. Okay? And we call this consciousness. And remember, last class, we discussed how this consciousness, the universe is consciousness. Right? And there are infinite dimensions to this consciousness. And this is where our memories are stored. So a very simple analogy is think about the internet. Right? You have a computer, a laptop, and some memory is stored on the laptop, but most of it is actually stored in the cloud. And how the computer works is by interacting with the internet, your computer becomes more conscious. Okay? Does that make sense? Same thing here where if you just use the human brain and just assume that everything comes from the human brain, nothing makes sense.</p>
+<p>Ref: video:predictive-history-ft2cuowguyc@transcript:v1#seg-0021</p>
+<h2 id="seg-0022-00-26-24-00-27-34-SPEAKER-00"><a href="#seg-0022-00-26-24-00-27-34-SPEAKER-00" class="headerlink" title="seg-0022 &#x2F; 00:26:24-00:27:34 &#x2F; SPEAKER_00"></a>seg-0022 &#x2F; 00:26:24-00:27:34 &#x2F; SPEAKER_00</h2><p>But if you assume that the human brain is merely an antenna to the universal consciousness, it makes a lot more sense. Okay? And not only that, but by imagination, by consciousness, we’re able to implant ourselves into the universe. Okay? And different emotions implant themselves in different wavelengths, different dimensions. Okay? Does that make sense? So the combination of your emotions now leads to a unique imprint in the universe. Okay? And different personalities will obviously have the same imprint in the universe. And we call this archetypes. Okay? Archetypes. This is from Carl Jung, who is a… Swiss… Psychologist. Okay? Carl Jung. Okay? The word he uses is archetypes. Okay? They’re different personalities and they are actually in the same parts of the universe and so they behave the same. That’s why certain people look alike. Okay? If you’re an evil person, you have a certain look to your face.</p>
+<p>Ref: video:predictive-history-ft2cuowguyc@transcript:v1#seg-0022</p>
+<h2 id="seg-0023-00-27-34-00-28-41-SPEAKER-00"><a href="#seg-0023-00-27-34-00-28-41-SPEAKER-00" class="headerlink" title="seg-0023 &#x2F; 00:27:34-00:28:41 &#x2F; SPEAKER_00"></a>seg-0023 &#x2F; 00:27:34-00:28:41 &#x2F; SPEAKER_00</h2><p>Right? If you’re a good person, you have a certain look to your face. Okay? If you’re clever, you have a certain look. Okay? So archetypes. Okay? And so what’s happening is that what Homer is doing is that he’s opened his mind to the universe and therefore he’s able to access all archetypes. Okay? We all do this through empathy, but Homer is able to do this at a greater level than everyone else. Okay? And then he’s able to transplant these archetypes into the world of the universe. And that’s how he’s able to create what he does. A word we have for these people are prophets. Right? What are prophets? Prophets are those who bring the truth of the universe onto our world and construct it in a language that allows us to access this truth eternally. Okay? So in this time in history, poets are prophets are teachers. These are the same function.</p>
+<p>Ref: video:predictive-history-ft2cuowguyc@transcript:v1#seg-0023</p>
+<h2 id="seg-0024-00-28-44-00-30-09-SPEAKER-00"><a href="#seg-0024-00-28-44-00-30-09-SPEAKER-00" class="headerlink" title="seg-0024 &#x2F; 00:28:44-00:30:09 &#x2F; SPEAKER_00"></a>seg-0024 &#x2F; 00:28:44-00:30:09 &#x2F; SPEAKER_00</h2><p>Okay? Where you’re accessing the truth of the universe and you’re spreading this truth through words that enable the construction of civilization. And we think this is true. Why? Because think about how amazing it is that the Iliad was written 2,500 years ago. Okay? It was written 2,500 years ago by this guy, Homer, living in the Mediterranean, the Aegean. Right? Different culture, different time, but the Iliad is able to speak directly to you as a Chinese person living in China in the 21st century. Not only that, but you’re able to imagine Achilles as yourself. So if we assume that the universe is conscious and it is infinite and eternal, and there are archetypes that exist within this universe. That Homer is able to draw on, then that makes sense now. Okay? This is both spaceless and timeless, this consciousness. All right? Is this clear to you guys? Okay.</p>
+<p>Ref: video:predictive-history-ft2cuowguyc@transcript:v1#seg-0024</p>
+<h2 id="seg-0025-00-30-09-00-30-56-SPEAKER-00"><a href="#seg-0025-00-30-09-00-30-56-SPEAKER-00" class="headerlink" title="seg-0025 &#x2F; 00:30:09-00:30:56 &#x2F; SPEAKER_00"></a>seg-0025 &#x2F; 00:30:09-00:30:56 &#x2F; SPEAKER_00</h2><p>Because if this is not true, then you have to answer the question, how was Homer able to do this? Right? How was he able to construct characters like Achilles, Odysseus, Agamemnon? That are so real that they feel alive to us. That they’re so real that we can hear them speak to themselves. So real that they themselves can hear themselves speak to others. Okay? Any questions? Ask a question and make sure you understand this theory. Okay? This is actually a very complex theory.</p>
+<p>Ref: video:predictive-history-ft2cuowguyc@transcript:v1#seg-0025</p>
+<h2 id="seg-0026-00-31-06-00-31-35-SPEAKER-01"><a href="#seg-0026-00-31-06-00-31-35-SPEAKER-01" class="headerlink" title="seg-0026 &#x2F; 00:31:06-00:31:35 &#x2F; SPEAKER_01"></a>seg-0026 &#x2F; 00:31:06-00:31:35 &#x2F; SPEAKER_01</h2><p>Yeah? Just speak. The quote unquote prophets. So in this theory, it’s actually not a… Technically not a prophet because they are not predicting future. Right? Because the universe is spaceless or timeless. So that they’re actually talking about the truth. Right? So they’re not making predictions because all of them are already written down in the universe.</p>
+<p>Ref: video:predictive-history-ft2cuowguyc@transcript:v1#seg-0026</p>
+<h2 id="seg-0027-00-31-35-00-32-48-SPEAKER-00"><a href="#seg-0027-00-31-35-00-32-48-SPEAKER-00" class="headerlink" title="seg-0027 &#x2F; 00:31:35-00:32:48 &#x2F; SPEAKER_00"></a>seg-0027 &#x2F; 00:31:35-00:32:48 &#x2F; SPEAKER_00</h2><p>Okay. Okay. So the word prophet doesn’t actually mean someone who predicts the future. Okay? The word prophet actually means someone who speaks to themselves. He speaks the truth. Speaks truth. Okay? Because for most of you of human history, when you say someone’s a prophet and he speaks truth, what you’re really saying is that he’s speaking the word of God. Right? Because what is truth? Truth is the universe, which is God. So when you speak truth, you’re speaking the universe. And what is the universe? The universe is past, present, and future all together. It is beyond space and beyond time. So when you speak the truth, the truth is what has happened, what is happening now, and what will happen in the future. Okay? So the way that you test his words is see if it happens. Right? And a lot of this truth is this moral truth where if you do evil onto others, evil will come onto you.</p>
+<p>Ref: video:predictive-history-ft2cuowguyc@transcript:v1#seg-0027</p>
+<h2 id="seg-0028-00-32-49-00-33-59-SPEAKER-00"><a href="#seg-0028-00-32-49-00-33-59-SPEAKER-00" class="headerlink" title="seg-0028 &#x2F; 00:32:49-00:33:59 &#x2F; SPEAKER_00"></a>seg-0028 &#x2F; 00:32:49-00:33:59 &#x2F; SPEAKER_00</h2><p>Okay? So the story of Achilles, right? Where Achilles, he’s stuck in this situation. He wants Agamemnon to apologize so that he can go fight the Trojans. Agamemnon refuses to apologize. So Achilles, what does he do? Well, he sacrifices Patroclus. Right? It’s the death of Patroclus that enables Achilles to go fight the Trojans. So he’s done evil onto Patroclus. And because he’s done that, evil will now come onto Achilles. Okay? So, yeah. So we think prophets means speaking the future, but it’s really speaking the truth. Okay? Because truth is eternal. If you do evil onto others, then evil will have to come onto you. So it’s both a prediction as well as a moral judgment. Okay? Does that make sense? And so the prophet, the poet, the teacher, again, same idea where, why is the person a poet? Because how do you know it’s truth? You know it’s truth because it’s beautiful.</p>
+<p>Ref: video:predictive-history-ft2cuowguyc@transcript:v1#seg-0028</p>
+<h2 id="seg-0029-00-34-00-00-35-08-SPEAKER-00"><a href="#seg-0029-00-34-00-00-35-08-SPEAKER-00" class="headerlink" title="seg-0029 &#x2F; 00:34:00-00:35:08 &#x2F; SPEAKER_00"></a>seg-0029 &#x2F; 00:34:00-00:35:08 &#x2F; SPEAKER_00</h2><p>Because it speaks to you. Okay? Do you understand? So when Homer is going around, because this is an illiterate culture, right? There’s no writing going on. So what he’s doing is he’s going to different places and he’s telling the story of the Iliad. He’s speaking. And as he’s speaking, it’s like music to the listeners. It’s beautiful. It’s poetry. But it’s beautiful. It’s beautiful because it’s also truthful. Okay? Because they feel as though Achilles is a real person with real emotions. And then Achilles comes and helps them better understand themselves. Okay? So that’s poet. The teacher is like, okay, how do you understand yourself? You understand yourself by understanding the Iliad. Okay? By understanding the psychology, the motivations, the emotions of these individuals. You can better understand yourself. And once you do that, once you’re able to hear yourself speak, once you’re able to have more consciousness, then that gives birth to civilization. Okay?</p>
+<p>Ref: video:predictive-history-ft2cuowguyc@transcript:v1#seg-0029</p>
+<h2 id="seg-0030-00-35-08-00-36-22-SPEAKER-00"><a href="#seg-0030-00-35-08-00-36-22-SPEAKER-00" class="headerlink" title="seg-0030 &#x2F; 00:35:08-00:36:22 &#x2F; SPEAKER_00"></a>seg-0030 &#x2F; 00:35:08-00:36:22 &#x2F; SPEAKER_00</h2><p>Because not only are you able to imagine, but you’re able to imagine with other people as well. So if you look at Greek culture, whether it’s Plato, whether it’s Thucydides, whether it’s Aeschylus. Okay? This is the greatest thinkers, greatest intellectuals of Greek civilization. They’re all derivative of Homer. Okay? They’re all operating within Homer’s universe and working off that universe. Okay? But their applications are different. So for example, Thucydides, what he does is that he writes in a very Homer way in that his characters are always giving speeches. The difference, of course, is that Thucydides is writing about real people, real events. Whereas Homer, he’s just writing about people. He’s not writing. He’s singing about people of his imagination that are part of the Greek cultural landscape. Okay? Does that make sense? Okay. Okay. All right. So in literature, prediction and truth are the same thing. If you’re able to speak truth, you can predict the future. All right?</p>
+<p>Ref: video:predictive-history-ft2cuowguyc@transcript:v1#seg-0030</p>
+<h2 id="seg-0031-00-36-22-00-36-41-SPEAKER-00"><a href="#seg-0031-00-36-22-00-36-41-SPEAKER-00" class="headerlink" title="seg-0031 &#x2F; 00:36:22-00:36:41 &#x2F; SPEAKER_00"></a>seg-0031 &#x2F; 00:36:22-00:36:41 &#x2F; SPEAKER_00</h2><p>That’s what truth is. Truth is a tool. It’s eternal. Past, present, and future collide together. They converge on truth. All right. Any more questions? Okay. Okay. So we have up to book 16 for Friday. Okay? Bye.</p>
+<p>Ref: video:predictive-history-ft2cuowguyc@transcript:v1#seg-0031</p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/book/decision-algorithm/" title="决策算法100讲"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="决策算法100讲"/></a><div class="content"><a class="title" href="/book/decision-algorithm/" title="决策算法100讲">决策算法100讲</a><time datetime="2026-08-27T16:00:00.000Z" title="发表于 2026-08-28 00:00:00">2026-08-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/08/23/life-notes-odyssey/" title="奥德赛意识流"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="奥德赛意识流"/></a><div class="content"><a class="title" href="/2026/08/23/life-notes-odyssey/" title="奥德赛意识流">奥德赛意识流</a><time datetime="2026-08-23T12:50:01.000Z" title="发表于 2026-08-23 20:50:01">2026-08-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/08/10/life-notes-make-room/" title="再挤挤"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="再挤挤"/></a><div class="content"><a class="title" href="/2026/08/10/life-notes-make-room/" title="再挤挤">再挤挤</a><time datetime="2026-08-10T13:19:42.000Z" title="发表于 2026-08-10 21:19:42">2026-08-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/08/10/life-notes-musashi/" title="武藏之死在天下无双"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="武藏之死在天下无双"/></a><div class="content"><a class="title" href="/2026/08/10/life-notes-musashi/" title="武藏之死在天下无双">武藏之死在天下无双</a><time datetime="2026-08-09T22:53:53.000Z" title="发表于 2026-08-10 06:53:53">2026-08-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/08/09/life-notes-autumn-fruit/" title="给春稗以秋实"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="给春稗以秋实"/></a><div class="content"><a class="title" href="/2026/08/09/life-notes-autumn-fruit/" title="给春稗以秋实">给春稗以秋实</a><time datetime="2026-08-08T23:41:53.000Z" title="发表于 2026-08-09 07:41:53">2026-08-09</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%9B%BE%E4%B9%A6%E7%AC%94%E8%AE%B0/"><span class="card-category-list-name">图书笔记</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"><span class="card-category-list-name">生活随笔</span><span class="card-category-list-count">8</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E5%8D%9A%E5%BC%88/" style="font-size: 1.1em; color: #999">博弈</a> <a href="/tags/%E5%86%B3%E7%AD%96/" style="font-size: 1.1em; color: #999">决策</a> <a href="/tags/%E6%A6%82%E7%8E%87/" style="font-size: 1.1em; color: #999">概率</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/08/">
+            <span class="card-archive-list-date">
+              八月 2026
+            </span>
+            <span class="card-archive-list-count">8</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/07/">
+            <span class="card-archive-list-date">
+              七月 2026
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">9</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">23.2k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-29T07:20:36.538Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script defer src="/js/knowledge-graph.js?v=5"></script><script id="canvas_nest" defer="defer" color="150,170,190" opacity="0.42" zIndex="-1" count="88" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>
