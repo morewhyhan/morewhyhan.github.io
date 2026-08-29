@@ -205,7 +205,7 @@ inject:
     - <link rel="stylesheet" href="/css/custom.css">
   bottom:
     - <script defer src="/js/home-video.js?v=2"></script>
-    - <script defer src="/js/knowledge-graph.js?v=3"></script>
+    - <script defer src="/js/knowledge-graph.js?v=4"></script>
 
 CDN:
   internal_provider: local
