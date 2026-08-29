@@ -1,13 +1,12 @@
-/* Knowledge graph powered by Cytoscape.js and the fCoSE layout. */
+/* Knowledge graph powered by Cytoscape.js and the WebCola physics layout. */
 (() => {
   'use strict'
 
   const DATA_URL = '/knowledge-graph/data.json'
   const LIBRARIES = [
     ['cytoscape', 'https://cdn.jsdelivr.net/npm/cytoscape@3.34.2/dist/cytoscape.min.js', 'cytoscape'],
-    ['layout-base', 'https://cdn.jsdelivr.net/npm/layout-base@2.0.1/layout-base.js', 'layoutBase'],
-    ['cose-base', 'https://cdn.jsdelivr.net/npm/cose-base@2.2.0/cose-base.js', 'coseBase'],
-    ['cytoscape-fcose', 'https://cdn.jsdelivr.net/npm/cytoscape-fcose@2.2.0/cytoscape-fcose.js', null]
+    ['webcola', 'https://cdn.jsdelivr.net/npm/webcola@3.4.0/WebCola/cola.min.js', 'cola'],
+    ['cytoscape-cola', 'https://cdn.jsdelivr.net/npm/cytoscape-cola@2.5.1/cytoscape-cola.js', null]
   ]
   const COLORS = {
     '分类': '#d0af78',
@@ -176,6 +175,8 @@
 
     const dark = document.documentElement.getAttribute('data-theme') === 'dark'
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    let activeLayout
+    let hasFitted = false
     const cy = window.cytoscape({
       container,
       elements,
@@ -261,37 +262,39 @@
       ]
     })
 
-    function runLayout () {
-      const layout = cy.layout({
-        name: 'fcose',
-        quality: options.local ? 'draft' : 'default',
-        randomize: true,
+    function runLayout (randomize = true) {
+      if (activeLayout) activeLayout.stop()
+      hasFitted = false
+      activeLayout = cy.layout({
+        name: 'cola',
+        randomize,
         animate: !reducedMotion,
-        animationDuration: options.local ? 420 : 900,
-        animationEasing: 'ease-out-cubic',
-        fit: true,
+        refresh: 1,
+        maxSimulationTime: options.local ? 2600 : 12000,
+        infinite: !options.local && !reducedMotion,
+        ungrabifyWhileSimulating: false,
+        fit: false,
         padding: options.local ? 28 : 110,
         nodeDimensionsIncludeLabels: true,
-        uniformNodeDimensions: false,
-        packComponents: false,
-        samplingType: true,
-        sampleSize: Math.min(25, nodes.length),
-        nodeSeparation: options.local ? 54 : 92,
-        nodeRepulsion: node => node.data('kind') === '分类' ? 9000 : 6200,
-        idealEdgeLength: () => options.local ? 68 : 125,
-        edgeElasticity: () => 0.38,
-        nestingFactor: 0.1,
-        numIter: options.local ? 1200 : 2500,
-        tile: true,
-        tilingPaddingVertical: 24,
-        tilingPaddingHorizontal: 24,
-        gravity: 0.22,
-        gravityRangeCompound: 1.5,
-        gravityCompound: 1,
-        gravityRange: 4.2,
-        initialEnergyOnIncremental: 0.3
+        avoidOverlap: true,
+        handleDisconnected: true,
+        convergenceThreshold: 0.01,
+        centerGraph: true,
+        nodeSpacing: node => node.data('kind') === '分类'
+          ? (options.local ? 24 : 50)
+          : (options.local ? 15 : 30),
+        edgeLength: edge => {
+          const categoryEdge = edge.source().data('kind') === '分类' || edge.target().data('kind') === '分类'
+          if (options.local) return categoryEdge ? 82 : 66
+          return categoryEdge ? 150 : 118
+        },
+        ready: () => {
+          if (hasFitted) return
+          hasFitted = true
+          cy.fit(cy.elements(), options.local ? 28 : 110)
+        }
       })
-      layout.run()
+      activeLayout.run()
     }
 
     function clearFocus () {
@@ -337,6 +340,7 @@
     return {
       destroy () {
         clearFocus()
+        if (activeLayout) activeLayout.stop()
         cy.destroy()
         container.replaceChildren()
       },
