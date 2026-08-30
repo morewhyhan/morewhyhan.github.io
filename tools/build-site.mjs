@@ -36,5 +36,7 @@ await fs.rm(notesPublicDir, { recursive: true, force: true })
 await fs.cp(quartzPublicDir, notesPublicDir, { recursive: true })
 await fs.writeFile(path.join(sitePublicDir, ".nojekyll"), "", "utf8")
 
+run(process.execPath, [path.join(toolsDir, "verify-site-output.mjs")], rootDir)
+
 console.log(`\nUnified site ready: ${sitePublicDir}`)
 console.log(`Quartz mounted at: ${notesPublicDir}`)
