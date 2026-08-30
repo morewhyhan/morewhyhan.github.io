@@ -54,6 +54,18 @@ const homepageEntries = [...homepage.matchAll(/<a\s+class="article-title"\s+href
 )
 const homepageTitles = new Set(homepageEntries.map(({ title }) => title))
 const missingFromHomepage = posts.filter(({ title }) => !homepageTitles.has(title))
+const extraOnHomepage = homepageEntries.filter(({ title }) => !posts.some((post) => post.title === title))
+
+const archive = await fs.readFile(path.join(publicDir, "archives", "index.html"), "utf8")
+const archiveEntries = [
+  ...archive.matchAll(/<a\s+class="article-sort-item-title"\s+href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/g),
+].map(([, href, title]) => ({ href, title: decodeHtml(title) }))
+const archiveTitles = new Set(archiveEntries.map(({ title }) => title))
+const missingFromArchive = posts.filter(({ title }) => !archiveTitles.has(title))
+const extraInArchive = archiveEntries.filter(({ title }) => !posts.some((post) => post.title === title))
+
+const searchXml = await fs.readFile(path.join(publicDir, "search.xml"), "utf8")
+const missingFromSearch = posts.filter(({ title }) => !searchXml.includes(title))
 
 for (const { href, title } of homepageEntries) {
   const relative = decodeURIComponent(href).replace(/^\/+/, "").replace(/\/$/, "")
@@ -79,6 +91,19 @@ if (homepageEntries.length !== posts.length) {
 if (missingFromHomepage.length > 0) {
   failures.push(`首页缺少：${missingFromHomepage.map(({ title }) => title).join("、")}`)
 }
+if (extraOnHomepage.length > 0) {
+  failures.push(`首页多出：${extraOnHomepage.map(({ title }) => title).join("、")}`)
+}
+if (archiveEntries.length !== posts.length || missingFromArchive.length > 0 || extraInArchive.length > 0) {
+  failures.push(
+    `时间轴与已发布文章不一致（时间轴 ${archiveEntries.length}，文章 ${posts.length}）` +
+      (missingFromArchive.length > 0 ? `；缺少：${missingFromArchive.map(({ title }) => title).join("、")}` : "") +
+      (extraInArchive.length > 0 ? `；多出：${extraInArchive.map(({ title }) => title).join("、")}` : ""),
+  )
+}
+if (missingFromSearch.length > 0) {
+  failures.push(`搜索索引缺少：${missingFromSearch.map(({ title }) => title).join("、")}`)
+}
 if (missingFromKnowledgeGarden.length > 0) {
   failures.push(`知识花园缺少：${missingFromKnowledgeGarden.map(({ title }) => title).join("、")}`)
 }
@@ -88,5 +113,5 @@ if (failures.length > 0) {
 }
 
 console.log(
-  `Verified site output: ${posts.length} published posts, ${homepageEntries.length} homepage entries, ${posts.length} knowledge-garden nodes.`,
+  `Verified content parity: ${posts.length} published posts, ${homepageEntries.length} homepage entries, ${archiveEntries.length} archive entries, ${posts.length} knowledge-garden nodes.`,
 )
