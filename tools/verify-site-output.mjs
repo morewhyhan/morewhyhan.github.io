@@ -35,6 +35,13 @@ function extractFrontmatterTitle(markdown, fileName) {
   return rawTitle
 }
 
+function quartzSlug(fileName) {
+  return fileName
+    .toLowerCase()
+    .replace(/[^a-z0-9\u4e00-\u9fff]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+}
+
 function extractKnowledgeGardenTarget(markdown, slug) {
   const permalink = markdown.match(/^permalink:\s*["']?([^"'\s]+)["']?\s*$/m)?.[1]
   const course = permalink?.replace(/^\/+|\/+$/g, "").match(/^book\/([^/]+)$/)
@@ -47,7 +54,7 @@ const postFiles = (await fs.readdir(postsDir))
 const posts = []
 for (const fileName of postFiles) {
   const markdown = await fs.readFile(path.join(postsDir, fileName), "utf8")
-  const slug = path.basename(fileName, ".md").toLowerCase()
+  const slug = quartzSlug(path.basename(fileName, ".md"))
   posts.push({
     fileName,
     slug,
