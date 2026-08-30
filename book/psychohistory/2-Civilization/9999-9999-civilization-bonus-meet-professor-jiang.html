@@ -1,0 +1,324 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>虚船向远 | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Civilization BONUS:  Meet Professor JiangSource: https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;voQEteh6Hko seg-0001 &#x2F; 00:00:00-00:01:23 &#x2F; SPEAKER_00Hi YouTube, this is Professor Jiang. Today is my last da">
+<meta property="og:type" content="website">
+<meta property="og:title" content="虚船向远">
+<meta property="og:url" content="https://morewhyhan.github.io/book/psychohistory/2-Civilization/9999-9999-civilization-bonus-meet-professor-jiang.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="Civilization BONUS:  Meet Professor JiangSource: https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;voQEteh6Hko seg-0001 &#x2F; 00:00:00-00:01:23 &#x2F; SPEAKER_00Hi YouTube, this is Professor Jiang. Today is my last da">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-29T22:33:15.268Z">
+<meta property="article:modified_time" content="2026-08-29T06:48:46.919Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/psychohistory/2-Civilization/9999-9999-civilization-bonus-meet-professor-jiang.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '虚船向远',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/notes/"><i class="fa-fw fas fa-project-diagram"></i><span> 知识花园</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(/img/hua.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/notes/"><i class="fa-fw fas fa-project-diagram"></i><span> 知识花园</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title"></h1></div></header><main class="layout" id="content-inner"><div id="page"><div class="container" id="article-container"><h1 id="Civilization-BONUS-Meet-Professor-Jiang"><a href="#Civilization-BONUS-Meet-Professor-Jiang" class="headerlink" title="Civilization BONUS:  Meet Professor Jiang"></a>Civilization BONUS:  Meet Professor Jiang</h1><p>Source: <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=voQEteh6Hko">https://www.youtube.com/watch?v=voQEteh6Hko</a></p>
+<h2 id="seg-0001-00-00-00-00-01-23-SPEAKER-00"><a href="#seg-0001-00-00-00-00-01-23-SPEAKER-00" class="headerlink" title="seg-0001 &#x2F; 00:00:00-00:01:23 &#x2F; SPEAKER_00"></a>seg-0001 &#x2F; 00:00:00-00:01:23 &#x2F; SPEAKER_00</h2><p>Hi YouTube, this is Professor Jiang. Today is my last day in Beijing. Tomorrow morning I board a flight with my two boys for Toronto, Canada. That’s where I was, that’s where I grew up. My parents are there, so it’s really the first time my kids are seeing their grandparents and everyone’s really excited about it. This morning, my wife and I, we sent our three kids to kindergarten, then we went to the hospital so that I could do some blood work. I have high blood pressure. I turn 50 next year, so my wife is very anxious about my health. And then after the hospital, I checked the news and Israel is attacking Iran. So… I, in my previous videos, have said that this would happen, but I am surprised by the accelerated timeline. It seems we’re headed towards World War III far faster and far harder than I could ever imagine. So like everyone else, I’m just praying and hoping that…</p>
+<p>Ref: video:predictive-history-voqeteh6hko@transcript:v1#seg-0001</p>
+<h2 id="seg-0002-00-01-23-00-02-25-SPEAKER-00"><a href="#seg-0002-00-01-23-00-02-25-SPEAKER-00" class="headerlink" title="seg-0002 &#x2F; 00:01:23-00:02:25 &#x2F; SPEAKER_00"></a>seg-0002 &#x2F; 00:01:23-00:02:25 &#x2F; SPEAKER_00</h2><p>that things turn out for the best, but also preparing for the worst. So this is really the first time that I’ve had a chance to talk directly to you guys. So let me tell you about myself, why I’m teaching this course, and what my plans are for the future of this class. So I was born in China in 1976. But when I was six, my family and I immigrated to Toronto, Canada. And my family was poor, but I worked really hard and I got a full scholarship to go to Yale University. And I was really thankful to my teachers and the opportunity to empower myself for education. So after I graduated from Yale with a degree in English Literature, I returned to China and I’ve been ever since working in education. Doing everything I could possibly do. I’m doing everything I could possibly do. In order to promote education reform in China.</p>
+<p>Ref: video:predictive-history-voqeteh6hko@transcript:v1#seg-0002</p>
+<h2 id="seg-0003-00-02-25-00-03-28-SPEAKER-00"><a href="#seg-0003-00-02-25-00-03-28-SPEAKER-00" class="headerlink" title="seg-0003 &#x2F; 00:02:25-00:03:28 &#x2F; SPEAKER_00"></a>seg-0003 &#x2F; 00:02:25-00:03:28 &#x2F; SPEAKER_00</h2><p>And I’ve worked various capacities. I’ve obviously worked as an English teacher, but I’ve also worked as a principal, curriculum director, a teacher trainer. I’ve worked in all levels of education in China. Kindergarten, primary school, junior high, high school, university as well. Three years ago, I got hired at this school that I’m at now, a private school in Beijing, that helps students go abroad. And I first came in actually as a curriculum director, overseeing the humanities curriculum at the school, which is what I specialize in. But the school needed teachers because of COVID. It was really hard to recruit teachers back then. So I was teaching AP English and it was my first time teaching advanced placement English. I really didn’t know what I was doing. So I just thought that we would just read a lot of books. So the kids and I, we read Julius Caesar. Paradise Lost, Virginia Woolf, Dante Divine Comedy, the Iliad, and the kids loved it.</p>
+<p>Ref: video:predictive-history-voqeteh6hko@transcript:v1#seg-0003</p>
+<h2 id="seg-0004-00-03-28-00-04-27-SPEAKER-00"><a href="#seg-0004-00-03-28-00-04-27-SPEAKER-00" class="headerlink" title="seg-0004 &#x2F; 00:03:28-00:04:27 &#x2F; SPEAKER_00"></a>seg-0004 &#x2F; 00:03:28-00:04:27 &#x2F; SPEAKER_00</h2><p>And I loved teaching it. So in the second year, I built a great books program at the school. And again, it was extremely successful. We read the Iliad, the Odyssey, the Iliad, the Bible, the Divine Comedy, and the kids loved it. But while teaching it, I recognized there’s a problem. And the problem was the kids. The kids, being Chinese, had absolutely no historical context to work with. So this year, I started to develop a new program, which is the program that you’ve been experiencing for the last 60 classes. My goal this year was to teach the entirety of human history from the Ice Age up until the American Empire, which is what I taught yesterday. And again, it’s been great for me. It’s been great for me. It’s been great for the kids. And it’s been great for me because it’s really offered me an opportunity to think very deeply about history.</p>
+<p>Ref: video:predictive-history-voqeteh6hko@transcript:v1#seg-0004</p>
+<h2 id="seg-0005-00-04-29-00-05-31-SPEAKER-00"><a href="#seg-0005-00-04-29-00-05-31-SPEAKER-00" class="headerlink" title="seg-0005 &#x2F; 00:04:29-00:05:31 &#x2F; SPEAKER_00"></a>seg-0005 &#x2F; 00:04:29-00:05:31 &#x2F; SPEAKER_00</h2><p>Specifically, it’s given me an opportunity to think about the possibilities of history. And over the course of teaching this course, I’ve decided that I want to create a new intellectual movement, a new sort of history. I call it predictive history. The idea is that in the future, I hope that history is able to accomplish three major goals. The first goal is to connect events of the past into a coherent story. Second is to help us understand, explain the present. And the third goal is to be able to predict the future. And I think that if what we teach accomplishes all three goals, then it must be true history. And I think if we have true history, then we, humanity, the world, can better organize, can better think. Can better control our future. And that’s my ambition. As you can imagine, I was deeply inspired by the works of Isaac Asimov.</p>
+<p>Ref: video:predictive-history-voqeteh6hko@transcript:v1#seg-0005</p>
+<h2 id="seg-0006-00-05-31-00-06-40-SPEAKER-00"><a href="#seg-0006-00-05-31-00-06-40-SPEAKER-00" class="headerlink" title="seg-0006 &#x2F; 00:05:31-00:06:40 &#x2F; SPEAKER_00"></a>seg-0006 &#x2F; 00:05:31-00:06:40 &#x2F; SPEAKER_00</h2><p>As a young boy growing up in Toronto, Canada, I didn’t have that many friends, but I read a lot of books. And one of my favorite series was the Foundation series. And in it, Isaac Asimov proposed the idea of psychohistory, which is the idea that we can mathematically model the present and the past. So as to predict the future. And that, I think, will be my future ambition moving forward. I want to build intellectual foundations for the possibility of psychohistory. And that’s my long -term thinking. So about this course. So I initially uploaded the classes so that my students can review the lectures because these are Chinese students, and their English is not that great. And there were a couple hundred subscribers initially, and everyone was fantastic. I’m so thankful for these initial subscribers because they believed in me, they commented, gave me valuable feedback, and I tried to interact with them as much as possible.</p>
+<p>Ref: video:predictive-history-voqeteh6hko@transcript:v1#seg-0006</p>
+<h2 id="seg-0007-00-06-40-00-07-42-SPEAKER-00"><a href="#seg-0007-00-06-40-00-07-42-SPEAKER-00" class="headerlink" title="seg-0007 &#x2F; 00:06:40-00:07:42 &#x2F; SPEAKER_00"></a>seg-0007 &#x2F; 00:06:40-00:07:42 &#x2F; SPEAKER_00</h2><p>This past month, something odd happened. My channel just blew up. I went from like 300 subscribers at the beginning of May. To about 25,000 as we speak right now, and it’s constantly growing. And the feedback has been overwhelmingly positive. So thank you so much for subscribing, for liking, for commenting. I try to read every comment, but as you can imagine, there’s just so many comments. And I would like to respond to every one of them. But again, there’s so much going on in my life. I have three young kids that I have to take care of. I have to take care of them with my wife. I also have to prep for classes. And because I have three young kids, I’ve been sick a lot. It’s allergy season in China, COVID is still going strong. So I’m just trying my best right now to take care of my kids. So my apologies if I don’t respond.</p>
+<p>Ref: video:predictive-history-voqeteh6hko@transcript:v1#seg-0007</p>
+<h2 id="seg-0008-00-07-43-00-08-45-SPEAKER-00"><a href="#seg-0008-00-07-43-00-08-45-SPEAKER-00" class="headerlink" title="seg-0008 &#x2F; 00:07:43-00:08:45 &#x2F; SPEAKER_00"></a>seg-0008 &#x2F; 00:07:43-00:08:45 &#x2F; SPEAKER_00</h2><p>I will try to respond over the summer. But again, I’m so thankful for all the support. Thank you. All the positive feedback that I’ve received recently. So I finished teaching the course yesterday, 60 classes covering the entire span of human history. And a lot of you are curious as to what the plans are moving forward. Well, tomorrow I’m going back to Toronto to rest, recuperate, relax. The summer is also a really good time for me to reflect on what I’ve taught and how I’ve improved the course. I will also be doing a lot of reading. Some of you have suggested anything I’ve taught, which I will go into deeply this summer. I will also look at Oswald Spangler very carefully. Some of you have commented that I’m very weak in terms of philosophy. Marx, Hegel, Kant are pretty weak. I’m pretty weak at. And I admit that. So this summer, I will try to brush up on my philosophy.</p>
+<p>Ref: video:predictive-history-voqeteh6hko@transcript:v1#seg-0008</p>
+<h2 id="seg-0009-00-08-46-00-09-48-SPEAKER-00"><a href="#seg-0009-00-08-46-00-09-48-SPEAKER-00" class="headerlink" title="seg-0009 &#x2F; 00:08:46-00:09:48 &#x2F; SPEAKER_00"></a>seg-0009 &#x2F; 00:08:46-00:09:48 &#x2F; SPEAKER_00</h2><p>I will also need to study economics in depth, as well. So Adam Smith and other economists, because that really right now is the weak point in my analysis. I don’t have enough classical economics in my background to fully comment on what’s happening economically in the world. So that’s my plan. When I return to Beijing in mid -August, I’ll be teaching a new iteration of this course. So rather than 60 classes, I’ll try to cram everything in into 30 classes. Now, some of you have bravely watched all 60 classes. I guarantee you, in this new series, you’ll be really impressed, and you’ll really enjoy it. I’m going to add tons of new material. And I’m going to make the themes much more salient, much more coherent, so that you can see the underlying structures of human history much more clearly. The second semester, which starts in February, will be a lot of fun.</p>
+<p>Ref: video:predictive-history-voqeteh6hko@transcript:v1#seg-0009</p>
+<h2 id="seg-0010-00-09-48-00-10-46-SPEAKER-00"><a href="#seg-0010-00-09-48-00-10-46-SPEAKER-00" class="headerlink" title="seg-0010 &#x2F; 00:09:48-00:10:46 &#x2F; SPEAKER_00"></a>seg-0010 &#x2F; 00:09:48-00:10:46 &#x2F; SPEAKER_00</h2><p>The second semester, I’ll be teaching a new iteration of this course. geopolitics. So what I’ll be doing is I’ll be looking at current events trying to analyze why these events are happening and making predictions about what will happen. So the second semester will be a lot of fun. Some of you are really enjoying this channel and I’m so grateful that that you are and don’t worry I love being able to teach to a global audience and I’m gonna keep keep on doing this for as long as I can. Some of you may be curious as to what my long -term ambitions are. Well as I said I have three kids. I love teaching and I really want to develop a psychohistory to its fullest possibility. So my long -term ambition is actually to set up a my own school that specializes in the teaching of the liberal arts of the humanities and build the foundations for psychohistory.</p>
+<p>Ref: video:predictive-history-voqeteh6hko@transcript:v1#seg-0010</p>
+<h2 id="seg-0011-00-10-46-00-11-56-SPEAKER-00"><a href="#seg-0011-00-10-46-00-11-56-SPEAKER-00" class="headerlink" title="seg-0011 &#x2F; 00:10:46-00:11:56 &#x2F; SPEAKER_00"></a>seg-0011 &#x2F; 00:10:46-00:11:56 &#x2F; SPEAKER_00</h2><p>I want this school to be the best ever. I want this to be like Plato’s Academy. I want this to be like the Jedi Temple where I’m training the intellectual Jedi’s of the future. These will be the future intellectuals, the future writers, the future historians of humanity. And I hope that we together when we build this community will be able to lead humanity forward and that’s really what I want to do. My ambition. So again thank you so much for watching my lectures. I’m really thankful. Some of your comments have really made a deep impression on me and they’re gonna really help me improve the course for next year. So I promise you that I will offer a much more lean, much more clean, much more enjoyable viewing experience in St. Athos. I will also try as best as I can to fix my hair because I know that’s been a concern for a lot of you.</p>
+<p>Ref: video:predictive-history-voqeteh6hko@transcript:v1#seg-0011</p>
+<h2 id="seg-0012-00-11-56-00-12-28-SPEAKER-00"><a href="#seg-0012-00-11-56-00-12-28-SPEAKER-00" class="headerlink" title="seg-0012 &#x2F; 00:11:56-00:12:28 &#x2F; SPEAKER_00"></a>seg-0012 &#x2F; 00:11:56-00:12:28 &#x2F; SPEAKER_00</h2><p>So enjoy your summer. I’m going to engage in the process of deep reflection and deep learning, deep reading this summer so that in September, in the fall, I can deliver the best quality content I can to everyone. Because I’m so grateful. Thank you. to everyone for watching okay well that’s it for me for me enjoy your summer and I will see you in mid -august</p>
+<p>Ref: video:predictive-history-voqeteh6hko@transcript:v1#seg-0012</p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/book/decision-algorithm/" title="决策算法100讲"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="决策算法100讲"/></a><div class="content"><a class="title" href="/book/decision-algorithm/" title="决策算法100讲">决策算法100讲</a><time datetime="2026-08-27T16:00:00.000Z" title="发表于 2026-08-28 00:00:00">2026-08-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/08/23/life-notes-odyssey/" title="奥德赛意识流"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="奥德赛意识流"/></a><div class="content"><a class="title" href="/2026/08/23/life-notes-odyssey/" title="奥德赛意识流">奥德赛意识流</a><time datetime="2026-08-23T12:50:01.000Z" title="发表于 2026-08-23 20:50:01">2026-08-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/08/10/life-notes-make-room/" title="再挤挤"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="再挤挤"/></a><div class="content"><a class="title" href="/2026/08/10/life-notes-make-room/" title="再挤挤">再挤挤</a><time datetime="2026-08-10T13:19:42.000Z" title="发表于 2026-08-10 21:19:42">2026-08-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/08/10/life-notes-musashi/" title="武藏之死在天下无双"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="武藏之死在天下无双"/></a><div class="content"><a class="title" href="/2026/08/10/life-notes-musashi/" title="武藏之死在天下无双">武藏之死在天下无双</a><time datetime="2026-08-09T22:53:53.000Z" title="发表于 2026-08-10 06:53:53">2026-08-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/08/09/life-notes-autumn-fruit/" title="给春稗以秋实"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="给春稗以秋实"/></a><div class="content"><a class="title" href="/2026/08/09/life-notes-autumn-fruit/" title="给春稗以秋实">给春稗以秋实</a><time datetime="2026-08-08T23:41:53.000Z" title="发表于 2026-08-09 07:41:53">2026-08-09</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%9B%BE%E4%B9%A6%E7%AC%94%E8%AE%B0/"><span class="card-category-list-name">图书笔记</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"><span class="card-category-list-name">生活随笔</span><span class="card-category-list-count">7</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E5%8D%9A%E5%BC%88/" style="font-size: 1.1em; color: #999">博弈</a> <a href="/tags/%E5%86%B3%E7%AD%96/" style="font-size: 1.1em; color: #999">决策</a> <a href="/tags/%E6%A6%82%E7%8E%87/" style="font-size: 1.1em; color: #999">概率</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/08/">
+            <span class="card-archive-list-date">
+              八月 2026
+            </span>
+            <span class="card-archive-list-count">8</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">8</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">21.8k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-30T00:07:47.992Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script id="canvas_nest" defer="defer" color="150,170,190" opacity="0.42" zIndex="-1" count="88" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

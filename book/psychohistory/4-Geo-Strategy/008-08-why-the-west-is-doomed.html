@@ -1,0 +1,368 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>虚船向远 | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Geo-Strategy Update #8:  Why the West is DoomedSource: https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;E83dpuyvpiM seg-0001 &#x2F; 00:00:00-00:01:16 &#x2F; SPEAKER_00Good morning YouTube so I know that you flock this">
+<meta property="og:type" content="website">
+<meta property="og:title" content="虚船向远">
+<meta property="og:url" content="https://morewhyhan.github.io/book/psychohistory/4-Geo-Strategy/008-08-why-the-west-is-doomed.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="Geo-Strategy Update #8:  Why the West is DoomedSource: https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;E83dpuyvpiM seg-0001 &#x2F; 00:00:00-00:01:16 &#x2F; SPEAKER_00Good morning YouTube so I know that you flock this">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/myself.png">
+<meta property="article:published_time" content="2026-08-29T22:33:15.275Z">
+<meta property="article:modified_time" content="2026-08-29T06:48:46.973Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/myself.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/book/psychohistory/4-Geo-Strategy/008-08-why-the-west-is-doomed.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '虚船向远',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/notes/"><i class="fa-fw fas fa-project-diagram"></i><span> 知识花园</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(/img/hua.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/notes/"><i class="fa-fw fas fa-project-diagram"></i><span> 知识花园</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title"></h1></div></header><main class="layout" id="content-inner"><div id="page"><div class="container" id="article-container"><h1 id="Geo-Strategy-Update-8-Why-the-West-is-Doomed"><a href="#Geo-Strategy-Update-8-Why-the-West-is-Doomed" class="headerlink" title="Geo-Strategy Update #8:  Why the West is Doomed"></a>Geo-Strategy Update #8:  Why the West is Doomed</h1><p>Source: <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=E83dpuyvpiM">https://www.youtube.com/watch?v=E83dpuyvpiM</a></p>
+<h2 id="seg-0001-00-00-00-00-01-16-SPEAKER-00"><a href="#seg-0001-00-00-00-00-01-16-SPEAKER-00" class="headerlink" title="seg-0001 &#x2F; 00:00:00-00:01:16 &#x2F; SPEAKER_00"></a>seg-0001 &#x2F; 00:00:00-00:01:16 &#x2F; SPEAKER_00</h2><p>Good morning YouTube so I know that you flock this channel because I am such a Sunny and optimistic person. I bring cheer in a world of gloom You may face some difficulties in your life, but you know that when you watch my videos I’m gonna tell you how great the world is unfortunately today It’s all going to be doom and gloom. I’m going to talk about how the Western world Is going to collapse and there’s nothing anyone can do about it. So let me start with a concrete example. I live in Canada and these past few years I’ve just seen Canadian society Get worse and worse. A lot of the issue Is this relentless immigration these past few years Millions of people have come into this country seeking a better life Unfortunately, they can’t create in only a few cities where there are economic opportunities and as a result housing prices have gone up inflation</p>
+<p>Ref: video:predictive-history-e83dpuyvpim@transcript:v1#seg-0001</p>
+<h2 id="seg-0002-00-01-16-00-02-33-SPEAKER-00"><a href="#seg-0002-00-01-16-00-02-33-SPEAKER-00" class="headerlink" title="seg-0002 &#x2F; 00:01:16-00:02:33 &#x2F; SPEAKER_00"></a>seg-0002 &#x2F; 00:01:16-00:02:33 &#x2F; SPEAKER_00</h2><p>has gone up cost of living has gone up but wages have been stagnant or depressed because of the surge in cheap labor and In Toronto, if you’re not making at least $100,000 a Year, it’s very hard to get by and quite frankly. Most are not making that kind of money and Most are struggling so crime has gone up homelessness has gone up drug addiction has gone up It’s a very dire situation in Canada now, it’s easy to blame the immigrants and I don’t think the reason Are the immigrants I myself am an immigrant so Maybe I’m biased, but I will say that We came over in about 1983 and My dad was a high school teacher in a village in Canada, sorry, we were my dad was a high school teacher in our village back in China and We were really thankful for our opportunity To come to Canada and we felt really blessed</p>
+<p>Ref: video:predictive-history-e83dpuyvpim@transcript:v1#seg-0002</p>
+<h2 id="seg-0003-00-02-33-00-03-46-SPEAKER-00"><a href="#seg-0003-00-02-33-00-03-46-SPEAKER-00" class="headerlink" title="seg-0003 &#x2F; 00:02:33-00:03:46 &#x2F; SPEAKER_00"></a>seg-0003 &#x2F; 00:02:33-00:03:46 &#x2F; SPEAKER_00</h2><p>because life back in China was just terrible it’s really hard for anyone today to imagine the poverty in China back then during the Cold Revolution But let me give you a concrete example 15 years ago. My dad came to visit me in Beijing when I was working as a high school administrator and he bought entire duffel bag a huge duffel bag of toilet rolls 24 toilet rolls and the reason why is Toilet paper was considered the ultimate luxury back in our village During the Cold Revolution and so maybe he wanted to give these toilet rolls to all the all his relatives and sort of one that He’s made it in Canada in Canada well, the problem was that he had a very hard life in Canada as most recent immigrants do he was a dishwasher for his entire life and As a dishwasher working in restaurants and bars. He encountered a lot of racism and</p>
+<p>Ref: video:predictive-history-e83dpuyvpim@transcript:v1#seg-0003</p>
+<h2 id="seg-0004-00-03-46-00-04-53-SPEAKER-00"><a href="#seg-0004-00-03-46-00-04-53-SPEAKER-00" class="headerlink" title="seg-0004 &#x2F; 00:03:46-00:04:53 &#x2F; SPEAKER_00"></a>seg-0004 &#x2F; 00:03:46-00:04:53 &#x2F; SPEAKER_00</h2><p>humiliation so let me give you a example One day my dad and I went to a supermarket To buy some butter. We couldn’t find the butter because the supermarket which is huge. So my dad he saw a clerk in the supermarket, but he couldn’t find any butter wearing his uniform, his white uniform, and my dad asked him, sorry, sir, do you know where the butter is? I mean, his English isn’t that great, though, but it was pretty easy to understand what my dad wanted. The store clerk looks at him briefly and says, sorry, I don’t work here. So that’s the sort of humiliation that my dad faced every day as a new immigrant in Canada who didn’t have any status and whose English wasn’t very good. We were very poor in Canada. We could easily qualify for welfare, but we didn’t apply for welfare because we didn’t know welfare existed. I remember late at night,</p>
+<p>Ref: video:predictive-history-e83dpuyvpim@transcript:v1#seg-0004</p>
+<h2 id="seg-0005-00-04-53-00-06-05-SPEAKER-00"><a href="#seg-0005-00-04-53-00-06-05-SPEAKER-00" class="headerlink" title="seg-0005 &#x2F; 00:04:53-00:06:05 &#x2F; SPEAKER_00"></a>seg-0005 &#x2F; 00:04:53-00:06:05 &#x2F; SPEAKER_00</h2><p>my dad would sneak out across the street and pick up some sofas or chairs that the neighbors had discarded. And they would become our furniture. My dad cut my hair, so believe it or not, but when I was younger, my hair was actually worse than it is today. And so the kids made fun of me. I had bad hair, uneven hair. My mom bought me clothes from bargain outlets. So they were crappy clothes. They weren’t Nike or Adidas that the other kids were wearing. And I smelled bad. So understandably, the other kids teased me. I was very unpopular. So I focused on school. I focused on getting out of poverty. And through hard work, I went to Yale University on a full scholarship. And that opened new doors, new vestas for me. And so I really achieved the Canadian dream. And if you’re going for Canada, if you’re going for Yale, I wouldn’t be able to make YouTube videos.</p>
+<p>Ref: video:predictive-history-e83dpuyvpim@transcript:v1#seg-0005</p>
+<h2 id="seg-0006-00-06-05-00-07-25-SPEAKER-00"><a href="#seg-0006-00-06-05-00-07-25-SPEAKER-00" class="headerlink" title="seg-0006 &#x2F; 00:06:05-00:07:25 &#x2F; SPEAKER_00"></a>seg-0006 &#x2F; 00:06:05-00:07:25 &#x2F; SPEAKER_00</h2><p>So I’m very thankful for Canada and for Yale. So again, we’re really thankful for the opportunity to come. But the reality is there’s just too many immigrants coming into this country. And what’s really happening is, even though you may have some short -term economic GDP burst, even though you may have some short -term economic GDP burst, even though you may have some short -term economic GDP burst, ultimately, you’re degrading the social capital, trust, and cohesion of Canada. Ultimately, the Canadian identity has always been fragile. And all this massive influx of immigrants is making the identity much more fragile, which is in the long -term going to affect Canada’s capacity to work together, to innovate, to be resilient, to be cohesive as a society. Right now, a quarter, 25 % of Canadians are foreign -born, first -generation immigrants like myself. So if there were ever a referendum and Canadians could choose whether</p>
+<p>Ref: video:predictive-history-e83dpuyvpim@transcript:v1#seg-0006</p>
+<h2 id="seg-0007-00-07-25-00-08-34-SPEAKER-00"><a href="#seg-0007-00-07-25-00-08-34-SPEAKER-00" class="headerlink" title="seg-0007 &#x2F; 00:07:25-00:08:34 &#x2F; SPEAKER_00"></a>seg-0007 &#x2F; 00:07:25-00:08:34 &#x2F; SPEAKER_00</h2><p>or not to join the United States voluntarily, most of these immigrants would immediately say, let’s join the United States, because there are more immigrants. because there are more immigrants. So in the long -term, I don’t see Canada staying together. I think Canada will ultimately be dismembered by the United States and be absorbed into the American empire in the next 20, 30 years. I don’t think Canada right now can be a sustainable nation. Now, it’s really easy to blame immigrants for all of this. And most Canadians do, in fact, blame immigrants, And most Canadians do, in fact, blame immigrants, because that’s what they encounter every day. They encounter immigrants not being able to speak English, not following the rules, cutting in line. They watch the news and see immigrants committing crimes. They see immigrants, rich immigrants, buying up these expensive property and making life miserable for everyone. So it’s really easy to blame the immigrants. But ultimately, we need to understand why this immigration is happening.</p>
+<p>Ref: video:predictive-history-e83dpuyvpim@transcript:v1#seg-0007</p>
+<h2 id="seg-0008-00-08-34-00-09-43-SPEAKER-00"><a href="#seg-0008-00-08-34-00-09-43-SPEAKER-00" class="headerlink" title="seg-0008 &#x2F; 00:08:34-00:09:43 &#x2F; SPEAKER_00"></a>seg-0008 &#x2F; 00:08:34-00:09:43 &#x2F; SPEAKER_00</h2><p>And it’s happening because of, you know, because of the baby boomers. The baby boomers want three things. They want their pensions to be paid. They want quality, free healthcare. And they want the property prices to go up. Basically, they want the Canadian economy to keep on growing and growing and growing, regardless of the consequences. Now, in order for this to happen, for the Canadian economy to grow, there are three main mechanisms to accomplish this. The first mechanism is to exploit resources, because Canada really is the wealthiest country in the world. It has abundant, almost infinite resources, especially fresh water, which is what the world is going to need in the next hundred years. So Canada’s an extremely wealthy place, and it can choose to exploit and export a lot of these resources. That’s the first solution. The second solution, which is much more sustainable, is</p>
+<p>Ref: video:predictive-history-e83dpuyvpim@transcript:v1#seg-0008</p>
+<h2 id="seg-0009-00-09-43-00-11-07-SPEAKER-00"><a href="#seg-0009-00-09-43-00-11-07-SPEAKER-00" class="headerlink" title="seg-0009 &#x2F; 00:09:43-00:11:07 &#x2F; SPEAKER_00"></a>seg-0009 &#x2F; 00:09:43-00:11:07 &#x2F; SPEAKER_00</h2><p>to unleash the entrepreneurial energy of the Canadian people, to encourage more entrepreneurship, more privatization, to reduce the regulatory state, to reduce the red tape. Okay, that’s the second solution. And the third solution is immigration. Let’s let in more immigrants. Let’s let in the rich immigrants. Let’s let in the poor immigrants to pour cash into the economy. Let’s let in poor immigrants so that they work as slave labor for Canadian corporations. So of these three solutions, the Canadian government went with the third solution, increased immigration. Now, a lot of people out there believe that this is a conspiracy, that there’s this global international conspiracy out there to dilute national identity, to destroy the idea of the nation state, to reduce the white gene pool. This is all a World Economic Forum white replacement theory, conspiracy spearheaded by the Jews. And quite honestly, if the people in charge were this smart, were this well organized, the world wouldn’t be in the mess that it is today.</p>
+<p>Ref: video:predictive-history-e83dpuyvpim@transcript:v1#seg-0009</p>
+<h2 id="seg-0010-00-11-07-00-12-24-SPEAKER-00"><a href="#seg-0010-00-11-07-00-12-24-SPEAKER-00" class="headerlink" title="seg-0010 &#x2F; 00:11:07-00:12:24 &#x2F; SPEAKER_00"></a>seg-0010 &#x2F; 00:11:07-00:12:24 &#x2F; SPEAKER_00</h2><p>You’d be surprised by how idiotic, by how incompetent the people in charge are. So let me explain to you why immigration is increasing, not just in Canada, but also throughout the Western world. Okay, so to understand this, we need to understand the framework of the Canadian nation. What is Canada exists and what does Canada do? Well, Canada has some certain unique characteristics. First of all, it’s a vast nation with almost infinite wealth, surrounded by two oceans, the Pacific and the Atlantic. And so Canada does not have like natural predators as they would in Europe. Canadians grew up in a time of relative peace, safety, and security. The problem though, is that Canada shares a border with the world’s… most powerful empire, with history’s greatest empire, America. And so in order to prevent conflict between Canada and the United States, the last major conflict between Canada and the United States was the War of 1812.</p>
+<p>Ref: video:predictive-history-e83dpuyvpim@transcript:v1#seg-0010</p>
+<h2 id="seg-0011-00-12-25-00-13-36-SPEAKER-00"><a href="#seg-0011-00-12-25-00-13-36-SPEAKER-00" class="headerlink" title="seg-0011 &#x2F; 00:12:25-00:13:36 &#x2F; SPEAKER_00"></a>seg-0011 &#x2F; 00:12:25-00:13:36 &#x2F; SPEAKER_00</h2><p>To prevent the conflict, there’s almost an implicit agreement between the people of Canada and the people of America. Canadians, first and foremost, are not ambitious. If Canadians were ambitious, then Canada would be at war with America, and America would have absorbed Canada into the American empire a long time ago. So Canadians, the first, the core characteristic of the Canadian identity is lack of ambition, in order to maintain peace and stability with America. And if you’re not ambitious, then you’re not gonna industrialize, which means that you’re going to maintain and safeguard, the environment. You’ll use some of the environment, but you’ll make sure it’s self -sustaining. So in other words, Canada’s almost like a resource bank for the American empire. The American empire, when it needs, can always draw on the infinite resources of Canada. And so, because of its lack of ambition, there are two main drivers of the Canadian economy.</p>
+<p>Ref: video:predictive-history-e83dpuyvpim@transcript:v1#seg-0011</p>
+<h2 id="seg-0012-00-13-36-00-14-50-SPEAKER-00"><a href="#seg-0012-00-13-36-00-14-50-SPEAKER-00" class="headerlink" title="seg-0012 &#x2F; 00:13:36-00:14:50 &#x2F; SPEAKER_00"></a>seg-0012 &#x2F; 00:13:36-00:14:50 &#x2F; SPEAKER_00</h2><p>The first, as I said, is resource exploitation, but sustainable, limited resources. But the main driver of the Canadian economy is immigration. Canada allows rich, corrupt families to come to Canada to hide their wealth. Canada also welcomes cheap labor, poor immigrants like my father to come to Canada to do all the work, so that Canadians can enjoy their life on drinking beer, drinking Molson’s, a terrible beer, by the way, by the cottage. And because of this economic framework, three major religions have developed in Canada to sustain this economic framework. The first religion is environmentalism. Canians love the environment. They believe it is their duty, their inherent duty to protect and love trees. That’s the first religion. Second religion is multiculturalism. They believe that diversity is good. Multiculturalism, they believe that diversity is good. mainly because white people love ethnic food. When white people think multiculturalism, they think ethnic restaurants, Mexican food, Chinatown.</p>
+<p>Ref: video:predictive-history-e83dpuyvpim@transcript:v1#seg-0012</p>
+<h2 id="seg-0013-00-14-50-00-16-16-SPEAKER-00"><a href="#seg-0013-00-14-50-00-16-16-SPEAKER-00" class="headerlink" title="seg-0013 &#x2F; 00:14:50-00:16:16 &#x2F; SPEAKER_00"></a>seg-0013 &#x2F; 00:14:50-00:16:16 &#x2F; SPEAKER_00</h2><p>And so they love multiculturalism. But if immigrants become politically ambitious, like the Indians, no, you can’t have that. So that’s why Indians are so derided in Canada, because the Indians are actually politically active and effective. But hey, if they didn’t stick to making samosas every day, Canadians would love them. So in a multicultural society, what’s really important is to be an open society and not have a distinct cultural identity. And this has created a lot of problems in Canada. It’ll create further problems in Canada. And the… The third major religion is bureaucratism, right? Because if you don’t have your own ethnic identity, if you don’t have a core ambition, then you need a regulatory state, a bureaucracy, in order to maintain everything together. You need people to tell you what to do. And Canadians worship authority. Canadians are extremely obedient. Canadians believe experts know everything, okay? So because of these three religions, there are three distinct characteristics about the Canadian individual, okay?</p>
+<p>Ref: video:predictive-history-e83dpuyvpim@transcript:v1#seg-0013</p>
+<h2 id="seg-0014-00-16-16-00-17-23-SPEAKER-00"><a href="#seg-0014-00-16-16-00-17-23-SPEAKER-00" class="headerlink" title="seg-0014 &#x2F; 00:16:16-00:17:23 &#x2F; SPEAKER_00"></a>seg-0014 &#x2F; 00:16:16-00:17:23 &#x2F; SPEAKER_00</h2><p>What are Canadians really good at? Well the first thing is Canadians are really good at following the rules. From birth, Canadians believe that they must obey the rules. The worst thing that can happen is if they break a rule. Second thing that the Canadians really are aware of, really good at is being polite to other people because in a multicultural society you don’t want to offend everyone. But I will say that I have noticed in my most recent trip back to Canada, Canadians are no longer so polite. They’re much more passive -aggressive than before because of the dire economic situation that Canada is in right now. The third thing that Canadians are really good at, in fact probably the best in the world at, is being mediocre. Okay Canadians obviously have no ambition, in fact they hate ambition. I remember in high school because I was poor and I wanted to go to Yale, I was extremely focused on grades.</p>
+<p>Ref: video:predictive-history-e83dpuyvpim@transcript:v1#seg-0014</p>
+<h2 id="seg-0015-00-17-23-00-18-36-SPEAKER-00"><a href="#seg-0015-00-17-23-00-18-36-SPEAKER-00" class="headerlink" title="seg-0015 &#x2F; 00:17:23-00:18:36 &#x2F; SPEAKER_00"></a>seg-0015 &#x2F; 00:17:23-00:18:36 &#x2F; SPEAKER_00</h2><p>And so my teachers the word they used for me is ambitious. I’m an ambitious individual and that’s essentially a curse word in Canada. But I will say this, Canada, I mean if you can just just cut that out, if you can just cut that out, and if you can just cut that out, conceptualize heaven on earth. It would be Canada, right? Extreme wealth, extremely generous government benefits. No one will go poor. No one will starve in Canada. No wars, just complete peace. It’s almost heaven on earth. And here is an opportunity for people to achieve eudaimonia, right? Eudaimonia is the Greek term for flourishing. Here is an opportunity for Canadians to contribute intellectually to the development of humanity because they have the resources, they have the time, they have the security. No one else does. And so you would expect this tremendous outpouring of human creativity in Canada these past 50 years.</p>
+<p>Ref: video:predictive-history-e83dpuyvpim@transcript:v1#seg-0015</p>
+<h2 id="seg-0016-00-18-37-00-19-47-SPEAKER-00"><a href="#seg-0016-00-18-37-00-19-47-SPEAKER-00" class="headerlink" title="seg-0016 &#x2F; 00:18:37-00:19:47 &#x2F; SPEAKER_00"></a>seg-0016 &#x2F; 00:18:37-00:19:47 &#x2F; SPEAKER_00</h2><p>In the future, Canada will be a great place to be. In the future, Canada will be a great place to be. In the future, Canada will be a great place to be. In reality, Canadians have for the past 50 years chosen to shut off their brains. Canada is an extremely complacent nation. It’s almost like everyone’s on Prozac or something. This is Prozac nation. So Canadians are extremely mediocre. I think that after Canada becomes dismembered and joins the American empire, maybe a generation afterwards, everyone’s going to forget Canada ever existed because Canada has made absolutely no contribution to the world. Canada doesn’t really matter in the world. And Canadians are very happy to not matter in the world. So now we can understand if your three religions are environmentalism, multiculturalism, and bureaucratism, well, then there’s only one solution. You can’t exploit resources because of your religion of environmentalism.</p>
+<p>Ref: video:predictive-history-e83dpuyvpim@transcript:v1#seg-0016</p>
+<h2 id="seg-0017-00-19-47-00-20-46-SPEAKER-00"><a href="#seg-0017-00-19-47-00-20-46-SPEAKER-00" class="headerlink" title="seg-0017 &#x2F; 00:19:47-00:20:46 &#x2F; SPEAKER_00"></a>seg-0017 &#x2F; 00:19:47-00:20:46 &#x2F; SPEAKER_00</h2><p>You can’t encourage entrepreneurship because of your religion of bureaucratism. You don’t want to reduce the regulatory state. You don’t want to promote individual initiative. So the only solution available to you is mass immigration. And again, a lot of it is just driven by the baby boomers. So the only solution available to you is mass immigration. And again, a lot of it is just driven by the baby boomers. So now let me explain to you why baby boomers suck. And they suck for three main reasons. The first is that they’re the most selfish generation in human history. Second is that they’re going to be the longest living generation in human history. And the third is that they want to maintain the empire. So let me go through each one by one. Baby boomers are selfish. Everyone knows this. They had the most luxurious life. But the problem is that if you always lived a life</p>
+<p>Ref: video:predictive-history-e83dpuyvpim@transcript:v1#seg-0017</p>
+<h2 id="seg-0018-00-20-46-00-21-55-SPEAKER-00"><a href="#seg-0018-00-20-46-00-21-55-SPEAKER-00" class="headerlink" title="seg-0018 &#x2F; 00:20:46-00:21:55 &#x2F; SPEAKER_00"></a>seg-0018 &#x2F; 00:20:46-00:21:55 &#x2F; SPEAKER_00</h2><p>of comfort and security and prosperity, you become a selfish individual because you think you deserve all this. The other thing is that the baby boomers have a religion, and it’s an ethos of achievement and accumulation. The more the better. The bigger the better. The more money I have, the better. the longer i live the better i need to accumulate and accumulate and achieve and achieve in order to signify my value my my worth and their greed their selfishness is destroying the environment it’s destroying the economy and ultimately it’s going to kill their children okay so that’s the first thing uh baby boomers are extremely selfish and that by itself is not really a problem the problem is they’re not dying um um and i can understand why okay because because i because at home i i’m living with my dad and my dad is in his early 80s and as i said previously he’s had</p>
+<p>Ref: video:predictive-history-e83dpuyvpim@transcript:v1#seg-0018</p>
+<h2 id="seg-0019-00-21-55-00-22-59-SPEAKER-00"><a href="#seg-0019-00-21-55-00-22-59-SPEAKER-00" class="headerlink" title="seg-0019 &#x2F; 00:21:55-00:22:59 &#x2F; SPEAKER_00"></a>seg-0019 &#x2F; 00:21:55-00:22:59 &#x2F; SPEAKER_00</h2><p>this terrible life uh 10 years ago he got diagnosed with parkinson’s five years ago he had a bad fall while using the um bathroom and now he’s paralyzed um and we really thought five years ago that was it um he had a few months to live but he’s still going and so he has parkinson’s he’s basically paralyzed and he’s living his best life all his life he’s worked slave wages minimum wage and now he’s collecting a very generous pension from the canadian government it’s free money for him he has access to the best health care honestly if had to pay for the health care we couldn’t afford it and he would have died five years ago but not because it’s all being paid by the canadian government um he spent six months at a really nice hospital with his own room every day a physical therapist comes to the house and helps him regain some</p>
+<p>Ref: video:predictive-history-e83dpuyvpim@transcript:v1#seg-0019</p>
+<h2 id="seg-0020-00-22-59-00-23-50-SPEAKER-00"><a href="#seg-0020-00-22-59-00-23-50-SPEAKER-00" class="headerlink" title="seg-0020 &#x2F; 00:22:59-00:23:50 &#x2F; SPEAKER_00"></a>seg-0020 &#x2F; 00:22:59-00:23:50 &#x2F; SPEAKER_00</h2><p>um some muscle control um and does some cleaning for him and really um it’s his best life and his in his house he has his own house and because of all this immigration the property value go up he’s seen himself getting wealthier and wealthier if you’re a baby boomer who’s been taught that what matters is achievement and accumulation why would you give up now right as your life gets get better and better why would you give it up now so even though you know he’s bedridden all the time i see him clinging to life um and i can understand why because he’s been through so much crap and now he can really begin to enjoy himself this is really his life he’s been through so much crap and now he’s living on earth for him so he doesn’t want he doesn’t want to die okay but it’s not just him it’s the entire generation of</p>
+<p>Ref: video:predictive-history-e83dpuyvpim@transcript:v1#seg-0020</p>
+<h2 id="seg-0021-00-23-50-00-24-51-SPEAKER-00"><a href="#seg-0021-00-23-50-00-24-51-SPEAKER-00" class="headerlink" title="seg-0021 &#x2F; 00:23:50-00:24:51 &#x2F; SPEAKER_00"></a>seg-0021 &#x2F; 00:23:50-00:24:51 &#x2F; SPEAKER_00</h2><p>baby boomers millions and millions of them and in canada they’re they’re a quarter of the population so they control all the political power they control all the wealth and therefore they can dictate government policy i have a friend in new york city a very famous um person extremely wealthy like tens of millions of dollars and she’s 90. and she has alzheimer’s and she can’t walk most of the time she’s sleeping she’s semi comatose basically and i i thought you know any day now she could die but i’ve been thinking that for the past 10 years and one day i asked my cousin who’s a doctor listen if you’re 90 years old and you’re senile you have alzheimer’s you can’t get out of bed but you have unlimited wealth how long can keep you going like how long can you survive he has and she has like four full -time caregivers to make sure that you</p>
+<p>Ref: video:predictive-history-e83dpuyvpim@transcript:v1#seg-0021</p>
+<h2 id="seg-0022-00-24-51-00-25-47-SPEAKER-00"><a href="#seg-0022-00-24-51-00-25-47-SPEAKER-00" class="headerlink" title="seg-0022 &#x2F; 00:24:51-00:25:47 &#x2F; SPEAKER_00"></a>seg-0022 &#x2F; 00:24:51-00:25:47 &#x2F; SPEAKER_00</h2><p>know she’s taken care of and my cousin the doctor said to me she can go on for another 20 years at least another 20 years at least so these baby boomers aren’t dying okay so the baby boomers have captured all the wealth of society um and they refuse to share any of it because of their achievement ethos and they’re so um but but then there’s actually a much bigger problem which is that baby boomers are wedded to the idea of empire last year i was in brooklyn uh visiting some friends i got invited to a uh party and they and this party was full of china experts so apparently every china expert in in the world is from brooklyn so um after covid when they were forced out of china they had they all returned to brooklyn and so i met all of them at this party and i was talking to one lady very</p>
+<p>Ref: video:predictive-history-e83dpuyvpim@transcript:v1#seg-0022</p>
+<h2 id="seg-0023-00-25-47-00-26-51-SPEAKER-00"><a href="#seg-0023-00-25-47-00-26-51-SPEAKER-00" class="headerlink" title="seg-0023 &#x2F; 00:25:47-00:26:51 &#x2F; SPEAKER_00"></a>seg-0023 &#x2F; 00:25:47-00:26:51 &#x2F; SPEAKER_00</h2><p>very very wealthy comes very powerful family and i uh and she was a baby boomer and i and i talked i discussed with her we’re talking individually one -on -one i was i i said to privately my fears about the american political system i said my fear is that given the trajectory of american foreign policy which which which is like extremely non -existent i said there’s a danger that america could be fighting wars on three major fronts america could be fighting simultaneously russia iran and china and then she looked at me and said that’s fine we’re america we’re in with the indispensable nation we can do this we can take on all three and defeat all three does not matter okay that’s the arrogance of empire all right so let me give you an image of what empire is and for this image i’m going to draw on the play the back high from euboides</p>
+<p>Ref: video:predictive-history-e83dpuyvpim@transcript:v1#seg-0023</p>
+<h2 id="seg-0024-00-26-51-00-27-58-SPEAKER-00"><a href="#seg-0024-00-26-51-00-27-58-SPEAKER-00" class="headerlink" title="seg-0024 &#x2F; 00:26:51-00:27:58 &#x2F; SPEAKER_00"></a>seg-0024 &#x2F; 00:26:51-00:27:58 &#x2F; SPEAKER_00</h2><p>if you have not read euboides you must read euboides one of the greatest playwrights in human history so he wrote uh the play the back high about the year um 400 bce this is this is like um after the peloponnesian war when athens the athenian empire which had become basically a mafia state basically decided to go to war against the entire world and thousands and thousands of the young people died in these wars of empire and so euboides wrote the back high almost as a critique of empire and so the ending of the back high goes like this um there’s a religious festival in the mountains and these women are all drugged out okay they’re hallucinating and as part of the religious festival they sacrifice a man who’s the king of thebes uh pentheus and so what they do is they capture him they rip him apart okay they physically rip him apart they whip</p>
+<p>Ref: video:predictive-history-e83dpuyvpim@transcript:v1#seg-0024</p>
+<h2 id="seg-0025-00-27-58-00-29-02-SPEAKER-00"><a href="#seg-0025-00-27-58-00-29-02-SPEAKER-00" class="headerlink" title="seg-0025 &#x2F; 00:27:58-00:29:02 &#x2F; SPEAKER_00"></a>seg-0025 &#x2F; 00:27:58-00:29:02 &#x2F; SPEAKER_00</h2><p>up the limbs they rip up the legs they dismember him and the person who rips um off his head is actually his mother agave and after she does this she becomes ecstatic and she ticks the head and she runs back to the city of thebes and she proclaims to the citizens look at what i’ve done and she’s holding the head of her son pentheus in her right hand and she’s saying to everyone this is a lion’s head you see how brave you see how powerful you see how virtuous i am for fighting a lion and ripping his head off and then everyone looks at her aghast they don’t believe that this is that she she can’t see the truth. And so finally, her father, Katniss, has to tell her, Agave, that’s not a lion’s head. That’s the head of your son. So that’s what an empire is, okay? If you want to know what an</p>
+<p>Ref: video:predictive-history-e83dpuyvpim@transcript:v1#seg-0025</p>
+<h2 id="seg-0026-00-29-02-00-30-16-SPEAKER-00"><a href="#seg-0026-00-29-02-00-30-16-SPEAKER-00" class="headerlink" title="seg-0026 &#x2F; 00:29:02-00:30:16 &#x2F; SPEAKER_00"></a>seg-0026 &#x2F; 00:29:02-00:30:16 &#x2F; SPEAKER_00</h2><p>empire is, remember the image of a mother holding the head of her son and proclaiming to the world, look how brave, powerful, and virtuous I am. An empire is a system where the old sacrifice the young for their glory, okay? That’s what an empire is. And that’s what the baby boomers want. They grew up in a time of the Pax Americana. They don’t want to see it die in their lifetimes. They’d rather burn down the entire empire. They’d rather sacrifice their own children and their grandchildren than to lose the idea of empire while they’re alive, okay? So that’s why the baby boomers have basically told the American government to launch these wars around the world to save the Pax Americana because that’s the system they grew up in. That’s the system they want to die in, the Pax Americana, the Anglo -American empire. They want to save the Pax Americana. They want to save the Pax Americana.</p>
+<p>Ref: video:predictive-history-e83dpuyvpim@transcript:v1#seg-0026</p>
+<h2 id="seg-0027-00-30-16-00-31-35-SPEAKER-00"><a href="#seg-0027-00-30-16-00-31-35-SPEAKER-00" class="headerlink" title="seg-0027 &#x2F; 00:30:16-00:31:35 &#x2F; SPEAKER_00"></a>seg-0027 &#x2F; 00:30:16-00:31:35 &#x2F; SPEAKER_00</h2><p>They want to save the Pax Americana. They want to feel virtuous, powerful, and strong, okay? And they don’t care if they have to burn down the world in order to do so. And so the question then is, what can we do? Well, you think about it, there’s nothing we can do because, as I said, the baby boomers are the most dominant political group in the Western world. They control the political system. They control the financial system. They control the cultural system. And they’re all parents. They’re the people we love and honor and cherish. I’m not going to say to my father, hey, dad, you’re paralyzed. Your life doesn’t have any meaning anymore. And maybe it’s time for you to rest in peace and so that the rest of the world, the young, can have their place. So one metaphor that I think best describes the world we live in is rat utopia. Rat utopia are a series of experiments conducted by James B.</p>
+<p>Ref: video:predictive-history-e83dpuyvpim@transcript:v1#seg-0027</p>
+<h2 id="seg-0028-00-31-35-00-32-35-SPEAKER-00"><a href="#seg-0028-00-31-35-00-32-35-SPEAKER-00" class="headerlink" title="seg-0028 &#x2F; 00:31:35-00:32:35 &#x2F; SPEAKER_00"></a>seg-0028 &#x2F; 00:31:35-00:32:35 &#x2F; SPEAKER_00</h2><p>Cahoon in the 60s and 70s. And this was a time of growing abundance in the world. And this is the first time in human history when we escaped scarcity, the problem of scarcity. So he wanted to look at what would happen. If we looked, if we lived in a world of abundance. So he created these experiments, these colonies, where rats were allowed to live in a world of abundance. There were no predators. There was unlimited water and food. And what happened each time he did this experiment, no matter how he tweaked the experiment, the result was the same. What happened was the social hierarchy.. At that moment, the mauve tropical்?uh the miejsc of the North Pole, uh, belongs to us, uh, that govern the rat colony. Um, collapse and Cahoon causes the behavior sync. And very quickly the rat to start to LAs to</p>
+<p>Ref: video:predictive-history-e83dpuyvpim@transcript:v1#seg-0028</p>
+<h2 id="seg-0029-00-32-35-00-33-37-SPEAKER-00"><a href="#seg-0029-00-32-35-00-33-37-SPEAKER-00" class="headerlink" title="seg-0029 &#x2F; 00:32:35-00:33:37 &#x2F; SPEAKER_00"></a>seg-0029 &#x2F; 00:32:35-00:33:37 &#x2F; SPEAKER_00</h2><p>each other, they starting to engage and CaaanURN embarrassed à to engage in all sorts of. of uh brutal activities. Um, and às result everyone died out. Okay, so no matter how James B. Cahoon constructed vez this experiment, uh, ultimately it led to a very what would make you laugh. Oh, the seguirce schstto thaaaaat io проб Christians becii becae l filled with Hephaenopathy. led to the collapse of the rat colony and the extermination of all the rats. And he struggled with this all his life, and he could never really find the answer as to why this was happening. And the only thing that he could hypothesize is maybe water can be infinite, maybe security, food, luxury, maybe all of it can be provided infinitely. But one thing that is not infinite, one thing that is a zero -sum game is the idea of status. And we are ingrained, sorry, the desire for status is inherent to us.</p>
+<p>Ref: video:predictive-history-e83dpuyvpim@transcript:v1#seg-0029</p>
+<h2 id="seg-0030-00-33-37-00-34-43-SPEAKER-00"><a href="#seg-0030-00-33-37-00-34-43-SPEAKER-00" class="headerlink" title="seg-0030 &#x2F; 00:33:37-00:34:43 &#x2F; SPEAKER_00"></a>seg-0030 &#x2F; 00:33:37-00:34:43 &#x2F; SPEAKER_00</h2><p>We strive for status. So normally in the state of nature, rats will fight each other for status. And the rats who lose, they’ll run off somewhere else and they’ll build their own colony or they’ll get killed by natural predators. But in an enclosed environment where the rats can’t run off somewhere else, then they’re forced to constantly fight each other over and over again for status. Peter Turchin, the social scientist, has a concept for this. It’s called elite overproduction. So that is collapse over time because too much elite is being produced and ultimately they will fight each other for the limited positions of power and status. And so we’re living in rat utopia. And quite honestly, this is why young people now refuse to have children. It’s not just because the economic opportunities for young people are very limited, are very pessimistic, and they are. The real reason is the baby boomers refuse to give up their status.</p>
+<p>Ref: video:predictive-history-e83dpuyvpim@transcript:v1#seg-0030</p>
+<h2 id="seg-0031-00-34-44-00-35-44-SPEAKER-00"><a href="#seg-0031-00-34-44-00-35-44-SPEAKER-00" class="headerlink" title="seg-0031 &#x2F; 00:34:44-00:35:44 &#x2F; SPEAKER_00"></a>seg-0031 &#x2F; 00:34:44-00:35:44 &#x2F; SPEAKER_00</h2><p>Think about the politicians in Washington, DC. I mean, like many of them, their brains aren’t even functioning and they’re still there. And so we live in a time of rat utopia. But again, these people are the ones who gave us birth, the ones who nurtured us, the ones who we must honor and cherish. So we can never ever blame the baby boomers for what’s going on. We blame the immigrants, or we blame the Jews, or we blame the deep state, or we blame Trump, or we blame Justin Trudeau, but we never blame the real culprits who are the baby boomers, okay? So the question then is, what can we do? And so I think the only thing we can do is tell the truth. We owe it to ourselves, we owe it to our children to let them know the truth. It was not the immigrants who destroyed the West. It was not Putin or Trump or Trudeau who destroyed the West.</p>
+<p>Ref: video:predictive-history-e83dpuyvpim@transcript:v1#seg-0031</p>
+<h2 id="seg-0032-00-35-46-00-36-54-SPEAKER-00"><a href="#seg-0032-00-35-46-00-36-54-SPEAKER-00" class="headerlink" title="seg-0032 &#x2F; 00:35:46-00:36:54 &#x2F; SPEAKER_00"></a>seg-0032 &#x2F; 00:35:46-00:36:54 &#x2F; SPEAKER_00</h2><p>It was not the Jews. It was us because we became selfish, lazy, and corrupt. That’s the real reason why the West is dying, and the real reason why no one can do anything about it, okay, because we refuse to admit the truth to ourselves. But the least we can do is tell the truth to our children, and that’s why I do what I do. Okay, so again, apologies for today. I’m sorry it’s such doom and gloom. Next week, we go back to the regular programming of just cheer. Okay, no, I’m not going to ever be optimistic about the world because there’s no reason to be optimistic about the world. Okay, so next week, I’m gonna preview the next academic year of classes I’ll be teaching. I’ll be teaching three new classes, The Secret History of the World. So I’ll be going into the nexus of finance, intelligence, and religion.</p>
+<p>Ref: video:predictive-history-e83dpuyvpim@transcript:v1#seg-0032</p>
+<h2 id="seg-0033-00-36-54-00-37-53-SPEAKER-00"><a href="#seg-0033-00-36-54-00-37-53-SPEAKER-00" class="headerlink" title="seg-0033 &#x2F; 00:36:54-00:37:53 &#x2F; SPEAKER_00"></a>seg-0033 &#x2F; 00:36:54-00:37:53 &#x2F; SPEAKER_00</h2><p>It’s gonna be a really interesting class. I’m really looking forward to teaching it. I’m really looking forward to sharing with you. I’ll also be teaching the great books, and I’ll also be sharing, I’ll also be teaching Game Theory, okay? So in my next video, next week, I’ll be sharing with you, previewing these three classes. If you like what I do, please support my work by supporting me on Buy Me a Coffee. The link is below. If you want to be part of, if you want to be part of, the community, the Breakthrough History community, please join my Discord server. This week, I’ve started a sub stack. And if you want to join my sub stack, the link is below as well. So in my sub stack, I’ll be going into solutions for how we can rebuild a better world, how we can work together to build a better world after the world collapses.</p>
+<p>Ref: video:predictive-history-e83dpuyvpim@transcript:v1#seg-0033</p>
+<h2 id="seg-0034-00-37-53-00-38-03-SPEAKER-00"><a href="#seg-0034-00-37-53-00-38-03-SPEAKER-00" class="headerlink" title="seg-0034 &#x2F; 00:37:53-00:38:03 &#x2F; SPEAKER_00"></a>seg-0034 &#x2F; 00:37:53-00:38:03 &#x2F; SPEAKER_00</h2><p>So, okay, that’s it for today. I’ll see you guys next week. Thank you so much for today. And I look forward to next week.</p>
+<p>Ref: video:predictive-history-e83dpuyvpim@transcript:v1#seg-0034</p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/book/decision-algorithm/" title="决策算法100讲"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="决策算法100讲"/></a><div class="content"><a class="title" href="/book/decision-algorithm/" title="决策算法100讲">决策算法100讲</a><time datetime="2026-08-27T16:00:00.000Z" title="发表于 2026-08-28 00:00:00">2026-08-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/08/23/life-notes-odyssey/" title="奥德赛意识流"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="奥德赛意识流"/></a><div class="content"><a class="title" href="/2026/08/23/life-notes-odyssey/" title="奥德赛意识流">奥德赛意识流</a><time datetime="2026-08-23T12:50:01.000Z" title="发表于 2026-08-23 20:50:01">2026-08-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/08/10/life-notes-make-room/" title="再挤挤"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="再挤挤"/></a><div class="content"><a class="title" href="/2026/08/10/life-notes-make-room/" title="再挤挤">再挤挤</a><time datetime="2026-08-10T13:19:42.000Z" title="发表于 2026-08-10 21:19:42">2026-08-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/08/10/life-notes-musashi/" title="武藏之死在天下无双"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="武藏之死在天下无双"/></a><div class="content"><a class="title" href="/2026/08/10/life-notes-musashi/" title="武藏之死在天下无双">武藏之死在天下无双</a><time datetime="2026-08-09T22:53:53.000Z" title="发表于 2026-08-10 06:53:53">2026-08-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/08/09/life-notes-autumn-fruit/" title="给春稗以秋实"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="给春稗以秋实"/></a><div class="content"><a class="title" href="/2026/08/09/life-notes-autumn-fruit/" title="给春稗以秋实">给春稗以秋实</a><time datetime="2026-08-08T23:41:53.000Z" title="发表于 2026-08-09 07:41:53">2026-08-09</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%9B%BE%E4%B9%A6%E7%AC%94%E8%AE%B0/"><span class="card-category-list-name">图书笔记</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"><span class="card-category-list-name">生活随笔</span><span class="card-category-list-count">7</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E5%8D%9A%E5%BC%88/" style="font-size: 1.1em; color: #999">博弈</a> <a href="/tags/%E5%86%B3%E7%AD%96/" style="font-size: 1.1em; color: #999">决策</a> <a href="/tags/%E6%A6%82%E7%8E%87/" style="font-size: 1.1em; color: #999">概率</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/08/">
+            <span class="card-archive-list-date">
+              八月 2026
+            </span>
+            <span class="card-archive-list-count">8</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">8</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">21.8k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-30T00:07:47.992Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script id="canvas_nest" defer="defer" color="150,170,190" opacity="0.42" zIndex="-1" count="88" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>
