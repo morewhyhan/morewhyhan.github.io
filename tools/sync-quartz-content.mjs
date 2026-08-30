@@ -133,7 +133,7 @@ for (const [index, entry] of decisionEntries.entries()) {
   )
 }
 
-const jiangSourceDir = path.join(sourceDir, "book", "english-original-library")
+const jiangSourceDir = path.join(sourceDir, "book", "psychohistory")
 const jiangFiles = (await markdownFiles(jiangSourceDir)).filter((file) => {
   const relative = path.relative(jiangSourceDir, file)
   return path.basename(file).toLowerCase() !== "readme.md" && relative !== "index.md"
@@ -151,7 +151,7 @@ for (const sourceFile of jiangFiles) {
     relative,
     sourceFile,
     title,
-    target: `books/english-original-library/${toWikiPath(relative)}`,
+    target: `books/psychohistory/${toWikiPath(relative)}`,
   })
   jiangCourseSections.set(section, entries)
 }
@@ -162,7 +162,7 @@ for (const [section, entries] of jiangCourseSections) {
     const markdown = await fs.readFile(entry.sourceFile, "utf8")
     const titled = setChineseTitle(markdown, entry.title)
     await writeMarkdown(
-      path.join(quartzContentDir, "books", "english-original-library", entry.relative),
+      path.join(quartzContentDir, "books", "psychohistory", entry.relative),
       addAdjacentLinks(titled, entries[index - 1], entries[index + 1]),
     )
   }
@@ -180,7 +180,7 @@ ${sectionMeta.description}
 [[${first.target}|从第一讲开始：${first.title}]]
 `
   await writeMarkdown(
-    path.join(quartzContentDir, "books", "english-original-library", section, "index.md"),
+    path.join(quartzContentDir, "books", "psychohistory", section, "index.md"),
     sectionIndex,
   )
 }
@@ -207,7 +207,7 @@ description: 关于判断、选择与行动的一百讲连续课程。
 await writeMarkdown(path.join(quartzContentDir, "books", "decision-algorithm", "index.md"), decisionIndex)
 
 const jiangSectionLinks = Object.entries(jiangSections)
-  .map(([section, meta]) => `- [[books/english-original-library/${section}/index|${meta.title}]] — ${meta.description}`)
+  .map(([section, meta]) => `- [[books/psychohistory/${section}/index|${meta.title}]] — ${meta.description}`)
   .join("\n")
 const jiangIndex = `---
 title: 姜学勤心理史学
@@ -218,7 +218,7 @@ description: 姜学勤老师从经典、文明、博弈、地缘与隐秘历史�
 
 ${jiangSectionLinks}
 `
-await writeMarkdown(path.join(quartzContentDir, "books", "english-original-library", "index.md"), jiangIndex)
+await writeMarkdown(path.join(quartzContentDir, "books", "psychohistory", "index.md"), jiangIndex)
 
 const booksIndex = `---
 title: 图书与课程
@@ -226,7 +226,7 @@ description: 可以连续阅读的图书笔记与系统课程。
 ---
 
 - [[books/decision-algorithm/index|决策算法100讲]]
-- [[books/english-original-library/index|姜学勤心理史学]]
+- [[books/psychohistory/index|姜学勤心理史学]]
 `
 await writeMarkdown(path.join(quartzContentDir, "books", "index.md"), booksIndex)
 
@@ -241,7 +241,7 @@ description: 虚船向远的文章、图书与课程索引。
 
 - [[blog/index|博客文章]]
 - [[books/decision-algorithm/index|决策算法100讲]]
-- [[books/english-original-library/index|姜学勤心理史学]]
+- [[books/psychohistory/index|姜学勤心理史学]]
 `
 await writeMarkdown(path.join(quartzContentDir, "index.md"), home)
 

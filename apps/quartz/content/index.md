@@ -9,4 +9,4 @@ description: 虚船向远的文章、图书与课程索引。
 
 - [[blog/index|博客文章]]
 - [[books/decision-algorithm/index|决策算法100讲]]
-- [[books/english-original-library/index|姜学勤心理史学]]
+- [[books/psychohistory/index|姜学勤心理史学]]

@@ -33,12 +33,12 @@ comments: false
     </div>
     <div class="recent-post-item">
       <div class="post_cover left">
-        <a href="/book/english-original-library/" title="姜学勤心理史学">
+        <a href="/book/psychohistory/" title="姜学勤心理史学">
           <img class="post-bg" src="/img/hua.png" alt="姜学勤心理史学">
         </a>
       </div>
       <div class="recent-post-info">
-        <a class="article-title" href="/book/english-original-library/" title="姜学勤心理史学">姜学勤心理史学</a>
+        <a class="article-title" href="/book/psychohistory/" title="姜学勤心理史学">姜学勤心理史学</a>
         <div class="article-meta-wrap">
           <span class="article-meta">
             <i class="fas fa-inbox"></i>
