@@ -33,6 +33,17 @@ function extractTitle(markdown, fallback) {
   return heading || fallback
 }
 
+function extractPermalink(markdown) {
+  const rawPermalink = markdown.match(/^permalink:\s*["']?([^"'\s]+)["']?\s*$/m)?.[1]
+  return rawPermalink?.replace(/^\/+|\/+$/g, "")
+}
+
+function courseTarget(markdown) {
+  const permalink = extractPermalink(markdown)
+  const match = permalink?.match(/^book\/([^/]+)$/)
+  return match ? `books/${match[1]}/index` : null
+}
+
 function stripTerminalNavigation(markdown, pathFragment) {
   const normalized = markdown.replace(/\r\n/g, "\n").trimEnd()
   const marker = normalized.lastIndexOf("\n---\n")
@@ -103,8 +114,11 @@ for (const generatedDir of generatedDirs) {
 
 const blogSourceDir = path.join(sourceDir, "_posts")
 const blogFiles = await markdownFiles(blogSourceDir)
+let blogContentCount = 0
 for (const sourceFile of blogFiles) {
   const markdown = await fs.readFile(sourceFile, "utf8")
+  if (courseTarget(markdown)) continue
+  blogContentCount += 1
   await writeMarkdown(path.join(quartzContentDir, "blog", path.basename(sourceFile)), markdown)
 }
 
@@ -246,5 +260,5 @@ description: 虚船向远的文章、图书与课程索引。
 await writeMarkdown(path.join(quartzContentDir, "index.md"), home)
 
 console.log(
-  `Quartz content synced: ${blogFiles.length} posts, ${decisionEntries.length} decision notes, ${jiangFiles.length} Jiang Xueqin lectures.`,
+  `Quartz content synced: ${blogContentCount} blog posts, ${decisionEntries.length} decision notes, ${jiangFiles.length} Jiang Xueqin lectures.`,
 )

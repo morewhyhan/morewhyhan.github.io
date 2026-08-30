@@ -35,16 +35,24 @@ function extractFrontmatterTitle(markdown, fileName) {
   return rawTitle
 }
 
+function extractKnowledgeGardenTarget(markdown, slug) {
+  const permalink = markdown.match(/^permalink:\s*["']?([^"'\s]+)["']?\s*$/m)?.[1]
+  const course = permalink?.replace(/^\/+|\/+$/g, "").match(/^book\/([^/]+)$/)
+  return course ? `books/${course[1]}/index` : `blog/${slug}`
+}
+
 const postFiles = (await fs.readdir(postsDir))
   .filter((fileName) => fileName.toLowerCase().endsWith(".md"))
   .sort((a, b) => a.localeCompare(b, "zh-CN", { numeric: true }))
 const posts = []
 for (const fileName of postFiles) {
   const markdown = await fs.readFile(path.join(postsDir, fileName), "utf8")
+  const slug = path.basename(fileName, ".md").toLowerCase()
   posts.push({
     fileName,
-    slug: path.basename(fileName, ".md").toLowerCase(),
+    slug,
     title: extractFrontmatterTitle(markdown, fileName),
+    knowledgeGardenTarget: extractKnowledgeGardenTarget(markdown, slug),
   })
 }
 
@@ -79,8 +87,8 @@ for (const { href, title } of homepageEntries) {
 
 const contentIndexPath = path.join(publicDir, "notes", "static", "contentIndex.json")
 const contentIndex = JSON.parse(await fs.readFile(contentIndexPath, "utf8"))
-const missingFromKnowledgeGarden = posts.filter(({ slug, title }) => {
-  const node = contentIndex[`blog/${slug}`]
+const missingFromKnowledgeGarden = posts.filter(({ knowledgeGardenTarget, title }) => {
+  const node = contentIndex[knowledgeGardenTarget]
   return !node || node.title !== title
 })
 

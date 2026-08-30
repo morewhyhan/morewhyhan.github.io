@@ -1,10 +1,21 @@
 ---
 title: 姜学勤心理史学
-type: page
-comments: false
-aside: true
-top_img: false
+date: 2026-08-29 00:00:00
+permalink: book/psychohistory/
+categories:
+  - 图书笔记
+tags:
+  - 心理史学
+  - 历史
+  - 课程
 description: 姜学勤老师从经典、文明、博弈、地缘与隐秘历史展开的心理史学系列课程。
+cover: /img/hua.png
+original: false
+copyright: false
+comments: false
+graph: true
+aliases:
+  - psychohistory
 ---
 
 [← 返回图书笔记](/book/)
