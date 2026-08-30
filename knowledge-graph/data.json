@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-30T03:14:01.753Z",
+  "generatedAt": "2026-08-30T07:03:58.258Z",
   "nodes": [
     {
       "id": "/book/decision-algorithm/",
@@ -76,38 +76,6 @@
       ]
     },
     {
-      "id": "/2026/08/01/life-notes-ten-years-later/",
-      "title": "十年后的我",
-      "url": "/2026/08/01/life-notes-ten-years-later/",
-      "kind": "生活随笔",
-      "categories": [
-        "生活随笔"
-      ],
-      "tags": [],
-      "aliases": [],
-      "description": "第一次在终端里敲出\"Hello World\"，黑色屏幕上只有一行白字。 天地初开，混沌退散。 那是世界回应我的第一声。 此后浏览器上的窗口越开越多。教程是粮仓，文档是舆图，论坛是驿站，密密麻麻的标签栏灯火连营，一直铺到屏幕尽头。 递归…",
-      "original": true,
-      "links": [
-        "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"
-      ]
-    },
-    {
-      "id": "/2026/08/10/life-notes-make-room/",
-      "title": "再挤挤",
-      "url": "/2026/08/10/life-notes-make-room/",
-      "kind": "生活随笔",
-      "categories": [
-        "生活随笔"
-      ],
-      "tags": [],
-      "aliases": [],
-      "description": "小时候放学最怕下雨。",
-      "original": true,
-      "links": [
-        "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"
-      ]
-    },
-    {
       "id": "/2026/08/10/life-notes-musashi/",
       "title": "武藏之死在天下无双",
       "url": "/2026/08/10/life-notes-musashi/",
@@ -140,6 +108,63 @@
       ]
     },
     {
+      "id": "/2026/08/10/life-notes-make-room/",
+      "title": "再挤挤",
+      "url": "/2026/08/10/life-notes-make-room/",
+      "kind": "生活随笔",
+      "categories": [
+        "生活随笔"
+      ],
+      "tags": [],
+      "aliases": [],
+      "description": "小时候放学最怕下雨。",
+      "original": true,
+      "links": [
+        "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"
+      ]
+    },
+    {
+      "id": "/2026/08/01/life-notes-ten-years-later/",
+      "title": "十年后的我",
+      "url": "/2026/08/01/life-notes-ten-years-later/",
+      "kind": "生活随笔",
+      "categories": [
+        "生活随笔"
+      ],
+      "tags": [],
+      "aliases": [],
+      "description": "第一次在终端里敲出\"Hello World\"，黑色屏幕上只有一行白字。 天地初开，混沌退散。 那是世界回应我的第一声。 此后浏览器上的窗口越开越多。教程是粮仓，文档是舆图，论坛是驿站，密密麻麻的标签栏灯火连营，一直铺到屏幕尽头。 递归…",
+      "original": true,
+      "links": [
+        "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"
+      ]
+    },
+    {
+      "id": "/book/psychohistory/",
+      "title": "姜学勤心理史学",
+      "url": "/book/psychohistory/",
+      "kind": "图书笔记",
+      "categories": [
+        "图书笔记"
+      ],
+      "tags": [
+        "心理史学",
+        "历史",
+        "课程"
+      ],
+      "aliases": [
+        "psychohistory"
+      ],
+      "description": "姜学勤老师从经典、文明、博弈、地缘与隐秘历史展开的心理史学系列课程。",
+      "original": false,
+      "links": [
+        "/categories/%E5%9B%BE%E4%B9%A6%E7%AC%94%E8%AE%B0/",
+        "/tags/%E5%BF%83%E7%90%86%E5%8F%B2%E5%AD%A6/",
+        "/tags/%E5%8E%86%E5%8F%B2/",
+        "/tags/%E8%AF%BE%E7%A8%8B/"
+      ]
+    },
+    {
       "id": "/categories/%E5%9B%BE%E4%B9%A6%E7%AC%94%E8%AE%B0/",
       "title": "图书笔记",
       "url": "/categories/%E5%9B%BE%E4%B9%A6%E7%AC%94%E8%AE%B0/",
@@ -147,7 +172,7 @@
       "categories": [],
       "tags": [],
       "aliases": [],
-      "description": "1 篇内容",
+      "description": "2 篇内容",
       "original": true,
       "virtual": true,
       "links": []
@@ -204,6 +229,51 @@
       "tags": [],
       "aliases": [
         "博弈"
+      ],
+      "description": "1 篇内容",
+      "original": true,
+      "virtual": true,
+      "links": []
+    },
+    {
+      "id": "/tags/%E5%BF%83%E7%90%86%E5%8F%B2%E5%AD%A6/",
+      "title": "#心理史学",
+      "url": "/tags/%E5%BF%83%E7%90%86%E5%8F%B2%E5%AD%A6/",
+      "kind": "标签",
+      "categories": [],
+      "tags": [],
+      "aliases": [
+        "心理史学"
+      ],
+      "description": "1 篇内容",
+      "original": true,
+      "virtual": true,
+      "links": []
+    },
+    {
+      "id": "/tags/%E5%8E%86%E5%8F%B2/",
+      "title": "#历史",
+      "url": "/tags/%E5%8E%86%E5%8F%B2/",
+      "kind": "标签",
+      "categories": [],
+      "tags": [],
+      "aliases": [
+        "历史"
+      ],
+      "description": "1 篇内容",
+      "original": true,
+      "virtual": true,
+      "links": []
+    },
+    {
+      "id": "/tags/%E8%AF%BE%E7%A8%8B/",
+      "title": "#课程",
+      "url": "/tags/%E8%AF%BE%E7%A8%8B/",
+      "kind": "标签",
+      "categories": [],
+      "tags": [],
+      "aliases": [
+        "课程"
       ],
       "description": "1 篇内容",
       "original": true,
