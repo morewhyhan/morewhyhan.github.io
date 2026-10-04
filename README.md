@@ -61,6 +61,10 @@ npm run server
 
 普通文章会自动出现在首页、时间轴、分类和标签页面，并使用 Butterfly 的原生文章卡片。
 
+### 《给大学生》原创系列
+
+本系列入口是 `/series/college-students/`。文章仍放在 `source/_posts/`，使用 `categories: [给大学生]`、`series: 给大学生` 和 `original: true`；它们按日期进入系列目录和文章侧栏。知识花园会自动同步系列目录与文章。
+
 ## 保存源码并发布网站
 
 先把源码保存到 `source`：

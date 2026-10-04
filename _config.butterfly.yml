@@ -14,6 +14,7 @@ menu:
   标签: /tags/ || fas fa-tags
   知识花园: /notes/ || fas fa-project-diagram
   清单||fas fa-heartbeat:
+    给大学生: /series/college-students/ || fas fa-graduation-cap
     图书笔记: /book/ || fas fa-book-open
   支持我: /reward/ || fas fa-thumbs-up
   友情链接: /link/ || fas fa-link
@@ -132,7 +133,10 @@ aside:
     order: -1
     limit: 8
   card_post_series:
-    enable: false
+    enable: true
+    series_title: true
+    orderBy: date
+    order: 1
   card_webinfo:
     enable: true
     post_count: true
@@ -174,6 +178,12 @@ search:
     pagination:
       enable: false
       hitsPerPage: 8
+
+series:
+  enable: true
+  orderBy: date
+  order: 1
+  number: true
 
 lightbox: fancybox
 

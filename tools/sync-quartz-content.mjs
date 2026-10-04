@@ -114,12 +114,39 @@ for (const generatedDir of generatedDirs) {
 
 const blogSourceDir = path.join(sourceDir, "_posts")
 const blogFiles = await markdownFiles(blogSourceDir)
+const blogSeries = new Map()
 let blogContentCount = 0
 for (const sourceFile of blogFiles) {
   const markdown = await fs.readFile(sourceFile, "utf8")
   if (courseTarget(markdown)) continue
   blogContentCount += 1
   await writeMarkdown(path.join(quartzContentDir, "blog", path.basename(sourceFile)), markdown)
+  const series = markdown.match(/^series:\s*["']?(.*?)["']?\s*$/m)?.[1]?.trim()
+  if (series) {
+    const entries = blogSeries.get(series) ?? []
+    const slug = path.basename(sourceFile, ".md")
+      .toLowerCase()
+      .replace(/[^a-z0-9\u4e00-\u9fff]+/g, "-")
+      .replace(/^-+|-+$/g, "")
+    entries.push({
+      title: extractTitle(markdown, slug),
+      target: `blog/${slug}`,
+      date: markdown.match(/^date:\s*(.+)$/m)?.[1] ?? "",
+    })
+    blogSeries.set(series, entries)
+  }
+}
+
+for (const [series, entries] of blogSeries) {
+  entries.sort((a, b) => a.date.localeCompare(b.date))
+  await writeMarkdown(path.join(quartzContentDir, "blog", "series", series, "index.md"), `---
+title: ${JSON.stringify(series)}
+description: ${JSON.stringify(`${series}原创文章系列。`)}
+original: true
+---
+
+${entries.map((entry, index) => `${index + 1}. [[${entry.target}|${entry.title}]]`).join("\n")}
+`)
 }
 
 const decisionSourceDir = path.join(sourceDir, "book", "decision-algorithm")
@@ -205,8 +232,9 @@ description: 虚船向远发布的文章。
 ---
 
 这里保留「虚船向远」发布的文章。可以从左侧目录进入具体文章，也可以使用搜索查找内容。
+${blogSeries.size > 0 ? `\n## 系列\n\n${[...blogSeries.keys()].map((series) => `- [[blog/series/${series}/index|${series}]]`).join("\n")}\n` : ""}
 `
-await writeMarkdown(path.join(quartzContentDir, "blog", "index.md"), blogIndex)
+await writeMarkdown(path.join(quartzContentDir, "blog", "index.md"), `${blogIndex.trimEnd()}\n`)
 
 const firstDecision = decisionEntries[0]
 const decisionIndex = `---
