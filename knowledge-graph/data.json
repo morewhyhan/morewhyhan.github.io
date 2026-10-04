@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-30T10:56:12.213Z",
+  "generatedAt": "2026-10-04T17:35:36.360Z",
   "nodes": [
     {
       "id": "/2025/12/29/Freqtrade 量化框架使用指南/",
@@ -26,6 +26,64 @@
         "/tags/%E9%87%8F%E5%8C%96/",
         "/tags/%E5%9B%A0%E5%AD%90%E7%AD%96%E7%95%A5/",
         "/tags/%E6%95%99%E7%A8%8B/"
+      ]
+    },
+    {
+      "id": "/2026/10/05/college-student-goals/",
+      "title": "大学生目标分析",
+      "url": "/2026/10/05/college-student-goals/",
+      "kind": "文章",
+      "categories": [
+        "给大学生"
+      ],
+      "tags": [],
+      "aliases": [],
+      "description": "什么样的目标，才值得支配大学三年的时间？一个经过自己调查和判断而认领，能够形成连续积累，并且不断接受现实检验的目标。",
+      "original": true,
+      "links": [
+        "/categories/%E7%BB%99%E5%A4%A7%E5%AD%A6%E7%94%9F/"
+      ]
+    },
+    {
+      "id": "/book/decision-algorithm/",
+      "title": "决策算法100讲",
+      "url": "/book/decision-algorithm/",
+      "kind": "图书笔记",
+      "categories": [
+        "图书笔记"
+      ],
+      "tags": [
+        "决策",
+        "概率",
+        "博弈"
+      ],
+      "aliases": [
+        "决策算法",
+        "老喻决策算法100讲"
+      ],
+      "description": "老喻关于概率、风险、博弈与人生选择的系统课程资料；全套资料在本站按一个专题收录。",
+      "original": false,
+      "links": [
+        "/categories/%E5%9B%BE%E4%B9%A6%E7%AC%94%E8%AE%B0/",
+        "/tags/%E5%86%B3%E7%AD%96/",
+        "/tags/%E6%A6%82%E7%8E%87/",
+        "/tags/%E5%8D%9A%E5%BC%88/"
+      ]
+    },
+    {
+      "id": "/2026/08/09/life-notes-autumn-fruit/",
+      "title": "给春稗以秋实",
+      "url": "/2026/08/09/life-notes-autumn-fruit/",
+      "kind": "生活随笔",
+      "categories": [
+        "生活随笔"
+      ],
+      "tags": [],
+      "aliases": [],
+      "description": "余秀华有一句诗我记了很多年：\"告诉你稻子和稗子的区别，告诉你一棵稗子提心吊胆的春天。\"第一次读到只觉得漂亮，后来才发现，我好像就是那棵稗子。",
+      "original": true,
+      "links": [
+        "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"
       ]
     },
     {
@@ -61,48 +119,6 @@
       ]
     },
     {
-      "id": "/2026/08/09/life-notes-autumn-fruit/",
-      "title": "给春稗以秋实",
-      "url": "/2026/08/09/life-notes-autumn-fruit/",
-      "kind": "生活随笔",
-      "categories": [
-        "生活随笔"
-      ],
-      "tags": [],
-      "aliases": [],
-      "description": "余秀华有一句诗我记了很多年：\"告诉你稻子和稗子的区别，告诉你一棵稗子提心吊胆的春天。\"第一次读到只觉得漂亮，后来才发现，我好像就是那棵稗子。",
-      "original": true,
-      "links": [
-        "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"
-      ]
-    },
-    {
-      "id": "/book/decision-algorithm/",
-      "title": "决策算法100讲",
-      "url": "/book/decision-algorithm/",
-      "kind": "图书笔记",
-      "categories": [
-        "图书笔记"
-      ],
-      "tags": [
-        "决策",
-        "概率",
-        "博弈"
-      ],
-      "aliases": [
-        "决策算法",
-        "老喻决策算法100讲"
-      ],
-      "description": "老喻关于概率、风险、博弈与人生选择的系统课程资料；全套资料在本站按一个专题收录。",
-      "original": false,
-      "links": [
-        "/categories/%E5%9B%BE%E4%B9%A6%E7%AC%94%E8%AE%B0/",
-        "/tags/%E5%86%B3%E7%AD%96/",
-        "/tags/%E6%A6%82%E7%8E%87/",
-        "/tags/%E5%8D%9A%E5%BC%88/"
-      ]
-    },
-    {
       "id": "/2026/08/10/life-notes-make-room/",
       "title": "再挤挤",
       "url": "/2026/08/10/life-notes-make-room/",
@@ -129,6 +145,22 @@
       "tags": [],
       "aliases": [],
       "description": "宫本武藏十三岁的时候，杀了第一个人。",
+      "original": true,
+      "links": [
+        "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"
+      ]
+    },
+    {
+      "id": "/2026/08/01/life-notes-ten-years-later/",
+      "title": "十年后的我",
+      "url": "/2026/08/01/life-notes-ten-years-later/",
+      "kind": "生活随笔",
+      "categories": [
+        "生活随笔"
+      ],
+      "tags": [],
+      "aliases": [],
+      "description": "第一次在终端里敲出\"Hello World\"，黑色屏幕上只有一行白字。 天地初开，混沌退散。 那是世界回应我的第一声。 此后浏览器上的窗口越开越多。教程是粮仓，文档是舆图，论坛是驿站，密密麻麻的标签栏灯火连营，一直铺到屏幕尽头。 递归…",
       "original": true,
       "links": [
         "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"
@@ -176,22 +208,6 @@
       ]
     },
     {
-      "id": "/2026/08/01/life-notes-ten-years-later/",
-      "title": "十年后的我",
-      "url": "/2026/08/01/life-notes-ten-years-later/",
-      "kind": "生活随笔",
-      "categories": [
-        "生活随笔"
-      ],
-      "tags": [],
-      "aliases": [],
-      "description": "第一次在终端里敲出\"Hello World\"，黑色屏幕上只有一行白字。 天地初开，混沌退散。 那是世界回应我的第一声。 此后浏览器上的窗口越开越多。教程是粮仓，文档是舆图，论坛是驿站，密密麻麻的标签栏灯火连营，一直铺到屏幕尽头。 递归…",
-      "original": true,
-      "links": [
-        "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"
-      ]
-    },
-    {
       "id": "/categories/%E6%8A%80%E6%9C%AF/",
       "title": "技术",
       "url": "/categories/%E6%8A%80%E6%9C%AF/",
@@ -218,14 +234,14 @@
       "links": []
     },
     {
-      "id": "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/",
-      "title": "生活随笔",
-      "url": "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/",
+      "id": "/categories/%E7%BB%99%E5%A4%A7%E5%AD%A6%E7%94%9F/",
+      "title": "给大学生",
+      "url": "/categories/%E7%BB%99%E5%A4%A7%E5%AD%A6%E7%94%9F/",
       "kind": "分类",
       "categories": [],
       "tags": [],
       "aliases": [],
-      "description": "7 篇内容",
+      "description": "1 篇内容",
       "original": true,
       "virtual": true,
       "links": []
@@ -239,6 +255,19 @@
       "tags": [],
       "aliases": [],
       "description": "2 篇内容",
+      "original": true,
+      "virtual": true,
+      "links": []
+    },
+    {
+      "id": "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/",
+      "title": "生活随笔",
+      "url": "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/",
+      "kind": "分类",
+      "categories": [],
+      "tags": [],
+      "aliases": [],
+      "description": "7 篇内容",
       "original": true,
       "virtual": true,
       "links": []

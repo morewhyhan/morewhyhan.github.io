@@ -1,0 +1,610 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>大学生目标分析 | 虚船向远</title><meta name="author" content="涵千"><meta name="copyright" content="涵千"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="什么样的目标，才值得支配大学三年的时间？一个经过自己调查和判断而认领，能够形成连续积累，并且不断接受现实检验的目标。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="大学生目标分析">
+<meta property="og:url" content="https://morewhyhan.github.io/2026/10/05/college-student-goals/index.html">
+<meta property="og:site_name" content="虚船向远">
+<meta property="og:description" content="什么样的目标，才值得支配大学三年的时间？一个经过自己调查和判断而认领，能够形成连续积累，并且不断接受现实检验的目标。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://morewhyhan.github.io/img/hua.png">
+<meta property="article:published_time" content="2026-10-04T17:17:00.000Z">
+<meta property="article:modified_time" content="2026-10-04T17:23:15.167Z">
+<meta property="article:author" content="涵千">
+<meta property="article:tag" content="读书笔记，生活感悟，思考,Java,nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morewhyhan.github.io/img/hua.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "大学生目标分析",
+  "url": "https://morewhyhan.github.io/2026/10/05/college-student-goals/",
+  "image": "https://morewhyhan.github.io/img/hua.png",
+  "datePublished": "2026-10-04T17:17:00.000Z",
+  "dateModified": "2026-10-04T17:23:15.167Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "涵千",
+      "url": "https://github.com/morewhyhan"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://morewhyhan.github.io/2026/10/05/college-student-goals/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '大学生目标分析',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/notes/"><i class="fa-fw fas fa-project-diagram"></i><span> 知识花园</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/series/college-students/"><i class="fa-fw fas fa-graduation-cap"></i><span> 给大学生</span></a></li><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/hua.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">虚船向远</span></a><a class="nav-page-title" href="/"><span class="site-name">大学生目标分析</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/notes/"><i class="fa-fw fas fa-project-diagram"></i><span> 知识花园</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/series/college-students/"><i class="fa-fw fas fa-graduation-cap"></i><span> 给大学生</span></a></li><li><a class="site-page child" href="/book/"><i class="fa-fw fas fa-book-open"></i><span> 图书笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/reward/"><i class="fa-fw fas fa-thumbs-up"></i><span> 支持我</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">大学生目标分析</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-10-04T17:17:00.000Z" title="发表于 2026-10-05 01:17:00">2026-10-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-10-04T17:23:15.167Z" title="更新于 2026-10-05 01:23:15">2026-10-05</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%BB%99%E5%A4%A7%E5%AD%A6%E7%94%9F/">给大学生</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">5.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>15分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="一、大学生的首要问题"><a href="#一、大学生的首要问题" class="headerlink" title="一、大学生的首要问题"></a>一、大学生的首要问题</h2><p>上大学以后，首先要研究的，不是电脑怎么买，不是证书考哪个，也不是眼下应该学哪一门技术。</p>
+<p>首先要研究的是：</p>
+<p><strong>自己究竟想要什么。</strong></p>
+<p>这个问题不清楚，后面的许多问题就失去了尺度：</p>
+<p>① 我要买电脑，究竟按什么标准买？<br>② 我要学东西，究竟应该学什么？<br>③ 我要尽快挣钱，是专升本，还是直接就业？<br>④ 我要直接就业，毕业时又应该具备什么能力？</p>
+<p>这些问题表面不同，实际都归到一个问题：</p>
+<p><strong>我究竟准备拿大学三年的时间，去换什么？</strong></p>
+<p>这个问题不解决，事情做得再多，也未必有用。</p>
+<p>不清楚自己要去哪里，那么不管往哪走都是走错的。<br>于是环顾四下，皆是南墙。<br>任何看似正确的行为，都能让自己撞得头破血流。</p>
+<p>大学三年并不缺事情做。</p>
+<p>大一有课程、社团、游戏、朋友；大二有人升本，有人考证，有人学技术；大三实习、就业一齐压来。今天有今天的任务，明天有明天的热点。一个人完全可以忙上三年，却始终没有回答自己究竟要去哪里。</p>
+<p>问题可以暂时不答，可时间却不会停下。</p>
+<p>等到毕业时收拾寝室，再回头说一句“早知当初”，才发现有些准备本来可以早一点开始，有些时间也本来可以用得更好。</p>
+<p>最后留下的，也许只有一句：</p>
+<p><strong>“我本来可以……”</strong></p>
+<p>所以，在研究怎样学习以前，必须先研究：</p>
+<p><strong>三年过后，我是谁？</strong></p>
+<p>三年后的我不是凭空产生的。</p>
+<p>一个人三年以后有什么，很大程度上同这三年的积累有关。目标影响我们怎样使用时间，实际条件也会影响这些投入最后能留下什么。</p>
+<p>因此，本文真正要回答的是：</p>
+<p><strong>什么样的目标，才值得支配大学三年的时间？</strong></p>
+<hr>
+<h2 id="二、研究方法"><a href="#二、研究方法" class="headerlink" title="二、研究方法"></a>二、研究方法</h2><p>目标也不是一个人关起门来想出来的。</p>
+<p>学生自己有自己的要求；家庭、学校、同伴、社会舆论和就业市场，也都向学生提出自己的要求。</p>
+<p>这些力量所处的位置不同，所求不同，掌握的力量不同，对学生发生的作用也不同。</p>
+<p>所以，不能只听它们说什么。</p>
+<p>要看：</p>
+<p>① 它处在什么位置；<br>② 它真正要求什么；<br>③ 它凭什么影响学生；<br>④ 它最终把学生的时间拉向哪里。</p>
+<p>最后还要看：</p>
+<p><strong>这些要求到了学生这里，是被直接接受，还是经过调查、比较和判断以后，重新变成自己的目标。</strong></p>
+<p>下面分别来看。</p>
+<hr>
+<h2 id="三、大学生的目标是怎样形成的"><a href="#三、大学生的目标是怎样形成的" class="headerlink" title="三、大学生的目标是怎样形成的"></a>三、大学生的目标是怎样形成的</h2><h3 id="（一）学生自己：眼前近，未来远"><a href="#（一）学生自己：眼前近，未来远" class="headerlink" title="（一）学生自己：眼前近，未来远"></a>（一）学生自己：眼前近，未来远</h3><p>学生首先掌握自己的时间、注意力和行动。</p>
+<p>父母可以劝，老师可以要求，学校可以考核，真正落实到每天，却还得由学生本人去做。</p>
+<p>学生自己又有两方面的要求。</p>
+<p>一方面，希望三年以后有学历、有能力、有工作、有收入；另一方面，又希望今天轻松一点、自由一点、快乐一点。</p>
+<p>两方面经常发生冲突。</p>
+<p>工作在几年以后，游戏在今晚；能力要几年积累，短视频几秒钟就有反馈；未来的损失尚未发生，今天的快乐却伸手可得。</p>
+<p>这里有一个经常遇到的问题：</p>
+<p><strong>长远利益很重要，眼前利益却离得更近。</strong></p>
+<p>不是不知道未来重要，而是未来还没有重要到足以支配今天。</p>
+<p>没有一个稳定的长期目标，时间就容易被眼前的事情一点一点拿走。</p>
+<h3 id="（二）父母和家庭：求稳"><a href="#（二）父母和家庭：求稳" class="headerlink" title="（二）父母和家庭：求稳"></a>（二）父母和家庭：求稳</h3><p>家庭承担学生的学费、生活费，也常常承担失败以后的一部分成本。</p>
+<p>因此，家庭往往很关心风险。</p>
+<p>学历高一点，工作稳定一点，收入可靠一点，路走得稳一点，这些东西容易得到父母支持，不只是因为它们“好”，更因为它们比较确定。</p>
+<p>这也使不少父母希望孩子：</p>
+<p><strong>少走弯路，少冒风险。</strong></p>
+<p>家庭又掌握经济支持和失败后的兜底能力，所以这种要求不是普通意见，而有现实力量。</p>
+<p>家庭求稳，有它的道理。</p>
+<p>但家庭首先解决的是怎样减少失败，而个人成长有时恰恰要经过探索、试错和暂时的不确定。</p>
+<p>探索需要时间，也可能走弯路。家庭愿意承担多大风险，学生又准备怎样探索，需要把这些事情说清楚。</p>
+<p>父母认为稳妥的路，可以听，可以研究；却不能因为它稳妥，就不经判断地变成自己的路。</p>
+<h3 id="（三）学校和教师：求可管、可评"><a href="#（三）学校和教师：求可管、可评" class="headerlink" title="（三）学校和教师：求可管、可评"></a>（三）学校和教师：求可管、可评</h3><p>一个学校要同时组织几千、几万名学生，就不能完全按照每个人的实际成长来管理。</p>
+<p>它必须有统一尺度。</p>
+<p>于是有学分，有成绩，有证书，有综测，有奖项，有升学率，有就业率。</p>
+<p>这些东西容易统计，容易比较，也容易管理。</p>
+<p>在这样的管理安排下，学校通常重视：</p>
+<p><strong>可考核、可记录、可管理的结果。</strong></p>
+<p>学校和教师又掌握课程、成绩、毕业、评奖、比赛、项目等资源，因此这些标准能够直接影响学生怎样使用时间。</p>
+<p>问题在于：</p>
+<p><strong>学校能够记录的，不等于一个人真正需要的全部能力。</strong></p>
+<p>独立判断、解决实际问题、作品、经验，有时比一张证书重要，却未必比一张证书更容易被记录。</p>
+<p>于是学生最容易犯的错误，就是把：</p>
+<p><strong>“怎样成为一个好学生”</strong></p>
+<p>当成：</p>
+<p><strong>“怎样成为一个有能力的人”。</strong></p>
+<p>二者有重合，却不是一回事。</p>
+<h3 id="（四）同伴：拿别人作尺子"><a href="#（四）同伴：拿别人作尺子" class="headerlink" title="（四）同伴：拿别人作尺子"></a>（四）同伴：拿别人作尺子</h3><p>同伴不能决定你毕业，也不能决定你将来拿多少工资。</p>
+<p>但同伴有一种很实际的力量：</p>
+<p><strong>比较。</strong></p>
+<p>别人升本，我是不是也应该升？</p>
+<p>别人考证，我是不是也少了一张？</p>
+<p>别人已经实习，我是不是落后了？</p>
+<p>一个人自己没有尺度的时候，看别人，是最省力的办法。</p>
+<p>所以一个人越不知道自己要什么，同伴的力量就越大。</p>
+<p>同伴能够告诉你的，是：</p>
+<p><strong>别人正在做什么。</strong></p>
+<p>却不能告诉你：</p>
+<p><strong>别人去的地方，是不是你要去的地方。</strong></p>
+<p>比较能够暂时解除迷茫，却不能代替判断。</p>
+<h3 id="（五）网络和社会舆论：不断换题"><a href="#（五）网络和社会舆论：不断换题" class="headerlink" title="（五）网络和社会舆论：不断换题"></a>（五）网络和社会舆论：不断换题</h3><p>网络每天都在提供新的答案。</p>
+<p>今天考公，明天升本；今天编程，明天人工智能；今天自媒体，明天副业。</p>
+<p>这些答案未必是假的。</p>
+<p>问题在于，网络传播需要不断制造新内容、新话题、新热点。</p>
+<p>个人成长却恰恰相反。</p>
+<p>真正的能力，往往要求一件事情反复做，长期做，越做越深。</p>
+<p>新话题不断出现，已经开始的学习却还需要继续。要不要换方向，应当看新信息是否真的改变了原来的判断。</p>
+<p>如果总按照热点配置时间，三年里可以换很多方向，学过很多东西，也知道很多新名词，却未必真正做成一件事情。</p>
+<h3 id="（六）就业市场：最后看的是使用价值"><a href="#（六）就业市场：最后看的是使用价值" class="headerlink" title="（六）就业市场：最后看的是使用价值"></a>（六）就业市场：最后看的是使用价值</h3><p>就业市场同前面几种力量不同。</p>
+<p>到了求职的时候，我们要面对具体岗位的筛选。</p>
+<p>企业会考虑工作需要什么人，也会看资格、经验和培养成本。一个人付出了很多时间，并不意味着这些投入就能得到认可，还要看它们同岗位要求是否相合。</p>
+<p>就业市场影响学生的地方，最终落实在：</p>
+<p><strong>现实机会。</strong></p>
+<p>学校主要问：</p>
+<p><strong>你有没有完成培养过程？</strong></p>
+<p>就业市场主要问：</p>
+<p><strong>你现在到底能做什么？</strong></p>
+<p>二者有时一致，有时并不一致。</p>
+<p>所以一个学生完全可能课程修完了，证书拿到了，也顺利毕业了，到了求职的时候却仍然回答不了：</p>
+<p><strong>我究竟能替别人解决什么问题？</strong></p>
+<h3 id="（七）各种力量的汇合"><a href="#（七）各种力量的汇合" class="headerlink" title="（七）各种力量的汇合"></a>（七）各种力量的汇合</h3><p>现在把这些力量放到一起看。</p>
+<p>学生自己，容易被眼前利益牵引；</p>
+<p>家庭，把人拉向稳定；</p>
+<p>学校，把人拉向可评价的优秀；</p>
+<p>同伴，把人拉向别人正在走的路；</p>
+<p>网络，把人拉向不断变化的热点；</p>
+<p>就业市场，则在最后按照现实需要进行筛选。</p>
+<p>这些力量还会彼此加强。</p>
+<p>市场提高学历门槛，家庭便更加重视学历；</p>
+<p>学校重视升学，教师便推动学生升学；</p>
+<p>网络制造热点，同伴开始讨论；</p>
+<p>同伴一动，没有方向的人也容易跟着动。</p>
+<p>这样一层一层作用下来，最后学生自己也会说：</p>
+<p><strong>“这是我想要的。”</strong></p>
+<p>但这个“我想要”，还不能算数。</p>
+<p>必须再问两个问题。</p>
+<p>第一：</p>
+<p><strong>这个目标最后是谁作的主？</strong></p>
+<p>是别人给出以后直接接受，还是经过自己调查、比较和判断以后重新认领？</p>
+<p>第二：</p>
+<p><strong>这个目标最后把时间引向哪里？</strong></p>
+<p>是把今天主要用来换取较长期的结果，还是主要用来满足当前生活？</p>
+<p>为了比较这些影响，可以先从两个方面观察：</p>
+<p><strong>一个是目标由谁作主，一个是时间向哪里流。</strong></p>
+<p>下面据此讨论四种目标状态。</p>
+<hr>
+<h2 id="四、大学生的四种目标状态"><a href="#四、大学生的四种目标状态" class="headerlink" title="四、大学生的四种目标状态"></a>四、大学生的四种目标状态</h2><table>
+<thead>
+<tr>
+<th></th>
+<th><strong>未来取向较强</strong></th>
+<th><strong>当下取向较强</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>目标自主性较强</strong></td>
+<td><strong>叛逆派</strong></td>
+<td><strong>活在当下派</strong></td>
+</tr>
+<tr>
+<td><strong>目标自主性较弱</strong></td>
+<td><strong>三好学生派</strong></td>
+<td><strong>漂流瓶</strong></td>
+</tr>
+</tbody></table>
+<p>这里用四种目标状态帮助讨论，不是把所有学生划成四类。一个人在不同事情上，也可能处于不同状态。</p>
+<p>我们要研究的是：</p>
+<p><strong>一种目标状态如果长期支配三年，人最后大体会变成什么样。</strong></p>
+<h3 id="（一）叛逆派"><a href="#（一）叛逆派" class="headerlink" title="（一）叛逆派"></a>（一）叛逆派</h3><h4 id="1-怎样形成的"><a href="#1-怎样形成的" class="headerlink" title="1. 怎样形成的"></a>1. 怎样形成的</h4><p>这一派不是不听父母、不听老师，也不是专门和别人唱反调。</p>
+<p>他们也看家庭意见，看学校标准，看同伴选择，看网络信息，也看就业市场。</p>
+<p>不同之处是：</p>
+<p><strong>外界只能提供材料，不能替他下最后结论。</strong></p>
+<p>父母说应该升本，他还要问升本究竟能换来什么；</p>
+<p>学校说证书重要，他还要看市场认不认；</p>
+<p>别人都去实习，他也要先看这份实习是否同自己的方向有关。</p>
+<p>所以这一派的目标形成过程是：</p>
+<p><strong>外部影响——自己调查——自己判断——自己认领。</strong></p>
+<h4 id="2-他们要什么"><a href="#2-他们要什么" class="headerlink" title="2. 他们要什么"></a>2. 他们要什么</h4><p>他们要的不是某一条固定道路。</p>
+<p>有人升本，有人就业，有人学技术，有人做项目。</p>
+<p>共同点只有一个：</p>
+<p><strong>我知道自己为什么这样选。</strong></p>
+<h4 id="3-他们怎样行动"><a href="#3-他们怎样行动" class="headerlink" title="3. 他们怎样行动"></a>3. 他们怎样行动</h4><p>因为有自己的取舍，他们比较容易集中力量。</p>
+<p>不是什么证都考，不是什么比赛都参加，不是什么热点都追。</p>
+<p>认定几件重要的事情，就把时间集中上去。</p>
+<h4 id="4-三年以后"><a href="#4-三年以后" class="headerlink" title="4. 三年以后"></a>4. 三年以后</h4><p>如果判断基本正确，知识可以接技能，技能接项目，项目接作品，作品再进入实践，三年的积累容易连成一条线。</p>
+<p>但是自己作主，并不等于自己永远正确。</p>
+<p>一个错误判断，坚持三年，同样可以造成很大损失。</p>
+<p>所以这一派真正的问题是：</p>
+<p><strong>方向要自己作主，判断又必须不断接受现实检验。</strong></p>
+<h3 id="（二）三好学生派"><a href="#（二）三好学生派" class="headerlink" title="（二）三好学生派"></a>（二）三好学生派</h3><h4 id="1-怎样形成的-1"><a href="#1-怎样形成的-1" class="headerlink" title="1. 怎样形成的"></a>1. 怎样形成的</h4><p>这一派最容易在家庭、学校和社会评价方向一致的时候形成。</p>
+<p>家庭要求稳；</p>
+<p>学校要求成绩、证书、比赛、升学；</p>
+<p>社会又不断强化学历、稳定和体面的价值。</p>
+<p>几股力量一合，一条路线便已经摆在面前。</p>
+<p>所以这一派的目标形成过程是：</p>
+<p><strong>外部规定——本人接受——长期执行。</strong></p>
+<h4 id="2-他们要什么-1"><a href="#2-他们要什么-1" class="headerlink" title="2. 他们要什么"></a>2. 他们要什么</h4><p>他们要的是一个公认正确的未来。</p>
+<p>成绩好一点，学历高一点，证书多一点，履历漂亮一点。</p>
+<p>他们不是没有目标。</p>
+<p>恰恰相反，他们的目标往往最清楚，行动也最坚定。</p>
+<p>问题是：</p>
+<p><strong>这个未来主要是谁规定的？</strong></p>
+<h4 id="3-他们怎样行动-1"><a href="#3-他们怎样行动-1" class="headerlink" title="3. 他们怎样行动"></a>3. 他们怎样行动</h4><p>这一派最容易稳定执行。</p>
+<p>考试来了便复习，证书有用便考，比赛能加分便参加，升学需要什么便准备什么。</p>
+<p>所以他们也最容易获得学校能够记录的成果。</p>
+<h4 id="4-三年以后-1"><a href="#4-三年以后-1" class="headerlink" title="4. 三年以后"></a>4. 三年以后</h4><p>如果外部规定的道路恰好适合本人，他们会走得很顺。</p>
+<p>如果不适合，就会出现另一种情况：</p>
+<p><strong>行动是自己的，方向却主要是别人给的。</strong></p>
+<p>事情做了很多，履历也不难看，到了真正选择工作和生活的时候，却还要重新问一次：</p>
+<p><strong>我究竟要什么？</strong></p>
+<h3 id="（三）活在当下派"><a href="#（三）活在当下派" class="headerlink" title="（三）活在当下派"></a>（三）活在当下派</h3><h4 id="1-怎样形成的-2"><a href="#1-怎样形成的-2" class="headerlink" title="1. 怎样形成的"></a>1. 怎样形成的</h4><p>这一派的目标主要由本人决定，但是本人把较大的价值放在当前生活。</p>
+<p>他们认为：</p>
+<p><strong>大学不能只是一段为几年以后作准备的时间。</strong></p>
+<p>今天本身，也值得过。</p>
+<h4 id="2-他们要什么-2"><a href="#2-他们要什么-2" class="headerlink" title="2. 他们要什么"></a>2. 他们要什么</h4><p>朋友、恋爱、兴趣、运动、旅行、自由、生活体验，都可能成为重要目标。</p>
+<p>他们不是不要未来。</p>
+<p>只是不同意把今天全部交给未来。</p>
+<h4 id="3-他们怎样行动-2"><a href="#3-他们怎样行动-2" class="headerlink" title="3. 他们怎样行动"></a>3. 他们怎样行动</h4><p>这一派内部还要分成两种。</p>
+<ol>
+<li><p><strong>积累型当下。</strong><br> 今天做的事情首先为了今天，却仍然留下作品、能力、身体和经验。例如摄影、创作、运动、长期兼职。</p>
+</li>
+<li><p><strong>消费型当下。</strong><br> 今天得到快乐，但长期投入以后，对能力和经验的积累帮助较少。例如大量重复性的游戏、刷视频和娱乐。</p>
+</li>
+</ol>
+<h4 id="4-三年以后-2"><a href="#4-三年以后-2" class="headerlink" title="4. 三年以后"></a>4. 三年以后</h4><p>所以这一派真正的问题，不是该不该活在当下。</p>
+<p>而是：</p>
+<p><strong>今天结束以后，有没有东西能够进入明天。</strong></p>
+<p>能够进入明天，今天也是积累。</p>
+<p>不能进入明天，三年便主要变成消费。</p>
+<h3 id="（四）漂流瓶"><a href="#（四）漂流瓶" class="headerlink" title="（四）漂流瓶"></a>（四）漂流瓶</h3><h4 id="1-怎样形成的-3"><a href="#1-怎样形成的-3" class="headerlink" title="1. 怎样形成的"></a>1. 怎样形成的</h4><p>这一派受到的影响最多，却没有一套稳定尺度。</p>
+<p>父母说升本，就准备升本；</p>
+<p>同学考证，就跟着考证；</p>
+<p>网络出现热点，就去学热点；</p>
+<p>就业临近，又突然开始准备求职。</p>
+<p>所以这一派的目标形成过程是：</p>
+<p><strong>谁现在声音最大，就暂时跟谁走。</strong></p>
+<h4 id="2-他们要什么-3"><a href="#2-他们要什么-3" class="headerlink" title="2. 他们要什么"></a>2. 他们要什么</h4><p>他们也想有工作，也想收入高一点，也想生活轻松一点。</p>
+<p>问题不是没有愿望。</p>
+<p>而是这些愿望没有被组织成一个能够长期支配行动的目标。</p>
+<h4 id="3-他们怎样行动-3"><a href="#3-他们怎样行动-3" class="headerlink" title="3. 他们怎样行动"></a>3. 他们怎样行动</h4><p>事情往往做得不少。</p>
+<p>考试前学习，证书来了报名，软件学几天，活动参加一次，资料收藏很多。</p>
+<p>问题不在于不行动。</p>
+<p>而在于：</p>
+<p><strong>没有一条线把这些行动串起来。</strong></p>
+<h4 id="4-三年以后-3"><a href="#4-三年以后-3" class="headerlink" title="4. 三年以后"></a>4. 三年以后</h4><p>最后最容易得到的，是许多彼此断开的经历。</p>
+<p>什么都碰过一点，什么都知道一点，却很难有一样真正形成优势。</p>
+<p>所以漂流瓶最大的损失，不是三年什么都没有做。</p>
+<p>而是：</p>
+<p><strong>三年不断开始，很少真正完成。</strong></p>
+<hr>
+<h2 id="五、什么样的目标值得支配三年"><a href="#五、什么样的目标值得支配三年" class="headerlink" title="五、什么样的目标值得支配三年"></a>五、什么样的目标值得支配三年</h2><p>以上四种状态，可以归结如下：</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>目标由谁作主</th>
+<th>时间主要流向</th>
+<th>三年后的主要结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>叛逆派</strong></td>
+<td>本人调查、判断后认领</td>
+<td>较长期目标</td>
+<td>容易形成连续积累，也可能连续错向</td>
+</tr>
+<tr>
+<td><strong>三好学生派</strong></td>
+<td>外部标准占主导</td>
+<td>较长期目标</td>
+<td>容易形成学历、成绩、证书等标准化成果</td>
+</tr>
+<tr>
+<td><strong>活在当下派</strong></td>
+<td>本人作主</td>
+<td>当前生活</td>
+<td>结果取决于今天究竟是积累还是消费</td>
+</tr>
+<tr>
+<td><strong>漂流瓶</strong></td>
+<td>当前最强的外部力量</td>
+<td>当前任务</td>
+<td>容易留下许多彼此断开的经历</td>
+</tr>
+</tbody></table>
+<p>现在可以回答本文真正的问题了：</p>
+<p><strong>什么样的目标，才值得支配大学三年的时间？</strong></p>
+<p>第一，<strong>它必须经过自己的调查和判断。</strong></p>
+<p>父母、老师、同伴、网络都可以提供意见，但是不能直接替自己作最后决定。</p>
+<p>否则方向虽然明确，却未必属于自己。</p>
+<p>第二，<strong>它必须能够形成连续积累。</strong></p>
+<p>今天做的事情，要能够成为明天的基础；今年得到的东西，要能够进入明年。</p>
+<p>否则事情做得再多，三年也不过是一堆互不相连的片段。</p>
+<p>第三，<strong>它必须不断接受现实检验。</strong></p>
+<p>自己认领的目标，也可能是错的。</p>
+<p>不能因为“这是我的选择”，就拒绝修改。方向必须不断拿行动、结果和现实反馈去校正。</p>
+<p>所以，真正值得支配大学三年的，不是“别人都说正确”的目标，也不是“我一时喜欢”的目标。</p>
+<p>而是：</p>
+<p><strong>一个经过自己调查和判断而认领，能够形成连续积累，并且不断接受现实检验的目标。</strong></p>
+<p>自主、积累、校正，三者缺一不可。</p>
+<hr>
+<h2 id="六、三年过后，我是谁？"><a href="#六、三年过后，我是谁？" class="headerlink" title="六、三年过后，我是谁？"></a>六、三年过后，我是谁？</h2><p>现在可以回答本文最开始的问题了。</p>
+<p><strong>三年过后，我是谁？</strong></p>
+<p>答案不在三年以后。</p>
+<p>答案其实每天都在发生。</p>
+<p>今天把一个小时交给什么，明天就多一点什么；一百天如此，一年如此，三年以后，那些反复发生的选择便长在了自己身上。</p>
+<p>有人留下学历和证书；</p>
+<p>有人留下技能和作品；</p>
+<p>有人留下身体、朋友和生活经验；</p>
+<p>也有人做过很多事情，却没有一样真正接得起来。</p>
+<p>所以，三年后的自己，不是某一天突然决定出来的。</p>
+<p>而是：</p>
+<blockquote>
+<p><strong>无数个今天，把时间一点一点投向某个方向以后，最后积成的结果。</strong></p>
+</blockquote>
+<p>大学的路太多了</p>
+<p>升本是一条路，就业是一条路；考证是一条路，学技术是一条路；老师有老师指出的路，父母有父母认为稳妥的路，同学已经有人跑在另一条路上，手机一打开，又总有新的路摆在眼前。</p>
+<p>走到这里，才真正知道什么叫“多歧路”。</p>
+<p>它不是一句诗。</p>
+<p>它就是大一到大三每一次不知道该选什么的时候。</p>
+<p>没有自己的尺度，看见一条路便想走一条；听见一个答案便想换一个答案。今天向东，明天向西，看起来一直没有停，实际上力量都耗在转向上。</p>
+<p>走错了，知道错在哪里，下一步便比上一步更准；试过一件事情，留下了一点能力、一点经验，也不是白走。</p>
+<p>如果每次换路都从头开始，又没有弄清上次为什么走不通，时间便耗在一次次重新开始上。</p>
+<p>这样走三年，岔路越来越多，自己的方向却越来越模糊。</p>
+<p>所以我们前面分析父母、学校、同伴、舆论和市场，最后并不是为了教人拒绝这些声音。</p>
+<p>相反，都应该听。</p>
+<p>父母知道一些风险，学校提供一些尺度，同伴提供一些参照，市场更会给出最现实的回答。</p>
+<p>但这些声音只能告诉我们：</p>
+<blockquote>
+<p><strong>路在哪里。</strong></p>
+</blockquote>
+<p>不能替我们决定：</p>
+<blockquote>
+<p><strong>哪一条路是自己的。</strong></p>
+</blockquote>
+<p>这个决定，必须留在自己手里。</p>
+<p>目标定下来以后，还要看实际做得怎样。发现原来的判断有问题，就改；换一条路，也要说明为什么换。</p>
+<p>以前的学习和项目，能用的就接着用。确实走错了，也要弄清错在哪里，免得换了方向以后又犯同样的错。</p>
+<p>大学才刚开始，许多准备还来得及。想清楚一件，就动手做一件；遇到困难，把它弄明白，再往前走。到了毕业的时候，我们要有拿得出手的本事，也要有选择自己生活的底气。</p>
+<p><strong>这三年，值得我们认真干一场。</strong></p>
+<hr>
+<p><a href="/series/college-students/">返回《给大学生》系列目录</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://github.com/morewhyhan">涵千</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://morewhyhan.github.io/2026/10/05/college-student-goals/">https://morewhyhan.github.io/2026/10/05/college-student-goals/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://morewhyhan.github.io" target="_blank">虚船向远</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img/hua.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>感谢你的支持</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/book/psychohistory/" title="姜学勤心理史学"><img class="cover" src="/img/hua.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">姜学勤心理史学</div></div><div class="info-2"><div class="info-item-1">姜学勤老师从经典、文明、博弈、地缘与隐秘历史展开的心理史学系列课程。</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/myself.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">涵千</div><div class="author-info-description">流水不争先，争的是滔滔不绝</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/morewhyhan/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/morewhyhan/" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello ! Welcome my World!</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%A4%A7%E5%AD%A6%E7%94%9F%E7%9A%84%E9%A6%96%E8%A6%81%E9%97%AE%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">一、大学生的首要问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%A0%94%E7%A9%B6%E6%96%B9%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">二、研究方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%A4%A7%E5%AD%A6%E7%94%9F%E7%9A%84%E7%9B%AE%E6%A0%87%E6%98%AF%E6%80%8E%E6%A0%B7%E5%BD%A2%E6%88%90%E7%9A%84"><span class="toc-number">3.</span> <span class="toc-text">三、大学生的目标是怎样形成的</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%88%E4%B8%80%EF%BC%89%E5%AD%A6%E7%94%9F%E8%87%AA%E5%B7%B1%EF%BC%9A%E7%9C%BC%E5%89%8D%E8%BF%91%EF%BC%8C%E6%9C%AA%E6%9D%A5%E8%BF%9C"><span class="toc-number">3.1.</span> <span class="toc-text">（一）学生自己：眼前近，未来远</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%88%E4%BA%8C%EF%BC%89%E7%88%B6%E6%AF%8D%E5%92%8C%E5%AE%B6%E5%BA%AD%EF%BC%9A%E6%B1%82%E7%A8%B3"><span class="toc-number">3.2.</span> <span class="toc-text">（二）父母和家庭：求稳</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%88%E4%B8%89%EF%BC%89%E5%AD%A6%E6%A0%A1%E5%92%8C%E6%95%99%E5%B8%88%EF%BC%9A%E6%B1%82%E5%8F%AF%E7%AE%A1%E3%80%81%E5%8F%AF%E8%AF%84"><span class="toc-number">3.3.</span> <span class="toc-text">（三）学校和教师：求可管、可评</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%88%E5%9B%9B%EF%BC%89%E5%90%8C%E4%BC%B4%EF%BC%9A%E6%8B%BF%E5%88%AB%E4%BA%BA%E4%BD%9C%E5%B0%BA%E5%AD%90"><span class="toc-number">3.4.</span> <span class="toc-text">（四）同伴：拿别人作尺子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%88%E4%BA%94%EF%BC%89%E7%BD%91%E7%BB%9C%E5%92%8C%E7%A4%BE%E4%BC%9A%E8%88%86%E8%AE%BA%EF%BC%9A%E4%B8%8D%E6%96%AD%E6%8D%A2%E9%A2%98"><span class="toc-number">3.5.</span> <span class="toc-text">（五）网络和社会舆论：不断换题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%88%E5%85%AD%EF%BC%89%E5%B0%B1%E4%B8%9A%E5%B8%82%E5%9C%BA%EF%BC%9A%E6%9C%80%E5%90%8E%E7%9C%8B%E7%9A%84%E6%98%AF%E4%BD%BF%E7%94%A8%E4%BB%B7%E5%80%BC"><span class="toc-number">3.6.</span> <span class="toc-text">（六）就业市场：最后看的是使用价值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%88%E4%B8%83%EF%BC%89%E5%90%84%E7%A7%8D%E5%8A%9B%E9%87%8F%E7%9A%84%E6%B1%87%E5%90%88"><span class="toc-number">3.7.</span> <span class="toc-text">（七）各种力量的汇合</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%A4%A7%E5%AD%A6%E7%94%9F%E7%9A%84%E5%9B%9B%E7%A7%8D%E7%9B%AE%E6%A0%87%E7%8A%B6%E6%80%81"><span class="toc-number">4.</span> <span class="toc-text">四、大学生的四种目标状态</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%88%E4%B8%80%EF%BC%89%E5%8F%9B%E9%80%86%E6%B4%BE"><span class="toc-number">4.1.</span> <span class="toc-text">（一）叛逆派</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%80%8E%E6%A0%B7%E5%BD%A2%E6%88%90%E7%9A%84"><span class="toc-number">4.1.1.</span> <span class="toc-text">1. 怎样形成的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E4%BB%96%E4%BB%AC%E8%A6%81%E4%BB%80%E4%B9%88"><span class="toc-number">4.1.2.</span> <span class="toc-text">2. 他们要什么</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E4%BB%96%E4%BB%AC%E6%80%8E%E6%A0%B7%E8%A1%8C%E5%8A%A8"><span class="toc-number">4.1.3.</span> <span class="toc-text">3. 他们怎样行动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E4%B8%89%E5%B9%B4%E4%BB%A5%E5%90%8E"><span class="toc-number">4.1.4.</span> <span class="toc-text">4. 三年以后</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%88%E4%BA%8C%EF%BC%89%E4%B8%89%E5%A5%BD%E5%AD%A6%E7%94%9F%E6%B4%BE"><span class="toc-number">4.2.</span> <span class="toc-text">（二）三好学生派</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%80%8E%E6%A0%B7%E5%BD%A2%E6%88%90%E7%9A%84-1"><span class="toc-number">4.2.1.</span> <span class="toc-text">1. 怎样形成的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E4%BB%96%E4%BB%AC%E8%A6%81%E4%BB%80%E4%B9%88-1"><span class="toc-number">4.2.2.</span> <span class="toc-text">2. 他们要什么</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E4%BB%96%E4%BB%AC%E6%80%8E%E6%A0%B7%E8%A1%8C%E5%8A%A8-1"><span class="toc-number">4.2.3.</span> <span class="toc-text">3. 他们怎样行动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E4%B8%89%E5%B9%B4%E4%BB%A5%E5%90%8E-1"><span class="toc-number">4.2.4.</span> <span class="toc-text">4. 三年以后</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%88%E4%B8%89%EF%BC%89%E6%B4%BB%E5%9C%A8%E5%BD%93%E4%B8%8B%E6%B4%BE"><span class="toc-number">4.3.</span> <span class="toc-text">（三）活在当下派</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%80%8E%E6%A0%B7%E5%BD%A2%E6%88%90%E7%9A%84-2"><span class="toc-number">4.3.1.</span> <span class="toc-text">1. 怎样形成的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E4%BB%96%E4%BB%AC%E8%A6%81%E4%BB%80%E4%B9%88-2"><span class="toc-number">4.3.2.</span> <span class="toc-text">2. 他们要什么</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E4%BB%96%E4%BB%AC%E6%80%8E%E6%A0%B7%E8%A1%8C%E5%8A%A8-2"><span class="toc-number">4.3.3.</span> <span class="toc-text">3. 他们怎样行动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E4%B8%89%E5%B9%B4%E4%BB%A5%E5%90%8E-2"><span class="toc-number">4.3.4.</span> <span class="toc-text">4. 三年以后</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%88%E5%9B%9B%EF%BC%89%E6%BC%82%E6%B5%81%E7%93%B6"><span class="toc-number">4.4.</span> <span class="toc-text">（四）漂流瓶</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%80%8E%E6%A0%B7%E5%BD%A2%E6%88%90%E7%9A%84-3"><span class="toc-number">4.4.1.</span> <span class="toc-text">1. 怎样形成的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E4%BB%96%E4%BB%AC%E8%A6%81%E4%BB%80%E4%B9%88-3"><span class="toc-number">4.4.2.</span> <span class="toc-text">2. 他们要什么</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E4%BB%96%E4%BB%AC%E6%80%8E%E6%A0%B7%E8%A1%8C%E5%8A%A8-3"><span class="toc-number">4.4.3.</span> <span class="toc-text">3. 他们怎样行动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E4%B8%89%E5%B9%B4%E4%BB%A5%E5%90%8E-3"><span class="toc-number">4.4.4.</span> <span class="toc-text">4. 三年以后</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E7%9B%AE%E6%A0%87%E5%80%BC%E5%BE%97%E6%94%AF%E9%85%8D%E4%B8%89%E5%B9%B4"><span class="toc-number">5.</span> <span class="toc-text">五、什么样的目标值得支配三年</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E4%B8%89%E5%B9%B4%E8%BF%87%E5%90%8E%EF%BC%8C%E6%88%91%E6%98%AF%E8%B0%81%EF%BC%9F"><span class="toc-number">6.</span> <span class="toc-text">六、三年过后，我是谁？</span></a></li></ol></div></div><div class="card-widget card-post-series"><div class="item-headline"><i class="fa-solid fa-layer-group"></i><span>给大学生</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/10/05/college-student-goals/" title="大学生目标分析"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="大学生目标分析"></a><div class="content"><a class="title" href="/2026/10/05/college-student-goals/" title="大学生目标分析">大学生目标分析</a><time datetime="2026-10-04T17:17:00.000Z" title="发表于 2026-10-05 01:17:00">2026-10-05</time></div></div></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/10/05/college-student-goals/" title="大学生目标分析"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="大学生目标分析"/></a><div class="content"><a class="title" href="/2026/10/05/college-student-goals/" title="大学生目标分析">大学生目标分析</a><time datetime="2026-10-04T17:17:00.000Z" title="发表于 2026-10-05 01:17:00">2026-10-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/book/psychohistory/" title="姜学勤心理史学"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="姜学勤心理史学"/></a><div class="content"><a class="title" href="/book/psychohistory/" title="姜学勤心理史学">姜学勤心理史学</a><time datetime="2026-08-28T16:00:00.000Z" title="发表于 2026-08-29 00:00:00">2026-08-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/book/decision-algorithm/" title="决策算法100讲"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="决策算法100讲"/></a><div class="content"><a class="title" href="/book/decision-algorithm/" title="决策算法100讲">决策算法100讲</a><time datetime="2026-08-27T16:00:00.000Z" title="发表于 2026-08-28 00:00:00">2026-08-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/08/23/life-notes-odyssey/" title="奥德赛意识流"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="奥德赛意识流"/></a><div class="content"><a class="title" href="/2026/08/23/life-notes-odyssey/" title="奥德赛意识流">奥德赛意识流</a><time datetime="2026-08-23T12:50:01.000Z" title="发表于 2026-08-23 20:50:01">2026-08-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/08/10/life-notes-make-room/" title="再挤挤"><img src="/img/hua.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="再挤挤"/></a><div class="content"><a class="title" href="/2026/08/10/life-notes-make-room/" title="再挤挤">再挤挤</a><time datetime="2026-08-10T13:19:42.000Z" title="发表于 2026-08-10 21:19:42">2026-08-10</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/hua.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 涵千</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="/js/tw_cn.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script defer src="/js/home-video.js?v=2"></script><script id="canvas_nest" defer="defer" color="150,170,190" opacity="0.42" zIndex="-1" count="88" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>
