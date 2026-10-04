@@ -45,6 +45,8 @@ function quartzSlug(fileName) {
 function extractKnowledgeGardenTarget(markdown, slug) {
   const permalink = markdown.match(/^permalink:\s*["']?([^"'\s]+)["']?\s*$/m)?.[1]
   const course = permalink?.replace(/^\/+|\/+$/g, "").match(/^book\/([^/]+)$/)
+  const series = permalink?.replace(/^\/+|\/+$/g, "").match(/^series\/[^/]+$/)
+  if (series) return `blog/series/${extractFrontmatterTitle(markdown, slug)}/index`
   return course ? `books/${course[1]}/index` : `blog/${slug}`
 }
 
@@ -86,9 +88,23 @@ for (const { href, title } of homepageEntries) {
   const relative = decodeURIComponent(href).replace(/^\/+/, "").replace(/\/$/, "")
   const outputFile = path.join(publicDir, relative, "index.html")
   try {
-    await fs.access(outputFile)
+    const html = await fs.readFile(outputFile, "utf8")
+    if (!/<html[\s>]/i.test(html)) throw new Error("Rendered page is empty or invalid")
   } catch {
     throw new Error(`Homepage entry has no rendered page: ${title} -> ${href}`)
+  }
+}
+
+const seriesDir = path.join(publicDir, "series")
+for (const relative of await fs.readdir(seriesDir, { recursive: true })) {
+  if (!relative.endsWith(".html")) continue
+  const html = await fs.readFile(path.join(seriesDir, relative), "utf8")
+  if (!/<html[\s>]/i.test(html)) throw new Error(`Series page is empty or invalid: ${relative}`)
+  const directory = html.match(/<ol class="book-note-list">([\s\S]*?)<\/ol>/)?.[1] ?? ""
+  for (const [, href] of directory.matchAll(/href="([^"]+)"/g)) {
+    const target = decodeURIComponent(href).replace(/^\/+/, "").replace(/\/$/, "")
+    const article = await fs.readFile(path.join(publicDir, target, "index.html"), "utf8")
+    if (!/<html[\s>]/i.test(article)) throw new Error(`Series article is empty or invalid: ${href}`)
   }
 }
 

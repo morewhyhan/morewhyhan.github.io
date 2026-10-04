@@ -1,7 +1,11 @@
 ---
 title: 大学生目标分析
+slug: college-student-goals
 date: 2026-10-05 01:17:00
 permalink: 2026/10/05/college-student-goals/
+layout: post
+type: article
+graph: true
 categories:
   - 给大学生
 series: 给大学生

@@ -133,10 +133,7 @@ aside:
     order: -1
     limit: 8
   card_post_series:
-    enable: true
-    series_title: true
-    orderBy: date
-    order: 1
+    enable: false
   card_webinfo:
     enable: true
     post_count: true
@@ -178,12 +175,6 @@ search:
     pagination:
       enable: false
       hitsPerPage: 8
-
-series:
-  enable: true
-  orderBy: date
-  order: 1
-  number: true
 
 lightbox: fancybox
 

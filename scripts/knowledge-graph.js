@@ -70,6 +70,7 @@ function shouldInclude (doc, isPost) {
 
 function graphKind (data, categories, isPost) {
   if (data.type === 'mechanism') return '机制卡片'
+  if (data.type === 'article') return '文章'
   if (categories.includes('若我在场')) return '若我在场'
   if (categories.includes('读书笔记') || categories.includes('图书笔记')) return '图书笔记'
   if (categories.includes('生活随笔')) return '生活随笔'

@@ -113,18 +113,22 @@ for (const generatedDir of generatedDirs) {
 }
 
 const blogSourceDir = path.join(sourceDir, "_posts")
-const blogFiles = await markdownFiles(blogSourceDir)
+const blogFiles = [
+  ...(await markdownFiles(blogSourceDir)),
+  ...(await markdownFiles(path.join(sourceDir, "series"))),
+]
 const blogSeries = new Map()
 let blogContentCount = 0
 for (const sourceFile of blogFiles) {
   const markdown = await fs.readFile(sourceFile, "utf8")
-  if (courseTarget(markdown)) continue
+  if (courseTarget(markdown) || /^series\/[^/]+$/.test(extractPermalink(markdown) ?? "")) continue
   blogContentCount += 1
-  await writeMarkdown(path.join(quartzContentDir, "blog", path.basename(sourceFile)), markdown)
+  const fileName = markdown.match(/^slug:\s*([^\s]+)\s*$/m)?.[1] ?? path.basename(sourceFile, ".md")
+  await writeMarkdown(path.join(quartzContentDir, "blog", `${fileName}.md`), markdown)
   const series = markdown.match(/^series:\s*["']?(.*?)["']?\s*$/m)?.[1]?.trim()
   if (series) {
     const entries = blogSeries.get(series) ?? []
-    const slug = path.basename(sourceFile, ".md")
+    const slug = fileName
       .toLowerCase()
       .replace(/[^a-z0-9\u4e00-\u9fff]+/g, "-")
       .replace(/^-+|-+$/g, "")
