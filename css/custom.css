@@ -853,3 +853,12 @@ body.knowledge-graph-overlay-open {
     transition: none;
   }
 }
+.content-breadcrumb {
+  margin: 0 0 1.5rem;
+  font-size: 0.9em;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.content-breadcrumb a { text-decoration: none; }
+.content-breadcrumb span { opacity: 0.75; }
