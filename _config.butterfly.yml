@@ -9,6 +9,7 @@ nav:
 
 menu:
   首页: / || fas fa-home
+  内容目录: /content-directory/ || fas fa-folder-tree
   时间轴: /archives/ || fas fa-archive
   分类: /categories/ || fas fa-folder-open
   标签: /tags/ || fas fa-tags
@@ -205,6 +206,7 @@ inject:
     - <link rel="stylesheet" href="/css/custom.css">
   bottom:
     - <script defer src="/js/home-video.js?v=2"></script>
+    - <script defer src="/js/content-breadcrumb.js?v=1"></script>
 
 CDN:
   internal_provider: local
