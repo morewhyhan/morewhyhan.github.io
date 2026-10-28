@@ -171,10 +171,11 @@ hexo.extend.generator.register('knowledge-graph-data', locals => {
   contentNodes.forEach(node => {
     node.categories.forEach(category => categoryCounts.set(category, (categoryCounts.get(category) || 0) + 1))
   })
+  const categoryPaths = new Map(locals.categories.toArray().map(category => [category.name, category.path]))
   const categoryNodes = [...categoryCounts.entries()].map(([title, count]) => ({
-    id: normalizeUrl(`/categories/${encodeURIComponent(title)}/`),
+    id: normalizeUrl(categoryPaths.get(title) || `/categories/${encodeURIComponent(title)}/`),
     title,
-    url: normalizeUrl(`/categories/${encodeURIComponent(title)}/`),
+    url: normalizeUrl(categoryPaths.get(title) || `/categories/${encodeURIComponent(title)}/`),
     kind: '分类',
     categories: [],
     tags: [],

@@ -1,7 +1,10 @@
 ---
 title: Freqtrade 量化框架使用指南
 date: 2025-12-29 02:52:30
-categories: ['技术','交易']
+categories:
+  - 1自然科学
+  - 1.2计算机与信息科学
+  - 1.2.7 软件工程
 tags: ['Freqtrade','量化','因子策略','教程']
 ---
 
