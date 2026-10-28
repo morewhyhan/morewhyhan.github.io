@@ -2,9 +2,9 @@
 title: "再挤挤"
 date: "2026-08-10 21:19:42"
 categories:
+  - 专题
   - 生活随笔
 description: "小时候放学最怕下雨。"
-graph_parent: 生活随笔
 ---
 小时候放学最怕下雨。
 

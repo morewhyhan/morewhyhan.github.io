@@ -4,41 +4,18 @@ type: page
 comments: false
 ---
 
-按学科大类、二级学科和专业分支浏览文章。
+## [专题](/categories/%E4%B8%93%E9%A2%98/)
 
-## [1自然科学](/categories/1%E8%87%AA%E7%84%B6%E7%A7%91%E5%AD%A6/)
-
-### [1.2计算机与信息科学](/categories/1%E8%87%AA%E7%84%B6%E7%A7%91%E5%AD%A6/1-2%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E4%BF%A1%E6%81%AF%E7%A7%91%E5%AD%A6/)
-
-#### [1.2.7 软件工程](/categories/1%E8%87%AA%E7%84%B6%E7%A7%91%E5%AD%A6/1-2%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E4%BF%A1%E6%81%AF%E7%A7%91%E5%AD%A6/1-2-7-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/)
-
-- [Freqtrade 量化框架使用指南](/2025/12/29/Freqtrade%20%E9%87%8F%E5%8C%96%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/)
-## [5社会科学](/categories/5%E7%A4%BE%E4%BC%9A%E7%A7%91%E5%AD%A6/)
-
-### [5.4社会学](/categories/5%E7%A4%BE%E4%BC%9A%E7%A7%91%E5%AD%A6/5-4%E7%A4%BE%E4%BC%9A%E5%AD%A6/)
-
-#### [5.4.2 互动文化与身份](/categories/5%E7%A4%BE%E4%BC%9A%E7%A7%91%E5%AD%A6/5-4%E7%A4%BE%E4%BC%9A%E5%AD%A6/5-4-2-%E4%BA%92%E5%8A%A8%E6%96%87%E5%8C%96%E4%B8%8E%E8%BA%AB%E4%BB%BD/)
+### [生活随笔](/categories/%E4%B8%93%E9%A2%98/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/)
 
 - [再挤挤](/2026/08/10/life-notes-make-room/)
-## [6人文与艺术](/categories/6%E4%BA%BA%E6%96%87%E4%B8%8E%E8%89%BA%E6%9C%AF/)
-
-### [6.1历史与考古学](/categories/6%E4%BA%BA%E6%96%87%E4%B8%8E%E8%89%BA%E6%9C%AF/6-1%E5%8E%86%E5%8F%B2%E4%B8%8E%E8%80%83%E5%8F%A4%E5%AD%A6/)
-
-#### [6.1.3 世界通史](/categories/6%E4%BA%BA%E6%96%87%E4%B8%8E%E8%89%BA%E6%9C%AF/6-1%E5%8E%86%E5%8F%B2%E4%B8%8E%E8%80%83%E5%8F%A4%E5%AD%A6/6-1-3-%E4%B8%96%E7%95%8C%E9%80%9A%E5%8F%B2/)
-
 - [墓地上的文明](/2026/08/06/life-notes-civilization-on-graves/)
-### [6.2语言与文学](/categories/6%E4%BA%BA%E6%96%87%E4%B8%8E%E8%89%BA%E6%9C%AF/6-2%E8%AF%AD%E8%A8%80%E4%B8%8E%E6%96%87%E5%AD%A6/)
-
-#### [6.2.5 文学理论与方法](/categories/6%E4%BA%BA%E6%96%87%E4%B8%8E%E8%89%BA%E6%9C%AF/6-2%E8%AF%AD%E8%A8%80%E4%B8%8E%E6%96%87%E5%AD%A6/6-2-5-%E6%96%87%E5%AD%A6%E7%90%86%E8%AE%BA%E4%B8%8E%E6%96%B9%E6%B3%95/)
-
 - [奥德赛意识流](/2026/08/23/life-notes-odyssey/)
-### [6.3哲学伦理学与宗教](/categories/6%E4%BA%BA%E6%96%87%E4%B8%8E%E8%89%BA%E6%9C%AF/6-3%E5%93%B2%E5%AD%A6%E4%BC%A6%E7%90%86%E5%AD%A6%E4%B8%8E%E5%AE%97%E6%95%99/)
-
-#### [6.3.3 存在与心智](/categories/6%E4%BA%BA%E6%96%87%E4%B8%8E%E8%89%BA%E6%9C%AF/6-3%E5%93%B2%E5%AD%A6%E4%BC%A6%E7%90%86%E5%AD%A6%E4%B8%8E%E5%AE%97%E6%95%99/6-3-3-%E5%AD%98%E5%9C%A8%E4%B8%8E%E5%BF%83%E6%99%BA/)
-
 - [棋盘外有妖之命](/2026/08/08/life-notes-demon-outside-the-board/)
-#### [6.3.5 价值哲学](/categories/6%E4%BA%BA%E6%96%87%E4%B8%8E%E8%89%BA%E6%9C%AF/6-3%E5%93%B2%E5%AD%A6%E4%BC%A6%E7%90%86%E5%AD%A6%E4%B8%8E%E5%AE%97%E6%95%99/6-3-5-%E4%BB%B7%E5%80%BC%E5%93%B2%E5%AD%A6/)
-
 - [给春稗以秋实](/2026/08/09/life-notes-autumn-fruit/)
 - [武藏之死在天下无双](/2026/08/10/life-notes-musashi/)
 - [十年后的我](/2026/08/01/life-notes-ten-years-later/)
+
+### [量化交易](/categories/%E4%B8%93%E9%A2%98/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/)
+
+- [Freqtrade 量化框架使用指南](/2025/12/29/Freqtrade%20%E9%87%8F%E5%8C%96%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/)

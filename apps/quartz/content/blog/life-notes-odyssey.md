@@ -2,9 +2,9 @@
 title: "奥德赛意识流"
 date: "2026-08-23 20:50:01"
 categories:
+  - 专题
   - 生活随笔
 description: "我中了特洛伊木马病毒。"
-graph_parent: 生活随笔
 ---
 我中了特洛伊木马病毒。
 
