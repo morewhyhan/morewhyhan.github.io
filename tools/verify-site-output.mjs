@@ -96,7 +96,11 @@ for (const { href, title } of homepageEntries) {
 }
 
 const seriesDir = path.join(publicDir, "series")
-for (const relative of await fs.readdir(seriesDir, { recursive: true })) {
+const seriesFiles = await fs.readdir(seriesDir, { recursive: true }).catch((error) => {
+  if (error.code === "ENOENT") return []
+  throw error
+})
+for (const relative of seriesFiles) {
   if (!relative.endsWith(".html")) continue
   const html = await fs.readFile(path.join(seriesDir, relative), "utf8")
   if (!/<html[\s>]/i.test(html)) throw new Error(`Series page is empty or invalid: ${relative}`)

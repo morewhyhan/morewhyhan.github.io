@@ -87,8 +87,14 @@ function addAdjacentLinks(markdown, previous, next) {
   return `${markdown.trimEnd()}\n\n---\n\n${links.join(" · ")}\n`
 }
 
-async function markdownFiles(dir) {
-  const entries = await fs.readdir(dir, { withFileTypes: true })
+async function markdownFiles(dir, optional = false) {
+  let entries
+  try {
+    entries = await fs.readdir(dir, { withFileTypes: true })
+  } catch (error) {
+    if (optional && error.code === "ENOENT") return []
+    throw error
+  }
   const files = []
 
   for (const entry of entries) {
@@ -115,7 +121,7 @@ for (const generatedDir of generatedDirs) {
 const blogSourceDir = path.join(sourceDir, "_posts")
 const blogFiles = [
   ...(await markdownFiles(blogSourceDir)),
-  ...(await markdownFiles(path.join(sourceDir, "series"))),
+  ...(await markdownFiles(path.join(sourceDir, "series"), true)),
 ]
 const blogSeries = new Map()
 let blogContentCount = 0
