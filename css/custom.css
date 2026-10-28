@@ -7,7 +7,7 @@ body {
   font-family: "LXGW WenKai Screen", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-/* Homepage image: keep the cat visible when the viewport crops the picture. */
+/* Homepage image. */
 #page-header.full_page {
   height: 100vh;
   height: 100svh;
@@ -15,14 +15,14 @@ body {
   overflow: hidden;
   isolation: isolate;
   background-color: #0b0e12;
-  background-position: 75% bottom;
+  background-position: center center;
   background-size: cover;
   background-attachment: scroll;
 }
 
 #page-header.full_page::before {
   z-index: 1;
-  background: rgba(0, 0, 0, 0.24);
+  background: rgba(0, 0, 0, 0.08);
 }
 
 #page-header.full_page #nav,
