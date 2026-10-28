@@ -2,6 +2,8 @@
 
 这是 `https://morewhyhan.github.io/` 的可编辑源码。
 
+内容组织、页面路径和发布约定见 [AGENTS.md](AGENTS.md) 与 [博客内容与发布规范](.agents/博客内容与发布规范.md)。
+
 本项目使用 **Node.js + Hexo + Butterfly**，不使用 Python。
 
 ## 只需要认识两个分支
@@ -84,7 +86,7 @@ npm run deploy
 | 路径 | 内容 |
 | --- | --- |
 | `source/_posts/` | 自己写的普通文章 |
-| `source/book/` | 图书笔记与专题资料 |
+| `source/book/` | 图书与外部课程资料 |
 | `source/knowledge/cards/` | 机制卡片（进入图谱，不计入文章数） |
 | `source/img/` | 图片 |
 | `source/media/` | 首页视频等媒体 |
