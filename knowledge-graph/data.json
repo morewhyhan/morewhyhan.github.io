@@ -1,49 +1,6 @@
 {
-  "generatedAt": "2026-10-28T08:27:04.697Z",
+  "generatedAt": "2026-10-28T08:39:07.536Z",
   "nodes": [
-    {
-      "id": "/2025/12/29/Freqtrade 量化框架使用指南/",
-      "title": "Freqtrade 量化框架使用指南",
-      "url": "/2025/12/29/Freqtrade 量化框架使用指南/",
-      "kind": "文章",
-      "categories": [
-        "技术",
-        "交易"
-      ],
-      "tags": [
-        "Freqtrade",
-        "量化",
-        "因子策略",
-        "教程"
-      ],
-      "aliases": [],
-      "description": "",
-      "original": true,
-      "links": [
-        "/categories/%E6%8A%80%E6%9C%AF/",
-        "/categories/%E4%BA%A4%E6%98%93/",
-        "/tags/Freqtrade/",
-        "/tags/%E9%87%8F%E5%8C%96/",
-        "/tags/%E5%9B%A0%E5%AD%90%E7%AD%96%E7%95%A5/",
-        "/tags/%E6%95%99%E7%A8%8B/"
-      ]
-    },
-    {
-      "id": "/2026/08/06/life-notes-civilization-on-graves/",
-      "title": "墓地上的文明",
-      "url": "/2026/08/06/life-notes-civilization-on-graves/",
-      "kind": "生活随笔",
-      "categories": [
-        "生活随笔"
-      ],
-      "tags": [],
-      "aliases": [],
-      "description": "很久以前，人类没有明年。 狩猎落空便是饥饿，河流干涸便要迁徙。老人跟不上队伍，孩子熬不过寒冬。人逐鹿群，鹿逐水草，天地辽阔，处处可容身，又处处不能久留。 后来，一粒种子落进泥土。麦田蔓延，仓廪立起；墙内有了市廛、文字、律令、礼乐与王权…",
-      "original": true,
-      "links": [
-        "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"
-      ]
-    },
     {
       "id": "/book/decision-algorithm/",
       "title": "决策算法100讲",
@@ -64,106 +21,79 @@
       "description": "老喻关于概率、风险、博弈与人生选择的系统课程资料；全套资料在本站按一个专题收录。",
       "original": false,
       "links": [
-        "/categories/%E5%9B%BE%E4%B9%A6%E7%AC%94%E8%AE%B0/",
+        "/categories/图书笔记/",
         "/tags/%E5%86%B3%E7%AD%96/",
         "/tags/%E6%A6%82%E7%8E%87/",
         "/tags/%E5%8D%9A%E5%BC%88/"
       ]
     },
     {
+      "id": "/2025/12/29/Freqtrade 量化框架使用指南/",
+      "title": "Freqtrade 量化框架使用指南",
+      "url": "/2025/12/29/Freqtrade 量化框架使用指南/",
+      "kind": "文章",
+      "categories": [
+        "1自然科学",
+        "1.2计算机与信息科学",
+        "1.2.7 软件工程"
+      ],
+      "tags": [
+        "Freqtrade",
+        "量化",
+        "因子策略",
+        "教程"
+      ],
+      "aliases": [],
+      "description": "",
+      "original": true,
+      "links": [
+        "/categories/1自然科学/",
+        "/categories/1自然科学/1-2计算机与信息科学/",
+        "/categories/1自然科学/1-2计算机与信息科学/1-2-7-软件工程/",
+        "/tags/Freqtrade/",
+        "/tags/%E9%87%8F%E5%8C%96/",
+        "/tags/%E5%9B%A0%E5%AD%90%E7%AD%96%E7%95%A5/",
+        "/tags/%E6%95%99%E7%A8%8B/"
+      ]
+    },
+    {
       "id": "/2026/08/09/life-notes-autumn-fruit/",
       "title": "给春稗以秋实",
       "url": "/2026/08/09/life-notes-autumn-fruit/",
-      "kind": "生活随笔",
+      "kind": "文章",
       "categories": [
-        "生活随笔"
+        "6人文与艺术",
+        "6.3哲学伦理学与宗教",
+        "6.3.5 价值哲学"
       ],
       "tags": [],
       "aliases": [],
       "description": "余秀华有一句诗我记了很多年：\"告诉你稻子和稗子的区别，告诉你一棵稗子提心吊胆的春天。\"第一次读到只觉得漂亮，后来才发现，我好像就是那棵稗子。",
       "original": true,
       "links": [
-        "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"
+        "/categories/6人文与艺术/",
+        "/categories/6人文与艺术/6-3哲学伦理学与宗教/",
+        "/categories/6人文与艺术/6-3哲学伦理学与宗教/6-3-5-价值哲学/"
       ]
     },
     {
-      "id": "/2026/08/10/life-notes-make-room/",
-      "title": "再挤挤",
-      "url": "/2026/08/10/life-notes-make-room/",
-      "kind": "生活随笔",
+      "id": "/2026/08/06/life-notes-civilization-on-graves/",
+      "title": "墓地上的文明",
+      "url": "/2026/08/06/life-notes-civilization-on-graves/",
+      "kind": "文章",
       "categories": [
-        "生活随笔"
+        "6人文与艺术",
+        "6.1历史与考古学",
+        "6.1.3 世界通史"
       ],
       "tags": [],
       "aliases": [],
-      "description": "小时候放学最怕下雨。",
+      "description": "很久以前，人类没有明年。 狩猎落空便是饥饿，河流干涸便要迁徙。老人跟不上队伍，孩子熬不过寒冬。人逐鹿群，鹿逐水草，天地辽阔，处处可容身，又处处不能久留。 后来，一粒种子落进泥土。麦田蔓延，仓廪立起；墙内有了市廛、文字、律令、礼乐与王权…",
       "original": true,
       "links": [
-        "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"
-      ]
-    },
-    {
-      "id": "/2026/08/08/life-notes-demon-outside-the-board/",
-      "title": "棋盘外有妖之命",
-      "url": "/2026/08/08/life-notes-demon-outside-the-board/",
-      "kind": "生活随笔",
-      "categories": [
-        "生活随笔"
-      ],
-      "tags": [],
-      "aliases": [],
-      "description": "如果一切重来，命运还会一样吗？",
-      "original": true,
-      "links": [
-        "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"
-      ]
-    },
-    {
-      "id": "/2026/08/01/life-notes-ten-years-later/",
-      "title": "十年后的我",
-      "url": "/2026/08/01/life-notes-ten-years-later/",
-      "kind": "生活随笔",
-      "categories": [
-        "生活随笔"
-      ],
-      "tags": [],
-      "aliases": [],
-      "description": "第一次在终端里敲出\"Hello World\"，黑色屏幕上只有一行白字。 天地初开，混沌退散。 那是世界回应我的第一声。 此后浏览器上的窗口越开越多。教程是粮仓，文档是舆图，论坛是驿站，密密麻麻的标签栏灯火连营，一直铺到屏幕尽头。 递归…",
-      "original": true,
-      "links": [
-        "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"
-      ]
-    },
-    {
-      "id": "/2026/08/10/life-notes-musashi/",
-      "title": "武藏之死在天下无双",
-      "url": "/2026/08/10/life-notes-musashi/",
-      "kind": "生活随笔",
-      "categories": [
-        "生活随笔"
-      ],
-      "tags": [],
-      "aliases": [],
-      "description": "宫本武藏十三岁的时候，杀了第一个人。",
-      "original": true,
-      "links": [
-        "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"
-      ]
-    },
-    {
-      "id": "/2026/08/23/life-notes-odyssey/",
-      "title": "奥德赛意识流",
-      "url": "/2026/08/23/life-notes-odyssey/",
-      "kind": "生活随笔",
-      "categories": [
-        "生活随笔"
-      ],
-      "tags": [],
-      "aliases": [],
-      "description": "我中了特洛伊木马病毒。",
-      "original": true,
-      "links": [
-        "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"
+        "/categories/6人文与艺术/",
+        "/categories/6人文与艺术/6-1历史与考古学/",
+        "/categories/6人文与艺术/6-1历史与考古学/6-1-3-世界通史/"
       ]
     },
     {
@@ -185,60 +115,348 @@
       "description": "姜学勤老师从经典、文明、博弈、地缘与隐秘历史展开的心理史学系列课程。",
       "original": false,
       "links": [
-        "/categories/%E5%9B%BE%E4%B9%A6%E7%AC%94%E8%AE%B0/",
+        "/categories/图书笔记/",
         "/tags/%E5%BF%83%E7%90%86%E5%8F%B2%E5%AD%A6/",
         "/tags/%E5%8E%86%E5%8F%B2/",
         "/tags/%E8%AF%BE%E7%A8%8B/"
       ]
     },
     {
-      "id": "/categories/%E6%8A%80%E6%9C%AF/",
-      "title": "技术",
-      "url": "/categories/%E6%8A%80%E6%9C%AF/",
-      "kind": "分类",
-      "categories": [],
+      "id": "/2026/08/08/life-notes-demon-outside-the-board/",
+      "title": "棋盘外有妖之命",
+      "url": "/2026/08/08/life-notes-demon-outside-the-board/",
+      "kind": "文章",
+      "categories": [
+        "6人文与艺术",
+        "6.3哲学伦理学与宗教",
+        "6.3.3 存在与心智"
+      ],
       "tags": [],
       "aliases": [],
-      "description": "1 篇内容",
+      "description": "如果一切重来，命运还会一样吗？",
       "original": true,
-      "virtual": true,
-      "links": []
+      "links": [
+        "/categories/6人文与艺术/",
+        "/categories/6人文与艺术/6-3哲学伦理学与宗教/",
+        "/categories/6人文与艺术/6-3哲学伦理学与宗教/6-3-3-存在与心智/"
+      ]
     },
     {
-      "id": "/categories/%E4%BA%A4%E6%98%93/",
-      "title": "交易",
-      "url": "/categories/%E4%BA%A4%E6%98%93/",
-      "kind": "分类",
-      "categories": [],
+      "id": "/2026/08/01/life-notes-ten-years-later/",
+      "title": "十年后的我",
+      "url": "/2026/08/01/life-notes-ten-years-later/",
+      "kind": "文章",
+      "categories": [
+        "6人文与艺术",
+        "6.3哲学伦理学与宗教",
+        "6.3.5 价值哲学"
+      ],
       "tags": [],
       "aliases": [],
-      "description": "1 篇内容",
+      "description": "第一次在终端里敲出\"Hello World\"，黑色屏幕上只有一行白字。 天地初开，混沌退散。 那是世界回应我的第一声。 此后浏览器上的窗口越开越多。教程是粮仓，文档是舆图，论坛是驿站，密密麻麻的标签栏灯火连营，一直铺到屏幕尽头。 递归…",
       "original": true,
-      "virtual": true,
-      "links": []
+      "links": [
+        "/categories/6人文与艺术/",
+        "/categories/6人文与艺术/6-3哲学伦理学与宗教/",
+        "/categories/6人文与艺术/6-3哲学伦理学与宗教/6-3-5-价值哲学/"
+      ]
     },
     {
-      "id": "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/",
-      "title": "生活随笔",
-      "url": "/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/",
-      "kind": "分类",
-      "categories": [],
+      "id": "/2026/08/10/life-notes-make-room/",
+      "title": "再挤挤",
+      "url": "/2026/08/10/life-notes-make-room/",
+      "kind": "文章",
+      "categories": [
+        "5社会科学",
+        "5.4社会学",
+        "5.4.2 互动文化与身份"
+      ],
       "tags": [],
       "aliases": [],
-      "description": "7 篇内容",
+      "description": "小时候放学最怕下雨。",
       "original": true,
-      "virtual": true,
-      "links": []
+      "links": [
+        "/categories/5社会科学/",
+        "/categories/5社会科学/5-4社会学/",
+        "/categories/5社会科学/5-4社会学/5-4-2-互动文化与身份/"
+      ]
     },
     {
-      "id": "/categories/%E5%9B%BE%E4%B9%A6%E7%AC%94%E8%AE%B0/",
+      "id": "/2026/08/10/life-notes-musashi/",
+      "title": "武藏之死在天下无双",
+      "url": "/2026/08/10/life-notes-musashi/",
+      "kind": "文章",
+      "categories": [
+        "6人文与艺术",
+        "6.3哲学伦理学与宗教",
+        "6.3.5 价值哲学"
+      ],
+      "tags": [],
+      "aliases": [],
+      "description": "宫本武藏十三岁的时候，杀了第一个人。",
+      "original": true,
+      "links": [
+        "/categories/6人文与艺术/",
+        "/categories/6人文与艺术/6-3哲学伦理学与宗教/",
+        "/categories/6人文与艺术/6-3哲学伦理学与宗教/6-3-5-价值哲学/"
+      ]
+    },
+    {
+      "id": "/2026/08/23/life-notes-odyssey/",
+      "title": "奥德赛意识流",
+      "url": "/2026/08/23/life-notes-odyssey/",
+      "kind": "文章",
+      "categories": [
+        "6人文与艺术",
+        "6.2语言与文学",
+        "6.2.5 文学理论与方法"
+      ],
+      "tags": [],
+      "aliases": [],
+      "description": "我中了特洛伊木马病毒。",
+      "original": true,
+      "links": [
+        "/categories/6人文与艺术/",
+        "/categories/6人文与艺术/6-2语言与文学/",
+        "/categories/6人文与艺术/6-2语言与文学/6-2-5-文学理论与方法/"
+      ]
+    },
+    {
+      "id": "/categories/图书笔记/",
       "title": "图书笔记",
-      "url": "/categories/%E5%9B%BE%E4%B9%A6%E7%AC%94%E8%AE%B0/",
+      "url": "/categories/图书笔记/",
       "kind": "分类",
       "categories": [],
       "tags": [],
       "aliases": [],
       "description": "2 篇内容",
+      "original": true,
+      "virtual": true,
+      "links": []
+    },
+    {
+      "id": "/categories/1自然科学/",
+      "title": "1自然科学",
+      "url": "/categories/1自然科学/",
+      "kind": "分类",
+      "categories": [],
+      "tags": [],
+      "aliases": [],
+      "description": "1 篇内容",
+      "original": true,
+      "virtual": true,
+      "links": []
+    },
+    {
+      "id": "/categories/1自然科学/1-2计算机与信息科学/",
+      "title": "1.2计算机与信息科学",
+      "url": "/categories/1自然科学/1-2计算机与信息科学/",
+      "kind": "分类",
+      "categories": [],
+      "tags": [],
+      "aliases": [],
+      "description": "1 篇内容",
+      "original": true,
+      "virtual": true,
+      "links": []
+    },
+    {
+      "id": "/categories/1自然科学/1-2计算机与信息科学/1-2-7-软件工程/",
+      "title": "1.2.7 软件工程",
+      "url": "/categories/1自然科学/1-2计算机与信息科学/1-2-7-软件工程/",
+      "kind": "分类",
+      "categories": [],
+      "tags": [],
+      "aliases": [],
+      "description": "1 篇内容",
+      "original": true,
+      "virtual": true,
+      "links": []
+    },
+    {
+      "id": "/categories/6人文与艺术/",
+      "title": "6人文与艺术",
+      "url": "/categories/6人文与艺术/",
+      "kind": "分类",
+      "categories": [],
+      "tags": [],
+      "aliases": [],
+      "description": "6 篇内容",
+      "original": true,
+      "virtual": true,
+      "links": []
+    },
+    {
+      "id": "/categories/6人文与艺术/6-3哲学伦理学与宗教/",
+      "title": "6.3哲学伦理学与宗教",
+      "url": "/categories/6人文与艺术/6-3哲学伦理学与宗教/",
+      "kind": "分类",
+      "categories": [],
+      "tags": [],
+      "aliases": [],
+      "description": "4 篇内容",
+      "original": true,
+      "virtual": true,
+      "links": []
+    },
+    {
+      "id": "/categories/6人文与艺术/6-3哲学伦理学与宗教/6-3-5-价值哲学/",
+      "title": "6.3.5 价值哲学",
+      "url": "/categories/6人文与艺术/6-3哲学伦理学与宗教/6-3-5-价值哲学/",
+      "kind": "分类",
+      "categories": [],
+      "tags": [],
+      "aliases": [],
+      "description": "3 篇内容",
+      "original": true,
+      "virtual": true,
+      "links": []
+    },
+    {
+      "id": "/categories/6人文与艺术/6-1历史与考古学/",
+      "title": "6.1历史与考古学",
+      "url": "/categories/6人文与艺术/6-1历史与考古学/",
+      "kind": "分类",
+      "categories": [],
+      "tags": [],
+      "aliases": [],
+      "description": "1 篇内容",
+      "original": true,
+      "virtual": true,
+      "links": []
+    },
+    {
+      "id": "/categories/6人文与艺术/6-1历史与考古学/6-1-3-世界通史/",
+      "title": "6.1.3 世界通史",
+      "url": "/categories/6人文与艺术/6-1历史与考古学/6-1-3-世界通史/",
+      "kind": "分类",
+      "categories": [],
+      "tags": [],
+      "aliases": [],
+      "description": "1 篇内容",
+      "original": true,
+      "virtual": true,
+      "links": []
+    },
+    {
+      "id": "/categories/6人文与艺术/6-3哲学伦理学与宗教/6-3-3-存在与心智/",
+      "title": "6.3.3 存在与心智",
+      "url": "/categories/6人文与艺术/6-3哲学伦理学与宗教/6-3-3-存在与心智/",
+      "kind": "分类",
+      "categories": [],
+      "tags": [],
+      "aliases": [],
+      "description": "1 篇内容",
+      "original": true,
+      "virtual": true,
+      "links": []
+    },
+    {
+      "id": "/categories/5社会科学/",
+      "title": "5社会科学",
+      "url": "/categories/5社会科学/",
+      "kind": "分类",
+      "categories": [],
+      "tags": [],
+      "aliases": [],
+      "description": "1 篇内容",
+      "original": true,
+      "virtual": true,
+      "links": []
+    },
+    {
+      "id": "/categories/5社会科学/5-4社会学/",
+      "title": "5.4社会学",
+      "url": "/categories/5社会科学/5-4社会学/",
+      "kind": "分类",
+      "categories": [],
+      "tags": [],
+      "aliases": [],
+      "description": "1 篇内容",
+      "original": true,
+      "virtual": true,
+      "links": []
+    },
+    {
+      "id": "/categories/5社会科学/5-4社会学/5-4-2-互动文化与身份/",
+      "title": "5.4.2 互动文化与身份",
+      "url": "/categories/5社会科学/5-4社会学/5-4-2-互动文化与身份/",
+      "kind": "分类",
+      "categories": [],
+      "tags": [],
+      "aliases": [],
+      "description": "1 篇内容",
+      "original": true,
+      "virtual": true,
+      "links": []
+    },
+    {
+      "id": "/categories/6人文与艺术/6-2语言与文学/",
+      "title": "6.2语言与文学",
+      "url": "/categories/6人文与艺术/6-2语言与文学/",
+      "kind": "分类",
+      "categories": [],
+      "tags": [],
+      "aliases": [],
+      "description": "1 篇内容",
+      "original": true,
+      "virtual": true,
+      "links": []
+    },
+    {
+      "id": "/categories/6人文与艺术/6-2语言与文学/6-2-5-文学理论与方法/",
+      "title": "6.2.5 文学理论与方法",
+      "url": "/categories/6人文与艺术/6-2语言与文学/6-2-5-文学理论与方法/",
+      "kind": "分类",
+      "categories": [],
+      "tags": [],
+      "aliases": [],
+      "description": "1 篇内容",
+      "original": true,
+      "virtual": true,
+      "links": []
+    },
+    {
+      "id": "/tags/%E5%86%B3%E7%AD%96/",
+      "title": "#决策",
+      "url": "/tags/%E5%86%B3%E7%AD%96/",
+      "kind": "标签",
+      "categories": [],
+      "tags": [],
+      "aliases": [
+        "决策"
+      ],
+      "description": "1 篇内容",
+      "original": true,
+      "virtual": true,
+      "links": []
+    },
+    {
+      "id": "/tags/%E6%A6%82%E7%8E%87/",
+      "title": "#概率",
+      "url": "/tags/%E6%A6%82%E7%8E%87/",
+      "kind": "标签",
+      "categories": [],
+      "tags": [],
+      "aliases": [
+        "概率"
+      ],
+      "description": "1 篇内容",
+      "original": true,
+      "virtual": true,
+      "links": []
+    },
+    {
+      "id": "/tags/%E5%8D%9A%E5%BC%88/",
+      "title": "#博弈",
+      "url": "/tags/%E5%8D%9A%E5%BC%88/",
+      "kind": "标签",
+      "categories": [],
+      "tags": [],
+      "aliases": [
+        "博弈"
+      ],
+      "description": "1 篇内容",
       "original": true,
       "virtual": true,
       "links": []
@@ -297,51 +515,6 @@
       "tags": [],
       "aliases": [
         "教程"
-      ],
-      "description": "1 篇内容",
-      "original": true,
-      "virtual": true,
-      "links": []
-    },
-    {
-      "id": "/tags/%E5%86%B3%E7%AD%96/",
-      "title": "#决策",
-      "url": "/tags/%E5%86%B3%E7%AD%96/",
-      "kind": "标签",
-      "categories": [],
-      "tags": [],
-      "aliases": [
-        "决策"
-      ],
-      "description": "1 篇内容",
-      "original": true,
-      "virtual": true,
-      "links": []
-    },
-    {
-      "id": "/tags/%E6%A6%82%E7%8E%87/",
-      "title": "#概率",
-      "url": "/tags/%E6%A6%82%E7%8E%87/",
-      "kind": "标签",
-      "categories": [],
-      "tags": [],
-      "aliases": [
-        "概率"
-      ],
-      "description": "1 篇内容",
-      "original": true,
-      "virtual": true,
-      "links": []
-    },
-    {
-      "id": "/tags/%E5%8D%9A%E5%BC%88/",
-      "title": "#博弈",
-      "url": "/tags/%E5%8D%9A%E5%BC%88/",
-      "kind": "标签",
-      "categories": [],
-      "tags": [],
-      "aliases": [
-        "博弈"
       ],
       "description": "1 篇内容",
       "original": true,
