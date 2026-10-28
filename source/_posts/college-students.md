@@ -21,5 +21,5 @@ graph: true
 <!-- more -->
 
 <ol class="book-note-list">
-  <li><a href="/2026/10/05/college-student-goals/"><span>001</span>大学生目标分析</a></li>
+  <li>目前暂无已发布文章。</li>
 </ol>

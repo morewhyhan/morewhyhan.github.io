@@ -121,7 +121,13 @@ const blogSeries = new Map()
 let blogContentCount = 0
 for (const sourceFile of blogFiles) {
   const markdown = await fs.readFile(sourceFile, "utf8")
-  if (courseTarget(markdown) || /^series\/[^/]+$/.test(extractPermalink(markdown) ?? "")) continue
+  if (courseTarget(markdown)) continue
+  const topicPermalink = extractPermalink(markdown)?.match(/^series\/([^/]+)$/)
+  if (topicPermalink) {
+    const topicTitle = extractTitle(markdown, topicPermalink[1])
+    await writeMarkdown(path.join(quartzContentDir, "blog", "series", topicTitle, "index.md"), markdown)
+    continue
+  }
   blogContentCount += 1
   const fileName = markdown.match(/^slug:\s*([^\s]+)\s*$/m)?.[1] ?? path.basename(sourceFile, ".md")
   await writeMarkdown(path.join(quartzContentDir, "blog", `${fileName}.md`), markdown)
