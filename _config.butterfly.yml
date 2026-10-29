@@ -70,7 +70,7 @@ subtitle:
   source: false
   sub:
     - 月印千江水，千江月
-    - 概率不为零，重复足够多次，可能便趋近必然。
+    - To Bayes, Probability knows no absolute zero. No matter how close an event’s probability is to zero, infinite repetition renders it all but certain.
     - 用见识和行动，对抗熵增
 
 toc:
@@ -103,7 +103,7 @@ aside:
   position: right
   card_author:
     enable: true
-    description: 概率不为零，重复足够多次，可能便趋近必然。
+    description: To Bayes, Probability knows no absolute zero. No matter how close an event’s probability is to zero, infinite repetition renders it all but certain.
     button:
       enable: true
       icon: fab fa-github

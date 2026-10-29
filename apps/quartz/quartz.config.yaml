@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: Mehrwis
-  pageTitleSuffix: " · Mehrwis"
+  pageTitle: 虚船向远
+  pageTitleSuffix: " · 虚船向远"
   enableSPA: true
   enablePopovers: true
   analytics: null
@@ -231,7 +231,7 @@ plugins:
     enabled: true
     options:
       links:
-        返回Mehrwis: https://morewhyhan.github.io/
+        返回虚船向远: https://morewhyhan.github.io/
         GitHub: https://github.com/morewhyhan/
     layout:
       position: footer

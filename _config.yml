@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Mehrwis
+title: 虚船向远
 # subtitle: ''
-description: '概率不为零，重复足够多次，可能便趋近必然。'
+description: 'To Bayes, Probability knows no absolute zero. No matter how close an event’s probability is to zero, infinite repetition renders it all but certain.'
 keywords: '读书笔记，生活感悟，思考,Java,nodejs'
-author: '涵千'
+author: 'Mehrwis'
 language: zh-CN
 timezone: ''
 
