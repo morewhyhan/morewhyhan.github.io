@@ -5,7 +5,7 @@
 # Site
 title: 虚船向远
 # subtitle: ''
-description: 'To Bayes, Probability knows no absolute zero. No matter how close an event’s probability is to zero, infinite repetition renders it all but certain.'
+description: '概率论中没有绝对的0。无限次的重复将使其概率趋近必然。'
 keywords: '读书笔记，生活感悟，思考,Java,nodejs'
 author: 'Mehrwis'
 language: zh-CN
