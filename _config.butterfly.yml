@@ -190,7 +190,7 @@ lightbox: fancybox
 
 canvas_nest:
   enable: true
-  color: '150,170,190'
+  color: '205,105,110'
   opacity: 0.42
   zIndex: -1
   count: 88
