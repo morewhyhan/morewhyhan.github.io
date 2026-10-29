@@ -227,11 +227,9 @@
   let title = ''
   const entry = articles[path]
   if (entry) {
-    crumbs.push(['文章目录', '/content-directory/'])
+    crumbs.push(['分类', '/categories/'])
     entry.cats.forEach((name, index) => crumbs.push([name, '/categories/' + entry.cats.slice(0, index + 1).map(s => encodeURIComponent(s.replace(/[. ]/g, '-'))).join('/') + '/']))
     title = entry.title
-  } else if (path === '/content-directory/') {
-    title = '文章目录'
   } else if (path === '/book/' || path.startsWith('/book/decision-algorithm/') || path.startsWith('/book/psychohistory/')) {
     if (path === '/book/') {
       title = '图书笔记'
@@ -262,9 +260,9 @@
   } else if (path.startsWith('/categories/')) {
     container = document.querySelector('#category, #page')
     const parts = path.slice('/categories/'.length).split('/').filter(Boolean)
-    crumbs.push(['文章目录', '/content-directory/'])
     if (!parts.length) { title = '分类' }
     else {
+      crumbs.push(['分类', '/categories/'])
       const names = parts.map(x => x.replace(/-/g, ' '))
       names.slice(0, -1).forEach((name, i) => crumbs.push([name, '/categories/' + parts.slice(0, i + 1).map(encodeURIComponent).join('/') + '/']))
       title = names[names.length - 1]
