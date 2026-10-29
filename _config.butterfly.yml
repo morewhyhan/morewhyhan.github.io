@@ -32,6 +32,9 @@ code_blocks:
 
 social:
   fab fa-github: https://github.com/morewhyhan/ || GitHub || '#24292e'
+  fab fa-x-twitter: https://x.com/merhrwis || X（推特）
+  fab fa-tiktok: https://v.douyin.com/1Y7tAnrwnl8 || 抖音
+  fab fa-weixin: https://mp.weixin.qq.com/s/ifeYG1mTfHlC2q_Y9rZO-g || 微信公众号文章
 
 favicon: /img/favicon.ico
 
