@@ -64,8 +64,8 @@ subtitle:
   enable: true
   effect: true
   typed_option:
-    typeSpeed: 100
-    backSpeed: 50
+    typeSpeed: 80
+    backSpeed: 40
     loop: true
   source: false
   sub:
@@ -142,7 +142,7 @@ aside:
   position: right
   card_author:
     enable: true
-    description: 概率论中没有绝对的0。无限次的重复将使其概率趋近必然。
+    description: 概率论中没有绝对的零，无限次的重复将使其趋近必然。
     button:
       enable: true
       icon: fab fa-github
