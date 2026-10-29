@@ -70,7 +70,7 @@ subtitle:
   source: false
   sub:
     - 月印千江水，千江月
-    - 流水不争先，争的是滔滔不绝
+    - 概率不为零，重复足够多次，可能便趋近必然。
     - 用见识和行动，对抗熵增
 
 toc:
@@ -103,7 +103,7 @@ aside:
   position: right
   card_author:
     enable: true
-    description: 流水不争先，争的是滔滔不绝
+    description: 概率不为零，重复足够多次，可能便趋近必然。
     button:
       enable: true
       icon: fab fa-github

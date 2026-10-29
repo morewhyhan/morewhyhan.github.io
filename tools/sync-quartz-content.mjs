@@ -244,10 +244,10 @@ ${sectionMeta.description}
 
 const blogIndex = `---
 title: 博客文章
-description: 虚船向远发布的文章。
+description: Mehrwis发布的文章。
 ---
 
-这里保留「虚船向远」发布的文章。可以从左侧目录进入具体文章，也可以使用搜索查找内容。
+这里保留「Mehrwis」发布的文章。可以从左侧目录进入具体文章，也可以使用搜索查找内容。
 ${blogSeries.size > 0 ? `\n## 系列\n\n${[...blogSeries.keys()].map((series) => `- [[blog/series/${series}/index|${series}]]`).join("\n")}\n` : ""}
 `
 await writeMarkdown(path.join(quartzContentDir, "blog", "index.md"), `${blogIndex.trimEnd()}\n`)
@@ -290,10 +290,10 @@ await writeMarkdown(path.join(quartzContentDir, "books", "index.md"), booksIndex
 
 const home = `---
 title: 知识花园
-description: 虚船向远的文章、图书与课程索引。
+description: Mehrwis的文章、图书与课程索引。
 ---
 
-这里是「虚船向远」内容的另一种阅读入口。它不负责制造关系，只呈现文章与课程中真实存在的路径。
+这里是「Mehrwis」内容的另一种阅读入口。它不负责制造关系，只呈现文章与课程中真实存在的路径。
 
 ## 从这里进入
 
