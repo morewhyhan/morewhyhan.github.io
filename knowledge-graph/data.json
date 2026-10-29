@@ -1,6 +1,32 @@
 {
-  "generatedAt": "2026-10-29T05:07:51.557Z",
+  "generatedAt": "2026-10-29T08:28:28.687Z",
   "nodes": [
+    {
+      "id": "/book/decision-algorithm/",
+      "title": "决策算法100讲",
+      "url": "/book/decision-algorithm/",
+      "kind": "图书笔记",
+      "categories": [
+        "图书笔记"
+      ],
+      "tags": [
+        "决策",
+        "概率",
+        "博弈"
+      ],
+      "aliases": [
+        "决策算法",
+        "老喻决策算法100讲"
+      ],
+      "description": "老喻关于概率、风险、博弈与人生选择的系统课程资料；全套资料在本站按一个专题收录。",
+      "original": false,
+      "links": [
+        "/categories/图书笔记/",
+        "/tags/%E5%86%B3%E7%AD%96/",
+        "/tags/%E6%A6%82%E7%8E%87/",
+        "/tags/%E5%8D%9A%E5%BC%88/"
+      ]
+    },
     {
       "id": "/2025/12/29/Freqtrade 量化框架使用指南/",
       "title": "Freqtrade 量化框架使用指南",
@@ -29,50 +55,6 @@
       ]
     },
     {
-      "id": "/book/decision-algorithm/",
-      "title": "决策算法100讲",
-      "url": "/book/decision-algorithm/",
-      "kind": "图书笔记",
-      "categories": [
-        "图书笔记"
-      ],
-      "tags": [
-        "决策",
-        "概率",
-        "博弈"
-      ],
-      "aliases": [
-        "决策算法",
-        "老喻决策算法100讲"
-      ],
-      "description": "老喻关于概率、风险、博弈与人生选择的系统课程资料；全套资料在本站按一个专题收录。",
-      "original": false,
-      "links": [
-        "/categories/图书笔记/",
-        "/tags/%E5%86%B3%E7%AD%96/",
-        "/tags/%E6%A6%82%E7%8E%87/",
-        "/tags/%E5%8D%9A%E5%BC%88/"
-      ]
-    },
-    {
-      "id": "/2026/08/09/life-notes-autumn-fruit/",
-      "title": "给春稗以秋实",
-      "url": "/2026/08/09/life-notes-autumn-fruit/",
-      "kind": "生活随笔",
-      "categories": [
-        "专题",
-        "生活随笔"
-      ],
-      "tags": [],
-      "aliases": [],
-      "description": "余秀华有一句诗我记了很多年：\"告诉你稻子和稗子的区别，告诉你一棵稗子提心吊胆的春天。\"第一次读到只觉得漂亮，后来才发现，我好像就是那棵稗子。",
-      "original": true,
-      "links": [
-        "/categories/专题/",
-        "/categories/专题/生活随笔/"
-      ]
-    },
-    {
       "id": "/2026/08/06/life-notes-civilization-on-graves/",
       "title": "墓地上的文明",
       "url": "/2026/08/06/life-notes-civilization-on-graves/",
@@ -84,6 +66,24 @@
       "tags": [],
       "aliases": [],
       "description": "很久以前，人类没有明年。 狩猎落空便是饥饿，河流干涸便要迁徙。老人跟不上队伍，孩子熬不过寒冬。人逐鹿群，鹿逐水草，天地辽阔，处处可容身，又处处不能久留。 后来，一粒种子落进泥土。麦田蔓延，仓廪立起；墙内有了市廛、文字、律令、礼乐与王权…",
+      "original": true,
+      "links": [
+        "/categories/专题/",
+        "/categories/专题/生活随笔/"
+      ]
+    },
+    {
+      "id": "/2026/08/08/life-notes-demon-outside-the-board/",
+      "title": "棋盘外有妖之命",
+      "url": "/2026/08/08/life-notes-demon-outside-the-board/",
+      "kind": "生活随笔",
+      "categories": [
+        "专题",
+        "生活随笔"
+      ],
+      "tags": [],
+      "aliases": [],
+      "description": "如果一切重来，命运还会一样吗？",
       "original": true,
       "links": [
         "/categories/专题/",
@@ -109,6 +109,24 @@
       ]
     },
     {
+      "id": "/2026/08/09/life-notes-autumn-fruit/",
+      "title": "给春稗以秋实",
+      "url": "/2026/08/09/life-notes-autumn-fruit/",
+      "kind": "生活随笔",
+      "categories": [
+        "专题",
+        "生活随笔"
+      ],
+      "tags": [],
+      "aliases": [],
+      "description": "余秀华有一句诗我记了很多年：\"告诉你稻子和稗子的区别，告诉你一棵稗子提心吊胆的春天。\"第一次读到只觉得漂亮，后来才发现，我好像就是那棵稗子。",
+      "original": true,
+      "links": [
+        "/categories/专题/",
+        "/categories/专题/生活随笔/"
+      ]
+    },
+    {
       "id": "/2026/08/10/life-notes-musashi/",
       "title": "武藏之死在天下无双",
       "url": "/2026/08/10/life-notes-musashi/",
@@ -124,6 +142,31 @@
       "links": [
         "/categories/专题/",
         "/categories/专题/生活随笔/"
+      ]
+    },
+    {
+      "id": "/book/psychohistory/",
+      "title": "姜学勤心理史学",
+      "url": "/book/psychohistory/",
+      "kind": "图书笔记",
+      "categories": [
+        "图书笔记"
+      ],
+      "tags": [
+        "心理史学",
+        "历史",
+        "课程"
+      ],
+      "aliases": [
+        "psychohistory"
+      ],
+      "description": "姜学勤老师从经典、文明、博弈、地缘与隐秘历史展开的心理史学系列课程。",
+      "original": false,
+      "links": [
+        "/categories/图书笔记/",
+        "/tags/%E5%BF%83%E7%90%86%E5%8F%B2%E5%AD%A6/",
+        "/tags/%E5%8E%86%E5%8F%B2/",
+        "/tags/%E8%AF%BE%E7%A8%8B/"
       ]
     },
     {
@@ -163,47 +206,17 @@
       ]
     },
     {
-      "id": "/book/psychohistory/",
-      "title": "姜学勤心理史学",
-      "url": "/book/psychohistory/",
-      "kind": "图书笔记",
-      "categories": [
-        "图书笔记"
-      ],
-      "tags": [
-        "心理史学",
-        "历史",
-        "课程"
-      ],
-      "aliases": [
-        "psychohistory"
-      ],
-      "description": "姜学勤老师从经典、文明、博弈、地缘与隐秘历史展开的心理史学系列课程。",
-      "original": false,
-      "links": [
-        "/categories/图书笔记/",
-        "/tags/%E5%BF%83%E7%90%86%E5%8F%B2%E5%AD%A6/",
-        "/tags/%E5%8E%86%E5%8F%B2/",
-        "/tags/%E8%AF%BE%E7%A8%8B/"
-      ]
-    },
-    {
-      "id": "/2026/08/08/life-notes-demon-outside-the-board/",
-      "title": "棋盘外有妖之命",
-      "url": "/2026/08/08/life-notes-demon-outside-the-board/",
-      "kind": "生活随笔",
-      "categories": [
-        "专题",
-        "生活随笔"
-      ],
+      "id": "/categories/图书笔记/",
+      "title": "图书笔记",
+      "url": "/categories/图书笔记/",
+      "kind": "分类",
+      "categories": [],
       "tags": [],
       "aliases": [],
-      "description": "如果一切重来，命运还会一样吗？",
+      "description": "2 篇内容",
       "original": true,
-      "links": [
-        "/categories/专题/",
-        "/categories/专题/生活随笔/"
-      ]
+      "virtual": true,
+      "links": []
     },
     {
       "id": "/categories/专题/",
@@ -232,19 +245,6 @@
       "links": []
     },
     {
-      "id": "/categories/图书笔记/",
-      "title": "图书笔记",
-      "url": "/categories/图书笔记/",
-      "kind": "分类",
-      "categories": [],
-      "tags": [],
-      "aliases": [],
-      "description": "2 篇内容",
-      "original": true,
-      "virtual": true,
-      "links": []
-    },
-    {
       "id": "/categories/专题/生活随笔/",
       "title": "生活随笔",
       "url": "/categories/专题/生活随笔/",
@@ -253,6 +253,51 @@
       "tags": [],
       "aliases": [],
       "description": "7 篇内容",
+      "original": true,
+      "virtual": true,
+      "links": []
+    },
+    {
+      "id": "/tags/%E5%86%B3%E7%AD%96/",
+      "title": "#决策",
+      "url": "/tags/%E5%86%B3%E7%AD%96/",
+      "kind": "标签",
+      "categories": [],
+      "tags": [],
+      "aliases": [
+        "决策"
+      ],
+      "description": "1 篇内容",
+      "original": true,
+      "virtual": true,
+      "links": []
+    },
+    {
+      "id": "/tags/%E6%A6%82%E7%8E%87/",
+      "title": "#概率",
+      "url": "/tags/%E6%A6%82%E7%8E%87/",
+      "kind": "标签",
+      "categories": [],
+      "tags": [],
+      "aliases": [
+        "概率"
+      ],
+      "description": "1 篇内容",
+      "original": true,
+      "virtual": true,
+      "links": []
+    },
+    {
+      "id": "/tags/%E5%8D%9A%E5%BC%88/",
+      "title": "#博弈",
+      "url": "/tags/%E5%8D%9A%E5%BC%88/",
+      "kind": "标签",
+      "categories": [],
+      "tags": [],
+      "aliases": [
+        "博弈"
+      ],
+      "description": "1 篇内容",
       "original": true,
       "virtual": true,
       "links": []
@@ -311,51 +356,6 @@
       "tags": [],
       "aliases": [
         "教程"
-      ],
-      "description": "1 篇内容",
-      "original": true,
-      "virtual": true,
-      "links": []
-    },
-    {
-      "id": "/tags/%E5%86%B3%E7%AD%96/",
-      "title": "#决策",
-      "url": "/tags/%E5%86%B3%E7%AD%96/",
-      "kind": "标签",
-      "categories": [],
-      "tags": [],
-      "aliases": [
-        "决策"
-      ],
-      "description": "1 篇内容",
-      "original": true,
-      "virtual": true,
-      "links": []
-    },
-    {
-      "id": "/tags/%E6%A6%82%E7%8E%87/",
-      "title": "#概率",
-      "url": "/tags/%E6%A6%82%E7%8E%87/",
-      "kind": "标签",
-      "categories": [],
-      "tags": [],
-      "aliases": [
-        "概率"
-      ],
-      "description": "1 篇内容",
-      "original": true,
-      "virtual": true,
-      "links": []
-    },
-    {
-      "id": "/tags/%E5%8D%9A%E5%BC%88/",
-      "title": "#博弈",
-      "url": "/tags/%E5%8D%9A%E5%BC%88/",
-      "kind": "标签",
-      "categories": [],
-      "tags": [],
-      "aliases": [
-        "博弈"
       ],
       "description": "1 篇内容",
       "original": true,
